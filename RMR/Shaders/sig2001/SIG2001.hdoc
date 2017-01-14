@@ -1,0 +1,36 @@
+TITLE	SIG2001 Shaders	H1	Shaders from <i>Advanced RenderMan 3</i> at SIGGRAPH 2001 course 48
+DIR	SIG2001	PIC	100	100	ALIGN=LEFT CLEAR
+TOC	Course Notes	PDF	NOTE	This the original version of <a href="../../Books/sig01.course48.pdf.gz">the course notes</a> have been updated to fix some typos and other problems.<P>
+TOC	Extras	Supplemental materials	NOTE	<A HREF="../../Books/sig01.course48.xtra.tgz">sig01.course48.xtra.tgz</A>
+SECTION	PIC	../../Pics/redball.gif	Shaders from Larry Gritz's course notes
+SHADER	causticlight	NOTE	Example spot light shader for doing caustics.
+DESC	light shader with caustics
+DO_LINE
+SHADER	envsurf	NOTE	Simple surface shader using environment for color.
+DESC	environment surface shader
+DO_LINE
+SHADER	hdri1	NOTE	Simple light shader using environment map for light color
+DESC	enviroment light shader
+DO_LINE
+SHADER	hdri2	NOTE	More complete light shader using environment map for light color.  Also uses shadows
+DESC	enviroment light shader with shadows
+DO_LINE
+SECTION	PIC	../../Pics/redball.gif	Shaders from Matt Pharr's course notes
+TOC	km.h	 Kubelka-Munk layers	NOTE	<a href="km.h">km.h</a> is a SL include file containing functions making use fo the Kubelka-Munk material layer model.<P>
+SHADER	skin	NOTE	Simplified Hanrahan and Krueger sub-surface scattering model for giving the appearance of human skin.
+DESC	skin surface shader
+DO_LINE	
+SECTION	PIC	../../Pics/redball.gif	Shaders from Kevin Bjorke course notes
+TOC	isshad.h	neat_example	NOTE	Although <a href="isshad.h">isshad.h</a> is not used in the two included shaders from <i>Square</i>, this contains neat example of checking the RIB <b>Option</b> and <b>Attribute</b> for certain values to effect the behavior of a shader!  In this case it looks like they were looking for a certain condition that would tell this function if this render was a shadow pass or not.
+SHADER	softboxes	NOTE	Is an extended concept of the RAT <b>tvscreen</b>.  It is a light shader with a number of cards.  These cards can act as sort of bounce cards for lighting.  This shader had lots of different uses but two of the more common were for fake rim lighting and as eye catchlights.<p>It seems as those on <b>Final Fantasy</b> they wrote their shaders in an old observe macro preprocesser called <i>M4</i>.  This allows for easily adding X number of parameters with similiar functionality.  Say oh for example, shadows and related parameters for reading multiple shadow maps.<P>The <i>M4</i> code for this shader is called <a href="softbox.slm4">softbox.slm4</a>.<p>I made this shader by running:<p><pre>    m4 softbox.slm4 > softbox.sl</pre><p>
+DESC	Inspired from a practical "softbox"
+DO_LINE
+SHADER	superKagee	Allows one to layer multiple shadows together.  Sort of like the concept of the RAT <b>magiclight</b>.<p>Once again the main source for this shader is in <i>M4</i>: <a href="superKagee.slm4">superKagee.slm4</a>.  I made the shader by running:<p><pre>    m4 -Dm4numshads=4 skagee.slm > superKagee.sl</pre><p>In this case I set the macro to equal to 4.  Telling the program to build up the shader to work with 4 shadowmaps.<p>
+DESC	layered shadows surface shader
+DO_LINE
+TOC	WPrefix.tcl	example MTOR TCL script	NOTE	My tcl isn't very good, so I am not completely sure what this is doing.  It seems go through the maya scene looking for certain conditions to find some information about the scene.<p>If anybody has any more detailed info feel free to pass it on.<p><a href="WPrefix.tcl">WPrefix.tcl</a><p>
+SECTION	PIC	../../Pics/redball.gif	Shaders from Lawrence Treweek's course notes
+SHADER	volcube	NOTE	Ray-marching volumetric surface shader that was used on <b>Hollow Man</b>
+DESC	volumetric surface shader
+DO_LINE
+

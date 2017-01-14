@@ -1,0 +1,450 @@
+surface gmarbtile_polish
+param	float	Ka		0.5
+param	float	Kd		0.4
+param	float	Ks		0.2
+param	float	Kr		0.2
+param	float	roughness		0.05
+param	color	specularcolor		1 1 1
+param	float	txtscale		1
+param	color	darkcolor		0 0 0
+param	color	lightcolor		0 0 0
+param	color	veincolor		0 0 0
+param	color	groovecolor		0 0 0
+param	float	veinfreq		1
+param	float	sharpness		25
+param	float	tilesize		1
+param	float	groovewidth		0.015
+local	string	$_str_0 	"shader"
+local	point	PP	0 0 0
+local	vector	offset	0 0 0
+local	normal	Nf	0 0 0
+local	vector	V	0 0 0
+local	vector	refldir	0 0 0
+local	color	Ct	0 0 0
+local	color	env	0 0 0
+local	float	pixelsize	0
+local	float	twice	0
+local	float	scale	0
+local	float	freq	0
+local	float	turbsum	0
+local	float	turb	0
+local	float	i	0
+local	float	swidth	0
+local	float	twidth	0
+local	float	w	0
+local	float	h	0
+local	float	ss	0
+local	float	tt	0
+local	float	whichs	0
+local	float	whicht	0
+local	float	groovy	0
+local	float	GWF	0
+initcode 7
+	pushiv	0.01 0.12 0.004 
+	popc	darkcolor 
+initcode 8
+	pushiv	0.06 0.18 0.02 
+	popc	lightcolor 
+initcode 9
+	pushiv	0.47 0.57 0.03 
+	popc	veincolor 
+initcode 10
+	pushiv	0.02 0.02 0.02 
+	popc	groovecolor 
+initcode 14
+	return
+code
+	pushv	P 
+	pushs	$_str_0 
+	transforms
+	mulFv	txtscale 
+	popv	PP 
+	pushv	P 
+	area
+	sqrt
+	mulF	txtscale 
+	popf	pixelsize 
+	return_area
+	pushf	pixelsize 
+	pushif	2 
+	mulff
+	popf	twice 
+	cpFF	pixelsize swidth 
+	cpFF	swidth twidth 
+	pushf	tilesize 
+	pushif	0.5 
+	divff
+	mulF	groovewidth 
+	popf	GWF 
+	pushf	tilesize 
+	pushv	PP 
+	xcomp
+	divff
+	popf	ss 
+	cpFF	ss whichs 
+	pushif	1 
+	pushf	ss 
+	mod
+	popf	ss 
+	pushf	ss 
+	subF	whichs 
+	popf	whichs 
+	pushf	tilesize 
+	pushv	PP 
+	ycomp
+	divff
+	popf	tt 
+	cpFF	tt whicht 
+	pushif	1 
+	pushf	tt 
+	mod
+	popf	tt 
+	pushf	tt 
+	subF	whicht 
+	popf	whicht 
+	pushif	0 
+	pushf	whicht 
+	pushif	15 
+	mulff
+	pushf	whichs 
+	pushif	7 
+	mulff
+	popv	offset 
+	pushv	offset 
+	addV	PP 
+	popv	PP 
+	pushif	0 
+	popf	turb 
+	pushif	1 
+	popf	scale 
+label 0
+	pushf	twice 
+	pushf	scale 
+	gt
+	ifz	2
+	pushif	0.5 
+	pushf	scale 
+	pushv	PP 
+	divvf
+	noisev
+	subff
+	abs
+	mulF	scale 
+	addF	turb 
+	popf	turb 
+label 1
+	pushif	2 
+	divF	scale 
+	popf	scale 
+	jump	0
+label 2
+	pushf	pixelsize 
+	pushf	scale 
+	gt
+	ifz	3
+	pushif	0.5 
+	pushf	scale 
+	pushv	PP 
+	divvf
+	noisev
+	subff
+	abs
+	pushf	scale 
+	pushif	1 
+	pushif	0 
+	pushif	1 
+	pushf	pixelsize 
+	divF	scale 
+	subff
+	fclamp
+	mulff
+	mulff
+	addF	turb 
+	popf	turb 
+label 3
+label 4
+	pushf	turb 
+	pushif	0.35 
+	pushif	0.1 
+	smoothstep
+	pushc	lightcolor 
+	pushc	darkcolor 
+	cmix
+	popc	Ct 
+	pushif	1 
+	popf	freq 
+	pushiv	35.2 -21.9 6.25 
+	popv	offset 
+	pushif	0 
+	popf	i 
+label 5
+	pushif	6 
+	pushf	i 
+	lt
+	ifz	7
+	pushf	freq 
+	pushiv	0.5 0.5 0.5 
+	pushv	PP 
+	mulFv	freq 
+	pointnoisev
+	subvv
+	divvf
+	addV	offset 
+	popv	offset 
+	pushif	2 
+	mulF	freq 
+	popf	freq 
+label 6
+	pushif	1 
+	addF	i 
+	popf	i 
+	jump	5
+label 7
+	pushv	offset 
+	addV	PP 
+	popv	PP 
+	pushif	0 
+	popf	turbsum 
+	pushif	1 
+	popf	freq 
+	pushf	veinfreq 
+	pushv	PP 
+	mulvf
+
+	popv	PP 
+	pushif	0 
+	popf	i 
+label 8
+	pushif	3 
+	pushf	i 
+	lt
+	ifz	10
+	pushif	1 
+	pushf	freq 
+	pushv	PP 
+	mulvf
+	noisev
+	pushif	2 
+	mulff
+	subff
+	abs
+	popf	turb 
+	pushf	freq 
+	pushf	sharpness 
+	pushf	turb 
+	pushif	1 
+	subff
+	pushif	1 
+	pushif	0.8 
+	smoothstep
+	pow
+	divff
+	popf	turb 
+	pushf	turb 
+	pushf	turbsum 
+	pushif	1 
+	subff
+	mulff
+	addF	turbsum 
+	popf	turbsum 
+	pushif	2 
+	mulF	freq 
+	popf	freq 
+label 9
+	pushif	1 
+	addF	i 
+	popf	i 
+	jump	8
+label 10
+	pushif	1 
+	pushiv	-4.4 8.34 27.1 
+	addV	PP 
+	pushif	2 
+	mulfv
+	noisev
+	pushif	2 
+	mulff
+	subff
+	pushif	0.05 
+	pushif	-0.1 
+	smoothstep
+	mulF	turbsum 
+	popf	turbsum 
+	pushf	turbsum 
+	pushc	veincolor 
+	pushc	Ct 
+	cmix
+	popc	Ct 
+	pushif	1 
+	pushf	swidth 
+	ge
+	ifz	11
+	pushf	GWF 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	w 
+	jump	12
+label 11
+	pushf	swidth 
+	divF	GWF 
+	pushif	2 
+	mulff
+	pushif	0 
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	pushf	swidth 
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	subF	ss 
+	divff
+	fclamp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	divF	GWF 
+	pushif	1 
+	subff
+	fmax
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	subF	GWF 
+	subF	GWF 
+	pushf	swidth 
+	subF	GWF 
+	subF	ss 
+	divff
+	fclamp
+	fclamp
+	subff
+	popf	w 
+label 12
+	pushif	1 
+	pushf	twidth 
+	ge
+	ifz	13
+	pushf	GWF 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	h 
+	jump	14
+label 13
+	pushf	twidth 
+	divF	GWF 
+	pushif	2 
+	mulff
+	pushif	0 
+	pushif	1 
+	pushif	0 
+	pushf	twidth 
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	pushf	twidth 
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	subF	tt 
+	divff
+	fclamp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushf	twidth 
+	divF	GWF 
+	pushif	1 
+	subff
+	fmax
+	pushif	1 
+	pushif	0 
+	pushf	twidth 
+	subF	GWF 
+	subF	GWF 
+	pushf	twidth 
+	subF	GWF 
+	subF	tt 
+	divff
+	fclamp
+	fclamp
+	subff
+	popf	h 
+label 14
+	pushf	h 
+	mulF	w 
+	popf	groovy 
+	pushf	groovy 
+	pushc	Ct 
+	pushc	groovecolor 
+	cmix
+	popc	Ct 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushv	I 
+	normalize
+	popv	V 
+	pushf	roughness 
+	pushv	V 
+	negv
+	pushv	Nf 
+	specular
+	mulFv	Ks 
+	popc	env 
+	pushif	0 
+	pushf	groovy 
+	mulF	Kr 
+	gt
+	ifz	15
+	pushv	Nf 
+	pushv	V 
+	reflect
+	popv	refldir 
+	pushv	refldir 
+	pushv	P 
+	trace
+	mulFv	Kr 
+	addC	env 
+	popc	env 
+label 15
+label 16
+	pushc	specularcolor 
+	mulFv	groovy 
+	mulC	env 
+	popc	env 
+	cpCC	Os Oi 
+	pushc	env 
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	Ct 
+	addcc
+	mulC	Oi 
+	popc	Ci 
+	return

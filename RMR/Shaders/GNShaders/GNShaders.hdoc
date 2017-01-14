@@ -1,0 +1,6 @@
+MAILTO	gnattress AT mac DOT com	NAME	Email Graeme Nattress
+TITLE	GNShaders	H1	Graeme Nattress Shaders
+DIR	GNShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	GNember	NOTE	This shader is designed to be used with particles.  Where the particle is scaled to represent it's life.  The desired effect is that of glowing particles that dim and fade as they die.
+DESC	Glowing ember shader
+DO_LINE

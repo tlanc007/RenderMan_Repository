@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<content collectionGUID="CC8D43BC-5F8F-47BE-80D1-1C9A9F194E72">
+  <lastEdited clientType="local-build-20080911" date="2008-09-11 20:46:20 -0700"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;RMR Blog&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>First Official JP RenderMan User Event!</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>In the &lt;a href="http://www.renderman.org/RMR/index.html%23Announce"&gt;Newsworthy&lt;/a&gt; section added mention of the &lt;b&gt;First Official JP RenderMan User Community&lt;/b&gt; event which is to take place on the 28th.  For more information go to &lt;a href="http://bernard.nexusinternational.jp/2008/06/call-for-renderman-community-of-japan.html"&gt;Bernard&#x2019;s Blog&lt;/a&gt;.&#xD;</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Tuesday, June 17, 2008&lt;/b&gt;</richText>
+  </textBox>
+</content>

@@ -1,0 +1,21 @@
+Listing of files in the ch8 directory
+
+NOTE: There is a bug somewhere in one of the files used to build listings 
+listing8_3.gen and listing8_4.gen. -- I haven't tracked it down yet.  The message from prman is:
+
+Warning in context RMContext00001 in command RiClipping:  IllegalNesting:  
+        inside 'camera' block.  
+
+1767 Jun 17 22:15 Makefile
+ 476 Jun 17 22:20 Readme
+1504 Jun  3 19:52 listing8_1.c
+2325 Jun  3 14:03 listing8_2.c
+ 988 Jun  3 19:41 listing8_3.c
+1015 Jun  3 14:13 listing8_4.c
+2246 Jun  3 19:41 listing8_5.c
+
+For the Makefile you will need to provide for the following variables:
+
+RMAN_LIB, RIDIR, RUN_RMAN, OTHER_LIBS and CC.
+
+They are described in the Makefile

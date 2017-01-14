@@ -1,0 +1,231 @@
+light windowlight
+param	float	intensity		1
+param	color	lightcolor		0 0 0
+param	color	darkcolor		0 0 0
+param	point	from		0 0 0
+local	string	$_str_0 	"current"
+local	string	$_str_1 	"shader"
+param	point	to		0 0 0
+param	point	center		0 0 0
+param	vector	up		0 0 0
+param	vector	in		0 0 0
+param	float	hpanes		2
+param	float	vpanes		3
+param	float	panewidth		6
+param	float	paneheight		6
+param	float	framewidth		0.1
+param	float	frameheight		0.1
+param	float	fuzz		0.25
+local	vector	inv	0 0 0
+local	vector	right	0 0 0
+local	vector	upv	0 0 0
+local	vector	path	0 0 0
+local	float	offset	0
+local	float	modulus	0
+local	float	yfract	0
+local	float	xfract	0
+local	float	d	0
+local	point	PL	0 0 0
+local	float	_2$edge0	0
+code
+local	float	_2$edge1	0
+code
+local	float	_2$x0	0
+local	float	_2$x1	0
+initcode 1
+	pushiv	1 0.9 0.6 
+	popc	lightcolor 
+initcode 2
+	pushiv	0.05 0.15 0.1 
+	popc	darkcolor 
+initcode 3
+	pushiv	0 0 0 
+	pushs	$_str_0 
+	pushs	$_str_1 
+	transform2s
+	popv	from 
+initcode 4
+	pushiv	0 1 0 
+	pushs	$_str_0 
+	pushs	$_str_1 
+	transform2s
+	popv	to 
+initcode 5
+	pushiv	0 0 0 
+	pushs	$_str_0 
+	pushs	$_str_1 
+	transform2s
+	popv	center 
+initcode 6
+	pushiv	0 0 1 
+	pushs	$_str_0 
+	pushs	$_str_1 
+	vtransform2s
+	popv	up 
+initcode 7
+	pushiv	0 1 0 
+	pushs	$_str_0 
+	pushs	$_str_1 
+	vtransform2s
+	popv	in 
+initcode 14
+	return
+code
+	return_area
+	pushv	to 
+	subV	from 
+	normalize
+	popv	path 
+	pushv	in 
+	normalize
+	popv	inv 
+	pushv	inv 
+	pushv	up 
+	cross
+	popv	right 
+	pushv	right 
+	pushv	inv 
+	cross
+	normalize
+	popv	upv 
+	pushv	inv 
+	pushv	upv 
+	cross
+	popv	right 
+	pushv	center 
+	subV	Ps 
+	pushv	inv 
+	vdot
+	popf	d 
+	pushv	inv 
+	pushv	path 
+	vdot
+	divF	d 
+	pushv	path 
+	mulvf
+	subV	Ps 
+	popv	PL 
+	pushif	0.01 
+	pushv	path 
+	negv
+	pushv	PL 
+	illuminate3	0
+	pushif	2 
+	divF	vpanes 
+	mulF	paneheight 
+	pushv	upv 
+	pushv	center 
+	subV	PL 
+	vdot
+	addff
+	popf	offset 
+	pushf	vpanes 
+	pushf	paneheight 
+	divF	offset 
+	lt
+	pushif	0 
+	pushf	offset 
+	gt
+	and
+	ifz	1
+	pushf	paneheight 
+	pushf	offset 
+	mod
+	popf	modulus 
+	pushif	2 
+	divF	frameheight 
+	popf	_2$edge0 
+	pushif	2 
+	divF	frameheight 
+	subF	paneheight 
+	popf	_2$edge1 
+	pushif	0.5 
+	mulF	fuzz 
+	subF	modulus 
+	popf	_2$x0 
+	pushf	fuzz 
+	addF	_2$x0 
+	popf	_2$x1 
+	pushf	fuzz 
+	pushf	_2$edge0 
+	pushf	_2$x0 
+	fmax
+	pushf	_2$edge1 
+	pushf	_2$x1 
+	fmin
+	subff
+	divff
+	pushif	0 
+	fmax
+	jump	3
+label 3
+	popf	yfract 
+	jump	2
+label 1
+	pushif	0 
+	popf	yfract 
+label 2
+	pushif	2 
+	divF	hpanes 
+	mulF	panewidth 
+	pushv	right 
+	pushv	center 
+	subV	PL 
+	vdot
+	addff
+	popf	offset 
+	pushf	hpanes 
+	pushf	panewidth 
+	divF	offset 
+	lt
+	pushif	0 
+	pushf	offset 
+	gt
+	and
+	ifz	4
+	pushf	panewidth 
+	pushf	offset 
+	mod
+	popf	modulus 
+	pushif	2 
+	divF	framewidth 
+	popf	_2$edge0 
+	pushif	2 
+	divF	framewidth 
+	subF	panewidth 
+	popf	_2$edge1 
+	pushif	0.5 
+	mulF	fuzz 
+	subF	modulus 
+	popf	_2$x0 
+	pushf	fuzz 
+	addF	_2$x0 
+	popf	_2$x1 
+	pushf	fuzz 
+	pushf	_2$edge0 
+	pushf	_2$x0 
+	fmax
+	pushf	_2$edge1 
+	pushf	_2$x1 
+	fmin
+	subff
+	divff
+	pushif	0 
+	fmax
+	jump	6
+label 6
+	popf	xfract 
+	jump	5
+label 4
+	pushif	0 
+	popf	xfract 
+label 5
+	pushf	xfract 
+	mulF	yfract 
+	pushc	lightcolor 
+	pushc	darkcolor 
+	cmix
+	mulFv	intensity 
+	popc	Cl 
+label 0
+	return

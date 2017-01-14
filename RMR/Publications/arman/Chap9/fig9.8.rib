@@ -1,0 +1,204 @@
+#########################################################################
+# fig9.8.rib - RIB to create Figure 9.8 of:
+#
+# _Advanced RenderMan: Creating CGI for Motion Picture_, 
+# by Anthony A. Apodaca and Larry Gritz, Morgan Kaufmann, 1999.
+#
+# This file demostrates the use of the WardAnisotropic reflection model,
+# resulting in three TIFF files:
+#        fig9.8a.tif        uroughness=vroughness=0.3
+#        fig9.8b.tif        uroughness=0.15, vroughness=0.5
+#        fig9.8c.tif        uroughness=0.5, vroughness=0.15
+#
+#########################################################################
+
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+Option "searchpath" "shader" [".:../shaders:&"]
+Option "searchpath" "archive" [".:../models:&"]
+Format 300 200 1
+PixelSamples 2 2
+ShadingRate 1
+
+FrameBegin 1
+Display "fig9.8a.tif" "file" "rgb"
+Projection "perspective" "fov" [19]
+##CameraOrientation 0 -40 20 0 0 5.75 0 0.33559 0.942008
+ConcatTransform [-1 0 0 0 0 0.33559 0.942008 0 0 0.942008 -0.33559 0 0 0 0 1]
+Translate 0 40 -20 
+WorldBegin
+TransformBegin
+CoordSysTransform "camera"
+# Ambient light
+LightSource "ambientlight" 1 "intensity" [0.01]
+Illuminate 1 1
+# Key light
+AttributeBegin
+Translate 80 120 -100
+#Rotate -20 0 1 0
+#Rotate 30 1 0 0
+LightSource "uberlight" 2 "string lighttype" ["omni"] "intensity" [0.8] "lightcolor" [1 .95 .9]
+AttributeEnd
+Illuminate 2 1
+# Fill light
+AttributeBegin
+Translate -50 50 -100
+#Rotate -20 0 1 0
+#Rotate 30 1 0 0
+Declare "lighttype" "string"
+LightSource "uberlight" 3 "lighttype" ["omni"] "intensity" [0.1] 
+            "float nonspecular" [0.3] 
+            "lightcolor" [.95 .95 1]
+AttributeEnd
+Illuminate 3 1
+# Rim light
+AttributeBegin
+Translate -60 60 90
+LightSource "uberlight" 4 "string lighttype" ["omni"] "intensity" [0.35]
+           "float nonspecular" [.3]
+AttributeEnd
+Illuminate 4 1
+# Bounce light
+AttributeBegin
+Translate 0 -20 -100
+LightSource "uberlight" 5 "string lighttype" ["omni"] "intensity" [0.05] "float nonspecular" [.7]
+AttributeEnd
+Illuminate 5 1
+TransformEnd
+AttributeBegin
+Color 1 .3 .05
+Surface "brushedmetal" "float uroughness" [0.3] "float vroughness" [0.3]
+Translate 0 0 1
+Scale 3 3 3
+ReadArchive "teapot.rib"
+AttributeEnd
+AttributeBegin
+Color .65 .65 .65
+Surface "constant"
+Sphere 50 -50 50 360
+AttributeEnd
+WorldEnd
+FrameEnd
+
+
+FrameBegin 2
+Display "fig9.8b.tif" "file" "rgb"
+Projection "perspective" "fov" [19]
+##CameraOrientation 0 -40 20 0 0 5.75 0 0.33559 0.942008
+ConcatTransform [-1 0 0 0 0 0.33559 0.942008 0 0 0.942008 -0.33559 0 0 0 0 1]
+Translate 0 40 -20 
+WorldBegin
+TransformBegin
+CoordSysTransform "camera"
+# Ambient light
+LightSource "ambientlight" 1 "intensity" [0.01]
+Illuminate 1 1
+# Key light
+AttributeBegin
+Translate 80 120 -100
+#Rotate -20 0 1 0
+#Rotate 30 1 0 0
+LightSource "uberlight" 2 "string lighttype" ["omni"] "intensity" [0.8] "lightcolor" [1 .95 .9]
+AttributeEnd
+Illuminate 2 1
+# Fill light
+AttributeBegin
+Translate -50 50 -100
+#Rotate -20 0 1 0
+#Rotate 30 1 0 0
+Declare "lighttype" "string"
+LightSource "uberlight" 3 "lighttype" ["omni"] "intensity" [0.1] 
+            "float nonspecular" [0.3] 
+            "lightcolor" [.95 .95 1]
+AttributeEnd
+Illuminate 3 1
+# Rim light
+AttributeBegin
+Translate -60 60 90
+LightSource "uberlight" 4 "string lighttype" ["omni"] "intensity" [0.35]
+           "float nonspecular" [.3]
+AttributeEnd
+Illuminate 4 1
+# Bounce light
+AttributeBegin
+Translate 0 -20 -100
+LightSource "uberlight" 5 "string lighttype" ["omni"] "intensity" [0.05] "float nonspecular" [.7]
+AttributeEnd
+Illuminate 5 1
+TransformEnd
+AttributeBegin
+Color 1 .3 .05
+Surface "brushedmetal" "float uroughness" [0.15] "float vroughness" [0.5]
+Translate 0 0 1
+Scale 3 3 3
+ReadArchive "teapot.rib"
+AttributeEnd
+AttributeBegin
+Color .65 .65 .65
+Surface "constant"
+Sphere 50 -50 50 360
+AttributeEnd
+WorldEnd
+FrameEnd
+
+
+FrameBegin 3
+Display "fig9.8c.tif" "file" "rgb"
+Projection "perspective" "fov" [19]
+##CameraOrientation 0 -40 20 0 0 5.75 0 0.33559 0.942008
+ConcatTransform [-1 0 0 0 0 0.33559 0.942008 0 0 0.942008 -0.33559 0 0 0 0 1]
+Translate 0 40 -20 
+WorldBegin
+TransformBegin
+CoordSysTransform "camera"
+# Ambient light
+LightSource "ambientlight" 1 "intensity" [0.01]
+Illuminate 1 1
+# Key light
+AttributeBegin
+Translate 80 120 -100
+#Rotate -20 0 1 0
+#Rotate 30 1 0 0
+LightSource "uberlight" 2 "string lighttype" ["omni"] "intensity" [0.8] "lightcolor" [1 .95 .9]
+AttributeEnd
+Illuminate 2 1
+# Fill light
+AttributeBegin
+Translate -50 50 -100
+#Rotate -20 0 1 0
+#Rotate 30 1 0 0
+Declare "lighttype" "string"
+LightSource "uberlight" 3 "lighttype" ["omni"] "intensity" [0.1] 
+            "float nonspecular" [0.3] 
+            "lightcolor" [.95 .95 1]
+AttributeEnd
+Illuminate 3 1
+# Rim light
+AttributeBegin
+Translate -60 60 90
+LightSource "uberlight" 4 "string lighttype" ["omni"] "intensity" [0.35]
+           "float nonspecular" [.3]
+AttributeEnd
+Illuminate 4 1
+# Bounce light
+AttributeBegin
+Translate 0 -20 -100
+LightSource "uberlight" 5 "string lighttype" ["omni"] "intensity" [0.05] "float nonspecular" [.7]
+AttributeEnd
+Illuminate 5 1
+TransformEnd
+AttributeBegin
+Color 1 .3 .05
+Surface "brushedmetal" "float uroughness" [0.5] "float vroughness" [0.15]
+Translate 0 0 1
+Scale 3 3 3
+ReadArchive "teapot.rib"
+AttributeEnd
+AttributeBegin
+Color .65 .65 .65
+Surface "constant"
+Sphere 50 -50 50 360
+AttributeEnd
+WorldEnd
+FrameEnd

@@ -1,0 +1,118 @@
+version BMRT 2.4.0beta
+surface SHW_brushedmetal
+param	float	Ka		0.03
+param	float	Kd		0.03
+param	float	Ks		1
+param	float	roughness		0.04
+param	color	specularcolor		1 1 1
+local	normal	Nf	0 0 0
+local	vector	tangent	0 0 0
+local	color	env	0 0 0
+local	float	Kt	0
+local	vector	V	0 0 0
+local	vector	H	0 0 0
+local	float	spec	0
+local	float	aniso	0
+local	float	shad	0
+local	float	sin_light	0
+local	float	sin_eye	0
+local	float	cos_light	0
+local	float	cos_eye	0
+local	vector	Ln	0 0 0
+initcode 4
+	return
+code
+	return_area
+	pushv	dPdu 
+	normalize
+	popv	tangent 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushv	I 
+	normalize
+	negv
+	popv	V 
+	pushv	V 
+	pushv	tangent 
+	negv
+	vdot
+	popf	cos_eye 
+	mulFF	cos_eye cos_eye 
+	pushif	1 
+	subff
+	sqrt
+	popf	sin_eye 
+	pushif	0 
+	popf	spec 
+	pushif	1.5708 
+	pushv	Nf 
+	pushv	P 
+	illuminance_start
+label 0
+	illuminance3	1
+	pushv	L 
+	normalize
+	popv	Ln 
+	addVV	V Ln 
+	pushif	0.5 
+	mulfv
+	popv	H 
+	pushv	Ln 
+	pushv	tangent 
+	vdot
+	popf	cos_light 
+	mulFF	cos_light cos_light 
+	pushif	1 
+	subff
+	sqrt
+	popf	sin_light 
+	pushif	0 
+	mulFF	sin_light sin_eye 
+	mulFF	cos_light cos_eye 
+	addff
+	fmax
+	popf	aniso 
+	pushif	0 
+	pushv	Ln 
+	pushv	Nf 
+	vdot
+	fmax
+	pushif	0 
+	pushv	V 
+	pushv	Nf 
+	vdot
+	fmax
+	mulff
+	popf	shad 
+	pushf	shad 
+	pushf	roughness 
+	pushif	1 
+	divff
+	pushf	aniso 
+	pow
+	mulF	Ks 
+	mulff
+	addF	spec 
+	popf	spec 
+	jump	0
+label 1
+	pushc	specularcolor 
+	mulFF	Ks spec 
+	mulfc
+	popc	env 
+	pushc	env 
+	pushc	Cs 
+	pushv	Nf 
+	diffuse
+	mulFc	Kd 
+	ambient
+	mulFc	Ka 
+	addcc
+	mulC	Os 
+	mulcc
+	addcc
+	popc	Ci 
+	return

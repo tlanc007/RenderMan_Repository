@@ -1,0 +1,5 @@
+TITLE	DWShaders	H1	Dan Weeks Shaders
+DIR	DWShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	DWParquetTile
+DESC	Parquet wood shader
+DO_LINE

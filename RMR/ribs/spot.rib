@@ -1,0 +1,23 @@
+#RenderMan RIB
+#Spotlight lightsource sample rib
+#by Arcady Doubinin (cglab@glas.apc.org)
+#Date 6/16/95
+
+version 3.01
+
+Format 640 480 1
+Display "spot.tiff" "file" "rgb"
+
+#View transforms
+Projection "perspective" "fov" [70]
+Translate 0 0 3
+Rotate 30 0 1 0
+WorldBegin
+	LightSource "ambientlight" 0
+	LightSource "spotlight" 1 "from" [2 2 -2] "to" [0 0 0] "intensity" [1.5]
+	Surface "plastic" "Ka" [0.1] "Kd" [0.4] "Ks" [0.6] "roughness" [0.4]
+	Color 1 0.2 0.5
+	Sphere 1 -1 1 360
+	Color 0.2 0.35 0.8
+	Polygon "P" [-4 -1 -4  4 -1 -4  4 -1 4  -4 -1 4]
+WorldEnd

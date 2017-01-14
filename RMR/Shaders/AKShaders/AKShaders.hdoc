@@ -1,0 +1,8 @@
+MAILTO	avk107 AT yahoo DOT com	NAME	Email Andrew
+TITLE	AKShaders	H1	Andrew V. Klishin Shaders
+DIR	AKShaders	PIC	100	100	ALIGN=LEFT CLEAR
+NEW
+DESC	stained glass
+SHADER	AK_StainedTexture	NOTE	A stained glass texture shader.  This example uses <a href="http://RMR/st/nebula.0.tiff">nebula.0.tiff</a>.
+DO_LINE
+

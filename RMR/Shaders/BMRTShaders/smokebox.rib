@@ -1,0 +1,72 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+Option "searchpath" "shader" [".:../shaders:&"]
+Display "smokebox1.tif" "file" "rgb"
+FrameAspectRatio 1
+Format 256 256 1
+PixelSamples 1 1
+Projection "perspective"  "fov" 30
+ConcatTransform  [ 1 0 0 0 0 0 -1 0 0 1 0 0 0 0 0 1  ] 
+Translate 0 -20.5 -5
+
+Option "radiosity"  "steps" [40] "minpatchsamples" [2]
+
+WorldBegin
+Attribute "radiosity"  "patchsize" [3]  "elemsize" [1.5]  "minsize" [0.5]
+
+Declare "falloff" "float"
+Declare "density" "float"
+Declare "stepsize" "float"
+Declare "integstart" "float"
+Declare "integend" "float"
+Declare "scatter" "color"
+Declare "use_lighting" "float"
+Declare "octaves" "float"
+Declare "freq" "float"
+Declare "smokevary" "float"
+
+Atmosphere "noisysmoke" "density" [0.05] "integstart" 1 "integend" 50
+	"stepsize" [.5] "scatter" [1 1.25 2] "use_lighting" [1]
+	"octaves" [3] "freq" [.5] "smokevary" [1.5]
+
+
+Attribute "light" "shadows" "on"
+LightSource "spotlight" 1 "intensity" 70 "from" [4.99 0 9.5] "to" [0 0 3] "coneangle" .55 "conedeltaangle" .1
+
+AttributeBegin
+Attribute "identifier" "name" "Walls"
+Attribute "render" "casts_shadows" ["none"]
+Sides 1
+Surface "matte" 
+Color  [ 0.5 0.5 0.5  ] 
+Polygon "P"  [ -5 -5 0 5 -5 0 5 5 0 -5 5 0  ] 
+Color  [ 0.4 0.4 0.4  ] 
+Polygon "P"  [ -5 5 10 5 5 10 5 -5 10 -5 -5 10  ] 
+Color  [ 0.6 0.6 0.6  ] 
+Polygon "P"  [ -5 -5 0 -5 -5 10 5 -5 10 5 -5 0  ] 
+Color  [ 0.65 0.05 0.05  ] 
+Polygon "P"  [ 5 -5 0 5 -5 10 5 5 10 5 5 0  ] 
+Color  [ 0.05 0.05 0.65  ] 
+Polygon "P"  [ -5 5 0 -5 5 10 -5 -5 10 -5 -5 0  ] 
+Color  [ 0.5 0.5 0.5  ] 
+Polygon "P"  [ 5 5 0 5 5 10 -5 5 10 -5 5 0  ] 
+AttributeEnd
+
+AttributeBegin
+Attribute "identifier" "name" ["box"]
+Attribute "render" "casts_shadows" ["opaque"]
+Surface "matte" 
+Color  [ 0.7 0.7 0.7 ] 
+#Translate -2 -2.75 0 
+Translate 1 0 0
+Rotate -10 0 0 1 
+Polygon "P"  [ -1.5 1.5 0 -1.5 -1.5 0 -1.5 -1.5 6 -1.5 1.5 6  ] 
+Polygon "P"  [ 1.5 1.5 6 1.5 -1.5 6 1.5 -1.5 0 1.5 1.5 0  ] 
+Polygon "P"  [ 1.5 -1.5 6 -1.5 -1.5 6 -1.5 -1.5 0 1.5 -1.5 0  ] 
+Polygon "P"  [ 1.5 1.5 0 -1.5 1.5 0 -1.5 1.5 6 1.5 1.5 6  ] 
+Polygon "P"  [ 1.5 1.5 0 1.5 -1.5 0 -1.5 -1.5 0 -1.5 1.5 0  ] 
+Polygon "P"  [ -1.5 1.5 6 -1.5 -1.5 6 1.5 -1.5 6 1.5 1.5 6  ] 
+AttributeEnd
+
+WorldEnd

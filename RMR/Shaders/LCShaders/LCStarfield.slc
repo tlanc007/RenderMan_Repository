@@ -1,0 +1,189 @@
+surface LCStarfield
+param	float	frequency		1
+param	float	minsize		0.05
+param	float	maxsize		0.2
+param	float	lightIntensity		1
+param	float	lightFallOff		0.15
+param	float	useYZplane		0
+param	float	useXZplane		0
+local	string	$_str_0 	"world"
+local	float	val	0
+local	vector	wI	0 0 0
+local	float	alpha	0
+local	float	beta	0
+local	float	variation	0
+local	float	cx	0
+local	float	cy	0
+local	float	x	0
+local	float	y	0
+local	float	r	0
+local	float	rad	0
+local	float	starDifRadius	0
+initcode 6
+	return
+code
+	return_area
+	pushif	0 
+	popf	val 
+	pushv	I 
+	pushs	$_str_0 
+	vtransforms
+	normalize
+	popv	wI 
+	pushv	wI 
+	ycomp
+	popf	beta 
+	pushv	wI 
+	xcomp
+	popf	alpha 
+	pushf	minsize 
+	subF	maxsize 
+	popf	starDifRadius 
+	pushif	2 
+	pushf	beta 
+	mulF	frequency 
+	pushf	alpha 
+	mulF	frequency 
+	cellnoiseff
+	mulff
+	mulF	starDifRadius 
+	addF	minsize 
+	popf	r 
+	pushf	r 
+	pushif	1 
+	subff
+	pushif	2 
+	pushif	0.5 
+	pushf	beta 
+	mulF	frequency 
+	pushf	alpha 
+	mulF	frequency 
+	cellnoiseff
+	subff
+	mulff
+	mulff
+	popf	cx 
+	pushf	r 
+	pushif	1 
+	subff
+	pushif	2 
+	pushif	0.5 
+	pushf	beta 
+	mulF	frequency 
+	pushif	235 
+	addff
+	pushf	alpha 
+	mulF	frequency 
+	pushif	142 
+	addff
+	cellnoiseff
+	subff
+	mulff
+	mulff
+	popf	cy 
+	pushif	2 
+	pushif	0.5 
+	pushif	1 
+	pushf	alpha 
+	mulF	frequency 
+	mod
+	subff
+	mulff
+	popf	x 
+	pushif	2 
+	pushif	0.5 
+	pushif	1 
+	pushf	beta 
+	mulF	frequency 
+	mod
+	subff
+	mulff
+	popf	y 
+	pushf	cy 
+	subF	y 
+	pushf	cy 
+	subF	y 
+	mulff
+	pushf	cx 
+	subF	x 
+	pushf	cx 
+	subF	x 
+	mulff
+	addff
+	sqrt
+	popf	rad 
+	pushf	beta 
+	mulF	frequency 
+	pushif	151 
+	addff
+	pushf	alpha 
+	mulF	frequency 
+	pushif	130 
+	subff
+	cellnoiseff
+	mulF	lightIntensity 
+	popf	variation 
+	pushf	r 
+	pushf	rad 
+	gt
+	ifz	0
+	pushif	0 
+	popf	val 
+	jump	1
+label 0
+	pushif	3 
+	pushf	rad 
+	pushif	1 
+	subff
+	pow
+	pushf	lightFallOff 
+	pushf	r 
+	pow
+	mulF	variation 
+	mulff
+	popf	val 
+label 1
+	pushiv	1 1 1 
+	mulFv	val 
+	popc	Ci 
+	pushif	1 
+	cset	Oi 
+	pushif	1 
+	pushif	0 
+	pushif	2 
+	pushc	Ci 
+	comp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushif	1 
+	pushc	Ci 
+	comp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushif	0 
+	pushc	Ci 
+	comp
+	fclamp
+	popc	Ci 
+	pushif	1 
+	pushif	0 
+	pushif	2 
+	pushc	Oi 
+	comp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushif	1 
+	pushc	Oi 
+	comp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushif	0 
+	pushc	Oi 
+	comp
+	fclamp
+	popc	Oi 
+	return

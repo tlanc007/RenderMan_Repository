@@ -1,0 +1,31 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+Display "listing12_1.tiff" "file" "rgb"
+Format 256 192 -1
+ShadingRate 1
+LightSource "distantlight" 1
+CropWindow 0 1 0 1
+Projection "perspective"
+Projection "perspective" "fov" [56.357227 ]
+FrameAspectRatio 1.333333
+Identity
+Rotate 0 0 0 1 
+Rotate -18.434948 1 0 0 
+Rotate 0 0 1 0 
+Translate 0 -1 3 
+WorldBegin
+Declare "tmap" "uniform string"
+Surface "mytexture" "tmap" ["grid.tx"]
+Color [0.9 0.9 0.9]
+TransformBegin
+Translate -1.3 0.5 1 
+Rotate -50 1 0 0 
+Patch "bilinear" "P" [-1 0.3 1 1 -0.1 1 -1 -0.1 -1 1 0.3 -1 ]
+TransformEnd
+TransformBegin
+Translate 1 0.5 1 
+Rotate -40 1 0 0 
+Patch "bilinear" "P" [-1 0.3 1 1 -0.1 1 -1 -0.1 -1 1 0.3 -1 ] "st" [0 0 0.5 0 0 0.5 0.5 0.5 ]
+TransformEnd
+WorldEnd
+

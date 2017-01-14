@@ -1,0 +1,95 @@
+
+##RenderMan RIB-Structure 1.0
+##System NEXTSTEP
+##Scene /Users/indy/Box.rib
+##Creator solidThinking Rel:2.5 Ver:240
+##CreationDate Mon Mar 24 1997 13:36:17
+##Frame 1
+##CameraOrientation -0.875078 0.827109 -1.441812 0.026298 -0.093230 -0.006170
+##EndStructure
+Option "searchpath" "texture" [ "&:/CDROM/Library/Textures" ]
+#
+Shutter 0.0 1.0
+Option "shadow" "bias0" [ .01 ] "bias1" [ .01 ]
+Imager "clamptoalpha"
+ShadingRate 1
+FrameBegin 1
+Display "54.shd" "shadow" "z"
+Clipping .01 10000
+Format 256 256 1
+ScreenWindow -1 1 -1 1
+Projection "orthographic"
+Transform [ .948683 -.147442 -.279751 0
+ 0 .884652 -.466252 0 .316228 .442326 .839254 0 -1.78813e-08 3.51529e-08 2.144761 1 ]
+WorldBegin
+AttributeBegin
+Attribute "identifier" "name" [ "Box" ]
+Attribute "dice" "binary" [ 1 ]
+TransformBegin
+ConcatTransform [ .672871 0 0 0
+ 0 .672871 0 0 0 0 .672871 0 0 0 0 1 ]
+TransformBegin
+Rotate -90 1 0 0
+Patch "bilinear" "P" [ -.597847 -.597847 .597847 .597847 -.597847 .597847 -.597847 .597847 .597847 .597847 .597847 .597847 ]
+Patch "bilinear" "P" [ -.597847 .597847 -.597847 .597847 .597847 -.597847 -.597847 -.597847 -.597847 .597847 -.597847 -.597847 ]
+Patch "bilinear" "P" [ .597847 .597847 .597847 .597847 -.597847 .597847 .597847 .597847 -.597847 .597847 -.597847 -.597847 ]
+Patch "bilinear" "P" [ -.597847 -.597847 .597847 -.597847 .597847 .597847 -.597847 -.597847 -.597847 -.597847 .597847 -.597847 ]
+Patch "bilinear" "P" [ -.597847 .597847 .597847 .597847 .597847 .597847 -.597847 .597847 -.597847 .597847 .597847 -.597847 ]
+Patch "bilinear" "P" [ .597847 -.597847 .597847 -.597847 -.597847 .597847 .597847 -.597847 -.597847 -.597847 -.597847 -.597847 ]
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 2
+Display "Hullplate_test.tiff" "file" "rgb"
+Clipping .01 1000
+ScreenWindow -1 1 -.681445 .681445
+Projection "perspective" "fov" [ 60 ]
+Transform [ .84691 .253711 .467306 0
+ 0 .878829 -.477137 0 -.531737 .404092 .744289 0 -.025552 .077755 1.876698 1 ]
+Format 609 415 1
+WorldBegin
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+LightSource "ambientlight" 19 "intensity" [ .2 ] "lightcolor" [ .582415 .732871 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+Declare "from" "point"
+Declare "to" "point"
+Declare "shadowname" "string"
+Declare "samples" "float"
+Declare "width" "float"
+LightSource "shadowdistant" 21 "intensity" [ .98 ] "lightcolor" [ 1 .877041 .709891 ] "from" [ .6 1 -1.8 ] "to" [ 0 0 0 ] "shadowname" [ "54.shd" ] "samples" [ 16 ] "width" [ 1 ]
+AttributeBegin
+Attribute "identifier" "name" [ "Box" ]
+Attribute "dice" "binary" [ 1 ]
+TransformBegin
+ConcatTransform [ .672871 0 0 0
+ 0 .672871 0 0 0 0 .672871 0 0 0 0 1 ]
+Declare "sphere" "float"
+Declare "coordinatesystem" "string"
+Attribute "displacementbound" "sphere" [ .1 ] "coordinatesystem" [ "object" ]
+Color [ .666707 .666707 .666707 ]
+Declare "Ks" "float"
+Declare "Kd" "float"
+Declare "Ka" "float"
+Declare "roughness" "float"
+Declare "specularcolor" "color"
+Surface "plastic" "Ks" [ .5 ] "Kd" [ .5 ] "Ka" [ 1 ] "roughness" [ .1 ] "specularcolor" [ 1 1 1 ]
+Declare "Km" "float"
+Declare "texturename" "string"
+Displacement "emboss" "Km" [ -.0125 ] "texturename" [ "Hullplate.tx" ]
+TransformBegin
+Rotate -90 1 0 0
+Patch "bilinear" "P" [ -.597847 -.597847 .597847 .597847 -.597847 .597847 -.597847 .597847 .597847 .597847 .597847 .597847 ]
+Patch "bilinear" "P" [ -.597847 .597847 -.597847 .597847 .597847 -.597847 -.597847 -.597847 -.597847 .597847 -.597847 -.597847 ]
+Patch "bilinear" "P" [ .597847 .597847 .597847 .597847 -.597847 .597847 .597847 .597847 -.597847 .597847 -.597847 -.597847 ]
+Patch "bilinear" "P" [ -.597847 -.597847 .597847 -.597847 .597847 .597847 -.597847 -.597847 -.597847 -.597847 .597847 -.597847 ]
+Patch "bilinear" "P" [ -.597847 .597847 .597847 .597847 .597847 .597847 -.597847 .597847 -.597847 .597847 .597847 -.597847 ]
+Patch "bilinear" "P" [ .597847 -.597847 .597847 -.597847 -.597847 .597847 .597847 -.597847 -.597847 -.597847 -.597847 -.597847 ]
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd

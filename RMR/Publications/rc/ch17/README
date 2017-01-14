@@ -1,0 +1,61 @@
+README file for "Chapter 17"
+
+This section is not a chapter in the RenderMan Companion; it is a tutorial
+on PhotoRealistic RenderMan describing attributes and options that affect
+the rendering performance in various ways.
+
+The organization of the section is one "example-set" for most options
+and attributes described.  Each "example-set" comprises one example
+in some cases but usually two examples, one "this-is-bad" and one
+"this-is-how-you-fix-it".  The directory thus contains one main program
+for each "example-set", and one opt_ file for each EXAMPLE.
+
+There is also one file, opt.c, containing the option settings that generally do
+not vary from example to example (RiFormat, for example), a readme file (this),
+a makefile for running the examples, and two shaders used in the examples.
+
+Examples 1 & 2 (bucketsize):
+---------------------------
+sphere.c:	Main program which draws a sphere.
+opt_1.c:	Example-specific options. 
+opt_2.c:	Example-specific options. 
+
+Examples 3 & 4 (eye-plane splitting):
+-----------------------------------
+eyesplit.c:	Main program which draws several yellow spikes crossing
+		the eye plane.
+opt_3.c:	Example-specific options. 
+opt_4.c:	Example-specific options. 
+
+Examples 5 & 6 (jitter):
+-----------------------
+jitter.c:	Main program which draws a long (aliased) red checkerboard.
+opt_5.c:	Example-specific options. 
+opt_6.c:	Example-specific options. 
+
+Examples 7 & 8 (shadow map bias):
+--------------------------------
+shadow.c:	Main program which draws a small sphere beside a large one.
+opt_7.c:	Example-specific options. 
+opt_8.c:	Example-specific options. 
+shadowlight.sl:	A distant light shader which casts shadows.
+
+Example 9 (display origin):
+--------------------------
+offset.c:	Main program which draws four frames of a sphere with
+		different colors.
+opt_9.c:	Example-specific options. 
+
+Examples 10 & 11 (binary dicing):
+--------------------------------
+bindice.c:	Main program which draws a bezier-patch version of a sphere.
+opt_10.c:	Example-specific options. 
+opt_11.c:	Example-specific options. 
+
+Examples 12 & 13 (displacement bounds):
+--------------------------------------
+cylinder.c:	Main program which draws a cylinder with "wave" displacement
+		shader.
+opt_12.c:	Example-specific options. 
+opt_13.c:	Example-specific options. 
+wave.sl:	Displacement shader for sinusoidal waves.

@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE>Stupid RenderMan/RAT Tricks 2001</TITLE>
+</HEAD>
+
+  <body>
+ <body bgcolor="#ffffff">
+
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+ </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+
+    <h1>Stupid RenderMan/RAT Tricks 2001</h1>
+<p>
+<center>Welcome to the Third Annual Stupid RenderMan/RAT Tricks!</center>
+<p>
+<H4>What's on this page?</H4><P>
+<UL>
+<LI><A HREF="#intro">Introduction</A>
+<LI><A HREF="#tiles">Constant Tiled Textures</A>
+<LI><A HREF="#deep">Deep Shadows</A>
+<LI><A HREF="#bounce">Local bounce lighting</a>
+<LI><A HREF="#oven">RenderMan EZ-Bake Oven</a>
+<LI><A HREF="#alfred">Alfred on Large Renderfarms</a>
+</UL>
+<hr>
+<a name="intro"></a>
+Mach has been the first one to submit materials to the RMR.  I will add more materials as the presenters sent them to me.
+<p>
+Oct 12, 2001 --It seems that some people have had trouble reading the PowerPoint slides via StarOfice.  So I have uploaded a gzip'd StarOffice version of them:<p>
+<a href="ConstantTiles.ssd.gz">ConstantTiles.ssd.gz</a> <br>
+<a href="DeepShadows.sdd.gz">DeepShadows.ssd.gz</a>
+    <hr>
+<a name="tiles"></a>
+<H2>Constant Tiled Textures</H2>
+Mach Tony Kobayashi of Square USA presented a method of tiling on a scaling surface.
+<P>
+Here are his PowerPoint slides: <a href="ConstantTiles.ppt">ConstantTiles.ppt</a> (Remember Unix users you can use StarOffice to read these)<p>
+<a href="MTK_tile.sl">MTK_tile.sl</a> is Mach's example shader.  NOTE: That his is just an example shader and one would want to do some optimizations for a "real" one.
+<p>
+<HR>
+<a name="deep"></a>
+<H2>Deep Shadows</H2>
+Mach Tony Kobayashi of Square USA presented how he implemented "Deep Shadows".
+<p>
+Here are his PowerPoint slides: <a href="DeepShadows.ppt">DeepShadows.ppt</a>. (Remember Unix users you can use StarOffice to read these)
+<p>
+<HR>
+<a name="bounce"></a>
+<H2>Local Bounce Lighting in Surface Shaders</H2>
+Christophe Hery, of ILM, presented a technique for faking self re-emission of light on a surface, useful for filling in "local" shadowed areas.<p>
+<img src="../../pics/new.jpg">Here are Christophe's PowerPoint slides: <a href="local.bounce.ppt">local.bounce.ppt</a>.
+<p>
+<HR>
+<a name="oven"></a>
+<H2>The <a href="#pixarTM">RenderMan®</a> EZ-Bake Oven</H2>
+Jonathan Litt and Dan Goldman, of ILM, showed a technique for "shader baking" - caching the output of shaders into a texture map. Great for computationally expensive or hard to alias shaders.<p>
+This technique basically uses Pref to shade from the original 3d model onto a flat plan to capture the lighting to make into texture maps.
+<p>
+<HR>
+<a name="alfred"></a>
+<H2>Using Alfred Effectively on Large Renderfarms</H2>
+Wayne Wooten, of Pixar, presented tips and tricks for using Alfred on very large renderfarm installations.<p>
+At the end he showed a really cool 3D gui for visualizing the traffic on Pixar's renderfarm!<p>
+<HR>
+<H3>Any comments or  suggestions?  Send them to: 
+<a href="mailto:talrmr@SpamSucks_pacbell.net">talrmr@SpamSucks_pacbell.net</a><P>
+<P>
+</H3><P><HR>
+<I><small>
+<A NAME="pixarTM"></A>
+<h3>RenderMan is a registered trademark of Pixar</h3>.
+<p>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2001 <A HREF="mailto:talrmr@SpamSucks_pacbell.net">Tal L. Lancaster</A> all rights reserved</I><P></small>
+<!-- Created: Mon Aug 20 22:38:05 PDT 2001 -->
+<!-- hhmts start -->
+Last modified: Sun Oct 21 23:02:23 PDT 2001
+<!-- hhmts end -->
+  </body>
+</html>

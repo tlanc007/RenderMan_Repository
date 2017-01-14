@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<rss xmlns:iweb="http://www.apple.com/iweb" version="2.0">
+  <channel>
+    <title>Blog</title>
+    <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog</link>
+    <description>Changes or remarks that I have concerning The RenderMan Repository are found here.
+
+NOTE: This is not the redesign for the RMR.  This is just a temporary way for me to get the Blog going.
+</description>
+    <item>
+      <title>SRT - 2008</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/9/11_SRT_-_2008.html</link>
+      <guid isPermaLink="false">ac15a687-8368-4090-b7b1-f1e2c3446783</guid>
+      <pubDate>Thu, 11 Sep 2008 20:43:55 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/9/11_SRT_-_2008.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Retired Twiki for mediawiki</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/8/3_Retired_Twiki_for_mediawiki.html</link>
+      <guid isPermaLink="false">0572301b-3b9e-4ce8-844d-c50563a880df</guid>
+      <pubDate>Sun, 3 Aug 2008 15:56:18 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/8/3_Retired_Twiki_for_mediawiki.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Fixed Nav links</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/8/2_Fixed_Nav_links.html</link>
+      <guid isPermaLink="false">3b6dacff-360f-4efa-8c39-c5a7aebd950a</guid>
+      <pubDate>Sat, 2 Aug 2008 19:36:06 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/8/2_Fixed_Nav_links.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Disney pubs</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/7/24_Disney_pubs.html</link>
+      <guid isPermaLink="false">d3674bad-f67c-48f3-84b7-cf46c59b7894</guid>
+      <pubDate>Thu, 24 Jul 2008 22:22:40 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/7/24_Disney_pubs.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>RMR face lift.</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/7/19_RMR_face_lift..html</link>
+      <guid isPermaLink="false">23f3b5e9-6580-4839-aa40-36ef7c0a8d28</guid>
+      <pubDate>Sat, 19 Jul 2008 14:15:02 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/7/19_RMR_face_lift..html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Stupid RAT Tricks 2008</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/6/18_Stupid_RAT_Tricks_2008.html</link>
+      <guid isPermaLink="false">ffb35786-6a3a-400a-b222-fcffc99f0a9a</guid>
+      <pubDate>Wed, 18 Jun 2008 22:45:26 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/6/18_Stupid_RAT_Tricks_2008.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>First Official JP RenderMan User Event!</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/6/17_First_Official_JP_RenderMan_User_Event%21.html</link>
+      <guid isPermaLink="false">286598eb-b83e-4d8a-ad70-b582b856c7d5</guid>
+      <pubDate>Tue, 17 Jun 2008 21:15:41 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/6/17_First_Official_JP_RenderMan_User_Event%21.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Big Oops</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/4/2_Big_Oops.html</link>
+      <guid isPermaLink="false">6ed00ece-52bd-4500-b103-471fdc245a6c</guid>
+      <pubDate>Wed, 2 Apr 2008 22:27:12 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/4/2_Big_Oops.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>New RenderMan book</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/3/31_New_RenderMan_book.html</link>
+      <guid isPermaLink="false">cfcf024c-30e2-45bf-a940-e0fcca8895ed</guid>
+      <pubDate>Mon, 31 Mar 2008 21:58:50 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/3/31_New_RenderMan_book.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Changes so far</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/3/30_Changes_so_far.html</link>
+      <guid isPermaLink="false">38f89946-f353-469a-8d1b-5d278571ae59</guid>
+      <pubDate>Sun, 30 Mar 2008 16:47:43 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/3/30_Changes_so_far.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Search Engine</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/3/13_Search_Engine.html</link>
+      <guid isPermaLink="false">f2cc6b39-35a6-4a59-8e4c-d006b448c46c</guid>
+      <pubDate>Thu, 13 Mar 2008 00:00:00 -0700</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/3/13_Search_Engine.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Revamping  RMR</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/2/20_Revamping__RMR.html</link>
+      <guid isPermaLink="false">f18b0c80-fa2e-4d7b-9ee9-a3832b3bff08</guid>
+      <pubDate>Wed, 20 Feb 2008 22:42:32 -0800</pubDate>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/2/20_Revamping__RMR.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <iweb:dateFormat>EEEE, MMMM d, yyyy</iweb:dateFormat>
+    <iweb:baseURL>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog</iweb:baseURL>
+    <iweb:maximumSummaryItems>5</iweb:maximumSummaryItems>
+  </channel>
+</rss>

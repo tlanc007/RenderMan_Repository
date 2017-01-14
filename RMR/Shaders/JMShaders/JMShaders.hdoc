@@ -1,0 +1,9 @@
+TITLE	JMShaders	H1	Jonathan Merritt Shaders
+DIR	JMShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	JMredapple
+DESC	a red apple
+DO_LINE
+NEW
+SHADER	JMlunette	NOTES	Pattern for ground planes using fBm noise based off of u,v coordinates.<p>NOTE: This shader needs the <a href="http://www.bmrt.org/arman/">Advanced RenderMan</a> include files <a href="http://www.bmrt.org/arman/shaders/noises.h">noises.h</a></b> and <a href="http://www.bmrt.org/arman/shaders/noises.h">patterns.h</a></b> 
+DESC	"Lunette" ground plane
+DO_LINE

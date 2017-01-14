@@ -1,0 +1,242 @@
+##RenderMan RIB-Structure 1.1
+##Creator mtor 2.1, RAT 4.1 (Jul 13 2000 16:21:45)
+##For am7808
+##CreationDate Fri Dec  1 13:46:46 2000
+
+##RenderMan RIB
+version 3.03
+Declare "glowColor" "color"
+Declare "Opacity" "uniform float"
+Declare "TransName" "uniform string"
+Declare "Displacement" "uniform float"
+Declare "Height" "uniform float"
+Declare "glowStyle" "float"
+Declare "cosPower" "float"
+Declare "Transparency" "uniform float"
+Declare "Falloff" "uniform float"
+Declare "incandescence" "color"
+Declare "STMatrix0" "uniform point"
+Declare "Ka" "uniform float"
+Declare "BumpName" "uniform string"
+Declare "STMatrix1" "uniform point"
+Declare "FalloffDistance" "uniform float"
+Declare "specularColor" "color"
+Declare "Roughness" "uniform float"
+Declare "AntiAlias" "uniform float"
+Declare "radialFrequency" "float"
+Declare "refractedColor" "color"
+Declare "softsize" "float"
+Declare "lifetime" "string"
+Declare "Kd" "uniform float"
+Declare "EnvSimFreq" "uniform float"
+Declare "location" "string"
+Declare "BumpMag" "uniform float"
+Declare "noiseUoffset" "float"
+Declare "UsePref" "uniform float"
+Declare "fogIntensity" "float"
+Declare "haloIntensity" "float"
+Declare "noiseUscale" "float"
+Declare "__Pref" "vertex hpoint"
+Declare "lensFlare" "float"
+Declare "flareNumCircles" "float"
+Declare "Erosion" "uniform float"
+Declare "Specular" "uniform float"
+Declare "resource" "string"
+Declare "Ambient" "uniform float"
+Declare "darkcolor" "uniform color"
+Declare "glowOpacity" "float"
+Declare "translucenceCoeff" "float"
+Declare "useDecayRegions" "float"
+Declare "EnvName" "uniform string"
+Declare "incandescense" "color"
+Declare "SmoothName" "uniform string"
+Declare "Projection" "uniform float"
+Declare "softtype" "float"
+Declare "Ks" "uniform float"
+Declare "useBarnDoors" "float"
+Declare "sfnx" "string"
+Declare "fog2Dnoise" "float"
+Declare "rotation" "float"
+Declare "sfny" "string"
+Declare "flareColor" "color"
+Declare "sfnz" "string"
+Declare "swirl" "uniform float"
+Declare "flareFocus" "float"
+Declare "barnDoors" "float[4]"
+Declare "minmax" "int"
+Declare "refractiveIndex" "float"
+Declare "EnvType" "uniform float"
+Declare "ConeAngle" "uniform float"
+Declare "shadowcolor" "color"
+Declare "decayRegions" "float[6]"
+Declare "flareColSpread" "float"
+Declare "starPoints" "float"
+Declare "light" "string"
+Declare "dropOff" "float"
+Declare "MaxIterations" "uniform float"
+Declare "diffuseCoeff" "float"
+Declare "ErodeLow" "uniform float"
+Declare "decayRate" "float"
+Declare "GlowName" "uniform string"
+Declare "noiseThreshold" "float"
+Declare "specularRollOff" "float"
+Declare "flareVertical" "float"
+Declare "Metalness" "uniform float"
+Declare "ambientShade" "float"
+Declare "fogStarLevel" "float"
+Declare "fogType" "float"
+Declare "haloType" "float"
+Declare "Diffuse" "uniform float"
+Declare "roughness" "uniform float"
+Declare "specularcolor" "uniform color"
+Declare "render" "string"
+Declare "glowSpread" "float"
+Declare "ColorName" "uniform string"
+Declare "sfpx" "string"
+Declare "Brightness" "uniform float"
+Declare "sfpy" "string"
+Declare "sfpz" "string"
+Declare "c0" "uniform point"
+Declare "rolloff" "float"
+Declare "hexagonFlare" "float"
+Declare "flareLength" "float"
+Declare "c1" "uniform point"
+Declare "ambientColor" "color"
+Declare "shadows" "string"
+Declare "flareIntensity" "float"
+Declare "reflectivity" "float"
+Declare "fogSpread" "float"
+Declare "fogColor" "color"
+Declare "haloSpread" "float"
+Declare "haloColor" "color"
+Declare "ProjRadius" "uniform float"
+Declare "noiseVscale" "float"
+Declare "glow2Dnoise" "float"
+Declare "Rough" "uniform float"
+Declare "decay" "float"
+Declare "shadowname" "string"
+Declare "serverresource" "string"
+Declare "Shd0" "uniform string"
+Declare "glowIntensity" "float"
+Declare "flareMinSize" "float"
+Declare "penumbraAngle" "float"
+Declare "Glow" "uniform float"
+Declare "grain" "uniform float"
+Declare "EnvFilterSize" "uniform float"
+Declare "flareMaxSize" "float"
+Declare "noiseVoffset" "float"
+Declare "Smoothness" "uniform float"
+Declare "flareHorizontal" "float"
+Declare "glowRadialNoise" "float"
+Declare "coneAngle" "float"
+Declare "dspyParams" "string"
+Declare "MetalName" "uniform string"
+Declare "OpaciName" "uniform string"
+Declare "Environment" "uniform float"
+Declare "casts_shadows" "string"
+Declare "eccentricity" "float"
+Declare "shadingModel" "float"
+Declare "fogRadialNoise" "float"
+Declare "swirlfreq" "uniform float"
+Declare "LightColor" "uniform color"
+Option "searchpath" "resource" ["../BMRTShaders:/usr/local/rat/lib/shaders:/usr/local/rat/lib:/usr/local/prman/lib/shaders:/usr/local/prman/lib:.:@:/usr/people/am7808/maya/projects/SNOWREEL/rmantmp/:/usr/local/prman/look/masters:/usr/local/prman/look/instances:/usr/local/prman/lib/textures:/usr/local/rat/lib/dsos"]
+FrameBegin 1
+Option "limits" "bucketsize" [32 32]
+Option "limits" "gridsize" [256]
+Attribute "dice" "binary" [0]
+Exposure 1 1
+PixelSamples 3 3
+Hider "hidden" "jitter" [1]
+PixelFilter "catmull-rom" 3 3
+#Shutter 2 2.5
+Shutter 0.08 0.1
+#Format 720 576 1
+Format 360 288 1
+#Display "AMcaustic" "tiff" "rgb"
+Display "AMcaustic" "framebuffer" "rgb"
+Clipping 0.1 1000
+Projection "perspective" "fov" [54.4322]
+ScreenWindow -1 1 -0.8 0.8
+ConcatTransform [0.114937 -0.501758 -0.857338 2.28706e-09 -1.28613e-08 0.863058 -0.505105 1.65942e-09 -0.993373 -0.0580554 -0.0991974 4.17832e-10 -5.3041 -0.307914 21.2405 1]
+WorldBegin 
+TransformBegin 
+CoordinateSystem "worldspace"
+TransformEnd 
+ReverseOrientation 
+ShadingRate 5
+ShadingInterpolation "constant"
+Surface "defaultsurface" 
+TransformBegin 
+Attribute "identifier" "name" ["DlightShape"]
+Transform [-0.965926 -0.258819 3.68823e-22 0 -1.05471e-15 4.10783e-15 -1 0 0.258819 -0.965926 -4.21885e-15 0 -2 5 0 1]
+LightSource "uberlight" 1 
+#LightSource "mtorDirectionalLight" 1 "intensity" [1]"lightcolor" [1 1 1]"decayRate" [0]
+TransformEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["|nurbsSphere1|nurbsSphereShape1"]
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 1.06908 0 1]
+Color [0.5 0.5 0.5]
+Opacity [1 1 1]
+Surface "matte" "Ka" 0 "Kd" .8
+#Surface "mtorLambert" "refractiveIndex" [1]"diffuseCoeff" [0.8]"ambientColor" [0 0 0]"incandescence" [0 0 0]"translucenceCoeff" [0]"glowIntensity" [0]
+ShadingInterpolation "smooth"
+NuPatch 11 4 [-0.25 -0.25 -0.125
+0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1 1.125 1.25 1.25] 0 1 7 4 [0 0 0 0 0.25 0.5 0.75 1 1 1 1] 0 1 "Pw" [9.59647e-17 -1 -4.75206e-16 1 9.59647e-17 -1 -4.75206e-16 1
+9.59647e-17 -1 -4.75206e-16 1 9.59647e-17 -1 -4.75206e-16 1 9.59647e-17 -1 -4.75206e-16 1
+9.59647e-17 -1 -4.75206e-16 1 9.59647e-17 -1 -4.75206e-16 1 9.59647e-17 -1 -4.75206e-16 1
+9.59647e-17 -1 -4.75206e-16 1 9.59647e-17 -1 -4.75206e-16 1 9.59647e-17 -1 -4.75206e-16 1
+0.199917 -1 -0.199917 1 0.282725 -1 -2.84255e-16 1 0.199917 -1 0.199917 1
+1.1516e-16 -1 0.282725 1 -0.199917 -1 0.199917 1 -0.282725 -1 -1.64853e-16 1
+-0.199917 -1 -0.199917 1 -1.85086e-16 -1 -0.282725 1 0.199917 -1 -0.199917 1
+0.282725 -1 -2.84255e-16 1 0.199917 -1 0.199917 1 0.61643 -0.783612 -0.61643 1
+0.871764 -0.783612 -6.89348e-17 1 0.61643 -0.783612 0.61643 1 1.99029e-16 -0.783612 0.871764 1
+-0.61643 -0.783612 0.61643 1 -0.871764 -0.783612 -1.28862e-17 1 -0.61643 -0.783612 -0.61643 1
+-4.14639e-16 -0.783612 -0.871764 1 0.61643 -0.783612 -0.61643 1 0.871764 -0.783612 -6.89348e-17 1
+0.61643 -0.783612 0.61643 1 0.867202 2.57912e-16 -0.867202 1 1.22641 1.22531e-17 2.90111e-16 1
+0.867202 -2.33405e-16 0.867202 1 2.05191e-16 -3.3516e-16 1.22641 1 -0.867202 -2.33405e-16 0.867202 1
+-1.22641 1.22531e-17 2.19349e-16 1 -0.867202 2.57912e-16 -0.867202 1 -5.08515e-16 3.59667e-16 -1.22641 1
+0.867202 2.57912e-16 -0.867202 1 1.22641 1.22531e-17 2.90111e-16 1 0.867202 -2.33405e-16 0.867202 1
+0.61643 0.783612 -0.61643 1 0.871764 0.783612 4.81371e-16 1 0.61643 0.783612 0.61643 1
+9.26813e-17 0.783612 0.871764 1 -0.61643 0.783612 0.61643 1 -0.871764 0.783612 3.24724e-16 1
+-0.61643 0.783612 -0.61643 1 -3.08292e-16 0.783612 -0.871764 1 0.61643 0.783612 -0.61643 1
+0.871764 0.783612 4.81371e-16 1 0.61643 0.783612 0.61643 1 0.199917 1 -0.199917 1
+0.282725 1 4.18014e-16 1 0.199917 1 0.199917 1 -2.05545e-17 1 0.282725 1
+-0.199917 1 0.199917 1 -0.282725 1 2.65986e-16 1 -0.199917 1 -0.199917 1
+-4.9371e-17 1 -0.282725 1 0.199917 1 -0.199917 1 0.282725 1 4.18014e-16 1
+0.199917 1 0.199917 1 1.73997e-16 1 2.05245e-16 1 1.73997e-16 1 2.05245e-16 1
+1.73997e-16 1 2.05245e-16 1 1.73997e-16 1 2.05245e-16 1 1.73997e-16 1 2.05245e-16 1
+1.73997e-16 1 2.05245e-16 1 1.73997e-16 1 2.05245e-16 1 1.73997e-16 1 2.05245e-16 1
+1.73997e-16 1 2.05245e-16 1 1.73997e-16 1 2.05245e-16 1 1.73997e-16 1 2.05245e-16 1]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["|nurbsPlane1|nurbsPlaneShape1"]
+ConcatTransform [6 0 0 0 0 6 0 0 0 0 6 0 0 0 0 1]
+Color [0.5 0.5 0.5]
+Opacity [1 1 1]
+Surface "matte" "Ka" 0 "Kd" .8
+#Surface "mtorLambert" "refractiveIndex" [1]"diffuseCoeff" [0.8]"ambientColor" [0 0 0]"incandescence" [0 0 0]"translucenceCoeff" [0]"glowIntensity" [0]
+ShadingInterpolation "smooth"
+NuPatch 4 4 [0 0 0 0 1 1 1 1] 0 1 4 4 [0 0 0 0 1 1 1 1] 0 1 "Pw" [-0.5 -1.41638e-16 0.5 1
+-0.5 -4.72128e-17 0.166667 1 -0.5 4.72128e-17 -0.166667 1 -0.5 1.41638e-16 -0.5 1
+-0.166667 -1.41638e-16 0.5 1 -0.166667 -4.72128e-17 0.166667 1 -0.166667 4.72128e-17 -0.166667 1
+-0.166667 1.41638e-16 -0.5 1 0.166667 -1.41638e-16 0.5 1 0.166667 -4.72128e-17 0.166667 1
+0.166667 4.72128e-17 -0.166667 1 0.166667 1.41638e-16 -0.5 1 0.5 -1.41638e-16 0.5 1
+0.5 -4.72128e-17 0.166667 1 0.5 4.72128e-17 -0.166667 1 0.5 1.41638e-16 -0.5 1]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["|nurbsPlane2|nurbsPlaneShape2"]
+ConcatTransform [2 0 0 0 0 2 0 0 0 0 2 0 0.289554 0 0 1]
+Color [0.5 0.5 0.5]
+Opacity [1 1 1]
+Surface "matte" "Ka" 0 "Kd" .8
+#Surface "mtorLambert" "refractiveIndex" [1]"diffuseCoeff" [0.8]"ambientColor" [0 0 0]"incandescence" [0 0 0]"translucenceCoeff" [0]"glowIntensity" [0]
+ShadingInterpolation "smooth"
+NuPatch 4 4 [0 0 0 0 1 1 1 1] 0 1 4 4 [0 0 0 0 1 1 1 1] 0 1 "Pw" [-0.5 -1.41638e-16 0.5 1
+-0.5 -4.72128e-17 0.166667 1 -0.5 4.72128e-17 -0.166667 1 -0.5 1.41638e-16 -0.5 1
+-0.166667 -1.41638e-16 0.5 1 -0.166667 -4.72128e-17 0.166667 1 -0.166667 4.72128e-17 -0.166667 1
+-0.166667 1.41638e-16 -0.5 1 0.166667 -1.41638e-16 0.5 1 0.166667 -4.72128e-17 0.166667 1
+0.166667 4.72128e-17 -0.166667 1 0.166667 1.41638e-16 -0.5 1 0.5 -1.41638e-16 0.5 1
+0.5 -4.72128e-17 0.166667 1 0.5 4.72128e-17 -0.166667 1 0.5 1.41638e-16 -0.5 1]
+AttributeEnd 
+WorldEnd 
+FrameEnd 

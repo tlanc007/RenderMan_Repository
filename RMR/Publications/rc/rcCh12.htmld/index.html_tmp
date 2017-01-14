@@ -1,0 +1,135 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rcCh12</TITLE>
+<LINK HREF="../rcTop.htmld/index.html" REL="Parent" TITLE="rcTop">
+<LINK HREF="../rcCh4.htmld/index.html" REL="Sibling" TITLE="rcCh4">
+<LINK HREF="../misc.htmld/index.html" REL="Sibling" TITLE="misc">
+<LINK HREF="../errataRev1.htmld/index.html" REL="Sibling" TITLE="errataRev1">
+<LINK HREF="../rcCh5.htmld/index.html" REL="Sibling" TITLE="rcCh5">
+<LINK HREF="../rcCh13.htmld/index.html" REL="Sibling" TITLE="rcCh13">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER><H1><P>
+_RC_ Chapter 12 Surface Mapping</H1><P>
+</CENTER><B><P>
+</B><P>
+<H2> <A HREF="../errataRev1.htmld/index.html#ch12">Errata</A>
+
+<P>
+ <CENTER></H2><P>
+ <table> <tr valign=top>
+<P>
+<td algn=middle width=100 height=75
+<A HREF="../ch12/listing12_1.tiff"><IMG SRC=../ch12/listing12_1.jpg border=0 vspace=5  ALT="../ch11/listing12_1.tiff"></A>
+
+<br> listing12_1</td>
+<P>
+<td algn=middle width=100 height=75
+<A HREF="../ch12/listing12_2.tiff"><IMG SRC=../ch12/listing12_2.jpg border=0 vspace=5  ALT="../ch12/listing12_2.tiff"></A>
+
+<br> listing12_2</td>
+<P>
+<td algn=middle width=100 height=75
+<A HREF="../ch12/envr12_3.tiff"><IMG SRC=../ch12/envr12_3.jpg border=0 vspace=5  ALT="../ch12/evnr12_3.tiff"></A>
+
+<br> envr12_3</td>
+<P>
+<td algn=middle width=100 height=75
+<A HREF="../ch12/listing12_5.tiff"><IMG SRC=../ch12/listing12_5.jpg border=0 vspace=5  ALT="../ch12/listing12_5.tiff"></A>
+
+<br> listing12_5</td>
+<P>
+</tr></table><P>
+</CENTER><P>
+<P>
+This chapter requires more user changes than most of the others.  All of the listings can be grabbed at once via: <A HREF="../ch12.tar.gz">ch12.tar.gz</A>
+.  Some of the examples also require listings from some of the other chapters.  See that example section from more details.<P>
+<P>
+Listings 12_1 and 12_2 use a shader <A HREF="../ch12/mytexture.sl">mytexture.sl</A>
+ and a texture map.  The shader only uses the first channel value from the texture map.  If you wish to use a color texture map then use <A HREF="../ch12/mytexture_c.sl">mytexture_c.sl</A>
+.  <I>NOTE: that this shader  will produce a slo mytexture.slo and not mytexture_c.slo.  Also the Makefile doesn't know about this shader and so it will build and use mytexture.sl.  The color version will need will need to be recompiled manually</I> <I>before the Makefile is used.</I><P>
+<P>
+<P>
+<B>p. 253</B> <A NAME="ex12_1"></A>
+
+<A HREF="../ch12/listing12_1.c">listing12_1.c</A>
+ -- Generates Figure 12.4.  Example of TextureCoordinates.  This listing also requires: <A HREF="../ch12/listing12_1.h">listing12_1.h</A>
+, <A HREF="../ch12/main.c">main.c</A>
+ to compile.  To run it needs: <A HREF="../ch12/mytexture.sl">mytexture.sl</A>
+ and  <A HREF="../Shaders/WWShaders/grid.tiff">grid.tiff</A>
+. <I>(NOTE: if using prman will need to convert the TIFF image to an prman texture-map.  Also, be aware that GRID_TEXTURE should be changed to the name of the texture-map to use) </I>(<A HREF="../errataRev1.htmld/index.html#ex12_1">Errata</A>
+
+ )<P>
+<P>
+<B>p. 254</B> <A NAME="ex12_2"></A>
+
+<A HREF="../ch12/listing12_2.c">listing12_2.c</A>
+ -- Generates Figure 12.5.  another example of TextureCoordinates.  This listing also requires: <A HREF="../ch12/listing12_2.h">listing12_2.h</A>
+, <A HREF="../ch12/hcontour.h">hcontour.h</A>
+ <A HREF="../ch12/main.c">main.c</A>
+ to compile.  To run it needs: <A HREF="../ch12/mytexture.sl">mytexture.sl</A>
+ and  <A HREF="../Shaders/WWShaders/grid.tiff">grid.tiff</A>
+. <I>(NOTE: if using prman will need to convert the TIFF image to an prman texture-map.  Also, be aware that GRID_TEXTURE should be changed to the name of the texture-map to use) </I>(<A HREF="../errataRev1.htmld/index.html#ex12_2">Errata</A>
+
+ )<P>
+<P>
+<B>p. 266, 267</B> <A NAME="env12_3"></A>
+
+ listings <B>12_3</B> and <B>12_4</B> have been combined to <A HREF="../ch12/envr12_.c">envr12.c</A>
+ -- Generates and uses environment maps.  This listing also requires:   <A HREF="../misc.htmld/index.html">misc package</A> .  To run it needs shader <A HREF="../ch12/shiny.sl">shiny.sl</A>
+.<P>
+<B>p. 270</B> <A NAME="ex12_5"></A>
+
+<A HREF="../ch12/listing12_5.c">listing12_5.c</A>
+ -- Function for creating and using a shadow map for a light source.   This listing also requires: <A HREF="../ch12/listing12_1.h">listing12_1.h</A>
+, <A HREF="../rcCh2.htmld/index.html#ex2_3.c">listing2_3.c</A>
+
+, <A HREF="../rcCh2.htmld/index.html#ex2_7">listing2_7.c</A>
+
+, and  <A HREF="../ch12/main.c">main.c</A>
+ to compile. To run it uses the shader <A HREF="../ch12/shadowspot.sl">shadowspot.sl</A>
+  (<A HREF="../errataRev1.htmld/index.html#ex12_5">Errata</A>
+
+ )<P>
+<P>
+The <A HREF="../ch12/Makefile">Makefile</A>
+. <P>
+<P>
+<HR>
+<P>
+<ADDRESS>Any comments or  suggestions?  Send them to:
+<a href="mailto:tal AT renderman DOT org">tal AT renderman DOT org</a></ADDRESS>
+ <P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="../rcTop.htmld/index.html">rcTop</A>]
+
+<DT>See Also (Siblings):</DT><DD>
+
+[<A HREF="../rcCh4.htmld/index.html">rcCh4</A>]
+
+[<A HREF="../misc.htmld/index.html">misc</A>]
+
+[<A HREF="../errataRev1.htmld/index.html">errataRev1</A>]
+
+[<A HREF="../rcCh5.htmld/index.html">rcCh5</A>]
+
+[<A HREF="../rcCh13.htmld/index.html">rcCh13</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rcCh12</A> was converted on Sat Jun 07 23:31:24 PDT 1997 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+<small>
+<P> <I>The RMR is <A HREF="/RMR/copyright.htmld/index.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+
+</BODY>
+</HTML>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<content collectionGUID="CC8D43BC-5F8F-47BE-80D1-1C9A9F194E72">
+  <lastEdited clientType="local-build-20080911" date="2008-09-11 20:46:20 -0700"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;RMR Blog&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Disney pubs</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>I just uploaded 3 documents that Disney is allowing me to share with the RenderMan community.&#xD;&#xD;One is some notes that Brent Burely put together as he was trying to understand filtering in PRMan.  These can be found in the show and tell section:&#xD;&#xD;&lt;a href="http://www.renderman.org/RMR/rmShowAndTell.htmld/index.html%23Filtering"&gt;PRMan Filtering&lt;/a&gt;&#xD;&#xD;The other two documents are two parts of a talk that Mark Hammel and I gave at Disney Animation back in the winter of 2007.  These can be found in the Publications section:&#xD;&#xD;&lt;a href="http://www.renderman.org/RMR/Publications/index.html%23prman"&gt;RenderMan Nuts &amp; Bolts&lt;/a&gt;.&#xD;&#xD;&#xD;</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Thursday, July 24, 2008&lt;/b&gt;</richText>
+  </textBox>
+</content>

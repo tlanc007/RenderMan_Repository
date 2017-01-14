@@ -1,0 +1,16 @@
+MAILTO	Pwquint AT aol DOT com	NAME	Email Peter Quint
+TITLE	PQShaders	H1	Peter Quint Shaders
+DIR	PQShaders	PIC	100	100
+NEW
+SHADER	PQcorktile	NOTE	This shader shows the advatages of using functions rather than duplicating the same code over and over.  Compare this one with the	LINK	PQShaders#PQslateroof	NAME	PQslatdroof	and 	LINK	PQShaders#PQslateroofd	NAME	PQslatedroofd	shaders.  It would be better to have the common code moved out to a function so the guts of the shaders can be shared.  This shader needs the include file: <a href="tile.h">tile.h</a>	It also needs the <b>noises.h</b> from BMRT/shaders.
+DESC	cork tiling shader
+DO_LINE
+SHADER	PQCrayon	
+DESC	making crayon like marks
+DO_LINE
+SHADER	PQslateroof	NOTE	This shader works in conjunction with	LINK	PQShaders#PQslateroofd	NAME	PQslateroofd displacement	shader (The RIB example also needs this shader to work).	
+DESC	slate roof shader
+DO_LINE
+SHADER	PQslateroofd	NOTE	This shader is meant to work in conjunction with	LINK	PQShaders#PQslateroof	NAME	PQslateroof surface 	shader.  The RIB example using this shader can be found there.
+DESC	slate roof displacement shader
+DO_LINE 

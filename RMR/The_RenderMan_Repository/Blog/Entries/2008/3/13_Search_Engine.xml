@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content collectionGUID="CC8D43BC-5F8F-47BE-80D1-1C9A9F194E72">
+  <lastEdited clientType="local-build-20080911" date="2008-09-11 20:46:19 -0700"/>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Search Engine</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Switched over to Google as the search engine.  Now the PDF documents can be searched.&#xD;</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Thursday, March 13, 2008&lt;/b&gt;</richText>
+  </textBox>
+  <image id="generic-picture-attributes" dynamic="no" visible="yes" src="13_Search_Engine_files/shapeimage_2.jpg" left="0px" top="0px" width="400px" height="300px"/>
+</content>

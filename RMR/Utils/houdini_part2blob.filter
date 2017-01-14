@@ -1,0 +1,265 @@
+#!/usr/local/bin/perl
+#
+#RiSpheres will be emitted as ellipsoid type blobbys
+#RiCurves will be emitted as segment type blobbys
+#
+#also the geometry should not be instanced.
+#
+#usage: cat in.rib | perl houdini_part2blob.filter > out.rib
+#
+#jiversen@d2.com
+
+$|=1;
+
+$sectPattern = 'Object bl_';  #it will start to process blobbies once it finds this...
+$printhead = "FILTER: [BLOB]";
+ 
+print STDERR "$printhead starting blobby filter...\n";
+print STDERR "$printhead $0: converts houdini particles in rib to blobbies\n";
+print STDERR "$printhead looks for objects with the prefix of 'bl_'\n";
+
+$ingeo = 0;
+$startblob = 0;
+$lineno = 0;
+$skip = 0;
+$firstFrame = ($skip)? 1: 0;
+$wantSkip = 0;
+undef @blTrans;
+undef @blTrans2;
+undef @blgeo;
+undef @repl;
+
+while (<>) {
+  $lineno++;
+  if (/Display (".+\.z")/) {
+    push (@repl, $1);
+  }
+  if (/^version/) {
+    #add imager
+    print STDOUT $_;
+    #print STDOUT qq|Imager "background" "color" [.5 .5 .6]\n|;
+    next;
+  }
+  elsif ($wantSkip && $firstFrame && /FrameBegin/) {
+    $skip = 1;
+    next;
+  }
+  elsif ($firstFrame && /FrameEnd/) {
+    $skip = 0;
+    $firstFrame = 0;
+    next;
+  }
+  elsif ($skip) {
+    print STDERR "$printhead skipping\n";
+    next;
+  }
+  elsif ($firstFrame && /^(.+ "jitter" [0]) (.+)$/) {
+    #don't want the midpoint jitter
+    $_= "$1\n";
+  }
+  
+  #$startblob = 1;
+  if (/($sectPattern.+)/) {
+    print STDERR "$printhead writing blobbies for $1\n";
+    $startblob = 1;
+  }
+  elsif (!$startblob) {
+    #just emit blindly
+    print;
+  }    
+  elsif (/EndObject/) {
+    $startblob = 0;
+    #do blob build
+    if ($sphereBlob) {
+      $n = @blgeo;
+      &emitSphereBlobMain;
+      $sphereBlob = 0;
+      print STDOUT "\tTransformEnd\n";
+      print STDOUT "AttributeEnd\n";
+    }
+    print STDOUT $_;
+  }
+  elsif (/TransformBegin/) {
+    $ingeo = 1;
+    $_ = <>;
+    $lineno++;
+    
+    if (/MotionBegin/) {
+      print STDERR "$printhead preserving motionblur on blobbies\n"    if( !$haveMotion ); #print message only once!
+      $haveMotion = 1;
+      $_ = <>;
+      $lineno++;
+    }
+    
+    if (/ConcatTransform/) {
+      $firstline = $_;
+      chomp( $firstline );
+      $_ = <>;  # read in second line of concattransform
+      $lineno++;
+      push (@blTrans, "$firstline$_");                
+      $_ = <>;
+      $lineno++;
+    }
+    else {
+      #gotta put something
+      push (@blTrans, '');
+      print STDERR "$printhead Expected translate but got: $_  - line $lineno";
+    }
+    
+    if ($haveMotion && /ConcatTransform/) {
+      $firstline = $_;
+      chomp( $firstline );
+      $_ = <>;  # read in second line of concattransform
+      $lineno++;
+      push (@blTrans2, "$firstline$_");                
+      $_ = <>;
+      $lineno++;
+    }
+    if ($haveMotion && /MotionEnd/) {
+      $_ = <>;
+      $lineno++;
+    } 
+    if (/Sphere/) {
+      push (@blgeo, $_);
+      $sphereBlob = 1;
+    }
+    else {
+      die ("$lineno: No sphere found: $_\n");
+    }
+  }
+  elsif (/TransformEnd/) {
+    $ingeo = 0;
+    
+  }
+  elsif (/Curves/) {
+    /"(\w+)"\s+\[([^\]]+)\]/;
+    $curvetype = $1;
+    @verts = split (' ', $2);
+    $nverts = @verts;
+    if ($curvetype =~ /linear/ && $verts[0] == 2) {
+      $/ = "]";
+      $_ = <>;
+      $lineno++;
+      $/ = "\n";
+      s/\]//;
+      #$_  "P" [ ...
+      s/\s+"P\w*"\s+\[\s+//;
+      @points = split();
+      $_ = <>; # should be \n from previous block
+      $lineno++;
+      $_ = <>;
+      $lineno++;
+      if (/"constantwidth" \[(.+)\]/) {
+        $width = $1;
+        &emitCurveBlobMain;
+      }
+      else {
+        die ("RiCurve wasn't constantwidth:$_");
+      }
+    }
+    else {
+      die "only support RiCurves that are linear and have 2 vertices";
+    }
+  }
+  elsif ($sphereBlob && /AttributeEnd/) {
+    #do nothing
+    next;
+  }
+  else {
+    #not sure so emit
+    print STDOUT $_;
+  }
+  
+}
+
+
+print STDERR "$printhead exiting blobby filter...\n";
+
+
+
+# ------------------------------------------------
+
+sub emitSphereBlobMain {  
+  if ($haveMotion) {
+    print STDOUT "MotionBegin [0 1]\n";
+  }
+
+  &emitSphereBlob (@blTrans);
+
+  if ($haveMotion) {
+    &emitSphereBlob (@blTrans2);
+    print STDOUT "MotionEnd\n";
+  }
+  $haveMotion = 0;
+}
+
+# ------------------------------------------------
+
+sub emitSphereBlob {
+  local (@trans) = @_;
+  local ($i, $blobPos, $coord, $scale, $nentries);
+  local ($headMatrix);
+  $nentries = @blgeo;
+
+  print STDOUT "Blobby $nentries [\n";
+  $blobPos = 0;
+  for ($i = 0; $i < $nentries; $i++) {    
+    print STDOUT "\t1001 $blobPos\n";
+    $blobPos += 16;
+  }
+  print STDOUT "0 $nentries ";
+  for ($i = 0; $i < $nentries; $i++) {    
+    print STDOUT "$i ";
+  }
+  print STDOUT "\n] [\n";
+  for ($i = 0; $i < $nentries; $i++) {    
+    $coord = $trans[$i];
+    $coord =~ /\[(.*?)\]/;   # everything between the square brackets (of "ConcatTransform[ .... ]" )
+    $coord = $1;
+    $scale = $blgeo [$i];
+    $scale =~ s/Sphere (\S+)(.+)\n$/$1/;
+
+    print STDOUT "$coord \n";
+  }
+  print STDOUT "]\n \t[\t\n";
+  print STDOUT "\n\t]\n";
+}
+
+# ------------------------------------------------
+
+sub emitCurveBlobMain {
+  local ($iter, $x, $y, $z, $iseven, $idmatrix);
+  local (@lseg);
+  
+  $idmatrix = "1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1";
+
+  print STDOUT "Blobby $nverts [\n";
+  $blobPos = 0;
+  for ($i = 0; $i < $nverts; $i++) {
+    print STDOUT "\t1002 $blobPos\n";
+    $blobPos += 23;
+  }
+  print STDOUT "0 $nverts ";
+  for ($i = 0; $i < $nverts; $i++) {
+    print STDOUT "$i ";
+  }
+  print STDOUT "\n] [\n";
+  $iter = 0;
+  while ($x = shift (@points)) {
+    $isodd = ($iter % 2);
+    #print "iter $iter $isodd\n";
+    $iter++;
+    $y = shift (@points);
+    $z = shift (@points);
+
+    $lseg [$isodd] = "$x $y $z";
+    if ($isodd) {
+      print STDOUT "@lseg $width $idmatrix\n";
+    }
+  }
+  print STDOUT "\n] []\n";
+  print STDOUT "\tTransformEnd\n";
+
+}
+
+

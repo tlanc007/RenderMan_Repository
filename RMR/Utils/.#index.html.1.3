@@ -1,0 +1,167 @@
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+    <title>RenderMan related Utilities</title>
+  </head>
+
+  <body bgcolor=white>
+
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+ </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+    <h1>RenderMan related Utilities</h1><P>
+
+<H4>What's on this page?</H4></P>
+<UL>
+<LI><A HREF="index.html#mscl">mscl</A> -- compiles multiple shader files for BMRT
+<LI><A HREF="index.html#mktmap">mktmap</A> -- makes texture-maps for prman
+<LI><A HREF="index.html#indent">rib-intention</A>
+<LI><A HREF="index.html#houdini_part2blob">houdini_part2blob</A> -- Particle to Blobby converter (more production savvy)
+<LI><A HREF="index.html#part2blob">part2blob</A> -- Particle to Blobby converter (improved)
+<LI><A HREF="#rendercron">RenderCron</A> -- set of Unix scripts for overnight renders
+<LI><A HREF="#ribexport">RIBexport</A> -- Maya to RIB exporter
+<LI><A HREF="index.html#ribvrt">ribvrt</A> -- MacroModel RIB converter
+<LI><A HREF="index.html#objxpand">objxpand</A> -- expand object instances
+<LI><A HREF="index.html#brender">brender</A> -- batch rendering
+<LI><A HREF="index.html#sl2slim">sl2slim</A> -- builds .slim files
+
+<LI><IMG SRC=../Pics/new.jpg><A HREF="index.html#rmVertex">rmVertex.mel</a>--add MTOR vertex variables
+<LI><A HREF="index.html#softRman">softrman</A> -- a Softimage plugin
+<P>
+<H3>NOTE: DUE to how this site's server is set up, the server will try to execute files ending in <b>.pl</b> (Perl scripts).  For this reason these Perl scripts have the suffix <b>.perl</b> so they can be downloaded.  Most likely you will want to rename the file to have the <b>.pl</b> suffix.  Also, if you are using a Unix based machine you will want to check the first line to make sure that it matches with where Perl is located on your machine.</H3><P>
+<hr>
+<A NAME="mslc"></A>
+<H2>mslc</H2><P>
+As great as BMRT is, its shader compiler (slc) can only accept one file at a time.  I have created a little Perl script <A HREF="mslc.perl">mslc.perl</A>, that will take a filelist  in order to compile a batch of shaders.  Be aware that you may need to change the first line to match the location of  perl  on your system.  <P>
+<hr>
+<A NAME="mktmap"></A>
+<H2>MAKE TEXTURES for PRMAN</H2><P>
+This script is for anyone who doesn't have access to <b>Pixar's txmake</b>, but have access to prman.  <p>
+<A HREF="mktmap.perl">mktmap.perl</A>
+This Perl script will create texture maps to be used with Pixar's prman.  NOTE: The script actually calls prman and uses MakeTexture.  So you will need to have it in your path for it to work.<P>
+Usage: mktmap original Image textureMap [wrap function width]<P>
+The parameters are really the same as found for the MakeTexture call found on page 256 of the RC, with the exception that &quot;wrap&quot; is used for both swrap and twrap and &quot;width&quot; is used for both swidth and twidth.<P>
+<P>
+<hr>
+<A NAME="indent"></A>
+<H2>RIB intention</H2><P>
+A little Perl script to indent RIB files <A HREF="ribindent.perl">ribindent.perl</A>.<P>
+<hr>
+<A NAME="houdini_part2blob"></A>
+(Another) Particle to Blobby Converter</H2><P>
+<a href="houdini_part2blob.filter">houdini_part2blob.filter</a><br>
+Another particle to blobby convter for Houdini.  However this version is much more refined than my <a href="#part2blob">original converter</a>.  Very kindly provided by <a href="mailto:jiversen@SpamSucks_d2.com">jason iversen</a>.<P>
+<pre>
+      usage: cat in.rib | perl houdini_part2blob.filter > out.rib
+or
+             cat in.rib | perl houdini_part2blob.filter | render
+</pre>
+The script still uses the same convention of looking for objects starting with a prefix of <b>bl_</b>.
+<hr>
+<A NAME="part2blob"></A>
+<H2>
+Particle to Blobby Converter</H2><P>
+<i>Update: Jan 17, 2001<br>
+<a href="mailto:jiversen@SpamSucks_d2.com">jason iversen</a> has made some tweeks to this script.  For one, it will now work better with Houdini4.</i><p><p>
+<a href="part2blob.perl">part2blob.perl</a>
+This script is a quick hack to that takes a series of RiSpheres or RiCurves and converts them to RiBlobby.  The script isn't very smart and it assumes that the RIB was generated through Houdini (AND NO INSTANCED GEOMETRY).<P>
+What this means is that the script expects to see the
+<pre>
+   # Object: OBJECT_NAME_HERE
+</pre>
+setup.  The script will try to <b>blob</b> up any objects it finds with a <i>bl_</i> prefix.  In <b>Houdini</b> at the Object-editor, prefix any OPs that are to be converted with <i>bl_</i>.  This OP is assumed to be a particle emiter and that it is either emiting the particles as RiSpheres or RiCurves.<P>
+<pre>
+RiSpheres will be emitted as 1001 (ellipsoid) blobbys
+RiCurves will be emitted as 1002 (segment) blobbys
+</pre>
+An example of what this script expects to see is in this compressed <A href="ring.1100.rib.gz">RIB file</A>.<P>
+<pre>
+Script Usage:
+
+part2blb.pl PREFIX RIB_FILES
+
+PREFIX -- what to prefix to the name of the converted RIB files.
+RIB_FILES -- the src RIB files to convert.
+
+</pre>
+Again this is a really dumb and simple script.  Unless I have done something really stupid, I probably won't be doing too much more with this script.  It is meant as a starting ground.  If you make improvements let me know and I will add it to the RMR.<P>
+A <b>Houdini</b> example can be found at:  <a href="../rmHoudini/index.html#partblob">rmHoudini</a>.<P>
+
+<P>
+<hr>
+<A NAME="rendercron"></A>
+<H2>RenderCron</H2>
+<a href="rendercron.tar">rendercron.tar</a> is a set of Unix shell scripts for rendering frames overnight as cron jobs.  You will need to customize these scripts for your environment before they will work. Contact <a href="mailto: artlite@SpamSucks_worldonline.co.za">Gavin Donaldson-Selby</a> for help or suggestions.<p> 
+<hr>
+<A NAME="ribexport"></A>
+<H2>Maya RIBexport</H2>
+
+<A HREF="ribexport.zip">ribexport.zip</A> contains a modified version of the Maya RIB exporter.  This version tries to add support for poly UVs.  <A HREF="ribexport.txt">Click here</A> to read more background information.  This was contributed by: <A HREF="mailto:drone@SpamSucks_drone.org">Olivier Renouard</A>.<P>
+<hr>
+<A NAME="ribvrt"></A>
+<H2>MacroModel RIB Converter</H2><P>
+<A HREF="../utils/ribvrt2.zip">ribvrt2.zip</A>
+
+A DOS program to clean the RIB files from MacroModel to into something a little prettier.  <A HREF="../utils/ribvrt2.txt">ribvrt2.txt</A> is a description of the program.<P>
+<hr>
+<A NAME="objxpand"></A>
+<H2>Object Instancing Expanders</H2><P>
+<A HREF="bobjxpand.perl">bobjxpand.perl</A> is a rip-off of Larry Grit'z <A HREF="objxpand">objxpand</A> script.  The difference is that this one works on a batch of RIB files.  However, it has the side-effect of overwriting the original.<P>
+<hr>
+<A NAME="brender"></A>
+<H2>Simple Batch Rendering Script</H2>
+<A HREF="brender.perl">brender.perl</A> a simple batch rendering script for rendering a sequence of files, that are organized like:  FILENAME.dddd.rib.  Where ddd is leading 0s.  Usage:<P>
+<pre>
+  brender.pl 13 55 myanim
+</pre>
+will render the files myanim.0013.rib to myanim.0055.rib.  You may need to edit the script to match your renderer and any options you wish to use.<P>
+<HR>
+<A NAME="sl2slim"></A>
+<H2>sl2slim</H2>
+Has its own <a href="sl2slim/index.html">page</a>.
+
+<HR>
+<A NAME="rmVertex"></A>
+<H2><img src=../Pics/new.jpg>rmVertex</H2>
+<a href="rmVertex.mel">rmVertex.mel</a> is a Mel script which adds Vertex variables for Mtor to be exported to RIB.<p>
+<code>
+<b>addConnVertexAttr</b> ("particleShape1", "rmanFidPP", "doubleArray", "particleId");
+</code>
+<p>
+Will add float vertex variable idPP to the geometry particleShape1 using the value from attribute particleID.
+<p>
+<HR>
+<A NAME="softrman"></A>
+<H2>SoftRman</H2><p>
+<A HREF="softRman.tgz">softRman.tgz</A> is a plugin, by <A HREF="mailto:rrogers@SpamSucks_peachnet.campuscwix.net">Chris Rogers</A>, for Softimage.  The source is included.<P>
+    <hr>
+<small>
+<A NAME="pixarTM"></A>
+<h3>RenderMan is a registered trademark of Pixar</h3>.
+<p>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2002 <A HREF="mailto:talrmr@SpamSucks_pacbell.net">Tal L. Lancaster</A> all rights reserved</I></P></small>
+  </body>
+</html>

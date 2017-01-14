@@ -1,0 +1,64 @@
+TITLE	TLShaders	H1	Tal Lancaster Shaders
+DIR	TLShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SECTION	PIC	../../Pics/redball.gif	Planets
+SHADER	TLTerranNwhite	NOTE	This is an alternative to the <A HREF="../KMShaders/index.html#KMTerran">KMTerran.sl</A> shader.  Really the only difference is in the colormap, which I removed white from the color spline.  The result is that ice isn't produced at the polar caps, nor for altitudes.  This is the shader used in	LINK	RMRShowTell#Terran	NAME	Terran	animation.
+DESC	a earth like surface.
+DO_LINE
+SHADER	TLSaturn	NOTE	This is the shader used in my	LINK	RMRShowTell#Saturn	NAME	Saturn	animation.
+DESC	a Saturn like surface.
+DO_LINE
+SHADER	TLRing	NOTE	This is the shader used in my	LINK	RMRShowTell#Saturn	NAME	Saturn	animation.
+DESC	Rings for a ringed planet.
+DO_LINE
+SECTION	PIC	../../Pics/redball.gif	Misc Space Stuff	
+SHADER	TLSpaceCloud	NOTE	This is the shader used in my	LINK	RMRShowTell#Nebula	NAME	Nebula	animation.  <B>This shader requires the use of a texture-map.  More information can be found at the Nebula animation section</B>.
+DESC	Rings for a ringed planet.
+DO_LINE
+SECTION	PIC	../../Pics/redball.gif	Tiles
+SHADER	TLShiftedMoonTile	NOTE	This is the shader used in my	LINK	RMRShowTell#Bounce1	NAME	Bounce1	animation.
+DESC	Tiled Cresent Moons.
+DO_LINE
+SHADER	TLShiftedD_RTile	NOTE	This is the shader used in my	LINK	RMRShowTell#Bounce2	NAME	Bounce2	animation.
+DESC	Tiled Disks.
+DO_LINE
+SECTION	PIC	../../Pics/redball.gif	Blockers
+SHADER	TLblocker1spotlight	NOTE	Examples of this shader can be found on the	LINK	RMRBlockers#Tmap	NAME	Light Blockers	page.  This light blocker requires a texture-map to work.
+DESC	texture-map light blocker
+DO_LINE
+SHADER	TLstarBlockerspotlight	NOTE	Examples of this shader can be found on the	LINK	RMRBlockers#Procedural	NAME	Light Blockers	page.  This light blocker is a procedural version.
+DESC	procedural light blocker
+DO_LINE
+SECTION	PIC	../../Pics/redball.gif	Misc	
+SHADER	TL_rglass	NOTE	Example shader showing typical use of refraction(), reflection(), under prman.  The example RIB will generate the environment map and then render the image.  A more detailed example of these functions can be found at: ___
+DESC	prman reflect, refract.
+DO_LINE
+SHADER	TLOrange	NOTE	This is the shader used in my	LINK	RMRShowTell#Orange	NAME	Orange in Fog.
+DESC	Orange (bump surface).
+DO_LINE	
+NEW
+SHADER	TLd_cell1	NOTE	Sample displacement shader using Vornoni cell noise.  This shader makes use of <b><a href="http://www.bmrt.org/arman/shaders/noises.h">noises.h</a></b> from the <a href="http://www.bmrt.org/arman/">Advanced RenderMan</a> book.  This shader has an output variable, <b>VoroVal</b> that can be used by a surface shader to do things like fill in the cracks with an alternate color. <a href="TLd_cell1.slim">TLd_cell1.slim</a><p> This shader is from my "Gazebo project" which I will upload when it is completed.
+DESC	sample Vornoi cell displacement
+DO_LINE
+SHADER	TLpplastic	NOTE	This is the RC paintedplastic, but with 2 parameters to flip s/t coordinates.  This is used in the <A HREF="#TL_rglass">TL_rglass</A> shader.
+DESC	paintedplastic with s/t inverse flags.
+DO_LINE
+SHADER	TLSmoke	NOTE	This is the shader used in my	LINK	RMRShowTell#Orange	NAME	Orange in Fog.
+DESC	Smoke (volume).
+DO_LINE
+SHADER	TLSkymetal	NOTE	A procedural chome-like shader.   The results many not be super exciting, but the source is very instructional of something to do when passing in a point into a shader.<P>This is a generalized version of  <A HREF="../SIG91/index.html#Sig91_skymetal">Sig91_skymetal.sl</A>.  Also this shader contains explainations for the various tramsform gyrations.<P>This shader will work with older renderer's that didn't have support for the &quot;<I>vector</I>&quot; type.  But first a setting will need to be set in the shader, before it is compiled.  More information can be found in the shader source.<P><A HREF="../TLShaders/torus.mov"><IMG SRC=torus.jpg  WIDTH=100 HEIGHT=100 BORDER=3></A>  (137K, 29 (384x256) frame MOV animation). The RIB can be found <A HREF="torus.rib">here</A> (40k).
+DESC	sort of chrome.
+DO_LINE
+SHADER	l_uber	NOTE	A modified version of <a href="../BMRTShaders/index.html#uberlight">uberlight</a>.  This version has slim parameter encodings used by <a href="/RMR/Utils/sl2slim/index.html">sl2slim</a>.  These slim encodings hooks up the shader nicely to Maya/MtoR.<p>Note: in order to quickly tie the shader to Maya's barndoor controls, I created another function to tie to instead of the super-elipse code.  Which means one can really mess stuff up if both the super elipse and barn door parameters are used.  Ideally, it would be better to just make the super-elipse work with Maya's barndoor controls.  <a href="l_uber.slim">l_uber.slim</a><p><img src="../../Pics/new.jpg">l_uber now supports PRMan softshadows.  To get this when building the shader make sure <b>USE_PRMAN_SOFTS</b> is defined.  <p>l_uber now has support for pointlight shadows.  To get this when building the shader make sure <b>USE_POINT_SHADOW</b> is defined.<p><a href="uberpoint/point.jpg"><img src=uberpoint/point_sm.jpg WIDTH 100 HEIGHT=75 CLEAR <alt=""uberpoint/point.jpg"></a> <a href="uberpoint.tgz">uberpoint.tgz</a> contains the example RIB to build up the shadows and render the image. (You will still need to grab <a href="l_uber.sl">l_uber.sl</a>.
+DESC	uberlight with slim controls.
+DO_LINE
+SHADER	s_pplastic	NOTE	A modified version of the PRMan <b>paintedplastic</b>. with sl2slim encodings.   <a href="s_pplastic.slim">s_pplastic.slim</a>
+DESC	PRMan paintedplastic with slim encodings
+DO_LINE
+SHADER	TLFresnelPlastic	NOTE	Example shader using <b>fresnel</b> using plastic lighting.  Notice how with very little effort the fresnel can give a nice backlighting effect and help the image fit into the background.  This shader has <a href="/RMR/Utils/sl2slim/index.html">sl2slim</a> encodings.  This shader is used in the	LINK	Examples/rrf#fresnel	NAME	Fresnel	example.<p>  The example RIB also uses: <a href="#TLconstantMap">TLconstantMap.sl</a>, <a href="#l_uber">l_uber.sl</a>, and <a href="../../rmTMaps.htmld/index.html#bludGrid">blueGrid</a>.  <p>This shader make use of the <b>reflections.h</b>, <b>filterwidth.h</b>, <b>raysphere.h</b> header files from the <a href="http://www.bmrt.org/arman/arman-shaders.tar.gz">Advanced RenderMan Book</a>.  You will need these to compile the shader.
+DESC	fresnel example
+DO_LINE
+SHADER	TLconstantMap	NOTE	Shader gives just a flat color (or colors if a color map is provided) and ignores any lighting.
+DESC	flat color shader
+DO_LINE
+
+

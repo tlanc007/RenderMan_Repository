@@ -1,0 +1,53 @@
+# velvet-test.rib
+# Author: Stephen H. Westin, Ford Motor Company Corporate Design
+#  <swestin@ford.com>
+# Date: 28 January 1997
+#
+# Modifications:
+#	2001.02.01	westin	Added point source to test retroreflection
+#				Added new parameters "backscatter" and
+#				"edginess"
+#				Tweaked for nicer picture
+#		Current mailing address: <westin@graphics.cornell.edu>
+#
+# This is a single sphere for quick tests of shaders using Velvet
+# reflectance.
+
+
+Display "SHW_velvet.tiff" "file" "rgb"
+#Display "velvet" "framebuffer" "rgb"
+Format 300 300 1.0
+
+# Correct for monitor gamma of 2.2
+Exposure 1.0 2.2
+
+Projection "perspective" "fov" 25
+
+Translate 0 0 500
+
+Rotate -115 1 0 0
+
+WorldBegin
+
+  LightSource "ambientlight" 1 "intensity" .1 "lightcolor" [.6 .6 1]
+  LightSource "distantlight" 4 "intensity" 1.0
+              "from" [-50 0 200] "to" [0 0 0] "lightcolor" [1 .9 .85]
+  LightSource "pointlight" 5 "intensity" 5000.0
+              "from" [0 200 50] "lightcolor" [1 .9 .85]
+
+Opacity [1 1 1]
+
+Declare "sheen" "color"
+Declare "roughness" "float"
+Declare "edginess" "float"
+Declare "backscatter" "float"
+
+AttributeBegin
+  Attribute "identifier" "name" [ "ball" ]
+  Color [.05 0 0]
+  Surface "SHW_velvet" "Ks" 0.1 "Kd" 1 "Ka" 0.05 "sheen" [.25 .05 .05]
+    "roughness" .1 "edginess" 20 "backscatter" 0.1
+  Sphere 100 -100 100 360
+AttributeEnd
+
+WorldEnd

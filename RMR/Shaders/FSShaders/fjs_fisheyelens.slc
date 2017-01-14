@@ -1,0 +1,103 @@
+version BMRT 2.6.0beta
+surface fjs_fisheyelens
+param	float	lens_angle		180
+param	float	zdistance		0.1
+param	float	scale		0.1
+local	string	$_str_0 	"camera"
+local	point	_4$Pcam	0 0 0
+local	float	_4$ss	0
+local	float	_4$tt	0
+local	float	_4$r	0
+local	float	_7$polar_angle	0
+local	float	_7$z	0
+local	float	_7$x	0
+local	float	_7$y	0
+local	vector	_7$tracedir	0 0 0
+local	string	$_str_1 	"current"
+local	point	_7$startpoint	0 0 0
+initcode 2
+	return
+code
+	return_area
+	pushif	0 
+	raylevel
+	gt
+	ifz	0
+	pushif	0 
+	cset	Oi 
+	pushiv	0 0 0 
+	popc	Ci 
+	jump	1
+label 0
+	pushv	P 
+	pushs	$_str_0 
+	transforms
+	popv	_4$Pcam 
+	pushf	scale 
+	pushv	_4$Pcam 
+	xcomp
+	divff
+	pushif	0.5 
+	mulff
+	popf	_4$ss 
+	pushf	scale 
+	pushv	_4$Pcam 
+	ycomp
+	divff
+	pushif	0.5 
+	mulff
+	popf	_4$tt 
+	mulFF	_4$tt _4$tt 
+	mulFF	_4$ss _4$ss 
+	addff
+	sqrt
+	popf	_4$r 
+	pushif	0.5 
+	pushf	_4$r 
+	gt
+	ifz	2
+	pushif	1 
+	cset	Oi 
+	pushiv	0 0 0 
+	popc	Ci 
+	jump	3
+label 2
+	pushf	_4$r 
+	pushf	lens_angle 
+	radians
+	mulff
+	popf	_7$polar_angle 
+	pushf	_7$polar_angle 
+	cos
+	popf	_7$z 
+	divFF	_4$ss _4$r 
+	pushf	_7$polar_angle 
+	sin
+	mulff
+	popf	_7$x 
+	divFF	_4$tt _4$r 
+	pushf	_7$polar_angle 
+	sin
+	mulff
+	popf	_7$y 
+	pushf	_7$z 
+	pushf	_7$y 
+	pushf	_7$x 
+	pushs	$_str_1 
+	pushs	$_str_0 
+	vtransformss
+	popv	_7$tracedir 
+	pushiv	0 0 0 
+	pushs	$_str_1 
+	pushs	$_str_0 
+	ptransformss
+	popv	_7$startpoint 
+	pushif	1 
+	cset	Oi 
+	pushv	_7$tracedir 
+	pushv	_7$startpoint 
+	trace
+	popc	Ci 
+label 3
+label 1
+	return

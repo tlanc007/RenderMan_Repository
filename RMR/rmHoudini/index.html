@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+    <title>Houdini</title>
+  </head>
+
+  <body bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER>
+    <h1>Houdini And RenderMan</h1><P>
+<H5>(Examples using Houdini with RenderMan)</H5><P>
+</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><a href="#colorAlpha">colorAlpha</a> -- exporting color & alpha
+<LI><a href="#BMRT">BMRT</a> -- Houdini & BMRT
+<LI><a href="#sc">Space Crib</a> -- my space crib animation
+<LI><a href="#partblob">Particles & RiBlobby</a>
+<HR>
+<A HREF="http://www.sidefx.com">Houdini</A> is a 3D animation and effects program with good hooks to RenderMan.  It is one of the most powerful particle systems, I have seen.  Houdini comes with a renderer, Mantra, and with the release of <b>Houdini-2.5</b>, mantra is really zippy.  With Houdini it is possible to make material networks, that can create RenderMan shaders on the fly.<P>
+
+For the moment, I am taking a purist approach, where I already have my own shaders and want Houdini to use them.  NOTE: By doing this, I am sacrificing some of Houdini's power.  As there are plenty of neat things that can be done, easier and perhaps quicker, by working with Mantra.  But as this is a RenderMan site... So far the only non-<A HREF="http://www.sidefx.com">SideFX</A> web site that I am aware of is:  <A HREF="http://anusf.anu.edu.au/anusf_visualization/houdini_tips/">Houdini Tips</A>.  -- Actually, it seems as though this page is going to go away.  Another place to try, is <A HREF="http://odforce.net">od[force]</A>.<P>
+
+
+Also, keep in mind, that I have just started to learn Houdini.  If you notice, I am doing something wrong or you have some of your own examples, let me know!<P>
+
+<hr>
+<A NAME = "colorAlpha"></A>
+<H2>Exporting color & alpha</H2>
+In the Materials-Editor, change the "Difuse color" to you want <b>Cs</b> to be.  Set the "Transmit color" for your opacity, <b>Os</b>.  Then on the geomtry-object's SHADING PAGE, set the material to match the one you just set.  Say the "Diffuse color" was set to RGB (.7 0 0) and "Transmit color" was (.5 .5 .5), the RIB for that object would give:
+<pre>
+Color [0.7 0 0]
+Opacity [.5 .5 .5]
+</pre>
+Which would be read into the shader as: Cs and Os respectfully.<P>
+<hr>
+<A NAME="bmrt"></A>
+<H2>Houdini and BMRT</H2>
+Yes, it is true, it is fairly easy to get Houdini to use <A HREF="http://www.seas.gwu.edu/student/gritz/bmrt.html">BMRT</A> for rendering.  The <A HREF="http://anusf.anu.edu.au/anusf_visualization/houdini_tips/">Houdini Tips</A> link has a pretty good description of what to do.  Soon, I will be posting a perl "RMANDS" script, so the Houdini dialog script box will work with BMRT shaders.<P>
+<hr>
+<A NAME="examples"></A>
+<H2>Examples</H2>
+<center>
+<A NAME="sc"></A>
+<h4>Space Crib</h4></center>
+The following is my first Houdini animation.  It is a work in progress.  There are two versions, the first is a BMRT version.  Next I will follow it up with a prman version.  There are still some work left do to:  No sound, doorway is pretty boring, also maybe add another planet to keep the smaller one company.<P>
+
+These animations use the following nonstandard shaders:<BR>
+<A HREF="../Shaders/LGShaders/index.html#LGParquetPlank">LGParquetPlank</A>,
+<A HREF="../Shaders/TLShaders/index.html#TLSaturn">TLSaturn</A>,
+<A HREF="../Shaders/TLShaders/index.html#TLRing">TLRing</A>,
+<A HREF="../Shaders/TLShaders/index.html#TLTerranNWhite">TLTerranNWhite</A>,
+<A HREF="../Shaders/KMShaders/index.html#KMTerranbump">KMTerranbump</A>,
+<A HREF="../Shaders/KMShaders/index.html#KMPlanetclouds">KMPlanetclouds</A>,
+<A HREF="../Shaders/BMRTShaders/index.html#wood2">wood2</A>(included in BMRT distribution),
+<A HREF="../Shaders/RCShaders/index.html#RCGlow">RCGlow</A>,
+<A HREF="../Shaders/BMRTShaders/index.html#uberlight">uberlight</A>, and
+<A HREF="../Shaders/LCShaders/index.html#LCStarfield">LCStarfield</A>(An antialiased starfield shader).<P>
+
+These shaders can also be found in: <A HREF="sc/scShaders.tgz">scShaders.tgz</A> (a gzipped tar file)<P>
+First are some BMRT stills:<P>
+<A HREF="sc/bmrt/sc.0017.tif"><IMG SRC="sc/bmrt/sc.0017.jpg"  ALIGN=CENTER WIDTH=320 CLEAR ALT="sc/bmrt/c.0017.tif"></A><A HREF="sc/bmrt/sc.0017.rib.gz">sc.0017.rib.gz</A>
+<A HREF="sc/bmrt/sc.0069.tif"><IMG SRC="sc/bmrt/sc.0069.jpg"  ALIGN=CENTER WIDTH=320 CLEAR ALT="sc/bmrt/sc.0069.tif"></A></A><A HREF="sc/bmrt/sc.0069.rib.gz">sc.0069.rib.gz</A>
+ <A HREF="sc/bmrt/sc.0149.tif"><IMG SRC="sc/bmrt/sc.0149.jpg"  ALIGN=CENTER WIDTH=320 CLEAR ALT="sc/bmrt/sc.0149.tif"></A></A><A HREF="sc/bmrt/sc.0149.rib.gz">sc.0149.rib.gz</A><P>
+
+<A HREF="sc/bmrt/scbm.mpg">scbm.mpg</A> (150 frame 320x200 mpeg animation --1.1M)<P>
+<A HREF="sc/bmrt/scbm.hip.gz">scbm.tar.gz</A> -- houdini HIP file.<P>
+
+
+<HR width=50%>
+prman stills:<P>
+<A HREF="sc/prman/sc.0017.tiff"><IMG SRC="sc/prman/sc.0017.jpg"  ALIGN=CENTER WIDTH=320 CLEAR ALT="ssc/prman/c.0017.tiff"></A><A HREF="sc/prman/sc.0017.rib.gz">sc.0017.rib.gz</A>
+<A HREF="sc/prman/sc.0067.tiff"><IMG SRC="sc/prman/sc.0079.jpg"  ALIGN=CENTER WIDTH=320 CLEAR ALT="sc/prman/sc.0079.tiff"></A></A><A HREF="sc/prman/sc.0079.rib.gz">sc.0079.rib.gz</A>
+ <A HREF="sc/prman/sc.0136.tiff"><IMG SRC="sc/prman/sc.0136.jpg"  ALIGN=CENTER WIDTH=320 CLEAR ALT="sc.0136.tiff"></A></A><A HREF="sc/prman/sc.0136.rib.gz">sc.0136.rib.gz</A>
+<P>
+
+<HR>
+<A NAME="partblob"></A>
+<H4>Particles & RiBlobbys,</H4>
+<A HREF="demo/partring/ring.mpg"><IMG SRC="demo/partring/ring.1102.jpg"  ALIGN=BOTTOM WIDTH=320 CLEAR></A><br>
+Particles are <b>Houdini's</b> "bread and butter".  <A HREF="demo/partring/particleRing.hip.gz">This compressed hip</A> is a slightly modified version of the particleRing SOP demo.  If you change the <b>bl_particle_ring</b> OP to emit particles as <i>spheres</i>; emit RIB; and run the <a href="../Utils/index.html#part2blob">part2blob.pl</a> script; it will create a set of ellipsiod <b>RiBlobby</b>s.<p>
+Instead if you changed the <i>particle-sop</i> to emit "lines", then the converor will emit segment <b>RiBlobby</b>s.<P>
+
+   <hr>
+<I>
+The RMR is <A HREF="../copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+
+
+<!-- Created: Sun Aug 30 17:03:15 PDT 1998 -->
+<!-- hhmts start -->
+Last modified: Wed Jan 17 22:47:15 PST 2001
+<!-- hhmts end -->
+  </body>
+</html>

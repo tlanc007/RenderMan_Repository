@@ -1,0 +1,50 @@
+http://corporate.pixar.com/news/20020516-80816.cfm
+
+
+Pixar Animation Studios Files Trade Secret, Copyright and
+                                    Patent Infringement Claims Against Exluna
+
+                                    EMERYVILLE, CA, May 16, 2002 - Pixar Animation Studios (Nasdaq: PIXR) today
+                                    announced that it has filed an amended complaint charging Exluna, Inc. with
+                                    misappropriation of trade secrets, copyright infringement and patent infringement. The
+                                    amended complaint was filed in the United States District Court for the Northern
+                                    District of California. 
+
+                                    The amended complaint alleges that Exluna, which was formed by three former Pixar
+                                    employees, has misappropriated trade secrets from Pixar?s RenderMan5, a program
+                                    used to develop animated movies. The amended complaint also charges Exluna with
+                                    infringement of Pixar?s RenderMan5 copyrights and Pixar?s U.S. Patent No. 4,897,806.
+
+
+
+
+ixar Animation Studios and Exluna Settle Lawsuit
+
+                                    EMERYVILLE, CA, July 22, 2002 - Pixar Animation Studios (Nasdaq: PIXR) today
+                                    announced it has settled its lawsuit against Exluna, Inc. The settlement resolves all
+                                    pending litigation and any other disputes between the two companies. Exluna, a
+                                    privately-held software company specializing in software development technology for
+                                    film quality graphics rendering, was charged with the misappropriation of trade secrets,
+                                    copyright infringement and patent infringement. 
+
+
+ http://corporate.pixar.com/news/20020722-85830.cfm
+
+                                   In a separate announcement today, NVIDIA Corporation (Nasdaq: NVDA) announced
+                                    the acquisition of Exluna, Inc. The acquisition is part of NVIDIA?s strategy to bring
+                                    cinematic quality to real-time graphics and adds core engineering competency and
+                                    intellectual property to its recently announced Cg (C for Graphics) strategy
+                                    (http://www.nvidia.com/view.asp?IO=cg). 
+
+
+
+ Exluna sued by Pixar! - 5th March 2002  
+
+                  Wow - really interesting developments! Pixar has filed a lawsuit claiming that Exluna has infringed its patents for rendering computer
+                  animated images. I haven't seen the details yet, but it would appear this is based on a Pixar patent for Monte Carlo sampling techniques
+                  (possibly this one) mainly used in motion blur in PRman. You can read a bit more on the story from the Detroit news. As you probably know
+                  Larry Gritz, Head of Entropy Research and Development, along with Matt Pharr, Craig Kolb and Doug Epps all used to work for Pixar.
+                  Exluna has posted an official response on their website.
+
+                  Speaking personally - and I am not a lawyer - but this is precisely why all the secrecy occurred before the first release of Entropy and why
+                  motion blur and depth of field are no longer present in BMRT. Anyway it doesn't help the image of Pixar at all. 

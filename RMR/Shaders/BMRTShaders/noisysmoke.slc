@@ -1,0 +1,421 @@
+volume noisysmoke
+param	float	density		60
+param	float	integstart		0
+param	float	integend		100
+param	float	stepsize		0.1
+param	float	debug		0
+param	float	use_lighting		1
+param	float	use_noise		1
+param	color	scatter		1 1 1
+param	float	octaves		3
+param	float	freq		1
+param	float	smokevary		1
+param	float	lightscale		15
+local	string	$_str_0 	"shader"
+local	string	$_str_1 	"current"
+local	string	$_str_2 	"nsteps = %f, t1 = %f, end = %f\n"
+local	string	$_str_3 	"   Cv = %c, Ov = %c\n"
+local	point	Worigin	0 0 0
+local	vector	incident	0 0 0
+local	point	origin	0 0 0
+local	vector	IN	0 0 0
+local	vector	WIN	0 0 0
+local	float	d	0
+local	float	tau	0
+local	color	Cv	0 0 0
+local	color	Ov	0 0 0
+local	color	dC	0 0 0
+local	color	dO	0 0 0
+local	float	ss	0
+local	float	dtau	0
+local	float	last_dtau	0
+local	float	end	0
+local	float	nsteps	0
+local	color	li	0 0 0
+local	color	last_li	0 0 0
+local	color	lighttau	0 0 0
+local	point	PP	0 0 0
+local	point	PW	0 0 0
+local	point	Psmoke	0 0 0
+local	color	scat	0 0 0
+local	float	f	0
+local	float	smoke	0
+local	float	i	0
+initcode 11
+	return
+code
+	return_area
+	pushv	I 
+	subV	P 
+	popv	Worigin 
+	pushv	I 
+	pushs	$_str_0 
+	vtransforms
+	popv	incident 
+	pushv	Worigin 
+	pushs	$_str_0 
+	transforms
+	popv	origin 
+	pushif	0 
+	cset	Cv 
+	pushif	0 
+	cset	Ov 
+	pushif	0 
+	popf	nsteps 
+	pushif	0.0001 
+	pushf	integend 
+	pushv	incident 
+	length
+	fmin
+	subff
+	popf	end 
+	pushf	stepsize 
+	random
+	mulff
+	addF	integstart 
+	popf	d 
+	pushf	end 
+	pushf	d 
+	lt
+	ifz	0
+	pushv	incident 
+	normalize
+	popv	IN 
+	pushv	IN 
+	pushs	$_str_1 
+	pushs	$_str_0 
+	vtransform2s
+	popv	WIN 
+	pushv	IN 
+	mulFv	d 
+	addV	origin 
+	popv	PP 
+	pushv	WIN 
+	mulFv	d 
+	addV	Worigin 
+	popv	PW 
+	pushif	0 
+	pushf	use_lighting 
+	gt
+	ifz	2
+	pushif	0 
+	cset	li 
+	pushv	PW 
+	illuminance_start
+label 4
+	illuminance1	5
+	pushc	Cl 
+	addC	li 
+	popc	li 
+	jump	4
+label 5
+	jump	3
+label 2
+	pushif	1 
+	cset	li 
+label 3
+	pushif	0 
+	pushf	use_noise 
+	fnef
+	ifz	6
+	pushf	freq 
+	pushv	PP 
+	mulvf
+	popv	Psmoke 
+	pushif	1 
+	pushv	Psmoke 
+	noisev
+	pushif	2 
+	mulff
+	subff
+	popf	smoke 
+	pushif	0.01 
+	pushif	2 
+	pushc	li 
+	comp
+	pushif	1 
+	pushc	li 
+	comp
+	pushif	0 
+	pushc	li 
+	comp
+	addff
+	addff
+	gt
+	ifz	8
+	pushif	1 
+	popf	f 
+	pushif	1 
+	popf	i 
+label 10
+	pushf	octaves 
+	pushf	i 
+	lt
+	ifz	12
+	pushif	0.5 
+	mulF	f 
+	popf	f 
+	pushif	2 
+	pushv	Psmoke 
+	mulvf
+
+	popv	Psmoke 
+	pushif	1 
+	pushv	Psmoke 
+	noisev
+	pushif	2 
+	mulff
+	subff
+	mulF	f 
+	addF	smoke 
+	popf	smoke 
+label 11
+	pushif	1 
+	addF	i 
+	popf	i 
+	jump	10
+label 12
+label 8
+label 9
+	pushf	smoke 
+	mulF	smokevary 
+	pushif	1 
+	pushif	-1 
+	smoothstep
+	mulF	density 
+	popf	dtau 
+	jump	7
+label 6
+	cpFF	density dtau 
+label 7
+	pushf	d 
+	subF	end 
+	pushf	stepsize 
+	fmin
+	popf	ss 
+	pushf	ss 
+	addF	d 
+	popf	d 
+	pushif	1 
+	addF	nsteps 
+	popf	nsteps 
+label 13
+	pushf	end 
+	pushf	d 
+	le
+	ifz	15
+	cpFF	dtau last_dtau 
+	cpCC	li last_li 
+	pushv	IN 
+	mulFv	d 
+	addV	origin 
+	popv	PP 
+	pushv	WIN 
+	mulFv	d 
+	addV	Worigin 
+	popv	PW 
+	pushif	0 
+	pushf	use_lighting 
+	gt
+	ifz	16
+	pushif	0 
+	cset	li 
+	pushv	PW 
+	illuminance_start
+label 18
+	illuminance1	19
+	pushc	Cl 
+	addC	li 
+	popc	li 
+	jump	18
+label 19
+	jump	17
+label 16
+	pushif	1 
+	cset	li 
+label 17
+	pushif	0 
+	pushf	use_noise 
+	fnef
+	ifz	20
+	pushf	freq 
+	pushv	PP 
+	mulvf
+	popv	Psmoke 
+	pushif	1 
+	pushv	Psmoke 
+	noisev
+	pushif	2 
+	mulff
+	subff
+	popf	smoke 
+	pushif	0.01 
+	pushif	2 
+	pushc	li 
+	comp
+	pushif	1 
+	pushc	li 
+	comp
+	pushif	0 
+	pushc	li 
+	comp
+	addff
+	addff
+	gt
+	ifz	22
+	pushif	1 
+	popf	f 
+	pushif	1 
+	popf	i 
+label 24
+	pushf	octaves 
+	pushf	i 
+	lt
+	ifz	26
+	pushif	0.5 
+	mulF	f 
+	popf	f 
+	pushif	2 
+	pushv	Psmoke 
+	mulvf
+
+	popv	Psmoke 
+	pushif	1 
+	pushv	Psmoke 
+	noisev
+	pushif	2 
+	mulff
+	subff
+	mulF	f 
+	addF	smoke 
+	popf	smoke 
+label 25
+	pushif	1 
+	addF	i 
+	popf	i 
+	jump	24
+label 26
+label 22
+label 23
+	pushf	smoke 
+	mulF	smokevary 
+	pushif	1 
+	pushif	-1 
+	smoothstep
+	mulF	density 
+	popf	dtau 
+	jump	21
+label 20
+	cpFF	density dtau 
+label 21
+	pushf	last_dtau 
+	addF	dtau 
+	pushf	ss 
+	pushif	0.5 
+	mulff
+	mulff
+	popf	tau 
+	pushf	last_dtau 
+	pushc	last_li 
+	mulcf
+	pushf	dtau 
+	pushc	li 
+	mulcf
+	addcc
+	pushf	ss 
+	pushif	0.5 
+	mulff
+	mulfc
+	popc	lighttau 
+	pushc	scatter 
+	pushf	tau 
+	negf
+	mulfc
+	popc	scat 
+	pushif	2 
+	pushc	scat 
+	comp
+	exp
+	pushif	1 
+	pushc	scat 
+	comp
+	exp
+	pushif	0 
+	pushc	scat 
+	comp
+	exp
+	pushif	1 
+	ftoc
+	subcc
+	popc	dO 
+	pushc	dO 
+	mulC	lighttau 
+	popc	dC 
+	pushc	dC 
+	pushc	Ov 
+	pushif	1 
+	ftoc
+	subcc
+	mulcc
+	addC	Cv 
+	popc	Cv 
+	pushc	dO 
+	pushc	Ov 
+	pushif	1 
+	ftoc
+	subcc
+	mulcc
+	addC	Ov 
+	popc	Ov 
+	pushif	0.005 
+	pushf	d 
+	subF	end 
+	pushf	ss 
+	fmin
+	fmax
+	popf	ss 
+	pushf	ss 
+	addF	d 
+	popf	d 
+	pushif	1 
+	addF	nsteps 
+	popf	nsteps 
+label 14
+	jump	13
+label 15
+label 0
+label 1
+	pushc	Ci 
+	pushc	Ov 
+	pushif	1 
+	ftoc
+	subcc
+	mulcc
+	pushc	Cv 
+	mulFv	lightscale 
+	addcc
+	popc	Ci 
+	pushc	Oi 
+	pushc	Ov 
+	pushif	1 
+	ftoc
+	subcc
+	mulcc
+	addC	Ov 
+	popc	Oi 
+	pushif	0 
+	pushf	debug 
+	gt
+	ifz	27
+	pushf	end 
+	pushf	integstart 
+	pushf	nsteps 
+	pushs	$_str_2 
+	printf
+	pushc	Ov 
+	pushc	Cv 
+	pushs	$_str_3 
+	printf
+label 27
+label 28
+	return

@@ -1,0 +1,285 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE>rmShow&amp;Tell</TITLE>
+<LINK HREF="../rmBlockers/index.html" REL="Child" TITLE="rmBlockers">
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+ </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+<CENTER><H1><P>
+Show and Tell</H1><P>
+<I>(various pictures and animations  and the code used to make them)</I><P>
+</CENTER><P>
+<P>
+<H4>What's on this page?</H4><P>
+<UL>
+<LI><A HREF="#Saturn">Saturn animation</A>
+<LI><A HREF="#Terran">Terran animation</A>
+<LI><A HREF="#Nebula">Nebula animation</A>
+<LI><A HREF="#Bounce1">Tiling example 1</A>
+<LI><A HREF="#Bounce2">Tiling example 2</A>
+<LI><A HREF="#Orange">An Orange in the fog</A>
+</UL>
+
+<P>
+<H4>There is also a page dedicated to <A HREF="../rmBlockers/index.html">light blockers</A>.</H4><P>
+<P>
+
+<HR>
+<A NAME="Saturn"></A>
+
+<H2>Saturn Animation</H2><P>
+In honor of the Saturn plane occurring Monday May 22, I have created this little MPEG animation.  It is a fly-by of a Saturn like planet consisting of 60 frames 200x100 (&lt; 30K).  More information about the event can be found here:<P>
+<P>
+ <A HREF="http://newproducts.jpl.nasa.gov/saturn/">Saturn Ring Plane Crossings of 1995-1996 (JPL) </A>.<P>
+<P>
+<P>
+<P>
+<A HREF="../st/sat.29.tiff"><IMG SRC=../st/sat.29.jpg WIDTH=100 HEIGHT=50  ALT="../st/sat.29.tiff"></A> 
+ (click image to get larger frame). <A HREF="../st/sat.mpeg">sat.mpeg</A>
+
+  <P>
+<P>
+<B>(12/18/96 Tal--This animation seems to only play correctly under the MPEG player under NeXTSTEP.  So here is a <A HREF="../st/sat.mov">MOV animation</A>
+
+.  This version is about 270k and the frames are 300x220.  NOTE:  It has been some time since I have seen this animation so large and I have noticed that the stars are way, too big.  It looks like they have been motion blurred, but this is not the case.  When, I get around to it , I may try doing another version that fixes this.)</B><P>
+<P>
+The shaders that were used to create this animation were: <A HREF="../Shaders/TLShaders/index.html#TLSaturn">TLSaturn</A>
+
+
+, <A HREF="../Shaders/TLShaders/index.html#TLRing">TLRing</A>
+
+
+, <A HREF="../Shaders/LGShaders/index.html#LGStarfield">LGStarfield</A>
+
+, and <A HREF="../Shaders/RCShaders/index.html#RCGlow">RCGlow</A>
+
+.  Its <A HREF="../st/saturn.rib">RIB</A>
+ (about 340K).<P>
+Also, I have included <A HREF="../st/saturn.c">C source</A>
+
+.  Which I feel will be more instructive than the RIB.  If you do decide to use the C source to generate the RIB, you will need  the <A HREF="../Books/RC/rcCh8.htmld/index.html#ex8_2">camera code</A>
+.  <B>NOTE: The C source for the Terran animation  offers a much better frame-work!  I highly recommend using that one if you plan on hacking with the code.</B><P>
+<P>
+Feel free to let me know what you think or how I can make it better, cooler, etc.<P>
+<P>
+
+<HR>
+<A NAME="Terran"></A>
+
+
+<H2>Terran Animation</H2><P>
+<P>
+Yet another fly-by, this time of an Earth-like planet consisting of 60 frames 200x100 (&lt; 13K).<P>
+<P>
+<P>
+<A HREF="../st/terran.11.tiff"><IMG SRC=../st/terran.11.jpg  ALIGH=LEFT WIDTH=100 HEIGHT=74  ALT="../st/terran.11.tiff"></A> 
+ (click image to get larger frame). <A HREF="../st/terran.mpeg">terran.mpeg</A>
+
+
+  <P>
+<P>
+<B>(12/18/96 Tal--This animation seems to only play correctly under the MPEG player under NeXTSTEP.  So here is a <A HREF="../st/ter.mov">MOV animation</A>
+
+.  This version is about 180k and the frames are 300x220.  NOTE:  It has been some time since I have seen this animation so large and I have noticed that the stars are way, too big.  It looks like they have been motion blurred, but this is not the case.  When, I get around to it , I may try doing another version that fixes this.)<P>
+<P>
+</B><P>
+The shaders that were used to create this animation were: <A HREF="../Shaders/TLShaders/index.html#TLTerranNwhite">TLTerranNwhite</A>
+, <A HREF="../Shaders/KMShaders/index.html#KMTerranbump">KMTerranbump</A>
+, <A HREF="../Shaders/KMShaders/index.html#KMPlanetclouds">KMPlanetclouds</A>
+, <A HREF="../Shaders/LGShaders/index.html#LGStarfield">LGStarfield</A>
+, and <A HREF="../Shaders/RCShaders/index.html#RCGlow">RCGlow</A>.
+Its <A HREF="../st/terran.rib">RIB</A> (about 80K).<P>
+Also, I have included <A HREF="../st/terran.c">C source</A>
+
+
+.  Which I feel will be more instructive than the RIB.  If you do decide to use the C source to generate the RIB, you will need  the <A HREF="../Books/RC/rcCh8.htmld/index.html#ex8_2">camera code</A>
+.  Also, this source is much better than the saturn.c.  Mainly, all of the elements have been moved to function calls.   Making much more straight forward to use the same frame-work for other planets.  Another feature that many BMRT users may find useful is now the frames can be rendered independently (using the -frames option).  The saturn animation required the frames to be rendered sequentially from first to last.<P>
+<P>
+<HR>
+<A NAME="Nebula"></A>
+<H2>Nebula Animation</H2><P>
+<P>
+<A HREF="../st/nebula.0.tiff"><IMG SRC=../st/nebula.0.jpg  ALIGH=LEFT WIDTH=100
+HEIGHT=74  ALT="../st/nebula.0.tiff"></A>
+ (click image to get larger frame). <A HREF="../st/nebula.mov">nebula.mov</A>
+ (360 frames 300x220 -- 1.5M).
+<P>
+<B>3/2/97 -- This animation has been a long time in the making.  I had started it nearly two years ago.  But I was never really happy with it and never found  the time to work on it.  Then last weekend, I decided to try and wrap it up.</B>
+
+<P>
+There are still some things I am not happy with:  need to work on a better sun,
+maybe throw in a couple of moons.  Maybe add a semi-transparent sphere around the planet to add some atmospherics.  The nebula could be better too.
+<P>
+I started out with a picture of the Orion Nebula from the Hubble Space Telescope.  The original image can be found at
+<A HREF="http://oposite.stsci.edu/ftp/pubinfo/tiff/oria.tiff">http://oposite.stsci.edu/ftp/pubinfo/tiff/oria.tiff</A> -- 1M.  <P>
+
+Here is an excerpt of the press release that goes with the image.<P>
+
+<I>
+<BLOCKQUOTE>
+<PRE>
+GAS PLUME NEAR THE EDGE OF ORION NEBULA         STSCI PR-92-29A
+Wide Field/Planetary Camera
+
+This HST "true color" mosaic image of a small portion of the Orion
+Nebula shows a wealth of detail never seen before.  New features
+include: elongated objects oriented on the brightest stars in this
+region (which are located just off the edge of the picture); rapidly
+expanding plumes of material around young stars and protoplanetary
+disks.
+</PRE>
+</BLOCKQUOTE>
+</I>
+<P>
+Ater getting the original image, I changed the aspect ration to 1:1 (RenderMan likes textures that are power of 2), staturated the colors, and rotated it.  Then this is what I used for the texture-map. (<B> The original is on the left and the new converted one is on the right. The images are scaled to aprox. 25%.  Clicking on them will download the full image.  1M and 0.47M respectfully.</B>)
+<A HREF="http://oposite.stsci.edu/ftp/pubinfo/tiff/oria.tiff">
+<IMG SRC=../st/oria_small.jpg  ALIGN = LEFT WIDTH=150 HEIGHT=116></A> 
+<A HREF=../st/ori2.tiff>
+<IMG SRC=../st/ori2_small.jpg  ALIGN = RIGHT WIDTH=150 HEIGHT=150></A>
+<P>
+The shaders that were used to create this animation were: 
+<A HREF="../Shaders/TLShaders/index.html#TLSpaceCloud">TLSpaceCloud</A>,
+<A HREF="../Shaders/KMShaders/index.html#KMVenus">KMVenus</A>,
+<A HREF="../Shaders/LGShaders/index.html#LGStarfield">LGStarfield</A>,
+ and 
+<A HREF="../Shaders/RCShaders/index.html#RCGlow">RCGlow</A>.
+The <A HREF="../st/nebula.rib.gz">compressed RIB</A> is about 12K.<P>
+Also, I have included <A HREF="../st/nebula.c">C source</A>.
+  Which I feel will be more instructive than the RIB.  If you do decide to use the C source to generate the RIB, you will need the 
+<A HREF="../Books/RC/rcCh8.htmld/index.html#ex8_2">camera code</A>.
+<P>
+<P>
+Please see the <A HREF="http://www.stsci.edu/policy/Copyright.html">Copyright</A> &copy reguarding the use of images from the <A HREF="http://oposite.stsci.edu/">
+<I>HST</I>
+</A>.
+<P> 
+<HR>
+
+<A NAME="Bounce1"></A>
+
+
+<H2>Bounce1 Animation</H2><P>
+<P>
+ That's right another boring bouncing ball animation.  NOTE: I am not trying to simulate any laws of physics.  But this does give a good feel for the shader and there is some subtle motion blurring.<P>
+<P>
+<P><A HREF="../st/TLShiftedD_R.22.tiff"><IMG SRC=../st/TLShiftedD_R.22.jpg  ALIGH=LEFT WIDTH=100 HEIGHT=74  ALT="../st/TLShiftedD_R.22.tiff"></A>
+
+ (click image to get larger frame). <A HREF="../st/TLSD_R.mpg">TLSD_R.mpg</A>
+
+
+  45 Frames 384x256 (130K).<P>
+<P>
+This animation was created to give a full view of  the <A HREF="../Shaders/TLShaders/index.html#TLShiftedD_RTile">TLShiftedD_RTile</A>
+
+
+
+ shader.  Also, the <A HREF="../st/TLShiftedD_RTile.rib.gz">RIB</A>
+
+ (5k compressed) was generated very easily with the help of <A HREF="http://wave.www.media.mit.edu/people/wave/">Wave's</A> most excellent WavesWorld.<P>
+<P>
+<A NAME="Bounce2"></A>
+
+
+<H2>Bounce2 Animation</H2><P>
+<P>
+That's right another boring bouncing ball animation.  NOTE: I am not trying to simulate any laws of physics.  But this does give a good feel for the shader and there is some subtle motion bluring.<P>
+<P>
+<P>
+<A HREF="../st/TLSMoon.11.tiff"><IMG SRC=../st/TLSMoon.11.jpg  ALIGH=LEFT WIDTH=100 HEIGHT=74  ALT="../st/TLSMoon.11.tiff"></A>
+ (click image to get larger frame). <A HREF="../st/TLSMoon.mpg">TLSMoon.mpg</A>
+
+
+  45 Frames 384x256 (130K).<P>
+<P>
+This animation was created to give a full view of  the <A HREF="../Shaders/TLShaders/index.html#TLShiftedMoonTile">TLShiftedMoonTile</A>
+
+
+
+ shader.  Also, the <A HREF="../st/TLShiftedMoonTile.rib.gz">RIB</A>
+
+ (5k compressed) was generated very easily with the help of <A HREF="http://wave.www.media.mit.edu/people/wave/">Wave's</A> most excellent WavesWorld.<P>
+<P>
+
+<HR>
+<A NAME="Orange"></A>
+<H2>Orange in Fog Animation</H2><P>
+<P>
+<P>
+<A HREF="../st/oran.8.tiff"><IMG SRC=../st/oran.8.jpg  ALT="../st/oran.8.tiff"> </A><A HREF="../st/oran.mov">oran.mov</A>  40 - 384x286 frames (180k).<P>
+<P>
+Just an orange rolling in the fog.  This was inspired from a slide from Sharron Calihan's Lighting Class at Siggraph '96.  Nothing too fancy.  But something about it looked kind of cool.  <P>
+<P>
+I may do another version from a different camera postion.<P>
+<P>
+Things, I am not happy with:  <P>
+<P>
+1) The orange isn't that great (one factor may be is that it is just bump-mapped, rather than being displaced)<P>
+<P>
+2) The shadow, on the orange, looks kind of  funky (ie. it is very hard and straight).  Again this might be an artifact of the orange only being bump-mapped.<P>
+<P>
+3) May want more ambient light to see more of the orange near the ground.<P>
+<P>
+If anybody has any improvements or ideas on how to improve it, please let me know.<P>
+<P>
+The <A HREF="../st/oran.rib.gz">RIB</A>
+
+ (~5k compressed) was generated very easily with the help of <A HREF="http://wave.www.media.mit.edu/people/wave/">Wave's</A> most excellent WavesWorld.<P>
+<P>
+The animation uses <A HREF="../Shaders/TLShaders/index.html#TLOrange">TLOrange.sl</A> and <A HREF="../Shaders/TLShaders/index.html#TLSmoke">TLSmoke.sl</A> shaders.
+
+<HR>
+<P>
+Don't forget feel free to send me your stuff, so they can get added to the RMR.<P>
+<P>
+<H3>Any comments or  suggestions?  Send them to: 
+<a href="mailto:talrmr@SpamSucks_pacbell.net">talrmr@SpamSucks_pacbell.net</a><P>
+<P>
+</H3><P>
+<P>
+<P>
+<P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>For More Details (Children):</DT><DD>
+
+[<A HREF="../rmBlockers/index.html">rmBlockers</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rmShow&amp;Tell</A> was converted on Sun Aug 10 15:14:37 PDT 1997 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+<HR>
+<I>
+<A NAME="pixarTM"></A>
+<h3>RenderMan is a registered trademark of Pixar</h3>.
+<p>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-1998 <A HREF="mailto:talrmr@SpamSucks_pacbell.net">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

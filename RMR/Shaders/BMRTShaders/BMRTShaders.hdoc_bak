@@ -1,0 +1,82 @@
+SUBTITLE_H5	(Shaders from Larry Gritz's BMRT/examples)
+SUBTITLE	The following are some of the shaders that can be found in BMRT/examples.
+TITLE	BMRTShaders	H1	BMRT Shading Section
+DIR	BMRTShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	background	NOTE	This rib also uses the dented shader.
+DESC	
+DO_LINE
+SHADER	brick	NOTE	<B>Note:</B> This shader requires <a href="noise.h">noise.h</a> and <a href="patterns.h">patterns.h</a> to compile.  This shader is also used in the texbox1.rib.<P>
+DESC	
+DO_LINE
+SHADER	brickbump	NOTE	<B>Note:</B> This shader requires <a href="noise.h">noise.h</a> and <a href="patterns.h">patterns.h</a> to compile. This example also uses the "brick" shaders.  This shader is also used in the texbox1.rib.<P>
+DESC	
+DO_LINE
+SHADER	castucco	NOTE	<B>Note:</B> This shader requires <a href="noise.h">noise.h</a> to compile. This shader is used in the texbox1.rib.<P>
+DESC	
+DO_LINE
+SHADER	clamptoalpha	NOTE	
+DESC	
+DO_LINE
+SHADER	cornell	NOTE	This RIB demonstrates radiosity with BMRT.<P>
+DESC	
+DO_LINE
+SHADER	dented	NOTE	
+DESC	
+DO_LINE
+SHADER	disptest	NOTE	This RIB demonstrates displacement and procedural textures with BMRT.  This example uses stucco, dented, shiny, and gmarble_polish shaders.<P>
+DESC	
+DO_LINE
+SHADER	dresser	NOTE	This RIB shows off radiosity and raytracing with BMRT.  This example needs wood2 and wallpaper_2stripe shaders.<P>
+DESC	
+DO_LINE
+SHADER	funkyglass	NOTE	<B>Note:</B> This image uses the <I>matte</I>,  <I>screen </I>, and  <I>screen_aa </I>, ahaders too.  In addition it shows off the automatic shadows found in BMRT.  This RIB is from BMRT/examples/shadtest.rib.  If you are wondering why the left image has a solid shadow rather than one like its middle counter part, check out the RIB and the corresponding BMRT documentation under:<P>Atrribute &quot;render&quot; ....<P>
+DESC	
+DO_LINE
+SHADER	glass	NOTE	This shader is used in the teapots.rib.<P>
+DESC	
+DO_LINE
+SHADER	gmarbtile_polish	NOTE	<B>NOTE:</B> This shader makes use of the trace() call, which means it can do reflections without reflection maps (at least under BMRT).  For example these next images (from BMRT/examples/disptest.rib), uses the <I>gmarble_polish</I>, <I>dented</I>, <I>shiny</I>, and <I>stucco</I> shaders.<P><A HREF="../BMRTShaders/balls2.tiff"><IMG SRC=../BMRTShaders/balls2.jpg  WIDTH=100 HEIGHT=75  ALT="../BMRTShaders/balls2.tiff"></A><A HREF="../BMRTShaders/disptest.rib">balls2.rib</A><P>
+DESC	
+DO_LINE
+SHADER	noisysmoke	NOTE	Atmospheric shader.  The RIB is just smokebox.rib renamed.<P>
+DESC	
+DO_LINE
+SHADER	plank	NOTE	
+DESC	
+DO_LINE
+SHADER	screen	NOTE	NOTE: A NON antialiased version
+DESC	
+DO_LINE
+SHADER	screen_aa	NOTE	NOTE: An anti-aliased version
+DESC	
+DO_LINE
+SHADER	shadtest	NOTE	Uses funkyglass, screen and screen_aa shaders.<P>
+DESC	
+DO_LINE
+SHADER	shiny	NOTE	Used in teapots.rib
+DESC	
+DO_LINE
+SHADER	stucco	NOTE	
+DESC	
+DO_LINE
+SHADER	superplank	NOTE	<B>Note:</B> This shader requires <a href="noise.h">noise.h</a> and <a href="patterns.h">patterns.h</a> to compile.  Used in teapots.rib, texbox1.rib, and tpdisp.rib.
+DESC	
+DO_LINE
+SHADER	teapots	NOTE	This RIB uses superplank, shiny, and glass shaders.
+DESC	
+DO_LINE
+SHADER	texbox1	NOTE	This RIB uses windowlight, brick, brickbump, castucco shaders.<P>
+DESC	
+DO_LINE
+SHADER	tpdisp	NOTE	This RIB uses the superplank shader.  This RIB shows bump-maping verses true displacement.
+DESC	
+DO_LINE
+SHADER	wallpaper_2stripe	NOTE  This shader is also used in dresser.rib.
+DESC	
+DO_LINE
+SHADER	windowlight	NOTE	This shader is used in texbox1.rib	
+DESC	
+DO_LINE
+SHADER	wood2	NOTE	<B>Note:</B> This shader requires <a href="patterns.h">patterns.h</a> to compile.  It is used in dresser.rib and limbo.rib.
+DESC	
+DO_LINE

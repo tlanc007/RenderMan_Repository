@@ -1,0 +1,86 @@
+version BMRT 2.4.0beta
+surface MKgooch
+param	float	Ka		0
+param	float	Kd		1
+param	float	Ks		0
+param	float	alpha		0.25
+param	float	beta		0.5
+param	float	b		0.55
+param	float	y		0.3
+param	float	roughness		0.1
+param	color	specularcolor		1 1 1
+local	normal	Nf	0 0 0
+local	color	blue	0 0 0
+local	color	yellow	0 0 0
+local	color	Cgooch	0 0 0
+local	float	ldotn	0
+local	float	blendval	0
+local	color	kcool	0 0 0
+local	color	kwarm	0 0 0
+initcode 8
+	return
+code
+	return_area
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushf	b 
+	pushif	0 
+	pushif	0 
+	popc	blue 
+	pushif	0 
+	pushf	y 
+	pushf	y 
+	popc	yellow 
+	pushiv	0 0 0 
+	popc	Cgooch 
+	mulCF	Cs alpha 
+	addC	blue 
+	popc	kcool 
+	mulCF	Cs beta 
+	addC	yellow 
+	popc	kwarm 
+	pushif	3.14159 
+	pushv	Nf 
+	pushv	P 
+	illuminance_start
+label 0
+	illuminance3	1
+	pushv	Nf 
+	pushv	L 
+	normalize
+	vdot
+	popf	ldotn 
+	pushf	ldotn 
+	pushif	1 
+	addff
+	pushif	0.5 
+	mulff
+	popf	blendval 
+	pushf	blendval 
+	pushc	kwarm 
+	pushc	kcool 
+	cmix
+	addC	Cgooch 
+	popc	Cgooch 
+	jump	0
+label 1
+	cpCC	Os Oi 
+	pushf	roughness 
+	pushv	I 
+	normalize
+	negv
+	pushv	Nf 
+	specular
+	mulCF	specularcolor Ks 
+	mulcc
+	mulFC	Kd Cgooch 
+	ambient
+	mulFc	Ka 
+	addcc
+	addcc
+	mulC	Os 
+	popc	Ci 
+	return

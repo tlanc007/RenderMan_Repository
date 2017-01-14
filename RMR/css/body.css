@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* Header */
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 13px;
+
+}
+
+a {
+
+ text-decoration: none;
+ color:#0033CC;
+
+}
+
+a:hover, a:active {
+  text-decoration:underline;
+  color:#CC0000;
+}
+
+p {
+
+color:#333333 ;
+
+}
+
+#news.p {
+
+ color: red;
+
+}
+
+h1 {
+	font-size: 15pt;
+	font-style:oblique;
+}
+
+h2 {
+	font-size: 15pt;
+}
+
+h3 {
+	font-size: 13pt;
+}
+
+h4 {
+	font-size: 12pt;
+}

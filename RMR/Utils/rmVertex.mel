@@ -1,0 +1,27 @@
+// Scripts to add vertex attributes to maya for export to RMan.
+// Tal Lancaster  01/19/02
+//
+// Usage: addConnVertexAttr ("particleShape1", "rmanFidPP", "doubleArray", "particleId");
+  
+// Function from Pixar mtorMapNurbsColor.mel example
+//
+global proc string addVertexAttr (string $attr, string $obj, string $attrType)
+// description:
+//  create a dynamic attribute on the object given by $obj.
+//  the attribute will be of type $attrtype (typically "doubleArray")
+//  the attribute will be named: $attr (typically something like "rmanFtest")
+{
+    string $attrs[] = `listAttr -st $attr $obj`;
+    if ($attrs[0] == "")
+    {
+	// doesn't exist, so create attribute
+	addAttr -ln $attr -dt $attrType $obj;
+    }
+    return ($obj + "." + $attr);
+}
+
+global proc addConnVertexAttr (string $obj, string $nattr, string $attrType, string $cattr)
+{
+	string $attr = addVertexAttr ($nattr, $obj, $attrType);
+	connectAttr -f ($obj + "." + $cattr) $attr;
+}

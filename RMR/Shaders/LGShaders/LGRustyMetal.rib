@@ -1,0 +1,65 @@
+Display "LGRustyMetal.tiff" "file" "rgb"
+
+##RenderMan RIB-Structure 1.0
+##System NeXT Release 3
+FrameBegin 0
+#
+Format 380 380 1.000000
+ScreenWindow -1 1 -1 1
+Projection "perspective" "fov" [ 40 ]
+Transform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 10 1 ]
+ShadingRate 1
+PixelSamples 2 2
+WorldBegin
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+Declare "from" "point"
+Declare "to" "point"
+LightSource "distantlight" 45 "intensity" [ .9 ] "lightcolor" [ 1 1 1 ] "from" [ 0 5 -5 ] "to" [ 0 0 0 ]
+TransformEnd
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+LightSource "ambientlight" 44 "intensity" [ .2 ] "lightcolor" [ 1 1 1 ]
+TransformEnd
+AttributeBegin
+Attribute "identifier" "name" [ "World" ]
+TransformBegin
+AttributeBegin
+Attribute "identifier" "name" [ "Cube_1" ]
+Attribute "identifier" "shadinggroup" [ "Cube_1" ]
+Color [ .932325 .932325 .932325 ]
+Declare "metalKa" "float"
+Declare "metalKs" "float"
+Declare "metalroughness" "float"
+Declare "rustKa" "float"
+Declare "rustKd" "float"
+Declare "rustcolor" "color"
+Declare "txtscale" "float"
+Declare "rusty" "float"
+Declare "rustbump" "float"
+Surface "LGRustyMetal" "metalKa" [ 1 ] "metalKs" [ 1 ] "metalroughness" [ .1 ] "rustKa" [ 1 ] "rustKd" [ 1 ] "rustcolor" [ .435301 .082354 0 ] "txtscale" [ 1 ] "rusty" [ .6 ] "rustbump" [ .035 ]
+ShadingInterpolation "constant"
+GeometricRepresentation "lines"
+TransformBegin
+ConcatTransform [ 3.204556 .63812 -.889384 0
+ -.09859 2.908489 1.731576 0 1.090175 -1.612724 2.770929 0 .002219 .113806 -1.359287 1 ]
+SolidBegin "primitive"
+PointsPolygons [ 4 4 4 4 4 4  ] [ 5
+ 4 6 7 4 0 2 6 1 5 7 3 4 5 1 0 2 3 7 6 0 1 3 2  ] "P" [ -.5 .5 .5 .5 .5 .5 -.5 -.5 .5 .5 -.5 .5
+ -.5 .5 -.5 .5 .5 -.5 -.5 -.5 -.5 .5 -.5 -.5 ]
+SolidEnd
+TransformEnd
+AttributeEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd

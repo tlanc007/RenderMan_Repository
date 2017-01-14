@@ -1,0 +1,767 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE>errataRev1</TITLE>
+<LINK HREF="../rcTop.htmld/index.html" REL="Parent" TITLE="rcTop">
+<LINK HREF="../rcCh5.htmld/index.html" REL="Sibling" TITLE="rcCh5">
+<LINK HREF="../rcCh11.htmld/index.html" REL="Sibling" TITLE="rcCh11">
+<LINK HREF="../rcCh7.htmld/index.html" REL="Sibling" TITLE="rcCh7">
+<LINK HREF="../rcCh8.htmld/index.html" REL="Sibling" TITLE="rcCh8">
+<LINK HREF="../misc.htmld/index.html" REL="Sibling" TITLE="misc">
+<LINK HREF="../rcCh16.htmld/index.html" REL="Sibling" TITLE="rcCh16">
+<LINK HREF="../rcCh4.htmld/index.html" REL="Sibling" TITLE="rcCh4">
+<LINK HREF="../rcCh2.htmld/index.html" REL="Sibling" TITLE="rcCh2">
+<LINK HREF="../rcCh10.htmld/index.html" REL="Sibling" TITLE="rcCh10">
+<LINK HREF="../rcCh6.htmld/index.html" REL="Sibling" TITLE="rcCh6">
+<LINK HREF="../rcCh3.htmld/index.html" REL="Sibling" TITLE="rcCh3">
+<LINK HREF="../rcCh13.htmld/index.html" REL="Sibling" TITLE="rcCh13">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Publications/index.html">Pubs</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+<td><a CLASS="none" href="/twiki/bin/view/RenderManRepository/WebHome">Twiki</a></td> </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+Copyrighted Pixar 1989<P>
+<P>
+Mark Henne<P>
+RenderMan Team<P>
+Pixar<P>
+9/13/89<P>
+<P>
+Errata Sheet version 1<P>
+&quot;<I>The RenderMan Companion</I>&quot; 1st Edition<P>
+by Steve Upstill<P>
+<P>
+(Converted to HTML by Tal Lancaster tal AT renderman DOT org)<P>
+<P>
+<UL>
+<LI><A HREF="index.html#introduction">Introduction</A>
+<LI><A
+HREF="index.html#ch2">Chapter2</A>
+<LI><A HREF="index.html#ch4">Chapter 4</A>
+<LI><A HREF="index.html#ch5">Chapter 5</A>
+<LI><A HREF="errataRev1.html#ch6">Chapter 6</A>
+<LI><A HREF="index.html#ch7">Chapter 7</A>
+<LI><A HREF="index.html#ch8">Chapter 8</A>
+<LI><A HREF="index.html#ch10">Chapter 10</A>
+<LI><A HREF="index.html#ch11">Chapter 11</A>
+<LI><A
+HREF="index.html#ch12">Chapter 12</A>
+<LI><A
+HREF="index.html#ch13">Chapter 13</A>
+<LI><A
+HREF="index.html#ch14">Chapter 14</A>
+<LI><A
+HREF="index.html#ch15">Chapter 15</A>
+<LI><A
+HREF="index.html#ch16">Chapter 16</A>
+<LI><A
+HREF="index.html#appD">Appendix D</A>
+<P>
+</UL><P>
+<P>
+<A NAME="introduction"></A><H2>INTRODUCTION:</H2><P>
+<P>
+    The corrections presented in this document point out mistakes in the book, such as syntax errors.  These mistakes make the code listings incorrect as they appear in <I>The RenderMan Companion</I>.  Extra code required to make the examples run, such as camera setup for the geometry chapters, is not discussed here.<P>
+<P>
+<P>
+<H2>CORRECTIONS:</H2><P>
+<P>
+  <A NAME="ch2"></A><H3>Chapter 2</H3><P>
+   <A NAME="ex2_3"></A><H3>p. 25 - Listing 2.3</H3><P>
+ 	There are two problems with the initialization of the array Cube[6][4].  First, commas are missing between the second and third points and also between the third and fourth points in the bottom face definition.  Second, the polygons' normals all face towards the center of the cube.  This is a somewhat subtle error, but an error nonetheless.  Note that the second and fourth columns of data are switched.  The cube's definition should be as follows:<P>
+<P>
+<pre><P>
+	static RtPoint Cube[6][4] = {<P>
+		    { {L,D,F}, {L,D,N}, {R,D,N}, {R,D,F} },  /* Bottom face */<P>
+		    { {L,D,F}, {L,U,F}, {L,U,N}, {L,D,N} },  /* Left face   */<P>
+		    { {R,U,N}, {L,U,N}, {L,U,F}, {R,U,F} },  /* Top  face   */<P>
+		    { {R,U,N}, {R,U,F}, {R,D,F}, {R,D,N} },  /* Right face  */<P>
+		    { {R,D,F}, {R,U,F}, {L,U,F}, {L,D,F} },  /* Far face    */<P>
+		    { {L,U,N}, {R,U,N}, {R,D,N}, {L,D,N} }   /* Near face   */<P>
+		};<P>
+</pre><P>
+	<P>
+<P>
+<A NAME="ex2_8"></A><H3>p. 34 - Listing 2.8</H3><P>
+	The picture files produced by the animation sequence have names which are too long for MS-DOS filenames.  These should be changed to &quot;anim#.pic&quot; where # is a number from 1 to 10. Do this by changing the call to sprintf() to read:<P>
+<P>
+<pre><P>
+	sprintf( filename, &quot;anim%d.pic&quot;, frame);<P>
+</pre><P>
+<P>
+<A NAME="ch4"></A><H3>Chapter 4</H3><P>
+<H3>p. 62</H3> - &quot;parameters to RiSphere() are illustrated at left&quot; should read <P>
+<P>
+<pre><P>
+	    &quot;... illustrated at right&quot;.<P>
+</pre><P>
+<P>
+<H3>p. 64</H3> - &quot;... points in the x,z plane of three-dimensional gspace, then calls RiHyperboloid() ...&quot; should read <P>
+<P>
+<pre><P>
+	    &quot;... three-dimensional space, ...&quot;.<P>
+</pre><P>
+<P>
+<A NAME="ex4_3"></A><H3>p. 67 - Listing 4.3</H3><P>
+The call to RiSphere() in the middle of TorusWave() has an incorrect argument list.  As the comment indicates, a downward-opening hemisphere is desired, but downward-opening from the perspective of the viewer, not the object coordinate space.  Because of the 90 degree rotation about the X axis, an upward-opening is needed for the hemisphere's creation.  The comment and code should read as follows:<P>
+<P>
+<pre><P>
+	/* Create the cap for the center of the wave */<P>
+	RiSphere( innerrad, -innerrad, 0.0, thetamax, RI_NULL);<P>
+</pre><P>
+<P>
+<A NAME="ch5"></A><H3>Chapter 5</H3><P>
+ <A NAME="ex5_2"></A><H3>p. 76 - Listing 5.2</H3><P>
+The #include reference to surfor.h should not be there. Note that the other #include file pin.hyper.h is not presented.<P>
+<P>
+	The /* comment */ in PolySurfOR() refers to &quot;the goblet description&quot;.  This should read &quot;the surface profile&quot;.<P>
+<P>
+	PolyBoid() is supposed to be provided as a triangular polygon approximation to hyperboloids, with the addition of suitable surface normals.  It is meant as an improvement to the PolyBoid() function in Listing 5.1.  What is provided instead is a function called PolyBand(), which is semantically identical to the PolyBoid() function presented in Listing 5.3.  This function illustrates the RiPointsPolygons() interface call.  Replace PolyBand() with the PolyBoid() function shown below:<P>
+<P>
+<pre><P>
+/* ================================================================ */<P>
+<P>
+#define SWAP(a,b,temp) temp = a; a = b; b = temp; <P>
+#define COPY_POINT(d, s)           {d[0]=s[0]; d[1]=s[1]; d[2]=s[2];} <P>
+<P>
+PolyBoid(point0, point1, normal0, normal1, ndivs, parity) <P>
+RtFloat *point0, *point1, *normal0, *normal1; int ndivs, parity; <P>
+{ <P>
+	RtPoint 	vertexpair0[2], vertexpair1[2], <P>
+			*ptrnextvertex = vertexpair0, <P>
+			*ptrlastvertex = vertexpair1, <P>
+			*temp, <P>
+			vertextriangle[3]; <P>
+	RtPoint 	normalpair0[2], normalpair1[2], <P>
+			*ptrnextnormal = normalpair0, <P>
+			*ptrlastnormal = normalpair1, <P>
+			normaltriangle[3]; <P>
+	int i; <P>
+<P>
+	getnextpair(0+parity/2.0, ptrnextvertex, point0, point1, ndivs); <P>
+	getnextpair(0+parity/2.0, ptrnextnormal, normal0, normal1, ndivs); <P>
+	for (i = 1; i &lt;= ndivs; i++) { <P>
+		SWAP(ptrlastvertex, ptrnextvertex, temp) <P>
+		SWAP(ptrlastnormal, ptrnextnormal, temp) <P>
+		getnextpair(i+parity/2.0, ptrnextvertex, <P>
+			point0, point1, ndivs); <P>
+		getnextpair(i+parity/2.0, ptrnextnormal, <P>
+			normal0, normal1, ndivs); <P>
+		COPY_POINT(vertextriangle[0], ptrlastvertex[0]); <P>
+		COPY_POINT(vertextriangle[1], ptrlastvertex[1]); <P>
+		COPY_POINT(vertextriangle[2], ptrnextvertex[1]); <P>
+		COPY_POINT(normaltriangle[0], ptrlastnormal[0]); <P>
+		COPY_POINT(normaltriangle[1], ptrlastnormal[1]); <P>
+		COPY_POINT(normaltriangle[2], ptrnextnormal[1]); <P>
+		RiPolygon(3, RI_P, (RtPointer) vertextriangle, RI_N, <P>
+			(RtPointer) normaltriangle, RI_NULL); <P>
+		COPY_POINT(vertextriangle[0], ptrnextvertex[0]); <P>
+		COPY_POINT(vertextriangle[1], ptrnextvertex[1]); <P>
+		COPY_POINT(vertextriangle[2], ptrlastvertex[0]); <P>
+		COPY_POINT(normaltriangle[0], ptrnextnormal[0]); <P>
+		COPY_POINT(normaltriangle[1], ptrnextnormal[1]); <P>
+		COPY_POINT(normaltriangle[2], ptrlastnormal[0]); <P>
+		RiPolygon(3, RI_P, (RtPointer) vertextriangle, RI_N, <P>
+			(RtPointer) normaltriangle, RI_NULL); <P>
+	} <P>
+} <P>
+<P>
+/* ================================================================ */<P>
+</pre><P>
+<P>
+<A NAME="ch6"></A><H3>Chapter 6</H3><P>
+ <A NAME="ex6_2"></A><H3>p. 94 - Listing 6.2</H3><P>
+The call to RiBasis() is missing a comma after the first RI_CATMULLROMSTEP argument.  It should read:<P>
+<P>
+<pre><P>
+	RiBasis( RiCatmullRomBasis, RI_CATMULLROMSTEP,<P>
+	RiCatmullRomBasis, RI_CATMULLROMSTEP);<P>
+</pre><P>
+<P>
+<A NAME="ex6_3"></A><H3>p. 101 - Listing 6.3</H3><P>
+	There is a problem in consistency between this listing and the other surface of revolution listings; this listing revolves about the y-axis, everything else revolves about the z-axis.  To make this example also revolve about the z-axis, change the assignments of the mesh[][][] to read as follows:<P>
+	<P>
+<pre>     <P>
+		 mesh[v][u][0] = points[v].x * coeff[u][0]; <P>
+		 mesh[v][u][1] = points[v].x * coeff[u][1]; <P>
+		 mesh[v][u][2] = points[v].y;<P>
+</pre><P>
+<P>
+	The comments refering to &quot;XY plane&quot; and &quot;Y axis&quot; should also be changed to &quot;XZ plane&quot; and &quot;Z axis&quot;, respectively.<P>
+<P>
+	All references to wrap and nowrap surfaces should be changed<P>
+to periodic and nonperiodic.  The text in this section of the<P>
+book should be updated to reflect this fact: the term RI_NOWRAP<P>
+should be changed to RI_NONPERIODIC, and RI_WRAP should be<P>
+changed to RI_PERIODIC.<P>
+<P>
+<A NAME="ex6_4"></A><H3>p. 102 - Listing 6.4</H3><P>
+	All references to wrap and nowrap surfaces should be changed to periodic and nonperiodic.  The text in this section of the book should be updated to reflect this fact: the term RI_NOWRAP should be changed to RI_NONPERIODIC, and RI_WRAP should be changed to RI_PERIODIC.<P>
+	    <P>
+<A NAME="ch7"></A><H3>Chapter 7</H3><P>
+<A NAME="ex7_2"></A><H3>p. 128 - Listing 7.2</H3><P>
+	#include &lt;math.h&gt; should be at the top of this listing to support the calls to sqrt().<P>
+<P>
+<A NAME="ex7_4"></A><H3>p. 135 - Listing 7.4</H3><P>
+	The parameter list to PlacePins() should be changed so that the first parameter reads &quot;xseparation&quot;, rather than &quot;separation&quot;.  Of course the following RtFloat declaration should also be updated.<P>
+    <P>
+<A NAME="ch8"></A><H3>Chapter 8</H3><P>
+<A NAME="ex8_4"></A><H3>p. 154 - Listing 8.4</H3><P>
+	The function min() does not exist in the math library, but can be #defined with:<P>
+<P>
+<pre><P>
+	#define min(a,b) ((a)&lt;(b)?(a):(b))<P>
+</pre><P>
+<P>
+	The fov parameter in RiProjection() should be in degrees, not radians.  This can be done with the following change:<P>
+<P>
+<pre><P>
+	fov = 2 * atan((min(framewidth,frameheight)*.5)/focallength);<P>
+<P>
+	should read<P>
+<P>
+	fov = 2 * atan((min(framewidth,frameheight)*.5)/focallength) *180.0/3.14159;<P>
+</pre><P>
+<P>
+<A NAME="ex8_5"></A><H3>p. 168 - Listing 8.5</H3><P>
+	The call to RiProjection() should not be done; it is being done in the call to FrameCamera().<P>
+<P>
+Casting PICXRES and PICYRES to RtInt in the #define section causes parameter passing problems when calling FrameCamera().  To fix this, change the call to FrameCamera() to read:<P>
+<P>
+<pre><P>
+	FrameCamera((float)PICXRES*CAMZOOM, (float)PICXRES,<P>
+	 (float)PICYRES);<P>
+</pre><P>
+<A NAME="ch10"></A><H3>Chapter 10</H3><P>
+<A NAME="ex10_3"></A><H3>p. 205 - Listing 10.3</H3><P>
+	In addition to &lt;ri.h&gt;, &lt;math.h&gt; and &lt;stdio.h&gt; should be #included.<P>
+<P>
+	There is no presentation of RiProcedural() in this example.  The following code should be inserted between the typedef of FractalTriangle and the #definition of MOVEPT.<P>
+<P>
+<pre><P>
+/* ================================================================ */<P>
+<P>
+Go() <P>
+{<P>
+    int childnum;<P>
+    FractalTriangle mytriangle;<P>
+    FractalPoint *pVertex;<P>
+    RtBound bound;<P>
+<P>
+    pVertex = &amp;(mytriangle.vertices[0]);<P>
+    pVertex-&gt;location[0] = -1;<P>
+    pVertex-&gt;location[1] = -0.5;<P>
+    pVertex-&gt;location[2] = 0;<P>
+    (pVertex++)-&gt;seed = random();<P>
+    pVertex-&gt;location[0] = 1;<P>
+    pVertex-&gt;location[1] = -0.5;<P>
+    pVertex-&gt;location[2] = 0;<P>
+    (pVertex++)-&gt;seed = random();<P>
+    pVertex-&gt;location[0] = 0;<P>
+    pVertex-&gt;location[1] = 0.5;<P>
+    pVertex-&gt;location[2] = 1;<P>
+    (pVertex++)-&gt;seed = random();<P>
+    mytriangle.level = 0;<P>
+    mytriangle.children = (FractalTriangle *) NULL;<P>
+    TriangleBound( &amp;mytriangle, bound );<P>
+    RiProcedural( &amp;mytriangle, bound, FractalDiv, FractalFree ); <P>
+}<P>
+<P>
+/* ================================================================ */<P>
+</pre><P>
+<P>
+The call to RiProcedural() in TriangleSplit() is missing a semicolon (;) at the end of the line.  Also, &quot;data&quot; should be of type &quot;RtPointer&quot;, not &quot;char *&quot;.  Actually, this doesn't matter much, because TriangleSplit() needs to be fixed, as noted below.<P>
+<P>
+FractalDiv() does not correctly split a triangle and render its children; FractalDiv() and TriangleSplit() should be modified to read as follows:<P>
+<P>
+<pre><P>
+/* ================================================================ */<P>
+<P>
+#define MAXLEVELS 5<P>
+/*<P>
+ * FractalDiv(): RenderMan refinement procedure for subdividing a fractal<P>
+ *	triangle.<P>
+ */<P>
+FractalDiv( data, levelofdetail )<P>
+RtPointer data;			<P>
+RtFloat levelofdetail;<P>
+{<P>
+    FractalTriangle *pTriangle = (FractalTriangle *)data, *pChild;<P>
+    RtPoint vertices[3];<P>
+    RtBound bound;<P>
+    int nchildren;<P>
+<P>
+    if (levelofdetail&lt;1.0 &#166;&#166; pTriangle-&gt;level&gt;MAXLEVELS ) { <P>
+    /* Small enough to be rendered */<P>
+	    MOVEPT(pTriangle-&gt;vertices[0].location, vertices[0]);<P>
+	    MOVEPT(pTriangle-&gt;vertices[1].location, vertices[1]);<P>
+	    MOVEPT(pTriangle-&gt;vertices[2].location, vertices[2]);<P>
+	    RiPolygon( 3, RI_P, vertices, RI_NULL );<P>
+    } else {				/* Too large; subdivide */<P>
+	    if(!pTriangle-&gt;children)<P>
+		TriangleSplit( pTriangle );<P>
+	    pChild = pTriangle-&gt;children;<P>
+	    nchildren = 4;<P>
+	    while( nchildren-- ) {<P>
+		/* TriangleBound() computes the bounding box for a triangle */<P>
+		TriangleBound( pChild, bound );<P>
+		RiProcedural( pChild++, bound, FractalDiv, FractalFree );<P>
+	    }<P>
+    }<P>
+}<P>
+<P>
+TriangleSplit( pFT )<P>
+FractalTriangle *pFT;<P>
+{<P>
+    int childnum;<P>
+    FractalTriangle *pChildren;<P>
+<P>
+    pFT-&gt;children = <P>
+	pChildren = (FractalTriangle *)malloc( 4*sizeof(FractalTriangle) );<P>
+    for(childnum = 0; childnum &lt; 4; childnum++) {<P>
+	pChildren[childnum].children = NULL;<P>
+	pChildren[childnum].level = pFT-&gt;level+1;<P>
+    }<P>
+    for( childnum = 0; childnum &lt; 3; childnum++ ) {<P>
+	pChildren[childnum].vertices[0] = pFT-&gt;vertices[childnum];<P>
+	EdgeSplit( &amp;(pFT-&gt;vertices[childnum]),<P>
+		   &amp;(pFT-&gt;vertices[(childnum+1)%3]),<P>
+		   &amp;(pChildren[childnum].vertices[1]));<P>
+    }<P>
+    for( childnum = 0; childnum &lt; 3; childnum++ ) {<P>
+	pChildren[3].vertices[childnum] = <P>
+	    pChildren[(childnum+1)%3].vertices[2] =<P>
+		pChildren[childnum].vertices[1];<P>
+    }<P>
+}<P>
+<P>
+/* ================================================================ */<P>
+</pre><P>
+<P>
+	A FractalFree() function is not provided in the RenderMan Companion.  Append the following code to Listing 10.3.<P>
+<P>
+<pre><P>
+/* ================================================================ */<P>
+<P>
+FractalFree( data )<P>
+RtPointer data;<P>
+{<P>
+    FractalTriangle *pTriangle = (FractalTriangle *)data;<P>
+    if(pTriangle-&gt;level == 0) <P>
+	FreeChildren( pTriangle-&gt;children );<P>
+}<P>
+<P>
+FreeChildren( pFTChildren )<P>
+FractalTriangle *pFTChildren;<P>
+{<P>
+    if( pFTChildren ) {<P>
+	FreeChildren( pFTChildren );   free( pFTChildren++ );<P>
+	FreeChildren( pFTChildren );   free( pFTChildren++ );<P>
+	FreeChildren( pFTChildren );   free( pFTChildren++ );<P>
+	FreeChildren( pFTChildren );   free( pFTChildren++ );<P>
+    }<P>
+}<P>
+<P>
+/* ================================================================ */<P>
+</pre><P>
+<P>
+<A NAME="ch11"></A><H3>Chapter 11</H3><P>
+<H3>p. 216</H3> - RiMatte() has a boolean flag which enables/disables (RI_TRUE/RI_FALSE) the matte attribute.<P>
+<P>
+<pre><P>
+	RiMatte(onoff)<P>
+	RtBoolean onoff;<P>
+</pre><P>
+<P>
+<H3>p. 222</H3> - &quot;It (Fconeangle) decays from 1 in the spotlight direction (to-from) to 0 coneangle radians away, and so is nonzero only inside a cone 2*coneangle degrees wide&quot;.  According to the RMIS, p. 25, coneangle is in radians, thus this passage should read &quot;... 2*coneangle radians wide&quot;.<P>
+<P>
+<A NAME="ex11_1"></A><H3>p. 228 - Listing 11.1</H3><P>
+	The order of the frames goes 3, 1, 2, 4.  It seems reasonable to change this to 1, 2, 3, 4.<P>
+<P>
+<A NAME="ch12"></A><H3>Chapter 12</H3><P>
+<A NAME="ex12_1"></A><H3>p. 253 - Listing 12.1</H3><P>
+	The order of the points in textcoords[] does not agree with corners[].  The line:<P>
+<P>
+<pre><P>
+	textcoords[] = {{0,0}, {0.5,0}, {0.5,0.5}, {0,0.5}};<P>
+<P>
+		should read:<P>
+<P>
+	textcoords[] = {{0,0}, {0.5,0}, {0,0.5}, {0.5,0.5}};<P>
+</pre><P>
+<P>
+<A NAME="ex12_2"></A><H3>p. 254 - Listing 12.2</H3><P>
+	In addition to &lt;ri.h&gt;, &lt;math.h&gt; should be #included because of the call to sqrt().<P>
+<P>
+	In MapSurfOR(), &quot;npts&quot; is an input parameter, but is later referred to as &quot;npoints&quot;; the same thing happens with &quot;pts&quot; and &quot;points&quot;.  The declaration should be changed to:<P>
+<P>
+<pre><P>
+	MapSurfOR(points, npoints)<P>
+	Point2D points;<P>
+	int npoints;<P>
+</pre><P>
+<P>
+	Also, MAXNPOINTS is not defined.  NPOINTS can be used instead.<P>
+<P>
+	In TextSurfOR(), &quot;tmap&quot; is used as an interface variable, but it is not declared.  The call to RiSurface() must be prefaced by the RiDeclare() call:<P>
+<P>
+<pre><P>
+		RtToken RI_TMAP;<P>
+		...<P>
+		RI_TMAP = RiDeclare(&quot;tmap&quot;, &quot;uniform string&quot;);<P>
+		RiSurface(&quot;mytexture&quot;, RT_TMAP, (RtPointer)&amp;tmap, RI_NULL);<P>
+</pre><P>
+<P>
+<A NAME="ex12_5"></A><H3>p. 270 - Listing 12.5</H3><P>
+	A new RiDisplay() call must be made inside frame 2, to change to rgba rendering rather than z rendering.  The new call to RiDisplay() in frame 2 should be:<P>
+<P>
+<pre><P>
+		RiFrameBegin(2);<P>
+		    RiDisplay(&quot;ri.pic&quot;, RI_FILE, RI_RGBA, RI_NULL);<P>
+</pre><P>
+<P>
+	&quot;shadowfile&quot; is not declared as an interface variable.  The following line should appear next to the char declaration at the top of the listing:<P>
+<P>
+<pre><P>
+		RtToken  RI_SHADOWFILE;<P>
+</pre><P>
+<P>
+	and the call to &quot;RiLightsource&quot; should have &quot;source&quot; capitalized and be preceded by RiDeclare():<P>
+<P>
+<pre><P>
+		RI_SHADOWFILE = RiDeclare(&quot;shadowfile&quot;, &quot;uniform string&quot;);<P>
+		RiLightSource(&quot;shadowspot&quot;, RI_SHADOWSPOT, <P>
+		    (RtPointer)&amp;shadowfile, RI_NULL);<P>
+</pre><P>
+<P>
+<A NAME="ch13"></A><H3>Chapter 13</H3><P>
+<A NAME="ex13_1"></A><H3>p. 282 - Listing 13.1</H3><P>
+<P>
+	An alternate &quot;clouds&quot; shader is presented than that in The RenderMan Companion.  The book's listing results in a dark image because the sum of the noise rarely exceeds 0.1.  Although lighting can be used here, a more effective looking shader ignores the lights and scales the sum somewhat.  The color computation used is:<P>
+<P>
+<pre><P>
+	1. Substitute line 9, the declaration of &quot;refl&quot;, with the declaration of white:<P>
+<P>
+		color white = color(1.0, 1.0, 1.0);<P>
+<P>
+	2. Delete line 17, the assignment of &quot;refl&quot;.<P>
+<P>
+	3. Replace line 18, the assignment of &quot;Ci&quot; with:<P>
+<P>
+	        Ci = mix(Cs, white, sum*4.0);<P>
+</pre><P>
+<P>
+	Notice that there is a numbering error in the book; 19 is applied to two lines in the listing.<P>
+<P>
+<A NAME="ch14"></A><H3>Chapter 14</H3><P>
+<H3>p. 298 - Table 14.4</H3><P>
+	Logical AND is presented as &quot;&amp;&quot;.  It should be &quot;&amp;&amp;&quot;, as presented on RMIS p. 94.<P>
+<P>
+<A NAME="ch15"></A><H3>Chapter 15</H3><P>
+<H3>p. 312 - Table 15.1</H3><P>
+The &quot;Returns&quot; colums for step() and smoothstep() is incorrect.  They should both say:<P>
+<P>
+<pre><P>
+	0 if val &lt; min; 1 if val =&gt; max<P>
+					    ^^^<P>
+</pre><P>
+<A NAME="ch16"></A><H3>Chapter 16</H3><P>
+<A NAME="ex16_2"></A><H3>p. 335 - Listing 16.2:</H3><P>
+	The normal, N, must be normalized in its use for light components.<P>
+<P>
+<pre><P>
+		point Nf = faceforward(N, I);<P>
+<P>
+	should read<P>
+<P>
+		point Nf = faceforward( normalize(N), I);<P>
+</pre><P>
+<P>
+<A NAME="ex16_3"></A><H3>p. 336 - Listing 16.3:</H3><P>
+	The normal must be normalized, as in Listing 16.2 above.  Also, the vector &quot;-I&quot; in the specular() call should be normalized. This is commonly done by adding the following line just after the declaration of Nf:<P>
+<P>
+<pre><P>
+		point V = normalize(-I);<P>
+<P>
+	Then use V in the specular() call instead of -I.<P>
+</pre><P>
+<P>
+<A NAME="ex16_4"></A><H3>p. 337 - Listing 16.4:</H3><P>
+	The normal (N) and incident (I) vectors must be normalized, as in Listing 16.3 above.<P>
+<P>
+<A NAME="ex16_6"></A><H3>p. 338 - Listing 16.6:</H3><P>
+To mimic the standard shader, the default position should be in camera space.  Also, the shader parameter list has a semicolon (;) instead of a comma (,).<P>
+<P>
+<pre><P>
+		point from   = point(0,0,0);  /* light position */<P>
+		      to     = point(0,0,1))<P>
+<P>
+	should read<P>
+<P>
+		point from   = point &quot;camera&quot; (0,0,0),  /* light position */<P>
+		      to     = point &quot;camera&quot; (0,0,1))<P>
+    </pre><P>
+<P>
+<A NAME="ex16_7"></A><H3>p. 339 - Listing 16.7:</H3><P>
+	To mimic the standard shader, the default position should be in camera space.  Also, the shader parameter list has an extra semicolon (;).<P>
+<P>
+<pre><P>
+		point from   = point(0,0,0));  /* light position */<P>
+<P>
+	should read<P>
+<P>
+		point from   = point &quot;camera&quot; (0,0,0))   /* light position */<P>
+</pre><P>
+<P>
+<A NAME="ex16_8"></A><H3>p. 340 - Listing 16.8:</H3><P>
+	To mimic the standard shader, the default position should be in camera space.<P>
+<P>
+<pre><P>
+		point from   = point(0,0,0),  /* light position */<P>
+		      to     = point(0,0,1);  /* light direction */<P>
+<P>
+	    should read<P>
+<P>
+		point from   = point &quot;camera&quot; (0,0,0),  /* light position */<P>
+		      to     = point &quot;camera&quot; (0,0,1);  /* light direction */<P>
+</pre><P>
+<P>
+The coneangle and conedeltaangle declarations have semicolons where there should be commas.<P>
+<P>
+<pre><P>
+		float coneangle		= radians(30);<P>
+		      conedeltaangle	= radians(5);<P>
+<P>
+should read<P>
+    <P>
+		float coneangle		= radians(30),<P>
+		      conedeltaangle	= radians(5),<P>
+</pre><P>
+<P>
+<A NAME="ex16_12"></A><H3>p. 345 - Listing 16.12:</H3><P>
+	The comment above the code says the shader is checker(), but it is declared as checks().  checker() seems more appropriate.  N should be normalized inside the faceforward call.<P>
+<P>
+<pre><P>
+		Kd*diffuse(faceforward(N,I)));<P>
+<P>
+	should read<P>
+<P>
+		Kd*diffuse(faceforward(normalize(N),I)));<P>
+</pre><P>
+<P>
+<A NAME="ex16_14"></A><H3>p. 349 - Listing 16.14:</H3><P>
+	The normal (N) and incident (I) vectors must be normalized, as in Listing 16.3 above.<P>
+<P>
+<A NAME="ex16_15"></A><H3>p. 351 - Listing 16.15:</H3><P>
+	This texture tends to alias near the quick jump from darkwood back to lightwood.  To fix this, change the 0.86 argument in the smoothstep() function should be changed to 1.0.  Also, the &quot;* (1 -&quot; stuff is not necessary.<P>
+<P>
+<pre><P>
+		r = smoothstep(0, 0.8, r) - smoothstep(0.83, 1.0, r);<P>
+</pre><P>
+<A NAME="ex16_17"></A><H3>p. 353 - Listing 16.17:</H3><P>
+	The normal (N) and incident (I) vectors must be normalized, as in Listing 16.3 above.<P>
+    <P>
+<A NAME="ex16_18"></A><H3>p. 354 - Listing 16.18:</H3><P>
+	The normal (N) and incident (I) vectors must be normalized, as in Listing 16.3 above.<P>
+    <P>
+<A NAME="ex16_19"></A><H3>p. 355 - Listing 16.19:</H3><P>
+	The normal (N) and incident (I) vectors must be normalized, as in Listing 16.3 above.<P>
+<P>
+<A NAME="ex16_20"></A><H3>p. 357 - Listing 16.20:</H3><P>
+	The normal, N, must be normalized in its use for light components.<P>
+<P>
+<pre><P>
+		point Nf = faceforward(N, I);<P>
+<P>
+	should read<P>
+<P>
+		point Nf = faceforward( normalize(N), I);<P>
+</pre><P>
+<P>
+<A NAME="ex16_22"></A><H3>p. 363 - Listing 16.22:</H3><P>
+	The &quot;I&quot; and &quot;N&quot; vectors must be normalized, as shown below:<P>
+<P>
+<pre><P>
+		point II = normalize(I);<P>
+		point NN = normalize(N);<P>
+<P>
+		diffuse = II.NN / (II.II * NN.NN);<P>
+</pre><P>
+<P>
+<A NAME="ex16_23"></A><H3>p. 365 - Listing 16.23:</H3> <P>
+	The last line in this shader, the assignment of N, should not be in the &quot;if&quot; block.<P>
+     <P>
+<pre><P>
+			P = center + radius*normalize(P-center); <P>
+			N = calculatenormal(P); <P>
+		    }    <P>
+		}    <P>
+</pre><P>
+<P>
+	should read<P>
+<P>
+<pre><P>
+			P = center + radius*normalize(P-center); <P>
+		    }    <P>
+		    N = calculatenormal(P); <P>
+		}    <P>
+</pre><P>
+<P>
+<A NAME="ex16_28"></A><H3>p. 373 - Listing 16.28:</H3><P>
+	&quot;spread&quot; should be a uniform float, not a uniform point.<P>
+<P>
+<A NAME="ex16_31"></A><H3>p. 376 - Listing 16.31:</H3><P>
+	There are some syntax errors in the parameter list. The semicolons after each of the float values (Ka, Kd, etc.) should be commas, as shown below:<P>
+<P>
+<pre><P>
+		float   Ka              = .5,<P>
+			Kd              = .5,<P>
+			Ks              = .8,<P>
+			roughness       = .1,<P>
+			spin            =  0;<P>
+</pre><P>
+<P>
+	In the assignment of Nf, N must be normalized.  It's also helpful to assign V = normalize(-I), for use in the specular call. <P>
+	    <P>
+	The formulas for the red crown should use &quot;u&quot; instead of &quot;v&quot;:<P>
+<P>
+<pre><P>
+		else {           /* between ring and top, create red crown */<P>
+			u = (u+.2)*6; u = u-floor(u);<P>
+			if (u &lt; .5)<P>
+				if (2*u - 0 &gt; (y-10.5)/(12.0-10.5))<P>
+					cs = REDCOLOR;<P>
+				else<P>
+					cs = NEUTRALCOLOR;<P>
+			else<P>
+				if (2*u - 1 + (y-10.5)/(12.0-10.5) &lt; 1)<P>
+					cs = REDCOLOR;<P>
+				else<P>
+					cs = NEUTRALCOLOR;<P>
+		}	<P>
+</pre><P>
+<P>
+	All the texture names should be consistent in using the extension &quot;txt&quot;, not &quot;tx&quot;.  Thus &quot;coated.tx&quot; should be &quot;coated.txt&quot;, &quot;circle.tx&quot; should be &quot;circle.txt&quot;, and &quot;b.tx&quot; should be &quot;b.txt&quot;.<P>
+<P>
+	The formulas for the dirt and gouge texture are wrong.  Replace<P>
+<pre><P>
+		strength = 1 - float texture(texturename, t+spin, y);<P>
+<P>
+	with the following:<P>
+<P>
+		strength = 1 - float texture(texturename, s+spin, y/15.0);<P>
+</pre><P>
+<P>
+	The specular() call at the end of the shader should use &quot;V&quot; instead of &quot;-I&quot; in its parameter list.<P>
+<P>
+<A NAME="ex16_32"></A><H3>p. 379 - Listing 16.32:</H3><P>
+	The formulas for accessing the texture are wrong.  Replace<P>
+<P>
+<pre><P>
+		P += (-Km * texture(texturename, t+spin, y))*normalize(N);<P>
+<P>
+	with the following:<P>
+<P>
+		P += (-Km * texture(texturename, s+spin, y/15.0))*normalize(N);<P>
+</pre><P>
+<P>
+<A NAME="ex16_33"></A><H3>p. 380 - Listing 16.33:</H3><P>
+	Semicolon (;) should be a comma (,) in the declaration of coneangle, ie:<P>
+<P>
+<pre><P>
+		float coneangle   = radians(30),<P>
+	</pre><P>
+			  <P>
+	Declaration of string shadowname should be string shadowfile, as should the call inside the shadow() function.  Also, shadow() returns 1.0 for 100% shadow, so its inverse is needed.  The lines should read: <P>
+<P>
+<pre><P>
+		string shadowfile = &quot;&quot;;)<P>
+		...<P>
+		attenuation *= (1.0 - shadow( shadowfile, Ps));<P>
+</pre><P>
+<P>
+<A NAME="ex16_36"></A><H3>p. 383 - Listing 16.36:</H3><P>
+	There is a syntax error in the declaration of Km at the top of the shader.  The comma at the end of the line should be a semicolon.<P>
+<P>
+<A NAME="ex16_37"></A><H3>p. 384 - Listing 16.37:</H3><P>
+	The normal (N) and incident (I) vectors must be normalized, as in Listing 16.3 above.<P>
+<P>
+<A NAME="ex16_38"></A><H3>p. 384 - Listing 16.38:</H3><P>
+	The normal must be normalized, as in Listing 16.2 above.<P>
+<P>
+<A NAME="appD"></A><H3>Appendix D</H3><P>
+<P>
+<H3>p. 412</H3> - RiMatte() has a boolean flag.<P>
+	<pre><P>
+	RiMatte(onoff)<P>
+	RtBoolean onoff;<P>
+</pre><P>
+<P>
+<HR>
+<P>
+<ADDRESS>Any comments or  suggestions?  Send them to:
+<a href="mailto:tal AT renderman DOT org">tal AT renderman DOT org</a><P></ADDRESS>
+<P>
+<P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="../rcTop.htmld/index.html">rcTop</A>]
+
+<DT>See Also (Siblings):</DT><DD>
+
+[<A HREF="../rcCh5.htmld/index.html">rcCh5</A>]
+
+[<A HREF="../rcCh11.htmld/index.html">rcCh11</A>]
+
+[<A HREF="../rcCh7.htmld/index.html">rcCh7</A>]
+
+[<A HREF="../rcCh8.htmld/index.html">rcCh8</A>]
+
+[<A HREF="../misc.htmld/index.html">misc</A>]
+
+[<A HREF="../rcCh16.htmld/index.html">rcCh16</A>]
+
+[<A HREF="../rcCh4.htmld/index.html">rcCh4</A>]
+
+[<A HREF="../rcCh2.htmld/index.html">rcCh2</A>]
+
+[<A HREF="../rcCh10.htmld/index.html">rcCh10</A>]
+
+[<A HREF="../rcCh6.htmld/index.html">rcCh6</A>]
+
+[<A HREF="../rcCh3.htmld/index.html">rcCh3</A>]
+
+[<A HREF="../rcCh13.htmld/index.html">rcCh13</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">errataRev1</A> was converted on Sat Feb 17 09:49:33 PST 1996 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+
+</BODY>
+</HTML>

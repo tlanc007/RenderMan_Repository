@@ -1,0 +1,7 @@
+MAILTO	 jbum AT jbum DOT com	NAME	Email Jim Bumgardner
+TITLE	JBUMShaders	H1	Jim Bumgardner Shaders
+DIR	JBUMShaders	PIC	100	100
+NEW
+SHADER	JBUMcraters	NOTE	Lunar-like surface shader (with displacements).  The shader uses cellnoise along with fBm to make craters.  This shader makes use of the following <a href="http://www.bmrt.org/arman/">Advanced RenderMan</a> include files: <a href="http://www.bmrt.org/arman/shaders/material.h">material.h</a>, <a href="http://www.bmrt.org/arman/shaders/noises.h">noises.h</a>, and <a href="http://www.bmrt.org/arman/shaders/patterns.h">patterns.h</a>.<p> Also, the RIB example make use of <a href="../LGShaders/index.html#LGStarfield">LGStarfield.sl</a>
+DESC	lunar-like surface
+DO_LINE

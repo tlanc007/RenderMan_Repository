@@ -1,0 +1,943 @@
+<HTML>
+<HEAD>
+<TITLE>CGRR FAQ</TITLE>
+</HEAD>
+<!-- Built with faq2html.pl Tal Lancaster -->
+<BODY bgcolor="#ffffff">
+<B>NOTE:This page has been HTMLified for the RMR.  It is based off of the CGRR FAQ, which is still maintained by <A HREF="mailto:lg AT larrygritz DOT com">Larry Gritz</A>.  As such this version may be out of date or contain typos and other formating problems.  If in doubt check in the <A HREF="http://www.seas.gwu.edu/student/gritz/cgr.renderman.faq">offical FAQ</A>, 
+Please do not bother Larry with problems that you find in this version of the document.  If there is a difference between them, let me know and I will try and fix it. --  <A HREF="mailto:tal AT renderman DOT org">Tal Lancaster</A>
+</B><PRE>
+<CENTER><H1>
+comp.graphics.rendering.renderman FAQ
+</H1></CENTER>
+<I>Archive-name:</I> graphics/renderman-faq
+<I>Posting-Frequency:</I> monthly
+<I>Last-modified:</I> 30 Nov 98
+
+
+This is the Frequently Asked Questions (FAQ) list for the
+<A HREF="news:comp.graphics.rendering.renderman">comp.graphics.rendering.renderman</A> newsgroup.  Please review this FAQ
+before posting questions to c.g.r.r.
+
+
+</PRE>
+<CENTER><H3>Contents: <BR>
+(<font color="red">this color</font> indicates changes since last time)</H3></CENTER>
+<OL type=I>
+<LI>Administrivia:
+<OL start=1>
+<LI><A HREF="#1">Q: What is the charter for comp.graphics.rendering.renderman?</A><LI><A HREF="#2">Q: What other newsgroups have closely related material?</A><LI><A HREF="#3">Q: Where is comp.graphics.rendering.renderman archived?</A></OL>
+<LI>General RI Questions:
+<OL start=4>
+<LI><A HREF="#4">Q: What is "RenderMan"?</A><LI><A HREF="#5">Q: Where can I find documentation on the RenderMan Interface?</A><LI><A HREF="#6">Q: What's the difference between the procedural interface and RIB?</A><LI><A HREF="#7">Q: What features are required in the RenderMan Interface?  What features     are optional?
+</A><LI><A HREF="#8">Q: What do I have to do in order to call my software "RenderMan compliant"?</A></OL>
+<LI>Implementations:
+<OL start=9>
+<LI><A HREF="#9">Q: What implementations of the RenderMan standard are available?</A><font color="red"><LI><A HREF="#10">Q: Is PRMan a ray tracer?  How can PRMan do reflections if it's not     a ray tracer?  Was a ray tracer used for reflections in Toy Story?     How about A Bug's Life?
+</A></font>
+<LI><A HREF="#11">Q: Is there a Macintosh/DOS/Windows port of BMRT?  In the works     Will the author of BMRT let me do the port to Mac/DOS/Windows?
+</A><font color="red"><LI><A HREF="#12">Q: How can I make objects cast semi-transparent shadows in BMRT?</A></font>
+     When I try, the shadows look fully opaque.
+
+</OL>
+<LI>Miscellaneous:
+<OL start=13>
+<font color="red"><LI><A HREF="#13">Q: What front ends (modelers, etc) support the RenderMan Interface?</A></font>
+<LI><A HREF="#14">Q: What other net resources exist which are related to RenderMan?</A><LI><A HREF="#15">Q: Where can I get the Pixar videos?</A><LI><A HREF="#16">Q: What is the correct capitalization of "Pixar"?</A>
+
+</OL>
+<PRE>
+
+Nomenclature:
+        RI = RenderMan Interface, often refers to the spec document.
+        RC = _The RenderMan Companion_ by Steve Upstill.
+        SL = Shading Language.
+        PRMan = Pixar's PhotoRealistic RenderMan product
+        BMRT = Blue Moon Rendering Tools
+
+
+</PRE>
+<BR>
+<HR>
+ 
+ 
+<A NAME="1"></A>
+<H4>Q: What is the charter for comp.graphics.rendering.renderman?</H4>
+<PRE>
+ 
+   comp.graphics.rendering.renderman is an unmoderated newsgroup 
+intended for the discussion of the RenderMan standard (e.g. 
+definition, semantics, usage, tips), the RenderMan shading language 
+(e.g. posted shaders, questions, tips), particular RenderMan 
+implementations, software that uses the RenderMan interface (e.g. 
+<B>RI</B>B-producing modelers, third party shaders), and comparisons, 
+comments and questions about RenderMan in general. 
+ 
+   This group is NOT intended for the distribution of images or <B>RI</B>B 
+files.  Large data or binary files should be uploaded to appropriate 
+FTP sites and announced on the newsgroup, but not posted directly. 
+ 
+ 
+ 
+<A NAME="2"></A>
+<H4>Q: What other newsgroups have closely related material?</H4>
+<PRE>
+ 
+    comp.graphics.animation             : computer animation 
+    comp.graphics.algorithms            : algorithms for graphics 
+    comp.graphics.rendering.raytracing  : the technique of ray tracing 
+    comp.graphics.visualization         : visualizing scientific data 
+    comp.sys.next.programmer            : programming NEXTSTEP 
+    alt.movies.visual-effects           : discussion of movie effects 
+    sci.image.processing                : technicalities of image processing 
+    alt.graphics.pixutils               : pixel and image utilities 
+ 
+The FAQ's for these groups (and most others) can be found at 
+<A HREF="ftp://rtfm.mit.edu/pub/usenet/news.answers">ftp://rtfm.mit.edu/pub/usenet/news.answers</A> and many of them have 
+HTML FAQ's at 
+<A HREF="http://www.cis.ohio-state.edu/hypertext/faq/usenet/FAQ-list.html">http://www.cis.ohio-state.edu/hypertext/faq/usenet/FAQ-list.html</A> 
+also Tal maintains an HTML FAQ at <A HREF="http://rmr.spinne.com/cgrrFAQ.html">http://rmr.spinne.com/cgrrFAQ.html</A> 
+ 
+ 
+ 
+<A NAME="3"></A>
+<H4>Q: Where is comp.graphics.renderman archived?</H4>
+<PRE>
+ 
+Try <A HREF="http://www.dejanews.com">www.dejanews.com</A>.
+ 
+ 
+ 
+ 
+ 
+<A NAME="4"></A>
+<H4>Q: What is "RenderMan"?</H4>
+<PRE>
+ 
+Here's the most brief explanation I could come up with: 
+ 
+    According to <B>RI</B> (p. 3): "The RenderMan Interface is a standard 
+interface between modeling programs and rendering programs capable of 
+producing photorealistic quality images." 
+ 
+    RenderMan is in many respects similar to PostScript, but for 3D 
+primitives.  The goal is to provide a standard mechanism for modeling 
+and animation software to send data to rendering systems in a device- 
+independent way, and with minimal regard to the actual rendering 
+algorithms being used.  A particular RenderMan implementation may use 
+scanline methods (z-buffer, REYES), ray tracing, radiosity, or other 
+methods. 
+ 
+    An important aspect of the RenderMan Interface is the Shading 
+Language (<B>SL</B>).  SL breaks the restrictive paradigm of surfaces being 
+described by a small number of parameters (Ka, Kd, Ks, etc.).  <B>SL</B> 
+allows the user to write her own arbitrarily complex descriptions of 
+how lighting and shading should be computed. 
+ 
+ 
+ 
+<A NAME="5"></A>
+<H4>Q: Where can I find documentation on the RenderMan Interface?</H4>
+<PRE>
+ 
+    The official RenderMan Interface 3.1 specification is surprisingly 
+readable for a standard document, but not in any way a tutorial.  A 
+must for any serious RenderMan user, it's available online at Pixar's 
+site!  See: 
+        <A HREF="http://www.pixar.com/products/renderman/toolkit/RISpec/">http://www.pixar.com/products/renderman/toolkit/RISpec/</A> 
+ 
+    _The RenderMan Companion: A Programmer's Guide to Realistic 
+Computer Graphics_, by Steve Upstill (Addison-Wesley, 1989, ISBN 
+0-201-50868-0) is an excellent introduction to the procedural API and 
+the Shading Language.  Unfortunately, it doesn't address <B>RI</B>B at all, 
+and the <B>SL</B> section is rather naive -- no antialiasing, relatively 
+simple shaders, etc.  The next step for the advanced user is  
+the Siggraph '98 course notes, described below. 
+ 
+    If you're interested in <B>SL</B>, or procedural shading in general, 
+check out _Textures and Modeling: A Procedural Approach_, by Ebert, 
+Musgrave, Peachey, Perlin, and Worley (Academic Press, 1994, ISBN 
+0-12-228760-6).  The source code (including RM shaders) can be found 
+at URL <A HREF="ftp://archive.cs.umbc.edu/pub/texture.">ftp://archive.cs.umbc.edu/pub/texture.</A>  The second edition 
+was released in 1998, and contains updates and new material. 
+ 
+    Moving to the more obscure, there are good course notes from 
+Siggraph '90 (course 18 - The RenderMan Interface & Shading Language), 
+Siggraph '92 (course 21 - Writing RenderMan Shaders), and Siggraph '95 
+(course 4 - Using RenderMan for Animation Production). 
+ 
+    Hot off the presses, Siggraph '98 Course #11 - Advanced RenderMan: 
+Beyond the Companion.  Organized by Tony Apodaca and Larry Gritz, it 
+features chapters by Apodaca, Gritz, Ronen Barzel (Pixar), Antoine 
+Durr (VIFX), Clint Hanson (Sony Pictures Imageworks), and Scott Johnston 
+(Fleeting Image Animation).  This is a must-have, and PDF version is 
+on the SIGGRAPH '98 Course Notes CD-ROM.  We will also try to put it 
+online sometime soon. 
+ 
+    Here are some other technical papers that discuss either the 
+RenderMan Interface or some of the technologies behind its 
+implementation(s): 
+ 
+    Cook, Carpenter, and Catmull. "The Reyes Image Rendering Architecture", 
+        Computer Graphics 21(4):95-102, 1987.  (Describes the rendering 
+        method that prman uses.) 
+ 
+    Gritz, Larry, and J.K. Hahn.  "<B>BMRT</B>: A Global Illumination 
+        Implementation of the RenderMan Standard", _Journal of Graphics 
+        Tools_, Vol. 1, No. 3, pp. 29-47, 1996. 
+ 
+    Hanrahan and Lawson. "A Language for Shading and Lighting Calculations", 
+        Computer Graphics 24(4):289-298, August 1990.  (Describes <B>SL</B>.) 
+ 
+    Reeves, Salesin, and Cook. "Rendering antialiased shadows with 
+        depth maps", Computer Graphics 21(4):283-291, July 1987. (Describes 
+        the methods that prman uses to compute shadows.) 
+ 
+    Slusallek, Pflaum, and Seidel. "Implementing RenderMan--Practice, 
+        Problems and Enhancements."  Proceedings of Eurographics '94. 
+        (Describes their implementation.) 
+ 
+ 
+ 
+ 
+ 
+<A NAME="6"></A>
+<H4>Q: What's the difference between the procedural interface and RIB?</H4>
+<PRE>
+ 
+   Two bindings exist for the RenderMan Interface.  The first is a  
+procedural API, i.e. a collection of library routines callable from 
+a C program.  Those functions all start with Ri, for example RiBegin(). 
+The procedural API is explained in great detail in _<B>RC</B>_ and in the RI 
+standard document. 
+ 
+   The second binding is called RenderMan Interface Bytestream (<B>RI</B>B). 
+<B>RI</B>B is an ASCII (or binary) metafile format.  In general, there is a 
+one-to-one correspondence between the API calls and their equivalent 
+<B>RI</B>B directives.  RIB is useful for archival and later rendering, 
+rendering over a network, and hacking scenes by hand.  <B>RI</B>B is 
+unfortunately not documented in _<B>RC</B>_, but is exhaustively detailed in 
+_<B>RI</B>_. 
+ 
+   The usual way that RenderMan is used is for a program (modeler) to 
+make the procedural API calls.  The program is linked to a library 
+which, for each API call, outputs the corresponding <B>RI</B>B to a file. 
+That archived <B>RI</B>B can later be sent to a standalone renderer which 
+inputs the <B>RI</B>B and outputs rendered images. 
+ 
+ 
+ 
+ 
+<A NAME="7"></A>
+<H4>Q: What features are required by the RI?  What is optional?</H4>
+<PRE>
+ 
+    The full list of requirements for a RenderMan-compliant renderer 
+is given in <B>RI</B> on pp. 5-7. 
+ 
+    Basically, a RenderMan-compliant renderer should minimally provide 
+the following features: 
+ 
+        Complete hierarchical graphics state 
+        Orthographic and perspective viewing transformations 
+        Hidden surface removal 
+        Pixel filtering and antialiasing 
+        Gamma correction and dithering before quantization 
+        Produce images containing any combination of RGB, A, and Z at a user 
+          specified resolution 
+        Support all of the geometric primitives of the standard (including 
+           quadrics, polygons, bilinear and bicubic patches, and NURBS) 
+        Provide the 14 standard light source, surface, volume, and 
+           displacement shaders 
+ 
+    This is actually quite a lot -- you'll find few rendering systems, 
+free or commercial, which provide as many features as even the minimal 
+RenderMan requirements. 
+ 
+    In addition, RenderMan-compliant renderers may support several 
+optional capabilities.  Many of these features are very advanced, and 
+some rendering algorithms simply cannot support certain features, so 
+the availability will tend to vary from implementation to 
+implementation.  The optional capabilities include: 
+ 
+        Solid Modeling (CSG)            Trim Curves for NURBS 
+        Multiple Levels of Detail       Motion Blur 
+        Depth of Field                  Area Light Sources 
+        Deformations                    Displacements 
+        Spectral Colors                 Texture Mapping 
+        Environment Mapping             Bump Mapping 
+        Shadow Depth Mapping            Volume Shading 
+        Ray Tracing                     Radiosity 
+        Programmable Shading (in Shading Language) 
+        Special Camera Projections 
+ 
+ 
+ 
+ 
+<A NAME="8"></A>
+<H4>Q: What do I have to do in order to call my software "RenderMan compliant"?</H4>
+<PRE>
+ 
+    You must support all of the required features, including all of 
+the geometric primitive types.  You must implement all of the API 
+calls or <B>RI</B>B requests, even for features you don't support (i.e. at 
+least have function stubs so your library accepts the calls).  You 
+must not allow information to be sent through any alternative calls 
+not defined by the interface, and you may not use any alternate 
+language for programmable shading. 
+ 
+    If you write a RenderMan compliant renderer, you must obtain a 
+no-charge license from Pixar (in writing).  You basically attest that 
+your software is compliant with the standard and that you won't abuse 
+Pixar's trademark and copyrights. 
+ 
+    Modeling programs which use the <B>RI</B> standard (i.e. output RIB or 
+make the API calls) may do so without a license, but must display 
+Pixar's copyrights as follows: 
+ 
+        The RenderMan (R) Interface Procedures and Protocol are: 
+                Copyright 1988, 1989, Pixar 
+                  All Rights Reserved 
+ 
+ 
+ 
+ 
+<A NAME="9"></A>
+<H4>Q: What implementations of the RenderMan standard are available?</H4>
+<PRE>
+ 
+   There are currently two widely used RenderMan-compliant renderers: 
+<B>PRMan</B> and BMRT.  Both are absolutely fully compliant with the RenderMan 
+spec, and have been used in various productions.  A couple less-used 
+ones have recently popped up, also.  Several other proprietary 
+implementations no doubt exist, but to the best of my knowledge they 
+are not available commercially or otherwise. 
+ 
+   Pixar's PhotoRealistic RenderMan ("<B>PRMan</B>", for short) is the most 
+widely used implementation.  These guys are, after all, the 
+originators of the standard, so their implementation is of very high 
+quality.  <B>PRMan</B> is used by many production houses, including ILM, 
+Digital Domain, Disney, and others.  It was used to render effects for 
+The Abyss, Terminator 2, Jurassic Park, Casper, Apollo 13, Contact, 
+Starship Troopers, and many other films.  And of course, it was used 
+to render Toy Story. 
+ 
+   <B>PRMan</B> is available on several UNIX systems as the RenderMan Toolkit 
+(retails for $5000 per processor).  Call Pixar for product information 
+(800-888-9856).  <B>PRMan</B> also is bundled with other products like 
+Vertigo, Macromedia Macromodel, and the now defunct Pixar Showplace. 
+The NEXTSTEP operating system comes with prman and qrman (Quick 
+RenderMan, Pixar's <B>RI</B>B previewer). 
+ 
+   Larry Gritz has a shareware implementation, called the Blue Moon 
+Rendering Tools (<B>BMRT</B>).  It supports ray tracing and radiosity, area 
+lights, full implementation of Shading Language, volume and imager 
+shaders, displacements, and other advanced features.  It also comes 
+with real-time <B>RI</B>B previewers (under X11 and/or OpenGL).  BMRT runs on 
+SGI, Linux, NEXTSTEP, Solaris, FreeBSD, and Windows 95/NT.  There are 
+no Mac or DOS versions.  Information about <B>BMRT</B> is available from 
+<A HREF="http://www.seas.gwu.edu/student/gritz/bmrt.html">http://www.seas.gwu.edu/student/gritz/bmrt.html</A> 
+ 
+   The University of Erlangen's Vision project is an object-oriented 
+RenderMan-compliant renderer.  Information may be found at: 
+<A HREF="http://www9.informatik.uni-erlangen.de/eng/research/rendering/vision">http://www9.informatik.uni-erlangen.de/eng/research/rendering/vision</A> 
+Also check out Philipp Slusallek's PhD about the Vision system, 
+available on the same site.  They're not terribly specific about 
+the distribution policy -- they seem able to distribute to "selected 
+institutions", but I don't believe they are widely distributing their 
+package. 
+ 
+    RenderDotC is a RenderMan-compliant scanline renderer available 
+from Dot C Software.  It runs under Windows 95/NT and SGI.  More 
+information from <A HREF="http://www.dotcsw.com/">http://www.dotcsw.com/</A> 
+ 
+    Photon is a <B>RI</B>B-reading renderer by Eidolon (Henning Hoffmann and 
+Stephen Keppel-Jones).  I hesitate to describe it as RenderMan- 
+compliant (as it has various holes), but it may well be one day soon. 
+It's still in the alpha stage, but looks promising.  I haven't tried 
+it, though.  More info is available from 
+<A HREF="http://www.eidolon-research.com/~eidolon/">http://www.eidolon-research.com/~eidolon/</A> 
+ 
+    Advanced Rendering Technology (ART) promises a "raytracer 
+on a chip" which is supposed to be compliant with the RenderMan 
+Interface.  Info is at: <A HREF="http://www.art.co.uk.">http://www.art.co.uk.</A> 
+ 
+ 
+ 
+ 
+<A NAME="10"></A>
+<H4>Q: Is PRMan a ray tracer?  How can PRMan do reflections if it's not a   ray tracer?  Was a ray tracer used for reflections in Toy Story?</H4>
+<PRE>
+ 
+   <B>PRMan</B> IS NOT A RAYTRACER.  It uses the Reyes algorithm (more or 
+less as described in the 1987 SIGGRAPH paper, though with many 
+enhancements and improvements).  Environment and reflection mapping do 
+quite reasonable approximations to reflection and refraction, in a 
+fraction of the time it usually takes a ray tracer.  Sometimes the 
+reflections don't look quite correct compared to a ray tracer, but 
+this is almost never a problem and almost always worth the time 
+savings. 
+ 
+   Pixar used the very same version of <B>PRMan</B> for Toy Story (and all 
+their other work) as they sell to the public.  You can see examples of 
+how well <B>PRMan</B> does reflections and refractions, not only in Toy 
+Story, but also in The Abyss and Terminator 2. 
+ 
+   However, ray tracing *was* used for 15 shots of "A Bug's Life." 
+(Look for the glass bottles!)  For these shots, <B>BMRT</B> and PRMan were 
+used together (with <B>BMRT</B> doing the ray tracing, PRMan doing everything 
+else).  The technique that was used to combine the renderers is 
+described in Larry Gritz's SIGGRAPH '98 course notes (Course #4). 
+It's also described in the <B>BMRT</B> documentation (release 2.4 and later). 
+ 
+ 
+ 
+ 
+<A NAME="11"></A>
+<H4>Q: Is there a Macintosh/DOS/Windows port of BMRT?  In the works?   Will the author of BMRT let me do the port to Mac/DOS/Windows?</H4>
+<PRE>
+ 
+   <B>BMRT</B> now has a port for Windows 95 and NT.  See the BMRT Web 
+site for more details.  Also, Pixar has announced that an NT port 
+of <B>PRMan</B> is forthcoming. 
+ 
+   But as far as other platforms go, the short answer is: No. 
+It is unlikely that the list of supported platforms will grow in the 
+near future.  It's extremely unlikely that <B>BMRT</B> will ever be ported to 
+the Mac or any other non-UNIX environment. 
+ 
+   <B>BMRT</B> is currently supported on SGI, Linux (on Intel), 
+Solaris (on SPA<B>RC</B>s), and FreeBSD, and Windows.  If you have a PC, I 
+strongly recommend looking into Linux, a free (!) UNIX implementation 
+that runs on Intel 486/Pentium systems. 
+ 
+   <B>BMRT</B>'s author doesn't wish to release source code, nor does he 
+currently want to port to non-UNIX OS's (on which he has neither the 
+access nor expertise, nor the desire to acquire either).  He's turned 
+down offers to port to Cray (among others), so it's not likely you'll 
+convince him to port to the Mac.  This is not a snub at users of the 
+Mac or any other platform, just a reality of the life of the author 
+and his finite time and resources. 
+ 
+   No, <B>BMRT</B>'s author is not willing/able to distribute BMRT source 
+for ports, even under nondisclosure. 
+ 
+ 
+ 
+ 
+<A NAME="12"></A>
+<H4>Q: How can I make objects cast semi-transparent shadows in BMRT?   When I try, the shadows look fully opaque.</H4>
+<PRE>
+ 
+If your object is semi-transparent and the shader sets Oi to something 
+less than 1 (i.e. it uses "compositing transparency"), then you just 
+need to add this to your <B>RI</B>B file (in the attribute scope of the 
+object in question): 
+ 
+        Attribute "render" "casts_shadows" ["shade"] 
+ 
+(See the <B>BMRT</B> documentation for other options for this command.) 
+ 
+BUT... if you have something computing true refraction (like the 
+glass.sl shader that comes with <B>BMRT</B>), then your shader looks  
+something like: 
+ 
+        ... 
+        color cr = Krefr * trace (P, refract (I, N, eta)); 
+        Oi = 1; 
+        Ci = Cs * (Ka*ambient() + Kd*diffuse(Nf)) + 
+             specularcolor * Ks*specular(P,Nf,V,roughness) + 
+             transmitcolor * cr ; 
+ 
+So that will still cast an opaque shadow because you are explicitly 
+setting Oi=1!  (Get it?) 
+ 
+The most straightforward way to deal with this (if you have <B>BMRT</B> 2.4 
+or later) is to use the new built-in isshadowray() function to make 
+your shader set Oi differently for shadow checks: 
+ 
+        if (isshadowray() == 1) { 
+            /* shadow -- fake Oi to be <1 */ 
+            Oi = color(1,1,1) - (Kr * transmitcolor); 
+        } else { 
+            /* viewing ray */ 
+            color cr = Krefr * trace (P, refract (I, N, eta)); 
+            Oi = 1; 
+            Ci = Cs * (Ka*ambient() + Kd*diffuse(Nf)) + 
+                 specularcolor * Ks*specular(P,Nf,V,roughness) + 
+                 transmitcolor * cr ; 
+        } 
+ 
+In combination with the "casts_shadows" ["shade"] attribute, this 
+should do the trick. 
+ 
+ 
+ 
+ 
+<A NAME="13"></A>
+<H4>Q: What front ends (modelers, etc) support the RenderMan Interface?</H4>
+<PRE>
+ 
+This information was supplied by many people, so it's hard to verify 
+its accuracy, and it certainly contains individuals' opinions.  Often, 
+this info comes from the companies supplying the products.  I do not 
+necessarily endorse any of the products listed, though if I find out 
+that any are particularly good or bad, I will note it.  The products 
+are listed in no particular order, though I've broken it into the 
+categories of: modelers, plugins or converters, and "other".  If you 
+know of other front ends or products which use RenderMan, please send 
+me a short paragraph and I will include it here. 
+ 
+Modelers & Animation Systems which can output <B>RI</B>B natively 
+---------------------------------------------------------- 
+ 
+   Side Effects' Houdini system (modeling & animation) has very 
+good RenderMan support (both <B>PRMan</B> and BMRT).  It also includes the 
+ability to create shaders *within* the program by a visual means and 
+export out the shader source for tweaking and compiling.  [ed. note - 
+I have heard great things about this package.]  Details at: 
+<A HREF="http://www.sidefx.com">www.sidefx.com</A>
+ 
+ 
+   Rhino is a Windows (NT or 95) based NURBS modeler which recently 
+added <B>RI</B>B support.  Their site has a free beta available for download: 
+<A HREF="http://www.rhino3d.com/">http://www.rhino3d.com/</A> 
+ 
+   Steve May at the Ohio State University has written an animation 
+language ("AL"), inspired by the Menv system that's used at Pixar.  It 
+has great <B>RI</B>B support and is programmable in some very interesting 
+ways.  It runs on Linux and UNIX platforms and provides a complete, 
+procedurally-oriented interface to <B>PRMan</B> and BMRT.  More info is 
+available from:  <A HREF="http://www.cgrg.ohio-state.edu/~smay/AL">http://www.cgrg.ohio-state.edu/~smay/AL</A> 
+ 
+   AC3D is a 3D modeler by Andy Colebourne.  It's polygon based, but 
+does extrusions, revolutions, etc.  It's quite nice, runs on Linux, 
+SGI, Sun, and now Windows, and demo versions are available as 
+shareware.  And it outputs <B>RI</B>B, among other formats.  More info, and 
+downloading the software, available at: 
+<A HREF="http://www.comp.lancs.ac.uk/computing/users/andy/ac3dlinux.html">http://www.comp.lancs.ac.uk/computing/users/andy/ac3dlinux.html</A> 
+ 
+    Vertigo's Animation Machine software (modeler & animation system) 
+has very nice support for RenderMan output, but it's only a polygon 
+based modeler.  You can generate <B>RI</B>B files or render directly. 
+Vertigo comes with the prman runtime library linked in for integrated 
+rendering, or you can buy Vertigo bundled with prman.  Their phone 
+number is 604-684-2113. 
+ 
+    Macromedia's MacroModel's was a spline-based modeler for Mac and 
+Win, with pretty good <B>RI</B>B export.  But it's now defunct.  So it goes. 
+ 
+    MicroStation is a general purpose CAD program which can be used as 
+a modeler.  It supports NURBS, CSG, fillets, and blends, and can 
+output <B>RI</B>B.  It's available for UNIX, DOS, and Windows.  I believe it 
+is actually written by Bentley Systems, but is marketed by Intergraph. 
+Cheap academic versions are available ($150?).  Bentley Systems can be 
+reached at: (610)458-5000 or academic AT bentley DOT com  (regarding the 
+academic package.) 
+ 
+    3DReality from Stone Design Corp. (505) 345-4800 info AT stone DOT com  
+Runs on NEXTSTEP.  A little long in the tooth and has some quirks, but 
+it's built of dynamically loadable bundles and offers a very accesible 
+API for adding your own shapes, tools, etc. Reads and writes <B>RI</B>BS just 
+fine. Really, really good academic discounts and very friendly tech 
+support. 
+ 
+   Hash Inc. sells a spline based animation package that is excellent 
+for character animation.  The .ribs are exported frame by frame.  It 
+is available for PC, PowerPC, and WinNT on SGI, MIPS and a few others. 
+It has particle effects, skinning, channels, spline deformation and 
+more.  <A HREF="http://www.hash.com/~hashinc/">http://www.hash.com/~hashinc/</A>  [ed. note: I've been told that 
+this package produces very bad <B>RI</B>B] 
+ 
+   Amapi 2.05 is mainly a modeller that is fairly good for creating 
+characters.  It uses NURBS, Splines and Polys.  Intuitive interface 
+unlike any. <A HREF="http://www.yonowat.com">http://www.yonowat.com</A> 
+ 
+   Alias PowerAnimator (also for SGI), versions 5 & 6, output rib, 
+NURBS including trim curves.  [ed. note: Alias's <B>RI</B>B output is 
+notoriously mediocre.] 
+ 
+   Intuitiv'3d from Intuitive Systems, Inc. tel: 415-852-0245 
+fax:415-852-1271, info AT intuisys DOT com DOT    Runs on NEXTSTEP.  Sports a 
+terrific interface but is rather slow.  Great realtime previews of 
+lighting and shape, so-so modeling tools, great shader manipulation, 
+including "MetaShaders" which store surface, color, displacement and 
+lighting shader info in a single entity.  Reads <B>RI</B>BS but saves to its 
+own proprietary format (.i3dw) 
+ 
+   solidThinking from Gestel Italia, Ph.:++39 444 964-974 
+Fax: ++39 444 964-984 Email: info AT solid DOT gestel DOT it , WWW: <A HREF="http://www.gestel.it">http://www.gestel.it</A> 
+   For NEXTSTEP, and now (in beta) available on Windows 95/NT, this 
+industrial-strength modeler from Italy approaches Alias in its power 
+and refinement. Great modeling tools including NURBS, control of every 
+RenderMan parameter, fast and smooth manipulation of objects and 
+lights. Reads and writes <B>RI</B>BS, support for both PRMan and BMRT, reads 
+Wavefront, TDDD and DXF files too. Support for things like particle 
+animation, 3D mice is planned.  Version 2.4 of solidThinking adds: 
+export/import from 3D Studio, VRML. 
+ 
+   Breeze Designer is a 32-bit 3D modelling and design tool for 
+Windows NT, Windows 95 and Win32s with exports for the Persistance of 
+Vision raytracer, RenderMan, and VRML.  Breeze Designer is still under 
+developement, and updated are posted regularly. The beta latest beta 
+version is available from the above location. All beta's are 
+distributed as copyright freeware. 
+<A HREF="ftp://ftp.povray.org/pub/povray/utilities/modellers/breeze/BreezeDesigner.html">ftp://ftp.povray.org/pub/povray/utilities/modellers/breeze/BreezeDesigner.html</A> 
+ 
+   The Valis Group's Pixel Putty Solo for the Mac ($349 retail, $299 
+direct?) offers an extremely versatile and fluid spline-based modeler 
+featuring nine different NURBS, lattice deformations and boolean 
+operations on patches, direct rendering to RenderMan using .slo 
+shaders, and event-based key frame animation with inverse kinematics. 
+More information can be had from Valis at: VALISGROUP AT aol DOT com  or 
+1-800-VALIS-04. 
+ 
+   Alias Sketch 2.0 for the Mac is a spline and polygon surface 
+modeler which supports NURBS but does not have shader support.  Price 
+is around $600. 
+ 
+   Autodesys form*Z is a CAD modeler on the Mac and Win95/NTwhich goes 
+for $1500.  Polygons, CSG, and spline meshes are supported.  No direct 
+shader support. 
+ 
+   VIDI's Presenter Professional for the Mac ($1500) is a 
+spline/patch-mesh based modeler with excellent RenderMan support; you 
+can manipulate shader parameters and everything.  More info at: 
+        <A HREF="http://erehwon.caltech.edu/vidi/vidi-homepage.html">http://erehwon.caltech.edu/vidi/vidi-homepage.html</A> 
+There's also a site at  
+        <A HREF="http://www.webnation.com/vidi/">http://www.webnation.com/vidi/</A> 
+which contains more info and some useful shaders. 
+ 
+   FastCad 3D by Evolution Computing; 437 South 48th Street, Suite 
+106; Tempe, AZ 85281; Phone: (602) 967-8633.  FastCad 3D is a 3-D 
+modeling system capable of producing a <B>RI</B>B file for rendering with a 
+program like Pixar's Renderman for Windows.  This DOS program can 
+produce 3D models quickly due to the fact that it is written in 
+Assembly language. 
+ 
+   DesignCad 3D for the Mac and Windows ($500) is a polygonal surface 
+modeler which outputs <B>RI</B>B.  Supports CSG.  No direct shader support. 
+More information from <A HREF="http://www.viagrafix.com">http://www.viagrafix.com</A> 
+ 
+   VisLab 3D Animation Software by Engineering Animation Inc.has a 
+full renderman interface.  Normal rendering is done entirely in 
+hardware, but everything can be automatically piped over to prman, or 
+written out as an .rib file. Both hardware and prman can also be 
+combined in the same scene. The interface is really great.  Contact: 
+Engineering Animation Inc., 2321 North Loop Drive, Ames, IA 50010, 
+515-296-9908 
+ 
+   Poser 2 is a human shape and pose modeler from Fractal Design which 
+supports animation, clothing, and exchanging body parts with various 
+3D objects.  It runs on Mac, PowerMac, and Windows.  It can export 
+RIB.  Details can be found at <A HREF="http://www.fractal.com/poser/">http://www.fractal.com/poser/</A> or by 
+calling (800)297-COOL. 
+ 
+   ThreeD, by Kieran Jones is a scene modeler that runs under NEXTSTEP 
+and supports RenderMan.  I haven't tried it, but it's available for 
+FTP from  
+<A HREF="ftp://next-ftp.peak.org/pub/next/apps/graphics/2D_3D/ThreeD.06.NIHS.b.tar.gz">ftp://next-ftp.peak.org/pub/next/apps/graphics/2D_3D/ThreeD.06.NIHS.b.tar.gz</A> 
+You can contact the author at kjones AT vcn DOT bc DOT ca DOT   
+ 
+   ShellyLib2.0, a shell-shape-generator which outputs <B>RI</B>B (among 
+other formats). is available from <A HREF="http://www.shelly.core.de/">http://www.shelly.core.de/</A> 
+ 
+   VTK, Bill Lorensen's OO scientific visualization toolkit, can now 
+output <B>RI</B>B.  It's not really a modeler, but if you're into SciVi, you 
+may think this is very cool.  See <A HREF="http://www.crd.ge.com/~lorensen/vtkrib">http://www.crd.ge.com/~lorensen/vtkrib</A> 
+ 
+   PhotoSynthesis 1.0 is a primitive modeler that has full support for 
+RenderMan on PowerMac platform. Rendering features include automatic 
+reflection and shadow generation, softbox reflections, and easily 
+set-up Depth of Field blur. Shaders are fully supported with unique 3D 
+cursor that replaces Up/At Vector. Exports <B>RI</B>B file format.  Full 
+featured NURBS, Boolean Operations and 3DMF File Import/Export will be 
+available in Spring of '97. Available directly from Silver Creek 
+Software.  For more information call 888/880-0551, e-mail  
+SilverCSW AT aol DOT com , or see their WWW site at 
+<A HREF="http://www.navicom.com/~silvercsw">http://www.navicom.com/~silvercsw</A> 
+ 
+   fracTG, an adaptive-mesh fractal terrain generator by Cristian 
+Adamo is a special purpose landscape and terrain generator that 
+produces beautiful landscapes.  It actually generates <B>RI</B>B, so the 
+resulting files can be rendered with <B>BMRT</B> (as all the examples in his 
+gallery are), or <B>PRMan</B>.  Check this one out: 
+<A HREF="http://www.datamarkets.com/fractg/">http://www.datamarkets.com/fractg/</A> 
+Hey, this link doesn't seem to work.  Anybody know any details? 
+ 
+Mops, from Randolph Schultz, is a free modeling environment which can 
+write <B>RI</B>B files.  It's available precompiled for SGI and Linux.  The 
+home page is: <A HREF="http://www.informatik.uni-rostock.de/~rschultz/mops.html">http://www.informatik.uni-rostock.de/~rschultz/mops.html</A> 
+ 
+"Shade" is a modeler/renderer that, among other things, claims to 
+be able to export its object models as <B>RI</B>B.  It runs under NT. 
+More details are available from: 
+<A HREF="http://www.ex-tools.co.jp/product/shade/shddeb_e.html">http://www.ex-tools.co.jp/product/shade/shddeb_e.html</A> 
+ 
+ 
+ 
+Converters & plug-ins for modelers 
+---------------------------------- 
+ 
+   Pixar's new MTOR product is a Maya plugin that produces excellent 
+RenderMan output, just as ATOR was for Alias.  Also includes 
+compositing software and a system for distributing rendering jobs 
+across a network.  Details available directly from Pixar. 
+ 
+   DriveMan from Gestel Italia converts IGES and Alias Wire files 
+to RenderMan, for use with either <B>PRMan</B> or BMRT.  There's both 
+a freeware version and a more complete commercial version. 
+More information from: <A HREF="http://www.gestel.it/driveman/index.html">http://www.gestel.it/driveman/index.html</A> 
+ 
+   SoRender is a freely distributed interactive graphical interface 
+from Softimage to the RenderMan standard.  The interface is currently 
+composed of eight tools that are all written as plug-ins to Softimage 
+and are built on Softimage's DKit.  Features Include: Interactive 
+Previewing of RenderMan rendered images from within Softimage; 
+Interactive tools for working with shaders and adjusting parameters; 
+Tools to make working with shadow maps and environment maps easier; 
+Shader Keywords to facilitate parameter animation; Support of both 
+PhotoRealistic RenderMan and <B>BMRT</B>; Access to all tools from within 
+Softimage; Support of motion blur.  SoRender can be obtained at 
+either: 
+<A HREF="http://www-viz.tamu.edu/htdocs/Software/SoRender/SoRender.homepage.html">http://www-viz.tamu.edu/htdocs/Software/SoRender/SoRender.homepage.html</A> 
+or ftp: viz.tamu.edu/pub/software/SoRender.v1-0.tar.gz 
+ 
+   A MentalRay-to-RenderMan converter, mi2rib is available from 
+<A HREF="http://www.avant.co.jp/avant/works/avant2/mi2rib.html">http://www.avant.co.jp/avant/works/avant2/mi2rib.html</A> 
+ 
+   WaveMan, a Wavefront-to-RenderMan conversion tool, is available 
+from Minds Eye Graphics (mindseye AT infi DOT net , 804-643-3713). 
+ 
+   SoftMan(TM): an interface tool between SoftImage and RenderMan sold by 
+Animal Logic.  Details can be found at: <A HREF="http://www.animalogic.com/Products">http://www.animalogic.com/Products</A> 
+For more information contact:  support AT al DOT com DOT au  
+ph 61 2 9906 1232  fax 61 2 9906 7433 
+ 
+   Lost In Space makes a product called Siren which converts SoftImage 
+scenes into <B>RI</B>B files.  Info is available from siren AT lostinspace DOT com DOT   
+Siren converts Softimage 3D scene and model files into RenderMan <B>RI</B>B 
+and shader files. Siren 2.0 works only on SGI's running I<B>RI</B>X 4.0.5 or 
+later. It can read Softimage 2.66 scene/model files. SiRen only has a 
+comandline/scripted interface, but is now being upgraded to a point 
+and click version 2.1.  To run siren you must have a copy of the 
+Softimage Developers Kit.  US$2000 per license, bulk discounts 
+available. 30% discount for educational institutions. Source licensing 
+is available. Siren + Renderman deals available.  Pay for Siren2.0 and 
+get a free upgrade to Siren2.1 when it is released. 
+ 
+   There is a 3D Studio to <B>RI</B>B converter by Alex Segal on the net, see 
+<A HREF="http://rmc.ufanet.ru/3ds2rib.html">http://rmc.ufanet.ru/3ds2rib.html</A> for details. 
+ 
+  Another <B>RI</B>B Exporter for 3DStudio MAX, this one by Henning Hoffman,  
+can be found at <A HREF="http://www.achilles.net/~henning/maxribexp.html">http://www.achilles.net/~henning/maxribexp.html</A> 
+ 
+   Envisions Solutions sells Envision-It, which converts DXF to <B>RI</B>B. 
+Not a modeler.  Sells for around $200. 
+ 
+   Okino Computer Graphics, Inc. has two products called the 'NuGraf 
+Rendering System' and 'PolyTrans', which include Renderman export 
+capability. It can convert from DXF, 3D Studio, Lightwave, OpenFlight, 
+IGES 5.3, Wavefront, SoftImage and many more (the latter 3 formats 
+allow output of trimmed NURBS to Renderman in a clean form). Output of 
+animation data from Lightwave and 3D Studio to Renderman will follow 
+in v2.1 of PolyTrans. A demo and other info are available from the WWW 
+site: <A HREF="http://www.okino.com/conv/conv.htm">http://www.okino.com/conv/conv.htm</A> Contact: 905-672-9328 (voice), 
+905-672-2706 (fax). 
+ 
+   Viewpoint Datalabs has a product called InterChange (formerly 
+Syndesis InterChange) for Windows and SGI, that converts between more 
+than fifty 3D file formats, including Softimage, Alias, LightWave, 3D 
+Studio and many others.  It can export geometry to a simple <B>RI</B>B file. 
+For info, see:  <A HREF="http://www.viewpoint.com/">http://www.viewpoint.com/</A> 
+ 
+   Syndesis (recently acquired by Viewpoint) still sells Megahedron. 
+It's a rendering engine controlled by a high-level interpreted 
+language.  It's not Java, it's not POV, it's not Renderman, but I bet 
+anyone who tinkers in Renderman would find it interesting.  It's 
+interactive, inexpensive, and easily reprogrammed, right down to 
+shaders and procedural objects and motions.  <A HREF="http://www.viewpoint.com/">http://www.viewpoint.com/</A> 
+ 
+   Cow House has a free converters from Inventor2.0 and VRML to 
+RenderMan & <B>BMRT</B>.  For details, see: 
+        <A HREF="http://www.cowhouse.com/Home/Converters/converters.html">http://www.cowhouse.com/Home/Converters/converters.html</A> 
+ 
+ 
+ 
+Other Tools 
+----------- 
+ 
+   RenderWrapper (RW) is a simple Tcl/Tk script for conveniently 
+setting the parameters for the rendrib, rgl, and rendribv renderers 
+from <B>BMRT</B>.  It provides a GUI for rendering single or multiple frames 
+in wireframe, polygon, and photorealistic modes. RW runs on Unix and 
+Windoze95/NT systems.  It is FREE and can be downloaded from: 
+<A HREF="http://www.seas.gwu.edu/student/gogo/rendwrap.html">http://www.seas.gwu.edu/student/gogo/rendwrap.html</A> 
+ 
+   The Affine Toolkit by Thomas E. Burge contains a number of <B>RI</B>B 
+filters and massagers, including binary <B>RI</B>B dumping and conversion 
+utilities, utilities to parameterize NURBS in <B>RI</B>B files by arc length, 
+polish up <B>RI</B>B files generated by Alias, etc.  More info and download 
+at: <A HREF="http://www.affine.com/">http://www.affine.com/</A> 
+ 
+   The "Rib Tickler" is a freeware IDE; its main purpose is the 
+editing of ASCII <B>RI</B>B - like it or not, the current crop of Windows' 
+based <B>RI</B>B exporters still require a lot of tweaking of the ASCII RIB 
+output, especially where materials are concerned.  And speaking of 
+materials, rib tickler allows you to code, compile, and preview 
+shaders, right from the IDE.  Details and download from: 
+ <A HREF="http://www.wfmm.com/ribtickler/">http://www.wfmm.com/ribtickler/</A> 
+ 
+   Cinema Graphics is now selling a product called "Shade Tree" 
+which is a dataflow system for writing RenderMan shaders.  Info 
+at <A HREF="http://www.cinegrfx.com/">http://www.cinegrfx.com/</A> 
+ 
+   Pixar used to sell Showplace for the Mac and Typestry 2 for the 
+Mac and PC.  They're nice little programs if you can get your hands 
+on them, but Pixar no longer sells these. 
+ 
+   SnakeMan, a Python binding for RenderMan written by Jeff Newquist, 
+can be found at: <A HREF="http://reality.sgi.com/newquist_engr/snakeman/">http://reality.sgi.com/newquist_engr/snakeman/</A> 
+ 
+   Terry - Another Python binding for RenderMan: 
+            <A HREF="http://www.lysator.liu.se/~ture/terry.html">http://www.lysator.liu.se/~ture/terry.html</A> 
+ 
+   WavesWorld, a set of UI, modeling and animation objects available only 
+atop NEXTSTEP, available via <A HREF="http://wave.www.media.mit.edu/people/wave/">http://wave.www.media.mit.edu/people/wave/</A> 
+An object oriented framework consisting of two "kits" of objects and 
+lots of examples, WavesWorld is based directly atop the RenderMan 
+interface. 
+ 
+   Wave has also made available a Tcl binding for RenderMan, available 
+at: <A HREF="ftp://ftp.media.mit.edu/pub/WavesWorld/adam.tar.gz">ftp://ftp.media.mit.edu/pub/WavesWorld/adam.tar.gz</A> 
+ 
+ 
+ 
+ 
+ 
+<A NAME="14"></A>
+<H4>Q: What other net resources exist which are related to RenderMan?</H4>
+<PRE>
+ 
+   Pixar home page:  <A HREF="http://www.pixar.com">http://www.pixar.com</A> finally contains useful 
+information!  Pay particular attention to 
+    <A HREF="http://www.pixar.com/products/renderman/toolkit/Toolkit/index.html">http://www.pixar.com/products/renderman/toolkit/Toolkit/index.html</A> 
+which has the RenderMan 3.1 spec and all of the documentation for 
+<B>PRMan</B> online. 
+ 
+BMRT home page:  <A HREF="http://www.seas.gwu.edu/student/gritz/bmrt.html">http://www.seas.gwu.edu/student/gritz/bmrt.html</A> 
+ 
+   Tal Lancaster of CalTech (now a TD at Disney) has set up a "RenderMan 
+Repository" for dissemination of shaders, <B>RI</B>B files, etc.  Among other 
+things, this site has pointers to just about everything else that has 
+RenderMan related stuff. Here's the URL:  <A HREF="http://rmr.spinne.com/">http://rmr.spinne.com/</A> 
+ 
+The Ebert, et al. book _Texturing and Modeling_ (mentioned earlier) 
+has an FTP site with the examples from the book, including RenderMan 
+Shading Language source code: 
+        <A HREF="ftp://archive.cs.umbc.edu/pub/textures">ftp://archive.cs.umbc.edu/pub/textures</A> 
+ 
+Professor Ken Musgrave (one of the authors of the T&M book) taught a 
+graduate seminar at GWU on procedural texturing.  Student projects, 
+images, and shaders can be found at: 
+    <A HREF="http://www.seas.gwu.edu/graphics/ProcTexCourse/">http://www.seas.gwu.edu/graphics/ProcTexCourse/</A> 
+ 
+Similarly, Stephen May recently taught a course on digital lighting 
+at Ohio State.  A Shading Language tutorial and student projects 
+can be found at these addresses: 
+        <A HREF="http://www.cgrg.ohio-state.edu/~smay/DigitalLighting/Course.html">http://www.cgrg.ohio-state.edu/~smay/DigitalLighting/Course.html</A> 
+        <A HREF="http://www.cgrg.ohio-state.edu/~smay/RManNotes/RManNotes.html">http://www.cgrg.ohio-state.edu/~smay/RManNotes/RManNotes.html</A> 
+ 
+Michael B. Johnson (a.k.a. "Wave") has a home page at: 
+        <A HREF="http://wave.www.media.mit.edu/people/wave/">http://wave.www.media.mit.edu/people/wave/</A> 
+He's built a lot of software that runs on top of RenderMan (see 
+the description of WavesWorld earlier in this FAQ). 
+ 
+   ThreeD, by Kieran Jones is a scene modeler that runs under NEXTSTEP 
+and supports RenderMan.  I haven't tried it, but it's available for 
+FTP from 
+    <A HREF="ftp://ftp.cs.orst.edu/pub/software/NeXT/binaries/graphics.">ftp://ftp.cs.orst.edu/pub/software/NeXT/binaries/graphics.</A> 
+You can contact the author at kjones AT freenet DOT vancouver DOT bc DOT ca DOT   
+ 
+   Geomview is an interactive 3D geometry (in the mathematical sense) 
+viewing program written at the Geometry Center.  It can export <B>RI</B>B. 
+URL is <A HREF="http://www.geom.umn.edu/software/download/geomview.html">http://www.geom.umn.edu/software/download/geomview.html</A> 
+ 
+   SoftMan(TM) (Animal Logic's Softimage->RenderMan tool) information 
+and demos: <A HREF="http://www.ozemail.com.au/~softman">http://www.ozemail.com.au/~softman</A> 
+ 
+   Alex Segal's 3D Studio to <B>RI</B>B converter is on the net, see 
+<A HREF="http://rmc.ufanet.ru/3ds2rib.html">http://rmc.ufanet.ru/3ds2rib.html</A> for details. 
+ 
+   Doug Ward has a site that's about using VIDI Presenter 3D.  If you 
+look on: <A HREF="http://www.webnation.com/vidi/">http://www.webnation.com/vidi/</A> (select the shaders button on 
+the frame) you'll find some shaders and other goodies that may be 
+useful even if you don't use Presenter. 
+ 
+Guido Quaroni has put up several shaders at 
+<A HREF="ftp://ftp.gestel.it/pub/incoming/shadersrc.tgz">ftp://ftp.gestel.it/pub/incoming/shadersrc.tgz</A> (this is a .tar.gz 
+file) and compiled versions of those shaders for both <B>PRMan</B> and BMRT 
+at <A HREF="ftp://ftp.gestel.it/pub/incoming/stshader.tgz">ftp://ftp.gestel.it/pub/incoming/stshader.tgz</A> 
+ 
+VTK, Bill Lorensen's OO scientific visualization toolkit, can now 
+output RIB.  See <A HREF="http://www.crd.ge.com/~lorensen/vtkrib/">http://www.crd.ge.com/~lorensen/vtkrib/</A> 
+ 
+Raynet, "<A HREF="http://ray.deepfx.com,">http://ray.deepfx.com,</A> offers 3-D scene file format 
+conversion and rendering services for <B>RI</B>B files.  I offer no 
+endorsement, just a pointer. 
+ 
+SnakeMan, a Python binding for RenderMan, can be found at: 
+<A HREF="http://reality.sgi.com/newquist_engr/snakeman/">http://reality.sgi.com/newquist_engr/snakeman/</A> 
+ 
+ 
+ 
+  
+ 
+<A NAME="15"></A>
+<H4>Q: Where can I get the Pixar videos?</H4>
+<PRE>
+ 
+Pixar's animation video (which contains Luxo Jr, Reds Dream, Tin Toy 
+and Knickknick) is available directly from Pixar.  The cost is $25.00. 
+Just call 1 800-888-9856 or 510-236-4000.  The tape is available in 
+both VHS NTSC and PAL formats. 
+ 
+Recently, the Pixar shorts were released by Disney Home Video as 
+"Tiny Toy Stories".  You should be able to find them at your local 
+video store for around $10. 
+ 
+ 
+ 
+ 
+<A NAME="16"></A>
+<H4>Q: What is the correct capitalization of "Pixar"?</H4>
+<PRE>
+ 
+   It's written "Pixar", just as it is throughout this FAQ.  I don't 
+know why people keep capitalizing it, perhaps they are trying to 
+duplicate the logo, which is in a particular typeface and happens to 
+be all caps.  In any case, it's not an acronym like IBM.  It's a 
+regular company name like Disney. 
+ 
+ 
+ 
+---------------------------------------------------------------------- 
+ 
+This FAQ was mostly written and maintained by Larry Gritz, who wishes 
+to thank the contributions of: Antoine Durr, J.J. Hoesing, Steve 
+Hollasch, Michael B. Johnson, Joshua Kolden, Andrew MacRae, Nino 
+Mendolia, David Milner, Pohl Longsine, Steve Weintz, and others. 
+ 
+Please send comments, additions, gripes to: lg AT larrygritz DOT com 
+ 
+--  
+Larry Gritz                                     Pixar Animation Studios 
+lg AT larrygritz DOT com                                    Richmond, CA 
+ 
+</PRE><HR>
+<B>NOTE:This page has been HTMLified for the RMR.  It is based off of the CGRR FAQ, which is still maintained by <A HREF="mailto:lg AT larrygritz DOT com">Larry Gritz</A>.  As such this version may be out of date or contain typos and other formating problems.  If in doubt check in the <A HREF="http://www.seas.gwu.edu/student/gritz/cgr.renderman.faq">offical FAQ</A>, 
+Please do not bother Larry with problems that you find in this version of the document.  If there is a difference between them, let me know and I will try and fix it. --  <A HREF="mailto:tal AT renderman DOT org">Tal Lancaster</A>
+</B><P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-1998 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

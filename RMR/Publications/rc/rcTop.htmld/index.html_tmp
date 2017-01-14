@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rcTop</TITLE>
+<LINK HREF="../../index.html" REL="Parent" TITLE="RenderMan Books & other publications">
+<LINK HREF="../rcCh5.htmld/index.html" REL="Child" TITLE="rcCh5">
+<LINK HREF="../rcCh11.htmld/index.html" REL="Child" TITLE="rcCh11">
+<LINK HREF="../rcCh7.htmld/index.html" REL="Child" TITLE="rcCh7">
+<LINK HREF="../rcCh8.htmld/index.html" REL="Child" TITLE="rcCh8">
+<LINK HREF="../misc.htmld/index.html" REL="Child" TITLE="misc">
+<LINK HREF="../rcCh16.htmld/index.html" REL="Child" TITLE="rcCh16">
+<LINK HREF="../rcCh4.htmld/index.html" REL="Child" TITLE="rcCh4">
+<LINK HREF="../rcCh2.htmld/index.html" REL="Child" TITLE="rcCh2">
+<LINK HREF="../rcCh10.htmld/index.html" REL="Child" TITLE="rcCh10">
+<LINK HREF="../rcCh6.htmld/index.html" REL="Child" TITLE="rcCh6">
+<LINK HREF="../errataRev1.htmld/index.html" REL="Child" TITLE="errataRev1">
+<LINK HREF="../rcCh3.htmld/index.html" REL="Child" TITLE="rcCh3">
+<LINK HREF="../rcCh13.htmld/index.html" REL="Child" TITLE="rcCh13">
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER><P>
+<H1>The RenderMan Companion: A Programmer's Guide to Realistic Computer Graphics</H1><P>
+<P>
+<I>(If you don't have this book, why not?  What are you waiting for?)</I><P>
+</CENTER><P>
+<I>The RenderMan Companion: A Programmer's Guide to Realistic Computer Graphics</I>, by Steve Upstill.  Published by Addison-Wesley.  ISBN 0-201-50868-0<P>
+<P>
+<A HREF="../errataRev1.htmld/index.html">Errata</A> (1989 1st draft, if somebody has a better one let me know) [The HTML version needs some fixing to get the formating straight].  Or if you prefer there is a  <A HREF="ftp://pete.cs.caltech.edu/pub/RMR/RC/errataRev1.doc">pure ASCII version</A>.<P>
+<P>
+<B>NOTE: That many have the listings have been modified slightly from the ones found in the _RC_.  So pay close attention.<P>
+<P>
+Disclaimer:  Much of this code has been graciously provided by Pixar.  However, if there are any mistakes, they are most likely my fault as I reorganized  or modified much of what I got.  So if you spot anything please let me know.</B> -- Tal (tal AT renderman DOT org)<B><P>
+</B><P>
+<A HREF="../rcCh2.htmld/index.html">chapter 2</A> -- Getting Started<BR>
+<A HREF="../rcCh3.htmld/index.html">chapter 3</A> -- The Structure of a RenderMan Program<BR>
+<A HREF="../rcCh4.htmld/index.html">chapter 4</A> -- Quadric Surfaces (Primitive Surfaces I:)<BR>
+<A HREF="../rcCh5.htmld/index.html">chapter 5</A> -- Polygons (Primitive Surfaces II:)<BR>
+<A HREF="../rcCh6.htmld/index.html">chapter 6</A> -- Parametric Surfaces (Primitive Surfaces III:)<BR>
+<A HREF="../rcCh7.htmld/index.html">chapter 7</A> -- Geometric Transformation and Hierarchical Modeling<BR>
+<A HREF="../rcCh8.htmld/index.html">chapter 8</A> -- The Digital Camera (Viewing I:)<BR>
+<A HREF="../rcCh10.htmld/index.html">chapter10 </A> -- Procedural Models and level of Detail<BR>
+<A HREF="../rcCh11.htmld/index.html">chapter11</A> -- Lighting and Shading<BR>
+<A HREF="../rcCh12.htmld/index.html">chapter12</A> -- Surface Mapping<BR>
+<A HREF="../rcCh13.htmld/index.html">chapter13</A> -- The RenderMan Shading Language I: Introduction<BR>
+<A HREF="../rcCh16.htmld/index.html">chapter 16</A> -- A Gallery of Shaders<BR>
+<A HREF="../misc.htmld/index.html">misc</A><P>
+
+NOTE: Pixar has a <A HREF="http://www.pixar.com/products/renderman/toolkit/Toolkit/tut.html">tutorial page</A> which describes how to build these examples. If you have <b>prman</b> then look under <i>$RMANTREE/tutorial</i>.  As a bonus, they have a Chapter 17, which contains examples of controlling various <b>prman</b> options. ie. eye-splits, gridsize, jitter, etc.<P>
+<HR>
+<P>
+<ADDRESS>Any comments or  suggestions?  Send them to:
+<a href="mailto:tal AT renderman DOT org">tal AT renderman DOT org</a><P></ADDRESS>
+     <P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="../../index.html">RenderMan Books & other publications</A>]
+
+<DT>For More Details (Children):</DT><DD>
+
+[<A HREF="../rcCh5.htmld/index.html">rcCh5</A>]
+
+[<A HREF="../rcCh11.htmld/index.html">rcCh11</A>]
+
+[<A HREF="../rcCh7.htmld/index.html">rcCh7</A>]
+
+[<A HREF="../rcCh8.htmld/index.html">rcCh8</A>]
+
+[<A HREF="../misc.htmld/index.html">misc</A>]
+
+[<A HREF="../rcCh16.htmld/index.html">rcCh16</A>]
+
+[<A HREF="../rcCh4.htmld/index.html">rcCh4</A>]
+
+[<A HREF="../rcCh2.htmld/index.html">rcCh2</A>]
+
+[<A HREF="../rcCh10.htmld/index.html">rcCh10</A>]
+
+[<A HREF="../rcCh6.htmld/index.html">rcCh6</A>]
+
+[<A HREF="../errataRev1.htmld/index.html">errataRev1</A>]
+
+[<A HREF="../rcCh3.htmld/index.html">rcCh3</A>]
+
+[<A HREF="../rcCh13.htmld/index.html">rcCh13</A>]
+</DL>
+<HR>
+<I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+
+</BODY>
+</HTML>

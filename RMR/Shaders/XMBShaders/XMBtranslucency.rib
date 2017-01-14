@@ -1,0 +1,138 @@
+##RenderMan RIB-Structure 1.1
+
+##Creator mtor 2.1, RAT 4.1 (Jul 17 2000 11:29:22)
+
+##For tal
+
+##CreationDate Sun Oct 01 19:48:11 2000
+
+
+
+##RenderMan RIB
+
+version 3.03
+
+Option "searchpath" "resource" [".:@"]
+
+FrameBegin 1
+
+Attribute "dice" "binary" [0]
+
+Exposure 1 1
+
+PixelSamples 3 3
+
+Hider "hidden" "jitter" [1]
+
+PixelFilter "catmull-rom" 3 3
+
+#Shutter 0 0.25
+
+Shutter 0 0.0104167
+
+Format 400 300 1
+Display "XMBtranslucency.tif" "tiff" "rgba"
+Clipping 0.1 1000
+
+Projection "perspective" "fov" [54.4322]
+
+ScreenWindow -1 1 -0.75 0.75
+
+ConcatTransform [0.849893 -0.232145 -0.473066 -1.8078e-009 5.79557e-009 0.897733 -0.44054 9.34391e-018 -0.526956 -0.374412 -0.762977 1.12088e-009 -4.31141e-007 -5.72131e-008 19.0726 1]
+
+WorldBegin 
+
+TransformBegin 
+
+CoordinateSystem "worldspace"
+
+TransformEnd 
+
+ReverseOrientation 
+
+ShadingRate 1
+
+ShadingInterpolation "smooth"
+
+Surface "defaultsurface" 
+
+TransformBegin 
+
+Attribute "identifier" "name" ["directionalLightShape1"]
+
+Transform [1 0 2.44921e-016 0 0 1 0 0 -2.44921e-016 0 1 0 0 0 -5.95547 1]
+
+LightSource "distantlight" 1 "intensity" [1]"lightcolor" [1 1 1]
+TransformEnd 
+
+TransformBegin 
+
+Attribute "identifier" "name" ["directionalLightShape2"]
+
+Transform [-0.99136 -3.56817e-017 0.131172 0 -0.03822 0.95661 -0.288855 0 -0.125481 -0.291373 -0.948344 0 5.73284 2.78293 7.4026 1]
+LightSource "distantlight" 2 "intensity" [0]"lightcolor" [1 1 1]
+
+TransformEnd 
+
+AttributeBegin 
+
+Attribute "identifier" "name" ["|nurbsCylinder1|nurbsCylinderShape1"]
+
+ConcatTransform [4.35314 0 0 0 0 4.35314 0 0 0 0 4.35314 0 0 0 0 1]
+
+#slim surface XMBtranslucency_0 
+
+TransformBegin
+
+Attribute "render" "string casts_shadows" ["opaque"]
+
+Scale 1 1 1
+
+Opacity [1 1 1]
+
+Color [0.749996185245 0.749996185245 0.749996185245]
+
+Surface "XMBtranslucency" "color sheen" [ 0.25 0.25 0.25 ] "color specularcolor" [ 1 1 1 ] "float Ka" [ 1 ] "float Kd" [ 1 ] "float Ks" [ 0.000 ] "float blurcolorTx" [ 0 ] "float blurcolorTx2" [ 0 ] "float colorS" [ 0 ] "float colorScaleS" [ 1 ] "float colorScaleT" [ 1 ] "float colorT" [ 0 ] "float roughness" [ 0.1 ] "float transTx" [ 1.000 ] "float transTx2" [ 1.000 ] "float transblurTx" [ 0 ] "float transblurTx2" [ 0 ] "string colorTx" [ "front.tx" ] "string colorTx2" [ "back.tx" ] "string transTex" [ "" ] "string transTex2" [ "" ] 
+
+TransformEnd
+
+ShadingInterpolation "smooth"
+
+NuPatch 11 4 [-0.25 -0.25 -0.125
+
+0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1 1.125 1.25 1.25] 0 1 4 4 [0 0 0 0 1 1 1 1] 0 1 "Pw" [0.783612 -1 -0.783612 1 1.10819 -1 -4.58187e-017 1
+
+0.783612 -1 0.783612 1 6.78551e-017 -1 1.10819 1 -0.783612 -1 0.783612 1
+
+-1.10819 -1 1.17647e-016 1 -0.783612 -1 -0.783612 1 -1.78877e-016 -1 -1.10819 1
+
+0.783612 -1 -0.783612 1 1.10819 -1 -4.58187e-017 1 0.783612 -1 0.783612 1
+
+0.783612 -0.333333 -0.783612 1 1.10819 -0.333333 -4.99846e-018 1 0.783612 -0.333333 0.783612 1
+
+6.78551e-017 -0.333333 1.10819 1 -0.783612 -0.333333 0.783612 1 -1.10819 -0.333333 1.58467e-016 1
+
+-0.783612 -0.333333 -0.783612 1 -1.78877e-016 -0.333333 -1.10819 1 0.783612 -0.333333 -0.783612 1
+
+1.10819 -0.333333 -4.99846e-018 1 0.783612 -0.333333 0.783612 1 0.783612 0.333333 -0.783612 1
+
+1.10819 0.333333 3.58218e-017 1 0.783612 0.333333 0.783612 1 6.78551e-017 0.333333 1.10819 1
+
+-0.783612 0.333333 0.783612 1 -1.10819 0.333333 1.99287e-016 1 -0.783612 0.333333 -0.783612 1
+
+-1.78877e-016 0.333333 -1.10819 1 0.783612 0.333333 -0.783612 1 1.10819 0.333333 3.58218e-017 1
+
+0.783612 0.333333 0.783612 1 0.783612 1 -0.783612 1 1.10819 1 7.6642e-017 1
+
+0.783612 1 0.783612 1 6.78551e-017 1 1.10819 1 -0.783612 1 0.783612 1
+
+-1.10819 1 2.40108e-016 1 -0.783612 1 -0.783612 1 -1.78877e-016 1 -1.10819 1
+
+0.783612 1 -0.783612 1 1.10819 1 7.6642e-017 1 0.783612 1 0.783612 1]
+
+AttributeEnd 
+
+WorldEnd 
+
+FrameEnd 
+

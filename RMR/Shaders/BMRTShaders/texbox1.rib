@@ -1,0 +1,150 @@
+##RenderMan RIB-Structure 1.0
+##CreationDate Mon Mar 15 16:44:06 1993
+##For gritz
+version 3.03
+
+############################################################################
+#
+# This RIB file describes the famous "Cornell Box", which is a test scene
+# commonly used to demonstrate radiosity.
+#
+############################################################################
+
+# Set up the camera position and field of view for the usual view of the
+# box.  No rendering resolution is specified, but you should choose a
+# 1.0 aspect ratio to get the usual view (i.e. same horizontal and vertical
+# resolutions, such as 256x256 or 512x512.
+#
+Option "searchpath" "shader" [".:../shaders:&"]
+Display "texbox1.tif" "file" "rgb"
+FrameAspectRatio 1
+Format 600 600 1
+Projection "perspective"  "fov" [34] 
+Scale -1 1 1
+Orientation "rh"
+
+##CameraOrientation 200 300 -650 320 230 0 0.0191195 0.994439 0.103564
+ConcatTransform [0.983382 0.0191195 0.180538 0 0 0.994439 -0.105314 0 -0.181547 0.103564 0.977914 0 0 0 0 1]
+Translate -200 -300 650 
+
+
+WorldBegin
+
+# Hint to the radiosity renderer: specify a good dicing size
+Attribute "radiosity"  "patchsize" [200]  "elemsize" [100]  "minsize" [10]
+
+
+############################################################################
+# Light Source Definitions
+############################################################################
+
+#
+# Set up a single area light source in the center of the ceiling.
+#
+
+AttributeBegin
+Surface "constant" 
+Attribute "light" "shadows" "on"
+Attribute "light" "nsamples" [2]
+AreaLightSource "arealight" 1  "intensity" [60000] "lightcolor" [.9 .9 1]
+Translate 0 -.1 0
+Polygon "P" [343.0 548.8 227.0 343.0 548.8 332.0 213.0 548.8 332.0 213.0 548.8 227.0]
+AttributeEnd
+Illuminate 1 1
+
+Declare "center" "point"
+Declare "up" "vector"
+Declare "in" "vector"
+Declare "panewidth" "float"
+Declare "paneheight" "float"
+Declare "framewidth" "float"
+Declare "frameheight" "float"
+Declare "hpanes" "float"
+Declare "vpanes" "float"
+Declare "fuzz" "float"
+LightSource "windowlight" 2 "intensity" [.35] "from" [175 300 -500] "to" [275 200 0] "center" [175 375 -500] "up" [0 1 0] "in" [0 0 1] "panewidth" [200] "paneheight" [150] "framewidth" [10] "frameheight" [10] "hpanes" [4] "lightcolor" [1 .8 .35] "fuzz" [7.5]
+
+############################################################################
+# Wall Definitions
+############################################################################
+
+AttributeBegin
+Attribute "identifier" "name" "Cornell Box Walls"
+
+# All surfaces are 1 sided (so we can see through the closest wall)
+#Sides 1
+Attribute "render" "casts_shadows" "none"
+
+# All surfaces are diffuse reflectors
+Surface "matte" "Kd" [0.75]
+Color  [ 1 1 1 ] 
+
+
+AttributeBegin
+Attribute "identifier" "name" "floor"
+Declare "Kr" "float"
+Declare "Km" "float"
+Surface "superplank" "Kr" [0.25] "Km" [.5]
+Color [.5 .2 .067]
+Patch "bilinear" "P" [552.8 0 0   0 0 0    549.6 0 559.2  0 0 559.2]
+AttributeEnd
+
+Attribute "identifier" "name" "ceiling"
+Polygon "P" [556.0 548.8 0 556.0 548.8 559.2 0 548.8 559.2 0 548.8 0.0]
+
+Declare "freq" "float"
+Declare "Km" "float"
+Declare "trough" "float"
+Declare "peak" "float"
+AttributeBegin
+Attribute "identifier" "name" "back_wall"
+Declare "groovedepth" "float"
+Declare "pitting" "float"
+Declare "brickwidth" "float"
+Declare "pockfrequency" "float"
+TextureCoordinates 0 0 .8 0 0 .8 .8 .8
+Displacement "brickbump" "groovedepth" [3] "pitting" [3] "brickwidth" [0.15] "pockfrequency" [3]
+Patch "bilinear" "P" [549.6 0 559.2 0 0 559.2 556.0 548.8 559.2 0 548.8 559.2]
+AttributeEnd
+
+AttributeBegin
+Attribute "identifier" "name" "left_wall"
+Color [0.64 0.15 0.1]
+Declare "brickvary" "float"
+Declare "raggedfreq" "float"
+Declare "raggedamp" "float"
+Declare "pockfrequeny" "float"
+Surface "brick" "brickvary" [0.75]  "groovedepth" [3] "pitting" [5] "raggedfreq" [12] "pockfrequency" [5]
+#Displacement "brickbump" "groovedepth" [1.5] "pitting" [1]
+TextureCoordinates 0 0 1.75 0 0 1.75 1.75 1.75
+Patch "bilinear" "P" [552.8 0 0 549.6 0 559.2 556 548.8 0 556 548.8 559.2]
+AttributeEnd
+
+AttributeBegin
+Attribute "identifier" "name" "right_wall"
+Color [0.15 0.5 0.15]
+Displacement "castucco" "Km" [.15] "freq" [0.2] "trough" [-0.15] "peak" [.35]
+Patch "bilinear" "P" [0 0 559.2  0  0  0 0 548.8 559.2  0 548.8 0]
+AttributeEnd
+
+AttributeEnd
+
+
+############################################################################
+# Tall Box Definition
+############################################################################
+AttributeBegin
+Attribute "identifier" "name" "Cornell Box -- tall box"
+Surface "matte" "Kd" [0.75]
+Displacement "castucco" "Km" [.3] "freq" [0.15] "trough" [-0.15] "peak" [.35]
+Color [ 1 1 1 ] 
+Translate 0 0 70
+Translate 180 0 200
+Rotate 20 0 1 0
+Polygon "P" [223 330 47 65 330 96  114 330 256 272 330 206.0]
+Polygon "P" [223 0 47  223 330 47  272 330 206 272 0 206.0]
+Polygon "P" [272 0 206 272 330 206 114 330 256 114 0 256.0]
+Polygon "P" [114 0 256 114 330 256  65 330  96  65 0 96.0]
+Polygon "P" [ 65 0 96   65 330 96  223 330  47 223 0 47.0]
+AttributeEnd
+WorldEnd

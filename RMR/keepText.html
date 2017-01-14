@@ -1,0 +1,75 @@
+Stuff originally from main page.  Will need to be moved to twiki or elsewhere.
+
+There are a lot of people when you hear them talking about RenderMan and how great the images are from it, etc.  They are most likely really talking about <a href="https://renderman.pixar.com/products/whatsrenderman/index.htm">Pixar's PhotoRealistic RenderMan®</a> (<b>PRMan</b>).
+<p>
+RenderMan is actually a technical specification for interfacing between modeling and rendering programs.  From 1998 until 2000 the published RenderMan Interface Specification was known as <a href="https://renderman.pixar.com/products/rispec/rispec_3_1/index.html">Version 3.1</a>. In 2000 Pixar published a new specification, <a href="https://renderman.pixar.com/products/rispec/rispec_pdf/RISpec3_2.pdf">Version 3.2</a>. <i>Coming soon Version 3.3</i>
+<p>
+For a renderer to be a considered a RenderMan compliant renderer it must meet all of the standard requirements laid out in the spec. There are some more things that are needed, too, which are mentioned in the Usenet: comp.graphics.rendering.renderman <a href="http://www.faqs.org/faqs/graphics/renderman-faq/">FAQ</a>.
+<p>
+So the reasons for this confusion between RenderMan the spec and PRMan the renderer are:
+<pre>
+  1. Pixar publishes and owns the RenderMan Interface Specification
+  2. RenderMan is a registered trademark of Pixar.
+  3. Pixar had the first implementation (PRMan).
+  4. PRMan has been used in a <i>lot</i> of <a href="https://renderman.pixar.com/products/whatsrenderman/movies.html">movies</a>.
+  5. Not only was PRMan the first implementation of the RenderMan 
+     Specification, it was for many years the only implementation. 
+</pre> 
+So many people just blur the lines between the specification and a particular implementation and call it RenderMan.  Many of these same people also think that because of some of the ways that Pixar implemented the specification that this are the only ways that a RenderMan renderer can be done.  Whereas these are in fact only implementation choices.<p>
+One example of this is that PRMan makes use of the Reyes scanline algorithm.  So many assume that RenderMan renderers can only use Reyes or some scanline rendering implementation.  Whereas this became moot when BMRT arrived which was the first publicly available RenderMan compliant raytracer.
+<p>
+So now you know better.
+<p>
+<HR width=50%>
+For more information check out the section &quot<b>Q: What is "RenderMan?&quot</b>"<A HREF="http://www.faqs.org/faqs/graphics/renderman-faq/">FAQ</A>
+ for the usenet group <I>comp.graphics.rendering.renderman</I>, maintained by 
+<A HREF="mailto:lg AT larrygritz DOT com">Larry Gritz</A>.  Namely, <P>
+Also, reading the <B>FAQ</B> is a good way to make your posts to the RenderMan Newsgroup (<A HREF="news:comp.graphics.rendering.renderman">news:comp.graphics.rendering.renderman</A>) be more intelligent and less annoying to us old timers on the newsgroup.  There is nothing more annoying (well, ok Spammers are much worse), then questions like <I>"Where can I get RenderMan?"  "Are there any good RenderMan books?"</I>  To which the answers are easily found, in the <B>FAQ</B> or a few minutes, from a WEB or newsgroup search.</P>
+<P></P>
+
+
+
+<HR width=50%>
+<H2><A NAME="RIBhistory">RIB History</A></H2>
+<p>
+RenderMan Interface Bytestream (RIB), very simply, is the file format used to pass scene information (model data, lights, camera, shaders, attributes, and options) to a RenderMan renderer to control image that it will render.
+
+At the 2003 SIGGRAPH, Dana Batali (Director or RenderMan Product Development at Pixar) shared an interesting <a href="pics/ribtimeline.jpg">historical slide</a> showing some of the major milestones on evolution of RIB. (which has been around publicly for 15+ years)
+
+<IMG SRC="/RMR/Pics/redball.gif"><i>(June 15, 2006)</i>
+With SIGGRAPH just around the corner, it must be time for anther round of Stipid RAT Tricks!  Here is the call for this year's submissions:
+<p>
+<i>
+We're now inviting your submissions for the eighth installment of Stupid RAT Tricks. This year's Stupid RAT Tricks will take place at the annual Pixar User's Group meeting at SIGGRAPH, Wednesday, August 2nd, 2006.
+<p>
+For those new to this event, the idea is to come up with something involving RenderMan, MTOR, Slim, RfM, shaders, DSOs, front ends to the above, scripts for handling RIB, war stories, etc. Almost anything related to RenderMan or its usage in a production environment is fair game. Judging will be based on a combination of how cool, useful, obscure, and just plain perverse the trick is. If it leaves us shaking our heads in awe, confusion, or both, it's a good thing.
+<p>
+Four winners will get to share their tricks with us at the User's Group meeting. Showing a set of pretty images won't be enough, though: you'll get 15 minutes at the meeting to educate us all on your trick. A/V equipment will be provided. You'll come away with instant fame, the adulation of your peers, and of course there will be prizes as well. There is one main prerequisite for submissions: you must be able to attend the User's Group meeting to present your trick in person.
+<p>
+Entries should be submitted to stupidrattricks@pixar.com and should have as their subject "Stupid RAT Trick". A few paragraphs describing your trick, along with any images if necessary, will be fine. If there is a lot of material or video, we'd prefer it if you could point us to an external web page containing your material. We'll need to get all of the entries before July 10, and winners will be announced on the forums on July 17.
+<p>
+N.B.: Invitations to the User's Group meeting will be mailed out separately to customers. Please do not RSVP for the meeting at this time.
+</i>
+<p>
+<IMG SRC="/RMR/Pics/redball.gif"><i>(May 21, 2006)</i> After a three year hiatus, there will be a RenderMan course at SIGGRAPH this year!  It is a full day course on Tuesday: <a href="http://www.siggraph.org/s2006/main.php?f=conference&p=courses&s=25"><b>25. RenderMan for Everyone</b></a>.  The speakers are:
+<pre>
+   Hal Bertram 
+   Rudy Cortes
+   Tal Lancaster
+   Dan Maas
+   Moriz Moeller
+   Heather Pritchett
+   Saty Raghavachary
+</pre>
+
+
+<p>
+<IMG SRC="/RMR/Pics/blueball.gif"><i>(Jan 25, 2006)</i> Well, unless you we on walkabout, you know by now that Disney bought Pixar on the Tuesday, the 24th!  The Pixar software group, sent out mail yesterday to all of their customers under support contracts that buisiness is as usual.  None of this should really effect the commercial development and support for RenderMan or RAT.
+<p>
+<a href="http://corporate.pixar.com/releaseDetail.cfm?ReleaseID=185239">Pixar press release</a> on the buyout.
+<p>
+
+
+
+<a href="oldNews/index.html">old News</a> -- old news items.
+<p>

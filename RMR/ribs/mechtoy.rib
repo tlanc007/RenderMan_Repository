@@ -1,0 +1,4680 @@
+# MechToy..rib
+# Author: Scott Iverson <si@SpamSucks_sitexgraphics.com>
+# Date: 7/19/95
+#
+# Fixed the sphere calls for the RMR (talrmr@SpamSucks_pacbell.net)
+#
+# Animated mechanical toy
+
+Declare "u" "float"
+Declare "v" "float"
+
+Projection "perspective" "fov" 26
+Format 380 380 -1
+PixelSamples 2 2
+Rotate 0 0 0 1
+Rotate -6.4 1 0 0
+Rotate 47 0 1 0
+Translate -7 -3 6
+
+LightSource "ambientlight" 1 "intensity" .2
+LightSource "distantlight" 2 "intensity" .5 "from" [1 1 -1] "to" [0 0 0]
+
+FrameBegin 1
+Display "MechToy.01.tiff" "file" "rgb"
+
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 120 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 40 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 2
+Display "MechToy.02.tiff" "file" "rgb"
+
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 130.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 59.9999994 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 3
+Display "MechToy.03.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 140.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 79.9999996 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 4
+Display "MechToy.04.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 150.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 99.9999998 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 5
+Display "MechToy.05.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 160.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 120.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 6
+Display "MechToy.06.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 170.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 140.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 7
+Display "MechToy.07.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 180.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 160.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 8
+Display "MechToy.08.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 190.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 180.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 9
+Display "MechToy.09.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 200.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 200.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 10
+Display "MechToy.10.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 210.00 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 220.00 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 11
+Display "MechToy.11.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 220.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 240.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 12
+Display "MechToy.12.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 230.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 260.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 13
+Display "MechToy.13.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 240.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 280.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 14
+Display "MechToy.14.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 250.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 300.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 15
+Display "MechToy.15.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 260.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 320.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 16
+Display "MechToy.16.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 270.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 340.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 17
+Display "MechToy.17.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 280.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 360.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 18
+Display "MechToy.18.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 290.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 380.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 19
+Display "MechToy.19.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 300.0 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 400.0 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 20
+Display "MechToy.20.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 310.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 420.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 21
+Display "MechToy.21.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 320.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 440.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 22
+Display "MechToy.22.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 330.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 460.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 23
+Display "MechToy.23.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 340.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 480.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 24
+Display "MechToy.24.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 350.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 500.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 25
+Display "MechToy.25.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 360.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 520.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 26
+Display "MechToy.26.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 370.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 540.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 27
+Display "MechToy.27.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 380.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 560.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 28
+Display "MechToy.28.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 390.00 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 580.00 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 29
+Display "MechToy.29.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 400.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 600.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 30
+Display "MechToy.30.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 410.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 620.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 31
+Display "MechToy.31.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 420.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 640.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 32
+Display "MechToy.32.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 430.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 660.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 33
+Display "MechToy.33.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 440.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 680.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 34
+Display "MechToy.34.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 450.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 700.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 35
+Display "MechToy.35.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 460.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 720.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 36
+Display "MechToy.36.tiff" "file" "rgb"
+WorldBegin
+AttributeBegin
+Surface "constant"
+Translate -4.0 0 -4.0
+Color 0 0 0
+Polygon "P" [ 0 0 0 0 0 2 2 0 2 2 0 0 ]
+Color 1 1 1
+Polygon "P" [ 0 0 2 0 0 4 2 0 4 2 0 2 ]
+Color 0 0 0
+Polygon "P" [ 0 0 4 0 0 6 2 0 6 2 0 4 ]
+Color 1 1 1
+Polygon "P" [ 0 0 6 0 0 8 2 0 8 2 0 6 ]
+Color 1 1 1
+Polygon "P" [ 2 0 0 2 0 2 4 0 2 4 0 0 ]
+Color 0 0 0
+Polygon "P" [ 2 0 2 2 0 4 4 0 4 4 0 2 ]
+Color 1 1 1
+Polygon "P" [ 2 0 4 2 0 6 4 0 6 4 0 4 ]
+Color 0 0 0
+Polygon "P" [ 2 0 6 2 0 8 4 0 8 4 0 6 ]
+Color 0 0 0
+Polygon "P" [ 4 0 0 4 0 2 6 0 2 6 0 0 ]
+Color 1 1 1
+Polygon "P" [ 4 0 2 4 0 4 6 0 4 6 0 2 ]
+Color 0 0 0
+Polygon "P" [ 4 0 4 4 0 6 6 0 6 6 0 4 ]
+Color 1 1 1
+Polygon "P" [ 4 0 6 4 0 8 6 0 8 6 0 6 ]
+Color 1 1 1
+Polygon "P" [ 6 0 0 6 0 2 8 0 2 8 0 0 ]
+Color 0 0 0
+Polygon "P" [ 6 0 2 6 0 4 8 0 4 8 0 2 ]
+Color 1 1 1
+Polygon "P" [ 6 0 4 6 0 6 8 0 6 8 0 4 ]
+Color 0 0 0
+Polygon "P" [ 6 0 6 6 0 8 8 0 8 8 0 6 ]
+AttributeEnd
+AttributeBegin
+Surface "matte"
+Color 1 0 0
+PointsPolygons [6 4 4 4 4 4 4] [6 7 8 9 10 11  0 1 7 6  1 2 8 7  2 3 9 8  3 4 10 9  4 5 11 10  5 0 6 11] "P" [ 1 0 0 0.5 0 -0.866025403 -0.5 0 -0.866025403 -1 0 0 -0.5 0 0.866025403 0.5 0 0.866025403 1 .1 0 0.5 .1 -0.866025403 -0.5 .1 -0.866025403 -1 .1 0 -0.5 .1 0.866025403 0.5 .1 0.866025403 ]
+TransformBegin
+Translate 0 0 -0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.6
+Scale 0.1 2.5 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+Color 0 1 1
+Translate 0 2.4 0
+#Attribute "divide" "u" 16 "v" 1
+Cylinder 0.1 -0.6 0.6 360
+AttributeEnd
+AttributeBegin
+Translate 0 2.4 0
+Rotate 470.000000 0 0 -1
+Surface "matte"
+Color 0 1 1
+TransformBegin
+TransformBegin
+Scale 0.1 1.20 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+AttributeBegin
+Translate 0 1.20 0
+Rotate -90 1 0 0
+ShadingInterpolation "smooth"
+#Attribute "divide" "u" 12 "v" 6
+Sphere .3 -.3 .3 360
+AttributeEnd
+TransformEnd
+Rotate 180 0 0 1
+TransformBegin
+Scale 0.1 0.3 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+Rotate 90 1 0 0
+Translate 0 -0.375 0
+Scale 0.1 0.75 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0.3 0
+TransformBegin
+Translate 0 0 -0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformBegin
+Translate 0 0 0.375
+Scale 0.1 1.0600 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+TransformEnd
+Color 0 0 1
+#Attribute "divide" "u" 12 "v" 1
+TransformBegin
+Translate 0 1.2600 0
+Cylinder 0.1 -0.375 0.375 360
+Rotate 740.000000 0 0 -1
+TransformBegin
+Translate 0 -0.6600 0
+Scale 0.1 1.3200 0.1
+PointsPolygons [4 4 4 4 4 4] [0 1 5 4  1 2 6 5  2 3 7 6  3 0 4 7  4 5 6 7  3 2 1 0] "P" [ 1 0 0  0 0 -1  -1 0 0  0 0 1  1 1 0  0 1 -1  -1 1 0  0 1 1 ]
+TransformEnd
+ShadingInterpolation "smooth"
+TransformBegin
+Translate 0 0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformBegin
+Translate 0 -0.6600 0
+Rotate -90 1 0 0
+#Attribute "divide" "u" 12 "v" 6
+Sphere .18 -.18 .18 360
+TransformEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd

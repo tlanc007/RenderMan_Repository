@@ -1,0 +1,23 @@
+# .RIB file to test EM_paper shader
+
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+Format 640 480 1
+PixelSamples 3 3
+Display "EM_paper.tiff" "file" "rgba"
+Projection "perspective"  "fov" [18]
+
+Translate 0 0 100
+Rotate 5 0 0 1
+Rotate 5 1 0 0
+
+WorldBegin
+
+LightSource "distantlight" 0 "intensity" [1] "from" [5 10 -50 ] "to" [ 0 0 0 ]
+
+Surface "EM_paper"
+Color [1 1 1]
+Patch "bilinear" "P" [-10.5 -14.85 0 10.5 -14.85 0 -10.5 14.85 0 10.5 14.85 0]
+
+WorldEnd

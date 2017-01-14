@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<content collectionGUID="CC8D43BC-5F8F-47BE-80D1-1C9A9F194E72">
+  <lastEdited clientType="local-build-20080911" date="2008-09-11 20:46:19 -0700"/>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Changes so far</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>There is now a &lt;a href="http://www.renderman.org/twiki/bin/view/RenderManRepository/WebHome"&gt;TWiki&lt;/a&gt; for the RMR.  And some of the Publications and Offsite links have migrated over to:&#xD;&#xD;&lt;a href="http://www.renderman.org/twiki/bin/view/RenderManRepository/OffsiteLinks"&gt;OffsiteLinks&lt;/a&gt;&#xD;&#xD;To become a contributor go to :&#xD;&#xD;&lt;a href="http://www.renderman.org/twiki/bin/view/TWiki/TWikiRegistration"&gt;TWiki Registration&lt;/a&gt;&#xD;&#xD;to sign up for an account.&#xD;&#xD;&#xD;&#xD;</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Sunday, March 30, 2008&lt;/b&gt;</richText>
+  </textBox>
+</content>

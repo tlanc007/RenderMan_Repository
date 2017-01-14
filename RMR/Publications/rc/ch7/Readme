@@ -1,0 +1,21 @@
+Listing of files in the ch7 directory
+
+2170 Jun 17 21:47 Makefile
+ 662 Jun 17 21:59 Readme
+ 569 Sep 22  1989 hcontour.h
+1540 Jun 17 21:36 listing7_1.c
+ 800 Jun 17 21:28 listing7_1.h
+2571 Jun 17 21:39 listing7_2.c
+ 753 Jun 17 21:39 listing7_2.h
+1357 Jun 17 21:42 listing7_3.c
+ 751 Jun 17 21:44 listing7_3.h
+2260 Jun 17 21:46 listing7_4.c
+ 754 Jun 17 21:47 listing7_4.h
+ 301 Jun 17 21:33 surf_go.c
+1454 Jun 17 21:41 wedge_go.c
+
+For the Makefile you will need to provide for the following variables:
+
+RMAN_LIB, RIDIR, RUN_RMAN, OTHER_LIBS and CC.
+
+They are described in the Makefile

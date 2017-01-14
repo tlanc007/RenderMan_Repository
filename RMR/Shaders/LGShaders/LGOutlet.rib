@@ -1,0 +1,86 @@
+Display "LGOutlet.tiff" "file" "rgb"
+
+##RenderMan RIB-Structure 1.0
+##System NeXT Release 3
+FrameBegin 0
+#
+Format 380 380 1.000000
+ScreenWindow -1 1 -1 1
+Projection "perspective" "fov" [ 40 ]
+Transform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 10 1 ]
+ShadingRate 1
+PixelSamples 2 2
+WorldBegin
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+Declare "from" "point"
+Declare "to" "point"
+LightSource "distantlight" 45 "intensity" [ .9 ] "lightcolor" [ 1 1 1 ] "from" [ 0 5 -5 ] "to" [ 0 0 0 ]
+TransformEnd
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+LightSource "ambientlight" 44 "intensity" [ .2 ] "lightcolor" [ 1 1 1 ]
+TransformEnd
+AttributeBegin
+Attribute "identifier" "name" [ "World" ]
+TransformBegin
+AttributeBegin
+Attribute "identifier" "name" [ "User_1" ]
+Attribute "identifier" "shadinggroup" [ "User_1" ]
+Color [ .599994 .599994 .599994 ]
+Declare "Ka" "float"
+Declare "Kd" "float"
+Declare "Ks" "float"
+Declare "roughness" "float"
+Declare "specularcolor" "color"
+Declare "stripecolor" "color"
+Declare "stripewidth" "float"
+Declare "stripespacing" "float"
+Surface "LGWallpaper2Stripe" "Ka" [ .5 ] "Kd" [ .75 ] "Ks" [ .25 ] "roughness" [ .1 ] "specularcolor" [ 1 1 1 ] "stripecolor" [ 1 .501968 .501968 ] "stripewidth" [ .05 ] "stripespacing" [ .5 ]
+ShadingInterpolation "constant"
+GeometricRepresentation "lines"
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 -3.486587 -3.467501 0 1 ]
+#
+#User Shape
+Patch "bilinear" "P" [ 0 0 0 7 0 0 0 7 0 7 7 0 ]
+
+TransformEnd
+AttributeEnd
+AttributeBegin
+Attribute "identifier" "name" [ "User_2" ]
+Attribute "identifier" "shadinggroup" [ "User_2" ]
+Color [ .75 .75 .65]
+Declare "Ka" "float"
+Declare "Kd" "float"
+Declare "Km" "float"
+Declare "screwKs" "float"
+Surface "LGOutlet" "Ka" [ 1 ] "Kd" [ 1 ] "Km" [ .1 ] "screwKs" [ .5 ]
+ShadingInterpolation "constant"
+GeometricRepresentation "lines"
+TransformBegin
+ConcatTransform [ .128512 0 0 0
+ 0 .128512 0 0 0 0 .128512 0 -.445606 -3.417178 -1.22558e-07 1 ]
+#
+#User Shape
+Translate 0 30 -0.1
+Scale 1.5 -1.5 1.5
+Patch "bilinear" "P" [ 0 0 0 7 0 0 0 14 0 7 14 0 ]
+
+TransformEnd
+AttributeEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+

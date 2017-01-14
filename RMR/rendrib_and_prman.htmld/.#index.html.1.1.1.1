@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE>rendrib_and_prman</TITLE>
+<LINK HREF="../rmTop.htmld/index.html" REL="Parent" TITLE="rmTop">
+<LINK HREF="../rmDetails.htmld/index.html" REL="Sibling" TITLE="rmDetails">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+ </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+<CENTER><H1><P>
+Rendrib and Prman</H1><H6><P>
+</CENTER></H6><P>
+<A HREF="http://www.cgrg.ohio-state.edu/~smay/smay.html">Steve May</A> in his <A HREF="http://www.cgrg.ohio-state.edu/~smay/RManNotes/RManNotes.html">RManNotes</A> has a <A HREF="http://www.cgrg.ohio-state.edu/~smay/RManNotes/MiscDetails.html#differences">quick listing</A> excerpted from the BMRT docs.<P>
+<P>
+
+<HR>
+<H6><P>
+<P>
+</H6><I>(The following was taken from Michael B. Johnson's WavesWorld doc, and references some WavesWorld specific topics (like WW3DWell), and represents his (incomplete and myopic) understanding of the two renderers.  Hopefully it will be useful to those versed in <a href="#pixarTM">RenderMan®</a> aracana....)</I><H6>  <P>
+<P>
+</H6>I use Larry Gritz's renderer, rendrib, from his fine collection of tools, the &quot;Blue Moon Rendering Tools&quot; (BMRT), alot.  I like it alot, but there are some important differences between it and prman.  While some of this is documented in Larry's doc for BMRT, some isn't.  The URL for Larry's BMRT distribution is: <P>
+<P>
+<A HREF="http://www.seas.gwu.edu/student/gritz/bmrt.html">http://www.seas.gwu.edu/student/gritz/bmrt.html</A>
+<P>
+<P>
+----------------------------------------------------------------------<P>
+<P>
+prman can motion blur some parameters (like thetaMax on quadrics), which rendrib can't (and won't ever, according to Larry).<P>
+<P>
+prman uses a different specular function than rendrib (rendrib uses the &quot;standard&quot; one).  This means that rendrib's specular highlights are &quot;wider&quot; than prman's.  To get them to look the same, adjust the &quot;roughness&quot; parameter of most shaders - they differ by an order of magnitude.  Personally, I like rendrib's better.<P>
+<P>
+prman can be made to run alot faster (although the quality is much lower) by adjusting the ShadingRate.  Since ShadingRate has basically no meaning to a raytracer (which solves things analytically, not by breaking them up in to micropolygons first), this means that for test images, prman is always faster, sometimes by more than an order of magnitude.  Note that in the WW3DWell, if you select rendrib for rendering, I actually look at the ShadingRate and adjust PixelSamples accordingly (which does make a big difference to rendrib) - if you<P>
+have a high quality ShadingRate, I use a high quality PixelSamples value, and correspondingly for low quality...<P>
+<P>
+There are lots of shaders you can write for rendrib that just won't work for prman.  BMRT and rendrib support volume shaders and image shaders (which prman doesn't), and the trace() function for surface shaders really work (in prman, it always returns 0).  If you're interested in some really cool effects via shaders, rendrib lets you do things you can't do any other way.<P>
+<P>
+Displacement shaders don't &quot;really&quot; work in rendrib, i.e. they don't  actually move P, just N.  <P>
+<P>
+rendrib uses straight TIFF files for textures, prman uses an undocumented proprietary format.  From my perspective, this is a huge win for rendrib.<P>
+<P>
+In rendrib, you get shadows for free (well, you have to wait longer, but you don't have to do any real work to get them).  Note that I turn this off when generating rendrib-specific rib files from the WW3DWell, although it's simple to turn it back on for specific lights (see the &quot;rooms&quot; examples - look at the spotlight).  If I wasn't so lame, I would generate the shadow maps for use by prman, but I *am* lame, so...<P>
+<P>
+rendrib can do radiosity rendering, which gives much more accurate diffuse illumination. For some scenes, this can be a huge win.  I don't support this directly from the WW3DWell; you have to go to a Terminal window and invoke rendrib by hand with the -radio option.<P>
+<P>
+rendrib gives you feedback about how much of the image is completed (check the console if you're using the WW3DWell), while prman doesn't.<P>
+<P>
+rendrib barfs on GeneralPolygons; prman doesn't. Hopefully this will be fixed soon.<P>
+<P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="../rmTop.htmld/index.html">rmTop</A>]
+
+<DT>See Also (Siblings):</DT><DD>
+
+[<A HREF="../rmDetails.htmld/index.html">rmDetails</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rendrib_and_prman</A> was converted on Sat Feb 17 19:25:46 PST 1996 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+
+</BODY>
+</HTML>

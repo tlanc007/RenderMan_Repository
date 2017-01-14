@@ -1,0 +1,9 @@
+Building the Apache httpd server
+
+
+the Configuration file needs to have:
+
+EXTRA_CFLAGS=-arch m68k -arch i486
+EXTRA_LFLAGS=-arch m68k -arch i486
+EXTRA_LIBS=-lNeXT_s
+

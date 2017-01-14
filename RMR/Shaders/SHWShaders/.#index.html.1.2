@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE> SHWShaders </TITLE>
+<body bgcolor="white">
+<center>
+<table cellspacing=0 cellpadding=3 border=0>
+<tr valign="bottom">
+<td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+<td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+</tr>
+<tr><td bgcolor="#305073" colspan=2>
+<table cellspacing=0 cellpadding=5 border=0>
+<tr bgcolor="#B8C8E0">
+<td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+<td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+<td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+<td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+<td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+<td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+<td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+<td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+<td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+</tr>
+</td></tr></table>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Stephen H. Westin Shaders</H1><P>
+</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#SHW_brushedmetal">SHW_brushedmetal</A>-- brushed metal (anisotropic)
+<LI><A HREF="index.html#SHW_velvet">SHW_velvet</A>-- a velvet shader
+</UL>
+<A HREF="mailto:westin@graphics.cornell.edu">Email Stephan</A><P>
+<HR>
+<A NAME="SHW_brushedmetal"></A>
+<H2>SHW_brushedmetal.sl</H2><P>
+An attempt at an anisotropic surface.<P>The surface is idealized as a bed of slightly rough parallel cylinders.   I use Kajiya's Phong-like highlight from a cylinder (SIGGRAPH '89), coupled with an arbitrary shadowing/masking function. Direction of anisotropy (i.e. the axis of the cylinders) is simply the "U" direction of patch parameter. -- Stephen<P> 
+<P>
+<A HREF="SHW_brushedmetal.jpg">
+<IMG SRC=SHW_brushedmetal_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="SHW_brushedmetal.jpg"></A>
+<A HREF="SHW_brushedmetal.sl">SHW_brushedmetal.sl</A>
+<A HREF="SHW_brushedmetal.rib">Sample RIB</A>
+<HR>
+<A NAME="SHW_velvet"></A>
+<H2>SHW_velvet.sl</H2><P>
+<i>Feb 01, 2001 --<br>Fixed a bug: due to a sign error, the retroreflective lobe will never be seen. I've fixed that and added a couple of parameters to give more control over the look. Updated the RIB file, too. -- Stephen</i><p>It's kinda sorta based on one of the results in my paper at SIGGRAPH '92. Seems to work both with BMRT and prman 3.6. -- Stephen.<P> 
+<P>
+<A HREF="SHW_velvet.jpg">
+<IMG SRC=SHW_velvet_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="SHW_velvet.jpg"></A>
+<A HREF="SHW_velvet.sl">SHW_velvet.sl</A>
+<A HREF="SHW_velvet.rib">Sample RIB</A>
+<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:talrmr@pacbell.net">talrmr@pacbell.net</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2002 <A HREF="mailto:tal@renderman.org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

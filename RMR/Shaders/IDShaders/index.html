@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE> IDShaders </TITLE>
+<body bgcolor="white">
+<center>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Ivan DeWolf Shaders</H1><P>
+</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#IDbrushedmetal">IDbrushedmetal</A>-- brushedmetal shader
+<LI><A HREF="index.html#IDbubbly">IDbubbly</A>-- "a cellular texture basis function" displacement shader.
+<LI><A HREF="index.html#IDcs">IDcs</A>-- simple Ci=Cs shader
+<LI><A HREF="index.html#IDez">IDez</A>-- simple matte shader.
+<LI><A HREF="index.html#IDfill">IDfill</A>-- simple toon shader
+<LI><A HREF="index.html#IDgloop">IDgloop</A>-- example of nonlinear displacements.
+<LI><A HREF="index.html#IDhair">IDhair</A>-- Parametric hair displacement shader 
+<LI><A HREF="index.html#IDoutline">IDoutline</A>-- outline shader
+<LI><A HREF="index.html#IDscartissue">IDscartissue</A>-- scar tissue
+<LI><A HREF="index.html#IDtooledsteel">IDtooledsteel</A>-- a combo of IDbrushedmetal and IDbubbly
+<LI><A HREF="index.html#toonRotate">toonRotate</A>-- example animation
+<LI><A HREF="index.html#toonStill">toonStill</A>-- one frame example
+<LI><A HREF="index.html#funcenter">funcenter</A>-- texture map
+</UL>
+<A HREF="mailto:ivan AT martian-labs DOT com ">Email Ivan DeWolf</A><P>
+<HR>
+<A NAME="IDbrushedmetal"></A>
+<H2>IDbrushedmetal.sl</H2><P>
+This shader can use an environment-map (ala prman).  This example RIB uses a prman latitude-longitude environment-map, called "a.tx".  For this example image, a.tx, was created from an image supplied by Ivan called, <A HREF="#funcenter">funcenter.jpg</A>.  Before it can be used, the file will need to be converted to tiff.  Next convert it so prman can use it with something like: <B>txmake -envlatl -smode periodic -tmode clamp funcenter.tif a.tx</B>.  <A HREF="cube.mpg">cube.mpg</A> (30 frame 320x243 mpeg file, ~158k), <A HREF="cube_anim.rib.gz">cube_anim.rib.gz</A>. 
+<P>
+<A HREF="IDbrushedmetal.jpg">
+<IMG SRC=IDbrushedmetal_sm.jpg WIDTH=100 HEIGHT=76 CLEAR
+<ALT="IDbrushedmetal.jpg"></A>
+<A HREF="IDbrushedmetal.sl">IDbrushedmetal.sl</A>
+<A HREF="IDbrushedmetal.rib">Sample RIB</A>
+<HR>
+<A NAME="IDbubbly"></A>
+<H2>IDbubbly.sl</H2><P>
+This shader is based off of Steven Worley's Siggraph 1996 paper.  This example RIB also uses the shader: <A HREF="#IDez">IDez</A>. 
+<P>
+<A HREF="IDbubbly.jpg">
+<IMG SRC=IDbubbly_sm.jpg WIDTH=100 HEIGHT=76 CLEAR
+<ALT="IDbubbly.jpg"></A>
+<A HREF="IDbubbly.sl">IDbubbly.sl</A>
+<A HREF="IDbubbly.rib">Sample RIB</A>
+<HR>
+<A NAME="IDcs"></A>
+<H2>IDcs.sl</H2><P>
+A simple shader (Ci = Cs actually).  It is used in the <A HREF="#toonStill">toonStill</A> and <A HREF="#toonRotate">toonRotate</A> RIB files. 
+<P>
+<A HREF="IDcs.sl">IDcs.sl</A>
+<HR>
+<A NAME="IDez"></A>
+<H2>IDez.sl</H2><P>
+A simplified matte shader.  This shader is used in <A HREF="#IDbubbly">IDbubbly</A> example. 
+<P>
+<A HREF="IDez.sl">IDez.sl</A>
+<HR>
+<A NAME="IDfill"></A>
+<H2>IDfill.sl</H2><P>
+Simple toon fill shader with shadows.   It is used in the <A HREF="#toonStill">toonStill</A> and <A HREF="#toonRotate">toonRotate</A> RIB files. 
+<P>
+<A HREF="IDfill.sl">IDfill.sl</A>
+<HR>
+<A NAME="IDgloop"></A>
+<H2>IDgloop.sl</H2><P>
+Example of nonlinear displacements (from "stupid renderman tricks '99).  This example RIB also uses the shader: <A HREF="#IDez">IDez</A>. 
+<P>
+<A HREF="IDgloop.jpg">
+<IMG SRC=IDgloop_sm.jpg WIDTH=100 HEIGHT=76 CLEAR
+<ALT="IDgloop.jpg"></A>
+<A HREF="IDgloop.sl">IDgloop.sl</A>
+<A HREF="IDgloop.rib">Sample RIB</A>
+<HR>
+<A NAME="IDhair"></A>
+<H2>IDhair.sl</H2><P>
+if you look at the .rib files, you'll see there are no curve primitives.  IDhair takes a parametric surface and splits it into lines, kinda like figure 16.32 on page 23 of the color plates in "advanced renderman".  these lines are then displaced off the surface in the direction of the normal farther and farther down the length of the line. they are then displaced downward depending on how much the surface points downward. This gives them their "hanging" feeling. this really is pushing the limits of the renderer and sometim s you can see odd flickering anomolies, oh well. anyway, there are 3 spheres in the .rib files, one with the hair shader, one with a simple scartissue shader, and a big flat shaded background sphere. the animation is meant to be played back pingponging back and forth, not looping.<P>-Ivan<P>  The RIB example uses the <a href="#IDscartissue">IDscartissue</a> and <a href="#IDcs">IDcs</a> shaders.<P><a href="IDhair_pingpong.mpg">IDhair_pingpong.mpg</a> is a 30 frame 320x243 mpeg animation (~280k).  The RIB for this animation is located <a href="hairanim.rib">here</a>.<P> 
+<P>
+<A HREF="IDhair.jpg">
+<IMG SRC=IDhair_sm.jpg WIDTH=100 HEIGHT=76 CLEAR
+<ALT="IDhair.jpg"></A>
+<A HREF="IDhair.sl">IDhair.sl</A>
+<A HREF="IDhair.rib">Sample RIB</A>
+<HR>
+<A NAME="IDoutline"></A>
+<H2>IDoutline.sl</H2><P>
+Valdez algorithm outline shader.   It is used in the <A HREF="#toonStill">toonStill</A> and <A HREF="#toonRotate">toonRotate</A> RIB files. 
+<P>
+<A HREF="IDoutline.sl">IDoutline.sl</A>
+<HR>
+<A NAME="IDscartissue"></A>
+<H2>IDscartissue.sl</H2><P>
+A gross scar tissue shader.  It is used in the <a href="#IDhair">IDhair</a> example. 
+<P>
+<A HREF="IDscartissue.sl">IDscartissue.sl</A>
+<HR>
+<A NAME="IDtooledsteel"></A>
+<H2>IDtooledsteel.sl</H2><P>
+This shader can use an environment-map (ala prman).  This example RIB uses a prman latitude-longitude environment-map, called "a.tx".  For this example image, a.tx, was created from an image supplied by Ivan called, <A HREF="#funcenter">funcenter.jpg</A>.  Before it can be used, the file will need to be converted to tiff.  Next convert it so prman can use it with something like: <B>txmake -envlatl -smode periodic -tmode clamp funcenter.tif a.tx</B>.  <A HREF="sphere.mpg">sphere.mpg</A> (45 frame 320x243 mpeg file, ~250k), <A HREF="sphere_amim.rib.gz">sphere_anim.rib</A>. 
+<P>
+<A HREF="IDtooledsteel.jpg">
+<IMG SRC=IDtooledsteel_sm.jpg WIDTH=100 HEIGHT=76 CLEAR
+<ALT="IDtooledsteel.jpg"></A>
+<A HREF="IDtooledsteel.sl">IDtooledsteel.sl</A>
+<A HREF="IDtooledsteel.rib">Sample RIB</A>
+<HR>
+<A NAME="toonRotate"></A>
+<H2>toonRotate</H2><P>
+<A HREF="toonRotate.mpg"><IMG SRC=toonStill.jpg WIDTH=100 ALT "toonStill.tif">toonRotate.mpg</A> -- 30 320x243 frame example animation (~300k). <A HREF="toonRotate.rib.gz">toonRotate.rib.gz</A>(gziped compressed).  The RIB uses the following shaders: <A HREF="IDcs.sl">IDcs.sl</A>, <A HREF="IDfill.sl">IDfill.sl</A>, and <A HREF="IDoutline.sl">IDoutline.sl</A>.<P><HR>
+<A NAME="toonStill"></A>
+<H2>toonStill</H2><P>
+<A HREF="toonStill.tif"><IMG SRC=toonStill.jpg WIDTH=100 ALT "toonStill.tif"></A> <A HREF="toonStill.rib">toonStill.rib</A> -- 1 frame example. The RIB uses the following shaders: <A HREF="IDcs.sl">IDcs.sl</A>, <A HREF="IDfill.sl">IDfill.sl</A>, and <A HREF="IDoutline.sl">IDoutline.sl</A>.<P> <HR>
+<A NAME="funcenter"></A>
+<H2>funcenter</H2><P>
+<A HREF="funcenter.jpg"><IMG SRC=funcenter_sm.jpg  HEIGHT=50  ALT="funcenter.jpg"></A> -- texture map src <P><HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:tal AT renderman DOT org">tal AT renderman DOT org</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

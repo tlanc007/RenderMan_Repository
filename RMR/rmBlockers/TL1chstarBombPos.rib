@@ -1,0 +1,135 @@
+Display "TL1chstarBombPos.tiff" "file" "rgba"
+
+##RenderMan RIB-Structure 1.0
+##System NeXT Release 3
+FrameBegin 0
+#
+#Format 200 200 1.000000
+Format 388 388 1.000000
+ScreenWindow -1 1 -1 1
+Projection "perspective" "fov" [ 40 ]
+Transform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 10 1 ]
+ShadingRate 1
+PixelSamples 3 3
+WorldBegin
+TransformBegin
+#ConcatTransform [ 1 0 0 0
+# 0 1 0 0 0 0 1 0 .938227 .322824 -10 1 ]
+Color [ .992431 1 .984848 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+Declare "from" "point"
+Declare "to" "point"
+Declare "coneangle" "float"
+Declare "conedeltaangle" "float"
+Declare "beamdistribution" "float"
+Declare "shadowname" "string"
+Declare "samples" "float"
+Declare "width" "float"
+Declare "blockername" "string"
+Declare "fieldofview" "float"
+Declare "negative" "float"
+Attribute "light" "shadows" "on"
+
+LightSource "TLblocker1spotlight" 20 "intensity" [ 200 ] "lightcolor" [ 1 1 1 ] "from" [ 2 7 -10 ] "to" [ 0 0 -5 ] "coneangle" [ .25 ] "conedeltaangle" [ .05] "beamdistribution" [ 2 ] "shadowname" [ "" ] "samples" [ 16 ] "width" [ 1 ] "blockername" "star2.tx" "fieldofview" .34 "negative" 0
+TransformEnd
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ .982864 1 .935575 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+LightSource "ambientlight" 3 "intensity" [ .08 ] "lightcolor" [ 1 1 1 ]
+TransformEnd
+AttributeBegin
+Attribute "identifier" "name" [ "World" ]
+ShadingInterpolation "constant"
+GeometricRepresentation "lines"
+TransformBegin
+ConcatTransform [ .640511 -.151014 -.752954 0
+ .081443 .988303 -.128935 0 .763617 .021261 .645318 0 .00094 -.435248 .013228 1 ]
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Attribute "identifier" "name" [ "Plane_4" ]
+Attribute "identifier" "shadinggroup" [ "Plane_4" ]
+Color [ 1 .965056 .980529 ]
+Declare "Ka" "float"
+Declare "Kd" "float"
+Surface "RCMatte" "Ka" [ 1 ] "Kd" [ 1 ]
+TransformBegin
+ConcatTransform [ 4.034174 .678644 1.898799 0
+ -.483407 4.389898 -.135126 0 -2.623729 -.126748 1.184147 0 -.471959 -.584884 -.102149 1 ]
+Polygon "P" [ 0 0 0 1 0 0 1 1 0 0 1 0 ]
+TransformEnd
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Attribute "identifier" "name" [ "Plane_5" ]
+Attribute "identifier" "shadinggroup" [ "Plane_5" ]
+Color [ .965056 1 .984527 ]
+Declare "Ka" "float"
+Declare "Kd" "float"
+Surface "RCMatte" "Ka" [ 1 ] "Kd" [ 1 ]
+TransformBegin
+ConcatTransform [ 2.202616 .324817 -4.243413 0
+ -.894783 4.41223 .160829 0 1.591079 .33243 .263488 0 -.373642 -.667905 -.11508 1 ]
+Polygon "P" [ 0 0 0 1 0 0 1 1 0 0 1 0 ]
+TransformEnd
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Attribute "identifier" "name" [ "Plane_1" ]
+Attribute "identifier" "shadinggroup" [ "Plane_1" ]
+Color [ .998001 1 .965056 ]
+Declare "Ka" "float"
+Declare "Kd" "float"
+Surface "RCMatte" "Ka" [ 1 ] "Kd" [ 1 ]
+TransformBegin
+ConcatTransform [ 3.934582 .62096 1.450884 0
+ 5.376808 .884755 -6.210563 0 -.959629 3.117343 .577869 0 -.44183 -.257684 -.236508 1 ]
+Polygon "P" [ 0 0 0 1 0 0 1 1 0 0 1 0 ]
+TransformEnd
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "Os"
+ Attribute "identifier" "name" [ "Cone_2" ]
+Attribute "identifier" "shadinggroup" [ "Cone_2" ]
+Color [ 1 .984832 .21485 ]
+Declare "Ks" "float"
+Declare "Kd" "float"
+Declare "Ka" "float"
+Declare "roughness" "float"
+Declare "specularcolor" "color"
+Surface "RCPlastic" "Ks" [ .5 ] "Kd" [ .5 ] "Ka" [ 1 ] "roughness" [ .1 ] "specularcolor" [ 1 1 1 ]
+TransformBegin
+ConcatTransform [ .80193 .083096 .557445 0
+ .562697 -.063048 -.800087 0 -.031971 .974608 -.099286 0 4.047375 .362605 -3.635612 1 ]
+Cone 1 .5 360
+TransformEnd
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "Os"
+Attribute "identifier" "name" [ "Sphere_1" ]
+Attribute "identifier" "shadinggroup" [ "Sphere_1" ]
+Color [ .433821 1 .522523 ]
+Declare "Ks" "float"
+Declare "Kd" "float"
+Declare "Ka" "float"
+Declare "roughness" "float"
+Declare "specularcolor" "color"
+Surface "RCPlastic" "Ks" [ .5 ] "Kd" [ .5 ] "Ka" [ 1 ] "roughness" [ .1 ] "specularcolor" [ 1 1 1 ]
+TransformBegin
+ConcatTransform [ .462373 .06127 .272847 0
+ -.065828 .536262 -.008869 0 -.271784 -.02565 .466331 0 2.31915 .661956 -.930756 1 ]
+SolidBegin "primitive"
+Sphere 1 -1 1 360
+SolidEnd
+TransformEnd
+AttributeEnd
+AttributeBegin
+AttributeEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd

@@ -1,0 +1,161 @@
+version BMRT 2.4.0beta
+surface LGbrushedmetal
+param	float	Ka		1
+param	float	Kd		0.1
+param	float	Ks		0.9
+param	float	uroughness		0.35
+param	float	vroughness		0.2
+param	color	basecolor		0.5 0.5 0.5
+local	string	$_str_0 	"__nonspecular"
+local	normal	Nf	0 0 0
+local	vector	xdir	0 0 0
+local	color	spec	0 0 0
+local	vector	_1$V	0 0 0
+code
+local	float	_1$cos_theta_r	0
+local	vector	_1$X	0 0 0
+local	vector	_1$Y	0 0 0
+local	color	_1$C	0 0 0
+local	float	_4$nonspec	0
+local	float	__float_dummy	0
+code
+local	vector	_6$LN	0 0 0
+local	float	_6$cos_theta_i	0
+local	vector	_8$H	0 0 0
+local	float	_8$rho	0
+local	float	_2$x	0
+code
+initcode 5
+	return
+code
+	return_area
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushv	dPdu 
+	normalize
+	popv	xdir 
+	pushv	I 
+	normalize
+	negv
+	popv	_1$V 
+	pushif	1 
+	pushif	1e-04 
+	pushv	_1$V 
+	pushv	Nf 
+	vdot
+	fclamp
+	popf	_1$cos_theta_r 
+	pushf	uroughness 
+	pushv	xdir 
+	divvf
+	popv	_1$X 
+	pushf	vroughness 
+	pushv	xdir 
+	pushv	Nf 
+	cross
+	divvf
+	popv	_1$Y 
+	pushif	0 
+	cset	_1$C 
+	pushif	2 
+	pushif	3.14159 
+	divff
+	pushv	Nf 
+	pushv	P 
+	illuminance_start
+label 1
+	illuminance3	2
+	pushif	0 
+	popf	_4$nonspec 
+	pushs	$_str_0 
+	pushif	1 
+	lightsourceM	_4$nonspec 
+	popf	__float_dummy 
+	pushif	1 
+	pushf	_4$nonspec 
+	lt
+	ifz	3
+	pushv	L 
+	normalize
+	popv	_6$LN 
+	pushv	Nf 
+	pushv	_6$LN 
+	vdot
+	popf	_6$cos_theta_i 
+	pushif	0 
+	pushf	_6$cos_theta_i 
+	gt
+	ifz	5
+	addVV	_1$V _6$LN 
+	normalize
+	popv	_8$H 
+	mulFF	_6$cos_theta_i _1$cos_theta_r 
+	sqrt
+	pushv	Nf 
+	pushv	_8$H 
+	vdot
+	pushif	1 
+	addff
+	pushv	_8$H 
+	pushv	_1$Y 
+	vdot
+	popf	_2$x 
+	mulFF	_2$x _2$x 
+label 7
+	pushv	_8$H 
+	pushv	_1$X 
+	vdot
+	popf	_2$x 
+	mulFF	_2$x _2$x 
+label 8
+	addff
+	divff
+	pushif	-2 
+	mulff
+	exp
+	divff
+	popf	_8$rho 
+	pushf	_8$rho 
+	pushf	_6$cos_theta_i 
+	pushf	_4$nonspec 
+	pushif	1 
+	subff
+	mulff
+	mulff
+	pushc	Cl 
+	mulcf
+	addC	_1$C 
+	popc	_1$C 
+label 5
+label 6
+label 3
+label 4
+	jump	1
+label 2
+	pushf	vroughness 
+	pushf	uroughness 
+	pushif	4 
+	mulff
+	mulff
+	pushc	_1$C 
+	divcf
+label 0
+	popc	spec 
+	mulFC	Ks spec 
+	pushv	Nf 
+	diffuse
+	mulFc	Kd 
+	ambient
+	mulFc	Ka 
+	addcc
+	addcc
+	mulC	basecolor 
+	popc	Ci 
+	cpCC	Os Oi 
+	pushc	Oi 
+	mulC	Ci 
+	popc	Ci 
+	return

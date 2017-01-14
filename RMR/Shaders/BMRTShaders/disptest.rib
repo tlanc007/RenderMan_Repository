@@ -1,0 +1,66 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+###########################################################################
+#
+# This RIB file demonstrates some more complex procedural textures.
+# Two spheres show the use of "stucco" and "dented" displacement shaders.
+# The floor shows the gmarbtile_polish shader, which is polised green
+# marble tiles.  Note that the reflection is accomplished by the shader
+# actually calling the trace() function, rather than reflection mapping.
+#
+###########################################################################
+
+Option "searchpath" "shader" [".:../shaders:&"]
+Display "disptest.tif" "file" "rgb"
+## Output was balls2.tif renamed to fit better in RMR -- tal 4/25/98
+Format 400 300 -1
+PixelSamples 1 1
+
+Declare "prmanspecular" "integer"
+Option "render" "prmanspecular" [0]
+Projection "perspective" "fov" 35
+Translate 0 -0.55 8
+Rotate -110 1 0 0
+
+
+WorldBegin
+
+LightSource "ambientlight" 1 "intensity" 0.02
+
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 1 "from" [0 1.5 4] "to" [0 0 0] "intensity" 0.6
+
+AttributeBegin
+  Declare "txtscale" "float"
+  Declare "Kr" "float"
+  Declare "darkcolor" "color"
+  Declare "lightcolor" "color"
+  Declare "veincolor" "color"
+  Surface "gmarbtile_polish" "Ka" 1 "txtscale" 0.5 "Kr" .25 "Kd" 0.3 "Ks" 0.2 "roughness" 0.02
+  Patch "bilinear" "P"  [ -5 -5 0 5 -5 0 -5 5 0 5 5 0  ] 
+AttributeEnd
+
+AttributeBegin
+  Color  [ .6 .6 .6 ]
+  Translate -1.5 0 1
+  Surface "matte"
+  Declare "frequency" "float"
+  Declare "Km" "float"
+  Displacement "stucco" "frequency" 20 "Km" 0.03
+  Sphere 1 -1 1 360
+AttributeEnd
+
+AttributeBegin
+  Translate 1.5 0 1
+  Color 1 .45 .05
+  Declare "Kr" "float"
+  Declare "Km" "float"
+  Surface "shiny" "Kd" 0 "Kr" 0.25 "roughness" 0.15 "specularcolor" [1 .5 .06]
+  Displacement "dented" "Km" 0.35
+  Sphere 1 -1 1 360
+AttributeEnd
+
+WorldEnd
+

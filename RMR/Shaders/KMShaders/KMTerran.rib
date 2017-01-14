@@ -1,0 +1,57 @@
+# Changed name to KMTerran.rib and names of shaders accordingly -- tal
+#
+# planet.rib
+#
+# Test file for the venus.sl shader.  See pp. 277-279.
+#
+# Reference:
+#    _Texturing and Modeling: A Procedural Approach_, by David S. Ebert, ed.,
+#    F. Kenton Musgrave, Darwyn Peachey, Ken Perlin, and Steven Worley.
+#    Academic Press, 1994.  ISBN 0-12-228760-6.
+#
+# 
+
+version 3.03
+ShadingRate 0.25
+PixelSamples 2 2
+Display "KMTerran.tiff" "file" "rgb"
+Format 380 380 -1
+
+Projection "perspective" "fov" 35
+Rotate -90 1 0 0
+Translate 0 -5 0
+
+WorldBegin
+
+  LightSource "ambientlight" 1 "intensity" [0.025]
+  Declare "shadows" "string"
+  Attribute "light" "shadows" "on"
+  LightSource "distantlight" 2 "from" [1 1 .1] "to" [0 0 0]
+
+  AttributeBegin
+    Declare "pswidth" "float"
+    Declare "frequency" "float"
+    Declare "casts_shadows" "string"
+    Attribute "render" "casts_shadows" "none"
+    Surface "KMStarfield" "pswidth" .25 "frequency" 3 "intensity" 2
+    Sphere 100 -100 100 360
+  AttributeEnd
+
+  AttributeBegin
+    Declare "sea_level" "float"
+    Rotate 90 0 0 1
+    Surface "KMTerran" "sea_level" 0.15
+    Displacement "KMTerranbump" "sea_level" 0.15
+    Color [.05 .05 .4]
+    Sphere 1 -1 1 360
+  AttributeEnd
+
+  AttributeBegin
+    Declare "casts_shadows" "string"
+    Attribute "render" "casts_shadows" "shade"
+    Declare "offset" "float"
+    Surface "KMPlanetclouds" "offset" 0.25
+    Sphere 1.02 -1.02 1.02 360
+  AttributeEnd
+
+WorldEnd

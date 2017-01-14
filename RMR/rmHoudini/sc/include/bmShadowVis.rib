@@ -1,0 +1,2 @@
+#Attribute "render" "visibility" 4
+Attribute "render" "casts_shadows" "opaque"

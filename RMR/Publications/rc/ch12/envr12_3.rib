@@ -1,0 +1,245 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+Declare "mapname" "uniform string"
+ShadingRate 1
+FrameBegin 1
+Display "env.xp" "file" "rgb"
+Format 64 64 1
+Projection "perspective"
+Projection "perspective" "fov" [90.000076 ]
+FrameAspectRatio 1
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -90 0 1 0 
+Translate 0 0 0 
+WorldBegin
+LightSource "ambientlight" 1 "intensity" [0.05 ]
+LightSource "pointlight" 2 "intensity" [40 ] "from" [-4 -5 -7]
+LightSource "pointlight" 3 "intensity" [40 ] "from" [3.5 6.5 -6]
+LightSource "pointlight" 4 "intensity" [10 ] "from" [4 7 6]
+Surface "plastic"
+TransformBegin
+Scale 20 20 20
+Color [1 0 0]
+Polygon "P" [-0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+Color [0 0 1]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 ]
+Color [0 1 0]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 ]
+Color [1 0 1]
+Polygon "P" [0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 ]
+Color [1 1 0]
+Polygon "P" [0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Color [0.6 0.6 0.6]
+Polygon "P" [-0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 ]
+TransformEnd
+WorldEnd
+FrameEnd
+FrameBegin 2
+Display "env.xm" "file" "rgb"
+Format 64 64 1
+Projection "perspective"
+Projection "perspective" "fov" [90.000076 ]
+FrameAspectRatio 1
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 90 0 1 0 
+Translate 0 0 0 
+WorldBegin
+LightSource "ambientlight" 5 "intensity" [0.05 ]
+LightSource "pointlight" 6 "intensity" [40 ] "from" [-4 -5 -7]
+LightSource "pointlight" 7 "intensity" [40 ] "from" [3.5 6.5 -6]
+LightSource "pointlight" 8 "intensity" [10 ] "from" [4 7 6]
+Surface "plastic"
+TransformBegin
+Scale 20 20 20
+Color [1 0 0]
+Polygon "P" [-0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+Color [0 0 1]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 ]
+Color [0 1 0]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 ]
+Color [1 0 1]
+Polygon "P" [0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 ]
+Color [1 1 0]
+Polygon "P" [0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Color [0.6 0.6 0.6]
+Polygon "P" [-0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 ]
+TransformEnd
+WorldEnd
+FrameEnd
+FrameBegin 3
+Display "env.yp" "file" "rgb"
+Format 64 64 1
+Projection "perspective"
+Projection "perspective" "fov" [90.000076 ]
+FrameAspectRatio 1
+Identity
+Rotate 0 0 0 1 
+Rotate 90 1 0 0 
+Rotate 0 0 1 0 
+Translate 0 0 0 
+WorldBegin
+LightSource "ambientlight" 9 "intensity" [0.05 ]
+LightSource "pointlight" 10 "intensity" [40 ] "from" [-4 -5 -7]
+LightSource "pointlight" 11 "intensity" [40 ] "from" [3.5 6.5 -6]
+LightSource "pointlight" 12 "intensity" [10 ] "from" [4 7 6]
+Surface "plastic"
+TransformBegin
+Scale 20 20 20
+Color [1 0 0]
+Polygon "P" [-0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+Color [0 0 1]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 ]
+Color [0 1 0]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 ]
+Color [1 0 1]
+Polygon "P" [0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 ]
+Color [1 1 0]
+Polygon "P" [0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Color [0.6 0.6 0.6]
+Polygon "P" [-0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 ]
+TransformEnd
+WorldEnd
+FrameEnd
+FrameBegin 4
+Display "env.ym" "file" "rgb"
+Format 64 64 1
+Projection "perspective"
+Projection "perspective" "fov" [90.000076 ]
+FrameAspectRatio 1
+Identity
+Rotate 0 0 0 1 
+Rotate -90 1 0 0 
+Rotate 180 0 1 0 
+Translate 0 0 0 
+WorldBegin
+LightSource "ambientlight" 13 "intensity" [0.05 ]
+LightSource "pointlight" 14 "intensity" [40 ] "from" [-4 -5 -7]
+LightSource "pointlight" 15 "intensity" [40 ] "from" [3.5 6.5 -6]
+LightSource "pointlight" 16 "intensity" [10 ] "from" [4 7 6]
+Surface "plastic"
+TransformBegin
+Scale 20 20 20
+Color [1 0 0]
+Polygon "P" [-0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+Color [0 0 1]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 ]
+Color [0 1 0]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 ]
+Color [1 0 1]
+Polygon "P" [0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 ]
+Color [1 1 0]
+Polygon "P" [0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Color [0.6 0.6 0.6]
+Polygon "P" [-0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 ]
+TransformEnd
+WorldEnd
+FrameEnd
+FrameBegin 5
+Display "env.zp" "file" "rgb"
+Format 64 64 1
+Projection "perspective"
+Projection "perspective" "fov" [90.000076 ]
+FrameAspectRatio 1
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 0 0 1 0 
+Translate 0 0 0 
+WorldBegin
+LightSource "ambientlight" 17 "intensity" [0.05 ]
+LightSource "pointlight" 18 "intensity" [40 ] "from" [-4 -5 -7]
+LightSource "pointlight" 19 "intensity" [40 ] "from" [3.5 6.5 -6]
+LightSource "pointlight" 20 "intensity" [10 ] "from" [4 7 6]
+Surface "plastic"
+TransformBegin
+Scale 20 20 20
+Color [1 0 0]
+Polygon "P" [-0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+Color [0 0 1]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 ]
+Color [0 1 0]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 ]
+Color [1 0 1]
+Polygon "P" [0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 ]
+Color [1 1 0]
+Polygon "P" [0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Color [0.6 0.6 0.6]
+Polygon "P" [-0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 ]
+TransformEnd
+WorldEnd
+FrameEnd
+FrameBegin 6
+Display "env.zm" "file" "rgb"
+Format 64 64 1
+Projection "perspective"
+Projection "perspective" "fov" [90.000076 ]
+FrameAspectRatio 1
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 180 0 1 0 
+Translate 0 0 0 
+WorldBegin
+LightSource "ambientlight" 21 "intensity" [0.05 ]
+LightSource "pointlight" 22 "intensity" [40 ] "from" [-4 -5 -7]
+LightSource "pointlight" 23 "intensity" [40 ] "from" [3.5 6.5 -6]
+LightSource "pointlight" 24 "intensity" [10 ] "from" [4 7 6]
+Surface "plastic"
+TransformBegin
+Scale 20 20 20
+Color [1 0 0]
+Polygon "P" [-0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+Color [0 0 1]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 ]
+Color [0 1 0]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 ]
+Color [1 0 1]
+Polygon "P" [0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 ]
+Color [1 1 0]
+Polygon "P" [0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Color [0.6 0.6 0.6]
+Polygon "P" [-0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 ]
+TransformEnd
+WorldEnd
+FrameEnd
+MakeCubeFaceEnvironment "env.xp" "env.xm" "env.yp" "env.ym" "env.zp" "env.zm" "env" 90 "gaussian" 2 2
+Format 256 192 -1
+FrameBegin 7
+Display "envr12_3.tiff" "file" "rgb"
+Projection "perspective" "fov" [25 ]
+Rotate 24.094801 1 0 0 
+Rotate -26.5651 0 1 0 
+Translate 2.5 2.5 5 
+WorldBegin
+LightSource "ambientlight" 25 "intensity" [0.05 ]
+LightSource "pointlight" 26 "intensity" [40 ] "from" [-4 -5 -7]
+LightSource "pointlight" 27 "intensity" [40 ] "from" [3.5 6.5 -6]
+LightSource "pointlight" 28 "intensity" [10 ] "from" [4 7 6]
+AttributeBegin
+Surface "shiny" "mapname" ["env"]
+Translate 0 0 0 
+Sphere 1 -1 1 360
+AttributeEnd
+Surface "plastic"
+TransformBegin
+Scale 20 20 20
+Color [1 0 0]
+Polygon "P" [-0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+Color [0 0 1]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 ]
+Color [0 1 0]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 ]
+Color [1 0 1]
+Polygon "P" [0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 ]
+Color [1 1 0]
+Polygon "P" [0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Color [0.6 0.6 0.6]
+Polygon "P" [-0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 -0.5 ]
+TransformEnd
+WorldEnd
+FrameEnd
+

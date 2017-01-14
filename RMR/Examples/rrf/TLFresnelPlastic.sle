@@ -1,0 +1,215 @@
+ExlunaShader 1.0
+surface TLFresnelPlastic
+%OiIsOs
+param	uniform	color	Csurf	0.5 0.5 0.5 	
+param	uniform	string	colorMap	"" 	
+param	uniform	float	ior	0 	
+param	uniform	float	Ka	1 	
+param	uniform	float	Kd	0.5 	
+param	uniform	float	Ks	0.5 	
+param	uniform	float	roughness	0.1 	
+param	uniform	color	Cspec	1 1 1 	
+param	uniform	float	Kr	0 	
+param	uniform	string	reflectMap	"" 	
+param	uniform	float	reflectBlur	0 	
+param	uniform	string	reflectSpace	"world" 	
+param	uniform	float	reflectDist	1e+10 	
+param	uniform	float	flipS	0 	
+param	uniform	float	flipT	0 	
+param	uniform	float	MtorFlip	0 	
+global	varying	color	Ci	0 0 0	
+global	varying	color	Oi	0 0 0	
+global	varying	color	Os	0 0 0	
+global	varying	point	P	0 0 0	
+global	varying	normal	N	0 0 0	
+global	varying	float	s	0	
+global	varying	float	t	0	
+global	varying	vector	I	0 0 0	
+const	uniform	float	$const0	1	
+const	uniform	float	$const1	11	
+const	uniform	float	$const2	13	
+const	uniform	float	$const3	16	
+const	uniform	float	$const4	19	
+const	uniform	float	$const5	0	
+const	uniform	float	$const6	26	
+const	uniform	float	$const7	27	
+const	uniform	float	$const8	29	
+const	uniform	float	$const9	31	
+const	uniform	string	$str0	""	
+const	uniform	float	$const10	34	
+const	uniform	float	$const11	35	
+const	uniform	float	$const12	38	
+const	uniform	float	$const13	39	
+const	uniform	float	$const14	55	
+const	uniform	float	$const15	1e-04	
+const	uniform	float	$const16	2	
+const	uniform	float	$const17	4	
+const	uniform	float	$const18	82	
+const	uniform	float	$const19	83	
+const	uniform	float	$const20	77	
+const	uniform	float	$const21	90	
+const	uniform	float	$const22	91	
+const	uniform	float	$const23	92	
+const	uniform	float	$const24	97	
+const	uniform	string	$str1	"blur"	
+const	uniform	string	$str2	"fill"	
+const	uniform	string	$str3	"firstchannel"	
+const	uniform	float	$const25	3	
+const	uniform	float	$const26	99	
+local	varying	float	_1$b	0	
+local	varying	float	_1$c	0	
+local	varying	float	_1$discrim	0	
+local	varying	float	_1$solutions	0	
+local	varying	point	_11$Psp	0 0 0	
+local	varying	vector	_11$Rsp	0 0 0	
+local	uniform	float	_11$r2	0	
+local	varying	float	_11$t0	0	
+local	varying	float	_11$t1	0	
+local	varying	float	ss	0	
+local	varying	float	tt	0	
+local	varying	float	fKt	0	
+local	varying	float	fKr	0	
+local	varying	color	Ct	0 0 0	
+local	varying	normal	Nf	0 0 0	
+local	varying	vector	V	0 0 0	
+local	varying	vector	R	0 0 0	
+local	varying	color	Cr	0 0 0	
+local	varying	float	reflOpacity	0	
+local	varying	vector	$tmp0	0 0 0	
+local	varying	vector	$tmp1	0 0 0	
+local	uniform	float	$tmp4	0	
+local	uniform	float	$tmp5	0	
+local	uniform	float	$tmp6	0	
+local	uniform	float	$tmp7	0	
+local	varying	float	$tmp9	0	
+local	varying	float	$tmp10	0	
+local	uniform	float	$tmp12	0	
+local	uniform	float	$tmp14	0	
+local	uniform	float	$tmp15	0	
+local	varying	float	$tmp20	0	
+local	varying	float	$tmp31	0	
+local	varying	float	$tmp34	0	
+local	varying	float	$tmp38	0	
+local	varying	float	$tmp41	0	
+local	varying	float	$tmp42	0	
+local	varying	color	$tmp44	0 0 0	
+local	varying	color	$tmp45	0 0 0	
+local	varying	color	$tmp46	0 0 0	
+local	varying	color	$tmp48	0 0 0	
+code
+	normalize	$tmp1  N  
+	faceforward	$tmp0  $tmp1  I  
+	normalize	Nf  $tmp0  
+	normalize	$tmp0  I  
+	neg		V  $tmp0  
+	reflect		$tmp0  I  Nf  
+	normalize	R  $tmp0  
+	eq		$tmp4  MtorFlip  $const0  
+	if		$tmp4  $const1  $const2  
+	assign		ss  t  
+	assign		tt  s  
+	assign		ss  s  
+	assign		tt  t  
+	eq		$tmp5  flipS  $const0  
+	if		$tmp5  $const3  $const3  
+	sub		ss  $const0  ss  
+	eq		$tmp6  flipT  $const0  
+	if		$tmp6  $const4  $const4  
+	sub		tt  $const0  tt  
+	ne		$tmp7  ior  $const5  
+	if		$tmp7  $const8  $const9  
+	normalize	$tmp0  I  
+	dot		$tmp9  I  Nf  
+	gt		$tmp10  $tmp9  $const5  
+	if		$tmp10  $const6  $const7  
+	assign		$tmp9  ior  
+	div		$tmp9  $const0  ior  
+	fresnel		$tmp0  Nf  $tmp9  fKr  fKt  
+	sub		fKt  $const0  fKr  
+	assign		fKt  $const0  
+	assign		fKr  fKt  
+	ne		$tmp12  colorMap  $str0  
+	if		$tmp12  $const10  $const11  
+	assign		$tmp12  $const0  
+	assign		$tmp12  $const5  
+	eq		$tmp14  $tmp12  $const0  
+	if		$tmp14  $const12  $const13  
+	texture		Ct  colorMap  ss  tt  
+	assign		Ct  Csurf  
+	assign		Cr  $const5  
+	assign		reflOpacity  $const0  
+	ne		$tmp15  reflectMap  $str0  
+	if		$tmp15  $const26  $const26  
+	transform	_11$Psp  reflectSpace  P  
+	vtransform	$tmp0  reflectSpace  R  
+	normalize	_11$Rsp  $tmp0  
+	mul		_11$r2  reflectDist  reflectDist  
+	assign		$tmp0  _11$Psp  
+	assign		$tmp1  _11$Psp  
+	dot		$tmp9  $tmp0  $tmp1  
+	gt		$tmp20  $tmp9  _11$r2  
+	if		$tmp20  $const14  $const14  
+	assign		$tmp1  _11$Psp  
+	normalize	$tmp0  $tmp1  
+	mul		_11$Psp  reflectDist  $tmp0  
+	assign		$tmp0  _11$Psp  
+	dot		$tmp9  $tmp0  _11$Rsp  
+	mul		_1$b  $const16  $tmp9  
+	assign		$tmp0  _11$Psp  
+	assign		$tmp1  _11$Psp  
+	dot		$tmp9  $tmp0  $tmp1  
+	mul		$tmp10  reflectDist  reflectDist  
+	sub		_1$c  $tmp9  $tmp10  
+	mul		$tmp9  _1$b  _1$b  
+	mul		$tmp10  $const17  _1$c  
+	sub		_1$discrim  $tmp9  $tmp10  
+	gt		$tmp31  _1$discrim  $const5  
+	if		$tmp31  $const19  $const23  
+	sqrt		_1$discrim  _1$discrim  
+	neg		$tmp9  _1$discrim  
+	sub		$tmp10  $tmp9  _1$b  
+	div		_11$t0  $tmp10  $const16  
+	gt		$tmp34  _11$t0  $const15  
+	if		$tmp34  $const20  $const19  
+	sub		$tmp9  _1$discrim  _1$b  
+	div		_11$t1  $tmp9  $const16  
+	assign		_1$solutions  $const16  
+	sub		$tmp9  _1$discrim  _1$b  
+	div		_11$t0  $tmp9  $const16  
+	gt		$tmp9  _11$t0  $const15  
+	if		$tmp9  $const18  $const19  
+	assign		_1$solutions  $const0  
+	assign		_1$solutions  $const5  
+	eq		$tmp38  _1$discrim  $const5  
+	if		$tmp38  $const22  $const23  
+	neg		$tmp10  _1$b  
+	div		_11$t0  $tmp10  $const16  
+	gt		$tmp10  _11$t0  $const15  
+	if		$tmp10  $const21  $const22  
+	assign		_1$solutions  $const0  
+	assign		_1$solutions  $const5  
+	assign		_1$solutions  $const5  
+	assign		$tmp41  _1$solutions  
+	gt		$tmp42  $tmp41  $const5  
+	if		$tmp42  $const24  $const24  
+	mul		$tmp0  _11$t0  _11$Rsp  
+	add		_11$Rsp  _11$Psp  $tmp0  
+	environment	reflOpacity  reflectMap  _11$Rsp  $str1  reflectBlur  $str2  $const0  $str3  $const25  
+	environment	Cr  reflectMap  _11$Rsp  $str1  reflectBlur  
+	assign		Oi  Os  
+	mul		$tmp44  fKt  Ct  
+	ambient		$tmp45  
+	mul		$tmp46  Ka  $tmp45  
+	diffuse		$tmp45  Nf  
+	mul		$tmp48  Kd  $tmp45  
+	add		$tmp45  $tmp46  $tmp48  
+	mul		$tmp46  $tmp44  $tmp45  
+	mul		$tmp44  fKr  Cspec  
+	mul		$tmp45  $tmp44  Ks  
+	specular	$tmp44  Nf  V  roughness  
+	mul		$tmp48  $tmp45  $tmp44  
+	add		$tmp44  $tmp46  $tmp48  
+	mul		$tmp45  Kr  Cr  
+	mul		$tmp46  $tmp45  fKr  
+	add		$tmp45  $tmp44  $tmp46  
+	mul		Ci  Os  $tmp45  

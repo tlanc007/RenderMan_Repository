@@ -1,0 +1,695 @@
+version BMRT 2.6.0beta
+surface RudyCSkin
+param	float	Kd		0.1
+param	color	skincolor		0.7 0.56 0.52
+param	string	skinmap		""
+param	color	sheenColor		1 1 1
+param	string	sheenmap		""
+param	float	blemishfreq		12
+param	float	belmishthresh		4
+param	float	blemishopac		1
+param	string	blemishmap		""
+param	float	eta		1.01
+param	float	thickness		1
+param	varying	vector	xdir		0 0 0
+param	float	angle		180
+param	float	oily		1.5
+param	string	oilmap		""
+param	float	xroughness		0.3
+param	float	yroughness		0.5
+param	float	poresfreq		60
+param	float	poresthresh		3
+param	float	poresdepth		-0.001
+local	string	$_str_0 	"__nonspecular"
+local	string	$_str_1 	""
+local	string	$_str_2 	"shader"
+local	normal	Nf	0 0 0
+local	normal	NN	0 0 0
+local	vector	Vf	0 0 0
+local	color	sc	0 0 0
+local	color	lc	0 0 0
+local	float	lo	0
+local	point	PP	0 0 0
+local	float	turb	0
+local	float	f	0
+local	float	maxfreq	0
+local	color	Cskin	0 0 0
+local	color	Csheen	0 0 0
+local	float	oilVal	0
+local	color	red01	0 0 0
+local	color	red02	0 0 0
+local	color	darkred01	0 0 0
+local	color	darkred02	0 0 0
+local	color	blemishcol	0 0 0
+local	float	_12$eta	0
+code
+local	float	_12$Kr	0
+local	float	_12$Kt	0
+local	float	_12$Kr2	0
+local	float	_12$Kt2	0
+local	color	_12$C	0 0 0
+local	vector	_12$T	0 0 0
+local	vector	_11$II	0 0 0
+code
+local	vector	_11$R	0 0 0
+local	vector	_11$T	0 0 0
+local	vector	_14$Ln	0 0 0
+local	vector	_14$H	0 0 0
+local	vector	_14$T2	0 0 0
+local	float	_10$g	0
+code
+local	float	_10$albedo	0
+code
+local	float	_10$win	0
+local	float	_10$won	0
+local	float	_9$costheta	0
+local	vector	_23$anisoDir	0 0 0
+local	matrix	_25$rot	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+local	float	_1$cos_theta_r	0
+local	vector	_1$X	0 0 0
+local	vector	_1$Y	0 0 0
+local	color	_1$C	0 0 0
+local	float	_4$nonspec	0
+local	float	__float_dummy	0
+code
+local	vector	_6$LN	0 0 0
+local	float	_6$cos_theta_i	0
+local	vector	_8$H	0 0 0
+local	float	_8$rho	0
+local	float	_2$x	0
+code
+initcode 11
+	pushv	dPdu 
+	popv	xdir 
+initcode 19
+	return
+code
+	pushv	I 
+	normalize
+	negv
+	popv	Vf 
+	pushif	8 
+	popf	maxfreq 
+	pushc	skincolor 
+	popc	Cskin 
+	pushc	sheenColor 
+	popc	Csheen 
+	pushf	oily 
+	popf	oilVal 
+	pushf	poresfreq 
+	pushv	P 
+	pushs	$_str_2 
+	transforms
+	mulvf
+	popv	PP 
+	pushif	0 
+	popf	turb 
+	pushif	1 
+	popf	f 
+label 0
+	pushf	maxfreq 
+	pushf	f 
+	lt
+	ifz	2
+	pushf	f 
+	pushif	1 
+	mulVF	PP f 
+	noisev
+	pushif	2 
+	mulff
+	subff
+	abs
+	divff
+	addF	turb 
+	popf	turb 
+label 1
+	pushif	2 
+	mulF	f 
+	popf	f 
+	jump	0
+label 2
+	pushf	poresdepth 
+	pushf	poresthresh 
+	pushf	turb 
+	pow
+	mulff
+	popf	turb 
+	pushv	N 
+	normalize
+	mulFv	turb 
+	addV	P 
+	calculatenormal
+	popv	NN 
+	pushv	I 
+	pushv	NN 
+	normalize
+	faceforward
+	popv	Nf 
+	pushs	$_str_1 
+	pushs	skinmap 
+	sne
+	ifz	3
+	pushif	0 
+	pushs	skinmap 
+	pushif	0 
+	pushif	0 
+	ctexture
+	popc	Cskin 
+label 3
+label 4
+	pushs	$_str_1 
+	pushs	sheenmap 
+	sne
+	ifz	5
+	pushif	0 
+	pushs	sheenmap 
+	pushif	0 
+	pushif	0 
+	ctexture
+	popc	Csheen 
+label 5
+label 6
+	cpCC	Cskin sc 
+	pushf	blemishfreq 
+	pushv	P 
+	pushs	$_str_2 
+	transforms
+	mulvf
+	popv	PP 
+	pushif	0 
+	popf	turb 
+	pushif	1 
+	popf	f 
+label 7
+	pushf	maxfreq 
+	pushf	f 
+	lt
+	ifz	9
+	pushf	f 
+	pushif	1 
+	mulVF	PP f 
+	noisev
+	pushif	2 
+	mulff
+	subff
+	abs
+	divff
+	addF	turb 
+	popf	turb 
+label 8
+	pushif	2 
+	mulF	f 
+	popf	f 
+	jump	7
+label 9
+	pushf	belmishthresh 
+	pushf	turb 
+	pow
+	popf	turb 
+	pushif	0.05 
+	pushc	Cskin 
+	addcf
+	popc	red01 
+	pushif	0.05 
+	pushc	red01 
+	subcf
+	popc	red02 
+	pushif	0.05 
+	pushc	Cskin 
+	subcf
+	popc	darkred01 
+	pushif	0.05 
+	pushc	darkred01 
+	subcf
+	popc	darkred02 
+	pushc	red01 
+	pushc	darkred02 
+	pushc	darkred01 
+	pushc	darkred02 
+	pushc	darkred01 
+	pushc	red02 
+	pushc	darkred01 
+	pushc	red01 
+	pushc	darkred01 
+	pushc	red02 
+	pushc	red01 
+	pushf	turb 
+	pushif	11 
+	colorspline
+	popc	blemishcol 
+	pushf	eta 
+	pushif	1 
+	divff
+	popf	_12$eta 
+	pushif	0 
+	cset	_12$C 
+	pushv	Vf 
+	negv
+	popv	_11$II 
+	pushf	_12$eta 
+	pushv	Nf 
+	pushv	_11$II 
+	fresnel4
+	popf	_12$Kr 
+	popf	_12$Kt 
+	popv	_11$R 
+	popv	_11$T 
+	pushf	_12$Kr 
+	pushif	0.5 
+	pushif	0 
+	smoothstep
+	popf	_12$Kr 
+	pushf	_12$Kr 
+	pushif	1 
+	subff
+	popf	_12$Kt 
+	pushv	_11$T 
+	normalize
+label 11
+	popv	_12$T 
+	pushif	2 
+	pushif	3.14159 
+	divff
+	pushv	Nf 
+	pushv	P 
+	illuminance_start
+label 12
+	illuminance3	13
+	pushv	L 
+	normalize
+	popv	_14$Ln 
+	addVV	_14$Ln Vf 
+	normalize
+	popv	_14$H 
+	pushif	0 
+	pushv	Nf 
+	pushv	_14$H 
+	vdot
+	gt
+	ifz	14
+	pushif	4 
+	pushv	Nf 
+	pushv	_14$H 
+	vdot
+	pow
+	pushv	Nf 
+	pushv	_14$Ln 
+	vdot
+	pushc	Cl 
+	mulFC	_12$Kr Csheen 
+	mulcc
+	mulcf
+	mulcf
+	addC	_12$C 
+	popc	_12$C 
+label 14
+label 15
+	pushif	0.2 
+	pushv	Nf 
+	pushv	_14$Ln 
+	vdot
+	pushc	Cl 
+	mulFC	_12$Kr Csheen 
+	mulcc
+	mulcf
+	mulcf
+	addC	_12$C 
+	popc	_12$C 
+	pushv	_14$Ln 
+	negv
+	popv	_11$II 
+	pushf	_12$eta 
+	pushv	Nf 
+	pushv	_11$II 
+	fresnel4
+	popf	_12$Kr2 
+	popf	_12$Kt2 
+	popv	_11$R 
+	popv	_11$T 
+	pushf	_12$Kr2 
+	pushif	0.5 
+	pushif	0 
+	smoothstep
+	popf	_12$Kr2 
+	pushf	_12$Kr2 
+	pushif	1 
+	subff
+	popf	_12$Kt2 
+	pushv	_11$T 
+	normalize
+label 16
+	popv	_14$T2 
+	pushif	0 
+	popf	_10$g 
+	pushif	0.4 
+	popf	_10$albedo 
+	pushv	Nf 
+	pushv	_12$T 
+	vdot
+	abs
+	popf	_10$win 
+	pushv	Nf 
+	pushv	_14$T2 
+	vdot
+	abs
+	popf	_10$won 
+	pushf	thickness 
+	pushf	_10$won 
+	pushif	1 
+	divff
+	pushf	_10$win 
+	pushif	1 
+	divff
+	addff
+	negf
+	mulff
+	exp
+	pushif	1 
+	subff
+	addFF	_10$win _10$won 
+	pushv	_12$T 
+	pushv	_14$T2 
+	negv
+	vdot
+	popf	_9$costheta 
+	pushif	1.5 
+	pushf	_9$costheta 
+	pushf	_10$g 
+	pushif	2 
+	mulff
+	mulff
+	mulFF	_10$g _10$g 
+	pushif	1 
+	addff
+	subff
+	pow
+	mulFF	_10$g _10$g 
+	pushif	1 
+	subff
+	divff
+label 18
+	divff
+	mulF	_10$albedo 
+	mulff
+label 17
+	pushif	0.3 
+	popf	_10$g 
+	pushif	0.5 
+	popf	_10$albedo 
+	pushv	Nf 
+	pushv	_12$T 
+	vdot
+	abs
+	popf	_10$win 
+	pushv	Nf 
+	pushv	_14$T2 
+	vdot
+	abs
+	popf	_10$won 
+	pushf	thickness 
+	pushf	_10$won 
+	pushif	1 
+	divff
+	pushf	_10$win 
+	pushif	1 
+	divff
+	addff
+	negf
+	mulff
+	exp
+	pushif	1 
+	subff
+	addFF	_10$win _10$won 
+	pushv	_12$T 
+	pushv	_14$T2 
+	negv
+	vdot
+	popf	_9$costheta 
+	pushif	1.5 
+	pushf	_9$costheta 
+	pushf	_10$g 
+	pushif	2 
+	mulff
+	mulff
+	mulFF	_10$g _10$g 
+	pushif	1 
+	addff
+	subff
+	pow
+	mulFF	_10$g _10$g 
+	pushif	1 
+	subff
+	divff
+label 20
+	divff
+	mulF	_10$albedo 
+	mulff
+label 19
+	pushif	0.8 
+	popf	_10$g 
+	pushif	0.8 
+	popf	_10$albedo 
+	pushv	Nf 
+	pushv	_12$T 
+	vdot
+	abs
+	popf	_10$win 
+	pushv	Nf 
+	pushv	_14$T2 
+	vdot
+	abs
+	popf	_10$won 
+	pushf	thickness 
+	pushf	_10$won 
+	pushif	1 
+	divff
+	pushf	_10$win 
+	pushif	1 
+	divff
+	addff
+	negf
+	mulff
+	exp
+	pushif	1 
+	subff
+	addFF	_10$win _10$won 
+	pushv	_12$T 
+	pushv	_14$T2 
+	negv
+	vdot
+	popf	_9$costheta 
+	pushif	1.5 
+	pushf	_9$costheta 
+	pushf	_10$g 
+	pushif	2 
+	mulff
+	mulff
+	mulFF	_10$g _10$g 
+	pushif	1 
+	addff
+	subff
+	pow
+	mulFF	_10$g _10$g 
+	pushif	1 
+	subff
+	divff
+label 22
+	divff
+	mulF	_10$albedo 
+	mulff
+label 21
+	addff
+	addff
+	pushf	_12$Kt2 
+	pushf	_12$Kt 
+	pushv	Nf 
+	pushv	_14$Ln 
+	vdot
+	mulCC	blemishcol Cl 
+	mulcf
+	mulcf
+	mulcf
+	mulcf
+	addC	_12$C 
+	popc	_12$C 
+	jump	12
+label 13
+	pushc	_12$C 
+label 10
+	popc	lc 
+	pushf	blemishopac 
+	pushif	1 
+	mulff
+	popf	lo 
+	pushs	$_str_1 
+	pushs	blemishmap 
+	sne
+	ifz	23
+	pushif	0 
+	pushs	blemishmap 
+	pushif	0 
+	pushif	0 
+	ftexture
+	mulF	lo 
+	popf	lo 
+label 23
+label 24
+	pushf	lo 
+	pushc	lc 
+	pushc	sc 
+	cmix
+	popc	sc 
+	pushif	0.01 
+	pushf	oily 
+	gt
+	ifz	25
+	pushv	xdir 
+	popv	_23$anisoDir 
+	pushif	0 
+	pushf	angle 
+	fnef
+	ifz	27
+	pushv	Nf 
+	pushf	angle 
+	radians
+	pushif	1 
+	ftom
+	mrotate
+	popm	_25$rot 
+	pushv	_23$anisoDir 
+	pushm	_25$rot 
+	vtransformm
+	popv	_23$anisoDir 
+label 27
+label 28
+	pushif	1 
+	pushif	1e-04 
+	pushv	Vf 
+	pushv	Nf 
+	vdot
+	fclamp
+	popf	_1$cos_theta_r 
+	pushf	xroughness 
+	pushv	_23$anisoDir 
+	divvf
+	popv	_1$X 
+	pushf	yroughness 
+	pushv	_23$anisoDir 
+	pushv	Nf 
+	cross
+	divvf
+	popv	_1$Y 
+	pushif	0 
+	cset	_1$C 
+	pushif	2 
+	pushif	3.14159 
+	divff
+	pushv	Nf 
+	pushv	P 
+	illuminance_start
+label 30
+	illuminance3	31
+	pushif	0 
+	popf	_4$nonspec 
+	pushs	$_str_0 
+	pushif	1 
+	lightsourceM	_4$nonspec 
+	popf	__float_dummy 
+	pushif	1 
+	pushf	_4$nonspec 
+	lt
+	ifz	32
+	pushv	L 
+	normalize
+	popv	_6$LN 
+	pushv	Nf 
+	pushv	_6$LN 
+	vdot
+	popf	_6$cos_theta_i 
+	pushif	0 
+	pushf	_6$cos_theta_i 
+	gt
+	ifz	34
+	addVV	Vf _6$LN 
+	normalize
+	popv	_8$H 
+	mulFF	_6$cos_theta_i _1$cos_theta_r 
+	sqrt
+	pushv	Nf 
+	pushv	_8$H 
+	vdot
+	pushif	1 
+	addff
+	pushv	_8$H 
+	pushv	_1$Y 
+	vdot
+	popf	_2$x 
+	mulFF	_2$x _2$x 
+label 36
+	pushv	_8$H 
+	pushv	_1$X 
+	vdot
+	popf	_2$x 
+	mulFF	_2$x _2$x 
+label 37
+	addff
+	divff
+	pushif	-2 
+	mulff
+	exp
+	divff
+	popf	_8$rho 
+	pushf	_8$rho 
+	pushf	_6$cos_theta_i 
+	pushf	_4$nonspec 
+	pushif	1 
+	subff
+	mulff
+	mulff
+	pushc	Cl 
+	mulcf
+	addC	_1$C 
+	popc	_1$C 
+label 34
+label 35
+label 32
+label 33
+	jump	30
+label 31
+	pushf	yroughness 
+	pushf	xroughness 
+	pushif	4 
+	mulff
+	mulff
+	pushc	_1$C 
+	divcf
+label 29
+	popc	lc 
+	pushs	$_str_1 
+	pushs	oilmap 
+	sne
+	ifz	38
+	pushif	0 
+	pushs	oilmap 
+	pushif	0 
+	pushif	0 
+	ftexture
+	mulF	oilVal 
+	popf	oilVal 
+label 38
+label 39
+	pushif	0.1 
+	mulF	oilVal 
+	pushc	lc 
+	mulcf
+	addC	sc 
+	popc	sc 
+label 25
+label 26
+	cpCC	Os Oi 
+	pushv	Nf 
+	diffuse
+	mulFc	Kd 
+	addC	sc 
+	popc	Ci 
+	return

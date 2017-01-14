@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+    <title>SIGGRAPH 2000 Shaders</title>
+  </head>
+
+  <body bgcolor=white>
+
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+ </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+<center>
+    <h1>Shaders from <i>Very Advanced RenderMan 2</i> at SIGGRAPH 2000 course 40</h1>
+</center>
+
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="#cnotes">Course Notes</A>-- PDF
+<LI><A HREF="#lancaster">Lancaster</A>-- Supplemental materials
+</UL>
+<HR>
+<A NAME="cnotes"></A><p>
+There were some typos in my section of the course notes.  Also, it appears that the gamma was off for some of my images.  A new PDF document with the corrections will be placed here in the next week or so.
+<hr>
+<p>
+<A NAME="lancaster"></A>
+For some reason my examples lost their line-feeds when the ISO-9600 CD got made.
+<br>  <A HREF="lancaster.tar">lancaster.tar</A> contains the full directory with the proper formating (well for UNIX anyways).
+<p>
+<hr>
+    <hr>
+<small>
+<P><I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2000  all rights reserved. <address><A HREF="mailto:talrmr@pacbell.net">Tal L. Lancaster</A></address></P>
+<!-- Created: Tue Jul 25 20:08:00 PDT 2000 -->
+<!-- hhmts start -->
+Last modified: Thu Jul 27 19:30:51 PDT 2000
+<!-- hhmts end -->
+<p>
+</I></small>
+  </body>
+</html>

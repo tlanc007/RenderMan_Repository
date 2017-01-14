@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+    <title>Procedural Primitive DSO</title>
+  </head>
+
+  <BODY  bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+ </center>
+    <h1>Procedural Primitive DSO</h1>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="#intro">intro</A>
+<LI><A HREF="#PP">Procedural Primitives</A>
+<UL>
+<LI><A HREF="#a_sphere">AppNote#23</A>-- a_sphere from appnote#23
+<LI><A HREF="#dsoproc">dsoproc</A>-- T. Burge's example
+</UL>
+<LI><A HREF="#SF">Shader Functions</A>
+<UL>
+</UL>
+</UL>
+<HR>
+<A NAME="intro"></A>
+<H3>Introduction</H3>
+There are two different kinds of DSOs that one can use.  One kind is used to create procedural primitives, which allows the renderer to create geometry on they fly.  The other kind is used to create C/C++ functions to be called from within the Shading Language.<P>
+First a <A HREF="Makefile">Makefile</A> for making DSO under Linux or SGI.  In short. A DSO for Linux is made with:
+<PRE>
+   cc -fPIC -c foo.c
+   ld -shared foo.o -o foo.so
+
+or more sincintly:
+
+   cc -fPIC -shared -o foo.so foo.c
+</PRE>
+Under SGI:
+<PRE>
+   cc -c foo.c
+   ld -shared -B dynamic -o foo.so foo.o
+</PRE>
+Of course the compiler will need to be told where to find any include files that are being used, such as ri.h.  This <A HREF="Makefile">Makefile</A> assumes that ri.h is located at <B>/usr/local/prman/include</B>, if this isn't the case then the Makefile will need to be changed.<P>
+<B>Red Hat Linux</B> users DSOs are now working under version starting with <B>prman3.8c</B> and greater. <BR>
+<B>prman3.8c</B> was built under <B>RH5.1</B>.  If you are still using <B>Red Hat 5.0</B> you will need the following:
+<B>libstdc++-2.8.0-8.i386.rpm</B> and <B>libstdc++-devel-2.8.0-8.i386.rpm</B>.<BR>
+<B>prman3.8d</B> was built under <B>RH5.2</B> and so you may need the appropriate libraries that version to work, if you are running under an older version.  Also, prman3.8.0.10 has worked fine for me under <B>RH6.0</B>.  But I have had problems with the shader compiler with <B>prman3.8.0.11</B> under <B>RH6.0</B>.  If anybody has any further information let me know.<BR>
+<B>prman3.9</B>, I suspect will be built under <B>RH6.0</B> so if you have an older version you may want to start thinking about upgrading soon.
+<P>
+SGI may need to set the -n32 flag when compiling and linking<P>
+<HR>
+<A NAME="PP"></A>
+<H3>Procedural Primitives</H3>
+The concept of Procedural Primitives was introduced in the <B>RenderMan Companion</B>, chapter __12. But it wasn't until <B>prman3.7</B> in which they were actually available.<P>   
+<A HREF="http://www.pixar.com/products/renderman/toolkit/Toolkit/AppNotes/appnote.23.html#DL">AppNote#23</A> goes into detail describing procedural primitives and gives some example code.<P>
+
+So far I have only two examples here, describing procedural primitives.  One example is from the appnote and the second is an example posted by <A HREF="mailto:teb AT affine DOT org ">Tom Burge's</A><P>
+As usual, if you have other examples that you would like posted, please send them onto me.<P>
+<HR width=50%>
+
+<A NAME="a_sphere"></A>
+<H2>A_Sphere</H2>
+<A HREF="a_sphere.tif">
+<IMG SRC=a_sphere.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="a_sphere.tif"></A>
+<A HREF="a_sphere.c">a_sphere.c</A>
+<A HREF="a_sphere.rib">Sample RIB</A>
+<P>
+Corrected code from  <A HREF="http://www.pixar.com/products/renderman/toolkit/Toolkit/AppNotes/appnote.23.html#DL">Application Note #23</A>. 
+<HR>
+<A NAME="dsoproc"></A>
+<H2>DSOPROC</H2>
+<A HREF="dsoproc.tif">
+<IMG SRC=dsoproc.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="dsoproc.tif"></A>
+<A HREF="dsoproc.c">dsoproc.c</A>
+<A HREF="dsoproc.rib">Sample RIB</A>
+<P>
+Corrected version of  <A HREF="mailto:teb AT affine DOT org ">Thomas Burge's</A> dsoproc.
+<HR>
+<A NAME="SF"></A>
+<P><H2>Shader Function DSOs</H2>
+The second type of DSO is used to create functions that are called within the Shading Language itself.  Don't like the prman noise function?  Now it is straightforward to implement your own, in either C or C++.<P>
+More information on Shader Function DSOs, can be found at: <A HREF="http://www.pixar.com/products/renderman/toolkit/Toolkit/dsoshadeops.html">Adding C Functions to Shading Language</A><P>
+<HR width=50%>
+<A HREF="bbox.c">box.c</A> shader DSO for giving the bounding box.<BR>
+<A HREF="bbox.sl">box.sl</A> example shader that calls <b>box.c</b>.<BR>
+<A HREF="bbox.rib">bbox.rib</A> example RIB.<BR><P>
+A <A HREF="Makefile">Makefile</A>.<P>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P>
+<!-- Created: Sat Oct 24 16:39:19 PDT 1998 -->
+<!-- hhmts start -->
+Last modified: Sat Oct  2 19:44:42 PDT 1999
+<!-- hhmts end -->
+</small>  </body>
+</html>

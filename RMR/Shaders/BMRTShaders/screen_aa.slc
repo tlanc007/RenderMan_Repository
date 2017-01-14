@@ -1,0 +1,223 @@
+surface screen_aa
+param	float	Ka		1
+param	float	Kd		0.75
+param	float	Ks		0.4
+param	float	roughness		0.1
+param	color	specularcolor		1 1 1
+param	float	density		0.25
+param	float	frequency		20
+local	normal	Nf	0 0 0
+local	vector	IN	0 0 0
+local	float	d	0
+local	float	ss	0
+local	float	tt	0
+local	float	swidth	0
+local	float	twidth	0
+local	float	GWF	0
+local	float	w	0
+local	float	h	0
+initcode 6
+	return
+code
+	pushv	I 
+	normalize
+	popv	IN 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushf	frequency 
+	pushif	1e-07 
+	pushf	dv 
+	pushf	dsdv 
+	mulff
+	abs
+	pushf	du 
+	pushf	dsdu 
+	mulff
+	abs
+	addff
+	fmax
+	mulff
+	popf	swidth 
+	pushf	frequency 
+	pushif	1e-07 
+	pushf	dv 
+	pushf	dtdv 
+	mulff
+	abs
+	pushf	du 
+	pushf	dtdu 
+	mulff
+	abs
+	addff
+	fmax
+	mulff
+	popf	twidth 
+	return_area
+	pushif	1 
+	pushf	s 
+	mulF	frequency 
+	mod
+	popf	ss 
+	pushif	1 
+	pushf	t 
+	mulF	frequency 
+	mod
+	popf	tt 
+	pushif	0.5 
+	mulF	density 
+	popf	GWF 
+	pushif	1 
+	pushf	swidth 
+	ge
+	ifz	0
+	pushf	GWF 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	w 
+	jump	1
+label 0
+	pushf	swidth 
+	divF	GWF 
+	pushif	2 
+	mulff
+	pushif	0 
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	pushf	swidth 
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	subF	ss 
+	divff
+	fclamp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	divF	GWF 
+	pushif	1 
+	subff
+	fmax
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	subF	GWF 
+	subF	GWF 
+	pushf	swidth 
+	subF	GWF 
+	subF	ss 
+	divff
+	fclamp
+	fclamp
+	subff
+	popf	w 
+label 1
+	pushif	1 
+	pushf	twidth 
+	ge
+	ifz	2
+	pushf	GWF 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	h 
+	jump	3
+label 2
+	pushf	twidth 
+	divF	GWF 
+	pushif	2 
+	mulff
+	pushif	0 
+	pushif	1 
+	pushif	0 
+	pushf	twidth 
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	pushf	twidth 
+	pushf	GWF 
+	pushif	1 
+	subff
+	subff
+	subF	tt 
+	divff
+	fclamp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushf	twidth 
+	divF	GWF 
+	pushif	1 
+	subff
+	fmax
+	pushif	1 
+	pushif	0 
+	pushf	twidth 
+	subF	GWF 
+	subF	GWF 
+	pushf	twidth 
+	subF	GWF 
+	subF	tt 
+	divff
+	fclamp
+	fclamp
+	subff
+	popf	h 
+label 3
+	pushf	h 
+	mulF	w 
+	pushif	1 
+	subff
+	popf	d 
+	pushf	d 
+	cset	Oi 
+	pushif	0 
+	pushf	d 
+	gt
+	ifz	4
+	pushf	roughness 
+	pushv	IN 
+	negv
+	pushv	Nf 
+	specular
+	pushf	Ks 
+	pushc	specularcolor 
+	mulcf
+	mulcc
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	Cs 
+	addcc
+	mulC	Oi 
+	popc	Ci 
+	jump	5
+label 4
+	pushif	0 
+	cset	Ci 
+label 5
+	return

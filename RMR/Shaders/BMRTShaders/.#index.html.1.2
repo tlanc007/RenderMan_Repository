@@ -1,0 +1,366 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE> BMRTShaders </TITLE>
+<body bgcolor="white">
+<center>
+<table cellspacing=0 cellpadding=3 border=0>
+<tr valign="bottom">
+<td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+<td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+</tr>
+<tr><td bgcolor="#305073" colspan=2>
+<table cellspacing=0 cellpadding=5 border=0>
+<tr bgcolor="#B8C8E0">
+<td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+<td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+<td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+<td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+<td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+<td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+<td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+<td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+<td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+</tr>
+</td></tr></table>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>BMRT Shading Section</H1><P>
+<H5>(Shaders from Larry Gritz's BMRT/examples)</H5><P>
+The following are some of the shaders that can be found in BMRT/examples.</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#background">background</A>
+<LI><A HREF="index.html#brick">brick</A>
+<LI><A HREF="index.html#brickbump">brickbump</A>
+<LI><A HREF="index.html#castucco">castucco</A>
+<LI><A HREF="index.html#clamptoalpha">clamptoalpha</A>
+<LI><A HREF="index.html#cornell">cornell</A>-- (example RIB)
+<LI><A HREF="index.html#dented">dented</A>
+<LI><A HREF="index.html#disptest">disptest</A>
+<LI><A HREF="index.html#dresser">dresser</A>-- (example RIB)
+<LI><A HREF="index.html#funkyglass">funkyglass</A>
+<LI><A HREF="index.html#glass">glass</A>
+<LI><A HREF="index.html#gmarbtile_polish">gmarbtile_polish</A>
+<LI><A HREF="index.html#noisysmoke">noisysmoke</A>
+<LI><A HREF="index.html#screen">screen</A>
+<LI><A HREF="index.html#screen_aa">screen_aa</A>
+<LI><A HREF="index.html#shadtest">shadtest</A>-- (example RIB)
+<LI><A HREF="index.html#shiny">shiny</A>
+<LI><A HREF="index.html#stucco">stucco</A>
+<LI><A HREF="index.html#superplank">superplank</A>
+<LI><A HREF="index.html#teapots">teapots</A>-- (example RIB)
+<LI><A HREF="index.html#texbox1">texbox1</A>-- (example RIB)
+<LI><A HREF="index.html#tpdisp">tpdisp</A>-- (example RIB)
+<LI><A HREF="index.html#uberlight">uberlight</A>-- light with many fun controls
+<LI><A HREF="index.html#wallpaper_2stripe">wallpaper_2stripe</A>
+<LI><A HREF="index.html#windowlight">windowlight</A>
+<LI><A HREF="index.html#wood2">wood2</A>
+</UL>
+<HR>
+<A NAME="background"></A>
+<H2>background.sl</H2><P>
+This rib also uses the  
+<A HREF="#dented ">dented </A>
+shader.
+<P>
+<A HREF="background.jpg">
+<IMG SRC=background_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="background.jpg"></A>
+<A HREF="background.sl">background.sl</A>
+<A HREF="background.rib">Sample RIB</A>
+<HR>
+<A NAME="brick"></A>
+<H2>brick.sl</H2><P>
+<B>Note:</B> This shader requires <a href="noises.h">noises.h</a> and <a href="patterns.h">patterns.h</a> to compile.  This shader is also used in the <a href="#texbox1">texbox1.rib</a>.<P> 
+<P>
+<A HREF="brick.jpg">
+<IMG SRC=brick_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="brick.jpg"></A>
+<A HREF="brick.sl">brick.sl</A>
+<A HREF="brick.rib">Sample RIB</A>
+<HR>
+<A NAME="brickbump"></A>
+<H2>brickbump.sl</H2><P>
+<B>Note:</B> This shader requires <a href="noises.h">noises.h</a> and <a href="patterns.h">patterns.h</a> to compile. This example also uses the "brick" shaders.  This shader is also used in the  <a href="#texbox1">texbox1.rib</a>.<P> 
+<P>
+<A HREF="brickbump.jpg">
+<IMG SRC=brickbump_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="brickbump.jpg"></A>
+<A HREF="brickbump.sl">brickbump.sl</A>
+<A HREF="brickbump.rib">Sample RIB</A>
+<HR>
+<A NAME="castucco"></A>
+<H2>castucco.sl</H2><P>
+<B>Note:</B> This shader requires <a href="noises.h">noises.h</a> to compile. This shader is used in the  <a href="#texbox1">texbox1.rib</a>.<P> 
+<P>
+<A HREF="castucco.sl">castucco.sl</A>
+<HR>
+<A NAME="clamptoalpha"></A>
+<H2>clamptoalpha.sl</H2><P>
+ 
+<P>
+<A HREF="clamptoalpha.sl">clamptoalpha.sl</A>
+<HR>
+<A NAME="cornell"></A>
+<H2>cornell</H2><P>
+This RIB demonstrates radiosity with BMRT.<P> 
+<P>
+<A HREF="cornell.jpg">
+<IMG SRC=cornell_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="cornell.jpg"></A>
+<A HREF="cornell.rib">Sample RIB</A>
+<HR>
+<A NAME="dented"></A>
+<H2>dented.sl</H2><P>
+ 
+<P>
+<A HREF="dented.jpg">
+<IMG SRC=dented_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="dented.jpg"></A>
+<A HREF="dented.sl">dented.sl</A>
+<A HREF="dented.rib">Sample RIB</A>
+<HR>
+<A NAME="disptest"></A>
+<H2>disptest.sl</H2><P>
+This RIB demonstrates displacement and procedural textures with BMRT.  This example uses  
+<A HREF="#stucco">stucco</A>
+, 
+<A HREF="#dented">dented</A>
+, 
+<A HREF="#shiny">shiny</A>
+, and 
+<A HREF="#gmarble_polish">gmarble_polish</A>
+ shaders.<P>
+<P>
+<A HREF="disptest.jpg">
+<IMG SRC=disptest_sm.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="disptest.jpg"></A>
+<A HREF="disptest.rib">Sample RIB</A>
+<HR>
+<A NAME="dresser"></A>
+<H2>dresser</H2><P>
+This RIB shows off radiosity and raytracing with BMRT.  This example needs  
+<A HREF="#wood2 ">wood2 </A>
+and 
+<A HREF="#wallpaper_2stripe ">wallpaper_2stripe </A>
+shaders.<P>
+<P>
+<A HREF="dresser.jpg">
+<IMG SRC=dresser_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="dresser.jpg"></A>
+<A HREF="dresser.rib">Sample RIB</A>
+<HR>
+<A NAME="funkyglass"></A>
+<H2>funkyglass.sl</H2><P>
+This shader is also used in <a href="#shadtest">shadtest.rib</a>..<P> 
+<P>
+<A HREF="funkyglass.jpg">
+<IMG SRC=funkyglass_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="funkyglass.jpg"></A>
+<A HREF="funkyglass.sl">funkyglass.sl</A>
+<A HREF="funkyglass.rib">Sample RIB</A>
+<HR>
+<A NAME="glass"></A>
+<H2>glass.sl</H2><P>
+This shader is used in the <a href="#teapots">teapots</a>.rib.<P> 
+<P>
+<A HREF="glass.jpg">
+<IMG SRC=glass_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="glass.jpg"></A>
+<A HREF="glass.sl">glass.sl</A>
+<A HREF="glass.rib">Sample RIB</A>
+<HR>
+<A NAME="gmarbtile_polish"></A>
+<H2>gmarbtile_polish.sl</H2><P>
+<B>NOTE:</B> This shader makes use of the trace() call, which means it can do reflections without reflection maps (at least under BMRT).  This shader is also used in <a href="#disptest">disptest.rib</a>.<P> 
+<P>
+<A HREF="gmarbtile_polish.jpg">
+<IMG SRC=gmarbtile_polish_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="gmarbtile_polish.jpg"></A>
+<A HREF="gmarbtile_polish.sl">gmarbtile_polish.sl</A>
+<A HREF="gmarbtile_polish.rib">Sample RIB</A>
+<HR>
+<A NAME="noisysmoke"></A>
+<H2>noisysmoke.sl</H2><P>
+Atmospheric shader.  The RIB is just smokebox.rib renamed.<P> 
+<P>
+<A HREF="noisysmoke.jpg">
+<IMG SRC=noisysmoke_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="noisysmoke.jpg"></A>
+<A HREF="noisysmoke.sl">noisysmoke.sl</A>
+<A HREF="noisysmoke.rib">Sample RIB</A>
+<HR>
+<A NAME="screen"></A>
+<H2>screen.sl</H2><P>
+NOTE: A NON antialiased version 
+<P>
+<A HREF="screen.jpg">
+<IMG SRC=screen_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="screen.jpg"></A>
+<A HREF="screen.sl">screen.sl</A>
+<A HREF="screen.rib">Sample RIB</A>
+<HR>
+<A NAME="screen_aa"></A>
+<H2>screen_aa.sl</H2><P>
+NOTE: An anti-aliased version 
+<P>
+<A HREF="screen_aa.jpg">
+<IMG SRC=screen_aa_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="screen_aa.jpg"></A>
+<A HREF="screen_aa.sl">screen_aa.sl</A>
+<A HREF="screen_aa.rib">Sample RIB</A>
+<HR>
+<A NAME="shadtest"></A>
+<H2>shadtest</H2><P>
+Uses  
+<A HREF="#funkyglass, ">funkyglass, </A>
+
+<A HREF="#screen">screen</A>
+ and 
+<A HREF="#screen_aa ">screen_aa </A>
+shaders.  <B>Note:</B> This example shows off the automatic shadows found in BMRT.  If you are wondering why the left image has a solid shadow rather than one like its middle counter part, check out the RIB and the corresponding BMRT documentation under:<P>Atrribute &quot;render&quot; ....<P><P>
+<P>
+<A HREF="shadtest.jpg">
+<IMG SRC=shadtest_sm.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="shadtest.jpg"></A>
+<A HREF="shadtest.rib">Sample RIB</A>
+<HR>
+<A NAME="shiny"></A>
+<H2>shiny.sl</H2><P>
+Used in teapots.rib 
+<P>
+<A HREF="shiny.jpg">
+<IMG SRC=shiny_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="shiny.jpg"></A>
+<A HREF="shiny.sl">shiny.sl</A>
+<A HREF="shiny.rib">Sample RIB</A>
+<HR>
+<A NAME="stucco"></A>
+<H2>stucco.sl</H2><P>
+ 
+<P>
+<A HREF="stucco.jpg">
+<IMG SRC=stucco_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="stucco.jpg"></A>
+<A HREF="stucco.sl">stucco.sl</A>
+<A HREF="stucco.rib">Sample RIB</A>
+<HR>
+<A NAME="superplank"></A>
+<H2>superplank.sl</H2><P>
+<B>Note:</B> This shader requires <a href="noises.h">noises.h</a> and <a href="patterns.h">patterns.h</a> to compile.  Used in  
+<A HREF="#teapots">teapots</A>
+, 
+<A HREF="#texbox1">texbox1</A>
+, and 
+<A HREF="#tpdisp">tpdisp</A>
+RIB examples.
+<P>
+<A HREF="superplank.jpg">
+<IMG SRC=superplank_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="superplank.jpg"></A>
+<A HREF="superplank.sl">superplank.sl</A>
+<A HREF="superplank.rib">Sample RIB</A>
+<HR>
+<A NAME="teapots"></A>
+<H2>teapots</H2><P>
+This RIB uses 
+<A HREF="#superplank">superplank</A>
+,
+<A HREF="#shiny">shiny</A>
+, and 
+<A HREF="#glass">glass</A>
+ shaders.
+<P>
+<A HREF="teapots.jpg">
+<IMG SRC=teapots_sm.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="teapots.jpg"></A>
+<A HREF="teapots.rib">Sample RIB</A>
+<HR>
+<A NAME="texbox1"></A>
+<H2>texbox1</H2><P>
+This RIB uses  
+<A HREF="#windowlight">windowlight</A>
+, 
+<A HREF="#brick">brick</A>
+, 
+<A HREF="#brickbump">brickbump</A>
+, 
+<A HREF="#castucco shaders.<P>">castucco shaders.<P></A>
+
+<P>
+<A HREF="texbox1.jpg">
+<IMG SRC=texbox1_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="texbox1.jpg"></A>
+<A HREF="texbox1.rib">Sample RIB</A>
+<HR>
+<A NAME="tpdisp"></A>
+<H2>tpdisp</H2><P>
+This RIB uses the  
+<A HREF="#superplank">superplank</A>
+ shader.  This RIB shows bump-maping verses true displacement.
+<P>
+<A HREF="tpdisp.jpg">
+<IMG SRC=tpdisp_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="tpdisp.jpg"></A>
+<A HREF="tpdisp.rib">Sample RIB</A>
+<HR>
+<A NAME="uberlight"></A>
+<H2>uberlight.sl</H2><P>
+This shader is based  on Ronen Barzel's paper "Lighting Controls for Computer Cinematography" (in Journal of Graphics Tools, vol. 2, no. 1: 1-20).  A whole page of examples using this shader can be found at:  <A HREF="../../rmBlockers/uber/index.html">uberlight</A>. 
+<P>
+<A HREF="uberlight.jpg">
+<IMG SRC=uberlight_sm.jpg WIDTH=100 HEIGHT=76 CLEAR
+<ALT="uberlight.jpg"></A>
+<A HREF="uberlight.sl">uberlight.sl</A>
+<A HREF="uberlight.rib">Sample RIB</A>
+<HR>
+<A NAME="wallpaper_2stripe"></A>
+<H2>wallpaper_2stripe.sl</H2><P>
+ 
+<P>
+<A HREF="wallpaper_2stripe.jpg">
+<IMG SRC=wallpaper_2stripe_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="wallpaper_2stripe.jpg"></A>
+<A HREF="wallpaper_2stripe.sl">wallpaper_2stripe.sl</A>
+<A HREF="wallpaper_2stripe.rib">Sample RIB</A>
+<HR>
+<A NAME="windowlight"></A>
+<H2>windowlight.sl</H2><P>
+This shader is used in  <a href="#texbox1">texbox1.rib</a>. 
+<P>
+<A HREF="windowlight.sl">windowlight.sl</A>
+<HR>
+<A NAME="wood2"></A>
+<H2>wood2.sl</H2><P>
+<B>Note:</B> This shader requires <a href="patterns.h">patterns.h</a> to compile.  It is used in  
+<A HREF="#dresser">dresser</A>
+ and 
+<A HREF="#limbo">limbo</A>
+RIBS.
+<P>
+<A HREF="wood2.jpg">
+<IMG SRC=wood2_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="wood2.jpg"></A>
+<A HREF="wood2.sl">wood2.sl</A>
+<A HREF="wood2.rib">Sample RIB</A>
+<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:talrmr@pacbell.net">talrmr@pacbell.net</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2002 <A HREF="mailto:tal@renderman.org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

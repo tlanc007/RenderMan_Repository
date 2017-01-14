@@ -1,0 +1,215 @@
+This is the README file for the examples/ subdirectory of the Blue Moon
+Rendering Tools distribution.
+
+Remember to set your display gamma properly to view these images!  If
+the test images look too dark, it means you haven't corrected for
+gamma.  On most monitors, the display gamma should probably be set
+around 2.4.  One way to do this if you're working on an SGI is with
+the /sbin/gamma utility.  If you are viewing TIFF files created by
+BMRT with some kind of image viewer (like xv), be sure to instruct the
+viewer to correct gamma properly.
+
+Before rendering, be sure that your environment variable named SHADERS
+is set to the place where the *.slc files reside.  For example, if you
+are running these tests in the BMRT/examples directory and have other
+shaders in the BMRT/shaders file, try:
+
+	export SHADERS=.:../shaders:/usr/BMRT/shaders:/usr/local/shaders
+
+or whatever.  Note that this is for ksh.  The equivalent for csh or
+tcsh is:
+
+	setenv SHADERS .:../shaders:/usr/BMRT/shaders:/usr/local/shaders
+
+All of the demos create TIFF files.  If you would rather render
+directly to the display, just use the -d command line option, which
+overrides the Display command in the RIB file and forces display
+to the framebuffer.  For example:
+
+	rendrib -d myfile.rib
+
+There are a few bonus shaders in this directory which aren't used in
+any of the examples.  Give them a once over anyway, maybe you'll find
+them useful.
+
+
+========================================================================
+
+
+
+Cornell Radiosity Box
+---------------------
+
+The file cornell.rib is a RIB description of the Cornell radiosity
+box test image.  I got the geometric and material description from
+the Cornell web site (www.graphics.cornell.edu), so this is the
+*actual* Cornell box, with minor modifications to convert to RIB
+and use RenderMan conventions for shaders and units and such.
+Try the following:
+
+	rendrib -d 8 cornbox.rib
+
+The -d option renders directly to the display.  An optional numerical
+argument instructs rendrib to display with progressive refinement (in
+this case, it starts by rendering every 8th scanline, then every 4th,
+and so on).  Without the -d flag, rendrib would create a TIFF file for
+the resulting image.
+
+Reading the RIB file will reveal how nonstandard attributes are used
+to declare light sources which automatically cast shadows, as well as
+how to give hints to the radiosity renderer about how finely to mesh
+objects.
+
+
+
+
+Shadow tests
+------------
+
+Try the following:
+
+	rendrib shadtest.rib
+
+Display the resulting file, balls1.tif.  You will notice several things:
+
+1. The light source casts shadows automatically, without the need for a
+   separate shadow map file.
+2. The spheres use custom shaders which alter their appearance and opacity
+   across their surfaces.  The left sphere uses a simple function (screen.sl)
+   which aliases quite a bit.  The center sphere uses a different shader
+   (screen_aa.sl), which attempts to antialias itself.  Even at low sampling
+   densities, the right sphere should be significantly less "jaggy".  The
+   right sphere has a more complex colored transparent look ("funkyglass").
+3. The right two spheres on the right cast the "correct" opacity shadows
+   on the floor, and also shadows themselves correctly.  This would be
+   extremely hard to do using shadow maps (especially the right-most sphere).
+   See the RIB file for an example of how to use these nonstandard attributes.
+
+
+
+
+
+Preview of Limbo Video
+----------------------
+
+As an example of how rendribv and rgl can be used to preview motion,
+I have included a RIB file that describes some motion.  Try typing:
+
+	rgl limbo.rib
+
+If you're on a fairly fast machine, try:
+
+	rgl -sync 30 limbo.rib
+
+The -sync 30 says that rgl should try to display the frames in
+limbo.rib as close to 30 frames per second as possible.  If you have a
+slow machine, it may appear jumpy.  If you omit the "-sync 30"
+command, every frame will be shown, but no specific speed will be
+used.  Another way to guarantee a specific frame rate is to reduce the
+polygon subdivision level, for example:
+
+	rgl -sync 30 -rd 0.5 limbo.rib
+
+This makes curved surfaces look a bit blocky, but it renders much
+faster.
+
+Similarly, you can use rendribv to preview a wireframe pencil test:
+
+	rendribv limbo.rib
+
+Incidentally, this RIB file is a clip from a video I made called "L*xo
+Learns to Limbo".  It was not key framed, but rather is the result of
+a new learning-based motion control system that I am currently
+developing.
+
+
+
+
+
+
+Complex textures
+----------------
+
+Try:
+
+	rendrib -d 8 disptest.rib
+
+You will see examples of three complex procedural textures.  One ball
+uses the displacement shader "stucco", the other ball uses the
+displacement shader "dented" along with the surface shader "shiny",
+and the floor uses the surface shader "gmarbtile_polish", which is
+supposed to look like polished green marble tiles.  Note that the
+shiny and marble textures reflects because the shaders call the
+trace() function.  No reflection maps were used.
+
+Try:
+
+	rendrib tpdisp.rib
+
+Then display the resulting file, tpdisp.tif.  The teapot on the right
+just modifies normals for the displacement, rather than moving the
+actual points.  But the teapot on the left has true displacements
+(look closely at the silhouette edges and the shadows).  New to BMRT
+2.3.5!  It's expensive, but if you need it, there's a special
+attribute that lets you have true displacements.  See the user manual
+for details on its use and limitations.
+
+Try:
+
+	rendrib texbox1.rib
+
+Then display the resulting file, texbox1.tif.  This is just another
+view of the Cornell box, but with some new textures applied to 
+show off the example shaders "castucco", "superplank", "brick",
+"brickbump", and "windowlight".
+
+
+
+
+
+
+Atmospheric effects
+-------------------
+
+Run this:
+
+	rendrib -d 4 smokebox.rib
+
+This image will take a while to render.  Don't worry.  It's using the
+sample volume shader in noisysmoke.sl.  It simulates atmospheric
+scattering of light in a smoke-filled box.  The volume shader marches
+along the incident ray, accumulating scattered illumination and
+attenuating for extinction.  Notice the cool atmospheric shadows.
+
+
+
+
+Ray Traced reflections & refractions
+------------------------------------
+
+Run this:
+
+	rendrib -d teapots.rib
+
+This image will take a while to render, but shows use of ray tracing
+for reflection and refraction, as well as use of the example shaders
+"shiny", "glass", and "superplank".
+
+
+
+
+Specular-to-diffuse Illumination
+--------------------------------
+
+Run this:
+
+	rendrib dresser.rib
+
+Then view the file dresser.tif.  This image will take a while to
+render (it took about an hour on my SGI).  Combines radiosity and ray
+tracing, and even accounts for light bouncing off of mirrors.  I bet
+you can't find another renderer that will give you this effect!
+
+
+
+

@@ -1,0 +1,37 @@
+SUBTITLE_B	example procedural shaders of K Musgrave's texture demos in chapter 8 of  Texturing and Modeling: A Procedural Approach)
+SUBTITLE	The following are example implementations of <A HREF="http://www.cs.umbc.edu/~ebert/book/book.html">Textures and Modeling: A Procedural Approach</A>.	
+TITLE	KMShaders	H1	Ken Mussgrave Shaders
+DIR	KMShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	KMCyclone
+DESC	
+DO_LINE
+SHADER	KMFlame
+DESC	
+DO_LINE
+SHADER	KMLuna	NOTE	An example RIB can be found at <A HREF="index.html#KMStrata">KMStrata</A>
+DESC	
+DO_LINE
+SHADER	KMPlanetclouds	NOTE	An example RIB can be found at <A HREF="index.html#KMTerran">KMTerran</A>
+DESC	
+DO_LINE
+SHADER	KMPuffyclouds
+DESC	
+DO_LINE
+SHADER	KMShiny
+DESC	
+DO_LINE
+SHADER	KMStrata	NOTE	The RIB for this example also uses the <A HREF="index.html#KMShiny">KMShiny</A>, <A HREF="index.html#KMWindywave">KMWindywave</A>, <A HREF="index.html#KMLuna">KMLuna</A> shaders.<P>
+DESC	
+DO_LINE
+SHADER	KMTerran	NOTE	The RIB for this examplealso uses, the	LINK	LGShaders#LGStarfield	NAME	LGStarfield	, <A HREF="index.html#KMTerranbump">KMTerranbump</A>, and <A HREF="index.html#KMPlanetclouds">KMPlanetcloulds</A> shaders.<P>
+DESC	
+DO_LINE
+SHADER	KMTerranbump	NOTE	The picture can be seen in <A HREF="index.html#KMTerran">KMTerran</A> section.<P>  This shader is used in the RIB file for KMTerran.sl.<P>
+DESC	
+DO_LINE
+SHADER	KMVenus
+DESC	
+DO_LINE
+SHADER	KMWindywave	NOTE	A RIB example of the LMLuna shader can be found in the <A HREF="index.html#KMStrata">KMStrata</A> section.<P>
+DESC	
+DO_LINE

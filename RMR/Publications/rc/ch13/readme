@@ -1,0 +1,32 @@
+README file for Chapter 13
+
+    The only example in this chapter is the application of a "clouds" shader
+to the bezier bowling pin created in chapter 6.  Note that the line numbers
+presented in Listing 13.1 should NOT be included in the source code file.
+
+Corrections and Additions:
+
+Listing 13.1:
+-------------
+    This is the standard Bezier bowling pin from chapter 6 with two changes:
+the color is set to a light blue, and a call to RiSurface() is used to 
+access the clouds shader.
+    The "clouds" shader in this directory differs from the presentation in
+The RenderMan Companion.  The book's listing results in an extremely dark 
+image because the sum of the noise rarely exceeds 0.1.  Although lighting 
+can be used here, a more effective looking shader ignores the lights and 
+scales the sum somewhat.  The following changes are made in the shader:
+
+    1. Substitute line 9, the declaration of "refl", with the declaration 
+       of "white".
+
+       color white = color(1.0, 1.0, 1.0);
+
+    2. Delete line 17, the assignment of "refl".
+
+    3. Replace line 18, the assignment of "Ci" with:
+
+       Ci = mix(Cs, white, sum*4.0);
+
+    Notice that there is a numbering error in the book; 19 is applied to 
+two lines in the listing.

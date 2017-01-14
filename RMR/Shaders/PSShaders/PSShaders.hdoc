@@ -1,0 +1,12 @@
+MAILTO	stuart AT cis DOT ohio-state DOT edu	NAME	Peter Stuart
+TITLE	PSShaders	H1	Peter Stuart
+DIR     PSShaders       PIC     100     100     ALIGN=LEFT CLEAR
+NEW
+SHADER	PSbarnacle	NOTE	Produces barnacels on a wood-like surface.<p>This shader source makes use of the following source files to build: <a href="#PSshapes.h">PSshapes.h</a>, <a href="#PSxforms.h">PSxforms.h</a>, and <a href="http://www.accad.ohio-state.edu/~smay/RManNotes/rmannotes.sl">rmannotes.sl</a><p>
+DESC	makes, uh, barnacles
+DO_LINE
+NEW
+TOC	PSshapes.h	shape functions	NOTE	Include file which contains functions to ease shape drawing.<p>
+NEW
+TOC	PSxforms.h	transforming functions	NOTE	Include file which contains functions to help with transforming.<p>
+TOC	Misc.	more shaders	NOTE	More of Peter's shaders can be found on his <a href="http://www.cis.ohio-state.edu/~stuart/shaders">shaders page</a>.<p><hr>

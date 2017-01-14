@@ -1,0 +1,42 @@
+##RenderMan RIB
+version 3.03
+FrameBegin 1
+Format 128 128 1
+ScreenWindow -1 1 -1 1
+Projection "orthographic" 
+Display "shad17.z" "zfile" "z" 
+Translate 0 0 10
+Rotate 48 0 -1 0
+WorldBegin 
+Scale 0.8 0.8 0.8
+Surface "matte" 
+Color [1 1 1]
+Sphere 1 -1 1 360 
+Translate -1.1 0 -0.99
+Sphere 0.1 -0.1 0.1 360 
+WorldEnd 
+FrameEnd 
+Display "RenderMan" "framebuffer" "rgb" 
+Format 256 192 -1
+ShadingRate 1
+FrameBegin 2
+MakeShadow "shad17.z" "shad17.shd" 
+PixelSamples 2 2
+ScreenWindow -1.3 -0.1 -0.45 0.45
+Projection "orthographic" 
+Option "shadow" "bias0" [0]"bias1" [0]
+Declare "nsamples" "uniform float"
+Declare "resfact" "uniform float"
+Declare "shadname" "uniform string"
+LightSource "shadowlight" 1 "nsamples" [16]"resfact" [2]"shadname" ["shad17.shd"]"from" [0 0 0]"to" [1 0 0.9]
+Translate 0 0 2
+LightSource "ambientlight" 2 "intensity" [0.1]
+WorldBegin 
+Scale 0.8 0.8 0.8
+Surface "matte" 
+Color [1 1 1]
+Sphere 1 -1 1 360 
+Translate -1.1 0 -0.99
+Sphere 0.1 -0.1 0.1 360 
+WorldEnd 
+FrameEnd 

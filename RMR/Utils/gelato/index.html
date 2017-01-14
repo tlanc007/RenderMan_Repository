@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+    <title>RMGelato</title>
+  </head>
+
+  <body bgcolor=white>
+
+ <center>
+ </td></tr></table>
+ </center>
+<center>
+    <h1>RenderMan/Gelato Utilities</h1>
+</center>
+
+<H4>What's on this page?</H4></P>
+<UL>
+<LI><A HREF="#rsl2gsl">rsl2gsl</A> -- Translates RenderMan shader source into Gelato shaders.</li>
+<LI><A HREF="#ribelato">Ribelato</A> -- Plugin allowing Gelato to render RIB scenes.</li>
+
+</UL>
+<hr>
+<a name="rsl2gsl"></a>
+<H2>rsl2gsl</H2>
+Amoung other things, with rsl2gsl, one can parse the RenderMan shading language (RSL) and either write out RenderMan or Gelato shaders.
+<p>
+
+More information can be found within the current <a href="download/rsl2gsl_ReadMe.html">ReadMe.html</a> file.
+<p>
+To get a copy go to the <a href="download/">download directory</a>. Note for those not familar with the syntax.  The packages, <i>.tgz</i></a> are in a gzip'ed tar file.  (For Windows users, if you get <a href="www.cygwin.com">Cygwin</a> as I recommend, it has the needed executable to extract the files: tar.)
+<pre>
+> tar zxvf rsl2gsl_1.0.0.tgz
+
+</pre>
+<p>
+Version 1.0.0 is now released.  Here are excerpts from the ChangeLog:
+<pre>
+1.0.0 July 27, 2005
+	[[ ]] can now be interpreted as rawblocks (RB).
+	Fixed bug where only one RB could occur in the same statement block area.
+	Fixed bug where dangling ';' in parameter list would cause a parsing error.
+	Fixed bug where two empty statements would cause a parsing error.
+	
+	Handles break and continue keywords.
+
+	Added gtrace() for Gelato's trace() as opposed to RMan's trace call.
+		This saves the code duplication that would have occured by 
+		using a RB.
+
+	Support for RMan illuminance send/recieve message passing.
+
+0.9.1 February 17, 2005
+	Handles array initializers that are negative numbers:
+
+	float a[2] = {-1, -2}
+	
+
+0.9.0 January 01, 2005
+	Tries to handle cases like:
+		vector v = (0, 0, 0);
+
+		to
+		
+		vector v = vector (0, 0, 0);
+
+		Gelato needs implicit cast.
+	
+	Closer to releasing source code.
+	
+0.8.3 November 29, 2004
+	Handles internal void functions
+
+	Another "current" -> "common" case handled.
+	
+0.8.2 November 18, 2004
+	Fixed another case dealing with "current"->"common" space translation
+		vtransform ( "shader", "current", vhsl );
+
+	Before only the first paramter was being considered.
+
+0.8.1 October 05, 2004
+	"current"->"commom" space translation missed case:
+		origin = point "current" (0, 0, 0);
+
+0.8 September 23, 2004
+	Several minor fixes/changes
+		Will change "current" to "common" for transformation space changes.
+	
+		illuminance(), illuminate() blocks will not longer cause a ';' to be emited if the argument list is empty.
+		The ?: triop has been changed.  Even less cases, than what were allowed in 0.7, will be accepted by the parser.  Consult the ReadMe.html for more details.
+
+		translator will allow for (int i = 0;...).  You will need Gelato 1.1 or greater for the shader compiler to accept this.
+		
+		Removed limitation of "yiq" as a color space.  You will need Gelato 1.1 or greater for the shader compiler to accept this.
+	
+	ReadMe.html has been updated.  New sections include:
+		Caution with the ?: operator
+		Manual intervention with translating light shaders may be needed.
+</pre>
+<hr>
+<a name="ribelato"></a>
+<H2>Ribelato</H2>
+Ribelato is a RIB input Plug-in that allows Gelato to render RenderMan RIB scenes.
+<p>
+To get a copy go to the <a href="download/">download directory</a>. The distribution is open sourced.  There is also a pre-compiled DSO that should work under various Linux platforms.
+<p>
+More information can be found within the current <a href="download/Ribelato_README">README</a> file.
+<p>
+    <hr>
+    <address><a href="mailto:tal AT renderman DOT org">Tal Lancaster</a></address>
+<!-- Created: Sat Jul 31 10:48:26 PDT 2004 -->
+<!-- hhmts start -->
+Last modified: Thu Jan 25 20:26:13 PDT 2006
+<!-- hhmts end -->
+  </body>
+</html>

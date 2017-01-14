@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>Stupid RenderMan/RAT Tricks 2002</TITLE>
+</HEAD>
+
+  <body>
+ <body bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+ </center>
+
+    <h1>Stupid RenderMan/RAT Tricks 2002</h1>
+<p>
+<center>Welcome to the Fourth Annual Stupid RenderMan/RAT Tricks!</center>
+<p>
+<H4>What's on this page?</H4><P>
+<UL>
+<LI><A HREF="#intro">Introduction</A>
+<LI><A HREF="#compress">Compressing RIB Files</A>
+<LI><A HREF="#aov">Rendering Lights Separately and Simultaneously</A>
+<LI><A HREF="#shadowb">Shadow Buffers</a>
+<LI><A HREF="#profile">Shader Profiling</a>
+</UL>
+<hr>
+<a name="intro"></a>
+Materials from the 4rth installment of Stupid RenderMan/RAT Tricks.
+<pre>
+Speakers:
+Ian Stephenson  Compressing RIB files
+Eric Leven      AOVs
+Christophe Hery Shadow Buffers
+Wayne Wooten    Profiling Shaders
+</pre>
+    <hr>
+<a name="compress"></a>
+<H2>Compressing RIB Files</H2>
+<a>Ian Stephenson</b> presented a way of saving disk space for a sequence by compressing the RIB and tracking the differences between each frame.
+<p>
+He has a <a href="http://www.dctsystems.freeserve.co.uk/diff.html">web page</a> with more information, including a <a href="http://www.dctsystems.freeserve.co.uk/diffRibs.pdf">1 page pdf</a> file.
+
+<p>
+<HR>
+<a name="aov"></a>
+<H2>Rendering Lights Separately and Simultaneously</H2>
+<b>Eric Leven</b> presented (actually Doug Epps did the presenting) the use of Arbritary Output Variables to create an image for each light simultaneously so these images can be composited at will for the final balance.
+<p>
+<a href="sepLights.ppt.gz">Here</a> are his powerpoint slides.  Also, Eric provided a <a href="nevel.tar.gz">tar</a> file which contains example shaders and RIB that can be rendered.
+ 
+<HR>
+<a name="shadowb"></a>
+<H2>Shadow Buffers</H2>
+<b>Christophe Hery</b> talked about Shadow Buffers and their uses for depth cueing, bounding box detection, quick & dirty raytacing and finally showed how to implement sub-surface scattering.  (Much thanks to Andrea Maiolo for the brain-storming sessions. -- Christophe) 
+<p>
+<a href="PrmanUserGroup2002.ppt">Here</a> are his powerpoint slides.
+<p>
+<HR>
+<a name="profile"></a>
+<H2>Profiling Shaders</H2>
+<b>Wayne Wooten</b> presented Shader Profiling.  This technique allows one to see relatively how long each micropoloygon takes to render in a given image.  In fact PRMan 11 has these feature built in.
+<p>
+<a href="Siggraph2002-WLW.ppt">Here</a> are his powerpoint slides.
+
+<HR>
+<H3>Any comments or  suggestions?  Send them to: 
+<a href="mailto:tal AT renderman DOT org">tal AT renderman DOT org</a><P>
+<P>
+</H3><P><HR>
+<I><small>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I><P></small>
+<!-- Created: Wed Jul 31 21:21:05 PDT 2002 -->
+<!-- hhmts start -->
+Last modified: Wed Aug 14 21:01:19 PDT 2002
+<!-- hhmts end -->
+  </body>
+</html>

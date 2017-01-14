@@ -1,0 +1,39 @@
+SUBTITLE_H5	(Darwyn Peachey's example procedural shaders from Texturing and Modeling: A Procedural Approach)
+SUBTITLE	The following are Darwyn Peachey's shaders from <A HREF="http://www.cs.umbc.edu/~ebert/book/book.html">Textures and Modeling: A Procedural Approach</A>.	
+PRENOTE	The shaders on this page are a little different than most of the others found here in the RMR.   They were written to, show a specific point.  As they have few if any parameters, they aren't very general.   One small exception is DPPeturb, which I modified to take a &quot;texture-file&quot; so it would be a little more convenient. <P>
+PRENOTE	<B>NOTE:</B> Many of these shaders require <A HREF="../DPShaders/DPProctext.h">DPProctext.h</A> to compile.<P>
+TITLE	DPShaders	H1	Darwyn Peachy Shaders
+DIR	DPShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	DPBlueMarble
+DESC	
+DO_LINE
+SHADER	DPBrick
+DESC	
+DO_LINE
+SHADER	DPBrickAnti
+DESC	
+DO_LINE
+SHADER	DPBrickbump
+DESC	
+DO_LINE
+SHADER	DPBrickperturb
+DESC	
+DO_LINE
+SHADER	DPCloudplane
+DESC	
+DO_LINE
+SHADER	DPMetalic	NOTE	<B>NOTE:</B> The RIB for this example is a modified version of the	LINK	RIBS#uteapot	NAME	teapot	that was RIBized by Stephen Westin.
+DESC	
+DO_LINE
+SHADER	DPPerturb	NOTE	<B>NOTE:</B> This RIB needs to use one of the grid images from the	LINK	rmTMaps	NAME	rmTMaps	page.  Also this RIB is set to work strictly with prman.  To use BMRT change the grid.txt to grid.tiff.
+DESC	
+DO_LINE
+SHADER	DPPlastic	NOTE	<B>NOTE:</B> The RIB for this example is a modified version of the	LINK	RIBS#uteapot	NAME	teapot	that was RIBized by Stephen Westin.
+DESC	
+DO_LINE
+SHADER	DPStar
+DESC	
+DO_LINE
+SHADER	DPWallpaper
+DESC	
+DO_LINE

@@ -1,0 +1,10 @@
+MAILTO	mark AT intrig DOT com	NAME	Email Mark
+TITLE	MBShaders	H1	Mark Beckwith Shaders
+DIR	MBShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	MBStarfield	NOTE	 --This is just	LINK	LGShaders#LGStarfield	NAME	LGStarfield	,  with some minor tweeks.  This shader is used in Mark's <A HREF="index.html#cubes">spinning cubes</A> animation.<P>
+DESC	a modified LGStarfield
+DO_LINE
+SHADER	MBVenus	NOTE	--This is just	LINK	KMShaders#KMVenus	NAME	KMVenus	, with some minor tweeks.  This shader is used in Mark's <A HREF="index.html#cubes">spinning cubes</A> animation.<P>
+DESC	a modified KMVenus
+DO_LINE
+TOC	Spinning cubes 	animation	NOTE	The critically acclaimed Spinning Cubes animation takes advantage of two shaders: The KMStarfield shader and the KMVenus shader.  They have been modified slightly from their original form to work with animations and planets that are arbitrarily sized.<P><img src=../MBShaders/cubes_small.jpg ALIGN=LEFT><a href="../MBShaders/cubes.rib.gz"> compressed RIB file </a> (~200K) <a href="../MBShaders/cubes.fli.gz"> compressed fli animation</a>  (~2.5M)<P><BR CLEAR=all>

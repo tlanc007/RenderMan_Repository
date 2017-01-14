@@ -1,0 +1,106 @@
+FrameBegin 1	# {
+ Display "l1.shd" "shadow" "z"
+ Format 512 512 1
+ Exposure 1 1
+ PixelSamples 1 1
+ Hider "hidden" "jitter" [0]
+ ScreenWindow -1 1 -1 1
+ Projection "perspective" "fov" [45]
+ Clipping 0.001 1000
+ ReadArchive "cube.rib"
+ ReadArchive "torus.rib"
+ Transform [0.725566 -0.479976 -0.49313 0 0.0348102 0.741282 -0.67029 0
+	-0.687272 -0.469174 -0.554557 0 -1.09564 -1.16807 10.9314 1]
+ WorldBegin	# {
+ TransformBegin
+ CoordinateSystem "worldspace"
+ TransformEnd
+  #
+  # Object: torus
+  AttributeBegin	# {
+    Attribute "identifier" "name" "torus"
+    Color [0.77 0.65065 0.17325]
+    Opacity [1 1 1]
+    Transform [0.866025 -0.5 0 0 0.433013 0.75 0.5 0
+	-0.25 -0.433013 0.866025 0 0.436218 2.65617 0.889742 1]
+    Surface "null"
+    Transform [0.866025 -0.5 0 0 0.433013 0.75 0.5 0
+	-0.25 -0.433013 0.866025 0 0.436218 2.65617 0.889742 1]
+    ObjectInstance 1
+  AttributeEnd	# }
+  #
+  # Object: tube
+  AttributeBegin	# {
+    Attribute "identifier" "name" "tube"
+    Color [0.678023 0.184448 0.704]
+    Opacity [1 1 1]
+    Transform [0.5 0 0 0 0 2 0 0
+	0 0 0.5 0 -2.67744 0.610029 -0.287599 1]
+    Surface "null"
+    Transform [0.5 0 0 0 0 2 0 0
+	0 0 0.5 0 -2.67744 0.610029 -0.287599 1]
+ShadingInterpolation "smooth"
+# Object tube
+Declare "N" "varying normal"
+TransformBegin
+    ConcatTransform [1 0 0 0 0 -4.37114e-008 1 0
+	0 -1 -4.37114e-008 0 0 0 0 1]
+    Hyperboloid 1 0 0.5  1 0 -0.5 360
+    Disk -.5 1 360
+    Disk  .5 1 360
+TransformEnd
+  AttributeEnd	# }
+  #
+  # Object: wallSide
+  AttributeBegin	# {
+    Attribute "identifier" "name" "wallSide"
+    Color [0.408 0.35904 0.376176]
+    Opacity [1 1 1]
+    Transform [3 0 0 0 0 3 0 0
+	0 0 3 0 0.187426 4.48959 -4.52006 1]
+    Surface "null"
+    Transform [3 0 0 0 0 3 0 0
+	0 0 3 0 0.187426 4.48959 -4.52006 1]
+##    ObjectInstance 3
+  AttributeEnd	# }
+  #
+  # Object: wallBack
+  AttributeBegin	# {
+    Attribute "identifier" "name" "wallBack"
+    Color [0.508 0.44704 0.468376]
+    Opacity [1 1 1]
+    Transform [2 0 0 0 0 2 0 0
+	0 0 2 0 -4.72652 4.55785 -0.0781829 1]
+    Surface "null"
+    Transform [2 0 0 0 0 2 0 0
+	0 0 2 0 -4.72652 4.55785 -0.0781829 1]
+##    ObjectInstance 4
+  AttributeEnd	# }
+  #
+  # Object: floor
+  AttributeBegin	# {
+    Attribute "identifier" "name" "floor"
+    Color [0.508 0.44704 0.468376]
+    Opacity [1 1 1]
+    Transform [3 0 0 0 0 3 0 0
+	0 0 3 0 0 -0.5 0 1]
+    Surface "null"
+    Transform [3 0 0 0 0 3 0 0
+	0 0 3 0 0 -0.5 0 1]
+##   ObjectInstance 5
+  AttributeEnd	# }
+  #
+  # Object: cube
+  AttributeBegin	# {
+    Attribute "identifier" "name" "cube"
+    Color [0.59 0.21004 0.349359]
+    Opacity [1 1 1]
+    Transform [1 0 0 0 0 1 0 0
+	0 0 1 0 -0.358929 0.0976397 -1.96818 1]
+    Surface "null"
+    Transform [1 0 0 0 0 1 0 0
+	0 0 1 0 -0.358929 0.0976397 -1.96818 1]
+    ObjectInstance 6
+  AttributeEnd	# }
+ WorldEnd	# }
+FrameEnd	# }

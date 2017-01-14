@@ -1,0 +1,6 @@
+SUBTITLE_B	(Shaders found from Siggraph 1991 Course 21)
+TITLE	Sig91	H1	Siggraph 1991 Course Notes Shaders
+DIR	Sig91	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	Sig91_skymetal	NOTE	This source is as it is found on p. 103 of  course 21 Siggraph 1991.  To be honest, I could never to get this shader to work as is.<P>A more generalized version with explainations can be found at	LINK	TLShaders#TLSkymetal	NAME TLSkymetal.sl
+DESC	a chrome like surface
+DO_LINE

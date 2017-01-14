@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<rss xmlns:iweb="http://www.apple.com/iweb" version="2.0">
+  <channel>
+    <title>Blog</title>
+    <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog</link>
+    <description>Changes or remarks that I have concerning The RenderMan Repository are found here.
+
+NOTE: This is not the redesign for the RMR.  This is just a temporary way for me to get the Blog going.
+</description>
+    <item>
+      <title>SRT - 2008</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/9/11_SRT_-_2008.html</link>
+      <guid isPermaLink="false">ac15a687-8368-4090-b7b1-f1e2c3446783</guid>
+      <pubDate>Thu, 11 Sep 2008 20:43:55 -0700</pubDate>
+      <description>So I have several presentations from this year&#x2019;s Stupid RAT Tricks: &lt;a href="http://www.renderman.org/RMR/Examples/srt2008/index.html"&gt;SRT2008&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;</description>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/9/11_SRT_-_2008.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Retired Twiki for mediawiki</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/8/3_Retired_Twiki_for_mediawiki.html</link>
+      <guid isPermaLink="false">0572301b-3b9e-4ce8-844d-c50563a880df</guid>
+      <pubDate>Sun, 3 Aug 2008 15:56:18 -0700</pubDate>
+      <description>Twiki was taking too much time to setup and manage.  Opted for mediawiki which seems much more direct to set up.&lt;br/&gt;&lt;br/&gt;Switched the links and redid the Otherlinks page in mediawiki format.&lt;br/&gt;&lt;br/&gt;Also added Pixie which got lost in the original twiki setup.&lt;br/&gt;</description>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/8/3_Retired_Twiki_for_mediawiki.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Fixed Nav links</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/8/2_Fixed_Nav_links.html</link>
+      <guid isPermaLink="false">3b6dacff-360f-4efa-8c39-c5a7aebd950a</guid>
+      <pubDate>Sat, 2 Aug 2008 19:36:06 -0700</pubDate>
+      <description>Fixed nav links for OFFSITE and TWKI.</description>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/8/2_Fixed_Nav_links.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>Disney pubs</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/7/24_Disney_pubs.html</link>
+      <guid isPermaLink="false">d3674bad-f67c-48f3-84b7-cf46c59b7894</guid>
+      <pubDate>Thu, 24 Jul 2008 22:22:40 -0700</pubDate>
+      <description>I just uploaded 3 documents that Disney is allowing me to share with the RenderMan community.&lt;br/&gt;&lt;br/&gt;One is some notes that Brent Burely put together as he was trying to understand filtering in PRMan.  These can be found in the show and tell section:&lt;br/&gt;&lt;br/&gt;&lt;a href="http://www.renderman.org/RMR/rmShowAndTell.htmld/index.html%2523Filtering"&gt;PRMan Filtering&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;The other two documents are two parts of a talk that Mark Hammel and I gave at Disney Animation back in the winter of 2007.  These can be found in the Publications section:&lt;br/&gt;&lt;br/&gt;&lt;a href="http://www.renderman.org/RMR/Publications/index.html%2523prman"&gt;RenderMan Nuts &amp;amp; Bolts&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</description>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/7/24_Disney_pubs.html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <item>
+      <title>RMR face lift.</title>
+      <link>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/7/19_RMR_face_lift..html</link>
+      <guid isPermaLink="false">23f3b5e9-6580-4839-aa40-36ef7c0a8d28</guid>
+      <pubDate>Sat, 19 Jul 2008 14:15:02 -0700</pubDate>
+      <description>Thanks to Tom Craigen, the RMR is starting to get a much needed facelift.  There are a few kinks that need working out  and there are a few more things to come.  But some of the more obvious things are in place.&lt;br/&gt;&lt;br/&gt;</description>
+      <iweb:comment link="http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog/Entries/2008/7/19_RMR_face_lift..html#comment_layer" count="0" enabled="0"></iweb:comment>
+    </item>
+    <iweb:dateFormat>EEEE, MMMM d, yyyy</iweb:dateFormat>
+    <iweb:baseURL>http://www.renderman.org/RMR/The_RenderMan_Repository/Blog/Blog.html/The_RenderMan_Repository/Blog</iweb:baseURL>
+    <iweb:maximumSummaryItems>5</iweb:maximumSummaryItems>
+  </channel>
+</rss>

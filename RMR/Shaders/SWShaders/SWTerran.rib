@@ -1,0 +1,24 @@
+# TLSaturn.rib
+# Author: Tal Lancaster tal@cs.caltech.edu
+# Date: 5/24/95
+# For the RenderMan Repository
+# 
+Display "SWTerran.tiff" "file" "rgb"
+ShadingRate 1.0
+PixelSamples 2 2
+Format 388 388 1.0
+
+Projection "perspective" "fov" 40
+Rotate -90 1 0 0
+Translate 0 -5 0
+
+WorldBegin
+	LightSource "ambientlight" 1 "intensity" [0.025]
+	LightSource "distantlight" 2 "intensity" 2 "from" [1 1 .1] "to" [0 0 0]
+
+	Surface "SWTerran"
+	Sphere 1 -1 1 360
+WorldEnd
+
+
+

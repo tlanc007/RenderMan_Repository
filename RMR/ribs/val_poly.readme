@@ -1,0 +1,23 @@
+The file val_poly.rib is a polygonal face in the RenderMan Interface Bytestream
+(RIB) format. The face is that of Valerie Hall which was converted from the
+files available from Curtin University in Australia.  
+
+For more info from Curtin, contact Andrew Marriot there.
+Email: rayrtace@cs.curtin.edu.au  or  Web: www.cs.curtin.edu.au/~raytrace
+
+This is a very quick conversion. Only Polygons are used which looks fine
+in Wireframe view, but not so hot at higher quality. I hope to convert it
+to Patches or PatchMeshes at some stage. 
+
+Thanks to Michael B. Johnson (Wave) for fixing up the code and inserting
+comments at important points. You can contact him by
+Email: wave@media.mit.edu  or  Web : wave.www.media.mit.edu/people/wave/
+
+All updates, corrections, criticisms etc. are welcome.
+
+Somhairle Foley  12th April 1995   
+---
+Somhairle Foley                      sfoley@compapp.dcu.ie
+School of Computer Applications      (NeXTMail Welcome)  
+Dublin City University, Ireland      www.compapp.dcu.ie/~sfoley/sfoley.html             
+

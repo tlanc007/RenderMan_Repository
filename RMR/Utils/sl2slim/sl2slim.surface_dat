@@ -1,0 +1,57 @@
+  previewinfo {
+    shadingrate 5
+    objectsize 1
+    objectshape Sphere
+    frame 1
+  }
+  attribute float ShadingRate {
+    default 0
+    range {0 1000 .005}
+    provider constant
+    subtype vslider
+    label {Shading Rate}
+    description {Controls the quality of the shader evaluation on a per-ensemble basis. If 0, the global value will be used. Generally you'll only want to use this value in the rare case that you want to override the global behavior.}
+  }
+  attribute string CoordSysTransform {
+    default {}
+    provider constant
+    label {Shader Space}
+    description {The coordinate system in which a shader is defined. Most shaders perform important calculations relative to this space and so transforming it affects their appearance. If empty, the shader space is the object space associated with the attached primitive. Place the name of a coordinate system object here to set the shader space for the shader. If you're using file referencing, use the "coordsys" function to translate the name of the coordinate system (eg: [coordsys mtorCoordSysShape10]).}
+  }
+  attribute float Scale {
+    default 1
+    range {0 100 .01}
+    provider constant
+    subtype vslider
+    description {An additional uniform scale factor applied on top of the optional coordinate system.}
+  }
+  attribute string CastsShadows {
+    default opaque
+    range { 
+		    Opaque opaque
+		    Os Os
+		    Shade shade
+		    }
+    provider constant
+    subtype selector
+    label {Casts Shadows}
+    description {Controls how surfaces shadow other surfaces. Possible values for shadowval are shown below, in order of increasing computational cost. You can optimize rendering time by making surfaces known to be opaque "opaque". To take an object out of consideration during shadow generation, disable the per-object attribute in your modeler. It is important, however, to use "shade" for any surfaces whose shaders modify the opacity of the surface in any patterned way. }
+  }
+  attribute color Cs {
+    default {0 .25 1}
+    provider constant
+    description {The RenderMan Surface Color Attribute. Note that some shaders don't automatically use this value. You may need to explicitly choose Surface Color as the parameter value.}
+  }
+  attribute color Os {
+    default {1 1 1}
+    provider constant
+    description {The RenderMan Surface Color Attribute. Note that some shaders don't automatically use this value. You may need to explicitly choose Surface Color as the parameter value.}
+  }
+  attribute float displacementbound {
+    default 0
+    range {0 1000 .0001 }
+    provider constant
+    subtype vslider
+    label {Displacement Bound}
+    description {This number represents the maximum displacement in shaderspace that your surface will undergo. Be very careful with this parameter as it can dramatically influence rendering times. In particular, make SURE to set this to 0 (zero) if you aren't performing any displacement.}
+}

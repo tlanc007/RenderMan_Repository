@@ -1,0 +1,87 @@
+surface funkyglass
+param	float	Ka		0.2
+param	float	Kd		0.2
+param	float	Ks		1
+param	float	roughness		0.08
+param	color	specularcolor		1 1 1
+local	string	$_str_0 	"shader"
+local	point	PP	0 0 0
+local	normal	Nf	0 0 0
+local	vector	V	0 0 0
+local	color	Ct	0 0 0
+local	color	Ot	0 0 0
+initcode 4
+	return
+code
+	return_area
+	pushv	I 
+	normalize
+	popv	V 
+	pushv	V 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushv	P 
+	pushs	$_str_0 
+	transforms
+	popv	PP 
+	pushif	0.5 
+	pushif	0.5 
+	pushv	PP 
+	colornoisev
+	subcf
+	pushif	2 
+	mulfc
+	addcf
+	popc	Ct 
+	pushc	Ct 
+	pushif	1 
+	ftoc
+	subcc
+	pushif	3 
+	pushif	2 
+	pushc	Ct 
+	comp
+	pushif	1 
+	pushc	Ct 
+	comp
+	pushif	0 
+	pushc	Ct 
+	comp
+	addff
+	addff
+	divff
+	ftoc
+	addcc
+	popc	Ot 
+	pushv	Nf 
+	pushv	V 
+	vdot
+	abs
+	pushif	0.5 
+	mulff
+	pushif	0.75 
+	subff
+	pushc	Ot 
+	mulcf
+	popc	Oi 
+	pushf	roughness 
+	pushv	V 
+	negv
+	pushv	Nf 
+	specular
+	pushf	Ks 
+	pushc	specularcolor 
+	mulcf
+	mulcc
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	Ct 
+	addcc
+	popc	Ci 
+	return

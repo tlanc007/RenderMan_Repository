@@ -1,0 +1,129 @@
+ExlunaShader 1.0
+displacement TLd_cell1
+param	uniform	float	Kvoro	0 	
+param	uniform	float	voro_freq	1 	
+param	uniform	float	voro_step	0.05 	
+param	uniform	float	voro_jitter	0 	
+param	uniform	string	PSpace	"shader" 	
+param	uniform	float	usePref	0 	
+param	varying	point	__Pref	1000 0 -1000 	
+oparam	varying	float	VoroVal	0 	
+global	varying	point	P	0 0 0	
+global	varying	normal	N	0 0 0	
+const	uniform	point	$const0	1000 0 -1000	
+const	uniform	float	$const1	0	
+const	uniform	float	$const2	5	
+const	uniform	float	$const3	6	
+const	uniform	float	$const4	0.5	
+const	uniform	float	$const5	1000	
+const	uniform	float	$const6	-1	
+const	uniform	float	$const7	1	
+const	uniform	float	$const8	52	
+const	uniform	float	$const9	48	
+const	uniform	float	$const10	34	
+const	uniform	float	$const11	53	
+const	uniform	float	$const12	31	
+const	uniform	float	$const13	54	
+const	uniform	float	$const14	28	
+const	uniform	float	$const15	55	
+const	uniform	string	$str0	"current"	
+local	varying	point	_42$thiscell	0 0 0	
+local	uniform	float	_42$i	0	
+local	uniform	float	_42$j	0	
+local	uniform	float	_42$k	0	
+local	varying	point	_48$testcell	0 0 0	
+local	varying	point	_48$pos	0 0 0	
+local	varying	vector	_48$offset	0 0 0	
+local	varying	float	_48$dist	0	
+local	varying	point	objP	0 0 0	
+local	varying	point	noiseP	0 0 0	
+local	varying	normal	Nn	0 0 0	
+local	varying	float	voro_f1	0	
+local	varying	float	voro_f2	0	
+local	varying	point	voro_pos1	0 0 0	
+local	varying	point	voro_pos2	0 0 0	
+local	varying	float	voro_dist	0	
+local	uniform	float	$tmp0	0	
+local	varying	point	$tmp1	0 0 0	
+local	varying	float	$tmp2	0	
+local	varying	float	$tmp3	0	
+local	varying	float	$tmp6	0	
+local	varying	float	$tmp9	0	
+local	uniform	float	$tmp11	0	
+local	uniform	float	$tmp12	0	
+local	uniform	float	$tmp13	0	
+local	uniform	vector	$tmp14	0 0 0	
+local	varying	vector	$tmp15	0 0 0	
+local	varying	vector	$tmp16	0 0 0	
+local	varying	float	$tmp18	0	
+local	varying	float	$tmp19	0	
+local	varying	normal	$tmp23	0 0 0	
+initcode 6
+	assign		__Pref  $const0  
+code
+	transform	objP  PSpace  P  
+	ne		$tmp0  usePref  $const1  
+	if		$tmp0  $const2  $const3  
+	transform	noiseP  PSpace  __Pref  
+	assign		noiseP  objP  
+	ntransform	Nn  PSpace  N  
+	normalize	Nn  Nn  
+	assign		voro_f1  $const1  
+	assign		voro_f2  $const1  
+	assign		voro_pos1  $const1  
+	assign		voro_pos2  $const1  
+	mul		$tmp1  noiseP  voro_freq  
+	xcomp		$tmp3  $tmp1  
+	floor		$tmp2  $tmp3  
+	add		$tmp3  $tmp2  $const4  
+	ycomp		$tmp6  $tmp1  
+	floor		$tmp2  $tmp6  
+	add		$tmp6  $tmp2  $const4  
+	zcomp		$tmp9  $tmp1  
+	floor		$tmp2  $tmp9  
+	add		$tmp9  $tmp2  $const4  
+	point		_42$thiscell  $tmp3  $tmp6  $tmp9  
+	assign		voro_f2  $const5  
+	assign		voro_f1  voro_f2  
+	assign		_42$i  $const6  
+	for		$tmp11  $const14  $const13  $const15  
+	le		$tmp11  _42$i  $const7  
+	assign		_42$j  $const6  
+	for		$tmp12  $const12  $const11  $const13  
+	le		$tmp12  _42$j  $const7  
+	assign		_42$k  $const6  
+	for		$tmp13  $const10  $const8  $const11  
+	le		$tmp13  _42$k  $const7  
+	point		$tmp14  _42$i  _42$j  _42$k  
+	add		_48$testcell  _42$thiscell  $tmp14  
+	cellnoise	$tmp15  _48$testcell  
+	sub		$tmp16  $tmp15  $const4  
+	mul		$tmp15  voro_jitter  $tmp16  
+	add		_48$pos  _48$testcell  $tmp15  
+	sub		_48$offset  _48$pos  $tmp1  
+	dot		_48$dist  _48$offset  _48$offset  
+	lt		$tmp18  _48$dist  voro_f1  
+	if		$tmp18  $const9  $const8  
+	assign		voro_f2  voro_f1  
+	assign		voro_pos2  voro_pos1  
+	assign		voro_f1  _48$dist  
+	assign		voro_pos1  _48$pos  
+	lt		$tmp19  _48$dist  voro_f2  
+	if		$tmp19  $const8  $const8  
+	assign		voro_f2  _48$dist  
+	assign		voro_pos2  _48$pos  
+	add		_42$k  _42$k  $const7  
+	add		_42$j  _42$j  $const7  
+	add		_42$i  _42$i  $const7  
+	sqrt		voro_f1  voro_f1  
+	sqrt		voro_f2  voro_f2  
+	sub		$tmp3  voro_f2  voro_f1  
+	step		$tmp2  voro_step  $tmp3  
+	sub		voro_dist  $const7  $tmp2  
+	assign		VoroVal  voro_dist  
+	mul		$tmp2  Kvoro  voro_dist  
+	mul		$tmp23  $tmp2  Nn  
+	add		objP  objP  $tmp23  
+	transform	P  PSpace  $str0  objP  
+	Pmoved
+	calculatenormal	N  P  

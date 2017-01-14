@@ -1,0 +1,60 @@
+#########################################################################
+# fig8.2.rib - RIB to create Figure 8.2 of:
+#
+# _Advanced RenderMan: Creating CGI for Motion Picture_, 
+# by Anthony A. Apodaca and Larry Gritz, Morgan Kaufmann, 1999.
+#
+# Render this image by running:
+#     prman prman.opt fig8.2.rib               (for PRMan)
+#     rendrib bmrt.opt fig8.2.rib              (for BMRT)
+#
+# This file requires the teapot.rib file in ../models, and the
+# PRMan or BMRT texture file for the mandrill in the ../texture
+# and/or ../tifftexture directory.  Selecting either prman.opt or
+# bmrt.opt to be read in prior to this file will correctly set the
+# texture search path for that renderer.
+#########################################################################
+
+
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+Option "searchpath" "shader" [".:../shaders:&"]
+Option "searchpath" "archive" [".:../models:&"]
+#Option "searchpath" "texture" [".:../texture:&"]
+Format 600 200 1
+PixelSamples 3 3
+ShadingRate 1
+Display "fig8.2.tif" "file" "rgb"
+Display "fig8.2.tif" "framebuffer" "rgb"
+Projection "orthographic"
+ScreenWindow -6.3 6.3 -2.1 2.1
+##CameraOrientation 0 20 10 0 0 0 0 -0.447214 0.894427
+ConcatTransform [1 0 0 0 0 -0.447214 -0.894427 0 0 0.894427 -0.447214 0 0 0 0 1]
+Translate 0 -20 -10 
+
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [0.04]
+#Attribute "light" "shadows" ["on"]
+LightSource "distantlight" 1 "intensity" [1] "from" [ 2 4.5 20 ] "to" [ 0 -1.5 0 ]
+LightSource "distantlight" 2 "intensity" [.2] "from" [ -2 4.5 10 ] "to" [ 0 -1.5 0 ]
+LightSource "distantlight" 3 "intensity" [.2] "from" [ 4 20 10 ] "to" [ 0 -1.5 0 ]
+AttributeBegin
+Color 1 1 1
+Surface "constant"
+Sphere 50 -50 50 360
+AttributeEnd
+Translate 0 2 0
+AttributeBegin
+Translate -3 0 0
+Rotate 200 0 0 1
+Surface "supertexmap" "string Csmapname" ["mandrill.tx"] "float Csblur" [0.02]
+ReadArchive "teapot.rib"
+AttributeEnd
+AttributeBegin
+Translate 3 0 0
+Rotate 200 0 0 1
+Surface "supertexmap" "string Csmapname" ["mandrill.tx"] "float Csblur" [0.1]
+ReadArchive "teapot.rib"
+AttributeEnd
+WorldEnd

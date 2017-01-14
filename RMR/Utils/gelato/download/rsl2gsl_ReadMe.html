@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>RSL2GSL version 1.0.3</title>
+  </head>
+
+  <BODY bgcolor="#ffffff">
+    <h1>RSL2GSL version 1.0.3</h1>
+<h3><center>Translator from the RenderMan<sup>®</sup> Shading Language to the Gelato<sup>®</sup> Shading Language</center></h3>
+<br>RenderMan is a registered trademark of <a href="http://www.pixar.com">Pixar, Inc.</a>
+<br>Gelato is a registered trademark of <a href="http://www.nvidia.com">NVIDIA Corporation</a>
+
+<UL>
+<LI><a href="#intro">Introduction</a>
+<LI><a href="#nonLinux">Support Windows & other non-Linux Platforms?</a>
+<LI><a href="#options">Command Options</a>
+<LI><a href="#example1">Simple Example</a>
+<LI><a href="#know">Things to Know</a>
+<LI><a href="#init">.INI File</a>
+<LI><a href="#nowork">What Doesn't Work</a>
+<LI><a href="#triop">Watch the ?: triop</a>
+<LI><a href="#lights">Cautions with lights</a>
+
+<LI><a href="#Windows">Windows OS support</a>
+<LI><a href="#Source">Source & Development</a>
+<LI><a href="#wishlist">Future wishlist</a>
+<LI><a href="#authors">Authors</a>
+</UL>
+<hr>
+<a name="intro"</a>
+<H2>Introduction</H2>
+<hr>
+RSL2GSL can parse RSL (Renderman shading language) source and output either RSL or GSL (Gelato shading language).  One feature this provides is the ability to have both GSL and RSl coexist in the same shader source.
+<p>
+
+The product is released with a <a href="LICENSE">Modified BSD License</a>.
+<p>
+The <a href="#Source">source</a> is available.
+<p>
+<a name="nonLinux"></a>
+The source was developed under Linux (Red Hat 9 & Fedora Core 2).  It also seems to work just fine under Windows (at least it has been built and run under <a href="#Windows">using Cygwin</a>).
+<p>
+<hr>
+<a name="options"></a>
+<H2>Options</H2>
+   Usage:<p>
+<b>multShader.pl</b> [<b>options</b>] shaderFile <sup><b>*</b></sup>
+<p>
+<h3>options</h3>
+<pre>
+  -h|-help       Print this message
+   -dt|dumpTree   Dump parse tree to stdout
+   -ds|dsdout     Dump shader to stdout
+   -gsl           Translate to Gelato shading language.
+                    Otherwise the default is to leave the code in RSL.
+                    (No translation)
+   -kt|keepTemp   Do not delete the temporary file, that is created during
+                    the translation process.  The default is to remove it
+                    after the shader compiler is called.
+   -noshad        Stop after the file process is done.  Do not call the
+                    shader compiler.
+   -output FILE   Write output to FILE.
+   -xtrapp SCRIPT After the standard pre-processor is called. The file
+                    will be processed again using the specified SCRIPT.
+   -v|verbose     Dump out extra debugging information out to stderr.
+</pre>
+<p>
+This will (attempt to) translate shaderFile from RSL to GSL.
+More information can be found in the ReadMe.html file included with 
+this distribution.
+<p>If neither the <b>-dt</b> or <b>-ds</b> options are given, the program will attempt to call a shader compiler.  In this situation if the <b>-gsl</b> option is given the shader compiler will be gelato otherwise it will be a RSL compiler.  The actual compiler chosen is determined by the <a href="#init">multShader.ini</a> file.
+<p>
+<sup><b>*</b></sup> As this is a perl script, Windows users may need to preface the command with perl:
+<br>
+<b>perl multShader.pl</b> [<b>options</b>] shaderFile
+<hr width=25%>
+<a name="example1"></a>
+<pre>
+//RSL source : tests/f.h
+float func (float f1, f2, f3) { }
+
+
+> <b>multShader.pl -ds -gsl tests/f.h</b>
+
+// GSL source 
+#include <_rsl2gsl.h>
+ 
+ float func (
+     float f1,
+     float f2,
+     float f3)
+{
+}
+
+</pre>
+<hr>
+<a name="init"></a>
+<h2>multShader.ini</h2>
+The translator looks for an initialization file, <b>multShader.ini</b>, to override its default settings.  This file is searched for in the following locations (in this order):
+<ol>
+<li>Installation directory where multShader.pl and related files are located.</li>
+<li>User's home directory</li>
+<li>Current location where the translator is being run from</li>
+</ol>
+The following is what the standard multShader.ini looks like:
+<p>
+<pre>
+###progs
+cpp	cpp 	#location of C pre-processor
+rsl	shader  #RenderMan shader compiler
+gsl	gslc    #Gelato shader compiler
+
+##gelato
+##rayTrace defaults
+Indirect	defaultIndirect
+Occlusion	defaultOcclusion
+</pre>
+
+The C-PreProcessor is called on the shader source code.<br>
+The RSL compiler is called if the parsetree completes and the <b>-gsl</b> and <b>-ds</b> options aren't used.
+<br>
+The GSL_COMPILER is called if the parsetree completes and the <b>-gsl</b> option is given but the <b>-ds</b> isn't.
+<p>
+Indirect token name is used for indirect trace sets.
+<br>
+Occlusion token name is used for Occlusion trace sets.
+
+<hr>
+<a name="know"></a>
+<h2>Things to know</h2>
+<UL>
+<LI>In Gelato <b>C</b> and <b>opacity</b> are similar to <b>Cs</b>, <b>Ci</b> and <b>Os</b>, <b>Oi</b> combined.  So where ever <b>C </b> or <b>opacity</b> are seen in the shader source they are renamed to <b>__rslgsl_C</b> and <b>__rslgsl_opacity</b> respectfully.
+</LI>
+<li>The translator predefines <b>Cs</b> and <b>Os</b> and sets them to the gelato <b>C</b> and <b>opacity</b>.  It also will replace <b>Ci</b> and <b>Oi</b> with <b>C</b> and <b>opacity</b>.</li>
+<li><b>deltau</b> and <b>deltav</b> are reserved in gelato, so the translator will rename this instances to <b>__rslgsl_deltau</b> and <b>__rslgsl_deltav</b>.</li>
+<li>In Gelato, ray tracing calls need to have a trace set.  The translator gives a name specific to the raytace call.  For the shader to work, an trace set attribute with the same name will need to be attached the all of the geometry that this call is to be applied to.  The actual name used is determined by the setting in the <a href="#init">multShader.ini</a> file. More specific information can be found in the "What doesn't work" section.</li>
+<li>Gelato doesn't define <b>s</b> and <b>t</b> texture coordinates in shaders.  So the translator will define them in the shader parameter list and initializes them to <b>u</b> and <b>v</b> respectfully.  However, the translator can't do this if the shader already has <b>s</b> or <b>t</b> defined in its parameter list.<br>
+If you have functions that are relying on the RSL global <b>s</b>, <b>t</b>, you will have to have these functions declared as internal functions and declare them as externs:
+<br>
+<i>extern float s, t;</i>
+<p>
+
+</li>
+<li>The translator embeds an include file called <i>_rsl2gsl.h</i>.  This file contains various helper functions to aid in the translation process.
+</li>
+<li>Gelato uses a different interface for DSO shadeOps than RenderMan.  In other words shadeOps written for RenderMan are not binary compatible with Gelato.  The translator can't do anything about this.  So shadeOps will need to be modified by hand and recompiled for them to work.  Obviously, if some renderer specific feature, was being used (ie. RxNoise, RxTexture) some substitute behavior will need to be used in place.</li>
+<li>If you intend to share RenderMan and Gelto code in the same files, keep in mind that __PRMAN__ and GELATO are the pre-defined values to test against when the code is run through cpp.  Also <a href="#rawblock">RAWBLOCKS</a> allows embedding language specific features into the source, which bypasses the translator section.</li>
+<li>"<b>lerp</b>" is an unkown texture access specifier.</li>
+<li><b><a href="#triop">? : tri-operator</a></b> operator, under PRMan's shader compiler, seems to not obey the RenderMan language syntax.
+<li><b>lights/emit</b> some care needs to be given when trying to translate RMan lights to Gelato lights.  For one in gelato the direction of L is opposite of RMan. For more details see the <a href="#lights">Lights</a> section.
+<li><b>gtrace</b> has been added to the translator to have your code refer to Gelato's trace call.  Use <b>trace</b> when referring to RMan. Use <b>gtrace</b> to when you want to refer to the gelato trace call.  This allows you to avoid the code duplication that would occur otherwise when trying to use <a href="#rawblock">RAWBLOCKS</a> to handle the RMan <b>gather</b> block.</li>
+<li>Watch out for RSL functions that declare local variables called <b>du</b> or <b>dv</b>.  The translator assumes that when it sees <b>du</b> or <b>dv</b>, that they are RSL built-in variables and replace them with the gelato equivalent.  Which will result in a compiler error.
+</UL>
+
+<hr>
+<a name="nowork"></a>
+<H2>What doesn't work</H2>
+<a name="rawblock"></a>
+There will be features that the translator doesn't handle or there will be constructs that will be more efficient to do in GSL natively.  The parser provides for this need by a feature called RAWBLOCK.  The syntax for this is double curly braces (or double square brackets).  Like the name infers, a RAWBLOCK must be an entire block (statement).  It can not be only part of a statement (expression).
+<p>
+<pre>
+#if GELATO
+{{
+   displace ("shader", .2);
+}}
+#else // RSL
+point sP = transform ("shader", P);
+sN = normalize (ntransform ("shader", N);
+sP += .2 * sN;
+P = transform ("shader", "current", sP);
+N = calculatenormal (P);
+#endif
+</pre>
+
+<dl>
+<dt><b>environment</b></dt>
+<dd>The optional 4 point texture coordinate variant isn't (<i>currently</i>) supported.  The following parameters are:  firstchannel.</dd>
+<p>
+<dt><b>indirectdiffuse</b></dt>
+<dd>The translator will give the trace set name as "defaultIndirect". (Unless a different name is provided in the <a href="#init">multShader.ini</a>.) A trace set attribute of this name will need to be attached to the desired geometry before this call will be applied.
+<br>
+The only optional parameters that will be accepted are: bias, maxdist, subset, and environmentdir.  Any other RSL options will be ignored and a warning given.</dd>
+<p>
+<dt><b>occlusion</b></dt>
+<dd>The translator will give the trace set name as "defaultOcculusion". (Unless a different name is provided in the <a href="#init">multShader.ini</a>.) A trace set attribute of this name will need to be attached to the desired geometry before this call will be applied.
+<br>
+The only optional parameters that will be accepted are: bias, maxdist, subset, environmentdir, and coneangle.  Any other RSL options will be ignored and a warning given.
+</dd>
+<p>
+<dt><b>rayinfo</b></dt>
+<dd>The translator only supports the request for depth and some portions of type.</dd>
+<p>
+<dt><b>shadow</b></dt>
+<dd>Doesn't support the channel, 4 point texture coordinates (<i>currently</i>), s/t blur, or s/t width options.</dd>
+<p>
+</dl>
+The following builtin calls are not supported at all and will require hand editing to have a shader that will successfully compile:
+<p>
+<b>transmission, photonmap, irradiancecache, incident, opposite, shadername, renderinfo, option, Deriv, depth, gather.</b>
+
+<p>
+<hr>
+<a name="triop"></a>
+<H2>PRMan ?: TRIOP</H2>
+Be a little wary of the ?: operator.  It may not be doing what you expect or at best beware that PRMan's behavior doesn't jive with shading language precedence.
+<p>
+Under PRMan the ?: operator precedence appears to be change depending on the context of its use.
+<pre>
+For example:
+
+float a = 1, b = 2;
+float c = a + b > 2 ? 1 : -1;
+
+This results in c = 1
+
+float a = 1, b = 2;
+float c = 5 * (b > 2)? 1: -1;
+
+Results in c = -5
+
+</pre>
+In the first example the triop has the expected precedence (which is the lowest).  However, when the parentheses are around the conditional portion, the triop now has higher precedence than the mult!
+<p>
+This kind of grammar is very difficult to do within a  YACC/Bison parser (which is what this parser uses).  So the parser allows the first case.  However, the second case will cause a syntax error.
+<p>
+To make the parser behave (and to give the proper syntax for the second example to produce the result of -5, the second line would need to be:
+<pre>
+float c = 5 * ((b > 2)? 1: -1);
+</pre>
+I suppose the argument could be made that as it is a "triop" there are three components: boolean_conditional, ? success, : failure.  So by putting the parentheses around the conditional section, this should imply that the entire "operator" should take precedence.
+<p>
+Regardless, it is really difficult to devise a clean YACC/Bison grammar in the attempt to deal with this kind of "contextual" knowledge.
+<p>
+So the take home messages are these:
+<OL>
+<li> Take a close look at your usages of the triop to make sure that it is indeed providing the results that you intend.
+<li> This translator may give you syntax errors for code that went through just fine with PRMan.  The above were my excuses for failing address this.
+</OL>
+<hr>
+<a name="lights"></a>
+<h2>Watch Your Lights</h2>
+There are some things to be aware of with lights between RenderMan and Gelato. (Especially as the translator won't deal with this for you.)
+<p>
+Within RenderMan, the L for non light shaders points from the surface towards the light shader.  For light shaders, L is pointing in the opposite direction (from the light to the surface.  All of your RenderMan light shaders have been built with this in mind (whether you were paying attention or not).
+<p>
+With Gelato L is pointing in the same direction for light shaders and non-light shaders.  According to Table 5.5 from the Gelato techref.pdf: "vector <b>L</b> Direction of incoming light (points from Ps to Pl)." 
+<p>
+What does all this mean?
+<p>
+For one, care should be given with the variable that is used as the "axis" vector (This is the second <b>illuminance</b> parameter, not counting the optional category parameter) when used outside of the <b>illumince</b> block.
+<p>
+Compare the <a href="http://www.renderman.org/RMR/Publications/arman/shaders/uberlight.sl">uberlight.sl</a>, from the Advanced RenderMan book, with the uberlight that comes with Gelato.
+
+<pre>
+/* RenderMan snippet */
+vector axis = normalize(vector "shader" (0,0,1));
+illuminate (from, axis, angle) {
+
+  L = axis * length(Ps-from);
+
+/* Gelato snippet */
+vector axis = vector ("shader", 0, 0, 1);
+emit (from, axis, angle) {
+
+  L = -axis * length(Ps-from);  
+</pre>
+
+The translator will not handle doing the -axis for you.  One tell tale sign that something like this might be going on with your translated light shaders is if the surface looks like it is being backlit when the light is really front lighting (or vise-versa).
+
+One other thing that I have noticed is sometimes a light shader might refer to N.  To make the light shader work under Gelato, I have had to change the N to Ns. 
+<p>
+<hr>
+<a name="Windows"></a>
+<h2>Windows OS support</h2>
+This release has been designed under and tested under Linux (specifically RH 9 and Fedora Core2).  The Windows support was added as an after thought, as to not get inundated with request for Windows builds.
+<p>
+The following are some things to keep in mind which may help you duplicate the environment that I used when building the system.  But first keep in mind that I don't use Windows much so I won't be able to answer too many questions on "if this will work?" or "why didn't you use that instead?".
+<p>
+<ul>
+<li>The Windows binaries were built under the <a href="http:///www.Cygwin.com">Cygwin</a> system.  You may need to have it installed and to run under that environment for things to work.  Also everything runs only under the command line.  Cygwin provides one.</li>
+<li>perl -- <i>(Cygwin provides)</i> The main wrapper program is a perl script.  You will need perl to be able to run the script: multShader.pl.  Also under Windows you will need to preface the script with , perl:  <b>perl multShader.pl</b> . . .</li>
+<li>cpp -- <i>(Cygwin provides)</i> the translator depends on running the C Pre-processor.  This allows for including any specified include files and performing macro substitution.</li>
+
+</ul>
+<hr>
+<a name="Source"></a>
+<h2>Source & Development</h2>
+The source has been made available so you have the power to fix bugs or extend the system as needed.
+<p>
+Running 'make' should be all that is needed to get building going.
+<p>
+Please send these back to the RMR so these can be shared with others.
+<p>
+Also please check with me before embarking on any radial changes to the code.
+<p>
+Check out the <a href="#wishlist">Wishlist</a> to get some hints on what would be some good things to fix.
+<hr>
+<a name="wishlist"></a>
+<h2>Future wishlist</h2>
+The following are some things, I would like to see improved on.
+
+<UL>
+<li>Loose the symtable.* code and write a more modern setup in C++.
+<li>It wouldn't be that difficult to be able to directly translate from RMan <b>gather</b> blocks to Gelato's <b>trace</b> call.
+<li>Keep the parser and translator current with RMan and gelato feature sets.
+<li>Make the parser smarter so <a href="#rawblock">RAWBLOCKS</a> could occur anywhere in a statement. -- <i>This might not be practical while still relying on the YACC/Bison grammar.
+</UL>
+<hr>
+<a name="authors"></a>
+<h2>Authors</h2>
+<pre>
+Brent Burley
+Tal Lancaster
+
+<b>Contact</b>: rsl2gsl AT renderman DOT org
+</pre>
+    <hr>
+    <address><a href="mailto:tal AT RENDERMAN DOT ORG">Tal Lancaster</a></address>
+<!-- Created: Sun Jun 13 21:42:09 PDT 2004 -->
+<!-- hhmts start -->
+Last modified: Sun Dec 11 16:08:10 PST 2005
+<!-- hhmts end -->
+  </body>
+</html>

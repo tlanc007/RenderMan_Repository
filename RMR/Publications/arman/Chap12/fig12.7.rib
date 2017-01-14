@@ -1,0 +1,96 @@
+#########################################################################
+# fig12.7.rib - RIB to create Figure 12.7 of:
+#
+# _Advanced RenderMan: Creating CGI for Motion Picture_, 
+# by Anthony A. Apodaca and Larry Gritz, Morgan Kaufmann, 1999.
+#
+# This file demostrates the ceramictiles shader.
+# The lights in this file assume ray tracing -- either BMRT or 
+# frankenrender will work, but plain PRMan will not have shadows unless
+# you make your own shadow map and modify the file to use it.  Sorry.
+#########################################################################
+
+##RenderMan RIB-Structure 1.0
+version 3.03
+Format 640 480 1
+#Format 1024 768 1
+PixelSamples 2 2
+Display "fig12.7.tif" "file" "rgb"
+
+Projection "perspective"  "fov" [18]
+ShadingRate 1
+Option "searchpath" "shader" ["../shaders:&"]
+
+##CameraOrientation 2 20 5 0 0 0 -0.0240204 -0.240204 0.970425
+ConcatTransform [0.995037 -0.0240204 -0.0965609 0 -0.0995037 -0.240204 -0.965609 0 3.56147e-10 0.970425 -0.241402 0 0 0 0 1]
+Translate -2 -20 -5
+ 
+WorldBegin
+
+TransformBegin
+# Ambient light
+LightSource "ambientlight" 1 "intensity" [0.01]
+Illuminate 1 1
+
+# Key light
+AttributeBegin
+Translate 80 120 200
+Declare "nsamples" "integer"
+Attribute "light" "nsamples" [16]
+AreaLightSource "uberlight" 2 "string lighttype" ["omni"] 
+            "intensity" [2] "lightcolor" [1 .95 .85]
+            "float falloff" [0] 
+            "float raytraceshadow" [1]
+Surface "constant"
+Attribute "render" "casts_shadows" ["none"]
+Disk 0 30 -360
+AttributeEnd
+Illuminate 2 1
+
+# Fill light
+AttributeBegin
+Translate -50 50 80
+Declare "lighttype" "string"
+LightSource "uberlight" 3 "lighttype" ["omni"] "intensity" [0.1]  "float nonspecular" [1] "lightcolor" [.9 .9 1]
+AttributeEnd
+Illuminate 3 1
+
+# Bounce light
+AttributeBegin
+Translate 0 20 -100
+LightSource "uberlight" 5 "string lighttype" ["omni"] "intensity" [0.05] "float nonspecular" [1]
+AttributeEnd
+Illuminate 5 1
+
+TransformEnd
+
+
+AttributeBegin
+Attribute "identifier" "name" ["Floor"]
+Attribute "render" "casts_shadows" ["none"]
+TransformBegin
+Scale .15 .15 .15
+Attribute "displacementbound" "sphere" [.1] "coordinatesystem" ["shader"]
+Surface "ceramictiles" "string projection" ["planar"]
+           "string textureprojspace" ["shader"]
+           "color Cbase" [.5 .5 .1] "color Cmottle" [.75 .75 .5]
+           "color Cedge" [.25 .2 .025]
+TransformEnd
+Patch "bilinear" "P" [-10 -10 0  0 -10 0  -10 10 0  0 10 0]
+TransformBegin
+Scale .15 .15 .15
+Attribute "displacementbound" "sphere" [.1] "coordinatesystem" ["shader"]
+Surface "ceramictiles" "string projection" ["planar"]
+           "string textureprojspace" ["shader"]
+TransformEnd
+Patch "bilinear" "P" [0 -10 0  10 -10 0  0 10 0  10 10 0]
+AttributeEnd
+
+AttributeBegin
+Surface "plastic"
+Color [ .75 .75 .75 ]
+Rotate 20 0 0 1
+ReadArchive "teapot.rib"
+AttributeEnd
+
+WorldEnd

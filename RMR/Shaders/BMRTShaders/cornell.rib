@@ -1,0 +1,134 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+############################################################################
+#
+# This RIB file describes the famous "Cornell Box", which is a test scene
+# commonly used to demonstrate radiosity.
+#
+############################################################################
+
+# Set up the camera position and field of view for the usual view of the
+# box.  No rendering resolution is specified, but you should choose a
+# 1.0 aspect ratio to get the usual view (i.e. same horizontal and vertical
+# resolutions, such as 256x256 or 512x512.
+#
+Option "searchpath" "shader" [".:../shaders:&"]
+Display "cornell.tif" "file" "rgba"
+FrameAspectRatio 1
+Format 400 400 1
+PixelSamples 2 2
+Projection "perspective" "fov" [37] 
+Scale -1 1 1
+Orientation "rh"
+##CameraOrientation 278 273 -800 278 273 0 0 1 0
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+Translate -278 -273 800 
+
+#Declare "steps" "integer"
+Option "radiosity" "steps" [100]
+
+WorldBegin
+
+#
+# Hint to the radiosity renderer: specify a good dicing size
+#
+Declare "patchsize" "float"
+Declare "elemsize" "float"
+Declare "minsize" "float"
+Attribute "radiosity" "patchsize" [200] "elemsize" [100] "minsize" [10]
+
+
+
+############################################################################
+# Light Source Definitions
+############################################################################
+
+#
+# Set up a single area light source in the center of the ceiling.
+#
+
+AttributeBegin
+Surface "constant" 
+Attribute "light" "shadows" "on"
+Attribute "light" "nsamples" [4]
+Translate 278 548.8 279.5
+Translate 0 -.1 0
+AreaLightSource "arealight" 1 "intensity" [150000] "lightcolor" [1 .9 .7]
+Patch "bilinear" "P" [65 0 -52.5 65 0 52.5 -65 0 -52.5 -65 0 52.5]
+#Polygon "P" [343.0 548.8 227.0 
+# 343.0 548.8 332.0
+# 213.0 548.8 332.0
+# 213.0 548.8 227.0]
+AttributeEnd
+Illuminate 1 1
+
+
+############################################################################
+# Wall Definitions
+############################################################################
+
+AttributeBegin
+Attribute "identifier" "name" "Cornell Box Walls"
+
+# All surfaces are 1 sided (so we can see through the closest wall)
+#Sides 1
+Attribute "render" "casts_shadows" "none"
+
+# All surfaces are diffuse reflectors
+Surface "matte" "Kd" [0.75]
+Color [ 1 1 1 ] 
+
+
+Attribute "identifier" "name" "floor"
+Polygon "P" [550 0 0 0 0 0 0 0 560 550 0 560]
+
+Attribute "identifier" "name" "ceiling"
+Polygon "P" [560 550 0 560 550 560 0 550 560 0 550 0.0]
+
+Attribute "identifier" "name" "back_wall"
+Polygon "P" [550 0 560 0 0 560 0 550 560 560 550 560]
+
+Attribute "identifier" "name" "right_wall"
+Color [0.15 0.5 0.15]
+Polygon "P" [0.0 0 560 0 0 0 0.0 550 0 0.0 550 560]
+
+Attribute "identifier" "name" "left_wall"
+Color [0.64 0.15 0.1]
+Polygon "P" [550 0 0 550 0 560 560 550 560 560 550 0.0]
+
+
+AttributeEnd
+
+
+
+############################################################################
+# Short Box Definition
+############################################################################
+AttributeBegin
+Attribute "identifier" "name" "Cornell Box -- short box"
+Surface "matte" "Kd" [0.75]
+Color [ 1 1 1 ] 
+Polygon "P" [130.0 165.0 65.0 82.0 165.0 225.0 240.0 165.0 272.0 290.0 165.0 114.0]
+Polygon "P" [290.0 0 114.0 290.0 165.0 114.0 240.0 165.0 272.0 240.0 0 272.0]
+Polygon "P" [130.0 0 65.0 130.0 165.0 65.0 290.0 165.0 114.0 290.0 0 114.0]
+Polygon "P" [ 82.0 0 225.0 82.0 165.0 225.0 130.0 165.0 65.0 130.0 0 65.0]
+Polygon "P" [240.0 0 272.0 240.0 165.0 272.0 82.0 165.0 225.0 82.0 0 225.0]
+AttributeEnd
+
+
+############################################################################
+# Tall Box Definition
+############################################################################
+AttributeBegin
+Attribute "identifier" "name" "Cornell Box -- tall box"
+Surface "matte" "Kd" [0.75]
+Color [ 1 1 1 ] 
+Polygon "P" [423.0 330.0 247.0 265.0 330.0 296.0 314.0 330.0 456.0 472.0 330.0 406.0]
+Polygon "P" [423.0 0 247.0 423.0 330.0 247.0 472.0 330.0 406.0 472.0 0 406.0]
+Polygon "P" [472.0 0 406.0 472.0 330.0 406.0 314.0 330.0 456.0 314.0 0 456.0]
+Polygon "P" [314.0 0 456.0 314.0 330.0 456.0 265.0 330.0 296.0 265.0 0 296.0]
+Polygon "P" [265.0 0 296.0 265.0 330.0 296.0 423.0 330.0 247.0 423.0 0 247.0]
+AttributeEnd
+WorldEnd
+

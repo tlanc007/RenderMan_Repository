@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rmPolicy</TITLE>
+<LINK HREF="../rmTop.htmld/index.html" REL="Parent" TITLE="rmTop">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ </td></tr></table>
+ </center>
+<H4>Your saying, &quot;Hey I've something I'd like to add.  How do I get it there?&quot;<P>
+</H4><P>
+First let's go over policy.<P>
+<P>
+<B>I.</B> Due to some past problems at Caltech with copyright infringements, for now I am not allowing any anonymous uploading.  Apparently somebody here had a picture of a purple prehistoric animal that was from a kid's show (I think you know which I mean) and the people who have the rights to this character have threaten to sue.  Enough said.<P>
+<P>
+For  now the only way to get things the WEB site is to email it directly to me at <B>tal AT renderman DOT org</B>.   If it is binary, I can handle MIME, or just plain uuencode.   If this is too, bothersome for you.<P>
+<P>
+<B>II</B>.   On a related topic, I won't accept any binaries (pictures excepted) such as compiled shader files, texture files, etc.  If you have a shader that you would like to share but don't want to distribute the source or if you have some shaders that you would like to sell.  Then feel free to send some pictures that you feel shows them off.<P>
+<P>
+	<B>A)</B> If it is just source -- make sure you include some comments telling us this is yours, so we know who it came from and who to give credit to.  Also, if you are sending a shader, make sure you include a simple RIB that shows the shader off.<P>
+<P>
+	<B>B)</B> Anything else include a readme describing what it is  and that this is yours.<P>
+	<P>
+<P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="../index.html">rmTop</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rmPolicy</A> was converted on Fri Feb 16 23:49:06 PST 1996 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+
+</BODY>
+</HTML>

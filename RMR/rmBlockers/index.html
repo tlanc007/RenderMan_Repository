@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rmLightBlockers</TITLE>
+<LINK HREF="../Examples/index.html" REL="Parent" TITLE="rmDetails">
+</HEAD>
+
+<BODY bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER><H1><P>
+Light Blockers</H1><P>
+<I>(various examples on using patterns to block light from a light source)</I><P>
+</CENTER>
+<H4>What's on this page?</H4></P>
+<UL>
+<LI><A HREF="#Intro">Introduction</A>
+<LI><A HREF="#Tmap">Texture-map based</A>
+<LI><A HREF="#Procedural">Procedural based</A>
+</UL>
+
+<HR>
+<A NAME="Intro"></A>
+<I>NOTE:  This page was written back in September '97 after reading Ronen Barzel's paper.  Now that the paper was rehashed in the Siggraph '98 RenderMan Course and Larry provided a shader with many of these features, I have started another page, <A HREF="uber/index.html">uberlight</A>.</I><P>
+ 
+Over the years I have played around with the the slide-projector shader, but never really got that many images I was satisfied with.  Then I happened across Ronen Barzel's article &quot;<I>Lighting Controls for Computer Cinematography</I>&quot; from the<B> Journal of Graphics Tools</B>.  An abstract of this article can be found at <A HREF="http://www.acm.org/jgt/papers/Barzel97/">Barzel97</A>.  One of the ideas from this article is using the images to block sections of the light.  This is a very simple but cool idea.
+<P>
+Currently these examples are what are more commonly referred to coockaloris effects (from traditional stage lighting).  There another kind that I haven't made any examples of yet, that the <A HREF="uber/index.html">uberlight</A> is capable of.  Namely, creating projection coordinates for which light from a particular source should not go.
+<P>
+The following are some light shaders to do blocking.  The first set are more general and can read in texture-maps to be used to as the blockers.  The next set are more specific and generate the patterns procedurally.  I believe the advantage to the this set is that one will have more control in animating the blockers.<P>
+
+<HR>
+<A NAME="Tmap"></A>
+
+<H2>Blockers with texture-maps<P>
+</H2><P>
+This set of shaders is more general as they use a texture-map to define the shape of the blocker.<P>
+<P>
+These first two images depict the scene light with a distantlight and a spot light respectfully.<P>
+<A HREF="distant.tiff"><IMG SRC=distant.jpg  ALIGN=CENTER WIDTH=100 ALT="distant.tiff"></A>
+
+<A HREF="distant.rib">distant.rib</A>
+
+ <A HREF="spot.tiff"><IMG SRC=spot.jpg  ALIGN=CENTER WIDTH=100 ALT="spot.tiff"></A>
+
+<A HREF="spot.rib">spot.rib</A>
+
+<P>
+<P>
+Now let's take the following image of a star and use it as a blocker.
+<A HREF="star.tiff"><IMG SRC=star.jpg  ALIGN=CENTER WIDTH=100 ALT="star.tiff"></A>
+
+<P>
+First with <A HREF="TLblocker1spotlight.sl">TLblocker1spotlight.sl</A>:<P>
+<P>
+<A HREF="TL1ch1starPos.tiff"><IMG SRC=TL1ch1starPos.jpg  ALIGN=CENTER WIDTH=100 ALT="TL1ch1starPos.tiff"></A>
+
+<A HREF="TL1ch1starPos.rib">TL1ch1starPos.rib</A>
+
+ <A HREF="TL1ch1starNeg.tiff"><IMG SRC=TL1ch1starNeg.jpg  ALIGN=CENTER WIDTH=100 ALT="TL1ch1starNeg.tiff"></A>
+<A HREF="TL1ch1starNeg.rib">TL1ch1starNeg.rib</A>
+<P>
+<HR>
+Now use the next image with a bunch of bombed stars as the blocker:
+<A HREF="star2.tiff"><IMG SRC=star2.jpg  ALIGN=CENTER WIDTH=100 ALT="star2.tiff"></A>
+<P>
+<P>
+<A HREF="TL1chstarBombPos.tiff"><IMG SRC=TL1chstarBombPos.jpg  ALIGN=CENTER WIDTH=100 ALT="TL1chstarBombPos.tiff"></A>
+
+<A HREF="TL1chstarBombPos.rib">TL1chstarBombPos.rib</A>
+
+ <A HREF="TL1chstarBombNeg.tiff"><IMG SRC=TL1chstarBombNeg.jpg  ALIGN=CENTER WIDTH=100 ALT="TL1chstarBombNeg.tiff"></A>
+
+<A HREF="TL1chstarBombNeg.rib">TL1chstarBombNeg.rib</A>
+<P>
+<P>
+OK, this all fine and dandy, but what if you wanted to animate your blocker.  Well it depends on the effect you want.<P>
+A. If you just want to simulate if the blocker is on a motor then one way would be to just start rotating the up vector.  Now you are all ready to do that 70's disco dance floor scene, you have been dying to do.<P>
+B. What if you really wanted you blocker to be changing over time?<P>
+ Well you choices are:<P>
+1.  some how generate the various texture-maps depicting the animation that is desired.<P>
+2. Generate the pattern procedurally inside the light shader.<P>
+<P>
+The latter is how I am speculating that the scene was done in <I>Toy Story</I> with rain drop shadows on Buzz. <P>
+<P>
+
+<HR>
+<A NAME="Procedural"></A>
+
+<H2>Procedural Blockers </H2><P>
+<P>
+This set of blockers do the blocking procedurally<P>
+<A HREF="TLProcstarPos.tiff"><IMG SRC=TLProcstarPos.jpg  WIDTH=100 ALT="TLProcstarPos.tiff"></A>
+
+<A HREF="TLstarBlockerspotlight.sl">TLstarBlockerspotlight.sl</A> <A HREF="TLProcstarPos.rib">TLProcstarPos.rib</A>
+<P>
+<P>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="../rmDetails.htmld/index.html">rmDetails</A>]
+</DL>
+<HR>
+<I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

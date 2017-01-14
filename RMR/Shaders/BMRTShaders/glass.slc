@@ -1,0 +1,290 @@
+surface glass
+param	float	Ka		0.2
+param	float	Kd		0
+param	float	Ks		0.5
+param	float	Kr		1
+param	float	Kt		1
+param	float	roughness		0.05
+param	float	blur		0
+param	float	eta		1.5
+param	color	specularcolor		1 1 1
+param	color	transmitcolor		1 1 1
+param	float	samples		1
+local	normal	Nf	0 0 0
+local	vector	IN	0 0 0
+local	vector	Rfldir	0 0 0
+local	vector	Rfrdir	0 0 0
+local	vector	uoffset	0 0 0
+local	vector	voffset	0 0 0
+local	color	ev	0 0 0
+local	color	cr	0 0 0
+local	vector	R	0 0 0
+local	vector	Rdir	0 0 0
+local	float	i	0
+local	float	j	0
+local	float	kr	0
+local	float	kt	0
+initcode 10
+	return
+code
+	return_area
+	pushif	0 
+	cset	ev 
+	pushif	0 
+	cset	cr 
+	pushv	I 
+	normalize
+	popv	IN 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushif	0 
+	pushv	N 
+	pushv	I 
+	vdot
+	lt
+	ifz	0
+	pushf	eta 
+	pushif	1 
+	divff
+	jump	1
+label 0
+	pushf	eta 
+label 1
+	pushv	Nf 
+	pushv	IN 
+	fresnel4
+	popf	kr 
+	popf	kt 
+	popv	Rfldir 
+	popv	Rfrdir 
+	pushf	Kr 
+	mulF	kr 
+	popf	kr 
+	pushf	Kt 
+	mulF	kt 
+	popf	kt 
+	pushif	0.001 
+	pushf	kr 
+	gt
+	ifz	2
+	pushv	Rfldir 
+	normalize
+	popv	Rdir 
+	pushif	0 
+	pushf	blur 
+	gt
+	ifz	4
+	pushv	Rdir 
+	xcomp
+	pushv	Rdir 
+	ycomp
+	subff
+	pushv	Rdir 
+	zcomp
+	pushv	Rdir 
+	xcomp
+	subff
+	pushv	Rdir 
+	ycomp
+	pushv	Rdir 
+	zcomp
+	subff
+	normalize
+	mulFv	blur 
+	popv	uoffset 
+	pushv	uoffset 
+	pushv	Rdir 
+	cross
+	popv	voffset 
+	pushif	0 
+	popf	i 
+label 6
+	pushf	samples 
+	pushf	i 
+	lt
+	ifz	8
+	pushif	0 
+	popf	j 
+label 9
+	pushf	samples 
+	pushf	j 
+	lt
+	ifz	11
+	pushv	voffset 
+	pushif	0.5 
+	pushf	samples 
+	random
+	addF	j 
+	divff
+	subff
+	mulfv
+	pushv	uoffset 
+	pushif	0.5 
+	pushf	samples 
+	random
+	addF	i 
+	divff
+	subff
+	mulfv
+	addV	Rdir 
+	addvv
+	popv	R 
+	pushv	R 
+	normalize
+	pushv	P 
+	trace
+	addC	ev 
+	popc	ev 
+label 10
+	pushif	1 
+	addF	j 
+	popf	j 
+	jump	9
+label 11
+label 7
+	pushif	1 
+	addF	i 
+	popf	i 
+	jump	6
+label 8
+	pushf	samples 
+	mulF	samples 
+	divF	kr 
+	pushc	ev 
+	mulcf
+	popc	ev 
+	jump	5
+label 4
+	pushv	Rdir 
+	pushv	P 
+	trace
+	mulFv	kr 
+	popc	ev 
+label 5
+label 2
+label 3
+	pushif	0.001 
+	pushf	kt 
+	gt
+	ifz	12
+	pushv	Rfrdir 
+	normalize
+	popv	Rdir 
+	pushif	0 
+	pushf	blur 
+	gt
+	ifz	14
+	pushv	Rfrdir 
+	xcomp
+	pushv	Rfrdir 
+	ycomp
+	subff
+	pushv	Rfrdir 
+	zcomp
+	pushv	Rfrdir 
+	xcomp
+	subff
+	pushv	Rfrdir 
+	ycomp
+	pushv	Rfrdir 
+	zcomp
+	subff
+	normalize
+	mulFv	blur 
+	popv	uoffset 
+	pushv	uoffset 
+	pushv	Rfrdir 
+	cross
+	popv	voffset 
+	pushif	0 
+	popf	i 
+label 16
+	pushf	samples 
+	pushf	i 
+	lt
+	ifz	18
+	pushif	0 
+	popf	j 
+label 19
+	pushf	samples 
+	pushf	j 
+	lt
+	ifz	21
+	pushv	voffset 
+	pushif	0.5 
+	pushf	samples 
+	random
+	addF	j 
+	divff
+	subff
+	mulfv
+	pushv	uoffset 
+	pushif	0.5 
+	pushf	samples 
+	random
+	addF	i 
+	divff
+	subff
+	mulfv
+	addV	Rdir 
+	addvv
+	popv	R 
+	pushv	R 
+	pushv	P 
+	trace
+	addC	cr 
+	popc	cr 
+label 20
+	pushif	1 
+	addF	j 
+	popf	j 
+	jump	19
+label 21
+label 17
+	pushif	1 
+	addF	i 
+	popf	i 
+	jump	16
+label 18
+	pushf	samples 
+	mulF	samples 
+	divF	kt 
+	pushc	cr 
+	mulcf
+	popc	cr 
+	jump	15
+label 14
+	pushv	Rdir 
+	pushv	P 
+	trace
+	mulFv	kt 
+	popc	cr 
+label 15
+label 12
+label 13
+	pushif	1 
+	cset	Oi 
+	pushc	cr 
+	mulC	transmitcolor 
+	pushf	roughness 
+	pushv	IN 
+	negv
+	pushv	Nf 
+	specular
+	mulFv	Ks 
+	addC	ev 
+	mulC	specularcolor 
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	Cs 
+	addcc
+	addcc
+	popc	Ci 
+	return

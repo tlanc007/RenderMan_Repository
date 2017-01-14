@@ -1,0 +1,104 @@
+##RenderMan RIB-Structure 1.1
+##Creator mtor 4.0b1, RAT 5.0b1 (Jan 15 2002 17:02:06)
+##For tal
+##CreationDate Sun Jan 27 13:59:18 2002
+
+version 3.04
+Declare "resource" "string"
+Declare "dirmap" "string"
+Declare "minmax" "int"
+Declare "serverresource" "string"
+Option "searchpath" "resource" [".:@"]
+FrameBegin 1
+Attribute "dice" "binary" [0]
+PixelSamples 3 3
+Exposure 1 1
+Hider "hidden" "jitter" [1]
+PixelFilter "catmull-rom" 3 3
+#Shutter 10 10.25
+Shutter 0.416667 0.427083
+Format 640 480 1
+Display "grey.0010.tif" "tiff" "rgba" "int merge" [0]
+Clipping 0.1 1000
+Projection "perspective" "fov" [54.4322]
+ScreenWindow -1 1 -0.75 0.75
+ConcatTransform [0.692143 0.161604 0.703436 9.86542e-009 -7.1284e-010 0.974612 -0.223903 8.11527e-017 0.72176 -0.154973 -0.674571 1.02876e-008 9.74874e-008 7.90092e-009 3.3162 1]
+WorldBegin 
+	TransformBegin 
+		CoordinateSystem "worldspace"
+	TransformEnd 
+	ReverseOrientation 
+	ShadingRate 1
+	ShadingInterpolation "smooth"
+	Surface "defaultsurface" 
+	TransformBegin 
+		Attribute "identifier" "string name" ["directionalLightShape1"]
+		Transform [-0.971201 -0.215528 0.101569 0 -0.233486 0.94585 -0.225503 0 -0.0474669 -0.242724 -0.968933 0 0 2.35556 5.29861 1]
+		#slim light l_uber_0 
+		#work genmap  -crew "" -far 0 -near 0 -frequency "never" -type "shadow" -depthfilter "min" -lazy "global" -resolution 512 -locator "directionalLightShape1": 
+		TransformBegin
+		Scale 1 1 1
+		LightSource "l_uber" "A80g_tgSJn300000-directionalLightShape1" "color lightcolor" [ 1 1 1 ] "color shadowcolor" [ 0 0 0 ] "float __eyeHighlight" [ 0 ] "float __foglight" [ 0 ] "float __inShadow" [ 0 ] "float __nondiffuse" [ 0 ] "float __nonspecular" [ 0 ] "float beamdistribution" [ 0 ] "float blocker_bottomdoor" [ 90 ] "float blocker_dooredge" [ 0.02 ] "float blocker_leftdoor" [ 90 ] "float blocker_rightdoor" [ 90 ] "float blocker_topdoor" [ 90 ] "float blockerhedge" [ .1 ] "float blockerheight" [ 1 ] "float blockerround" [ 1 ] "float blockerwedge" [ .1 ] "float blockerwidth" [ 1 ] "float coneAngle" [ 0.006 ] "float cutoff" [ 1.0e6 ] "float cuton" [ 0.01 ] "float falloff" [ 0 ] "float falloffdist" [ 0 ] "float faredge" [ 0 ] "float hedge" [ 0 ] "float height" [ 1 ] "float intensity" [ 1 ] "float lighttype" [ 3 ] "float max_intensity" [ 1 ] "float maxintensity" [ 1 ] "float nearedge" [ 0 ] "float noiseamp" [ 0 ] "float noisefreq" [ 4 ] "float nonspecular" [ 0 ] "float nshadowrays" [ 1 ] "float out_intensity" [ 1 ] "float parallelrays" [ 1 ] "float penumbraAngle" [ 5 ] "float raytraceshadow" [ 0 ] "float roundness" [ 1 ] "float shadowOpacity" [ 1.0 ] "float shadowbias" [ -1 ] "float shadowblur" [ 0.01 ] "float shadownsamps" [ 16 ] "float shearx" [ 0 ] "float sheary" [ 0 ]  "float wedge" [ 0 ] "float width" [ 1 ]  "string blockercoords" [ "" ] "string shadowname" [ "" ] "string slidename" [ "" ]  "vector noiseoffset" [ 0  0  0 ] "vector shadowcheat" [ 0 0 0 ] 
+		TransformEnd
+	TransformEnd 
+	AttributeBegin 
+		##backplane
+		CoordSysTransform "camera"
+		#slim surface backplane 
+		TransformBegin
+		Attribute "render" "string casts_shadows" ["opaque"]
+		Scale 1 1 1
+		Opacity [1 1 1]
+		Color [0.839215686275 0.839215686275 0.839215686275]
+		Surface "TLconstantMap" "float Km" [ 1 ] "float MtorFlip" [ 0 ] "float flipS" [ 0 ] "float flipT" [ 0 ] "string mapname" [ "" ] "string transmap" [ "" ] 
+		TransformEnd
+		Patch "bilinear" "P" [-515.338 386.504 999.9 515.338 386.504 999.9 -515.338 -386.504 999.9 515.338 -386.504 999.9]
+	AttributeEnd 
+	AttributeBegin 
+		Attribute "identifier" "name" ["|nurbsSphere1|ball"]
+		ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+		TransformBegin
+		Attribute "render" "string casts_shadows" ["opaque"]
+		Scale 1 1 1
+		Opacity [1 1 1]
+		Color [0 .25 1]
+		#slim surface s_grey 
+		TransformBegin
+		Attribute "render" "string casts_shadows" ["opaque"]
+		Scale 1 1 1
+		Opacity [1 1 1]
+		Color [1 1 1]
+		Surface "TLFresnelPlastic" "color Cspec" [ 1  1  1 ] "color Csurf" [ 0.5  0.5  0.5 ] "float Ka" [ 1 ] "float Kd" [ 1.000 ] "float Kr" [ 0.000 ] "float Ks" [ 1.000 ] "float MtorFlip" [ 1 ] "float flipS" [ 0 ] "float flipT" [ 0 ] "float ior" [ 0 ] "float reflectBlur" [ 0 ] "float reflectDist" [ 1e10 ] "float roughness" [ 0.1 ] "string colorMap" [ "" ] "string reflectMap" [ "grid2.ttx" ] "string reflectSpace" [ "world" ] 
+		TransformEnd
+		TransformEnd
+		ShadingInterpolation "smooth"
+		NuPatch 11 4 [-0.25 -0.25 -0.125
+		0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1 1.125 1.25 1.25] 0 1 7 4 [0 0 0 0 0.25 0.5 0.75 1 1 1 1] 0 1 "Pw" [9.59616e-017 -1 -2.53153e-016 1 9.59616e-017 -1 -2.53153e-016 1
+		9.59616e-017 -1 -2.53153e-016 1 9.59616e-017 -1 -2.53153e-016 1 9.59616e-017 -1 -2.53153e-016 1
+		9.59616e-017 -1 -2.53153e-016 1 9.59616e-017 -1 -2.53153e-016 1 9.59616e-017 -1 -2.53153e-016 1
+		9.59616e-017 -1 -2.53153e-016 1 9.59616e-017 -1 -2.53153e-016 1 9.59616e-017 -1 -2.53153e-016 1
+		0.199917 -1 -0.199917 1 0.282725 -1 -9.05309e-017 1 0.199917 -1 0.199917 1
+		5.05437e-017 -1 0.282725 1 -0.199917 -1 0.199917 1 -0.282725 -1 1.76377e-017 1
+		-0.199917 -1 -0.199917 1 -7.8868e-017 -1 -0.282725 1 0.199917 -1 -0.199917 1
+		0.282725 -1 -9.05309e-017 1 0.199917 -1 0.199917 1 0.61643 -0.783612 -0.61643 1
+		0.871764 -0.783612 1.77275e-017 1 0.61643 -0.783612 0.61643 1 -2.06333e-019 -0.783612 0.871764 1
+		-0.61643 -0.783612 0.61643 1 -0.871764 -0.783612 3.91488e-017 1 -0.61643 -0.783612 -0.61643 1
+		-8.71296e-017 -0.783612 -0.871764 1 0.61643 -0.783612 -0.61643 1 0.871764 -0.783612 1.77275e-017 1
+		0.61643 -0.783612 0.61643 1 0.867202 1.48617e-016 -0.867202 1 1.22641 9.55176e-017 1.67243e-016 1
+		0.867202 4.24185e-017 0.867202 1 -7.50934e-017 2.04241e-017 1.22641 1 -0.867202 4.24185e-017 0.867202 1
+		-1.22641 9.55176e-017 4.7772e-017 1 -0.867202 1.48617e-016 -0.867202 1 -4.7772e-017 1.70611e-016 -1.22641 1
+		0.867202 1.48617e-016 -0.867202 1 1.22641 9.55176e-017 1.67243e-016 1 0.867202 4.24185e-017 0.867202 1
+		0.61643 0.783612 -0.61643 1 0.871764 0.783612 2.20033e-016 1 0.61643 0.783612 0.61643 1
+		-1.0655e-016 0.783612 0.871764 1 -0.61643 0.783612 0.61643 1 -0.871764 0.783612 2.87664e-017 1
+		-0.61643 0.783612 -0.61643 1 1.92144e-017 0.783612 -0.871764 1 0.61643 0.783612 -0.61643 1
+		0.871764 0.783612 2.20033e-016 1 0.61643 0.783612 0.61643 1 0.199917 1 -0.199917 1
+		0.282725 1 1.6764e-016 1 0.199917 1 0.199917 1 -8.51664e-017 1 0.282725 1
+		-0.199917 1 0.199917 1 -0.282725 1 4.38816e-018 1 -0.199917 1 -0.199917 1
+		5.68422e-017 1 -0.282725 1 0.199917 1 -0.199917 1 0.282725 1 1.6764e-016 1
+		0.199917 1 0.199917 1 4.34992e-017 1 1.13693e-016 1 4.34992e-017 1 1.13693e-016 1
+		4.34992e-017 1 1.13693e-016 1 4.34992e-017 1 1.13693e-016 1 4.34992e-017 1 1.13693e-016 1
+		4.34992e-017 1 1.13693e-016 1 4.34992e-017 1 1.13693e-016 1 4.34992e-017 1 1.13693e-016 1
+		4.34992e-017 1 1.13693e-016 1 4.34992e-017 1 1.13693e-016 1 4.34992e-017 1 1.13693e-016 1]
+	AttributeEnd 
+WorldEnd 
+FrameEnd 

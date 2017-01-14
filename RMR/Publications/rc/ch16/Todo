@@ -1,0 +1,11 @@
+Todo
+
+Add copyright for all .c .h files
+
+Missing shader:  16.31 p. 376  pin_color()
+The pencil also needs a surface shader for the eraser green holder using shiny instead.
+
+Also missing textures that are needed for realpin.c and pencil.c.
+
+Shadowspot won't work with BMRT as shadow maps aren't supported
+

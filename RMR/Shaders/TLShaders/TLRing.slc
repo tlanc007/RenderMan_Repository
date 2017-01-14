@@ -1,0 +1,140 @@
+surface TLRing
+param	float	Ka		1
+param	float	Kd		1
+param	float	cutoff		0.55
+param	float	ringrad		1
+param	float	opacity		0.5
+local	string	$_str_0 	"shader"
+local	point	PP	0 0 0
+local	point	Nf	0 0 0
+local	float	val	0
+local	float	relpos	0
+local	float	oi	0
+local	color	cs	0 0 0
+local	color	dgrey	0 0 0
+local	color	dyellow	0 0 0
+local	color	dpink	0 0 0
+local	color	mutedgreen	0 0 0
+initcode 4
+	return
+code
+	return_area
+	pushif	0 
+	popf	oi 
+	pushiv	0.266 0.266 0.266 
+	popc	dgrey 
+	pushiv	0.73 0.664 0.398 
+	popc	dyellow 
+	pushiv	0.664 0.465 0.465 
+	popc	dpink 
+	pushiv	0.531 0.531 0.398 
+	popc	mutedgreen 
+	pushv	P 
+	pushs	$_str_0 
+	transforms
+	popv	PP 
+	pushv	PP 
+	length
+	popf	val 
+	pushf	ringrad 
+	mulF	cutoff 
+	pushf	val 
+	lt
+	ifz	0
+	pushif	0 
+	cset	Oi 
+	jump	1
+label 0
+	pushf	ringrad 
+	divF	val 
+	popf	relpos 
+	pushf	relpos 
+	floor
+	pushif	1 
+	pushf	relpos 
+	pushif	40 
+	mulff
+	noisef
+	pushif	2 
+	mulff
+	subff
+	addF	relpos 
+	subff
+	popf	oi 
+	pushif	1 
+	pushf	oi 
+	gt
+	ifz	2
+	pushif	0 
+	popf	oi 
+label 2
+label 3
+label 1
+	pushif	0 
+	pushf	oi 
+	feqf
+	ifz	4
+	pushif	0 
+	cset	Oi 
+	jump	5
+label 4
+	pushif	0.83 
+	pushf	relpos 
+	gt
+	ifz	6
+	cpCC	dgrey cs 
+	jump	7
+label 6
+	pushif	0.77 
+	pushf	relpos 
+	gt
+	ifz	8
+	pushif	0 
+	popf	oi 
+	pushif	0 
+	cset	Oi 
+	jump	9
+label 8
+	pushif	0.62 
+	pushf	relpos 
+	gt
+	ifz	10
+	cpCC	dyellow cs 
+	jump	11
+label 10
+	pushif	0.58 
+	pushf	relpos 
+	gt
+	ifz	12
+	cpCC	dpink cs 
+	jump	13
+label 12
+	cpCC	mutedgreen cs 
+label 13
+label 11
+label 9
+label 7
+	pushif	0 
+	pushf	oi 
+	fnef
+	ifz	14
+	pushf	oi 
+	cset	Oi 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	cs 
+	mulC	Oi 
+	popc	Ci 
+label 14
+label 15
+label 5
+	return

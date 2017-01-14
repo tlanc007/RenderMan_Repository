@@ -1,0 +1,1486 @@
+##RenderMan RIB
+version 3.03
+Sides 1
+FrameBegin 33
+PixelSamples 3 3
+ShadingRate 1
+PixelFilter "box" 1.000000 1.000000
+Option "limits" "bucketsize" [32 32]
+Option "limits" "gridsize" [256]
+Projection "perspective" "fov" [25]
+Format 320 240 1.000000
+Display "GNember.tif" "tiff" "rgba"
+#Display "GNember.tif" "framebuffer" "rgba"
+Transform [-0.697161 0.523316 0.490007 0.000000 0.000007 0.683500 -0.729951 0.000000 -0.716915 -0.508890 -0.476513 0.000000 0.000000 0.000000 56.138107 1.000000]
+Scale -1 1 1
+Translate 9.233557 -16.578342 9.742302
+WorldBegin
+LightSource "pointnofalloff" 1 "intensity" [1.000000] "lightcolor" [1.000000 1.000000 1.000000] "from" [0.000000 40.000000 40.000000]
+#LightSource "pointlightnofall" 1 "intensity" [1.000000] "lightcolor" [1.000000 1.000000 1.000000] "from" [0.000000 40.000000 40.000000]
+Surface "GNember"
+AttributeBegin
+Transform [1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000]
+ShadingRate 1.000000
+Attribute "identifier" "name" ["Particle System"]
+AttributeBegin
+Translate -4.449619 157.026138 -8.699273
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.100493 0.100493 0.100493
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -9.696750 152.320450 -0.529496
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.109215 0.109215 0.109215
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 14.554172 160.747787 21.700315
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.113717 0.113717 0.113717
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -16.116549 153.071960 20.472763
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.032303 0.032303 0.032303
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 9.172196 169.965027 -10.795358
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.041407 0.041407 0.041407
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -6.370576 165.546402 -11.192736
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.045481 0.045481 0.045481
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -24.200514 160.736679 -23.781132
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.097651 0.097651 0.097651
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 22.195362 150.603287 -19.231384
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.085715 0.085715 0.085715
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 6.550725 160.899002 -10.956073
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.121091 0.121091 0.121091
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -17.090307 165.046204 -0.838922
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.115812 0.115812 0.115812
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 15.214728 160.188477 24.182846
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.112150 0.112150 0.112150
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 23.233265 169.337891 -9.263480
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.192909 0.192909 0.192909
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.756067 166.052948 16.261061
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.168557 0.168557 0.168557
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 20.247746 159.734772 6.722576
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.139277 0.139277 0.139277
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 18.235331 149.685440 0.030622
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.137987 0.137987 0.137987
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -5.628942 159.123825 2.903280
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.144670 0.144670 0.144670
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 14.532703 158.947662 -11.249487
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.150345 0.150345 0.150345
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 6.774964 161.755280 -15.705030
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.206822 0.206822 0.206822
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 7.137121 144.517715 -15.088374
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.107535 0.107535 0.107535
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -20.222031 154.207184 -10.964589
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.097292 0.097292 0.097292
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -9.487517 150.927582 12.020917
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.155755 0.155755 0.155755
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 8.141458 161.952499 11.923049
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.123993 0.123993 0.123993
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.089750 151.719849 19.153141
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.097376 0.097376 0.097376
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 3.673998 142.036636 -16.364687
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.256116 0.256116 0.256116
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 9.316250 154.554642 4.189377
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.181409 0.181409 0.181409
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -19.917746 141.114883 -12.590705
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.138808 0.138808 0.138808
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -14.634438 144.712677 5.671385
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.245835 0.245835 0.245835
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 21.563974 155.789505 19.050106
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.169284 0.169284 0.169284
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 17.024500 153.938614 -6.124942
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.250200 0.250200 0.250200
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -12.817316 152.594086 -2.555293
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.178001 0.178001 0.178001
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -2.190405 152.884903 14.969016
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.169689 0.169689 0.169689
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -6.651177 146.433395 21.970123
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.242088 0.242088 0.242088
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -15.401225 136.755844 -1.309305
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.191726 0.191726 0.191726
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 19.185665 155.048615 0.354789
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.291159 0.291159 0.291159
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 11.554929 138.298843 6.663500
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.254330 0.254330 0.254330
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -16.939638 137.972839 -11.743859
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.189751 0.189751 0.189751
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -10.323824 147.467987 -7.507740
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.299236 0.299236 0.299236
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 2.120078 146.653656 -7.726601
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.317316 0.317316 0.317316
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 11.316521 153.723267 -12.134444
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.256043 0.256043 0.256043
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 11.255006 147.020187 3.989224
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.210367 0.210367 0.210367
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 18.241856 143.558395 14.673564
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.359466 0.359466 0.359466
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -18.548765 144.656311 16.402958
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.247594 0.247594 0.247594
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -3.464934 142.393997 -2.468875
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.278878 0.278878 0.278878
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -11.476674 138.530853 -6.883842
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.317431 0.317431 0.317431
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -10.543651 133.347366 -9.631956
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.219849 0.219849 0.219849
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -13.993409 145.075378 -13.725083
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.301519 0.301519 0.301519
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 3.222555 143.044037 -12.617279
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.334509 0.334509 0.334509
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -18.169649 138.266098 -1.218243
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.295933 0.295933 0.295933
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 20.054590 145.397141 15.112205
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.328531 0.328531 0.328531
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 15.117367 138.464386 17.209566
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.340665 0.340665 0.340665
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 7.359847 130.261703 10.878044
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.391524 0.391524 0.391524
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.772576 140.316864 5.108802
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.324194 0.324194 0.324194
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 15.691411 136.708542 14.372126
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.342681 0.342681 0.342681
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBeginTranslate -18.207769 140.767868 8.739244
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.320058 0.320058 0.320058
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -15.110272 126.880951 -7.911499
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.362877 0.362877 0.362877
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 13.588300 133.161423 10.830593
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.323251 0.323251 0.323251
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 8.646885 134.019394 8.280683
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.388006 0.388006 0.388006
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 6.297598 122.816986 -17.032324
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.412930 0.412930 0.412930
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 6.193699 129.030792 -2.955637
+Rotate 0.000000 0  0  1Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.371252 0.371252 0.371252
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.859006 126.411171 6.307135
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.401409 0.401409 0.401409
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 15.627185 131.105270 8.447889
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.457678 0.457678 0.457678
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 16.475098 128.882385 -9.545625
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.407093 0.407093 0.407093
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 13.268645 129.864594 1.454458
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.398079 0.398079 0.398079
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 15.430844 125.817299 -4.472226
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.400000 0.400000 0.400000
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 2.542325 126.631073 -5.288220
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.427682 0.427682 0.427682
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 15.169053 125.558289 -12.687384
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.446405 0.446405 0.446405
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.878359 128.545761 -9.997180
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.467810 0.467810 0.467810
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 6.534694 118.994598 15.920472
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.385059 0.385059 0.385059
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 11.968534 118.392815 13.968055
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.463590 0.463590 0.463590
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 8.852398 125.250862 3.186763
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.463648 0.463648 0.463648
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.381634 117.748230 15.098791
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.442057 0.442057 0.442057
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 9.817400 122.059456 8.576170
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.511651 0.511651 0.511651
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 14.860300 121.299889 -11.204926
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.490746 0.490746 0.490746
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 10.547578 109.529320 8.267159
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.479509 0.479509 0.479509
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -6.473400 117.323532 4.932487
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.450246 0.450246 0.450246
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 2.870768 116.284317 8.341869
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.496801 0.496801 0.496801
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -9.855570 108.141861 10.877195
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.527553 0.527553 0.527553
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 8.903671 114.538574 2.040907
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.545737 0.545737 0.545737
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -2.086045 41.127769 4.397818
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.094409 0.094409 0.094409
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 5.753293 44.536892 3.787116
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0Rotate 0.000000 1  0  0
+Scale 0.148966 0.148966 0.148966
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.621514 41.958206 -2.079540
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.159879 0.159879 0.159879
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 5.612844 45.740501 -5.301417
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.215139 0.215139 0.215139
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 2.833233 41.276012 5.142557
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.164400 0.164400 0.164400
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -6.200130 43.483059 -5.618667
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.299953 0.299953 0.299953
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 6.239123 43.116283 -0.621354
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.115739 0.115739 0.115739
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 4.551726 44.304108 1.754295
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.187930 0.187930 0.187930
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 2.783369 37.307617 4.188606
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.033801 0.033801 0.033801
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 4.602743 42.824886 -3.749913
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.080507 0.080507 0.080507
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -4.765710 46.657433 -3.645233
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.200751 0.200751 0.200751
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.730349 38.687618 0.929894
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.195332 0.195332 0.195332
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -4.103420 41.705570 5.640120
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.277608 0.277608 0.277608
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -4.164343 34.981586 3.329271
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.129229 0.129229 0.129229
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 4.027402 41.353275 3.195772
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.089840 0.089840 0.089840
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.758358 36.771309 4.752156
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.263537 0.263537 0.263537
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -3.868881 38.249031 -3.300679
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.233110 0.233110 0.233110
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -3.799267 34.923008 -3.920949
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.263060 0.263060 0.263060
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -4.664523 41.033924 4.448974
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.315788 0.315788 0.315788
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -4.121910 37.853329 0.459271
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.242790 0.242790 0.242790
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.060005 36.126472 -2.134410
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.261862 0.261862 0.261862
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 3.685860 34.483685 2.048045
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.324311 0.324311 0.324311
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -4.991627 42.564419 -3.080188
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.247332 0.247332 0.247332
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.725989 35.399372 -4.113654
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.407529 0.407529 0.407529
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.824649 38.928665 -3.863184
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.290024 0.290024 0.290024
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.826660 32.007114 -0.383732
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.413882 0.413882 0.413882
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 3.122358 38.491974 3.200667
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.372526 0.372526 0.372526
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 4.026752 33.393398 0.123283
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.318034 0.318034 0.318034
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.960704 34.921162 -3.229527
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.396358 0.396358 0.396358
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.842340 37.053570 4.795835
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.413492 0.413492 0.413492
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 3.957976 38.261429 1.820317
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.443482 0.443482 0.443482
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 4.095677 31.070805 -1.758201
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.444889 0.444889 0.444889
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -3.625458 37.572868 -2.719469
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.534232 0.534232 0.534232
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.237782 36.713093 1.539366
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.396818 0.396818 0.396818
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -2.969077 29.082394 -0.831182
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.464714 0.464714 0.464714
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -2.414222 32.026035 -1.292498
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.554674 0.554674 0.554674
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.934325 28.830696 -0.527127
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.475618 0.475618 0.475618
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.760610 30.440586 0.372754
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.544890 0.544890 0.544890
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 4.553578 34.844620 -4.782730
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0Scale 0.490984 0.490984 0.490984
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.438395 32.913090 2.366104
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.497341 0.497341 0.497341
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -5.302775 32.645538 4.585804
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.505701 0.505701 0.505701
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 2.590148 30.555981 0.438702
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.528235 0.528235 0.528235
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.830477 31.696648 -4.164860
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.476859 0.476859 0.476859
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.809406 27.402962 0.720003
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.516407 0.516407 0.516407
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -3.144923 28.953745 -0.187778
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.601323 0.601323 0.601323
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.974235 28.859150 -3.256353
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.512890 0.512890 0.512890
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.284277 26.185940 -1.797386
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.571650 0.571650 0.571650
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.576969 23.420174 0.597800
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.558274 0.558274 0.558274
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.974407 28.140903 1.703097
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.578282 0.578282 0.578282
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.337673 23.006041 -0.142608
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.574818 0.574818 0.574818
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.918789 24.352150 3.170171
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.655143 0.655143 0.655143
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.655108 21.924423 1.238294
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.619757 0.619757 0.619757
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.440425 25.388023 -1.196074
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.607235 0.607235 0.607235
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.411276 21.759457 -3.522008
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.636921 0.636921 0.636921
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 2.414746 19.083908 -0.391397
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.658821 0.658821 0.658821
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.409542 23.021059 -0.314591
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.772568 0.772568 0.772568
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.242956 22.099922 2.793769
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.685321 0.685321 0.685321
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.855284 21.376921 -1.024865
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.773178 0.773178 0.773178
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 2.032540 20.852154 -0.692688
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.716732 0.716732 0.716732
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.639521 20.116518 -1.028724
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.748641 0.748641 0.748641Sphere 2 -2 2 360.0AttributeEnd
+AttributeBegin
+Translate 1.682278 20.667336 0.957148
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.729907 0.729907 0.729907
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.936784 17.753864 2.621432
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.745573 0.745573 0.745573
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -2.119366 18.026031 0.905810
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.752543 0.752543 0.752543
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.343371 16.618496 2.237839
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.758593 0.758593 0.758593
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.615381 15.730025 0.322580
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.790879 0.790879 0.790879
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.226298 14.221071 -0.523243Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.853672 0.853672 0.853672
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.202894 12.619371 0.424647
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.814936 0.814936 0.814936
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -1.313250 12.879347 -0.677124
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.826803 0.826803 0.826803
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.577495 12.416995 0.247509
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.845834 0.845834 0.845834
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.192886 12.165741 0.193160
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.894327 0.894327 0.894327
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.778870 11.500994 0.385550
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.917306 0.917306 0.917306
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.433117 9.695122 2.440739
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.891411 0.891411 0.891411
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.439325 10.840620 -0.919819
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.912610 0.912610 0.912610
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.887526 9.774837 -2.419036
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.934613 0.934613 0.934613
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.682547 8.090010 0.928056
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.965703 0.965703 0.965703
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.059857 7.708811 -0.865218
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.944239 0.944239 0.944239
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.336377 6.314452 -0.859012
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.941176 0.941176 0.941176
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate -0.435336 6.794420 -0.335685
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 1.014736 1.014736 1.014736
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.392231 4.691366 -0.766620
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.996773 0.996773 0.996773
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.391891 4.153167 0.574170
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.974952 0.974952 0.974952
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.396244 3.882692 0.329093
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.956547 0.956547 0.956547
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 1.595643 2.008297 0.282814
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 1.051030 1.051030 1.051030
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.728739 1.833352 -1.168733
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 1.062031 1.062031 1.062031
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.502040 0.611738 0.313312
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.000000 0.000000 0.000000
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeBegin
+Translate 0.255898 -0.123260 1.172005
+Rotate 0.000000 0  0  1
+Rotate 0.000000 0  1  0
+Rotate 0.000000 1  0  0
+Scale 0.000000 0.000000 0.000000
+
+Sphere 2 -2 2 360.0
+AttributeEnd
+AttributeEnd
+WorldEnd
+FrameEnd

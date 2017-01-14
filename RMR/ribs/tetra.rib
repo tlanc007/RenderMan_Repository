@@ -1,0 +1,1637 @@
+# tetra.rib
+# Author: Scott Iverson <si@SpamSucks_sitexgraphics.com>
+# Date: 7/19/95
+#
+Display "tetra.tiff" "file" "rgb"
+Format 380 380 -1
+Projection "perspective" "fov" 31
+
+Rotate 0 0 0 1
+Rotate -1.6 1 0 0
+Rotate 41.6 0 1 0
+Translate -24 -7 27
+
+WorldBegin
+
+LightSource "ambientlight" 1 "intensity" .3
+LightSource "pointlight" 2 "intensity" 700 "from" [15 17 -20]
+
+Scale 20 20 20
+Surface "matte"
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+TransformBegin
+Translate 0 .375 0
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate 0 0 .433
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate .25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformBegin
+Translate -.25 0 -.1445
+Scale .5 .5 .5
+PointsPolygons [3 3 3 3] [0 1 3 0 2 1 0 3 2 1 2 3] "P" [0 .75 0  .5 0 -.289  0 0 .866  -.5 0 -.289]
+TransformEnd
+TransformEnd
+TransformEnd
+TransformEnd
+WorldEnd

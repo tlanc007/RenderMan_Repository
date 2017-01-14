@@ -1,0 +1,67 @@
+ExlunaShader 1.0
+surface TLconstantMap
+param	uniform	float	Km	1 	
+param	uniform	string	mapname	"" 	
+param	uniform	string	transmap	"" 	
+param	uniform	float	flipS	0 	
+param	uniform	float	flipT	1 	
+param	uniform	float	MtorFlip	1 	
+global	varying	color	Ci	0 0 0	
+global	varying	color	Oi	0 0 0	
+global	varying	color	Cs	0 0 0	
+global	varying	color	Os	0 0 0	
+global	varying	float	s	0	
+global	varying	float	t	0	
+const	uniform	float	$const0	1	
+const	uniform	float	$const1	4	
+const	uniform	float	$const2	6	
+const	uniform	float	$const3	9	
+const	uniform	float	$const4	12	
+const	uniform	string	$str0	""	
+const	uniform	float	$const5	15	
+const	uniform	float	$const6	16	
+const	uniform	float	$const7	21	
+const	uniform	float	$const8	22	
+const	uniform	float	$const9	0	
+local	varying	color	C	0 0 0	
+local	varying	color	O	0 0 0	
+local	varying	float	ss	0	
+local	varying	float	tt	0	
+local	uniform	float	$tmp0	0	
+local	uniform	float	$tmp1	0	
+local	uniform	float	$tmp2	0	
+local	uniform	float	$tmp3	0	
+local	varying	color	$tmp5	0 0 0	
+local	uniform	color	$tmp6	0 0 0	
+local	uniform	color	$tmp7	0 0 0	
+code
+	eq		$tmp0  MtorFlip  $const0  
+	if		$tmp0  $const1  $const2  
+	assign		ss  t  
+	assign		tt  s  
+	assign		ss  s  
+	assign		tt  t  
+	eq		$tmp1  flipS  $const0  
+	if		$tmp1  $const3  $const3  
+	sub		ss  $const0  ss  
+	eq		$tmp2  flipT  $const0  
+	if		$tmp2  $const4  $const4  
+	sub		tt  $const0  tt  
+	ne		$tmp3  mapname  $str0  
+	if		$tmp3  $const5  $const6  
+	texture		C  mapname  ss  tt  
+	assign		C  Cs  
+	mul		C  C  Km  
+	ne		$tmp3  transmap  $str0  
+	if		$tmp3  $const7  $const8  
+	texture		$tmp5  transmap  ss  tt  
+	sub		O  $const0  $tmp5  
+	assign		O  Os  
+	mul		Ci  C  O  
+	assign		Oi  O  
+	assign		$tmp6  $const9  
+	assign		$tmp7  $const0  
+	clamp		Ci  Ci  $tmp6  $tmp7  
+	assign		$tmp6  $const9  
+	assign		$tmp7  $const0  
+	clamp		Oi  Oi  $tmp6  $tmp7  

@@ -1,0 +1,60 @@
+Display "LGAntialiasedChecks.tiff" "file" "rgb"
+
+##RenderMan RIB-Structure 1.0
+##System NeXT Release 3
+FrameBegin 0
+#
+Format 380 362 1.000000
+ScreenWindow -1 1 -.952632 .952632
+Projection "perspective" "fov" [ 40 ]
+Transform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 10 1 ]
+ShadingRate 1
+PixelSamples 2 2
+WorldBegin
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+Declare "from" "point"
+Declare "to" "point"
+LightSource "distantlight" 49 "intensity" [ .9 ] "lightcolor" [ 1 1 1 ] "from" [ 0 5 -5 ] "to" [ 0 0 0 ]
+TransformEnd
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+LightSource "ambientlight" 48 "intensity" [ .2 ] "lightcolor" [ 1 1 1 ]
+TransformEnd
+AttributeBegin
+Attribute "identifier" "name" [ "World" ]
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+AttributeBegin
+Attribute "identifier" "name" [ "User_1" ]
+Attribute "identifier" "shadinggroup" [ "User_1" ]
+Color [ 0 0 1 ]
+Declare "Ka" "float"
+Declare "Kd" "float"
+Declare "frequency" "float"
+Declare "color1" "color"
+Declare "color2" "color"
+Surface "LGAntialiasedChecks" "Ka" [ 1 ] "Kd" [ 1 ] "frequency" [ 10 ] "color1" [ 0 0 0 ] "color2" [ 1 1 1 ]
+ShadingInterpolation "constant"
+GeometricRepresentation "lines"
+TransformBegin
+ConcatTransform [ 1.21835 -.15904 .235129 0
+ .010051 1.059717 .664722 0 -.283686 -.645494 1.033354 0 -3.937195 -2.817941 1.140715 1 ]
+#
+Patch "bilinear" "P" [ 0 0 0 7 0 0 0 7 0 7 7 0 ]
+TransformEnd
+AttributeEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd

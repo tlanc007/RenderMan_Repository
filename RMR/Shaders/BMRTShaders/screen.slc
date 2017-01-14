@@ -1,0 +1,62 @@
+surface screen
+param	float	Ka		1
+param	float	Kd		0.75
+param	float	Ks		0.4
+param	float	roughness		0.1
+param	color	specularcolor		1 1 1
+param	float	density		0.25
+param	float	frequency		20
+local	normal	Nf	0 0 0
+initcode 6
+	return
+code
+	return_area
+	pushf	density 
+	pushif	1 
+	pushf	frequency 
+	mulF	t 
+	mod
+	lt
+	pushf	density 
+	pushif	1 
+	pushf	frequency 
+	mulF	s 
+	mod
+	lt
+	or
+	ifz	0
+	pushif	1 
+	cset	Oi 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushf	roughness 
+	pushv	I 
+	normalize
+	negv
+	pushv	Nf 
+	specular
+	pushf	Ks 
+	pushc	specularcolor 
+	mulcf
+	mulcc
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	Cs 
+	addcc
+	mulC	Os 
+	popc	Ci 
+	jump	1
+label 0
+	pushif	0 
+	cset	Oi 
+	pushif	0 
+	cset	Ci 
+label 1
+	return

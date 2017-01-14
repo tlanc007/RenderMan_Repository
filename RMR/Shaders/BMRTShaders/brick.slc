@@ -1,0 +1,546 @@
+surface brick
+param	float	Ka		1
+param	float	Kd		1
+param	color	brickcolor		0 0 0
+param	color	mortarcolor		0 0 0
+param	float	raggedamp		0.04
+param	float	raggedfreq		12
+param	float	jagged		0.006
+param	float	brickvary		0.3
+param	float	brickwidth		0.28
+param	float	brickheight		0.07
+param	float	mortarthickness		0.014
+param	float	rowvary		0.5
+param	float	pitting		0.01
+param	float	pockfrequency		10
+param	float	groovedepth		0.01
+local	color	bcolor	0 0 0
+local	color	Ct	0 0 0
+local	normal	Nf	0 0 0
+local	float	sbrick	0
+local	float	tbrick	0
+local	float	w	0
+local	float	h	0
+local	float	ss	0
+local	float	tt	0
+local	float	swidth	0
+local	float	twidth	0
+local	float	BMWIDTH	0
+local	float	BMHEIGHT	0
+local	float	MWF	0
+local	float	MHF	0
+local	float	whichbrick	0
+local	float	fact	0
+local	float	disp	0
+local	float	_6$rowstagger	0
+code
+local	float	_6$rowstaggervary	0
+code
+local	float	_6$jaggedfreq	0
+code
+local	point	_6$PP	0 0 0
+local	float	_6$scoord	0
+local	float	_6$tcoord	0
+local	float	_5$edge1	0
+code
+local	float	_5$x0	0
+local	float	_5$x1	0
+initcode 2
+	pushiv	0.6 0.1 0.1 
+	popc	brickcolor 
+initcode 3
+	pushiv	0.6 0.6 0.6 
+	popc	mortarcolor 
+initcode 14
+	return
+code
+	pushf	mortarthickness 
+	addF	brickwidth 
+	popf	BMWIDTH 
+	pushf	mortarthickness 
+	addF	brickheight 
+	popf	BMHEIGHT 
+	pushf	BMWIDTH 
+	pushif	0.5 
+	divff
+	mulF	mortarthickness 
+	popf	MWF 
+	pushf	BMHEIGHT 
+	pushif	0.5 
+	divff
+	mulF	mortarthickness 
+	popf	MHF 
+	pushf	BMWIDTH 
+	pushif	1e-07 
+	pushf	dv 
+	pushf	dsdv 
+	mulff
+	abs
+	pushf	du 
+	pushf	dsdu 
+	mulff
+	abs
+	addff
+	fmax
+	divff
+	pushif	1.5 
+	mulff
+	popf	swidth 
+	pushf	BMHEIGHT 
+	pushif	1e-07 
+	pushf	dv 
+	pushf	dtdv 
+	mulff
+	abs
+	pushf	du 
+	pushf	dtdu 
+	mulff
+	abs
+	addff
+	fmax
+	divff
+	pushif	1.5 
+	mulff
+	popf	twidth 
+	pushif	0.5 
+	popf	_6$rowstagger 
+	pushif	0.2 
+	popf	_6$rowstaggervary 
+	pushif	1 
+	popf	_6$jaggedfreq 
+	pushf	s 
+	popf	_6$scoord 
+	pushf	t 
+	popf	_6$tcoord 
+	pushif	0 
+	pushf	jagged 
+	fnef
+	ifz	1
+	pushf	BMHEIGHT 
+	divF	_6$jaggedfreq 
+	mulF	t 
+	pushf	BMWIDTH 
+	divF	_6$jaggedfreq 
+	mulF	s 
+	pointnoiseff
+	popv	_6$PP 
+	pushv	_6$PP 
+	xcomp
+	mulF	jagged 
+	addF	_6$scoord 
+	popf	_6$scoord 
+	pushv	_6$PP 
+	ycomp
+	mulF	jagged 
+	addF	_6$tcoord 
+	popf	_6$tcoord 
+label 1
+label 2
+	pushf	BMWIDTH 
+	divF	_6$scoord 
+	popf	ss 
+	pushf	BMHEIGHT 
+	divF	_6$tcoord 
+	popf	tt 
+	pushf	tt 
+	floor
+	popf	tbrick 
+	pushif	1 
+	pushf	tbrick 
+	mulF	_6$rowstagger 
+	mod
+	addF	ss 
+	popf	ss 
+	pushif	0.5 
+	pushif	0.5 
+	addF	tbrick 
+	noisef
+	subff
+	mulF	_6$rowstaggervary 
+	addF	ss 
+	popf	ss 
+	pushf	ss 
+	floor
+	popf	sbrick 
+	pushf	sbrick 
+	subF	ss 
+	popf	ss 
+	pushf	tbrick 
+	subF	tt 
+	popf	tt 
+label 0
+	pushf	tbrick 
+	pushf	sbrick 
+	pushif	103 
+	mulff
+	addff
+	popf	whichbrick 
+	pushif	1 
+	pushf	raggedfreq 
+	pushif	23.8 
+	mulF	sbrick 
+	addF	t 
+	mulff
+	pushf	raggedfreq 
+	pushif	5.15 
+	mulF	tbrick 
+	addF	s 
+	mulff
+	noiseff
+	pushif	2 
+	mulff
+	subff
+	mulF	raggedamp 
+	addF	ss 
+	popf	ss 
+	pushif	1 
+	pushf	raggedfreq 
+	pushif	7.2 
+	mulF	sbrick 
+	addF	t 
+	mulff
+	pushf	raggedfreq 
+	pushif	11.4 
+	mulF	tbrick 
+	addF	s 
+	mulff
+	noiseff
+	pushif	2 
+	mulff
+	subff
+	mulF	raggedamp 
+	addF	tt 
+	popf	tt 
+	pushif	1 
+	pushif	2 
+	pushf	raggedfreq 
+	pushif	23.8 
+	mulF	sbrick 
+	addF	t 
+	mulff
+	mulff
+	pushif	2 
+	pushf	raggedfreq 
+	pushif	5.15 
+	mulF	tbrick 
+	addF	s 
+	mulff
+	mulff
+	noiseff
+	pushif	2 
+	mulff
+	subff
+	pushif	2 
+	divF	raggedamp 
+	mulff
+	addF	ss 
+	popf	ss 
+	pushif	1 
+	pushif	2 
+	pushf	raggedfreq 
+	pushif	7.2 
+	mulF	sbrick 
+	addF	t 
+	mulff
+	mulff
+	pushif	2 
+	pushf	raggedfreq 
+	pushif	11.4 
+	mulF	tbrick 
+	addF	s 
+	mulff
+	mulff
+	noiseff
+	pushif	2 
+	mulff
+	subff
+	pushif	2 
+	divF	raggedamp 
+	mulff
+	addF	tt 
+	popf	tt 
+	pushif	1 
+	pushf	swidth 
+	ge
+	ifz	3
+	pushf	MWF 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	w 
+	jump	4
+label 3
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	divF	MWF 
+	pushif	1 
+	subff
+	fmax
+	pushf	MWF 
+	pushif	1 
+	subff
+	popf	_5$edge1 
+	pushif	0.5 
+	mulF	swidth 
+	subF	ss 
+	popf	_5$x0 
+	pushf	swidth 
+	addF	_5$x0 
+	popf	_5$x1 
+	pushf	swidth 
+	pushf	MWF 
+	pushf	_5$x0 
+	fmax
+	pushf	_5$edge1 
+	pushf	_5$x1 
+	fmin
+	subff
+	divff
+	pushif	0 
+	fmax
+	jump	5
+label 5
+	fclamp
+	popf	w 
+label 4
+	pushif	1 
+	pushf	twidth 
+	ge
+	ifz	6
+	pushf	MHF 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	h 
+	jump	7
+label 6
+	pushif	1 
+	pushif	0 
+	pushf	twidth 
+	divF	MHF 
+	pushif	1 
+	subff
+	fmax
+	pushf	MHF 
+	pushif	1 
+	subff
+	popf	_5$edge1 
+	pushif	0.5 
+	mulF	twidth 
+	subF	tt 
+	popf	_5$x0 
+	pushf	twidth 
+	addF	_5$x0 
+	popf	_5$x1 
+	pushf	twidth 
+	pushf	MHF 
+	pushf	_5$x0 
+	fmax
+	pushf	_5$edge1 
+	pushf	_5$x1 
+	fmin
+	subff
+	divff
+	pushif	0 
+	fmax
+	jump	8
+label 8
+	fclamp
+	popf	h 
+label 7
+	pushif	1 
+	popf	fact 
+	pushif	0 
+	popf	disp 
+	pushf	MHF 
+	pushf	tt 
+	lt
+	ifz	9
+	pushif	1 
+	pushf	MHF 
+	divF	tt 
+	pushf	MHF 
+	divF	tt 
+	mulff
+	subff
+	mulF	groovedepth 
+	popf	disp 
+	jump	10
+label 9
+	pushf	MHF 
+	pushif	1 
+	subff
+	pushf	tt 
+	gt
+	ifz	11
+	pushif	1 
+	pushf	MHF 
+	pushf	tt 
+	pushif	1 
+	subff
+	divff
+	pushf	MHF 
+	pushf	tt 
+	pushif	1 
+	subff
+	divff
+	mulff
+	subff
+	mulF	groovedepth 
+	popf	disp 
+label 11
+label 12
+label 10
+	pushf	MWF 
+	pushf	ss 
+	lt
+	ifz	13
+	pushif	1 
+	pushf	MWF 
+	divF	ss 
+	pushf	MWF 
+	divF	ss 
+	mulff
+	subff
+	pushf	groovedepth 
+	pushif	0.85 
+	mulff
+	mulff
+	pushf	disp 
+	fmin
+	popf	disp 
+	jump	14
+label 13
+	pushf	MWF 
+	pushif	1 
+	subff
+	pushf	ss 
+	gt
+	ifz	15
+	pushif	1 
+	pushf	MWF 
+	pushf	ss 
+	pushif	1 
+	subff
+	divff
+	pushf	MWF 
+	pushf	ss 
+	pushif	1 
+	subff
+	divff
+	mulff
+	subff
+	pushf	groovedepth 
+	pushif	0.85 
+	mulff
+	mulff
+	pushf	disp 
+	fmin
+	popf	disp 
+label 15
+label 16
+label 14
+	pushf	tt 
+	pushif	1 
+	pushf	MHF 
+	pushif	1.3 
+	mulff
+	pushif	1 
+	subff
+	smoothstep
+	pushf	tt 
+	pushf	MHF 
+	pushif	1.3 
+	mulff
+	pushif	0 
+	smoothstep
+	subff
+	popf	fact 
+	pushf	ss 
+	pushif	1 
+	pushf	MWF 
+	pushif	1.3 
+	mulff
+	pushif	1 
+	subff
+	smoothstep
+	pushf	ss 
+	pushf	MWF 
+	pushif	1.3 
+	mulff
+	pushif	0 
+	smoothstep
+	subff
+	mulF	fact 
+	popf	fact 
+	pushif	0.5 
+	pushf	fact 
+	pushif	0.5 
+	mulff
+	addff
+	mulF	pitting 
+	popf	fact 
+	pushif	0.25 
+	pushf	BMWIDTH 
+	divF	pockfrequency 
+	pushf	tbrick 
+	addF	tt 
+	mulff
+	pushf	BMHEIGHT 
+	divF	pockfrequency 
+	pushf	sbrick 
+	addF	ss 
+	mulff
+	noiseff
+	pow
+	mulF	fact 
+	subF	disp 
+	popf	disp 
+	pushv	N 
+	normalize
+	mulFv	disp 
+	addV	P 
+	popv	P 
+	pushv	P 
+	calculatenormal
+	popv	N 
+	return_area
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushif	1 
+	pushif	0.5 
+	addF	whichbrick 
+	noisef
+	pushif	2 
+	mulff
+	subff
+	mulF	brickvary 
+	pushif	1 
+	addff
+	pushc	brickcolor 
+	mulcf
+	popc	bcolor 
+	pushf	h 
+	mulF	w 
+	pushc	bcolor 
+	pushc	mortarcolor 
+	cmix
+	popc	Ct 
+	cpCC	Os Oi 
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	pushc	Ct 
+	mulC	Os 
+	mulcc
+	popc	Ci 
+	return

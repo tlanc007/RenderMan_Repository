@@ -1,0 +1,86 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+###########################################################################
+#
+# This RIB file give a demonstration of the use of automatic shadows
+# which can be attenuated by opacity of individual objects.
+#
+# Casting shadows:
+#    By default, light sources do not cast shadows.  The following RIB
+#    sets a nonstandard attribute which causes any subsequently declared
+#    light sources to automatically cast shadows using ray tracing:
+#              Declare "shadows" "string"
+#              Attribute "light" "shadows" "on"
+#              LightSource ....
+#    This attribute "affixes" itself to the lightsource when it's
+#    declared.  Note that it can be pushed and popped by AttributeBegin/End,
+#    just like any other attribute.
+#
+# Occluder options:
+#    When a light source casts shadows, by default the object casts a
+#    shadow which blocks out light according to the Opacity in effect
+#    when the object was declared.  For some complex objects (like the
+#    ones in this scene), the surface shader needs to be evaluated before
+#    the renderer can know exactly what the opacity needs to be.  This
+#    is slower than the default, and only needs to be done when the 
+#    surface shader causes the opacity to change across the surface.  In
+#    this case, the proper attribute to set is:
+#           Declare "casts_shadows" "string"
+#           Attribute "render" "casts_shadows" "shade"
+#
+# These attributes are all described in the "BMRT User Guide".
+#
+###########################################################################
+
+Option "searchpath" "shader" [".:../shaders:&"]
+Display "shadtest.tif" "file" "rgba"
+## Output was balls1 renamed to fit in RMR -- tal 4/25/98
+Format 480 360 -1
+PixelSamples 1 1
+Projection "perspective" "fov" 45
+Translate 0 -2 8
+Rotate -110 1 0 0
+
+
+WorldBegin
+
+LightSource "ambientlight" 1 "intensity" 0.08
+
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 1 "from" [0 1 4] "to" [0 0 0] "intensity" 0.8
+
+AttributeBegin
+#  Attribute "render" "casts_shadows" "none"
+  Color  [ 0.7 0.7 0.7  ] 
+  Surface "matte"
+  Polygon "P"  [ -5 -5 0 5 -5 0 5 5 0 -5 5 0  ] 
+AttributeEnd
+
+AttributeBegin
+  Translate -2.25 0 2
+  Color [1 .45 .06]
+  Surface "screen" "Kd" 0.2 "Ks" 0.8 "roughness" 0.15 "specularcolor" [1 .5 .1]
+  Sphere 1 -1 1 360
+AttributeEnd
+
+AttributeBegin
+  Translate 0 0 2
+  Declare "casts_shadows" "string"
+  Attribute "render" "casts_shadows" "shade"
+  Color [1 .45 .06]
+  Surface "screen_aa" "Kd" 0.2 "Ks" 0.8 "roughness" 0.15 "specularcolor" [1 .5 .1]
+  Sphere 1 -1 1 360
+AttributeEnd
+
+AttributeBegin
+  Translate 2.25 0 2
+  Declare "casts_shadows" "string"
+  Attribute "render" "casts_shadows" "shade"
+  Surface "funkyglass" "roughness" 0.06
+  Sphere 1 -1 1 360
+AttributeEnd
+
+WorldEnd
+

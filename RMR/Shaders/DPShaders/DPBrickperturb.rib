@@ -1,0 +1,57 @@
+
+Display "DPBrickperturb.tiff" "file" "rgb"
+
+##RenderMan RIB-Structure 1.0
+##System NeXT Release 3
+Format 384 256 1.000000
+#Format 100 100 1.0
+ScreenWindow -1 1 -1 1
+Projection "perspective" "fov" [ 40 ]
+Transform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 10 1 ]
+ShadingRate 1
+PixelSamples 2 2
+WorldBegin
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+Declare "from" "point"
+Declare "to" "point"
+LightSource "distantlight" 49 "intensity" [ .9 ] "lightcolor" [ 1 1 1 ] "from" [ 0 5 -5 ] "to" [ 0 0 0 ]
+TransformEnd
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Color [ 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+LightSource "ambientlight" 48 "intensity" [ .2 ] "lightcolor" [ 1 1 1 ]
+TransformEnd
+AttributeBegin
+Attribute "identifier" "name" [ "World" ]
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+AttributeBegin
+Attribute "identifier" "name" [ "Plane_3" ]
+Attribute "identifier" "shadinggroup" [ "Plane_3" ]
+Color [ 0 0 1 ]
+Declare "Kd" "float"
+Declare "Ka" "float"
+Declare "frequency" "float"
+Declare "blackcolor" "color"
+Surface "DPBrickperturb" 
+ShadingInterpolation "constant"
+GeometricRepresentation "lines"
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 -3.494354 -3.421401 -1.90734e-06 1 ]
+Patch "bilinear" "P" [ 0 0 0 7 0 0 0 7 0 7 7 0 ]
+TransformEnd
+AttributeEnd
+TransformEnd
+AttributeEnd
+WorldEnd

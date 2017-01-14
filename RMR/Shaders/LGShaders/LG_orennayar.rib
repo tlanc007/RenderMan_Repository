@@ -1,0 +1,24 @@
+version 3.03
+ShadingRate 0.25
+Display "LG_orennayar.tiff" "file" "rgb"
+#Format 256 256 -1
+Format 380 380 -1
+Projection "perspective" "fov" 35
+Rotate -90 1 0 0
+Translate 0 -5 0
+
+WorldBegin
+
+  LightSource "ambientlight" 1 "intensity" [0.12]
+#  LightSource "ambientlight" 1 "intensity" [0.025]
+  LightSource "distantlight" 2 "intensity" 1 "from" [1.3 2 .1] "to" [0 0 0]
+
+  AttributeBegin
+  	Declare "sigma" "uniform float"
+#    Surface "matte" "Kd" 1
+    Surface "LG_orennayar" "Kd" 1 "sigma" .9
+    Color [.8 0 0]
+    Sphere 1 -1 1 360
+  AttributeEnd
+
+WorldEnd

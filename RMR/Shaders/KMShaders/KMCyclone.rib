@@ -1,0 +1,42 @@
+# Changed name to KMCyclone.rib and names of shaders accordingly -- tal
+#
+# cyclone.rib
+#
+# Test file for the cyclone.sl shader.  See pp. 275-277.
+#
+# Reference:
+#    _Texturing and Modeling: A Procedural Approach_, by David S. Ebert, ed.,
+#    F. Kenton Musgrave, Darwyn Peachey, Ken Perlin, and Steven Worley.
+#    Academic Press, 1994.  ISBN 0-12-228760-6.
+#
+# 
+
+version 3.03
+ShadingRate 1
+PixelSamples 2 2
+Format 380 380 -1
+
+Display "KMCyclone.tiff" "file" "rgb"
+
+Projection "perspective" "fov" 20
+Rotate -90 1 0 0
+Translate 0 -4 -.25
+
+WorldBegin
+
+  LightSource "ambientlight" 1 "intensity" 0.025
+  LightSource "distantlight" 2 "from" [1.5 2 .1] "to" [0 0 0]
+
+  AttributeBegin
+    Surface "matte"
+    Color [.05 .05 .4]
+    Sphere 1 -1 1 360
+  AttributeEnd
+
+  AttributeBegin
+    Rotate 115 1 0 0
+    Surface "KMCyclone"
+    Sphere 1.01 -1.01 1.01 360
+  AttributeEnd
+
+WorldEnd

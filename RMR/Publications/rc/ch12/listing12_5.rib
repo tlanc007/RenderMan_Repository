@@ -1,0 +1,385 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+Format 512 512 1
+FrameBegin 1
+Display "shdw.z" "zfile" "z"
+Projection "orthographic"
+Translate 0 0 4.5 
+Rotate 30 0 1 0 
+Rotate -30 1 0 0 
+WorldBegin
+ObjectBegin 1
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 ]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 ]
+Polygon "P" [0.5 0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 ]
+Polygon "P" [0.5 -0.5 0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 0.5 ]
+Polygon "P" [-0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+ObjectEnd
+AttributeBegin
+Translate -0.5 -0.5 -0.5 
+Scale 0.333333 0.333333 0.333333
+Color [0.333333 0.333333 0.333333]
+TransformBegin
+Translate 0.5 0.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.333333 0.333333 0.666667]
+TransformBegin
+Translate 0.5 0.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.333333 0.333333 1]
+TransformBegin
+Translate 0.5 0.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.333333 0.666667 0.333333]
+TransformBegin
+Translate 0.5 1.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.333333 0.666667 0.666667]
+TransformBegin
+Translate 0.5 1.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.333333 0.666667 1]
+TransformBegin
+Translate 0.5 1.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.333333 1 0.333333]
+TransformBegin
+Translate 0.5 2.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.333333 1 0.666667]
+TransformBegin
+Translate 0.5 2.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.333333 1 1]
+TransformBegin
+Translate 0.5 2.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 0.333333 0.333333]
+TransformBegin
+Translate 1.5 0.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 0.333333 0.666667]
+TransformBegin
+Translate 1.5 0.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 0.333333 1]
+TransformBegin
+Translate 1.5 0.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 0.666667 0.333333]
+TransformBegin
+Translate 1.5 1.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 0.666667 0.666667]
+TransformBegin
+Translate 1.5 1.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 0.666667 1]
+TransformBegin
+Translate 1.5 1.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 1 0.333333]
+TransformBegin
+Translate 1.5 2.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 1 0.666667]
+TransformBegin
+Translate 1.5 2.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [0.666667 1 1]
+TransformBegin
+Translate 1.5 2.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 0.333333 0.333333]
+TransformBegin
+Translate 2.5 0.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 0.333333 0.666667]
+TransformBegin
+Translate 2.5 0.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 0.333333 1]
+TransformBegin
+Translate 2.5 0.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 0.666667 0.333333]
+TransformBegin
+Translate 2.5 1.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 0.666667 0.666667]
+TransformBegin
+Translate 2.5 1.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 0.666667 1]
+TransformBegin
+Translate 2.5 1.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 1 0.333333]
+TransformBegin
+Translate 2.5 2.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 1 0.666667]
+TransformBegin
+Translate 2.5 2.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+Color [1 1 1]
+TransformBegin
+Translate 2.5 2.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 1
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+MakeShadow "shdw.z" "shadfile"
+Format 400 300 -1
+Option "shadow" "bias0" [0.1 ]
+Option "shadow" "bias1" [0.1 ]
+ShadingRate 1
+Declare "shadowfile" "uniform string"
+FrameBegin 2
+Display "listing12_5.tiff" "file" "rgb"
+Projection "perspective" "fov" [10 ]
+Translate 0 0 9.5 
+Rotate -30 0 1 0 
+Rotate -15 1 0 0 
+WorldBegin
+LightSource "ambientlight" 1 "intensity" [0.2 ]
+TransformBegin
+Rotate 30 1 0 0 
+Rotate -30 0 1 0 
+Translate 0 0 -4.5 
+LightSource "shadowspot" 2 "shadowfile" ["shadfile"]
+TransformEnd
+Declare "Ks" "uniform float"
+Surface "plastic" "Ks" [0.1 ]
+ObjectBegin 2
+Polygon "P" [-0.5 -0.5 0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 ]
+Polygon "P" [-0.5 -0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 ]
+Polygon "P" [0.5 0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 0.5 0.5 0.5 0.5 ]
+Polygon "P" [0.5 0.5 -0.5 0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 ]
+Polygon "P" [0.5 -0.5 0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 0.5 ]
+Polygon "P" [-0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 -0.5 -0.5 -0.5 -0.5 ]
+ObjectEnd
+AttributeBegin
+Translate -0.5 -0.5 -0.5 
+Scale 0.333333 0.333333 0.333333
+Color [0.333333 0.333333 0.333333]
+TransformBegin
+Translate 0.5 0.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.333333 0.333333 0.666667]
+TransformBegin
+Translate 0.5 0.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.333333 0.333333 1]
+TransformBegin
+Translate 0.5 0.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.333333 0.666667 0.333333]
+TransformBegin
+Translate 0.5 1.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.333333 0.666667 0.666667]
+TransformBegin
+Translate 0.5 1.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.333333 0.666667 1]
+TransformBegin
+Translate 0.5 1.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.333333 1 0.333333]
+TransformBegin
+Translate 0.5 2.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.333333 1 0.666667]
+TransformBegin
+Translate 0.5 2.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.333333 1 1]
+TransformBegin
+Translate 0.5 2.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 0.333333 0.333333]
+TransformBegin
+Translate 1.5 0.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 0.333333 0.666667]
+TransformBegin
+Translate 1.5 0.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 0.333333 1]
+TransformBegin
+Translate 1.5 0.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 0.666667 0.333333]
+TransformBegin
+Translate 1.5 1.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 0.666667 0.666667]
+TransformBegin
+Translate 1.5 1.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 0.666667 1]
+TransformBegin
+Translate 1.5 1.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 1 0.333333]
+TransformBegin
+Translate 1.5 2.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 1 0.666667]
+TransformBegin
+Translate 1.5 2.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [0.666667 1 1]
+TransformBegin
+Translate 1.5 2.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 0.333333 0.333333]
+TransformBegin
+Translate 2.5 0.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 0.333333 0.666667]
+TransformBegin
+Translate 2.5 0.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 0.333333 1]
+TransformBegin
+Translate 2.5 0.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 0.666667 0.333333]
+TransformBegin
+Translate 2.5 1.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 0.666667 0.666667]
+TransformBegin
+Translate 2.5 1.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 0.666667 1]
+TransformBegin
+Translate 2.5 1.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 1 0.333333]
+TransformBegin
+Translate 2.5 2.5 0.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 1 0.666667]
+TransformBegin
+Translate 2.5 2.5 1.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+Color [1 1 1]
+TransformBegin
+Translate 2.5 2.5 2.5 
+Scale 0.5 0.5 0.5
+ObjectInstance 2
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd
+

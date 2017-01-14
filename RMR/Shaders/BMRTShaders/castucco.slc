@@ -1,0 +1,120 @@
+displacement castucco
+param	float	freq		1
+param	float	Km		0.2
+param	float	octaves		3
+param	float	trough		-0.15
+param	float	peak		0.35
+local	string	$_str_0 	"shader"
+local	point	Pshad	0 0 0
+local	normal	NN	0 0 0
+local	float	fwidth	0
+local	float	disp	0
+local	float	_1$maxoctaves	0
+code
+local	float	_1$lacunarity	0
+code
+local	float	_1$gain	0
+code
+local	float	_1$i	0
+local	float	_1$amp	0
+local	point	_1$pp	0 0 0
+local	float	_1$sum	0
+local	float	_1$fw	0
+initcode 4
+	return
+code
+	pushv	P 
+	pushs	$_str_0 
+	transforms
+	mulFv	freq 
+	popv	Pshad 
+	pushv	Pshad 
+	area
+	sqrt
+	popf	fwidth 
+	pushif	3 
+	popf	_1$maxoctaves 
+	pushif	2 
+	popf	_1$lacunarity 
+	pushif	0.6 
+	popf	_1$gain 
+	pushif	1 
+	popf	_1$amp 
+	pushv	Pshad 
+	popv	_1$pp 
+	pushif	0 
+	popf	_1$sum 
+	pushf	fwidth 
+	popf	_1$fw 
+	pushif	0 
+	popf	_1$i 
+label 1
+	pushif	1 
+	pushf	_1$fw 
+	lt
+	pushf	_1$maxoctaves 
+	pushf	_1$i 
+	lt
+	and
+	ifz	3
+	pushf	_1$fw 
+	pushif	0.6 
+	pushif	0.2 
+	smoothstep
+	pushif	1 
+	subff
+	pushif	1 
+	pushv	_1$pp 
+	noisev
+	pushif	2 
+	mulff
+	subff
+	mulff
+	mulF	_1$amp 
+	addF	_1$sum 
+	popf	_1$sum 
+	pushf	_1$gain 
+	mulF	_1$amp 
+	popf	_1$amp 
+	pushf	_1$lacunarity 
+	pushv	_1$pp 
+	mulvf
+
+	popv	_1$pp 
+	pushf	_1$lacunarity 
+	mulF	_1$fw 
+	popf	_1$fw 
+label 2
+	pushif	1 
+	addF	_1$i 
+	popf	_1$i 
+	jump	1
+label 3
+	pushf	_1$sum 
+	jump	0
+label 0
+	popf	disp 
+	pushf	disp 
+	pushf	peak 
+	pushf	trough 
+	smoothstep
+	mulF	Km 
+	popf	disp 
+	pushv	N 
+	normalize
+	popv	NN 
+	pushv	NN 
+	pushs	$_str_0 
+	ntransforms
+	length
+	divF	disp 
+	pushv	NN 
+	mulvf
+	addV	P 
+	popv	P 
+	pushv	P 
+	calculatenormal
+	normalize
+	popv	N 
+	return_area
+	return

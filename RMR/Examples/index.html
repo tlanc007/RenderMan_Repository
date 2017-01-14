@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rmDetails</TITLE>
+</HEAD>
+
+ <body bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER><H1><P>
+Details..Details</H1><P>
+<P>
+</CENTER><P>
+In this section -- shaders, RIBS, texture-maps, C source, and utilities.  Various items of interest will be added as they become available.  For now the shaders section is the most developed.<P>
+<P>
+<H4>What's on this page?</H4><P>
+<UL>
+<LI><A HREF="#Details">RIBs, Shaders, ShowAndTell, Texture-Maps</A>
+<LI><A HREF="#Bind">C Binding & RIB</A>
+<P>
+</UL><P>
+
+<HR>
+<A NAME="Details"></A>
+
+<H4> </H4><H2>RIBs, Shaders, Show&amp;Tell<P>
+</H2><P>
+<A HREF="../RIBS/index.html">RIBs</A>  -- An assortment of RIBs<P>
+<A HREF="../RMRShaders.html">Shaders</A>  -- Off to the wonderful world of shaders.<P>
+<A HREF="../DSOs/index.html">DSOs</A> -- examples of Dynamic Shared Objects<P>
+<A HREF="../dspydrivers/index.html">Display Drivers</A> -- some alternate RenderMan display drivers<P>
+ShowAndTell --
+<UL>
+<LI><a href="dof/index.html">Depth Of Field</A>
+<LI><a href="#Inoise">Inoise</a> - integrated Perlin Noise
+<LI><a href="#HDR">High Dynamic Range images</a>
+<LI> <A HREF="../rmHoudini/index.html">Houdini</A> -- Some examples using RenderMan with Houdini
+<LI><A HREF="rrf/index.html">Refraction, Reflection, and Fresnel</A> -- shader functions
+<LI><a href="#Shadermaps">Shadermaps</a> for accelerating procedural shading
+<LI><a href="#SRT">SRT</a> -- Stupid RenderMan/RAT Tricks
+<LI> <A HREF="../rmBlockers/index.html">rmBlockers</A> -- blockers & cucaloris
+<LI> <A HREF="../rmBlockers/uber/index.html">UberLight</A> -- lots of lighting controls.
+<LI>  <A HREF="../rmShowAndTell.htmld/index.html">misc. ShowAndTell</A> -- pictures, animations and their code to generate them.
+</UL><P>
+<A HREF="../rmTMaps.htmld/index.html">Texture-Maps</A> -- TIFF images to be used in your shaders.<P>
+<HR>
+<A NAME="Inoise"></A>
+<H2>Inoise - Integrated Perlin Noise</H2>
+At the SIGGRAPH 2001 <i>Sketches and Applications</i>, <a href="mailto:ian AT dctsystems DOT freeserve DOT co DOT uk ">Ian Stephenson</a> presented: <a href="http://www.dctsystems.freeserve.co.uk/inoise.html">Inoise</a>.
+<p>
+This is a DSO shader op for doing Integrated Perlin Noise which should provide better anti-aliasing detail than just pure frequency clamping.  Go to the <a href="http://www.dctsystems.freeserve.co.uk/inoise">Inoise</a> link for more information, source, examples, and his PowerPoint SIGGRAPH presentation.  (Linux users don't forget that you can use StarOffice to read MS Powerpoint slides.)
+<HR>
+<a NAME="HDR"></a>
+<H2>High Dynamic Range images</H2>
+Using high dynamic range(HDR) images is a common way of trying to get global information from a set/environment (typically real world but it doesn't have to be).  Sometimes this is referred to as Image Based Lighting (IBL).  <a href="www.debevec.org">Paul Debevec</a> made this technique very popular a few years ago.  Now many studios, such as <b>ILM</b> and <b>DD</b>, are making use of this.
+<p>
+On Paul's most excellent site there are a number of <a href="http://www.debevec.org/Probes/">example HDR images</a> and a link to,  <a href="http://www.ict.usc.edu/graphics/hdrshop/beginning.html">HDR Shop</a>, a great tool for dealing with HDR images.  It also makes making use of HDR images easier with RenderMan rendering.  The program only runs under Windows machines.
+<p> 
+<a href="www.rendermania.com">Simon Bunker</a> has put together a whole bunch of links and information on <a href="http://www.rendermania.com/HDRI/">HDR</a>.  So rather than duplicate efforts, check out his site <a href="http://www.rendermania.com">rendermania</a>.  Also there you will find some of the shaders that he uses.<p>
+Speaking of shaders, there were some that <a href="/RMR/Shaders/SIG2001/index.html#Shaders from Larry Gritz's course notes">Larry Gritz</a> provided from the <a href="/RMR/Shaders/SIG2001/index.html">SIGGRAPH 2001 RenderMan Course</a>.
+<HR>
+<A NAME="Shadermaps"></a>
+<H2>Shadermaps: method for Accelerating Procedural Shading</H2>
+At SIGGRAPH 2001 Thouis Jones, Ronald Perry, Michael Callahan talked about using shader maps to pre-bake the static procedural parts of objects in a scene into texture maps.  Then use these maps in addition to just running the lighting part of the shaders to help speed up the rendering times.  They talk about their technique and have an example shader in their <a href="http://www.merl.com/reports/TR2000-25/">Technical Report</a> (in both PDF and Postscript).
+<HR>
+<A NAME="SRT"></A>
+<H2>Stupid RenderMan/RAT Tricks</H2>
+At Long last the Stupid RenderMan/RAT Tricks (SRT) have a home.  Although not too much to show yet.
+<UL>
+<LI><a href="srt1999/index.html">srt1999</a> - the first annual SRT
+<LI>2000 - the second annual SRT
+<LI><a href="srt2001/index.html">srt2001</a> - 3rd annual SRT
+<LI><a href="srt2002/index.html">srt2002</a> - 4rth annual SRT
+<LI><a href="srt2003/index.html">srt2003</a> - 5th annual SRT
+<LI><a href="srt2004/index.html">srt2004</a> - 6th annual SRT
+<LI><a href="srt2005/index.html">srt2005</a> - 7th annual SRT
+<LI><a href="srt2006/index.html">srt2006</a> - 8th annual SRT
+<LI><a href="srt2007/index.html">srt2007</a> - 9th annual SRT
+<LI><img src="../pics/new.jpg"><a href="srt2008/index.html">srt2008</a> -- 10th annual SRT
+
+</UL>
+<HR>
+<A NAME="Bind"></A>
+<H2>
+Example C bidings of newer prman primitives</H2>
+<H3>RiCurves</H3>
+C program for RIB from <A HREF="http://www.pixar.com/products/renderman/toolkit/Toolkit/AppNotes/appnote.19.html">Application Note 19</A>:
+<ul>
+Curves "cubic" [4] "nonperiodic" "P" [0 0 0 -1 -.5 1 2 .5 1 1 0 -1 ] "width" [.1 .04] 
+</ul>
+
+<table>
+<td bgcolor="#ffff00">
+<pre>
+#include &lt;ri.h&gt;
+
+main()
+{
+  RtToken type = "cubic";
+  RtInt ncurves = 1;
+  RtInt nvertices[1] = {4};
+  RtPoint P[4] = {{0, 0, 0},  {-1, -.5, 1},  {2, .5, 1},  {1, 0, -1}};
+  RtToken wrap = "nonperiodic";
+  RtToken width = "width";
+  RtFloat nwidths[2] = {.1, .04};
+
+RiBegin(RI_NULL);
+   RiFormat (320, 160, 1);
+   RiWorldBegin();
+     RiDeclare ("width", "varying float");
+     RiSurface("constant",RI_NULL);
+     RiCurves (type, ncurves, nvertices, wrap, RI_P, (RtPointer) P,  RI_WIDTH, &nwidths, RI_NULL);
+     RiWorldEnd();
+   RiEnd();
+}
+</pre>
+</tr></table>
+
+<HR>
+<H3>Any comments or  suggestions?  Send them to: 
+<a href="mailto:tal AT renderman DOT org">tal AT renderman DOT org</a><P>
+<P>
+</H3><P>
+
+<HR>
+<I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2008 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+
+</BODY>
+</HTML>

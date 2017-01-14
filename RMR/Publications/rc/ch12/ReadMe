@@ -1,0 +1,11 @@
+Created for the RenderMan Repository -- tal@cs.caltech.edu 6/18/95
+
+ReadMe file for chapter 12
+
+This chapter will require much more user interaction than usual.
+
+If you are using Larry Gritz' BMRT, then you will need to change any references for texture-maps from filename.tx to filename.tiff or if you prefer make a symbolic link from the filename.tiff to filename.tx.
+
+If you are using Pixar's prman, then you will need to produce the texture-maps by hand.  The Makefile won't do it for you.  
+
+envr12_3.c -- Contains the listings for both 12.3 and 12.4.  

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<content collectionGUID="CC8D43BC-5F8F-47BE-80D1-1C9A9F194E72">
+  <lastEdited clientType="local-build-20080911" date="2008-09-11 20:46:20 -0700"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;RMR Blog&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>RMR face lift.</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Thanks to Tom Craigen, the RMR is starting to get a much needed facelift.  There are a few kinks that need working out  and there are a few more things to come.  But some of the more obvious things are in place.&#xD;&#xD;</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Saturday, July 19, 2008&lt;/b&gt;</richText>
+  </textBox>
+</content>

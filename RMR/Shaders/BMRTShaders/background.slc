@@ -1,0 +1,20 @@
+imager background
+param	color	bgcolor		1 1 1
+param	color	background		1 1 1
+initcode 1
+	return
+code
+	return_area
+	pushc	background 
+	mulC	bgcolor 
+	pushf	alpha 
+	pushif	1 
+	subff
+	mulfc
+	addC	Ci 
+	popc	Ci 
+	pushif	1 
+	cset	Oi 
+	pushif	1 
+	popf	alpha 
+	return

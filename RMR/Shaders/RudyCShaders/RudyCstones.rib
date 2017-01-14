@@ -1,0 +1,36 @@
+Format 300 300 1
+PixelSamples 3 3
+ShadingRate 1
+FrameBegin 1
+#Display "RudyCstones.tif" "framebuffer" "rgb"
+Display "RudyCstones.tif" "tiff" "rgb"
+Projection "perspective" "fov" 40
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [ 0.10 ] "lightcolor"  [ 1 1 1 ]
+LightSource "distantlight" 1 "intensity" [ 1.00 ] "lightcolor" [ 1 1 1 ] "from" [ -1 1 -1 ] "to" [ 0 0 0 ]
+LightSource "distantlight" 2 "intensity" [ 0.50 ] "lightcolor" [ 1 1 1 ] "from" [ 1 1 2 ] "to" [ 0 0 0 ]
+LightSource "distantlight" 3 "intensity" [ 0.30 ] "lightcolor" [ 1 1 1 ] "from" [ 1 -1 -1 ] "to" [ 0 0 0 ]
+Declare "varylum" "float"
+Declare "varysat" "float"
+Declare "varyhue" "float"
+Declare "groundcolor" "color"
+Declare "stonecolor" "color"
+Declare "grunginess" "float"
+Declare "grunge_Pow" "float"
+Declare "grungefreq" "float"
+Declare "tilefreq" "float"
+Declare "maxfreq" "float"
+Declare "minfreq" "float"
+Declare "displace" "float"
+Declare "Km" "float"
+Declare "roughness" "float"
+Declare "Ks" "float"
+Declare "Kd" "float"
+Declare "Ka" "float"
+Surface "RudyCstones" 
+Translate 0 0 3.1
+Rotate -90 1 0 0
+Sphere 1 -1 1 360
+WorldEnd
+FrameEnd
+

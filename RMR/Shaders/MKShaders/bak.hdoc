@@ -1,0 +1,13 @@
+MAILTO	lmking@pacbell.net	NAME	Mike King
+TITLE	MKShaders	H1	Mike King Shaders
+DIR     MKShaders       PIC     100     100     ALIGN=LEFT CLEAR
+SHADER	MKfancysurf	NOTE	OK, take Larry's <A HREF="../LGShaders#LG_orennayar">LG_orennayar</A> shader, turn it into a function, add rim-lightting, and transparency, then you have <B>MKfancysurf</B>.  This shader was inspired from thinking about the illumination controls that have been talked about for Pixar's, <B>A Bug's Life</B>  The RIB uses <A HREF="#MKshadowdistant_rim">MKshadowdistant_rim</A> and <A HREF="#skinbump">skinbump</A>.<P><B>NOTE:</B>  FYI -- Beware that the Oren-Nayar lighting model is mathematically, unstable around the 90degree illuminance cone-angle. -- Tal.
+DESC	inspired from discussions on the <B>ABL</B> lighting model.
+DO_LINE
+SHADER	MKgooch	NOTE	This is a simple implementaion of the <A HREF="http://www.cs.utah.edu/~gooch/SIG98/abstract.html">Gooch</A> non-photorealistic lighting model.
+DESC	Gooch non-photorealistic lighting model.
+DO_LINE
+SHADER	MKshadowdistant_rim	NOTE	An example RIB and image for this light shader can be found at	QLINK	MKfancysurf	.	
+DESC	
+DO_LINE
+TOC	skinbump	bump-mapping pattern.	NOTE	<A HREF="skinbump.tif"><IMG SRC=skinbump.jpg  HEIGHT=100  ALT="skinbump.tiff"></A> -- bump-mapping texture-map.

@@ -1,0 +1,37 @@
+Display "TLSkymetal.tiff" "file" "rgba"
+
+##RenderMan RIB-Structure 1.0
+##System NeXT Release 3
+FrameBegin 1
+#
+Format 300 200 1.000000
+PixelSamples 1 1
+ScreenWindow -1 1 -.859127 .859127
+Projection "perspective" "fov" [ 40 ]
+Transform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 5 1 ]
+WorldBegin
+
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+LightSource "distantlight" 2 "intensity" [ 2 ] "lightcolor" [ 1 1 1 ]
+
+TransformEnd
+LightSource "ambientlight" 1 "intensity" [ .2 ] "lightcolor" [ 1 1 1 ]
+AttributeBegin
+Color [ 1 1 1 ]
+Declare "Ka" "float"
+Declare "Kd" "float"
+Declare "up" "uniform point"
+ShadingInterpolation "smooth"
+GeometricRepresentation "primitive"
+TransformBegin
+ConcatTransform [ .88971 -.314218 -.331186 0
+ .187026 -.410907 .892287 0 -.41646 -.855817 -.306821 0 0 0 0 1 ]
+Surface "TLSkymetal" "up" [0 1 0]
+Torus .8 .3 0 360 360
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd

@@ -1,0 +1,245 @@
+##RenderMan RIB-Structure 1.0
+##CreationDate Sat Nov 12 20:09:14 1994
+##For gritz
+version 3.03
+Option "searchpath" "shader" [".:../shaders:&"]
+Format 600 400 1
+PixelSamples 3 3
+Display "dresser.tif" "file" "rgb"
+Option "render" "use_hierarchy" [2]
+Option "render" "prmanspecular" [1]
+Declare "ringscale" "float"
+Projection "perspective" "fov" 42 
+ConcatTransform [0.936329 0.0800285 0.341882 0 0.351123 -0.213409 -0.911685 0 0 0.97368 -0.227921 0 0 0 0 1 ]
+Translate -3.5 -9 -6 
+LightSource "bouncer" 1
+Option "radiosity" "steps" [50] "minpatchsamples" [2]
+WorldBegin
+LightSource "ambientlight" 2 "intensity" 0.15
+AttributeBegin
+Surface "constant"
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+AreaLightSource "arealight" 3 "intensity" 45 
+Polygon "P" [4.5 5.5 7.99 5.5 5.5 7.99 5.5 4.5 7.99 4.5 4.5 7.99 ]
+AttributeEnd
+Illuminate 3 1
+Declare "patchsize" "float"
+Declare "elemsize" "float"
+Declare "minsize" "float"
+Attribute "radiosity" "patchsize" 5  "elemsize" 2.5  "minsize" 1.25 
+Attribute "radiosity" "has_caustics" 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "opaque"
+Sides 1
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Surface "matte"
+Color [0.6 0.6 0.6]
+Polygon "P" [0.01 0.01 0 0.01 9.99 0 0.01 9.99 0.5 0.01 0.01 0.5 ]
+Polygon "P" [9.99 9.99 0 9.99 0.01 0 9.99 0.01 0.5 9.99 9.99 0.5 ]
+Polygon "P" [9.99 0.01 0 0.01 0.01 0 0.01 0.01 0.5 9.99 0.01 0.5 ]
+Polygon "P" [0.01 9.99 0 9.99 9.99 0 9.99 9.99 0.5 0.01 9.99 0.5 ]
+Polygon "P" [10 10 8 10 0 8 0 0 8 0 10 8 ]
+Declare "grainsize" "float"
+Declare "stippling" "float"
+#Surface "stipple" "grainsize" 0.5  "stippling" 0.5  "Ks" 0 
+Color [0.6 0.6 0.4]
+Polygon "P" [0 10 0 0 0 0 10 0 0 10 10 0 ]
+Declare "stripewidth" "float"
+Declare "stripespacing" "float"
+Surface "wallpaper_2stripe" "stripewidth" 0.02  "stripespacing" 0.13 
+Color [0.13 0.4 0.6]
+Patch "bilinear" "P" [0 0 0 0 10 0 0 0 8 0 10 8 ]
+Patch "bilinear" "P" [10 10 0 10 0 0 10 10 8 10 0 8 ]
+Patch "bilinear" "P" [10 0 0 0 0 0 10 0 8 0 0 8 ]
+Patch "bilinear" "P" [0 10 0 10 10 0 0 10 8 10 10 8 ]
+AttributeEnd
+TransformBegin
+Translate 4.25 0.1 0 
+AttributeBegin
+Declare "lightwood" "color"
+Declare "darkwood" "color"
+Color [0.33 0.255 0.08]
+TransformBegin
+Rotate 90 0 1 0 
+Translate 4 1 0 
+Scale 0.5 0.5 0.5
+Surface "wood2" "lightwood" [0.33 0.255 0.08] "Kd" 1  "darkwood" [0.2475 0.19125 0.06]
+TransformEnd
+AttributeBegin
+Attribute "radiosity" "has_caustics" 1 
+Patch "bilinear" "P" [0 0 4 0 2.5 4 0 0 3.9 0 2.5 3.9 ]
+Patch "bilinear" "P" [3 2.5 4 3 0 4 3 2.5 3.9 3 0 3.9 ]
+Patch "bilinear" "P" [3 0 4 0 0 4 3 0 3.9 0 0 3.9 ]
+Patch "bilinear" "P" [0 2.5 4 3 2.5 4 0 2.5 3.9 3 2.5 3.9 ]
+Patch "bilinear" "P" [3 2.5 3.9 3 0 3.9 0 2.5 3.9 0 0 3.9 ]
+Patch "bilinear" "P" [0 2.5 4 0 0 4 3 2.5 4 3 0 4 ]
+AttributeEnd
+TransformBegin
+Translate 4 1 0 
+Scale 0.5 0.5 0.5
+Surface "wood2" "Kd" 1  "lightwood" [0.33 0.255 0.08] "darkwood" [0.2475 0.19125 0.06]
+TransformEnd
+Patch "bilinear" "P" [0 0 3.9 0 2.5 3.9 0 0 0.5 0 2.5 0.5 ]
+Patch "bilinear" "P" [3 2.5 3.9 3 0 3.9 3 2.5 0.5 3 0 0.5 ]
+Patch "bilinear" "P" [3 0 3.9 0 0 3.9 3 0 0.5 0 0 0.5 ]
+Patch "bilinear" "P" [0 2.5 3.9 3 2.5 3.9 0 2.5 0.5 3 2.5 0.5 ]
+Patch "bilinear" "P" [3 2.5 0.5 3 0 0.5 0 2.5 0.5 0 0 0.5 ]
+Patch "bilinear" "P" [0 2.5 3.9 0 0 3.9 3 2.5 3.9 3 0 3.9 ]
+Patch "bilinear" "P" [0 0 0.5 0 0.25 0.5 0 0 0 0 0.25 0 ]
+Patch "bilinear" "P" [0.25 0.25 0.5 0.25 0 0.5 0.25 0.25 0 0.25 0 0 ]
+Patch "bilinear" "P" [0.25 0 0.5 0 0 0.5 0.25 0 0 0 0 0 ]
+Patch "bilinear" "P" [0 0.25 0.5 0.25 0.25 0.5 0 0.25 0 0.25 0.25 0 ]
+Patch "bilinear" "P" [0.25 0.25 0 0.25 0 0 0 0.25 0 0 0 0 ]
+Patch "bilinear" "P" [0 0.25 0.5 0 0 0.5 0.25 0.25 0.5 0.25 0 0.5 ]
+Patch "bilinear" "P" [2.75 0 0.5 2.75 0.25 0.5 2.75 0 0 2.75 0.25 0 ]
+Patch "bilinear" "P" [3 0.25 0.5 3 0 0.5 3 0.25 0 3 0 0 ]
+Patch "bilinear" "P" [3 0 0.5 2.75 0 0.5 3 0 0 2.75 0 0 ]
+Patch "bilinear" "P" [2.75 0.25 0.5 3 0.25 0.5 2.75 0.25 0 3 0.25 0 ]
+Patch "bilinear" "P" [3 0.25 0 3 0 0 2.75 0.25 0 2.75 0 0 ]
+Patch "bilinear" "P" [2.75 0.25 0.5 2.75 0 0.5 3 0.25 0.5 3 0 0.5 ]
+Patch "bilinear" "P" [0 2.25 0.5 0 2.5 0.5 0 2.25 0 0 2.5 0 ]
+Patch "bilinear" "P" [0.25 2.5 0.5 0.25 2.25 0.5 0.25 2.5 0 0.25 2.25 0 ]
+Patch "bilinear" "P" [0.25 2.25 0.5 0 2.25 0.5 0.25 2.25 0 0 2.25 0 ]
+Patch "bilinear" "P" [0 2.5 0.5 0.25 2.5 0.5 0 2.5 0 0.25 2.5 0 ]
+Patch "bilinear" "P" [0.25 2.5 0 0.25 2.25 0 0 2.5 0 0 2.25 0 ]
+Patch "bilinear" "P" [0 2.5 0.5 0 2.25 0.5 0.25 2.5 0.5 0.25 2.25 0.5 ]
+Patch "bilinear" "P" [2.75 2.25 0.5 2.75 2.5 0.5 2.75 2.25 0 2.75 2.5 0 ]
+Patch "bilinear" "P" [3 2.5 0.5 3 2.25 0.5 3 2.5 0 3 2.25 0 ]
+Patch "bilinear" "P" [3 2.25 0.5 2.75 2.25 0.5 3 2.25 0 2.75 2.25 0 ]
+Patch "bilinear" "P" [2.75 2.5 0.5 3 2.5 0.5 2.75 2.5 0 3 2.5 0 ]
+Patch "bilinear" "P" [3 2.5 0 3 2.25 0 2.75 2.5 0 2.75 2.25 0 ]
+Patch "bilinear" "P" [2.75 2.5 0.5 2.75 2.25 0.5 3 2.5 0.5 3 2.25 0.5 ]
+TransformBegin
+Rotate 90 0 1 0 
+Scale 0.5 0.5 0.5
+Surface "wood2" "lightwood" [0.33 0.255 0.08] "darkwood" [0.2475 0.19125 0.06]
+TransformEnd
+Patch "bilinear" "P" [0.25 2.45 1.6 0.25 2.55 1.6 0.25 2.45 0.7 0.25 2.55 0.7 ]
+Patch "bilinear" "P" [2.75 2.55 1.6 2.75 2.45 1.6 2.75 2.55 0.7 2.75 2.45 0.7 ]
+Patch "bilinear" "P" [2.75 2.45 1.6 0.25 2.45 1.6 2.75 2.45 0.7 0.25 2.45 0.7 ]
+Patch "bilinear" "P" [0.25 2.55 1.6 2.75 2.55 1.6 0.25 2.55 0.7 2.75 2.55 0.7 ]
+Patch "bilinear" "P" [2.75 2.55 0.7 2.75 2.45 0.7 0.25 2.55 0.7 0.25 2.45 0.7 ]
+Patch "bilinear" "P" [0.25 2.55 1.6 0.25 2.45 1.6 2.75 2.55 1.6 2.75 2.45 1.6 ]
+AttributeBegin
+Surface "matte" "Ka" 0.25  "Kd" 0.5 
+Color [0.1 0.1 0.05]
+Translate 1.5 2.55 1.15 
+Patch "bilinear" "P" [-0.15 0.14 0.01 -0.15 0.16 0.01 -0.15 0.14 -0.01 -0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 0.01 0.15 0.14 0.01 0.15 0.16 -0.01 0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [0.15 0.14 0.01 -0.15 0.14 0.01 0.15 0.14 -0.01 -0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 0.15 0.16 0.01 -0.15 0.16 -0.01 0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 -0.01 0.15 0.14 -0.01 -0.15 0.16 -0.01 -0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.15 0.14 0.01 0.15 0.16 0.01 0.15 0.14 0.01 ]
+Patch "bilinear" "P" [-0.15 0 0.01 -0.15 0.16 0.01 -0.15 0 -0.01 -0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [-0.13 0.16 0.01 -0.13 0 0.01 -0.13 0.16 -0.01 -0.13 0 -0.01 ]
+Patch "bilinear" "P" [-0.13 0 0.01 -0.15 0 0.01 -0.13 0 -0.01 -0.15 0 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.13 0.16 0.01 -0.15 0.16 -0.01 -0.13 0.16 -0.01 ]
+Patch "bilinear" "P" [-0.13 0.16 -0.01 -0.13 0 -0.01 -0.15 0.16 -0.01 -0.15 0 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.15 0 0.01 -0.13 0.16 0.01 -0.13 0 0.01 ]
+Patch "bilinear" "P" [0.13 0 0.01 0.13 0.16 0.01 0.13 0 -0.01 0.13 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 0.01 0.15 0 0.01 0.15 0.16 -0.01 0.15 0 -0.01 ]
+Patch "bilinear" "P" [0.15 0 0.01 0.13 0 0.01 0.15 0 -0.01 0.13 0 -0.01 ]
+Patch "bilinear" "P" [0.13 0.16 0.01 0.15 0.16 0.01 0.13 0.16 -0.01 0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 -0.01 0.15 0 -0.01 0.13 0.16 -0.01 0.13 0 -0.01 ]
+Patch "bilinear" "P" [0.13 0.16 0.01 0.13 0 0.01 0.15 0.16 0.01 0.15 0 0.01 ]
+AttributeEnd
+Patch "bilinear" "P" [0.25 2.45 2.7 0.25 2.55 2.7 0.25 2.45 1.8 0.25 2.55 1.8 ]
+Patch "bilinear" "P" [2.75 2.55 2.7 2.75 2.45 2.7 2.75 2.55 1.8 2.75 2.45 1.8 ]
+Patch "bilinear" "P" [2.75 2.45 2.7 0.25 2.45 2.7 2.75 2.45 1.8 0.25 2.45 1.8 ]
+Patch "bilinear" "P" [0.25 2.55 2.7 2.75 2.55 2.7 0.25 2.55 1.8 2.75 2.55 1.8 ]
+Patch "bilinear" "P" [2.75 2.55 1.8 2.75 2.45 1.8 0.25 2.55 1.8 0.25 2.45 1.8 ]
+Patch "bilinear" "P" [0.25 2.55 2.7 0.25 2.45 2.7 2.75 2.55 2.7 2.75 2.45 2.7 ]
+AttributeBegin
+Surface "matte" "Ka" 0.25  "Kd" 0.5 
+Color [0.1 0.1 0.05]
+Translate 1.5 2.55 2.25 
+Patch "bilinear" "P" [-0.15 0.14 0.01 -0.15 0.16 0.01 -0.15 0.14 -0.01 -0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 0.01 0.15 0.14 0.01 0.15 0.16 -0.01 0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [0.15 0.14 0.01 -0.15 0.14 0.01 0.15 0.14 -0.01 -0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 0.15 0.16 0.01 -0.15 0.16 -0.01 0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 -0.01 0.15 0.14 -0.01 -0.15 0.16 -0.01 -0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.15 0.14 0.01 0.15 0.16 0.01 0.15 0.14 0.01 ]
+Patch "bilinear" "P" [-0.15 0 0.01 -0.15 0.16 0.01 -0.15 0 -0.01 -0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [-0.13 0.16 0.01 -0.13 0 0.01 -0.13 0.16 -0.01 -0.13 0 -0.01 ]
+Patch "bilinear" "P" [-0.13 0 0.01 -0.15 0 0.01 -0.13 0 -0.01 -0.15 0 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.13 0.16 0.01 -0.15 0.16 -0.01 -0.13 0.16 -0.01 ]
+Patch "bilinear" "P" [-0.13 0.16 -0.01 -0.13 0 -0.01 -0.15 0.16 -0.01 -0.15 0 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.15 0 0.01 -0.13 0.16 0.01 -0.13 0 0.01 ]
+Patch "bilinear" "P" [0.13 0 0.01 0.13 0.16 0.01 0.13 0 -0.01 0.13 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 0.01 0.15 0 0.01 0.15 0.16 -0.01 0.15 0 -0.01 ]
+Patch "bilinear" "P" [0.15 0 0.01 0.13 0 0.01 0.15 0 -0.01 0.13 0 -0.01 ]
+Patch "bilinear" "P" [0.13 0.16 0.01 0.15 0.16 0.01 0.13 0.16 -0.01 0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 -0.01 0.15 0 -0.01 0.13 0.16 -0.01 0.13 0 -0.01 ]
+Patch "bilinear" "P" [0.13 0.16 0.01 0.13 0 0.01 0.15 0.16 0.01 0.15 0 0.01 ]
+AttributeEnd
+Patch "bilinear" "P" [0.25 2.45 3.8 0.25 2.55 3.8 0.25 2.45 2.9 0.25 2.55 2.9 ]
+Patch "bilinear" "P" [2.75 2.55 3.8 2.75 2.45 3.8 2.75 2.55 2.9 2.75 2.45 2.9 ]
+Patch "bilinear" "P" [2.75 2.45 3.8 0.25 2.45 3.8 2.75 2.45 2.9 0.25 2.45 2.9 ]
+Patch "bilinear" "P" [0.25 2.55 3.8 2.75 2.55 3.8 0.25 2.55 2.9 2.75 2.55 2.9 ]
+Patch "bilinear" "P" [2.75 2.55 2.9 2.75 2.45 2.9 0.25 2.55 2.9 0.25 2.45 2.9 ]
+Patch "bilinear" "P" [0.25 2.55 3.8 0.25 2.45 3.8 2.75 2.55 3.8 2.75 2.45 3.8 ]
+AttributeBegin
+Surface "matte" "Ka" 0.25  "Kd" 0.5 
+Color [0.1 0.1 0.05]
+Translate 1.5 2.55 3.35 
+Patch "bilinear" "P" [-0.15 0.14 0.01 -0.15 0.16 0.01 -0.15 0.14 -0.01 -0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 0.01 0.15 0.14 0.01 0.15 0.16 -0.01 0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [0.15 0.14 0.01 -0.15 0.14 0.01 0.15 0.14 -0.01 -0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 0.15 0.16 0.01 -0.15 0.16 -0.01 0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 -0.01 0.15 0.14 -0.01 -0.15 0.16 -0.01 -0.15 0.14 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.15 0.14 0.01 0.15 0.16 0.01 0.15 0.14 0.01 ]
+Patch "bilinear" "P" [-0.15 0 0.01 -0.15 0.16 0.01 -0.15 0 -0.01 -0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [-0.13 0.16 0.01 -0.13 0 0.01 -0.13 0.16 -0.01 -0.13 0 -0.01 ]
+Patch "bilinear" "P" [-0.13 0 0.01 -0.15 0 0.01 -0.13 0 -0.01 -0.15 0 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.13 0.16 0.01 -0.15 0.16 -0.01 -0.13 0.16 -0.01 ]
+Patch "bilinear" "P" [-0.13 0.16 -0.01 -0.13 0 -0.01 -0.15 0.16 -0.01 -0.15 0 -0.01 ]
+Patch "bilinear" "P" [-0.15 0.16 0.01 -0.15 0 0.01 -0.13 0.16 0.01 -0.13 0 0.01 ]
+Patch "bilinear" "P" [0.13 0 0.01 0.13 0.16 0.01 0.13 0 -0.01 0.13 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 0.01 0.15 0 0.01 0.15 0.16 -0.01 0.15 0 -0.01 ]
+Patch "bilinear" "P" [0.15 0 0.01 0.13 0 0.01 0.15 0 -0.01 0.13 0 -0.01 ]
+Patch "bilinear" "P" [0.13 0.16 0.01 0.15 0.16 0.01 0.13 0.16 -0.01 0.15 0.16 -0.01 ]
+Patch "bilinear" "P" [0.15 0.16 -0.01 0.15 0 -0.01 0.13 0.16 -0.01 0.13 0 -0.01 ]
+Patch "bilinear" "P" [0.13 0.16 0.01 0.13 0 0.01 0.15 0.16 0.01 0.15 0 0.01 ]
+AttributeEnd
+AttributeBegin
+Translate 0.4 0.35 4 
+Rotate 8 1 0 0 
+Surface "matte"
+Color [0.2475 0.19125 0.06]
+Patch "bilinear" "P" [0 0 2.8 0 0.05 2.8 0 0 0 0 0.05 0 ]
+Patch "bilinear" "P" [1.8 0.05 2.8 1.8 0 2.8 1.8 0.05 0 1.8 0 0 ]
+Patch "bilinear" "P" [1.8 0 2.8 0 0 2.8 1.8 0 0 0 0 0 ]
+Patch "bilinear" "P" [0 0.05 2.8 1.8 0.05 2.8 0 0.05 0 1.8 0.05 0 ]
+Patch "bilinear" "P" [1.8 0.05 0 1.8 0 0 0 0.05 0 0 0 0 ]
+Patch "bilinear" "P" [0 0.05 2.8 0 0 2.8 1.8 0.05 2.8 1.8 0 2.8 ]
+Translate 0 0.051 0 
+Surface "shiny" "Kr" 0.7  "Kd" 0.05  "Ks" 0.25  "roughness" 0.05 
+Declare "specularcolor" "color"
+Attribute "radiosity" "specularcolor" [0.8 0.8 0.8]
+Polygon "P" [0.05 0 0.05 0.05 0 2.75 1.75 0 2.75 1.75 0 0.05 ]
+AttributeEnd
+AttributeBegin
+Translate 0.8 1.5 4 
+Surface "plastic" "Kd" 0.5  "Ks" 0.25  "roughness" 0.15
+Color [0.22 0.3 0.5]
+Declare "zonal" "string"
+Attribute "radiosity" "zonal" "zonal_receives"
+Cylinder 0.15 0 0.5 360
+TransformBegin
+Translate 0 0 0.5 
+Torus 0.09 0.06 0 90 360
+Disk 0.06 0.09 360
+TransformEnd
+Cylinder 0.09 0.5 0.65 360
+TransformBegin
+Translate 0 0 0.65 
+Torus 0.06 0.03 0 90 360
+Disk 0.03 0.06 360
+TransformEnd
+AttributeEnd
+AttributeEnd
+TransformEnd
+WorldEnd
+

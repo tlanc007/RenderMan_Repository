@@ -1,0 +1,273 @@
+<HTML>
+<HEAD>
+   <TITLE>Advanced RenderMan Errata</TITLE>
+</HEAD>
+<body bgcolor="#FFFFFF" link="#660033" vlink="#003366" alink="#FFFFCC">
+
+<H1><img src="../armancover.small.gif">
+<em>Advanced RenderMan: Creating CGI for Motion Pictures</em><br>
+<p>Errata for the First and Second Printing (Summer 2000)</H1>
+
+   
+
+<h4>Chapter 7</h4>
+<p><ol>
+<p><li>p. 172, the second <tt>printf</tt> statement used a / where
+     there should be a \.  It should say:
+     <br><tt>printf ("%f\n");</tt>
+<p><li>p. 177, the declaration for <tt>setcomp</tt> should read:
+     <br><tt>void setcomp (output color c; float i, x)</tt>
+</ol>
+   
+
+<h4>Chapter 8</h4>
+<p><ol>
+<p><li>p. 200, listing 8.4:  in <tt>spherical_projection</tt>, the
+assignment to <tt>tt</tt> should read:<br>
+<tt>tt = 1 - acos(zcomp(V))/PI;</tt>
+</ol>
+   
+
+<h4>Chapter 9</h4>
+<p><ol>
+<p><li>p. 207, in the middle of the page,<br>
+	 <tt>Ci = MaterialPlastic (Nf, V, Cs,...</tt><br>
+There is an extra parameter.  The <tt>V</tt> parameter should be
+deleted.
+
+<p><li>p. 220, Listing 9.9, the <tt>fresnel</tt> call is missing
+a parameter.  It should read:<br>
+<tt>&nbsp;fresnel (IN, Nf, 1/ior, fkr, fkt, R, T);</tt>
+
+<p><li>p. 234, "As before, <tt>illuminance</tt> implicitly sets..."
+     should read "As before, <tt>illuminate</tt> implicitly sets...".
+</ol>
+
+
+<h4>Chapter 12</h4>
+<p><ol>
+<p><li>p. 290, the very first line of text (after the program listing)
+refers to <tt>pref.h</tt> file.  That should say <tt>pshad.h</tt>, which
+is in program Listing 12.1.
+
+<p><li>p. 292, bottom of page: <tt>ds</tt> and <tt>dt</tt>
+should be <tt>dss</tt> and <tt>dtt</tt>, respectively.
+
+<p><li>p. 315, the pseudocode at the bottom has a mistake.
+The two lines that say: "Cvol += (1-Ovol) + stepsize..."
+and "Ovol += (1-Ovol) + stepsize..." should read:<br>
+&nbsp;Cvol += (1-Ovol) * stepsize*(scattered light);<br>
+&nbsp;Ovol += (1-Ovol) * stepsize*(local density);
+</ol>
+
+
+<h4>Chapter 14</h4>
+<p><ol>
+<p><li>p. 394, the last equation has "2d" where it should read "2/d".
+Specifically, it should say:<br>
+= ab((bPx)^(2/d) + (aPy)^(2/d))^(-d/2)
+</ol>
+
+
+<h4>Chapter 15</h4>
+<p><ol>
+<p><li>p. 414, the <tt>gcloud.sl</tt> shader has a typo.  Where it 
+says "Oi = opac * Oi", it should really be:
+
+<br>&nbsp; <tt>Oi = opac * Os;</tt>
+
+<p><li>p. 429, the <tt>hypertexture.sl</tt> shader has two typos.
+The line that says
+<pre>
+    while (d <= end && (comp(Oi,0)<0.1 || ...
+</pre>
+
+should really say
+<pre>
+    while (d <= end && (comp(Oi,0)<1 || comp(Oi,1)<1 || comp(Oi,2)<1)) {
+</pre>
+
+<p>Also the line that says
+<pre>
+    lighttau = lightdensity * (li + last_li)/2;
+</pre>
+should be deleted.  The variable is assigned correctly on the previous line.
+</ol>
+
+
+
+
+
+
+<p><hr><p>
+
+
+<H1>Errata for the First Printing (Dec 1999) [fixed in 2nd printing]</H1>
+
+
+<h4>Chapter 2</h4>
+
+<p><ol>
+<li>p. 49, the Figure 2.14 caption reads, "a slice of tghe 3D CIEXYZ color
+space."  That should read, "a slice of the 3D CIE XYZ color space."
+</ol>
+
+
+
+<h4>Chapter 3</h4>
+
+<p><ol> 
+<li>p. 67, section 3.2.4, states that in the camera coordinate system,
+"the positive z-axis extends in front of the camera, the positive
+x-axis is to the left..."  This should say that in camera coordinates,
+the positive x-axis is to the <em>right</em>. 
+
+<p>Similarly, on p. 68, when describing <tt>"screen"</tt> space,
+it should also say "...x is right and y is up."
+
+<p><li>p. 85, typo: "flexibile" should read "flexible".
+
+<p><li>p. 87, section 3.7.2, "The names of a shader that are provided..."
+should read "The names of shaders that are provided..."
+
+</ol>
+
+
+
+<h4>Chapter 4</h4>
+
+<p><ol>
+
+<li>p. 99, the explanation of the Torus primitive implies that
+<em>majorradius</em> is the outside radius of the torus, while
+<em>minorradius</em> defines the radius of the hole.  This is not true
+at all!  The whole paragraph should be replaced by:
+
+<p><tt>Torus</tt> creates the quartic "donut" surface (so it isn't a quadric,
+but it is defined with two angles, so we let it go).  The cross section
+of a torus is a circle of radius <em>minorradius</em> on the
+<em>x-z</em> plane, and the angles <em>phimin</em> and <em>phimax</em>
+define the arc of that circle.  It will be swept around
+the <em>z</em>-axis at a distance of <em>majorradius</em>
+to create the torus.  Thus, <em>majorradius+minorradius</em> defines
+the outside radius of the torus (its maximum size), while
+<em>majorradius-minorradius</em> defines the radius of the hole.
+
+</ol>
+
+
+<h4>Chapter 5</h4>
+
+<p><ol>
+<li>p. 123, the description of <tt>Curves</tt>, says,
+"...each curve is a cubic curve that responds to the <em>v</em> basis
+function and is step defined by the <tt>Basis</tt> call."
+I don't know where the "is" came from.  That sentence should read:
+"...responds to the <em>v</em> basis
+function and step defined by..."
+</ol>
+
+
+<h4>Chapter 7</h4>
+<p><ol>
+<li>p. 177, the descriptions of <tt>min</tt>, <tt>max</tt>, and
+<tt>clamp</tt> should have their return values listed as 
+<em>type</em> rather than <tt>float</tt>.  In other words, the
+function declarations should read:<br>
+<tt><em>type</em> min (<em>type</em> a, b, ...)<br>
+<em>type</em> max (<em>type</em> a, b, ...)<br>
+<em>type</em> clamp (<em>type</em> x, minval, maxval)<br></tt>
+
+<p><li>p. 180, the description of <tt>translate</tt>, <tt>rotate</tt>,
+and <tt>scale</tt> says that these functions take only uniform
+arguments.  This is untrue.  Please remove the two occurrences of
+'uniform' from the line containing the declaration of the "scale"
+function.  In other words, that line should read:<br>
+
+<tt>        matrix scale (matrix m; point t)</tt><br>
+        
+Also, in the following paragraph, please delete the sentence that
+reads, "In each case, all arguments to these functions must be uniform."
+
+</ol>
+
+
+<h4>Chapter 8</h4>
+<p><ol>
+<li>p. 195, item 3 (about 3/4 down the page) says "... is a scaline
+factor..."  It should say <em>scaling</em> factor.
+
+<p><li>p. 202, Listing 8.5: the code calls a function
+<tt>TextureProjectTo2D</tt>.  This should be <tt>ProjectTo2D</tt>,
+which is the name of the function as it's described on p. 99, in
+Listing 8.4, and in the online shader code.
+</ol>
+
+
+
+<h4>Chapter 9</h4>
+<p><ol>
+<p><li>p. 220, Listing 9.9 calls the <tt>fresnel()</tt> function
+and is missing an argument!  The function call should read: <br>
+<tt>fresnel (IN, Nf, 1/ior, fkr, fkt, R, T);</tt>
+</ol>
+
+
+
+
+<h4>Chapter 11</h4>
+<p><ol>
+<p><li>p. 269, the equation defining convolution is incorrect.  The 
+integrand should read f(delta)k(x-delta).  In other words, there's
+an x where a delta should be.
+<p><li>p. 273, the equation has a typo, the first integral is
+<em>f(x)fx</em>, when of course it should read: <em>f(x)dx</em>
+</ol>
+
+
+
+
+<h4>Bibliography</h4>
+
+<p><ol>
+<li>p. 516, the citation for Gershbein, Schroder, and Hanrahan should
+be for the Proceedings of SIGGRAPH '94.  (It cites a tech report
+of the same year, but there was a SIGGRAPH paper with the same title.)
+</ol>
+
+
+
+<h4>Index</h4>
+
+<p><ol>
+<li>p. 533, "Oren/Nayer" should be "Oren/Nayar".</li>
+</ol>
+
+
+
+<h4>Color Plates</h4>
+
+<p><ol>
+<li>p. 4 (color), the caption for Plate 9.2 reads "Ma<em>r</em>terialRoughMetal", but
+should be "MaterialRoughMetal".
+</ol>
+
+
+
+<hr>
+<p><a href="http://www.mkp.com/renderman">Return to the <em>Advanced RenderMan</em> book home page.</a>
+<p>
+
+<hr>
+<ADDRESS>
+Last change: $Date: 2008/03/23 04:22:26 $ / Larry Gritz (<a href="mailto:lg@exluna.com">lg@exluna.com</a>)</ADDRESS>
+<hr width=25%>
+<i>Sun Sep 14 17:43:47 PDT 2003: Imported into RMR -- Tal </i>
+<p>
+<I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995--2003 <A HREF="mailto:talrmr@SpamSucks_pacbell.net">Tal L. Lancaster</A> all rights reserved</I><br>
+<!-- hhmts start -->
+Last modified: Sun Sep 14 17:51:31 PDT 2003
+<!-- hhmts end -->
+</BODY>
+</HTML>

@@ -1,0 +1,48 @@
+##RenderMan RIB 
+
+# set your frame resolution here:
+#Format 100 100 1
+Format 256 256 1
+
+ShadingRate 1.0
+# use first one for screen display, second line to write to a file
+#Display "PSbarnacle_t.tif" "framebuffer" "rgba" 
+Display "PSbarnacle.tif" "file" "rgb" 
+
+Declare "sfreq" "float"
+Declare "tfreq" "float"
+Declare "seed" "float"
+Declare "max_height" "float"
+Declare "variation" "float"
+Declare "sparse" "float"
+Declare "ncones" "float"
+Declare "spikiness" "float"
+Declare "Ka" "float"
+
+Projection "perspective" "fov" [45]
+Scale -1 1 1
+Rotate 0 0 0 1
+Rotate 0 1 0 0
+Rotate 180 0 1 0
+Translate 0 0 -2.4
+
+WorldBegin 
+LightSource "ambientlight" 1 "intensity" [0.1]
+LightSource "distantlight" 2 "intensity" [1] "lightcolor" [1 1 1] "from" [5 5 10] "to" [0 0 0]
+LightSource "pointlight" 3 "intensity" [25] "from" [-5 -5 5]
+
+Rotate 90 1 0 0
+
+Attribute "displacementbound" "sphere" [.5] "coordinatesystem" ["shader"]
+
+# call your surface shader here:
+Surface "PSbarnacle" "max_height" [1] "ncones" [10] "spikiness" [0.5]
+	"sfreq" [20] "tfreq" [10] "sparse" [1] "variation" [4] "seed" [15]
+	"Ka" [1]
+
+#Patch "bilinear" "P" [-1 1 0 1 1 0 -1 -1 0 1 -1 0]
+Color 0.5 0.4 0.35
+Sphere 0.75 -0.75 0.75 360 
+
+WorldEnd 
+

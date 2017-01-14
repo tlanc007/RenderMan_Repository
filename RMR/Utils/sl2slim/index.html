@@ -1,0 +1,277 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (X11; U; Linux 2.4.2-2 i686) [Netscape]">
+   <title>sl2slim</title>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+</head>
+<body bgcolor="#FFFFFF">
+&nbsp;
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=3 >
+<tr VALIGN=BOTTOM>
+<td BGCOLOR="#305073"><span class="navtitle">RenderMan Repository</span></td>
+
+<td ALIGN=RIGHT BGCOLOR="#305073">&nbsp;</td>
+</tr>
+
+<tr>
+<td COLSPAN="2" BGCOLOR="#305073">
+<table BORDER=0 CELLSPACING=0 CELLPADDING=5 >
+<tr BGCOLOR="#B8C8E0">
+<td><a href="/RMR/index.html" CLASS="none">Home</a></td>
+
+<td><a href="/RMR/site_index.html" CLASS="none">Index</a></td>
+
+<td><a href="/RMR/Search.html" CLASS="none">Search</a></td>
+
+<td><a href="/RMR/cgrrFAQ.html" CLASS="none">FAQ</a></td>
+
+<td><a href="/RMR/OtherLinks/index.html" CLASS="none">Offsite</a></td>
+
+<td><a href="/RMR/RMRShaders.html" CLASS="none">Shaders</a></td>
+
+<td><a href="/RMR/Examples/index.html" CLASS="none">Examples</a></td>
+
+<td><a href="/RMR/Publications/index.html" CLASS="none">Pubs</a></td>
+
+<td><a href="/RMR/Utils/index.html" CLASS="none">Utils</a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table></center>
+
+<center>
+<h1>
+sl2slim</h1></center>
+
+<h4>
+What's on this page?</h4>
+
+<ul>
+<li>
+<a href="index.html#intro">intro</a> -- introduction</li>
+
+<li>
+<a href="index.html#encode">encoding</a> -- table</li>
+
+<li>
+<a href="index.html#description">description</a> --</li>
+
+<li>
+<a href="index.html#disclaimer">disclaimer</a> --</li>
+
+<li>
+<a href="index.html#util">sl2slim.tar</a> -- perl script &amp; data files</li>
+</ul>
+
+<hr><a NAME="intro"></a>
+<h3>
+Introduction</h3>
+<b>Slim</b> is a shader management tool from Pixar. It is part of RenderMan
+Artist Tools.
+<p>sl2slim just works on the subset of Slim that deals with shader parameter
+control. sl2slim is a Perl script that allows encoding Pixar slim parameter
+controls directly inside a RenderMan shader. It should work fine on surface,
+displacement, light, and imager shaders. It should with the following types:
+float, string, point, normal, vector, color, and matrix. Pretty much everything
+that was available as of prman3.9.
+<pre>Example simple shader :&nbsp;
+
+<font color="#0000FF">
+surface simpleshader (
+&nbsp;&nbsp; float useSimple = 0;
+&nbsp;&nbsp; float simpleType = 0;
+)
+{
+&nbsp;&nbsp; <font color="008888">/* perform some calculations for surface */</font>
+}
+</font>
+
+Example simple shader with slim encodings:&nbsp;
+
+<font color="#0000FF">
+surface simpleshader (
+&nbsp; float useSimple = 0;&nbsp;  <font color="008888">/* type switch
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; desc { Turn on to use. A simple example shader
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parameter switch. } */</font>
+&nbsp; float simpleType = 0;  <font color="008888">/* type selector
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; range { "spot" 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "omni" 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "directional" 3 }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; desc&nbsp; { An example of encoding a slim selector} */</font>
+)
+{
+&nbsp;&nbsp;  <font color="008888">/* perform some calculations for surface */</font>
+}
+</font>
+Example of sl2slim output with slim encodings :</pre>
+<img SRC="f2.jpg" height=765 width=416>
+<p><img SRC="f3.jpg" height=765 width=416>
+<hr><name="encode">
+<h3>
+Encode</h3>
+Here are the following encodings (and their slim expansions) that are available:
+<pre><b>def</b>&nbsp;&nbsp;&nbsp;&nbsp; default
+<b>desc</b>&nbsp;&nbsp;&nbsp; description
+<b>expr</b>&nbsp;&nbsp;&nbsp; expression
+<b>name</b>&nbsp;&nbsp;&nbsp; label
+<b>provider</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; provider
+<b>range</b>&nbsp;&nbsp; range
+<b>type</b>&nbsp;&nbsp;&nbsp; subtype
+<b>vis</b>&nbsp;&nbsp;&nbsp;&nbsp; display
+<b>cat</b>&nbsp;&nbsp;&nbsp;&nbsp; Allows grouping of parameters with same name under a single chicklet</pre>
+
+<hr><a NAME="description"></a>
+<h3>
+Description</h3>
+sl2slim works by placing the encoding in comments at the end of a parameter
+statement. More precisely, the encodings must be in the first comment just
+after the semi-colon (';') completing a parameter statement.
+<pre><font color="0000FF"><tt>surface myshader (
+&nbsp;&nbsp; float myparm1 = 0;&nbsp;<font color="008888">/* desc { Example parameter showing how to encode
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a description for slim } */</font>
+&nbsp;&nbsp; float flag = 0;&nbsp;&nbsp;  <font color="008888">/* type switch&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desc { Example flag parameter } def 1 */</font></tt></pre></font>
+<tt>Take note of the paramter 'flag', it has one default behavior when
+in Mtor and another when not using Mtor. . .</tt>
+<p><tt>Only one parameter declaration is allowed per statement.</tt>
+<pre><tt><font color="0000FF">float parmA;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>// will make sl2slim happy
+<font color="0000FF">float parmB;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font> // will make sl2slim happy
+
+<font color="0000FF">float parm1, parm2;&nbsp; </font>// will produce a bad slim file</tt></pre>
+<hr>
+<a NAME="examples"></a>
+<H3>More Examples</H3>
+<p><tt>Excerpts from l_uber:</tt>
+<font color="0000FF">
+<p><tt><font color="008888">/* Shadow mapped shadows */</font></tt>
+<br><tt>string shadowname = "";&nbsp;&nbsp; </tt> <font color="008888">/* type shadow desc {Under
+MTOR the common
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+setting for this is [shdname $OBJNAME].} */</tt></font></font>
+<p><tt>The above example sets the subtype to shadow and a description.</tt>
+<p><font color="0000FF">float shadowblur = 0.01;  <font color="008888">/* range {0 1 .001} type slider
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; desc {how soft to make the shadow
+edge, expressed as a percentage of the width of the entire shadow map.}
+cat miscShadow */</font></font>
+<p><tt>This example sets up a slider range 0-1 in .001 increments. This
+parameter is grouped with other parameters that belong to the miscShadow
+category.</tt>
+<font color="0000FF">
+<pre>&nbsp; float shadownsamps = 16;  <font color="008888">/* range {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "1" 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "4" 4
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "9" 9
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "16" 16
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "25" 25
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "36" 36
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "64" 64
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type selector desc {Controls supersampling of the shadowmap.}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cat miscShadow */</pre></font></font>
+<p><tt>This example sets up a selector with a default of 16 and a selector
+range from 1 to 64.</tt>
+<p>
+<font color="0000FF">
+color shadowcolor = 0;  <font color="008888">/* provider expression
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; expr {[mattr $OBJNAME.shadowColor $f]}</tt>
+<br><tt>&nbsp;&nbsp;&nbsp;&nbsp; desc {Shadows (i.e. those regions with
+occlusion as defined by any or all of the shadow map, ray cast, or blocker)
+don't actually have to block light. In fact, in this shader, shadowed regions
+actually just change the color of the light to shadowcolor. If this color
+is set to (0,0,0), it effectively blocks all light. But if you set it to,
+say (.25,.25,.25), it will make the shadowed regions lose their full brightness,
+but not go completely dark. Another use is if you are simulating sunlight:
+set the lightcolor to something yellowish, and make the shadowcolor dark
+but somewhat bluish. Another effect of shadows is to set the __nonspecular
+flag, so that the shadowed regions are lit only diffusely, without highlights.}
+<br>&nbsp;&nbsp;&nbsp;&nbsp; cat miscShadow */</tt></font></font>
+<p><tt>This example has tcl expressions allowing it to get its settings
+from Maya. In this case it sets the shadow color to whatever the Maya light
+shadow color is set to. This parameter also belongs to the miscShadow category.</tt>
+<font color="0000FF">
+<pre><tt>&nbsp;  <font color="008888">/* Basic intensity and color of the light */</font>
+&nbsp; uniform float lighttype = 0;  <font color="008888">/* type selector
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; range {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "spot" 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "omni(point)" 1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "area(BMRT)" 2
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "directional" 3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; def {0}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; provider expression
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; expr {[if {[mel "objectType $OBJNAME"] == "pointLight"}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {return 1}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {[if {[mel "objectType $OBJNAME"] == "spotLight"}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {return 0}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {return 3}]}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]}
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; desc {The type of light
+source. Use spot for lights that point in a particular direction, from
+a particular position (ie. spot). Use omni for light to cast light in all
+directions (ie. point). Use distant for lights that point in a particular
+direction, from any position (ie. distant).} */</font></tt></pre></font>
+<font color="0000FF">
+<pre><tt>&nbsp; float parallelrays = 0;  <font color="008888">/* range {0 1} type switch
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; provider expression
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; expr {[if {[mel "objectType $OBJNAME"] ==
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "directionalLight"} {return 1} else {return 0}]}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; desc {when off, the light apepar to eminate from&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a single point (i.e. the rays diverge). When on,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the light rays are parallel, as if from an&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; infinitely distant source (like the sun).} */</tt></font></pre></font>
+
+<hr><a NAME="disclaimer"></a>
+<h3>
+<tt>Disclaimer</tt></h3>
+<tt>The script isn't very robust and can be broken very easily. If I had
+realized how detailed I would have had to correctly parse the shading language,
+I would have started with a Bison grammar so the parsing would be more
+robust.</tt>
+<p><tt>1) Most of the standard RC shaders won't work. Remember one parameter
+per statement.
+<p>
+2) The first comment after the ';' ending a parameter statement must contain slim encodings.  Any comments after that one can contain, well, comments.  You don't have to have an encoding comment after a parameter statement.  But if for some reason you want to have some regular comments after one, then you must preceede that comment with with an encoding comment or an empty comment.
+</tt><p>
+Other known problems<p>
+<UL>
+<LI>The shader definition can not be the first line in the shader source file.<br>
+That is the first thing in the shader source can not be the <b>shader_type</b> (<i>light, surface, volume, displacement,</i> or <i>imager</i>).  If there isn't anything else that needs to go on lines before the <b>shader_type</b>, then just put a blank line as the first line of the file.
+<LI>The <b>shader_type</b> and <b>identifier</b> need to be on the same line.  Do not separate them with a carriage-return.
+<LI>The _dat files don't yet support the newer "context" sections added in RAT 4.5.
+</UL>
+<hr><a NAME="util"></a>
+<h3>
+<tt>Util</tt></h3>
+<tt><a href="sl2slim.tar">sl2slim.tar</a> contains:</tt>
+<pre><tt>sl2slim.displacement_dat
+sl2slim.light_dat
+sl2slim.surface_dat
+<a href="sl2slim.pl">sl2slim.perl</a> <i>(file saved as .perl instead of .pl so web-browser's won't try to execute it.)</i></tt></pre>
+<p>
+<tt><i>Usage:</i> sl2slim.pl [-IcppDir|...] SLFILES</tt>
+<pre><tt><b>cppDir</b> is the directory to search for include files.
+<b>SLFILES</b> is one or more shader files to process.
+<b>sl2slim.pl</b> will read through a shader source file optional&nbsp;
+&nbsp;&nbsp;&nbsp; slim encodings to create a .slim file with the&nbsp;
+&nbsp;&nbsp;&nbsp; same base name as the shader.</tt></pre>
+<tt>In order for the script to work, it will need to be modified to give
+the C processor is.</tt>
+<p>Typically I just have something like the following file in my Makefiles
+<p>.sl.slim:
+<br>
+<p><tt>Example shader and .slim files. <a href="/RMR/Shaders/TLShaders/l_uber.sl">l_uber.sl
+</a><a href="/RMR/Shaders/TLShaders/l_uber.slim">l_uber.slim</a> <a href="/RMR/Shaders/TLShaders/s_pplastic.sl">s_pplastic.sl
+</a><a href="/RMR/Shaders/TLShaders/s_pplastic.slim">s_pplastic.slim</a></tt>
+<p>
+<hr><tt><font size=-1>The RMR is <a href="/RMR/copyright.html">Copyright</a>
+&copy; 1995-2005 <a href="mailto:tal AT renderman DOT org">Tal L. Lancaster</a>
+all rights reserved</font></tt>
+<br><!-- Created: Fri Aug  3 20:27:05 PDT 2001 --><!-- hhmts start --><tt>Last
+modified: Sat Aug 4 22:46:14 PDT 2001</tt><!-- hhmts end -->
+</body>
+</html>

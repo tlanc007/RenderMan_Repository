@@ -1,0 +1,23 @@
+cd rmNew.htmld
+~/bin/t.pl index.html >rmNew.html
+cd ../rmNew01.htmld
+~/bin/t.pl index.html >rmNew01.html
+cd ../rmDetails.htmld
+~/bin/t.pl index.html >rmDetails.html
+cd ../rmShaders.htmld
+~/bin/t.pl index.html >rmShaders.html
+cd ..
+cd RIBS/ribs.htmld
+~/bin/t.pl index.html >ribs.html
+cd ../..
+cd Shaders
+cd BMRTShaders.htmld
+~/bin/t.pl index.html >BMRTShaders.html
+cd ../KMShaders.htmld
+~/bin/t.pl index.html >KMShaders.html
+cd ../RCShaders.htmld
+~/bin/t.pl index.html >RCShaders.html
+cd ../TLShaders.htmld
+~/bin/t.pl index.html >TLShaders.html
+cd ../WWLGShaders.htmld
+~/bin/t.pl index.html >WWLGShaders.html

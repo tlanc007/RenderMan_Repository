@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE> FSShaders </TITLE>
+<body bgcolor="white">
+<center>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Frank Summers Shaders</H1><P>
+</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#fjs_fisheyelens">fjs_fisheyelens</A>-- fisheye lens shader.
+</UL>
+<A HREF="mailto:summers AT stsci DOT edu ">Email Frank Summers</A><P>
+<HR>
+<A NAME="fjs_fisheyelens"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+fjs_fisheyelens.sl</H2><P>
+Simple fisheye lens shader.  Uses near clip-plane and raytracing (trace function).<p>Usage:<p> User must define a square polygon just beyond the near clip-plane distance. Generally, this polygon fills the entire viewing frustrum.<p>This shader is applied to the polygon and the user should specify the polygon placement and the maximum angle of the lens.<p> The result is a circular lensed image on the square polygon, with black corners. The angular distribution is like polar graph paper, with angle increasing linearly with distance from the center.<pre><p>   Corners of polygon are assumed to be (in camera space):<p>       [ scale,  scale, zdistance]<p>       [-scale,  scale, zdistance]<p>       [-scale, -scale, zdistance]<p>       [ scale, -scale, zdistance]</pre><p> See shader for more description.<p><IMG SRC=no_lens.jpg WIDTH=100 HEIGHT=100 CLEAR <ALT="no_lens.tiff">  </A><A HREF="no_lens.rib">no_lens.rib</A> 
+<P>
+<A HREF="fjs_fisheyelens.jpg">
+<IMG SRC=fjs_fisheyelens_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="fjs_fisheyelens.jpg"></A>
+<A HREF="fjs_fisheyelens.sl">fjs_fisheyelens.sl</A>
+<A HREF="fjs_fisheyelens.rib">Sample RIB</A>
+<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:tal AT renderman DOT org">tal AT renderman DOT org</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org ">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

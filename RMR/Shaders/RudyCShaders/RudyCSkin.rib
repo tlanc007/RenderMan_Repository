@@ -1,0 +1,40 @@
+Format 300 300 1
+PixelSamples 3 3 
+ShadingRate .5
+FrameBegin 1
+Display "RudyCSkin.tif" "tiff" "rgb"
+#Display "RudyCSkin.tif" "framebuffer" "rgb"
+Projection "perspective" "fov" 40
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [ 0.15 ] "lightcolor"  [ 1 1 1 ]
+#LightSource "distantlight" 1 "intensity" [ 1.50 ] "lightcolor" [ 1 1 1 ] "from" [ -1 1 -1 ] "to" [ 0 0 0 ]
+LightSource "distantlight" 1 "intensity" [ .75 ] "lightcolor" [ 1 1 1 ] "from" [ -1 1 -1 ] "to" [ 0 0 0 ]
+LightSource "distantlight" 2 "intensity" [ 0.75 ] "lightcolor" [ 1 1 1 ] "from" [ 1 1 2 ] "to" [ 0 0 0 ]
+LightSource "distantlight" 3 "intensity" [ 0.45 ] "lightcolor" [ 1 1 1 ] "from" [ 1 -1 -1 ] "to" [ 0 0 0 ]
+Declare "poresdepth" "float"
+Declare "poresthresh" "float"
+Declare "poresfreq" "float"
+Declare "yroughness" "float"
+Declare "xroughness" "float"
+Declare "oilmap" "string"
+Declare "oily" "float"
+Declare "angle" "float"
+Declare "xdir" "vector"
+Declare "thickness" "float"
+Declare "eta" "float"
+Declare "blemishmap" "string"
+Declare "blemishopac" "float"
+Declare "belmishthresh" "float"
+Declare "blemishfreq" "float"
+Declare "sheenmap" "string"
+Declare "sheenColor" "color"
+Declare "skinmap" "string"
+Declare "skincolor" "color"
+Declare "Kd" "float"
+Surface "RudyCSkin" "eta" [ 1.005 ] "xroughness" [ .25 ] "yroughness" [ .45 ] "poresdepth" [ -.001 ]
+Translate 0 0 3.1
+Rotate -90 1 0 0
+Sphere 1 -1 1 360
+WorldEnd
+FrameEnd
+

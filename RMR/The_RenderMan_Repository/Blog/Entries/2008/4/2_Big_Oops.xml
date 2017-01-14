@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content collectionGUID="CC8D43BC-5F8F-47BE-80D1-1C9A9F194E72">
+  <lastEdited clientType="local-build-20080911" date="2008-09-11 20:46:19 -0700"/>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Big Oops</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Before copying links over from the old RMR OtherLinks page, I tested the link to make sure it was still active before entering it on the &lt;a href="http:///twiki/bin/view/RenderManRepository/OffsiteLinks%23Renderers"&gt;OffsiteLinks&lt;/a&gt; TWiki page.&#xD;&#xD;It seems on the original page, I had Aqsis as &lt;a href="http://www.aqsis.com"&gt;www.aqsis.com&lt;/a&gt; instead of &lt;a href="http://www.aqsis.org"&gt;www.aqsis.org&lt;/a&gt;.  Sor when I tested the .com link, no aqsis.  So I incorrectly concluded that they weren&#x2019;t around any more.  That mistake has been corrected.&#xD;&#xD;Started to move some of the Converter links over to the OffsiteLinks TWiki.</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Wednesday, April 2, 2008&lt;/b&gt;</richText>
+  </textBox>
+  <image id="generic-picture-attributes" dynamic="no" visible="yes" src="2_Big_Oops_files/shapeimage_2.jpg" left="0px" top="0px" width="400px" height="300px"/>
+</content>

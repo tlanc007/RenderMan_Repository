@@ -1,0 +1,79 @@
+##RenderMan RIB-Structure 1.0
+##CreationDate Mon Jun 26 10:18:59 1995
+##For tal
+version 3.03
+Display "bulb.tiff" "file" "rgb"
+Format 256 192 -1
+ShadingRate 1
+LightSource "distantlight" 1
+CropWindow 0 1 0 1
+Projection "perspective"
+Projection "perspective" "fov" 34.708076 
+FrameAspectRatio 1.333333
+Identity
+Rotate 0 0 0 1 
+Rotate -73.739792 1 0 0 
+Rotate 0 0 1 0 
+Translate 0 -9 1.5 
+WorldBegin
+LightSource "ambientlight" 2 "intensity" 0.5 
+LightSource "pointlight" 3 "intensity" 14 
+LightSource "pointlight" 4 "from" [-3 6 0] "intensity" 14 
+LightSource "pointlight" 5 "from" [-3 3 -3] "intensity" 14 
+LightSource "pointlight" 6 "from" [3 3 0] "intensity" 8 
+AttributeBegin
+AttributeBegin
+Surface "matte"
+Color [0.02 0.03 0.07]
+Polygon "P" [-8 -2 8 8 -2 8 6 -2 -2.5 -6 -2 -2.5 ]
+AttributeEnd
+AttributeBegin
+Surface "plastic"
+Disk -0.95 0.2 360
+Color [0.02 0.03 0.07]
+Cylinder 0.2 -0.95 -0.9 360
+Color [0.02 0.03 0.07]
+Hyperboloid 0.2 0 -0.9 0.35 0 -0.825 360
+Color [1 0.404693 0.141722]
+Surface "metal"
+Hyperboloid 0.35 0 -0.825 0.5 0 -0.75 360
+AttributeEnd
+AttributeBegin
+Color [1 0.404693 0.141722]
+Surface "filament"
+Attribute "bound" "displacement" 0.1 
+Displacement "droop"
+Translate 0 0 2.625 
+Rotate 90 0 1 0 
+TextureCoordinates [ 0 0.25 1 0.25 0 0.75 1 0.75 ]
+Cylinder 0.075 -0.3625 0.3625 360
+TextureCoordinates [ 0 0.75 1 0.75 0 1 1 1 ]
+TransformBegin
+Translate 0 0 0.3625 
+Cone 0.2 0.075 360
+TransformEnd
+TextureCoordinates [ 1 0.25 0 0.25 1 0 0 0 ]
+TransformBegin
+Translate 0 0 -0.3625 
+Rotate 180 1 0 0 
+Cone 0.2 0.075 360
+TransformEnd
+Color [1 0.63911 0.290013]
+Declare "attenuation" "uniform float"
+Surface "glow" "attenuation" 5 
+Scale 1.6 1.6 4
+TextureCoordinates [ 0 0 1 0 0 1 1 1 ]
+Sphere 0.1875 -0.1875 0.1875 360
+AttributeEnd
+AttributeBegin
+Attribute "bound" "displacement" 0.1 
+Declare "frequency" "uniform float"
+Declare "Km" "uniform float"
+Displacement "threads" "Km" 0.05  "frequency" 4.5 
+Color [1 0.404693 0.141722]
+Surface "metal"
+Cylinder 0.5 -0.75 -0.0625 360
+AttributeEnd
+AttributeEnd
+WorldEnd
+

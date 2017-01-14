@@ -1,0 +1,7 @@
+Listing from misc directory
+
+ 415 Jun  3 14:14 Makefile
+1485 Jun  3 15:08 main.c
+
+For the Makefile you will need to provide for the RIDIR and CC variables.
+They are described in the Makefile

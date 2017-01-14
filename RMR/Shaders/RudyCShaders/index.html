@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE> RudyCShaders </TITLE>
+<body bgcolor="white">
+<center>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Rudy Cortes Shaders</H1><P>
+</CENTER>
+Rudy now has his own website: <b><a href="http://www.rudycortes.com">www.rudycortes.com</a></b><p><H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#RudyCSkin">RudyCSkin</A>-- skin shader
+<LI><A HREF="index.html#RudyCstones">RudyCstones</A>-- procedural stone shader
+<LI><A HREF="index.html#RudyCsteelfloor_d">RudyCsteelfloor_d</A>-- steelfloor displacement shader
+<LI><A HREF="index.html#RudyCconcretestripes_d">RudyCconcretestripes_d</A>-- concrete stripes displacement shader
+<LI><A HREF="index.html#RudyCplasmaball">RudyCplasmaball</A>-- SciFi plasma ball
+<LI><A HREF="index.html#RudyCstripeCeramic">RudyCstripeCeramic</A>-- painted ceramic
+<LI><A HREF="index.html#RudyCtile01">RudyCtile01</A>-- floor tiles
+<LI><A HREF="index.html#RudyCtile02">RudyCtile02</A>-- floor tiles
+<LI><A HREF="index.html#rclocillum.h">rclocillum.h</A>-- include file
+<LI><A HREF="index.html#Makefile">Makefile</A>-- Example Makefile
+</UL>
+<A HREF="mailto:shaders AT rudycortes DOT com ">Email Rudy Cortes</A><P>
+<HR>
+<A NAME="RudyCSkin"></A>
+<H2>RudyCSkin.sl</H2><P>
+Currently this shader doesn't look very well under PRMan.  It has been tested under BMRT and AIR<p>(<i>5/11/03 code change from author -- tal</i>) 
+<P>
+<A HREF="RudyCSkin.jpg">
+<IMG SRC=RudyCSkin_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="RudyCSkin.jpg"></A>
+<A HREF="RudyCSkin.sl">RudyCSkin.sl</A>
+<A HREF="RudyCSkin.rib">Sample RIB</A>
+<A HREF="RudyCSkin.slo">RudyCSkin.slo</A>
+<HR>
+<A NAME="RudyCstones"></A>
+<H2>RudyCstones.sl</H2><P>
+
+<P>
+<A HREF="RudyCstones.jpg">
+<IMG SRC=RudyCstones_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="RudyCstones.jpg"></A>
+<A HREF="RudyCstones.sl">RudyCstones.sl</A>
+<A HREF="RudyCstones.rib">Sample RIB</A>
+<A HREF="RudyCstones.slo">RudyCstones.slo</A>
+<HR>
+<A NAME="RudyCsteelfloor_d"></A>
+<H2>RudyCsteelfloor_d.sl</H2><P>
+Procedural displacement shader that resembles a steelplated floor.<p>NOTE: This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>). 
+<P>
+<A HREF="RudyCsteelfloor_d.jpg">
+<IMG SRC=RudyCsteelfloor_d_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="RudyCsteelfloor_d.jpg"></A>
+<A HREF="RudyCsteelfloor_d.sl">RudyCsteelfloor_d.sl</A>
+<A HREF="RudyCsteelfloor_d.rib">Sample RIB</A>
+<A HREF="RudyCsteelfloor_d.slo">RudyCsteelfloor_d.slo</A>
+<HR>
+<A NAME="RudyCconcretestripes_d"></A>
+<H2>RudyCconcretestripes_d.sl</H2><P>
+Displacement shader that gives 'concree stripes' look. NOTE: This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>). 
+<P>
+<A HREF="RudyCconcretestripes_d.jpg">
+<IMG SRC=RudyCconcretestripes_d_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="RudyCconcretestripes_d.jpg"></A>
+<A HREF="RudyCconcretestripes_d.sl">RudyCconcretestripes_d.sl</A>
+<A HREF="RudyCconcretestripes_d.rib">Sample RIB</A>
+<A HREF="RudyCconcretestripes_d.slo">RudyCconcretestripes_d.slo</A>
+<HR>
+<A NAME="RudyCplasmaball"></A>
+<H2>RudyCplasmaball.sl</H2><P>
+Nice plasma field shader. 
+<P>
+<A HREF="RudyCplasmaball.jpg">
+<IMG SRC=RudyCplasmaball_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="RudyCplasmaball.jpg"></A>
+<A HREF="RudyCplasmaball.sl">RudyCplasmaball.sl</A>
+<A HREF="RudyCplasmaball.rib">Sample RIB</A>
+<A HREF="RudyCplasmaball.slo">RudyCplasmaball.slo</A>
+<HR>
+<A NAME="RudyCstripeCeramic"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+RudyCstripeCeramic.sl</H2><P>
+Ceramic with feeling that it was painted while rotating on the molding table.  This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>).  It also uses Rudy's <a href="rclocillum.h">rclocillum.h</a> file.  <p>Also, take note, the RIB example needs an environment map.  It currently is using <a href="../IDShaders/index.html#funcenter">Ivan's funcenter</a> image. To turn it into a texture map for PRMan, I did: "<i>txmake -mode clamp -latlong funcenter.jpg funcenter.tx</i>" 
+<P>
+<A HREF="RudyCstripeCeramic.jpg">
+<IMG SRC=RudyCstripeCeramic_sm.jpg WIDTH=71 HEIGHT=100 CLEAR
+<ALT="RudyCstripeCeramic.jpg"></A>
+<A HREF="RudyCstripeCeramic.sl">RudyCstripeCeramic.sl</A>
+<A HREF="RudyCstripeCeramic.rib">Sample RIB</A>
+<A HREF="RudyCstripeCeramic.slo">RudyCstripeCeramic.slo</A>
+<HR>
+<A NAME="RudyCtile01"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+RudyCtile01.sl</H2><P>
+A floor tile shader.   This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>). 
+<P>
+<A HREF="RudyCtile01.jpg">
+<IMG SRC=RudyCtile01_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="RudyCtile01.jpg"></A>
+<A HREF="RudyCtile01.sl">RudyCtile01.sl</A>
+<A HREF="RudyCtile01.rib">Sample RIB</A>
+<A HREF="RudyCtile01.slo">RudyCtile01.slo</A>
+<HR>
+<A NAME="RudyCtile02"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+RudyCtile02.sl</H2><P>
+A floor tile shader. This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>). 
+<P>
+<A HREF="RudyCtile02.jpg">
+<IMG SRC=RudyCtile02_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="RudyCtile02.jpg"></A>
+<A HREF="RudyCtile02.sl">RudyCtile02.sl</A>
+<A HREF="RudyCtile02.rib">Sample RIB</A>
+<A HREF="RudyCtile02.slo">RudyCtile02.slo</A>
+<HR>
+<A NAME="rclocillum.h"></A>
+<H2>rclocillum.h</H2><P>
+Rudy's illumination <a href="rclocillum.h">include file</a>.<p><HR>
+<A NAME="Makefile"></A>
+<H2>Makefile</H2><P>
+Compliant <a href="Makefile">Makefile</a> to be used with the RMR shader development library.<p<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:tal AT renderman DOT org">tal AT renderman DOT org</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../AMShaders/index.html">AMShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../GNShaders/index.html">GNShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../PSShaders/index.html">PSShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

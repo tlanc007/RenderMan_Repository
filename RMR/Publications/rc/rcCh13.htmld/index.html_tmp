@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rcCh13</TITLE>
+<LINK HREF="../rcCh16.htmld/index.html" REL="Sibling" TITLE="rcCh16">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER><P>
+<H1>_RC_ Chapter 13 The RenderMan Shading Language I: Introduction<P>
+</CENTER><P>
+<A HREF="../errataRev1.htmld/index.html#ch13">Errata</A>
+</H1><H3><P>
+</H3><P>
+The only listing in this chaper is the clouds shader.  The listing for it here has been changed.  Also some other files (namely <A HREF="../ch13/surf13_1.c">surf13_1.c</A>
+ , <A HREF="../ch13/surf13_1.h">surf13_1.h</A>
+  and <A HREF="../ch13/pcontour.h">pcontour.h</A>
+  have been added to build up the image  found on p. 283.<P>
+     <B><P>
+<A HREF="../ch13/surf13_1.tiff"><IMG SRC=../ch13/surf13_1.gif  WIDTH=40 HEIGHT=100 ALT="../ch13/listing13_1.tiff"></A>
+
+p. 282</B> <A NAME="ex13_1"></A>
+
+<A HREF="../ch13/clouds.sl">clouds.sl</A>
+ -- An example shader (produces a cloudy surface). (<A HREF="../errataRev1.htmld/index.html#ex13_1">Errata</A>
+
+ )<P>
+<P>
+The <A HREF="../ch11/Makefile">Makefile</A>
+. <P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>See Also (Siblings):</DT><DD>
+
+[<A HREF="../rcCh16.htmld/index.html">rcCh16</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rcCh13</A> was converted on Sat May 18 11:01:48 PDT 1996 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+
+</BODY>
+</HTML>

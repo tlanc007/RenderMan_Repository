@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rcCh11</TITLE>
+<LINK HREF="../rcCh13.htmld/index.html" REL="Sibling" TITLE="rcCh13">
+<LINK HREF="../rcCh16.htmld/index.html" REL="Sibling" TITLE="rcCh16">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER><H1><P>
+_RC_ Chapter 11 Lighting and Shading</H1><P>
+</CENTER><B><P>
+</B><P>
+<H2> <A HREF="../errataRev1.htmld/index.html#ch11">Errata</A>
+
+ <P>
+ <CENTER></H2><P>
+ <table> <tr valign=top>
+<P>
+<td algn=middle width=100 height=75
+<A HREF="../ch11/frame.0.tiff"><IMG SRC=../ch11/frame.0.gif border=0 vspace=5  ALT="../ch11/frame.0.tiff"></A>
+
+<br> ambient light</td>
+<P>
+<td algn=middle width=100 height=75
+<A HREF="../ch11/frame.1.tiff"><IMG SRC=../ch11/frame.1.gif border=0 vspace=5  ALT="../ch11/frame.1.tiff"></A>
+
+<br> distant light</td>
+<P>
+<td algn=middle width=100 height=75
+<A HREF="../ch11/frame.2.tiff"><IMG SRC=../ch11/frame.2.gif border=0 vspace=5  ALT="../ch11/frame.2.tiff"></A>
+
+<br> point light </td>
+<P>
+<td algn=middle width=100 height=75
+<A HREF="../ch11/frame.3.tiff"><IMG SRC=../ch11/frame.3.gif border=0 vspace=5  ALT="../ch11/frame.3.tiff"></A>
+
+<br> spot light</td>
+<P>
+</tr></table><P>
+</CENTER><P>
+<P>
+<B>p. 220</B> <A NAME="ex11_1"></A>
+
+<A HREF="../ch11/listing11_1.c">listing11_1.c</A>
+ -- Program invoking four basic light sources.  This listing also requires <A HREF="../ch11/listing11_1.h">listing11_1.h</A>
+ and <A HREF="../ch11/main.c">main.c</A>
+. (<A HREF="../errataRev1.htmld/index.html#ex11_1">Errata</A>
+
+ )<P>
+<P>
+The <A HREF="../ch11/Makefile">Makefile</A>
+. <P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>See Also (Siblings):</DT><DD>
+
+[<A HREF="../rcCh13.htmld/index.html">rcCh13</A>]
+
+[<A HREF="../rcCh16.htmld/index.html">rcCh16</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rcCh11</A> was converted on Sat May 18 11:39:17 PDT 1996 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+
+</BODY>
+</HTML>

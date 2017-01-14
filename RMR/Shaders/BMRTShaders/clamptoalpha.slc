@@ -1,0 +1,11 @@
+imager clamptoalpha
+code
+	return_area
+	pushf	alpha 
+	pushf	alpha 
+	pushf	alpha 
+	pushiv	0 0 0 
+	pushc	Ci 
+	cclamp
+	popc	Ci 
+	return

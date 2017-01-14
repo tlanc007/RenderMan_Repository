@@ -1,0 +1,16 @@
+Listing of files in the ch5 directory
+
+1444 Jun  3 15:13 Makefile
+ 671 Jun  3 15:15 hcontour.h
+3143 Jun  3 15:01 listing5_1.c
+ 798 Jun  3 15:18 listing5_1.h
+4134 Jun  3 15:16 listing5_2.c
+ 793 Jun  3 15:18 listing5_2.h
+3396 Jun  3 15:23 listing5_3.c
+ 763 Jun  3 15:22 listing5_3.h
+
+For the Makefile you will need to provide for the following variables:
+
+RMAN_LIB, RIDIR, RUN_RMAN, OTHER_LIBS and CC.
+
+They are described in the Makefile

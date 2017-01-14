@@ -1,0 +1,190 @@
+surface wallpaper_2stripe
+param	float	Ka		0.5
+param	float	Kd		0.75
+param	float	Ks		0.25
+param	float	roughness		0.1
+param	color	specularcolor		1 1 1
+param	color	stripecolor		0 0 0
+param	float	stripewidth		0.05
+param	float	stripespacing		0.5
+local	normal	Nf	0 0 0
+local	color	Ct	0 0 0
+local	float	stripe	0
+local	float	ss	0
+local	float	swidth	0
+local	float	W	0
+initcode 5
+	pushiv	1 0.5 0.5 
+	popc	stripecolor 
+initcode 7
+	return
+code
+	pushf	stripespacing 
+	divF	stripewidth 
+	popf	W 
+	pushf	stripespacing 
+	pushif	1e-07 
+	pushf	dv 
+	pushf	dsdv 
+	mulff
+	abs
+	pushf	du 
+	pushf	dsdu 
+	mulff
+	abs
+	addff
+	fmax
+	divff
+	popf	swidth 
+	return_area
+	pushif	0.5 
+	pushf	stripespacing 
+	pushf	stripespacing 
+	pushf	s 
+	mod
+	divff
+	subff
+	popf	ss 
+	pushif	1 
+	pushf	swidth 
+	ge
+	ifz	0
+	pushf	W 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	stripe 
+	jump	1
+label 0
+	pushf	swidth 
+	divF	W 
+	pushif	2 
+	mulff
+	pushif	0 
+	pushif	1 
+	pushif	0 
+	pushf	stripewidth 
+	pushif	5 
+	mulff
+	addF	W 
+	pushf	swidth 
+	pushf	stripewidth 
+	pushif	5 
+	mulff
+	addF	W 
+	addff
+	subff
+	pushf	stripewidth 
+	pushif	5 
+	mulff
+	addF	W 
+	subF	ss 
+	divff
+	fclamp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	divF	W 
+	pushif	1 
+	subff
+	fmax
+	pushif	1 
+	pushif	0 
+	pushf	stripewidth 
+	pushif	4 
+	mulff
+	pushf	swidth 
+	subF	W 
+	addff
+	pushf	stripewidth 
+	pushif	4 
+	mulff
+	addF	W 
+	subff
+	pushf	stripewidth 
+	pushif	4 
+	mulff
+	pushf	swidth 
+	subF	W 
+	addff
+	subF	ss 
+	divff
+	fclamp
+	fclamp
+	pushf	swidth 
+	divF	W 
+	pushif	2 
+	mulff
+	pushif	0 
+	pushif	1 
+	pushif	0 
+	pushf	stripewidth 
+	addF	W 
+	pushf	swidth 
+	pushf	stripewidth 
+	addF	W 
+	addff
+	subff
+	pushf	stripewidth 
+	addF	W 
+	subF	ss 
+	divff
+	fclamp
+	fclamp
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	divF	W 
+	pushif	1 
+	subff
+	fmax
+	pushif	1 
+	pushif	0 
+	pushf	swidth 
+	subF	W 
+	subF	W 
+	pushf	swidth 
+	subF	W 
+	subF	ss 
+	divff
+	fclamp
+	fclamp
+	subff
+	addff
+	subff
+	popf	stripe 
+label 1
+	pushf	stripe 
+	pushc	stripecolor 
+	pushc	Cs 
+	cmix
+	popc	Ct 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	cpCC	Os Oi 
+	pushf	roughness 
+	pushv	I 
+	normalize
+	negv
+	pushv	Nf 
+	specular
+	pushf	Ks 
+	pushc	specularcolor 
+	mulcf
+	mulcc
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	Ct 
+	addcc
+	mulC	Os 
+	popc	Ci 
+	return

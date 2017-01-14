@@ -1,0 +1,9 @@
+MAILTO	westin AT graphics DOT cornell DOT edu	NAME	Email Stephan
+TITLE	SHWShaders	H1	Stephen H. Westin Shaders
+DIR	SHWShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	SHW_brushedmetal	NOTE	An attempt at an anisotropic surface.<P>The surface is idealized as a bed of slightly rough parallel cylinders.   I use Kajiya's Phong-like highlight from a cylinder (SIGGRAPH '89), coupled with an arbitrary shadowing/masking function. Direction of anisotropy (i.e. the axis of the cylinders) is simply the "U" direction of patch parameter. -- Stephen<P>
+DESC	brushed metal (anisotropic)
+DO_LINE
+SHADER	SHW_velvet	NOTE	<i>Feb 01, 2001 --<br>Fixed a bug: due to a sign error, the retroreflective lobe will never be seen. I've fixed that and added a couple of parameters to give more control over the look. Updated the RIB file, too. -- Stephen</i><p>It's kinda sorta based on one of the results in my paper at SIGGRAPH '92. Seems to work both with BMRT and prman 3.6. -- Stephen.<P>
+DESC	a velvet shader
+DO_LINE

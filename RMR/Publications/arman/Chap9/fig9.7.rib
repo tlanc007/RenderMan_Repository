@@ -1,0 +1,121 @@
+#########################################################################
+# fig9.7.rib - RIB to create Figure 9.7 of:
+#
+# _Advanced RenderMan: Creating CGI for Motion Picture_, 
+# by Anthony A. Apodaca and Larry Gritz, Morgan Kaufmann, 1999.
+#
+# This file demostrates the difference between the Oren/Nayar reflection
+# model (output in fig9.7a.tif) and an ordinary diffuse model
+# (fig9.7b.tif).
+#
+#########################################################################
+
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+Option "searchpath" "shader" [".:../shaders:&"]
+Option "searchpath" "archive" [".:../models:&"]
+Format 300 240 1
+PixelSamples 2 2
+ShadingRate 1
+
+FrameBegin 1
+Display "fig9.7a.tif" "file" "rgb"
+Projection "perspective" "fov" [23]
+##CameraOrientation 0 -40 15 0 0 5.75 0 0.225304 0.974288
+ConcatTransform [-1 0 0 0 0 0.225304 0.974288 0 0 0.974288 -0.225304 0 0 0 0 1]
+Translate 0 40 -15 
+WorldBegin
+TransformBegin
+CoordSysTransform "camera"
+# Ambient light
+LightSource "ambientlight" 1 "intensity" [0.01]
+Illuminate 1 1
+# Fill light
+AttributeBegin
+Translate -50 50 -100
+#Rotate -20 0 1 0
+#Rotate 30 1 0 0
+Declare "lighttype" "string"
+LightSource "uberlight" 3 "lighttype" ["omni"] "intensity" [0.075] "__nonspecular" [1] 
+AttributeEnd
+Illuminate 3 1
+# Bounce light
+AttributeBegin
+Translate 0 -20 -100
+LightSource "uberlight" 5 "string lighttype" ["omni"] "intensity" [0.025] "__nonspecular" [1]
+AttributeEnd
+Illuminate 5 1
+TransformEnd
+# Key light
+AttributeBegin
+Rotate 90 -1 0 0
+Translate 0 0 -100
+LightSource "uberlight" 2 "string lighttype" ["omni"] "intensity" [1.1]
+AttributeEnd
+Illuminate 2 1
+AttributeBegin
+Color 1 .3 .05
+Surface "clay" "roughness" [0.5]
+Translate -0.5 0 1
+Scale 3 3 3
+ReadArchive "teapot.rib"
+AttributeEnd
+AttributeBegin
+Color .65 .65 .65
+Surface "constant"
+Sphere 50 -50 50 360
+AttributeEnd
+WorldEnd
+FrameEnd
+
+FrameBegin 2
+Display "fig9.7b.tif" "file" "rgb"
+Projection "perspective" "fov" [23]
+##CameraOrientation 0 -40 15 0 0 5.75 0 0.225304 0.974288
+ConcatTransform [-1 0 0 0 0 0.225304 0.974288 0 0 0.974288 -0.225304 0 0 0 0 1]
+Translate 0 40 -15 
+WorldBegin
+TransformBegin
+CoordSysTransform "camera"
+# Ambient light
+LightSource "ambientlight" 1 "intensity" [0.01]
+Illuminate 1 1
+# Fill light
+AttributeBegin
+Translate -50 50 -100
+#Rotate -20 0 1 0
+#Rotate 30 1 0 0
+Declare "lighttype" "string"
+LightSource "uberlight" 3 "lighttype" ["omni"] "intensity" [0.075] "__nonspecular" [1] 
+AttributeEnd
+Illuminate 3 1
+# Bounce light
+AttributeBegin
+Translate 0 -20 -100
+LightSource "uberlight" 5 "string lighttype" ["omni"] "intensity" [0.025] "__nonspecular" [1]
+AttributeEnd
+Illuminate 5 1
+TransformEnd
+# Key light
+AttributeBegin
+Rotate 90 -1 0 0
+Translate 0 0 -100
+LightSource "uberlight" 2 "string lighttype" ["omni"] "intensity" [1.1]
+AttributeEnd
+Illuminate 2 1
+AttributeBegin
+Color 1 .3 .05
+Surface "clay" "roughness" [0]
+Translate -0.5 0 1
+Scale 3 3 3
+ReadArchive "teapot.rib"
+AttributeEnd
+AttributeBegin
+Color .65 .65 .65
+Surface "constant"
+Sphere 50 -50 50 360
+AttributeEnd
+WorldEnd
+FrameEnd
+

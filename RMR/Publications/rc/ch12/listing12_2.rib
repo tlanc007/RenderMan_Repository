@@ -1,0 +1,96 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+Display "listing12_2.tiff" "file" "rgb"
+Format 256 192 -1
+ShadingRate 1
+LightSource "distantlight" 1
+CropWindow 0 1 0 1
+Projection "perspective"
+Projection "perspective" "fov" [16.414448 ]
+FrameAspectRatio 1.333333
+Identity
+Rotate 0 0 0 1 
+Rotate -3.33847 1 0 0 
+Rotate 0 0 1 0 
+Translate 0 -0.7 6 
+WorldBegin
+Rotate -90 1 0 0 
+ShadingRate 0.5
+TransformBegin
+Translate -0.6 0 0 
+AttributeBegin
+Declare "tmap" "uniform string"
+Surface "mytexture" "tmap" ["grid.tx"]
+Rotate 90 0 0 1 
+TextureCoordinates [ 0 0 1 0 0 0.066667 1 0.066667 ]
+Hyperboloid 0 0 1 0.09 0 0.96 360
+TextureCoordinates [ 0 0.066667 1 0.066667 0 0.133333 1 0.133333 ]
+Hyperboloid 0.09 0 0.96 0.1273 0 0.85 360
+TextureCoordinates [ 0 0.133333 1 0.133333 0 0.2 1 0.2 ]
+Hyperboloid 0.1273 0 0.85 0.1203 0 0.7625 360
+TextureCoordinates [ 0 0.2 1 0.2 0 0.266667 1 0.266667 ]
+Hyperboloid 0.1203 0 0.7625 0.1047 0 0.675 360
+TextureCoordinates [ 0 0.266667 1 0.266667 0 0.333333 1 0.333333 ]
+Hyperboloid 0.1047 0 0.675 0.0935 0 0.5875 360
+TextureCoordinates [ 0 0.333333 1 0.333333 0 0.4 1 0.4 ]
+Hyperboloid 0.0935 0 0.5875 0.0899 0 0.5 360
+TextureCoordinates [ 0 0.4 1 0.4 0 0.466667 1 0.466667 ]
+Hyperboloid 0.0899 0 0.5 0.0982 0 0.4375 360
+TextureCoordinates [ 0 0.466667 1 0.466667 0 0.533333 1 0.533333 ]
+Hyperboloid 0.0982 0 0.4375 0.1236 0 0.3625 360
+TextureCoordinates [ 0 0.533333 1 0.533333 0 0.6 1 0.6 ]
+Hyperboloid 0.1236 0 0.3625 0.1851 0 0.225 360
+TextureCoordinates [ 0 0.6 1 0.6 0 0.666667 1 0.666667 ]
+Hyperboloid 0.1851 0 0.225 0.2281 0 0.0875 360
+TextureCoordinates [ 0 0.666667 1 0.666667 0 0.733333 1 0.733333 ]
+Hyperboloid 0.2281 0 0.0875 0.2383 0 -0.05 360
+TextureCoordinates [ 0 0.733333 1 0.733333 0 0.8 1 0.8 ]
+Hyperboloid 0.2383 0 -0.05 0.2255 0 -0.1625 360
+TextureCoordinates [ 0 0.8 1 0.8 0 0.866667 1 0.866667 ]
+Hyperboloid 0.2255 0 -0.1625 0.1953 0 -0.275 360
+TextureCoordinates [ 0 0.866667 1 0.866667 0 0.933333 1 0.933333 ]
+Hyperboloid 0.1953 0 -0.275 0.1414 0 -0.425 360
+TextureCoordinates [ 0 0.933333 1 0.933333 0 1 1 1 ]
+Hyperboloid 0.1414 0 -0.425 0.1125 0 -0.5 360
+AttributeEnd
+TransformEnd
+TransformBegin
+Translate 0.6 0 0 
+AttributeBegin
+Declare "tmap" "uniform string"
+Surface "mytexture" "tmap" ["grid.tx"]
+Rotate 90 0 0 1 
+TextureCoordinates [ 0 0 1 0 0 0.061121 1 0.061121 ]
+Hyperboloid 0 0 1 0.09 0 0.96 360
+TextureCoordinates [ 0 0.061121 1 0.061121 0 0.133204 1 0.133204 ]
+Hyperboloid 0.09 0 0.96 0.1273 0 0.85 360
+TextureCoordinates [ 0 0.133204 1 0.133204 0 0.187679 1 0.187679 ]
+Hyperboloid 0.1273 0 0.85 0.1203 0 0.7625 360
+TextureCoordinates [ 0 0.187679 1 0.187679 0 0.242837 1 0.242837 ]
+Hyperboloid 0.1203 0 0.7625 0.1047 0 0.675 360
+TextureCoordinates [ 0 0.242837 1 0.242837 0 0.297582 1 0.297582 ]
+Hyperboloid 0.1047 0 0.675 0.0935 0 0.5875 360
+TextureCoordinates [ 0 0.297582 1 0.297582 0 0.35193 1 0.35193 ]
+Hyperboloid 0.0935 0 0.5875 0.0899 0 0.5 360
+TextureCoordinates [ 0 0.35193 1 0.35193 0 0.391057 1 0.391057 ]
+Hyperboloid 0.0899 0 0.5 0.0982 0 0.4375 360
+TextureCoordinates [ 0 0.391057 1 0.391057 0 0.440198 1 0.440198 ]
+Hyperboloid 0.0982 0 0.4375 0.1236 0 0.3625 360
+TextureCoordinates [ 0 0.440198 1 0.440198 0 0.533676 1 0.533676 ]
+Hyperboloid 0.1236 0 0.3625 0.1851 0 0.225 360
+TextureCoordinates [ 0 0.533676 1 0.533676 0 0.623083 1 0.623083 ]
+Hyperboloid 0.1851 0 0.225 0.2281 0 0.0875 360
+TextureCoordinates [ 0 0.623083 1 0.623083 0 0.708648 1 0.708648 ]
+Hyperboloid 0.2281 0 0.0875 0.2383 0 -0.05 360
+TextureCoordinates [ 0 0.708648 1 0.708648 0 0.778915 1 0.778915 ]
+Hyperboloid 0.2383 0 -0.05 0.2255 0 -0.1625 360
+TextureCoordinates [ 0 0.778915 1 0.778915 0 0.851204 1 0.851204 ]
+Hyperboloid 0.2255 0 -0.1625 0.1953 0 -0.275 360
+TextureCoordinates [ 0 0.851204 1 0.851204 0 0.95012 1 0.95012 ]
+Hyperboloid 0.1953 0 -0.275 0.1414 0 -0.425 360
+TextureCoordinates [ 0 0.95012 1 0.95012 0 1 1 1 ]
+Hyperboloid 0.1414 0 -0.425 0.1125 0 -0.5 360
+AttributeEnd
+TransformEnd
+WorldEnd
+

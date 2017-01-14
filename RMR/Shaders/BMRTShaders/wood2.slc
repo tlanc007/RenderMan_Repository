@@ -1,0 +1,152 @@
+surface wood2
+param	float	Ka		1
+param	float	Kd		0.75
+param	float	Ks		0.4
+param	float	roughness		0.1
+param	color	specularcolor		1 1 1
+param	float	ringscale		15
+param	float	txtscale		1
+param	color	lightwood		0 0 0
+param	color	darkwood		0 0 0
+param	float	grainy		1
+local	string	$_str_0 	"shader"
+local	point	PP	0 0 0
+local	point	PQ	0 0 0
+local	normal	Nf	0 0 0
+local	color	Ct	0 0 0
+local	float	r	0
+local	float	r2	0
+local	float	my_t	0
+initcode 7
+	pushiv	0.69 0.44 0.25 
+	popc	lightwood 
+initcode 8
+	pushiv	0.35 0.22 0.08 
+	popc	darkwood 
+initcode 9
+	return
+code
+	return_area
+	pushv	P 
+	pushs	$_str_0 
+	transforms
+	mulFv	txtscale 
+	popv	PP 
+	pushf	ringscale 
+	pushv	PP 
+	zcomp
+	divff
+	popf	my_t 
+	pushv	PP 
+	zcomp
+	pushif	8 
+	pushv	PP 
+	ycomp
+	mulff
+	pushif	8 
+	pushv	PP 
+	xcomp
+	mulff
+	popv	PQ 
+	pushif	16 
+	pushv	PQ 
+	noisev
+	divff
+	addF	my_t 
+	popf	my_t 
+	pushif	12.93 
+	pushv	PP 
+	ycomp
+	addff
+	pushf	my_t 
+	pushv	PP 
+	xcomp
+	popv	PQ 
+	pushv	PQ 
+	noisev
+	mulF	ringscale 
+	popf	r 
+	pushf	r 
+	floor
+	subF	r 
+	popf	r 
+	pushf	r 
+	pushif	0.8 
+	pushif	0.75 
+	smoothstep
+	pushif	1 
+	subff
+	pushf	r 
+	pushif	0.55 
+	pushif	0.2 
+	smoothstep
+	pushif	0.8 
+	mulff
+	mulff
+	pushif	0.2 
+	addff
+	popf	r 
+	pushif	1 
+	pushif	128 
+	pushv	PP 
+	ycomp
+	mulff
+	addff
+	pushif	3 
+	pushif	8 
+	pushv	PP 
+	zcomp
+	mulff
+	subff
+	pushif	5 
+	pushif	128 
+	pushv	PP 
+	xcomp
+	mulff
+	addff
+	popv	PQ 
+	pushf	grainy 
+	pushif	1 
+	subff
+	pushv	PQ 
+	noisev
+	pushif	1.3 
+	subff
+	mulF	grainy 
+	addff
+	popf	r2 
+	pushf	r2 
+	pushf	r2 
+	mulF	r 
+	mulff
+	pushc	darkwood 
+	pushc	lightwood 
+	cmix
+	popc	Ct 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	cpCC	Os Oi 
+	pushf	roughness 
+	pushv	I 
+	normalize
+	negv
+	pushv	Nf 
+	specular
+	pushf	Ks 
+	pushc	specularcolor 
+	mulcf
+	mulcc
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	Ct 
+	addcc
+	mulC	Os 
+	popc	Ci 
+	return

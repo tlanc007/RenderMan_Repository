@@ -1,0 +1,190 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE> LGShaders </TITLE>
+<body bgcolor="white">
+<center>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Some of Larry Gritz Shaders</H1><P>
+<B>(More of Larry's shaders can be found on other pages)<P></B><P>
+</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#LGAntialiasedChecks">LGAntialiasedChecks</A>
+<LI><A HREF="index.html#LGBrick">LGBrick</A>
+<LI><A HREF="index.html#LGBrickBump">LGBrickBump</A>
+<LI><A HREF="index.html#LGbrushedmetal">LGbrushedmetal</A>-- surface for brushed (anisotropic) metal
+<LI><A HREF="index.html#LGEyeBall">LGEyeBall</A>
+<LI><A HREF="index.html#LGGreenMarble">LGGreenMarble</A>
+<LI><A HREF="index.html#LGHexTile">LGHexTile</A>
+<LI><A HREF="index.html#LGOutlet">LGOutlet</A>
+<LI><A HREF="index.html#LG_orennayar">LG_orennayar</A>-- Alternate isotropic lighting model
+<LI><A HREF="index.html#LGParquetPlank">LGParquetPlank</A>
+<LI><A HREF="index.html#LGRustyMetal">LGRustyMetal</A>
+<LI><A HREF="index.html#LGStarfield">LGStarfield</A>
+<LI><A HREF="index.html#LGVeinedMarble">LGVeinedMarble</A>
+<LI><A HREF="index.html#LGWallpaper2Stripe">LGWallpaper2Stripe</A>
+</UL>
+<A HREF="mailto:lg AT larrygritz DOT com">Email Larry</A><P>
+<HR>
+<A NAME="LGAntialiasedChecks"></A>
+<H2>LGAntialiasedChecks.sl</H2><P>
+ 
+<P>
+<A HREF="LGAntialiasedChecks.jpg">
+<IMG SRC=LGAntialiasedChecks_sm.jpg WIDTH=100 HEIGHT=95 CLEAR
+<ALT="LGAntialiasedChecks.jpg"></A>
+<A HREF="LGAntialiasedChecks.sl">LGAntialiasedChecks.sl</A>
+<A HREF="LGAntialiasedChecks.rib">Sample RIB</A>
+<HR>
+<A NAME="LGBrick"></A>
+<H2>LGBrick.sl</H2><P>
+ 
+<P>
+<A HREF="LGBrick.jpg">
+<IMG SRC=LGBrick_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="LGBrick.jpg"></A>
+<A HREF="LGBrick.sl">LGBrick.sl</A>
+<A HREF="LGBrick.rib">Sample RIB</A>
+<HR>
+<A NAME="LGBrickBump"></A>
+<H2>LGBrickBump.sl</H2><P>
+<B>NOTE:</B> This example also uses the LGBrick shader.  As this shader is a displacement shader it can work with other surfaces, too.  <P>When trying this under prman, I noticed some problems with the image.  I have been told that some of the older versions of  prman have problems with displacement shaders.  At this point I am unsure if it is bug in my version of prman (3.4) or if there is a problem with the shader.-- tal<P> 
+<P>
+<A HREF="LGBrickBump.jpg">
+<IMG SRC=LGBrickBump_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="LGBrickBump.jpg"></A>
+<A HREF="LGBrickBump.sl">LGBrickBump.sl</A>
+<A HREF="LGBrickBump.rib">Sample RIB</A>
+<HR>
+<A NAME="LGbrushedmetal"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+LGbrushedmetal.sl</H2><P>
+Makes a brushed metal surface.   The surface is anisotropic, i.e. has different reflection characteristics depending on the direction of the "grain".  <P>NOTE: This neewer version replaces LGbrushed_metal that was here earlier. 
+<P>
+<A HREF="LGbrushedmetal.jpg">
+<IMG SRC=LGbrushedmetal_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="LGbrushedmetal.jpg"></A>
+<A HREF="LGbrushedmetal.sl">LGbrushedmetal.sl</A>
+<A HREF="LGbrushedmetal.rib">Sample RIB</A>
+<HR>
+<A NAME="LGEyeBall"></A>
+<H2>LGEyeBall.sl</H2><P>
+ 
+<P>
+<A HREF="LGEyeBall.jpg">
+<IMG SRC=LGEyeBall_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="LGEyeBall.jpg"></A>
+<A HREF="LGEyeBall.sl">LGEyeBall.sl</A>
+<A HREF="LGEyeBall.rib">Sample RIB</A>
+<HR>
+<A NAME="LGGreenMarble"></A>
+<H2>LGGreenMarble.sl</H2><P>
+ 
+<P>
+<A HREF="LGGreenMarble.jpg">
+<IMG SRC=LGGreenMarble_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="LGGreenMarble.jpg"></A>
+<A HREF="LGGreenMarble.sl">LGGreenMarble.sl</A>
+<A HREF="LGGreenMarble.rib">Sample RIB</A>
+<HR>
+<A NAME="LGHexTile"></A>
+<H2>LGHexTile.sl</H2><P>
+ 
+<P>
+<A HREF="LGHexTile.jpg">
+<IMG SRC=LGHexTile_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="LGHexTile.jpg"></A>
+<A HREF="LGHexTile.sl">LGHexTile.sl</A>
+<A HREF="LGHexTile.rib">Sample RIB</A>
+<HR>
+<A NAME="LGOutlet"></A>
+<H2>LGOutlet.sl</H2><P>
+<B>NOTE:</B> This example also uses the LGWallPaper shader.<P> 
+<P>
+<A HREF="LGOutlet.jpg">
+<IMG SRC=LGOutlet_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="LGOutlet.jpg"></A>
+<A HREF="LGOutlet.sl">LGOutlet.sl</A>
+<A HREF="LGOutlet.rib">Sample RIB</A>
+<HR>
+<A NAME="LG_orennayar"></A>
+<H2>LG_orennayar.sl</H2><P>
+Alternate isotropic lighting model.  Based on Oren & Nayar's model published in SIGGRAPH 1994 Proceedings. 
+<P>
+<A HREF="LG_orennayar.jpg">
+<IMG SRC=LG_orennayar_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="LG_orennayar.jpg"></A>
+<A HREF="LG_orennayar.sl">LG_orennayar.sl</A>
+<A HREF="LG_orennayar.rib">Sample RIB</A>
+<HR>
+<A NAME="LGParquetPlank"></A>
+<H2>LGParquetPlank.sl</H2><P>
+ 
+<P>
+<A HREF="LGParquetPlank.jpg">
+<IMG SRC=LGParquetPlank_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="LGParquetPlank.jpg"></A>
+<A HREF="LGParquetPlank.sl">LGParquetPlank.sl</A>
+<A HREF="LGParquetPlank.rib">Sample RIB</A>
+<HR>
+<A NAME="LGRustyMetal"></A>
+<H2>LGRustyMetal.sl</H2><P>
+ 
+<P>
+<A HREF="LGRustyMetal.jpg">
+<IMG SRC=LGRustyMetal_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="LGRustyMetal.jpg"></A>
+<A HREF="LGRustyMetal.sl">LGRustyMetal.sl</A>
+<A HREF="LGRustyMetal.rib">Sample RIB</A>
+<HR>
+<A NAME="LGStarfield"></A>
+<H2>LGStarfield.sl</H2><P>
+A surface shader for producing stars on a large sphere.  This shader is pretty much used on all of the space examples in the RMR.<P><B>NOTE:</B> A one time this shader was called KMStarfield.  The reason for this was this shader was included with the distribution of the shaders from the <I>Texuring & Modeling</I> book and I was trying to name things in such a way as to easily track where the shaders were available orginally.  Unfortunately, many people didn't bother to read the source to see that this was Larry's shader and wasn't based off of any of Ken Mussgrave's code.  So this is the shaders new name, to give credit where credit is due.<P>  Also, I may have missed some of the references to the old name, so if you find any references to KMStarfield, use LGStarfield instead. 
+<P>
+<A HREF="LGStarfield.jpg">
+<IMG SRC=LGStarfield_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="LGStarfield.jpg"></A>
+<A HREF="LGStarfield.sl">LGStarfield.sl</A>
+<A HREF="LGStarfield.rib">Sample RIB</A>
+<HR>
+<A NAME="LGVeinedMarble"></A>
+<H2>LGVeinedMarble.sl</H2><P>
+ 
+<P>
+<A HREF="LGVeinedMarble.jpg">
+<IMG SRC=LGVeinedMarble_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="LGVeinedMarble.jpg"></A>
+<A HREF="LGVeinedMarble.sl">LGVeinedMarble.sl</A>
+<A HREF="LGVeinedMarble.rib">Sample RIB</A>
+<HR>
+<A NAME="LGWallpaper2Stripe"></A>
+<H2>LGWallpaper2Stripe.sl</H2><P>
+ 
+<P>
+<A HREF="LGWallpaper2Stripe.jpg">
+<IMG SRC=LGWallpaper2Stripe_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="LGWallpaper2Stripe.jpg"></A>
+<A HREF="LGWallpaper2Stripe.sl">LGWallpaper2Stripe.sl</A>
+<A HREF="LGWallpaper2Stripe.rib">Sample RIB</A>
+<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:tal AT renderman DOT org">tal AT renderman DOT org</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org ">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

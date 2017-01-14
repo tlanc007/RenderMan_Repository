@@ -1,0 +1,7 @@
+MAILTO	summers@stsci.edu	NAME	Email Frank Summers
+TITLE	FSShaders	H1	Frank Summers Shaders
+DIR	FSShaders	PIC	100	100
+NEW
+SHADER	fjs_fisheyelens	NOTE	Simple fisheye lens shader.  Uses near clip-plane and raytracing (trace function).<p>Usage:<p> User must define a square polygon just beyond the near clip-plane distance. Generally, this polygon fills the entire viewing frustrum.<p>This shader is applied to the polygon and the user should specify the polygon placement and the maximum angle of the lens.<p> The result is a circular lensed image on the square polygon, with black corners. The angular distribution is like polar graph paper, with angle increasing linearly with distance from the center.<pre><p>   Corners of polygon are assumed to be (in camera space):<p>       [ scale,  scale, zdistance]<p>       [-scale,  scale, zdistance]<p>       [-scale, -scale, zdistance]<p>       [ scale, -scale, zdistance]</pre><p> See shader for more description.<p><IMG SRC=no_lens.jpg WIDTH=100 HEIGHT=100 CLEAR <ALT="no_lens.tiff">  </A><A HREF="no_lens.rib">no_lens.rib</A>
+DESC	fisheye lens shader.
+DO_LINE

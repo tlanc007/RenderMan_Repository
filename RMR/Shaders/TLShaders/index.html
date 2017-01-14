@@ -1,0 +1,258 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE> TLShaders </TITLE>
+<body bgcolor="white">
+<center>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Tal Lancaster Shaders</H1><P>
+</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#TLTerranNwhite">TLTerranNwhite</A>-- a earth like surface.
+<LI><A HREF="index.html#TLSaturn">TLSaturn</A>-- a Saturn like surface.
+<LI><A HREF="index.html#TLRing">TLRing</A>-- Rings for a ringed planet.
+<LI><A HREF="index.html#TLSpaceCloud">TLSpaceCloud</A>-- Rings for a ringed planet.
+<LI><A HREF="index.html#TLShiftedMoonTile">TLShiftedMoonTile</A>-- Tiled Cresent Moons.
+<LI><A HREF="index.html#TLShiftedD_RTile">TLShiftedD_RTile</A>-- Tiled Disks.
+<LI><A HREF="index.html#TLblocker1spotlight">TLblocker1spotlight</A>-- texture-map light blocker
+<LI><A HREF="index.html#TLstarBlockerspotlight">TLstarBlockerspotlight</A>-- procedural light blocker
+<LI><A HREF="index.html#TL_rglass">TL_rglass</A>-- prman reflect, refract.
+<LI><A HREF="index.html#TLOrange">TLOrange</A>-- Orange (bump surface).
+<LI><A HREF="index.html#TLd_cell1">TLd_cell1</A>-- sample Vornoi cell displacement
+<LI><A HREF="index.html#TLpplastic">TLpplastic</A>-- paintedplastic with s/t inverse flags.
+<LI><A HREF="index.html#TLSmoke">TLSmoke</A>-- Smoke (volume).
+<LI><A HREF="index.html#TLSkymetal">TLSkymetal</A>-- sort of chrome.
+<LI><A HREF="index.html#l_uber">l_uber</A>-- uberlight with slim controls.
+<LI><A HREF="index.html#s_pplastic">s_pplastic</A>-- PRMan paintedplastic with slim encodings
+<LI><A HREF="index.html#TLFresnelPlastic">TLFresnelPlastic</A>-- fresnel example
+<LI><A HREF="index.html#TLconstantMap">TLconstantMap</A>-- flat color shader
+</UL>
+<HR>
+<H1><IMG SRC="../../Pics/redball.gif" ALT="">
+<A NAME="Planets"></A>Planets
+</H1>
+<A NAME="TLTerranNwhite"></A>
+<H2>TLTerranNwhite.sl</H2><P>
+This is an alternative to the <A HREF="../KMShaders/index.html#KMTerran">KMTerran.sl</A> shader.  Really the only difference is in the colormap, which I removed white from the color spline.  The result is that ice isn't produced at the polar caps, nor for altitudes.  This is the shader used in 
+<A HREF="../../rmShowAndTell.htmld/index.html#Terran">Terran</A>
+animation.
+<P>
+<A HREF="TLTerranNwhite.jpg">
+<IMG SRC=TLTerranNwhite_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="TLTerranNwhite.jpg"></A>
+<A HREF="TLTerranNwhite.sl">TLTerranNwhite.sl</A>
+<A HREF="TLTerranNwhite.rib">Sample RIB</A>
+<HR>
+<A NAME="TLSaturn"></A>
+<H2>TLSaturn.sl</H2><P>
+This is the shader used in my 
+<A HREF="../../rmShowAndTell.htmld/index.html#Saturn">Saturn</A>
+animation.
+<P>
+<A HREF="TLSaturn.jpg">
+<IMG SRC=TLSaturn_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="TLSaturn.jpg"></A>
+<A HREF="TLSaturn.sl">TLSaturn.sl</A>
+<A HREF="TLSaturn.rib">Sample RIB</A>
+<A HREF="TLSaturn.slo">TLSaturn.slo</A>
+<HR>
+<A NAME="TLRing"></A>
+<H2>TLRing.sl</H2><P>
+This is the shader used in my 
+<A HREF="../../rmShowAndTell.htmld/index.html#Saturn">Saturn</A>
+animation.
+<P>
+<A HREF="TLRing.jpg">
+<IMG SRC=TLRing_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="TLRing.jpg"></A>
+<A HREF="TLRing.sl">TLRing.sl</A>
+<A HREF="TLRing.rib">Sample RIB</A>
+<A HREF="TLRing.slo">TLRing.slo</A>
+<HR>
+<H1><IMG SRC="../../Pics/redball.gif" ALT="">
+<A NAME="Misc Space Stuff"></A>Misc Space Stuff
+</H1>
+<A NAME="TLSpaceCloud"></A>
+<H2>TLSpaceCloud.sl</H2><P>
+This is the shader used in my 
+<A HREF="../../rmShowAndTell.htmld/index.html#Nebula">Nebula</A>
+animation.  <B>This shader requires the use of a texture-map.  More information can be found at the Nebula animation section</B>.
+<P>
+<A HREF="TLSpaceCloud.jpg">
+<IMG SRC=TLSpaceCloud_sm.jpg WIDTH=100 HEIGHT=73 CLEAR
+<ALT="TLSpaceCloud.jpg"></A>
+<A HREF="TLSpaceCloud.sl">TLSpaceCloud.sl</A>
+<A HREF="TLSpaceCloud.rib">Sample RIB</A>
+<HR>
+<H1><IMG SRC="../../Pics/redball.gif" ALT="">
+<A NAME="Tiles"></A>Tiles
+</H1>
+<A NAME="TLShiftedMoonTile"></A>
+<H2>TLShiftedMoonTile.sl</H2><P>
+This is the shader used in my 
+<A HREF="../../rmShowAndTell.htmld/index.html#Bounce1">Bounce1</A>
+animation.
+<P>
+<A HREF="TLShiftedMoonTile.jpg">
+<IMG SRC=TLShiftedMoonTile_sm.jpg WIDTH=100 HEIGHT=95 CLEAR
+<ALT="TLShiftedMoonTile.jpg"></A>
+<A HREF="TLShiftedMoonTile.sl">TLShiftedMoonTile.sl</A>
+<A HREF="TLShiftedMoonTile.rib">Sample RIB</A>
+<HR>
+<A NAME="TLShiftedD_RTile"></A>
+<H2>TLShiftedD_RTile.sl</H2><P>
+This is the shader used in my 
+<A HREF="../../rmShowAndTell.htmld/index.html#Bounce2">Bounce2</A>
+animation.
+<P>
+<A HREF="TLShiftedD_RTile.jpg">
+<IMG SRC=TLShiftedD_RTile_sm.jpg WIDTH=100 HEIGHT=95 CLEAR
+<ALT="TLShiftedD_RTile.jpg"></A>
+<A HREF="TLShiftedD_RTile.sl">TLShiftedD_RTile.sl</A>
+<A HREF="TLShiftedD_RTile.rib">Sample RIB</A>
+<HR>
+<H1><IMG SRC="../../Pics/redball.gif" ALT="">
+<A NAME="Blockers"></A>Blockers
+</H1>
+<A NAME="TLblocker1spotlight"></A>
+<H2>TLblocker1spotlight.sl</H2><P>
+Examples of this shader can be found on the 
+<A HREF="../../rmBlockers/index.html#Tmap">Light Blockers</A>
+page.  This light blocker requires a texture-map to work.
+<P>
+<A HREF="TLblocker1spotlight.jpg">
+<IMG SRC=TLblocker1spotlight_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="TLblocker1spotlight.jpg"></A>
+<A HREF="TLblocker1spotlight.sl">TLblocker1spotlight.sl</A>
+<A HREF="TLblocker1spotlight.slo">TLblocker1spotlight.slo</A>
+<HR>
+<A NAME="TLstarBlockerspotlight"></A>
+<H2>TLstarBlockerspotlight.sl</H2><P>
+Examples of this shader can be found on the 
+<A HREF="../../rmBlockers/index.html#Procedural">Light Blockers</A>
+page.  This light blocker is a procedural version.
+<P>
+<A HREF="TLstarBlockerspotlight.jpg">
+<IMG SRC=TLstarBlockerspotlight_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="TLstarBlockerspotlight.jpg"></A>
+<A HREF="TLstarBlockerspotlight.sl">TLstarBlockerspotlight.sl</A>
+<HR>
+<H1><IMG SRC="../../Pics/redball.gif" ALT="">
+<A NAME="Misc"></A>Misc
+</H1>
+<A NAME="TL_rglass"></A>
+<H2>TL_rglass.sl</H2><P>
+Example shader showing typical use of refraction(), reflection(), under prman.  The example RIB will generate the environment map and then render the image.  A more detailed example of these functions can be found at: ___ 
+<P>
+<A HREF="TL_rglass.jpg">
+<IMG SRC=TL_rglass_sm.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="TL_rglass.jpg"></A>
+<A HREF="TL_rglass.sl">TL_rglass.sl</A>
+<A HREF="TL_rglass.rib">Sample RIB</A>
+<HR>
+<A NAME="TLOrange"></A>
+<H2>TLOrange.sl</H2><P>
+This is the shader used in my 
+<A HREF="../../rmShowAndTell.htmld/index.html#Orange">Orange in Fog.</A>
+
+<P>
+<A HREF="TLOrange.sl">TLOrange.sl</A>
+<HR>
+<A NAME="TLd_cell1"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+TLd_cell1.sl</H2><P>
+Sample displacement shader using Vornoni cell noise.  This shader makes use of <b><a href="http://www.bmrt.org/arman/shaders/noises.h">noises.h</a></b> from the <a href="http://www.bmrt.org/arman/">Advanced RenderMan</a> book.  This shader has an output variable, <b>VoroVal</b> that can be used by a surface shader to do things like fill in the cracks with an alternate color. <a href="TLd_cell1.slim">TLd_cell1.slim</a><p> This shader is from my "Gazebo project" which I will upload when it is completed. 
+<P>
+<A HREF="TLd_cell1.sl">TLd_cell1.sl</A>
+<A HREF="TLd_cell1.rib">Sample RIB</A>
+<HR>
+<A NAME="TLpplastic"></A>
+<H2>TLpplastic.sl</H2><P>
+This is the RC paintedplastic, but with 2 parameters to flip s/t coordinates.  This is used in the <A HREF="#TL_rglass">TL_rglass</A> shader. 
+<P>
+<A HREF="TLpplastic.sl">TLpplastic.sl</A>
+<HR>
+<A NAME="TLSmoke"></A>
+<H2>TLSmoke.sl</H2><P>
+This is the shader used in my 
+<A HREF="../../rmShowAndTell.htmld/index.html#Orange">Orange in Fog.</A>
+
+<P>
+<A HREF="TLSmoke.sl">TLSmoke.sl</A>
+<HR>
+<A NAME="TLSkymetal"></A>
+<H2>TLSkymetal.sl</H2><P>
+A procedural chome-like shader.   The results many not be super exciting, but the source is very instructional of something to do when passing in a point into a shader.<P>This is a generalized version of  <A HREF="../SIG91/index.html#Sig91_skymetal">Sig91_skymetal.sl</A>.  Also this shader contains explainations for the various tramsform gyrations.<P>This shader will work with older renderer's that didn't have support for the &quot;<I>vector</I>&quot; type.  But first a setting will need to be set in the shader, before it is compiled.  More information can be found in the shader source.<P><A HREF="../TLShaders/torus.mov"><IMG SRC=torus.jpg  WIDTH=100 HEIGHT=100 BORDER=3></A>  (137K, 29 (384x256) frame MOV animation). The RIB can be found <A HREF="torus.rib">here</A> (40k). 
+<P>
+<A HREF="TLSkymetal.jpg">
+<IMG SRC=TLSkymetal_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="TLSkymetal.jpg"></A>
+<A HREF="TLSkymetal.sl">TLSkymetal.sl</A>
+<A HREF="TLSkymetal.rib">Sample RIB</A>
+<HR>
+<A NAME="l_uber"></A>
+<H2>l_uber.sl</H2><P>
+A modified version of <a href="../BMRTShaders/index.html#uberlight">uberlight</a>.  This version has slim parameter encodings used by <a href="/RMR/Utils/sl2slim/index.html">sl2slim</a>.  These slim encodings hooks up the shader nicely to Maya/MtoR.<p>Note: in order to quickly tie the shader to Maya's barndoor controls, I created another function to tie to instead of the super-elipse code.  Which means one can really mess stuff up if both the super elipse and barn door parameters are used.  Ideally, it would be better to just make the super-elipse work with Maya's barndoor controls.  <a href="l_uber.slim">l_uber.slim</a><p><img src="../../Pics/new.jpg">l_uber now supports PRMan softshadows.  To get this when building the shader make sure <b>USE_PRMAN_SOFTS</b> is defined.  <p>l_uber now has support for pointlight shadows.  To get this when building the shader make sure <b>USE_POINT_SHADOW</b> is defined.<p><a href="uberpoint/point.jpg"><img src=uberpoint/point_sm.jpg WIDTH 100 HEIGHT=75 CLEAR <alt=""uberpoint/point.jpg"></a> <a href="uberpoint.tgz">uberpoint.tgz</a> contains the example RIB to build up the shadows and render the image. (You will still need to grab <a href="l_uber.sl">l_uber.sl</a>. 
+<P>
+<A HREF="l_uber.jpg">
+<IMG SRC=l_uber_sm.jpg WIDTH=100 HEIGHT=76 CLEAR
+<ALT="l_uber.jpg"></A>
+<A HREF="l_uber.sl">l_uber.sl</A>
+<A HREF="l_uber.rib">Sample RIB</A>
+<A HREF="l_uber.slo">l_uber.slo</A>
+<HR>
+<A NAME="s_pplastic"></A>
+<H2>s_pplastic.sl</H2><P>
+A modified version of the PRMan <b>paintedplastic</b>. with sl2slim encodings.   <a href="s_pplastic.slim">s_pplastic.slim</a> 
+<P>
+<A HREF="s_pplastic.jpg">
+<IMG SRC=s_pplastic_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="s_pplastic.jpg"></A>
+<A HREF="s_pplastic.sl">s_pplastic.sl</A>
+<A HREF="s_pplastic.rib">Sample RIB</A>
+<A HREF="s_pplastic.slo">s_pplastic.slo</A>
+<HR>
+<A NAME="TLFresnelPlastic"></A>
+<H2>TLFresnelPlastic.sl</H2><P>
+Example shader using <b>fresnel</b> using plastic lighting.  Notice how with very little effort the fresnel can give a nice backlighting effect and help the image fit into the background.  This shader has <a href="/RMR/Utils/sl2slim/index.html">sl2slim</a> encodings.  This shader is used in the 
+<A HREF="../../Examples/rrf/index.html#fresnel">Fresnel</A>
+example.<p>  The example RIB also uses: <a href="#TLconstantMap">TLconstantMap.sl</a>, <a href="#l_uber">l_uber.sl</a>, and <a href="../../rmTMaps.htmld/index.html#bludGrid">blueGrid</a>.  <p>This shader make use of the <b>reflections.h</b>, <b>filterwidth.h</b>, <b>raysphere.h</b> header files from the <a href="http://www.bmrt.org/arman/arman-shaders.tar.gz">Advanced RenderMan Book</a>.  You will need these to compile the shader.
+<P>
+<A HREF="TLFresnelPlastic.jpg">
+<IMG SRC=TLFresnelPlastic_sm.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="TLFresnelPlastic.jpg"></A>
+<A HREF="TLFresnelPlastic.sl">TLFresnelPlastic.sl</A>
+<A HREF="TLFresnelPlastic.rib">Sample RIB</A>
+<HR>
+<A NAME="TLconstantMap"></A>
+<H2>TLconstantMap.sl</H2><P>
+Shader gives just a flat color (or colors if a color map is provided) and ignores any lighting. 
+<P>
+<A HREF="TLconstantMap.jpg">
+<IMG SRC=TLconstantMap_sm.jpg WIDTH=100 HEIGHT=67 CLEAR
+<ALT="TLconstantMap.jpg"></A>
+<A HREF="TLconstantMap.sl">TLconstantMap.sl</A>
+<A HREF="TLconstantMap.rib">Sample RIB</A>
+<A HREF="TLconstantMap.slo">TLconstantMap.slo</A>
+<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:tal AT renderman DOT org">tal AT renderman DOT org</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../AMShaders/index.html">AMShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../GNShaders/index.html">GNShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../PSShaders/index.html">PSShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../RudyCShaders/index.html">RudyCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

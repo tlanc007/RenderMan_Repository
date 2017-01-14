@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE>rmShaderWWNotes</TITLE>
+<LINK HREF="../rmShaders.htmld/index.html" REL="Parent" TITLE="rmShaders">
+<LINK HREF="../Shaders/Shaders/KMShaders.htmld/index.html" REL="Sibling" TITLE="KMShaders">
+<LINK HREF="../Shaders/Shaders/BMRTShaders.htmld/index.html" REL="Sibling" TITLE="BMRTShaders">
+<LINK HREF="../Shaders/Shaders/WWLGShaders.htmld/index.html" REL="Sibling" TITLE="WWShaders">
+<LINK HREF="../Shaders/Shaders/TLShaders.htmld/index.html" REL="Sibling" TITLE="TLShaders">
+<LINK HREF="../Shaders/Shaders/DPShaders.htmld/index.html" REL="Sibling" TITLE="DPShaders">
+<LINK HREF="../Shaders/Shaders/RCShaders.htmld/index.html" REL="Sibling" TITLE="RCShaders">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+ </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+<CENTER><H2><P>
+Some Thoughts on Shaders</H2><H6><P>
+</H6><I>(This is an excerpt from documentation from WavesWorld --WavesWorld/Source/Shaders/README.  Copied with Permission)</I><H6><P>
+</CENTER><P>
+
+<HR>
+<P>
+</H6>Some notes on shaders:<P>
+<P>
+<P>
+Shaders are what make <a href="#pixarTM">RenderMan®</a> renderers different and so much cooler (i.e. powerful and flexible) than other renderers.  Unfortunately, while writing shaders is not really hard, getting to the point where you can write shaders *is* difficult.  You don't quite have to have the equivalent of a MS in Computer Graphics to do it, but it gets close.  A real short cut to learning how to write shaders, though, is access to good shader source code.  For a long time, the only source of shader source code was the examples in the <a href="#pixarTM">RenderMan®</a> Companion.  These are nice, but it's not clear (a priori) if these are &quot;toy&quot; examples, and also, it's always nice to see how a bunch of different people do similar things.<P>
+<P>
+In the past few months, though, this paucity of shader source has started to change.  With the advent of Larry Gritz's shareware <a href="#pixarTM">RenderMan®</a> compliant rendering toolkit, the &quot;Blue Moon Rendering Tools&quot;, and the release of the book &quot;Texturing and Modeling: a Procedural Approach&quot;, which cleaned up information from a few SIGGRAPH courses and made it generally available, there is now a ready source of lots of shader code to start hacking with.  <P>
+<P>
+Wannabe graphics hackers using NEXTSTEP have a great leg up here, since you've now got the best of both worlds; the superior tools and enviroment of NEXTSTEP to play, and now a wider market for you to share your work (i.e. other UNIX boxes can now compile and run your shader code using the Blue Moon tools).<P>
+<P>
+I've gathered together a large amount of shader source code here in one place to use as a starting point from which WavesWorld hackers can draw from.  Feel free to use the code in here, but make sure you prominently mention who wrote the shader you started with; it's only good manners, especially since no one writes a shader from scratch (at least no one I know).<P>
+<P>
+An important note on naming: shader name space, especially when you have lots of them, can get very cluttered (i.e. plastic1, myPlastic, brick, glass, grid, etc.)  One partial solution to this is to write more and more general shaders and shove the namespace problem on to the parameters; i.e. you have more and more parameters on the shaders, cutting down on the number of shaders because you have 5 that do the work formerly done by 30, but that's only a partial solution, especially when you just need to bang one out...  The other problem is that there are certain problems (tiles, bricks, wallpaper, metals, etc.) that different people approach slightly differently. When both solutions are good (sometime for different problems; one might be better, but runs slower, etc.), and you want to keep both around.<P>
+<P>
+To combat this, I've tried to use consistent prefixes that correspond to the original source of the shader: DP for Darwyn Peachey, LG for Larry Gritz, BM for ones Larry distributes with the Blue Moon Rendering Tools, KM for Ken Musgrave, RC or <a href="#pixarTM">RenderMan®</a> Companion, etc.  <P>
+<P>
+This seems like a reasonable solution. A better one would also encompass some sort of &quot;dictionary&quot; for shader names and parameters, but that will have to wait until we have a critical mass of people on the net who want to share shaders.  I'llbe happy when we get to the point of having this problem...<P>
+<H6><P>
+
+<HR>
+</H6><I>(Editor's note: The following appears at the end of the above file.   Although it appears very specific to WavesWorld.  I decieded to keep it: A. for completeness and B. As a soundboard to get people thinking of a good way to solve this.)<P>
+</I><H6><P>
+</H6>Compiling these shaders:<P>
+<P>
+In my environment, I have both Larry Gritz's Blue Moon Rendering Tools installed and the normal <a href="#pixarTM">RenderMan®</a> distribution that comes with NEXTSTEP.  Larry purposely uses a different suffix (.so vs. prman's .slo) for shaders compiled with his shader compiler.  This has the happy circumstance of easily allowing both shaders to coexist in the same directory.  Unfortunately, I couldn't come up with a standard Makefile that I was happy with that, with a run-time flag, could switch rules and generate compile shaders with both shader compilers.  I'm hoping someone will read this and send me one, actually :-).  In the meantime, I wrote a stupid little shell script which compiles them all and moves the shader object code into /LocalLibrary/Shaders, where they belong.  All you have to do is type &quot;./doIt&quot; in this directory and it will go and compile all the shader source.  It's a lame-o method, I know, but I've got bigger fish to fry, and if it bothers you that much, send me a better fix; maybe I'll use it.<P>
+<P>
+<P>
+- wave<P>
+<P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="../rmShaders.htmld/index.html">rmShaders</A>]
+
+<DT>See Also (Siblings):</DT><DD>
+
+[<A HREF="../Shaders/Shaders/KMShaders.htmld/index.html">KMShaders</A>]
+
+[<A HREF="../Shaders/Shaders/BMRTShaders.htmld/index.html">BMRTShaders</A>]
+
+[<A HREF="../Shaders/Shaders/WWLGShaders.htmld/index.html">WWShaders</A>]
+
+[<A HREF="../Shaders/Shaders/TLShaders.htmld/index.html">TLShaders</A>]
+
+[<A HREF="../Shaders/Shaders/DPShaders.htmld/index.html">DPShaders</A>]
+
+[<A HREF="../Shaders/Shaders/RCShaders.htmld/index.html">RCShaders</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rmShaderWWNotes</A> was converted on Sat Feb 17 19:08:26 PST 1996 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+
+</BODY>
+</HTML>

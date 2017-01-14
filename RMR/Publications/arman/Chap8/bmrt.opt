@@ -1,0 +1,18 @@
+#########################################################################
+# bmrt.opt - RIB options for rendering with BMRT for examples from:
+#
+# _Advanced RenderMan: Creating CGI for Motion Picture_, 
+# by Anthony A. Apodaca and Larry Gritz, Morgan Kaufmann, 1999.
+#
+# This file should be read prior to running examples with BMRT.
+# For example, to render fig8.1.rib, you should type:
+#	rendrib bmrt.opt fig8.1.rib 
+#########################################################################
+
+
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+Option "searchpath" "shader" [".:shaders:../shaders:&"]
+Option "searchpath" "archive" [".:models:../models:&"]
+Option "searchpath" "texture" [".:tifftexture:../tifftexture:&"]

@@ -1,0 +1,262 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<STYLE type="text/css">
+</STYLE>
+<STYLE>
+.ExampleStyle{
+position:	absolute;
+visibility:	hidden;
+top:		300;
+left:		400;
+}
+
+.BodyStyle{
+position:	relative;
+visibility:	visible;
+font-size:	large;
+font-family:    helvetica;
+text-align:	center;
+}
+</STYLE>
+<META NAME = "description"
+      CONTENT = "Tons of RenderMan information and examples"
+<META NAME = "Keywords"
+      CONTENT = "RenderMan, Shaders, RIB, Examples, Animation, Binding, Source, Books, Modelers, Texture-maps, Procedural, Utilities, FAQ, prman, BMRT">
+
+
+
+<TITLE>RenderMan® Repository Top</TITLE>
+</HEAD>
+<BODY bgcolor="#ffffff">
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan® Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Publications/index.html">Pubs</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+<td><a CLASS="none" href="/twiki/bin/view/RenderManRepository/WebHome">Twiki</a></td> </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+
+<P></P>
+<img src="/RMR/rmr_nav.jpg" border=0 usemap="#RMR_NAV">
+
+<CENTER>
+<H3>
+<P><B>A central resource for subjects related to <a href="#pixarTM">RenderMan®</a>.</B></P>
+</H3>
+<P></P>
+</CENTER>
+<P></P>
+<H3></H3>
+<P></P>
+<H4></H4>
+<H3><A HREF="/RMR/rmNew.html">What's New?</A> (12 December 2004)</H3>
+<P></P>
+
+<P>
+<H4>What's on this page?</H4></P>
+<UL>
+<LI><A HREF="/RMR/index.html#what">What is RenderMan?</A>
+<LI><A HREF="/RMR/index.html#RIBhistory">History of RIB</A>
+<LI><A HREF="/RMR/index.html#mail">Mail Notice</A>
+<LI><A HREF="/RMR/index.html#whatsHere">What's here?</A>
+<LI><blink><A HREF="/RMR/index.html#Announce">Newsworthy</A></blink>
+<LI><A HREF="/RMR/index.html#otherLinks">OtherLinks</A>
+<LI><A HREF="/RMR/index.html#Policy">Policy</A>
+</UL>
+<P></P>
+<HR>
+<P><A NAME="what"></A></P>
+<H2>What is <a href="#pixarTM">RenderMan®</a>?</H2>
+There are a lot of people when you hear them talking about RenderMan and how great the images are from it, etc.  They are most likely really talking about <a href="https://renderman.pixar.com/products/whatsrenderman/index.htm">Pixar's PhotoRealistic RenderMan®</a> (<b>PRMan</b>).
+<p>
+RenderMan is actually a technical specification for interfacing between modeling and rendering programs.  From 1998 until 2000 the published RenderMan Interface Specification was known as <a href="https://renderman.pixar.com/products/rispec/rispec_3_1/index.html">Version 3.1</a>. In 2000 Pixar published a new specification, <a href="https://renderman.pixar.com/products/rispec/rispec_pdf/RISpec3_2.pdf">Version 3.2</a>. <i>Coming soon Version 3.3</i>
+<p>
+For a renderer to be a considered a RenderMan compliant renderer it must meet all of the standard requirements laid out in the spec. There are some more things that are needed, too, which are mentioned in the Usenet: comp.graphics.rendering.renderman <a href="http://www.faqs.org/faqs/graphics/renderman-faq/">FAQ</a>.
+<p>
+So the reasons for this confusion between RenderMan the spec and PRMan the renderer are:
+<pre>
+  1. Pixar publishes and owns the RenderMan Interface Specification
+  2. RenderMan is a registered trademark of Pixar.
+  3. Pixar had the first implementation (PRMan).
+  4. PRMan has been used in a <i>lot</i> of <a href="https://renderman.pixar.com/products/whatsrenderman/movies.html">movies</a>.
+  5. Not only was PRMan the first implementation of the RenderMan 
+     Specification, it was for many years the only implementation. 
+</pre> 
+So many people just blur the lines between the specification and a particular implementation and call it RenderMan.  Many of these same people also think that because of some of the ways that Pixar implemented the specification that this are the only ways that a RenderMan renderer can be done.  Whereas these are in fact only implementation choices.<p>
+One example of this is that PRMan makes use of the Reyes scanline algorithm.  So many assume that RenderMan renderers can only use Reyes or some scanline rendering implementation.  Whereas this became moot when BMRT arrived which was the first publicly available RenderMan compliant raytracer.
+<p>
+So now you know better.
+<p>
+<HR width=50%>
+For more information check out the section &quot<b>Q: What is "RenderMan?&quot</b>"<A HREF="http://www.faqs.org/faqs/graphics/renderman-faq/">FAQ</A>
+ for the usenet group <I>comp.graphics.rendering.renderman</I>, maintained by 
+<A HREF="mailto:lg AT larrygritz DOT com">Larry Gritz</A>.  Namely, <P>
+Also, reading the <B>FAQ</B> is a good way to make your posts to the RenderMan Newsgroup (<A HREF="news:comp.graphics.rendering.renderman">news:comp.graphics.rendering.renderman</A>) be more intelligent and less annoying to us old timers on the newsgroup.  There is nothing more annoying (well, ok Spammers are much worse), then questions like <I>"Where can I get RenderMan?"  "Are there any good RenderMan books?"</I>  To which the answers are easily found, in the <B>FAQ</B> or a few minutes, from a WEB or newsgroup search.</P>
+<P></P>
+<HR width=50%>
+<H2><A NAME="RIBhistory">RIB History</A></H2>
+<p>
+RenderMan Interface Bytestream (RIB), very simply, is the file format used to pass scene information (model data, lights, camera, shaders, attributes, and options) to a RenderMan renderer to control image that it will render.
+
+At the 2003 SIGGRAPH, Dana Batali (Director or RenderMan Product Development at Pixar) shared an interesting <a href="pics/ribtimeline.jpg">historical slide</a> showing some of the major milestones on evolution of RIB. (which has been around publicly for 15+ years)
+<HR>
+<P><A NAME="mail"></A></P>
+<H2>Email Addresses Notice</H2>
+All of the email addresses here in the RMR are encoded to make it more difficult for harvesting.  When clicking on an email link you will need to manually adjust the address to make it legal again.
+<HR>
+<A NAME="whatsHere"></A>
+<H2>What's here (or what will be here)?</H2>
+<P></P>
+<P>The purpose of this Repository is to help spread the lore of <a href="#pixarTM">RenderMan®</a>.</P>
+<P><B>The RMR consists of about 75 HTML pages, 200 Megs of data and around 150 shaders at last count.  Plus there of dozens of <A HREF="/RMR/OtherLinks/index.html">links</A> to various other RenderMan related sites.</B>  This year 2004 the RMR celebrates its 8 year anniversary. </P>
+<P>This site is your site too, so don't be just a lurker. If you have
+something to share, by all means feel free to do so. This site will become
+only as good as you help make it.</P>
+<P></P>
+<P>Don't feel you have to have finished work either. I have been considering
+building a &quot;Work in Progress&quot; section, for code that doesn't produce
+the desired results or are wondering if there is a better way of doing it.
+</P>
+<P>OF NOTE:  I use <b>Pixar's PRMan</b> Linux.  So if information seems slanted, it is because this is what I use on a daily basis.</P>
+
+<HR width=50%>
+<P><A NAME="Announce"></A></P>
+<H2><blink>Newsworthy</blink></H2>
+<H4>Newsworthy events and announcements</H4>
+<i>So anybody got anything newsworthy?</i>
+<p>
+<p>
+<IMG SRC="/RMR/Pics/redball.gif"><b><a href="https://renderman.pixar.com/products/news/rps12.0_announced.html">Pixar announces RenderMan Pro 12</a></b> (06/03/04)<br>
+Pixar's RenderMan® Pro Server Release 12 is entering beta now, with the final release expected Q3, 2004.<p>
+Highlights from Pixar's RenderMan® Pro Server Release 12:
+<pre>
+<H4>Major Features</h4>
+    * <b>3D Baking </b>
+          o The point cloud file format has been extended to support
+            arbitrary data, and Pixar's innovative format, the brick map,
+            supports data of arbitrary size. Together, any kind of data
+            can be baked to disk and then retrieved with great efficiency. 
+          o New point cloud filtering tools support the computation of
+            subsurface scattering and open the door to many special
+            effects and optimizations. 
+    * <b>Improved Volume Rendering</b>
+          o Volume effects, like fire, smoke, and haze, can now be
+            created within arbitrary shapes.
+          o Tricky atmospheric effects, like smoke obscuring moving
+            mirrors, are now made possible by decoupling the computation
+            of the atmosphere from the traditional shading positions.
+<h4>Performance Optimizations</h4>
+    * <b>Significant Memory Reductions</b>
+          o Aggressive optimizations have reduced memory requirements up
+            to 30% for large scenes.
+    * <b>Geometry improvements</b>
+          o The Loop subdivision scheme is now supported. Loop
+            subdivision surfaces are optimized for triangular meshes and
+            henceforth is the recommended representation for meshes used
+            typically to represent cloth and fluid simulations.
+          o The Catmull-Clark scheme has also been optimized resulting
+            in significant memory reductions. Catmull-Clark remains the
+            recommended representation for characters and other meshes
+            comprised of facets with 4 or more sides. 
+          o Dense polygon meshes render much more efficiently.
+<h4>General Enhancements</h4>
+    * <b>Shading Language Improvements</b>
+          o Forward Message Passing allows shaders to send arguments to
+            downstream shaders prior to their execution. 
+          o Support for Varying Length Arrays has been added to the
+            shading language.
+    * <b>Arbitrary Output Variables</b>
+          o General AOV improvements, including support for the subpixel
+            hider and the ability to output multiple AOVs to a single file.
+    * <b>"Rif" Filters </b>
+          o "Rif" filters provide a powerful mechanism for customizing
+            3D data, including RIB files, read-archives, inline
+            archives, and procedural primitives.
+    * <b>OpenEXR Support</b>
+          o Added support for OpenEXR, allowing the creation of custom
+            channels and providing support for HDRI via float and half
+            formats. 
+    * <b>Reduction of Ray Tracing Bias</b>
+          o Greater fidelity for ray tracing bias has significantly
+            reduced bias artifacts.
+    * <b>Dicing Camera and Strategies</b>
+          o Improved control over the camera and strategies used for dicing.
+  
+</pre>
+<p>
+<IMG SRC="/RMR/Pics/redball.gif"><b>Pixar going it alone</b> (02/01/04)
+Just in case you have fallen off the planet and haven't been paying attention.  This week Pixar announced that after Cars (2005), they will not be using Disney as a distributor for its future projects.  Most likely it won't be until sometime after 2006 before we will start to understand how this will effect both companies.  Pixar's <href="http://corporate.pixar.com/news/20040129-127764.cfm">press release</a>
+<p>
+
+<IMG SRC="/RMR/Pics/redball.gif"><b>Changed Email Addresses</b>
+<br>
+It looks like somebody has started scanning web pages for email addresses.  I have changed everybody's address listed in the RMR, to something that will bounce.  Now you will have to check the address and edit out the garbage.  Sorry.
+<p>
+Also if it looks like you received mail from either my pacbell or renderman account and it didn't have anything to do with renderman, I didn't send it and now you know how you got selected.
+<p>
+
+
+<a href="oldNews/index.html">old News</a> -- old news items.
+<p>
+<HR width=50%>
+
+<P><A NAME="otherLinks"></A></P>
+The RenderMan Repository has an extensive page dedicated to <A HREF="/RMR/OtherLinks/index.html">off-site RenderMan related links</A>.  However, here are some highly recommended sites for people who want to improve their RenderMan knowledge:<P>
+
+<a href="https://renderman.pixar.com/products/rispec/rispec_3_1/index.html">3.1 RenderMan Spec</a><br>
+<a href="https://renderman.pixar.com/products/rispec/rispec_pdf/RISpec3_2.pdf">3.2 RenderMan Spec</a> (PDF)<br>
+<A HREF="http://www.cgrg.ohio-state.edu/~smay/RManNotes/rmannotes.html">RMNotes</A>, by <b>Steve May.</b>
+<P>
+<HR>
+<P><A NAME="Policy"></A></P>
+<H2>Policy</H2>
+
+<P><H4>Your saying, &quot;Hey I've something I'd like to add.  How do I get it there?&quot;
+</H4></P>
+First let's go over policy.</P>
+<P class="indent">
+For  now the only way to get things the WEB site is to email it directly to me at <B>tal AT renderman DOT org</B>.   If it is binary, I can handle MIME, or just plain uuencode.
+</P>
+<P class="indent">On a related topic, I won't accept any binaries (pictures excepted) such as compiled shader files, etc.  If you have a shader that you would like to share but don't want to distribute the source or if you have some shaders that you would like to sell.  Then feel free to send some pictures that you feel shows them off.
+<P class="indent">
+<B>A)</B> If it is just source -- make sure you include some comments telling us this is yours, so we know who it came from and who to give credit to.  Also, if you are sending a shader, make sure you include a simple RIB that shows the shader off.
+<P class="indent">
+<B>B)</B> Anything else include a readme describing what it is and that this is yours.</P>
+</P>
+</P>
+<HR>
+<P></P>
+<H3><P>The contents of the RMR are maintained and <A HREF="/RMR/copyright.html">copyrighted</A> by <A HREF="/RMR/tal.htmld/index.html">Tal Lancaster</A></P>
+<P>Any comments or suggestions? Send them to: <A HREF="mailto:tal AT renderman DOT org">tal AT renderman DOT org</A></P></H3>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<HR>
+ <A HREF="/RMR/tal.htmld/index.html">Tal's Personal Page</A>
+<HR>
+<I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+
+<A NAME="pixarTM"></A>
+<h3>RenderMan is a registered trademark of Pixar</h3>
+</BODY>
+</HTML>

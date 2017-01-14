@@ -1,0 +1,163 @@
+#########################################################################
+# fig8.4.rib - RIB to create Figure 8.4 of:
+#
+# _Advanced RenderMan: Creating CGI for Motion Picture_, 
+# by Anthony A. Apodaca and Larry Gritz, Morgan Kaufmann, 1999.
+#
+# This file demostrates the difference between true displacements and
+# bump mapping.  Rendering produces six files:
+#    fig8.4a.tif - far view, no bumps
+#    fig8.4b.tif - far view, bump map
+#    fig8.4c.tif - far view, displacements
+#    fig8.4d.tif - near view, no bumps
+#    fig8.4e.tif - near view, bump map
+#    fig8.4f.tif - near view, displacements
+#
+# This file requires the teapot.rib file in ../models and the lumpy
+# shader in ../shaders.
+#########################################################################
+
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+Option "searchpath" "shader" [".:shaders:../shaders:&"]
+Option "searchpath" "archive" [".:models:../models:&"]
+Format 300 200 1
+PixelSamples 2 2
+ShadingRate 1
+
+
+FrameBegin 1
+Display "fig8.4a.tif" "file" "rgba"
+Projection "perspective"  "fov" [15]
+##CameraOrientation 0 20 5 0 0 1.5 -0.0170699 -0.172355 0.984887
+ConcatTransform [0.999854 -0.0170699 0 0 -0.00294252 -0.172355 -0.98503 0 0.0168144 0.984887 -0.17238 0 0 0 0 1]
+Translate 0 -20 -4.5 
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [0.025]
+LightSource "spotlight" 1 "intensity" [300] "from" [ 2 4.5 20 ] "to" [ 0 -1.5 0 ] "coneangle" [0.38]
+LightSource "spotlight" 2 "intensity" [50] "from" [ -2 4.5 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+LightSource "spotlight" 3 "intensity" [50] "from" [ 4 20 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+AttributeBegin
+Translate 0 2 0
+Rotate 200 0 0 1
+Surface "plastic"
+ReadArchive "teapot.rib"
+AttributeEnd
+WorldEnd
+FrameEnd
+
+
+FrameBegin 2
+Display "fig8.4b.tif" "file" "rgba"
+Projection "perspective"  "fov" [15]
+##CameraOrientation 0 20 5 0 0 1.5 -0.0170699 -0.172355 0.984887
+ConcatTransform [0.999854 -0.0170699 0 0 -0.00294252 -0.172355 -0.98503 0 0.0168144 0.984887 -0.17238 0 0 0 0 1]
+Translate 0 -20 -4.5 
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [0.025]
+LightSource "spotlight" 1 "intensity" [300] "from" [ 2 4.5 20 ] "to" [ 0 -1.5 0 ] "coneangle" [0.38]
+LightSource "spotlight" 2 "intensity" [50] "from" [ -2 4.5 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+LightSource "spotlight" 3 "intensity" [50] "from" [ 4 20 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+AttributeBegin
+Translate 0 2 0
+Rotate 200 0 0 1
+Surface "plastic"
+Displacement "lumpy" "float maxoctaves" [1] "float Km" [0.05] "float power" [1] "float frequency" [4] "float truedisp" [0]
+ReadArchive "teapot.rib"
+AttributeEnd
+WorldEnd
+FrameEnd
+
+
+FrameBegin 3
+Display "fig8.4c.tif" "file" "rgba"
+Projection "perspective"  "fov" [15]
+##CameraOrientation 0 20 5 0 0 1.5 -0.0170699 -0.172355 0.984887
+ConcatTransform [0.999854 -0.0170699 0 0 -0.00294252 -0.172355 -0.98503 0 0.0168144 0.984887 -0.17238 0 0 0 0 1]
+Translate 0 -20 -4.5 
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [0.025]
+LightSource "spotlight" 1 "intensity" [300] "from" [ 2 4.5 20 ] "to" [ 0 -1.5 0 ] "coneangle" [0.38]
+LightSource "spotlight" 2 "intensity" [50] "from" [ -2 4.5 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+LightSource "spotlight" 3 "intensity" [50] "from" [ 4 20 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+AttributeBegin
+Translate 0 2 0
+Rotate 200 0 0 1
+Surface "plastic"
+Displacement "lumpy" "float maxoctaves" [1] "float Km" [0.05] "float power" [1] "float frequency" [4] "float truedisp" [1]
+Attribute "displacementbound" "coordinatesystem" ["world"] "sphere" [.1]
+Attribute "render" "truedisplacement" [1] 
+ReadArchive "teapot.rib"
+AttributeEnd
+WorldEnd
+FrameEnd
+
+
+FrameBegin 4
+Display "fig8.4d.tif" "file" "rgba"
+Projection "perspective"  "fov" [5]
+##CameraOrientation 0 20 5 0 0 1.5 -0.0170699 -0.172355 0.984887
+ConcatTransform [0.999854 -0.0170699 0 0 -0.00294252 -0.172355 -0.98503 0 0.0168144 0.984887 -0.17238 0 0 0 0 1]
+Translate 0 -20 -4.5 
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [0.025]
+LightSource "spotlight" 1 "intensity" [300] "from" [ 2 4.5 20 ] "to" [ 0 -1.5 0 ] "coneangle" [0.38]
+LightSource "spotlight" 2 "intensity" [50] "from" [ -2 4.5 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+LightSource "spotlight" 3 "intensity" [50] "from" [ 4 20 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+AttributeBegin
+Translate 0 2 -1
+Rotate 200 0 0 1
+Surface "plastic"
+Attribute "displacementbound" "coordinatesystem" ["world"] "sphere" [1]
+ReadArchive "teapot.rib"
+AttributeEnd
+WorldEnd
+FrameEnd
+
+
+FrameBegin 5
+Display "fig8.4e.tif" "file" "rgba"
+Projection "perspective"  "fov" [5]
+##CameraOrientation 0 20 5 0 0 1.5 -0.0170699 -0.172355 0.984887
+ConcatTransform [0.999854 -0.0170699 0 0 -0.00294252 -0.172355 -0.98503 0 0.0168144 0.984887 -0.17238 0 0 0 0 1]
+Translate 0 -20 -4.5 
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [0.025]
+LightSource "spotlight" 1 "intensity" [300] "from" [ 2 4.5 20 ] "to" [ 0 -1.5 0 ] "coneangle" [0.38]
+LightSource "spotlight" 2 "intensity" [50] "from" [ -2 4.5 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+LightSource "spotlight" 3 "intensity" [50] "from" [ 4 20 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+AttributeBegin
+Translate 0 2 -1
+Rotate 200 0 0 1
+Surface "plastic"
+Displacement "lumpy" "float maxoctaves" [1] "float Km" [0.05] "float power" [1] "float frequency" [4] "float truedisp" [0]
+Attribute "displacementbound" "coordinatesystem" ["world"] "sphere" [1]
+ReadArchive "teapot.rib"
+AttributeEnd
+WorldEnd
+FrameEnd
+
+
+FrameBegin 6
+Display "fig8.4f.tif" "file" "rgba"
+Projection "perspective"  "fov" [5]
+##CameraOrientation 0 20 5 0 0 1.5 -0.0170699 -0.172355 0.984887
+ConcatTransform [0.999854 -0.0170699 0 0 -0.00294252 -0.172355 -0.98503 0 0.0168144 0.984887 -0.17238 0 0 0 0 1]
+Translate 0 -20 -4.5 
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [0.025]
+LightSource "spotlight" 1 "intensity" [300] "from" [ 2 4.5 20 ] "to" [ 0 -1.5 0 ] "coneangle" [0.38]
+LightSource "spotlight" 2 "intensity" [50] "from" [ -2 4.5 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+LightSource "spotlight" 3 "intensity" [50] "from" [ 4 20 10 ] "to" [ 0 -1.5 0 ] "coneangle" [0.5]
+AttributeBegin
+Translate 0 2 -1
+Rotate 200 0 0 1
+Surface "plastic"
+Displacement "lumpy" "float maxoctaves" [1] "float Km" [0.05] "float power" [1] "float frequency" [4]
+Attribute "displacementbound" "coordinatesystem" ["world"] "sphere" [.1]
+Attribute "render" "truedisplacement" [1] 
+ReadArchive "teapot.rib"
+AttributeEnd
+WorldEnd
+FrameEnd

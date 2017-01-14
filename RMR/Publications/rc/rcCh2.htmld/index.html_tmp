@@ -1,0 +1,127 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rcCh2</TITLE>
+<LINK HREF="../rcTop.htmld/index.html" REL="Parent" TITLE="rcTop">
+<LINK HREF="../rcCh5.htmld/index.html" REL="Sibling" TITLE="rcCh5">
+<LINK HREF="../rcCh11.htmld/index.html" REL="Sibling" TITLE="rcCh11">
+<LINK HREF="../rcCh7.htmld/index.html" REL="Sibling" TITLE="rcCh7">
+<LINK HREF="../rcCh8.htmld/index.html" REL="Sibling" TITLE="rcCh8">
+<LINK HREF="../misc.htmld/index.html" REL="Sibling" TITLE="misc">
+<LINK HREF="../rcCh16.htmld/index.html" REL="Sibling" TITLE="rcCh16">
+<LINK HREF="../rcCh4.htmld/index.html" REL="Sibling" TITLE="rcCh4">
+<LINK HREF="../rcCh10.htmld/index.html" REL="Sibling" TITLE="rcCh10">
+<LINK HREF="../rcCh6.htmld/index.html" REL="Sibling" TITLE="rcCh6">
+<LINK HREF="../errataRev1.htmld/index.html" REL="Sibling" TITLE="errataRev1">
+<LINK HREF="../rcCh3.htmld/index.html" REL="Sibling" TITLE="rcCh3">
+<LINK HREF="../rcCh13.htmld/index.html" REL="Sibling" TITLE="rcCh13">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER> <H1><P>
+_RC_ Chapter 2 Getting Started</H1><P>
+</CENTER><P>
+<P>
+<H2> <A HREF="../errataRev1.htmld/index.html#ch2">Errata</A>
+
+ </H2><P>
+<B>p. 18</B> <A NAME="ex2_1"></A>
+
+ <A HREF="../ch2/listing2_1.c">Listing2_1.c</A>
+
+ --A Minimal program using RenderMan<P>
+<B>p. 20</B> <A NAME="ex2_2"></A>
+
+ <A HREF="../ch2/listing2_2.c">Listing2_2.c</A>
+
+ --Control over viewer and color<P>
+<B>p. 25</B> <A NAME="ex2_3"></A>
+
+ <A HREF="../ch2/listing2_3.c">listing2_3.c</A>
+
+ --Defining a cube<P>
+The main function has been moved out to <A HREF="../ch2/cubemain.c">cubemain.c</A>.  This way it can be used with some of the other listings. (<A HREF="../errataRev1.htmld/index.html#ex2_3">Errata</A>
+
+ )<P>
+<P>
+<B>p. 26</B> <A NAME="ex2_4"></A>
+
+ <A HREF="../ch2/listing2_4.c">listing2_4.c</A>
+
+ --Alternative cube definition<P>
+This requires the cubemain.c from above.<P>
+<P>
+<B>p. 28</B> <A NAME="ex2_5"></A>
+
+ <A HREF="../ch2/listing2_5.c">listing2_5.c</A>
+
+ --Another cube definition<P>
+This requires the cubemain.c from above.<P>
+<P>
+<B>p. 30</B> <A NAME="ex2_6"></A>
+
+ <A HREF="../ch2/listing2_6.c">listing2_6.c</A>
+
+ --Defining a larger cube from smaller minicubes<P>
+This requires the <A HREF="../ch2/colormain.c">colormain.c</A> which contains the &quot;main&quot; function.<P>
+<P>
+<B>p. 32</B> <A NAME="ex2_7"></A>
+
+ <A HREF="../ch2/listing2_7.c">listing2_7.c</A>
+
+ --A more efficient color cube<P>
+This requires the colormain.c from above.<P>
+<P>
+<B>p. 34</B> <A NAME="ex2_6"></A>
+
+ <A HREF="../ch2/listing2_8.c">listing2_8.c</A>
+
+ --A simple animation. (<A HREF="../errataRev1.htmld/index.html#ex2_8">Errata</A>
+
+ )<P>
+<P>
+<P>
+<P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="../rcTop.htmld/index.html">rcTop</A>]
+
+<DT>See Also (Siblings):</DT><DD>
+
+[<A HREF="../rcCh5.htmld/index.html">rcCh5</A>]
+
+[<A HREF="../rcCh11.htmld/index.html">rcCh11</A>]
+
+[<A HREF="../rcCh7.htmld/index.html">rcCh7</A>]
+
+[<A HREF="../rcCh8.htmld/index.html">rcCh8</A>]
+
+[<A HREF="../misc.htmld/index.html">misc</A>]
+
+[<A HREF="../rcCh16.htmld/index.html">rcCh16</A>]
+
+[<A HREF="../rcCh4.htmld/index.html">rcCh4</A>]
+
+[<A HREF="../rcCh10.htmld/index.html">rcCh10</A>]
+
+[<A HREF="../rcCh6.htmld/index.html">rcCh6</A>]
+
+[<A HREF="../errataRev1.htmld/index.html">errataRev1</A>]
+
+[<A HREF="../rcCh3.htmld/index.html">rcCh3</A>]
+
+[<A HREF="../rcCh13.htmld/index.html">rcCh13</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rcCh2</A> was converted on Sat Feb 17 10:04:03 PST 1996 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+
+</BODY>
+</HTML>

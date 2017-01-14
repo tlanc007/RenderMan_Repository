@@ -1,0 +1,6 @@
+MAILTO	wave AT pixar DOT com	NAME	Michael B. Johnson
+TITLE	WWShaders	H1	Michael B. Johnson Shaders
+DIR	WWShaders	PIC	100	100
+SHADER	WWCinderBlock	
+DESC	Creates cinderblock textured pattern
+DO_LINE

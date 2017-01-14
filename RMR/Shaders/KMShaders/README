@@ -1,0 +1,40 @@
+This is the README file for the texture demos for Ken Musgrave's
+example procedural shaders from Chapter 8 of:
+
+    _Texturing and Modeling: A Procedural Approach_, by David S. Ebert,
+    F. Kenton Musgrave, Darwyn Peachey, Ken Perlin, and Steven Worley.
+    Academic Press, 1994.  ISBN 0-12-228760-6.
+
+
+These examples consist of RenderMan (R) Shading Language source code
+and RIB (RenderMan Interface Bytestream) for sample scenes using the
+shaders.  RenderMan is a registered trademark of Pixar.  All rights
+reserved.
+
+These RIB files and shaders have been tested on both Pixar's
+PhotoRealistic RenderMan (prman), and the Blue Moon Rendering Tools
+(see the file BMRT.Announce for details about this shareware package).
+
+Here's how to view the demos:
+
+1. Type one of the following commands at the UNIX prompt (depending on
+   whether you're using prman or BMRT):
+
+		make -f Makefile.prman
+       - or -
+		make -f Makefile.bmrt
+
+2. This will cause all of the shaders to compile and the RIB files to render.
+   Sit back and relax, it will take several minutes to render the image
+   files.
+
+3. Use your favorite TIFF image viewer to display these files.  Don't
+   forget to gamma correct as necessary for your display device.
+
+
+Final note: some of the Shading Language files from chapter 2 (Darwyn
+Peachey's chapter) didn't run properly with earlier versions of BMRT.
+If you have trouble, please get the current version.
+
+
+

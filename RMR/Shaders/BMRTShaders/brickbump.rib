@@ -1,0 +1,72 @@
+Display "brickbump.tiff" "file" "rgb"
+
+##RenderMan RIB-Structure 1.0
+##System NeXT Release 3
+FrameBegin 0
+#
+Format 380 380 1.000000
+ScreenWindow -1 1 -1 1
+Projection "perspective" "fov" [ 40 ]
+Transform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 10 1 ]
+ShadingRate 1
+PixelSamples 2 2
+WorldBegin
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+Declare "from" "point"
+Declare "to" "point"
+LightSource "distantlight" 45 "intensity" [ .9 ] "lightcolor" [ 1 1 1 ] "from" [ 0 5 -5 ] "to" [ 0 0 0 ]
+TransformEnd
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Declare "intensity" "float"
+Declare "lightcolor" "color"
+LightSource "ambientlight" 44 "intensity" [ .2 ] "lightcolor" [ 1 1 1 ]
+TransformEnd
+AttributeBegin
+Attribute "identifier" "name" [ "World" ]
+TransformBegin
+AttributeBegin
+Attribute "identifier" "name" [ "User_1" ]
+Attribute "identifier" "shadinggroup" [ "User_1" ]
+Color [ 0 0 1 ]
+Declare "Ka" "float"
+Declare "Kd" "float"
+Declare "brickcolor" "color"
+Declare "mortarcolor" "color"
+Declare "jagged" "float"
+Declare "brickvary" "float"
+Declare "brickwidth" "float"
+Declare "brickheight" "float"
+Declare "mortarthickness" "float"
+Declare "rowvary" "float"
+Surface "brick" "Ka" [ 1 ] "Kd" [ 1 ] "brickcolor" [ .599994 .101962 .101962 ] "mortarcolor" [ .599994 .599994 .599994 ] "jagged" [ .006 ] "brickvary" [ .3 ] "brickwidth" [ .25 ] "brickheight" [ .08 ] "mortarthickness" [ .01 ] "rowvary" [ .25 ]
+Color [ 1 1 1 ]
+Declare "jagged" "float"
+Declare "brickwidth" "float"
+Declare "brickheight" "float"
+Declare "mortarthickness" "float"
+Declare "rowvary" "float"
+Declare "pitting" "float"
+Declare "pockfrequency" "float"
+Declare "groovedepth" "float"
+Displacement "brickbump" "jagged" [ .006 ] "brickwidth" [ .25 ] "brickheight" [ .08 ] "mortarthickness" [ .01 ] "rowvary" [ .25 ] "pitting" [ .2 ] "pockfrequency" [ 60 ] "groovedepth" [ .2 ]
+ShadingInterpolation "constant"
+GeometricRepresentation "lines"
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 -3.467403 -3.467477 -9.53674e-07 1 ]
+#
+#User Shape
+Patch "bilinear" "P" [ 0 0 0 7 0 0 0 7 0 7 7 0 ]
+TransformEnd
+AttributeEnd
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd

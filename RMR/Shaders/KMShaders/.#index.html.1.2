@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE> KMShaders </TITLE>
+<body bgcolor="white">
+<center>
+<table cellspacing=0 cellpadding=3 border=0>
+<tr valign="bottom">
+<td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+<td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+</tr>
+<tr><td bgcolor="#305073" colspan=2>
+<table cellspacing=0 cellpadding=5 border=0>
+<tr bgcolor="#B8C8E0">
+<td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+<td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+<td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+<td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+<td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+<td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+<td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+<td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+<td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+</tr>
+</td></tr></table>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Ken Mussgrave Shaders</H1><P>
+<B>example procedural shaders of K Musgrave's texture demos in chapter 8 of  Texturing and Modeling: A Procedural Approach)</B><P>
+The following are example implementations of <A HREF="http://www.cs.umbc.edu/~ebert/book/book.html">Textures and Modeling: A Procedural Approach</A>.</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#KMCyclone">KMCyclone</A>
+<LI><A HREF="index.html#KMFlame">KMFlame</A>
+<LI><A HREF="index.html#KMLuna">KMLuna</A>
+<LI><A HREF="index.html#KMPlanetclouds">KMPlanetclouds</A>
+<LI><A HREF="index.html#KMPuffyclouds">KMPuffyclouds</A>
+<LI><A HREF="index.html#KMShiny">KMShiny</A>
+<LI><A HREF="index.html#KMStrata">KMStrata</A>
+<LI><A HREF="index.html#KMTerran">KMTerran</A>
+<LI><A HREF="index.html#KMTerranbump">KMTerranbump</A>
+<LI><A HREF="index.html#KMVenus">KMVenus</A>
+<LI><A HREF="index.html#KMWindywave">KMWindywave</A>
+</UL>
+<HR>
+<A NAME="KMCyclone"></A>
+<H2>KMCyclone.sl</H2><P>
+
+<P>
+<A HREF="KMCyclone.jpg">
+<IMG SRC=KMCyclone_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMCyclone.jpg"></A>
+<A HREF="KMCyclone.sl">KMCyclone.sl</A>
+<A HREF="KMCyclone.rib">Sample RIB</A>
+<HR>
+<A NAME="KMFlame"></A>
+<H2>KMFlame.sl</H2><P>
+
+<P>
+<A HREF="KMFlame.jpg">
+<IMG SRC=KMFlame_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMFlame.jpg"></A>
+<A HREF="KMFlame.sl">KMFlame.sl</A>
+<A HREF="KMFlame.rib">Sample RIB</A>
+<HR>
+<A NAME="KMLuna"></A>
+<H2>KMLuna.sl</H2><P>
+An example RIB can be found at <A HREF="index.html#KMStrata">KMStrata</A> 
+<P>
+<A HREF="KMLuna.sl">KMLuna.sl</A>
+<HR>
+<A NAME="KMPlanetclouds"></A>
+<H2>KMPlanetclouds.sl</H2><P>
+An example RIB can be found at <A HREF="index.html#KMTerran">KMTerran</A> 
+<P>
+<A HREF="KMPlanetclouds.sl">KMPlanetclouds.sl</A>
+<HR>
+<A NAME="KMPuffyclouds"></A>
+<H2>KMPuffyclouds.sl</H2><P>
+
+<P>
+<A HREF="KMPuffyclouds.jpg">
+<IMG SRC=KMPuffyclouds_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMPuffyclouds.jpg"></A>
+<A HREF="KMPuffyclouds.sl">KMPuffyclouds.sl</A>
+<A HREF="KMPuffyclouds.rib">Sample RIB</A>
+<HR>
+<A NAME="KMShiny"></A>
+<H2>KMShiny.sl</H2><P>
+
+<P>
+<A HREF="KMShiny.sl">KMShiny.sl</A>
+<HR>
+<A NAME="KMStrata"></A>
+<H2>KMStrata.sl</H2><P>
+The RIB for this example also uses the <A HREF="index.html#KMShiny">KMShiny</A>, <A HREF="index.html#KMWindywave">KMWindywave</A>, <A HREF="index.html#KMLuna">KMLuna</A> shaders.<P> 
+<P>
+<A HREF="KMStrata.jpg">
+<IMG SRC=KMStrata_sm.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="KMStrata.jpg"></A>
+<A HREF="KMStrata.sl">KMStrata.sl</A>
+<A HREF="KMStrata.rib">Sample RIB</A>
+<HR>
+<A NAME="KMTerran"></A>
+<H2>KMTerran.sl</H2><P>
+The RIB for this examplealso uses, the 
+<A HREF="../../Shaders/LGShaders/index.html#LGStarfield">LGStarfield</A>
+, <A HREF="index.html#KMTerranbump">KMTerranbump</A>, and <A HREF="index.html#KMPlanetclouds">KMPlanetcloulds</A> shaders.<P>
+<P>
+<A HREF="KMTerran.sl">KMTerran.sl</A>
+<A HREF="KMTerran.rib">Sample RIB</A>
+<HR>
+<A NAME="KMTerranbump"></A>
+<H2>KMTerranbump.sl</H2><P>
+The picture can be seen in <A HREF="index.html#KMTerran">KMTerran</A> section.<P>  This shader is used in the RIB file for KMTerran.sl.<P> 
+<P>
+<A HREF="KMTerranbump.sl">KMTerranbump.sl</A>
+<HR>
+<A NAME="KMVenus"></A>
+<H2>KMVenus.sl</H2><P>
+
+<P>
+<A HREF="KMVenus.jpg">
+<IMG SRC=KMVenus_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMVenus.jpg"></A>
+<A HREF="KMVenus.sl">KMVenus.sl</A>
+<A HREF="KMVenus.rib">Sample RIB</A>
+<HR>
+<A NAME="KMWindywave"></A>
+<H2>KMWindywave.sl</H2><P>
+A RIB example of the LMLuna shader can be found in the <A HREF="index.html#KMStrata">KMStrata</A> section.<P> 
+<P>
+<A HREF="KMWindywave.sl">KMWindywave.sl</A>
+<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:talrmr@pacbell.net">talrmr@pacbell.net</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2002 <A HREF="mailto:tal@renderman.org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

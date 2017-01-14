@@ -1,0 +1,28 @@
+TITLE	SIG2000 Shaders	H1	Shaders from <i>Very Advanced RenderMan 2</i> at SIGGRAPH 2000 course 40
+DIR	SIG2000	PIC	100	100	ALIGN=LEFT CLEAR
+TOC	Course Notes	PDF	NOTE	This version of <a href="../../Books/infbeyond.pdf.gz">the course notes</a> have been updated to fix some typos and other problems.<P>
+TOC	Extras	Supplemental materials	NOTE	For some reason the examples lost their line-feeds when the ISO-9600 CD got made.<br>  <A HREF="sig2k_xtra.tgz">sig2k_xtra.tgz</A> contains the full directory with the proper formating (well for UNIX anyways).<P>  Also there is no need to run the unmk8_3 script as the file names have already be corrected.<P>
+SECTION	PIC	../../Pics/redball.gif	Shaders from Rob Bedow's course notes
+NEW
+SHADER	SIG2k_srfconta	NOTE	Example shader for rendering contact shadows based on depth data.  This shader is a good example of quering a shadowmap to get its transformation matricies.
+DESC	contact shadows
+DO_LINE
+NEW
+SHADER	SIG2k_srfdefor	NOTE	Typically used when an object is suppose to interact with soft surfaces.  Say for example a mouse walking on a bed.
+DESC	deformation surface shader
+DO_LINE
+NEW
+SHADER	SIG2k_srf_fur	NOTE	Example fur shader with fur clumping (when fur gets wet).
+DESC	fur shader
+DO_LINE
+SECTION	PIC	../../Pics/redball.gif	Shaders from Tal Lancaster's course notes
+TOC	Zero Shadow Bias	Example pass 1	NOTE	<A HREF="clysphere_1.tif"><IMG SRC=clysphere_1.jpg WIDTH=100 HEIGHT=100 CLEAR <ALT="clysphere_1.tif"></A>This example RIB shows how the zero shadow bias shader is used in pass 1.  This example needs: <a href="#SIG2k_d_map.sl">SIG2k_d_map.sl</a>, <a href="#SIG2k_shadowspot.sl">SIG2k_shadowspot.sl</a>, and <a href="#SIG2k_zerobias.sl">SIG2k_zerobias.sl</a>.<P>
+SHADER	SIG2k_d_map	NOTE	Simple displacement shader.  Reads a texture map and has controls to flip the texture in S and T.<p>This shader is used in <a href="#Zero Shadow Bias">Zero Shadow Bias (pass 1)</a>.<p>
+DESC	Simple displacement shader
+DO_LINE	
+SHADER	SIG2k_shadowspot	NOTE	modified shadowspot light shader to better handle intensity attenuation.<p>This shader is used in <a href="#Zero Shadow Bias">Zero Shadow Bias (pass 1)</a>.<p>
+DESC	modified shadowspot shader.
+DO_LINE
+SHADER	SIG2k_zerobias	NOTE	Example surface shader illustrating Laurent Charbonnel's zero bias shadow technique for SIGGRAPH 2000 RenderMan course.  This is the shader that is attached during the two zdepth passes.<p>This shader is used in <a href="#Zero Shadow Bias">Zero Shadow Bias (pass 1)</a>.<p>
+DESC	zero shadow bias surface shader
+DO_LINE

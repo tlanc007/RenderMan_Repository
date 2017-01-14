@@ -1,0 +1,41 @@
+# Changed name to KMVenus.rib and names of shaders accordingly -- tal
+#
+# venus.rib
+#
+# Test file for the venus.sl shader.  See pp. 277-279.
+#
+# Reference:
+#    _Texturing and Modeling: A Procedural Approach_, by David S. Ebert, ed.,
+#    F. Kenton Musgrave, Darwyn Peachey, Ken Perlin, and Steven Worley.
+#    Academic Press, 1994.  ISBN 0-12-228760-6.
+#
+# 
+
+version 3.03
+ShadingRate 0.25
+Display "KMVenus.tiff" "file" "rgb"
+#Format 256 256 -1
+Format 380 380 -1
+Projection "perspective" "fov" 35
+Rotate -90 1 0 0
+Translate 0 -5 0
+
+WorldBegin
+
+  LightSource "ambientlight" 1 "intensity" [0.025]
+  LightSource "distantlight" 2 "from" [1.3 2 .1] "to" [0 0 0]
+
+  AttributeBegin
+    Declare "pswidth" "float"
+    Declare "frequency" "float"
+    Surface "KMStarfield" "pswidth" .25 "frequency" 3 "intensity" 2
+    Sphere 100 -100 100 360
+  AttributeEnd
+
+  AttributeBegin
+    Surface "KMVenus"
+    Color [.7 .7 .5]
+    Sphere 1 -1 1 360
+  AttributeEnd
+
+WorldEnd

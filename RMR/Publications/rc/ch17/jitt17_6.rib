@@ -1,0 +1,1620 @@
+##RenderMan RIB
+version 3.03
+Projection "perspective" 
+Display "RenderMan" "framebuffer" "rgb" 
+Format 256 192 -1
+ShadingRate 4
+PixelFilter "box" 1 1
+ScreenWindow -0.2 0.7 -0.5 0.1
+FrameAspectRatio 1.33333
+PixelSamples 3 3
+Hider "hidden" "jitter" [1]
+Translate 0 -1 2.5
+Rotate 5 -1 0 0
+Scale 0.05 0.05 0.05
+LightSource "distantlight" 1 "from" [0 0 0]"to" [0 -1 0]
+WorldBegin 
+Surface "matte" 
+Color [1 0 0]
+Translate -5 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate -20 0 2
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate 2 0 0
+Translate 2 0 0
+Patch "bilinear" "P" [0 0 0 2 0 0 0 0 2 2 0 2]
+Translate -20 0 2
+WorldEnd 

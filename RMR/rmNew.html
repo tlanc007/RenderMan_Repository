@@ -1,0 +1,294 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rmNew</TITLE>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER>
+<H1>What's New!</H1>
+<H2>From September 13, 2003 - Present</H2>
+<P></P>
+</CENTER>
+<P></P>
+03/26/08<BR>
+ Added link to the <a href="/twiki/bin/view/RenderManRepository/WebHome">RMR Twiki</a> page to the navagation table for the site.
+ <p>
+ 
+03/13/08<BR>
+Fixed typo on rmBlockers page that had a bad link to the Examples page.
+<p>
+Switch out search engine to google.  Now can search through the all of the PDF documents on the site.
+<p>
+The RMR is in the process of a much needed face lift.  Also will be added several new pages and a TWiki section so others can more easily share their knowledge and information.
+<p>
+Worse case this will be in place by SIGGRAPH this year.  But I am hoping to have it unline much sooner.
+10/20/07<BR>
+Fixed some typos linking to the <a href="Examples/srt2007/index.html">SRT 2007</a> page and on the SRT2007 page itself.
+<p>
+10/09/07<BR>
+ Finally the <b>Stupid RAT Tricks</b> for 2007 are <a href="Examples/srt2007/index.html">here</a>.
+ <p>
+08/06/07<BR>
+ SIGGRAPH update(s).  Check out the <a href="/RMR/index.html#Announce">Newsworthy</a> section for some interesting bits at SIGGRAPH this year.
+ <p>
+ 
+06/25/07<BR>
+Added a link to Blizzard Entertainment who is looking for a RenderMan shader writer in the <a href="/RMR/index.html#Announce">Newsworthy</a> section.
+<p>
+01/25/07<BR>
+Added two more speakers to <a href="/RMR/Examples/index.html#SRT">SRT 2006</a>: Simon Haegler and Dan Maas.
+<p>
+Updated <a href="http://www.renderman.org/RMR/Utils/gelato/index.html#ribelato">ribelato</a> to rev 1.0.0.24.
+<p>
+12/19/06<BR>
+Finally got around to adding the <a href="/RMR/Publications/index.html#Sig">SIGGRAPH 2006 Xtras</a>.  NOTE due to size contraints I had to convert one of the image files <i>brickColor.tif</i> (16bit) to <i>brickColor.jpg</i> (8bit).
+<p>
+
+Also speaking of SIGGRAPH, I have started a page on Stupid RAT Tricks <a href="/RMR/Examples/index.html#SRT">2006</a>.  But so far only <i>Mach</i> has given me any materials.
+<p>
+I recieved email from Larry Gritz a little while back pointing out a typo in <a href="/RMR/Publications/index.html#Advanced">Advanced RenderMan</a>'s <a href="/RMR/Publications/arman/shaders/patterns.h">filteredsmoothstep</a>:
+<pre>
+<code>
+Original source for the <b>filtedsmoothstep</b>
+
+float filteredsmoothstep (float e0, e1, x, dx)
+{
+    float integral (float t) {
+	return -0.5*t*t * (t*t <b>+ t</b>);
+    }
+    . . .
+}
+
+Correct start of the function:
+
+float filteredsmoothstep (float e0, e1, x, dx)
+{
+    float integral (float t) {
+        return -0.5*t*t * (t*t - <b>2*t</b>);
+    }
+    . . .
+}
+</code>
+</pre>
+The file has been updated.
+<p>
+
+<p>
+07/30/06<BR>
+Added <a href="index.html#Announce">announcement</a> announcing that the course notes for the RenderMan course are online.  (A little early than normal, but as the attendees don't have them either, it didn't seem right to make them wait, too.)
+<p>
+The SIG2006 RenderMan course notes are available.  Go to the <a href="Publications/index.html#sig06">Publications page</a>
+<p>
+06/15/06<BR>
+Added <a href="index.html#Announce">announcement</a> for call for submissions for Stupid RAT Tricks 2006.
+<p>
+Added <a href="Utils/gelato/download/extensions">extensions</a> directory for extensions to the gelato utils, but haven't made it into the base release yet.
+<p>
+05/21/06<BR>
+Added <a href="index.html#Announce">announcement</a> for RenderMan course at SIGGRAPH this year.
+<p>
+Redid the <a href="/RMR/Publications/index.html#pixar_misc">Pixar publications page</a> as they have a new link and new articles (and some old classics)
+<p>
+04/22/06<BR>
+The RMR is back after being unavailable for a little over a week.  There was a little mixup when the domain registration was renewed and so it took a little time for everything to get straightened out.
+<P>
+01/25/06<BR>
+Added post on Disney's purcahse of Pixar in the <a href="/RMR/index.html#Announce"> announcement section.
+<p>
+01/16/06<BR>
+Added post on special <a href="/RMR/index.html#Announce">AQSIS challenge</a>: a chance to get into the 2nd edition of the "<b>Essential RenderMan Fast</b>" book!
+<p>
+01/08/06<BR>
+Added missing tar files for the <a href="/RMR/Publications/RC/rcTop.htmld/index.html">RenderMan Companion</a>.
+<p>
+01/05/06<BR>
+Added posting for the <a href="/RMR/index.html#Announce">5th Aqsis</a> rendering challenge.
+<p>
+12/11/05<BR>
+Uploaded <a href="Utils/gelato/index.html#rsl2gsl">rsl2gsl</a> version 1.0.3.
+<p>
+11/19/05<BR>
+Uploaded <a href="Utils/gelato/index.html#rsl2gsl">rsl2gsl</a> version 1.0.1.
+<p>
+11/15/05<BR>
+Uploaded <a href="Utils/gelato/index.html#ribelato">Ribelato</a> version 1.0.0.23 for windows and linux. (Mainly support for Gelato 2.0).
+<p>
+11/06/05<BR>
+Added posting for the <a href="/RMR/index.html#Announce">3rd Aqsis</a> rendering challenge.
+<p>
+09/26/05<BR>
+Ok, actually uploaded Luca's slides: <a href="/RMR/Examples/srt2005/index.html">SRT 2005 slides</a>.
+<p>
+09/18/95<BR>
+Added Luca's <a href="/RMR/Examples/srt2005/index.html">SRT 2005 slides</a>.
+<p>
+08/31/05<BR>
+Added the announcement for the monthly <a href="/RMR/index.html#Announce">Aqsis rendering contest</a>.
+<p>
+
+08/27/05<BR>
+Several of the Stupid Rat Tricks 2005 slides are now online:  <a href="/RMR/Examples/srt2005/index.html">SRT 2005</a>.
+<p>
+07/27/05<BR>
+Version 1.0.0 of <a href="Utils/gelato/index.html#rsl2gsl">rsl2gsl</a> has been released.  As of this release the source code is included.
+<p>
+05/03/05<BR>
+Fixed <a href="Utils/sl2slim/index#util">sl2slim</a> links to sl2slim.tar and sl2slim.pl.
+<p> 
+02/22/05<BR>
+Fix link to <b>WPrefix.tcl</b> on the <a href=Shaders/SIG2001/index.html#WPrefix.tcl>SIG2001</a> shaders page.
+<p>
+02/17/05<BR>
+Version 0.9.1 of <a href="Utils/gelato/index.html#rsl2gsl">rsl2gsl</a> has been released.
+<p>
+01/25/05<BR>
+In name change from <b>Books</b> to <b>Publications</b>, forgot to integrate Pubs with this, too.  So the SIGGRAPH papers were not being found.  They have been moved to their new location so they should be available again from the <b>Pubs/Publication</b> link.
+<p>
+Added <a href="index.html#Announce">announcement</a> for <b>Aqsis 1.0</b>.
+<p>
+01/03/05<BR>
+Version 0.9.0 of <a href="Utils/gelato/index.html#rsl2gsl">rsl2gsl</a> has been released.  Getting close to releasing source.
+<p>
+
+01/01/05<BR>
+Replaced the <b>Books</b> link with <b>Publications</b>.  All links within the RMR are now using this new directory.  The old Books link will stick around for at least another year or so.  This way other people's references to the site will still be valid.
+<p>
+
+12/12/04<BR>
+Fixed title for <a href="Pubs/index.html#RfB">Rendering for Beginners: Image synthesis using RenderMan.</a>.
+<p>
+12/04/04<BR>
+Added info on new RenderMan book: <b><a href="Pubs/index.html#RfB">Rendering for Beginners: Image synthesis using RenderMan.</a></b>.
+<p>
+11/15/04<BR>
+Uploaded <a href="Examples/srt2004/index.html#maquettes">Steve Chapman's</a> and <a href="Examples/srt2004/index.html#blobbies">Mach's</a> slides for <b>SRT2004</b>.
+<p>
+11/11/04<BR>
+Uploaded <a href="Utils/gelato/index.html#ribelato">Ribelato</a> version 1.0.0.22 for windows and linux.
+<p>
+10/05/04<BR>
+Uploaded <a href="Utils/gelato/index.html#ribelato">Ribelato</a> version 1.0.0.21 for windows and linux.
+<p>
+10/05/04<BR>
+Version 0.8.1 of <a href="Utils/gelato/index.html#rsl2gsl">rsl2gsl</a> has been released.
+<p>
+09/23/04<BR>
+Version 0.8 of <a href="Utils/gelato/index.html#rsl2gsl">rsl2gsl</a> has been released.
+<p>
+09/09/04<BR>
+Uploaded Brent Burley's presentation to the <a href="Examples/srt2004/index.html">SRT 2004</a> page.
+<p>
+09/07/04<BR>
+Actually Mach's slides won't be online until another month or so.
+<p>
+<p>
+09/06/04<BR>
+Uploaded Mach Kobayashi's presentation to the <strike><a href="Examples/srt2004/index.html">SRT 2004</a> page</strike>. (See 09/07/04 entry)
+<p>
+08/31/04<BR>
+Uploaded Dan Maas' presentation (it didn't actually make it online two days
+ago when creating the <a href="Examples/srt2004/index.html">SRT 2004</a> page.
+<p>
+08/30/04<BR>
+Added 2nd set of slides to <a href="Examples/srt2004/index.html">SRT 2004</a> .
+<p>
+08/29/04<BR>
+Per Christensen and his chapter was left out from the speaker's list for the <a href="Books/index.html#Sig">SIGGRAPH 2003</a> RenderMan course.  This has been corrected.
+<p>
+New page <a href="Examples/srt2004/index.html">SRT 2004</a> (Stupid RenderMan/RAT Tricks for 2004)
+<p> <a href="Pubs/index.html">Publications</a>: Redid the layout for some of the papers; Created a PRMan specific section; Added references to more papers.
+<p>
+08/18/04<BR>
+Uploaded <a href="Utils/gelato/index.html#ribelato">Ribelato</a> version 1.0.0.20 for windows and linux.
+<p>
+08/02/04<BR>
+Fixed broken link to <a href="Utils/gelato/index.html#ribelato">Ribelato's</a> README file.
+<p>
+07/31/04<BR>
+New page: <a href="Utils/gelato/index.html">Gelato</a> which contains several RenderMan related utils to work with Gelato, currently: <b>Ribelato</b> and <b>rsl2gsl</b>.
+<p>
+Also there are links to these utils, on the <a href="OtherLinks/index.html#convert">OtherLinks</a> page.  Granted they are here locally, but want to have a complete list of available converters.
+<p>
+07/25/04<BR>
+Added link to <b>PoserMan</b>, an export script for Poser 5, on the <a href="OtherLinks/index.html#convert">OtherLinks</a> page.
+<p>
+07/05/04<BR>
+Added link to <b>Light-R</b>, a LightWave to RIB plubin, on the <a href="OtherLinks/index.html#convert">OtherLinks</a> page.
+<p>
+06/15/04<BR>
+Added <a href="index.html#Announce">announcement</a> for Stupid Rat Tricks 2004
+06/06/04<BR>
+Added link to Henning Hoffmann 3ds Max plug on the <a href="OtherLinks/index.html#convert">OtherLinks</a> page.
+<p>
+06/03/04<BR>
+Added <a href="index.html#Announce">announcement</a> from Pixar on PRMan 12 beta.
+<p>
+05/21/04<BR>
+Updated link to <a href="OtherLinks/index.html#misc">Malcolm Kesson</a>.
+<p>
+02/01/04<BR>
+Added links to two websites:  <a href="OtherLinks/index.html#other">BIGROCK</a> and <a href="OtherLinks/index.html#misc">The RenderMan Academy</a>
+<p>
+Added announement mentioning Pixar splitting up with Disney in the <a href="index.html#Announce">Newsworthy section</a>.
+<p>
+01/28/04<BR>
+Fixed links to 3.1 and 3.1 RenderMan Specs near bottom of main web page.
+<p>
+12/31/03<BR>
+Added link to the <a href="Books/index.html#ESS">examples</a> for the <b>Essential RendreMan</b> book.
+<p>
+Added link to <a href="OtherLinks/index.html#misc">DrQueue</a> a distributed render queue project.
+<p>
+Updated link to <a href="OtherLinks/index.html#convert">AutoRib</a>
+<p>
+Updated link to <a href="OtherLinks/index.html#misc">3Dlighter</a>.
+<p>
+Broke up the current "what's new" logfile as it was getting too large.  Older logs <a href="oldNew/new04.html">start here</a>
+<p>
+12/23/03<BR>
+Phase 1 of all <a href="/RMR/index.html#mail">email encoding</a> for all RMR documents to make it more difficult for harvesting.
+<p>
+Updated all of Larry G's email address to point to his new address.
+<p>
+Changed all of Tal L's email adress to point to his RMR address.
+<p>
+11/24/03<BR>
+Forgot to upload the updated <a href="shaderDev.tgz">shaderDev.tgz</a>.
+11/23/03<BR>
+Added three new shaders from <a href="Shaders/RudyCShaders">Rudy Cortes</a>.  Also Rudy's Shader is the first directory that complies with the RMR shader development include libraries.  Note there is a <a href="Shaders/RudyCShaders/Makefile">Makefile</a> to build up the shaders and render out the tiff images.
+<p>
+Updated <a href="shaderDev.tgz">shaderDev.tgz</a> to include rmannotes.h (Which is Steve May's rmannotes.sl file with a name change and some minor tweeks.)
+<p>
+09/20/03<BR>
+Starting a new section on <a href="RMRShaders.html#shdDev">RMR shader development</a>.  Guidelines for sharing work,
+<p>
+09/19/03<BR>
+Added Mach's <a href="Examples/srt2003/index.html#txBaking">Stupid RenderMan Trick slides</a>.
+<p>
+09/18/03<BR>
+Added link to Ian Stephenson's <a href="OtherLinks/index.html#Renders">Angel</aa>.
+<p>
+Updated Ian's <a href="Examples/srt2003/index.html#smoke">examples</a> for his SRT2003 talk.
+<p>
+Changed links to Ian Stephenson's site on the <a href="OtherLinks/index.html">OtherLinks</a>
+<p>
+Added link to Ian Stephenson's: <a href="Books/index.html#misc">Implementing RenderMan on the Sony PS2</a> presentation.
+09/14/05<BR>
+Imported the <a href="Books/arman/materials.html">Advanced RenderMan</a> web pages into the RMR.
+<p>
+09/13/03<BR>
+Added 2 shaders from <a href="Shaders/RudyCShaders/index.html">Rudy</a>: concretetiles and plasmaball.
+<p>
+Added Pixar paper on <a href="Books/index.html#cgf">Ray Coherency</a> precented at EUROGRAPHICS 2003.
+<p>
+
+<A HREF="/RMR/oldNew/new04.html">PREVIOUS LOGS</A>
+<HR>
+<I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2008 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

@@ -1,0 +1,23 @@
+Listing of files in the ch6 directory
+
+2273 Jun 17 19:00 Makefile
+ 436 Jun 17 19:15 Readme
+1359 Jun 16 19:10 listing6_1.c
+ 744 Jun 16 19:09 listing6_1.h
+14532 Jun 16 19:07 listing6_1.tiff
+1066 Jun 17 18:50 listing6_2.c
+ 796 Jun 17 18:51 listing6_2.h
+8334 Jun 17 18:53 listing6_2.tiff
+1763 Jun 17 18:56 listing6_3.c
+ 800 Jun 17 18:54 listing6_3.h
+15350 Jun 17 18:58 listing6_3.tiff
+1774 Jun 17 18:59 listing6_4.c
+ 800 Jun 17 18:58 listing6_4.h
+15350 Jun 17 19:00 listing6_4.tiff
+ 282 Jun 17 19:01 pcontour.h
+
+For the Makefile you will need to provide for the following variables:
+
+RMAN_LIB, RIDIR, RUN_RMAN, OTHER_LIBS and CC.
+
+They are described in the Makefile

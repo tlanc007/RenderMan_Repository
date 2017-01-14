@@ -1,0 +1,148 @@
+1/10/97
+Moved DP stuff out of TMShaders to DPShaders.
+Really should change the hdocs to : instead of tabs.  
+Change  data to to assoitive array so don't need lots of different for loops to find info.  Make procedures to access and return this info.
+
+Renamed KMStarfield to LGStarfield.
+
+5/2/98
+Found missing text and pictures for the nebula animation and put them back on the rmShowAndTell page.  Touched up the rmShowandTell page (consistent name sections and a "WHAT's on this page" section.  mv rmLightBlockers.htmld to just rmBlockers, cleaned up that one, too.
+
+10/4/98
+The rmHoudini page has a broken link to LC starfield shader.
+
+saturn animation -- the RIB is really messed up, fix it to use the right shaders and to use LC's starfield.  It will need frequency 40 and useYZplane 1
+
+12/4/98
+How to set up for faq update...
+1. Get latest faq
+  I. Normally get it from: 
+     http://www.seas.gwu.edu/student/gritz/cgr.renderman.faq
+
+     But this is out of date, I grabed the latest from dejanews
+2. Save it as:  faq.dat
+3. Delete anything before Archive-name:
+4. mv cgrrFAQ.html ctrrFAQ.html2
+5. faq2html.pl <faq.dat >cgrrFAQ.html
+
+3/3/99
+FAQ update
+
+How to set up for faq update...
+1. Get latest faq
+  I. Normally get it from: 
+	http://www.bmrt.org/cgr.renderman.faq 
+
+     But if this is out of date, I grabed the latest from dejanews
+2. Save it as:  faq.dat
+3. Delete anything before Archive-name:
+4. mv cgrrFAQ.html ctrrFAQ.html2
+5. faq2html.pl <faq.dat >cgrrFAQ.html
+
+7/12/99
+Fixed missing pic from RIBS -- MechToy.  Replace all gifs with jpg.
+Remeber to remove gifs from mike's site.
+
+In RIBS it seems as though the animation is missing for mech toy.
+updated mechtoy.rib, have pic and animation.
+
+Updated Uberlight (rmBlockers/uber/)
+
++++
+DSOs need to create a shader function  (done)
++++
+
+Really should write a program that will find modified files.  List them and maybe tar them up. (done dateTar.pl)
+
+9/25/99
+Need to fix buildShaders.html to use new nav tools. (DONE 10/16/99)
+
+IDShaders -- need to be careful when rebuilding -- buidShaders is expecting tiff files for TOC and am using jpg.
+
+groupShaders isn't always getting the pictures, why?
+
+10/16/99
+updated buildShaderHTML.pl to emit nav_table.
+
+
+10/30/99
+Started to set up Wave to have his own page.  His shaders are missing.
+
+Should also do create a new site index; shader group.
+Find out why shader group is messing up images.
+
+11/13/99
+missing ribindent.pl from Utils directory.
+
+11/20/99
+Need to update Mike King's shader from mail
+
+Hello,
+
+I found a site  with some interesting programs that can output rib files:
+
+    - a 3D modeller with a built-in math parser for creating
+      parametric surfaces and implicit functions (free dimensions)
+
+    - a set of programs for processing meshes  (smesh)
+
+
+The address is:
+
+    http://www.geocities.com/ResearchTriangle/Thinktank/2965
+
+1/22/00
+should look into changing the copyrights to 2000.
+
+1/14/01
+new.jpg example
+TOC	Course Notes	PDF	NOTE	<IMG SRC=../../pics/new.jpg>This version of <a href="../../Books/infbeyond.pdf.gz">the course notes</a> have been updated to fix some typos and other problems.<P>
+
+<IMG SRC=pics/new.jpg><A HREF="Shaders/SIG2000/index.html">SIGGRAPH 2000</A>
+
+SECTION	PIC	../../Pics/redball.gif	Misc
+NEW	
+SHADER	TL_rglass
+
+9/13/03
+create make files for RMR shaders
+   then run group shaders once have html pages for shaders created
+   with makefiles.
+set up include / tar file for includes
+ask LG about arman online at RMR
+think about include standards for Rudy to make use of.
+                                                                                
+Still adding eg2003 on pubs page.
+                                                                                
+Links for fresnel or dof messed up and need fixing.
+ 
+
+9/20/03
+
+made symblolic link to ../Books/arman/shaders to armanShaders (from RMR/Shaders directory).  Should create a script that does this and other things.
+
+in Shaders/armanShaders
+lrwxrwxrwx    1 tal      tal            19 Sep 20 08:35 brushedmetal.rib -> ../Chap9/fig9.8.rib
+lrwxrwxrwx    1 tal      tal            21 Sep 20 08:38 ceramictiles.rib -> ../Chap12/fig12.7.rib
+lrwxrwxrwx    1 tal      tal            21 Sep 20 08:38 clay.rib -> ../Chap12/fig12.7.rib
+lrwxrwxrwx    1 tal      tal            19 Sep 20 08:39 emboss.rib -> ../Chap8/fig8.5.rib
+lrwxrwxrwx    1 tal      tal            19 Sep 20 08:41 lumpy.rib -> ../Chap8/fig8.6.rib
+lrwxrwxrwx    1 tal      tal            22 Sep 20 08:42 oakplank.rib -> ../Chap12/fig12.11.rib
+lrwxrwxrwx    1 tal      tal            22 Sep 20 08:43 oak.rib -> ../Chap12/fig12.10.rib
+lrwxrwxrwx    1 tal      tal            19 Sep 20 08:44 shiny.rib -> ../Chap8/fig8.6.rib
+lrwxrwxrwx    1 tal      tal            22 Sep 20 08:45 smoke.rib -> ../Chap12/fig12.12.rib
+lrwxrwxrwx    1 tal      tal            22 Sep 20 08:46 starball.rib -> ../Chap12/fig12.12.rib
+lrwxrwxrwx    1 tal      tal            19 Sep 20 08:47 supertexmap.rib -> ../Chap8/fig8.2.rib
+
+Actually going to make those actual copies so edit can be done and not affect the others.
+
+Rudy's arman code seemse to be newer than my by a couple of months.
+
+11/23/03
+tar czf shaderDev.tgz --exclude-from Excludes shaders
+
+12/23/03
+cd RMR; chgEmail.pl bob  # encoded all of the email addresses to make it harder for spam harvesters
+
+
+

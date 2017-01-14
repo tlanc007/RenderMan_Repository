@@ -1,0 +1,48 @@
+# Copied from SHW_velvet.rib and modified for SHW_brushedmetal -- tal
+#
+# Author: Stephen H. Westin, Ford Motor Company Corporate Design
+#  <swestin@ford.com>
+# Date: 28 January 1997
+#
+# This is a single sphere for quick tests of shaders using Velvet
+# reflectance.
+
+
+Display "SHW_brushedmetal.tiff" "file" "rgb"
+#Display "SHW_brushedmetal" "framebuffer" "rgb"
+Format 300 300 1.0
+
+# Correct for monitor gamma of 2.2
+Exposure 1.0 2.2
+
+Projection "perspective" "fov" 25
+
+Translate 0 0 500
+
+Rotate -115 1 0 0
+
+WorldBegin
+
+  LightSource "ambientlight" 1 "intensity" .1 "lightcolor" [.6 .6 1]
+#  LightSource "distantlight" 3 "intensity" 0.1 
+#              "from" [-50 -300 200] "to" [0 0 0]
+  LightSource "distantlight" 4 "intensity" 1.0
+              "from" [-50 0 200] "to" [0 0 0] "lightcolor" [1 .9 .85]
+
+Color [0 0 0]
+Opacity [1 1 1]
+
+Declare "sheen" "color"
+Declare "roughness" "float"
+
+AttributeBegin
+  Attribute "identifier" "name" [ "cylinder" ]
+  Color [.3 .3 .3]
+  Rotate 90 0 1 0
+  Surface "SHW_brushedmetal" "Kd" .5 "Ka" 1 "Ks" .5 "roughness" .15
+#  Sphere 100 -100 100 360
+  Cylinder 50 -100 100 360
+AttributeEnd
+
+WorldEnd
+

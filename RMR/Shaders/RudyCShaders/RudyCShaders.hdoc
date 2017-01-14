@@ -1,0 +1,33 @@
+MAILTO	shaders AT SpamSucks_rudycortes DOT com	NAME	Email Rudy Cortes
+PRENOTE	Rudy now has his own website: <b><a href="http://www.rudycortes.com">www.rudycortes.com</a></b><p>
+TITLE	RudyCShaders	H1	Rudy Cortes Shaders
+DIR	RudyCShaders	PIC	100	100
+SHADER	RudyCSkin	NOTE	Currently this shader doesn't look very well under PRMan.  It has been tested under BMRT and AIR<p>(<i>5/11/03 code change from author -- tal</i>)
+DESC	skin shader
+DO_LINE
+SHADER	RudyCstones
+DESC	procedural stone shader
+DO_LINE
+SHADER	RudyCsteelfloor_d	NOTE	Procedural displacement shader that resembles a steelplated floor.<p>NOTE: This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>).
+DESC	steelfloor displacement shader
+DO_LINE
+SHADER	RudyCconcretestripes_d	NOTE	Displacement shader that gives 'concree stripes' look. NOTE: This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>).
+DESC	concrete stripes displacement shader
+DO_LINE
+SHADER	RudyCplasmaball	NOTE	Nice plasma field shader.
+DESC	SciFi plasma ball
+DO_LINE
+NEW
+SHADER	RudyCstripeCeramic	NOTE	Ceramic with feeling that it was painted while rotating on the molding table.  This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>).  It also uses Rudy's <a href="rclocillum.h">rclocillum.h</a> file.  <p>Also, take note, the RIB example needs an environment map.  It currently is using <a href="../IDShaders/index.html#funcenter">Ivan's funcenter</a> image. To turn it into a texture map for PRMan, I did: "<i>txmake -mode clamp -latlong funcenter.jpg funcenter.tx</i>"
+DESC	painted ceramic
+DO_LINE
+NEW
+SHADER	RudyCtile01	NOTE	A floor tile shader.   This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>).
+DESC	floor tiles
+DO_LINE
+NEW
+SHADER	RudyCtile02	NOTE	A floor tile shader. This shader needs includes found in the <a href="/RMR/shaderDev.tgz">shaderDev.tgz</a> (More information can be found at: <a href="/RMR/RMRShaders.html#shdDev">RMR Shader dev</a>).
+DESC	floor tiles
+DO_LINE
+TOC	rclocillum.h	include file	NOTE	Rudy's illumination <a href="rclocillum.h">include file</a>.<p>
+TOC	Makefile	Example Makefile	NOTE	Compliant <a href="Makefile">Makefile</a> to be used with the RMR shader development library.<p>

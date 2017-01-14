@@ -1,0 +1,18 @@
+Fake caustic shader.
+The idea is that you apply this shader to a NURBs plane; witch by someway 
+mimics the translation and size of the caustic. The shader will then alter 
+the colour and opacity of the plane to mimic a caustic being casted on a 
+surface. The shader will create a round caustic centred on the plane. But 
+don't be afraid to "warp" the caustic by manipulating the CVs of your 
+plane! 2 parts build up the caustic; noise Caustic (Nc) and radial caustic 
+(Rc). Only where there is white in both the caustic will be visible. Get 
+it?
+
+When downloaded open AMcaustic.slim and AMcaustic.sl and fill in  
+"The_search_path_to_Amcaustics.slo" in the second line.   
+
+Email me if You got any questions!
+
+Aron Makkai 
+
+aron3d@yahoo.com

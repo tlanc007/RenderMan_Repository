@@ -1,0 +1,7 @@
+MAILTO	 Fredrik Gustafsson	NAME	Email	gusten AT algonet DOT se
+TITLE	FGShaders	H1	 Fredrik Gustafsson Shaders
+DIR	FGShaders	PIC	100	100
+NEW
+SHADER	FGHexaTile_bump	NOTE	Simple displacement shader that creates a Hexagon pattern using Voronoi/Worley noise.  This shader contains a tweak version of the ARMan voronoi_2d_f1f2() call.<p><b>NOTE:</b> This shader makes use of the following <a href="http://www.bmrt.org/arman/">Advanced RenderMan</a> include files: <a href="http://www.bmrt.org/arman/shaders/project.h">project.h</a> and <a href="http://www.bmrt.org/arman/shaders/patterns.h">patterns.h</a>.<p>
+DESC	Hexagon displacement shader
+DO_LINE

@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+    <title>RenderMan Books & other publications</title>
+  </head>
+
+  <body bgcolor=white color=black>
+
+ <center>
+ </td></tr></table>
+ </center>
+    <h1>RenderMan Books & other publications</h1>
+
+<H4>What's on this page?</H4></P>
+<UL>
+<LI><A HREF="index.html#iegz">IE and gzip info</A>
+<LI><A HREF="index.html#spec1">3.1 RenderMan Spec</A>
+<LI><A HREF="index.html#spec2">3.2 RenderMan Spec</A>
+<LI><A HREF="index.html#pixar_misc">Misc. Pixar online documentation</A>
+<LI><A HREF="#Advanced">Advanced RenderMan</A>
+<LI><A HREF="index.html#RC">RenderMan Companion</A>
+<LI><A HREF="index.html#ESS">Essential RenderMan fast</A>
+<LI><A HREF="index.html#RfB">Rendering for Beginners</A>
+<LI><A HREF="index.html#TM">Texturing and Modeling</A>
+<LI><A HREF="index.html#Sig">SIGGRAPH</A>
+<LI><A HREF="index.html#jgt">jgt</A>
+<LI><A HREF="index.html#prman">PRMan specific</A>
+<LI><A HREF="index.html#misc">misc</A>
+</UL>
+<P></P>
+<HR>
+<A NAME="iegz"></A>
+<H2>Internet Explorer & gzip files</H2><P>
+<font color="#0000ff">For users of Microsoft's Internet Explorer:  If you download any of these PDF files, be-aware that this browser will uncompress these gzip'ed files on the fly.  However it will still leave the .gz extension on the document.  So unzip will not know what to do as the document has already been decompressed.  Try renaming the file without the .gz extension and then see if acroread can read the file.</font>
+<p>
+<HR>
+<A NAME="spec1"></A>
+<H2>3.1 RenderMan Spec</H2><P>
+Ok, it is a little old (10 years now).  You can't even buy it any more in printed form.  But it still contains plenty of of useful information, that anyone who wants to improve their RenderMan knowledge should read!  Fortunately, <A HREF="http://www.pixar.com">Pixar</A> has made it available at its <a href="http://www.pixar.com/renderman/developers_corner/rispec/index.html">WEB site</A>.<P>
+<hr>
+<A NAME="spec2"></A>
+<H2>3.2 RenderMan Spec</H2><P>
+Hot off the presses the <a href="http://www.pixar.com/renderman/developers_corner/rispec/rispec_pdf/RISpec3_2.pdf">3.2 RenderMan Spec</a> is available in PDF form.<P>
+<hr>
+<A NAME="pixar_misc"></A>
+<H2>Misc. Pixar online documentation</H2>
+<img src="../pics/new.jpg">
+Pixar now has a <a href="http://graphics.pixar.com">online library</a> of classic and future classic papers.  Some that have been published and others that never made it for one reason or another.  Here are a couple of the available articls: 
+<br>
+<ul>
+<li> Interactive Depth of Field
+<li> Statistical Acceleration for Animated Global Illumination
+<li> Stochastic Pruning
+</ul>
+<p>
+These and many more can be found at: <a href="http://graphics.pixar.com/">http://graphics.pixar.com</a>
+<hr>
+<A NAME="Advanced"></A>
+<H2>Advanced RenderMan: "Creating CGI for Motion Pictures"</H2><P>
+By Anthony A. Apodaca and Larry Gritz, and others...<P>
+<a href="../Pics/arm.jpg"><img src=../Pics/arm_sm.jpg WIDTH=87 HEIGHT=110> </a>
+<pre>
+  ISBN 1-55860-618-1 $49.95  Published by Morgan Kaufmann Publishers
+
+Table of Contents:
+1. Photosurrealism
+2. Review of Math and CG Concepts
+3. Describing Models
+4. Geometric Primitives
+5. Handling Complexity
+6. How PhotoRealistic RenderMan Works
+7. Introduction to Shading Language
+8. Texture Mapping and Displacement
+9. Illumination Models and Lights
+10. Pattern Generation
+11. Shader Antialiasing
+12. A Gallery of Procedural Shaders
+13. Storytelling Through Lighting
+14. CG Lighting Controls
+15. Volumetric Shaders for Visual Effects
+16. Non-Photorealistic Rendering
+17. Ray Tracing in PRMan
+</pre>
+
+<A HREF="http://www.amazon.com/exec/obidos/ASIN/1558606181/o/qid=934345552/sr=8-2/002-7199017-0397618">The book</A> can be ordered from <A HREF="http://www.amazon.com">Amazon</A> for $34.97.<P>
+The <a href="arman/materials.html">Advanced Renderman</a> web pages have been imported into the RMR.  This includes all of the shaders and the <i><A href="arman/errata.html">Errata</A></i> and shader src, etc.
+<P>
+<hr>
+<A NAME="RC"></A>
+<H2>RenderMan Companion</H2><P>
+<img src=../Pics/RC.jpg  WIDTH=110 HEIGHT=140><p>
+<I>The RenderMan Companion: A Programmer's Guide to Realistic Computer Graphics</I> by Steve Upstill is a great starting place to start learning more about RenderMan.  The <A HREF="RC/rcTop.htmld/index.html">Errata and source listings</A> can be found here in the RMR.<BR>
+<P>
+<hr>
+<A NAME="ESS"></A>
+<H2>Essential RenderMan fast</H2><P>
+By Ian Stephenson
+<p>
+<img src=../Pics/erf.jpg  WIDTH=93 HEIGHT=140>
+<I>Essential RenderMan fast</I> 
+   ISBN: 1852336080 $34.95  Published by Springer Verlag 
+<p>
+<a href="http://www.springer.de/cgi/svcat/search_book.pl?isbn=1-85233-608-0&currency=Euro&language=English&lastResult=http%3A%2F%2Fwww.springer.de%2Fsearch97cgi%2Fs97_cgi%3F%26fulltextQuery%3DRenderMan%2Bfast%26fulltextOperator%3D%253C%2523AND%253E%26umlaute%3Don%26waehrung%3DEuro%26sortspec%3DErscheinungsjahr%2Bdesc%26action%3Dsearch%26collection%3Dcatalog_addition%26collection%3Dcatalog_metadata%26language%3Den%26queryText%3D%2528renderman%253C%2523and%253Efast%2529%26resultTemplate%3Dcatalog.result.hts%26sourceQueryText%3D&lastSearch=http%3A%2F%2Fwww.springer.de%2Fsearch97cgi%2Fs97_cgi%3Faction%3Dformgen%26template%3Dcatalog.search.hts%26fulltextQuery%3DRenderMan%2Bfast%26fulltextOperator%3D%253C%2523AND%253E%26umlaute%3Don%26waehrung%3DEuro%26sortspec%3DErscheinungsjahr%2Bdesc&newSearch=http%3A%2F%2Fwww.springer.de%2Fsearch97cgi%2Fs97_cgi%3Faction%3Dformgen%26template%3Dcatalog.search.hts%26language%3Den&verity=true&cookie=done">Springer Link</a>
+<br>
+<a href="http://www.amazon.com/exec/obidos/tg/detail/-/1852336080/qid=1042221200/sr=1-3/ref=sr_1_3/103-0554538-1274232?v=glance&s=books#product-details">Amazon link</a>
+<p>
+Many of the <a href="http://www.wahn.demon.co.uk/Download/index.html">examples</a> are now online.
+<p>
+<i>(I haven't seen the book myself, but it is my understanding it is targeted for the newcomer just getting into RenderMan to help them get up to speed. -- tal)</i>
+<p>
+
+<BR>
+<hr>
+<A NAME="RfB"></A>
+<H2>Rendering for Beginners: Image synthesis using RenderMan</h2>
+By Saty Raghavachary
+<p>
+<a href="../Pics/RfB.jpg"><img src=../Pics/RfB_sm.jpg WIDTH=95 HEIGHT=124></a>
+
+ISBN: 0240519353 $39.95 Published by Focal Press
+
+<pre>
+Table of Contents
+
+Rendering
+RenderMan
+RIB syntax
+Geometric primitives
+Transformations
+Camera, output
+Controls
+Shading
+What's next
+Resources
+</pre>
+
+<p>
+Available from <a href="http://www.amazon.com/exec/obidos/tg/detail/-/0240519353/qid%3D1101800341/sr%3D1/104-9385580-8381530">Amazon</a>.
+<p>
+More infomration can be found at:
+
+<a href="http://www.smartcg.com/tech/cg/books/RfB/home/index.html">smartcg.com</a> including example RIB, shaders, and errata from the book.
+<br>
+<P>
+<hr>
+<A NAME="TM"></A>
+<H2>Texturing and Modeling: A Procedural Approach</H2><P>
+<P><A HREF="http://www.cs.umbc.edu/~ebert/book/book.html"><IMG SRC=../Pics/TMCover.gif ALIGN=LEFT WIDTH=86 HEIGHT=110  ALT = "Textures and Modeling: A Procedural Approach"></A>: by Ebert, Musgrave, Peachey, Perlin, and Worley.  A great source for somebody interested in procedural textures.  There is some RenderMan code from the book can be found at <A HREF="ftp://archive.cs.umbc.edu/pub/texture">this FTP site</A>.  The shaders can also be found in the RMR under: <A HREF="../Shaders/DPShaders/index.html">Darwyn Peachy Shaders</A> and <A HREF="../Shaders/KMShaders/index.html">Ken Mussgrave Shaders</A></P>
+<BR CLEAR=all>
+
+<hr>
+<A NAME="Sig"></A>
+<H2>SIGGRAPH</H2><P>
+<font color="#0000ff">If you are using Internet Explorer, <a href="#iegz">click here</a> to see special instructions for downloading these PDF documents.</font><p>
+
+Over the years there have been several SIGGRAPH Courses on RenderMan.  It is almost impossible to get the older ones in printed form (or any other form for that matter).  But I am listing them to be complete.<P>
+
+Also, as time and need permits, some of the shaders from these courses will find their way into the RMR.<P>
+
+<i>SIGGRAPH '91</i>:  Our introduction to RIB, first half somewhat like the RC, covers things like geometry, camera, spaces, etc.  Then the last part covers shader writing.<P>
+<i>SIGGRAPH '92</i>:  Covers shader writing.  Has two sections on dealing with anti-aliasing procedural textures.  These course notes are available for download in <A HREF="sig92.course21.pdf">PDF form</A> (~1.2M)<P>
+<i>SIGGRAPH '95</i>:  Some repeated materials from '92 and some non-Pixar presenters, telling how they used RenderMan on their productions.  <B>NOTE:</B>  The SIGGRAPH Course Notes CDROM, contain <A HREF="sig95.course04.pdf">PDF versions </A> of this course.  As a bonus, the <A HREF="http://www.pixar.com/products/rendermandocs/toolkit/Toolkit/rispec31.pdf">3.1 spec PDF</A> and SIGGRAPH '92 course notes were included.<P>
+
+<i>SIGGRAPH '98</i>:  Heavy emphasis on extensions, that Pixar has incorporated into prman since, the 3.1 spec.  Also, another good presentation on writing anti-aliasing procedural textures.  These course notes are available for download in <A HREF="sig98.course11.pdf.gz">PDF form</A> (1.5M) <B>NOTE: This file is compressed.  You will need gunzip to uncompress it.</B><P>
+<i>SIGGRAPH '99</i>: Pretty much at redo of last year's course.  Clint Hanson gave some more examples of his volumetric shaders.  Also there was a new presenter, Doug Epps, from Tippet Studio.These course notes are available for download in <A HREF="sig99.course25.pdf.gz">PDF form</A> (1.2M) <B>NOTE: This file is compressed.  You will need gunzip to uncompress it.</B><P>
+<a href="infbeyond.pdf.gz">SIGGRAPH '00</a>(5Megs compressed).  The course notes have been rebuilt and are now down to a more manageable 7Megs (5Megs compressed).  The table of contents for these notes also linked to all of the sections. The course notes include:
+<UL>
+<li>Tony Apodaca's talk on <i>How PhotoRealistic RenderMan Works</i>
+<li>Larry Gritz's talk on <i>The Secret Life of Lights and Surfaces</i>
+<li>Tal Lancaster's talk on <i>Rendering Related Issues on the Production of Disney's Dinosaur</i>
+<li>Mitch Prater's talk on <i>The Artistry of Shading: Human skin</i>
+<li>Rob Bredow's talk on <i>Fur in Stuart Little</i>
+</ul>
+The shaders and example RIBs from the course notes can also be found at: <a href="../Shaders/SIG2000/index.html">SIG2000 Shaders</a> page.
+<p>
+<a href="sig01.course48.pdf.gz">SIGGRAPH 2001 pdf.gz</a> (5.6 Megs compressed.)  Note due to copyright restrictions all of the ILM Phantom meanace pictures have been removed from this PDF version.  The notes include:
+<UL>
+<li>Tony Apodaca - <i>How to interpret PRMan statistics</i>
+<li>Larry Gritz - <i>Guide to Global Illumination</i>
+<li>Matt Pharr - <i>Layered Media for Surfae Shaders</i>
+<li>Christophe Hery and Douglas Sutton - <i>Tutorial on Procedural Primitives</i>
+<li>Kevin Bjorke - <i>Using Maya with RenderMan on Final Fantasy</i>
+<li>Lawrence Treweek and Brian Steiner - <i>Volumetric Shaders In the Production of Hallow Man</i>
+</UL>
+Don't forget to check out the extras: <a href="sig01.course48.xtra.tgz">sig01.course48.xtra.tgz</a>.
+<p>
+Many of the shaders from the extras have been added to <a href="../Shaders/SIG2001/index.html">Shaders area</a>.  At the momement none of these have any complete examples.  Also Kevin Bjorke, Christophe Hery and Douglas Sutton stuff haven't been broken out yet.  
+<p>
+Here is an addendum to correct a typo for the ILM talk.  The <b>lod.cmd</b> listing should be:
+<pre>
+   AttributeBegin
+
+      Detail [ -1 1 -1 1 -1 1]
+
+      DetailRange [ 200 500 1e38 1e38 ]
+      Color 1 0 0
+      Procedural "DelayedReadArchive" [ "$cycleName.HI.$cycleFrame.rib" ] [ $boundingBox ]
+
+      DetailRange [ 50 75 200 500 ]
+      Color 0 1 0
+      Procedural "DelayedReadArchive" [ "$cycleName.MED.$cycleFrame.rib" ] [ $boundingBox ]
+
+      DetailRange [ 10 15 50 75 ]
+      Color 0 0 1
+      Procedural "DelayedReadArchive" [ "$cycleName.LO.$cycleFrame.rib" ] [ $boundingBox ]
+
+      DetailRange [ 0 0 10 15 ]
+      Color 1 1 1
+      Sphere 1 -1 1 360
+
+   AttributeEnd
+
+</pre>
+<p>
+<a href="sig02.course16.pdf.gz">SIGGRAPH 2002 pdf.gz</a> (10.2 Megs compressed.)    The notes include:
+<UL>
+<li>Tony Apodaca - <i>The Lore of the TDs</i>
+<li>Larry Gritz - <i>A Recipe for Texture Baking</i>
+<li>Matt Pharr - <i>Light/Surface Interactions</i>
+<li>Dan B Goldman - <i>Preproduction Planning for Rendering Complex Scenes</i>
+<li>Hayden Landis - <i>Production-Ready Global Illumination</i>
+<li>Rob Bredow - <i>RenderMan on Film</i>
+<li>Guido Quaroni  - <i>Furry Monsters in a Foggy World</i>
+</UL>
+Don't forget to check out the extras: <a href="sig02.course16.xtra.tgz">sig02.course16.xtra.tgz</a>.
+<p>
+<a href="sig03.course09.pdf.gz">SIGGRAPH 2003 pdf.gz</a> (38 Megs compressed!)    The notes include:
+<UL>
+<li>Dana Batali - <i>The Evolution of RIB</i>
+<li>David Laur - <i>Programable Ray Tracing</i>
+<li>Per Christensen - <i>Global Illumination and All That</i>
+<li>Christophe Hery - <i>Implementing a Sking BSSRDF</i>
+<li>Erin Tomson - <i>Human Skin for "Finding Nemo"</i>
+<li>Wayne Wooten - <i>Translucency Tricks</i>
+<li>Byron Bashforth - <i>Rendering Fish Guts for "Finding Nemo"</i>
+<li>Thomas Jordan  - <i>Reflections and Refractions for "Finding Nemo"</i>
+<li>Guido Quaroni  - <i>RenderMan in Pixar's Pipeline</i>
+<li>Chris Bernardi  - <i>Shading a Coral Reef</i>
+</UL>
+Don't forget to check out the extras: <a href="sig03.course09.xtra.tgz">sig03.course09.xtra.tgz</a>.
+<p>
+<img src="../pics/new.jpg"><a href="sig06.course25.pdf.gz">SIGGRAPH 2006 pdf.gz</a> (8 Megs compressed).  The notes included:
+<UL>
+<li>Rudy Cortes - <i>Introduction</i> (course chair)
+<li>Saty Raghavachary - <i>A Brief Introduction to RenderMan</i>
+<li>Dan Mass - <i>What The RenderMan Spec Never Told You</i>
+<li>Moritz Moeller - <i>Going Mad with Magic Lights</i>
+<li>Heather Pritchett - <i>RenderMan In Production at WDFA Part I</i>
+<li>Tal Lancaster - <i>RenderMan in Production at WDFA Part II<br>
+Changes to RenderMan: PRMan 13 Preview</i>
+<li>Hall Bertram - <i>Production Rendering Acceleration Techniques</i>
+</UL>
+Don't forget to check out the extras: <a href="sig06.course25.xtra.tgz">sig06.course25.xtra.tgz</a> (~10 Megs!).
+Don't forget to check out the extras: sig06.course25.xtra.tgz (Not available yet)
+<p>
+<hr>
+<A NAME="jgt"></A>
+<H2>Journal of Graphics Tools</H2><P>
+Although the <A HREF="http://www.acm.org/jgt/index.html">Journal of Graphics Tools</A> is not a publication on RenderMan, it very good and occasionally something RenderMan related shows up, such as the <A HREF="http://www.renderman.org/RMR/rmBlockers/uber/index.html">uberlight</A>.<br>
+<hr>
+<A NAME="prman"></A>
+<H2>PRMan Specific Publications</H2><P>
+This section trys to track all of the known publications on PRMan (or RenderMan ProServer) related subjects.  One place that some of these can be found is on the Pixar site itself, under the heading <a href="http://www.pixar.com/companyinfo/research/index.html">Research</a>.
+<p>
+<a href="http://www.pixar.com/companyinfo/research/per/eg03.pdf">RayCoherency_EG2003.pdf</a> <i>Ray Differentials and Multiresolution Geometry for Distribution Ray Tracint in Complex Scenes</i> -- EUROGRAPHICS 2003
+<pre>
+Per H. Christensen, David M. Laur, Julian Fong, Wayne L. Wooten,
+  and Dana Batali.  "Ray Differentials and Multiresolution Geometry
+  Caching for Distribution Ray Tracing in Complex Scenes".
+  Computer Graphics Forum (Eurographics 2003 Conference Proceedings),
+  pages 543-552.  Blackwell Publishers, September 2003.
+</pre>
+<p>
+
+<a href="http://www.pixar.com/companyinfo/research/per/egsr04.pdf"><i>An Irradiance Atlas for Global Illumination in Complex Production Scenes</i></a> -- EUROGRAPHICS 2004
+<br>
+Per H. Christensen and Dana Batali. Rendering Techniques 2004 (Proceedings of the Eurographics Sympossium on Rendering 2004), pp. 133-141. Eurographics June 2004
+<p>
+<a href="http://www-graphics.stanford.edu/papers/shadows/shadows.pdf"><i>Efficient Image-Base Methods for Rendering Soft Shadows</i></a> (Maneesh Agrawala etal).  This paper was presented at SIGGRAPH 2000, gives some interesting insight into the PRMan multi-map soft shadow technique.  Other variants of this subject can be found at the <a href="http://www-graphics.stanford.edu/papers/shadows/">Stanford.edu</a> web site.
+<p>
+<a href="http://graphics.stanford.edu/papers/deepshadows/deepshad.pdf">Deep Shadow Maps</a>  (Tom Lokovic and Eric Veach) paper from SIGGRAPH 2000.  Other variants can be found at the <a href="http://www-graphics.stanford.edu/papers/deepshadows/">Stanford.edu</a> web site.
+
+<hr>
+<A NAME="misc"></A>
+<H2>Misc</H2><P>
+<b>SIGGRAPH 2003</b>
+<br>
+<pre>
+   Ian Stephenson presented <a href="http://www.dctsystems.co.uk/Text/">Implementing RenderMan on the Sony PS2</a>
+</pre>
+<br>
+    <hr>
+<I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I><br>
+<!-- Created: Mon May 31 15:10:45 PDT 1999 -->
+<!-- hhmts start -->
+Last modified: Sun Jul 30 18:32:23 PDT 2006
+<!-- hhmts end -->
+  </body>
+</html>

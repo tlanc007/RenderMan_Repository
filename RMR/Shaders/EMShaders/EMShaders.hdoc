@@ -1,0 +1,6 @@
+MAILTO	darkmoon AT connexus DOT apana DOT org DOT au	NAME	Email darkmoon
+TITLE	EMShaders	H1	Emil Mikulic (Darkmoon) Shaders
+DIR	EMShaders	PIC	100	100
+SHADER	EM_paper	
+DESC	ruled paper
+DO_LINE

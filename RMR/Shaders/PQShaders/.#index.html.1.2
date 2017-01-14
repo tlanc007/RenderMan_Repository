@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+<TITLE> PQShaders </TITLE>
+<body bgcolor="white">
+<center>
+<table cellspacing=0 cellpadding=3 border=0>
+<tr valign="bottom">
+<td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+<td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+</tr>
+<tr><td bgcolor="#305073" colspan=2>
+<table cellspacing=0 cellpadding=5 border=0>
+<tr bgcolor="#B8C8E0">
+<td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+<td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+<td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+<td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+<td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+<td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+<td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+<td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+<td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+</tr>
+</td></tr></table>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Peter Quint Shaders</H1><P>
+</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#PQcorktile">PQcorktile</A>-- cork tiling shader
+<LI><A HREF="index.html#PQCrayon">PQCrayon</A>-- making crayon like marks
+<LI><A HREF="index.html#PQslateroof">PQslateroof</A>-- slate roof shader
+<LI><A HREF="index.html#PQslateroofd">PQslateroofd</A>-- slate roof displacement shader
+</UL>
+<A HREF="mailto:Pwquint@aol.com">Email Peter Quint</A><P>
+<HR>
+<A NAME="PQcorktile"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+PQcorktile.sl</H2><P>
+This shader shows the advatages of using functions rather than duplicating the same code over and over.  Compare this one with the 
+<A HREF="../../Shaders/PQShaders/index.html#PQslateroof">PQslatdroof</A>
+and 
+<A HREF="../../Shaders/PQShaders/index.html#PQslateroofd">PQslatedroofd</A>
+shaders.  It would be better to have the common code moved out to a function so the guts of the shaders can be shared.  This shader needs the include file: <a href="tile.h">tile.h</a>It also needs the <b>noises.h</b> from BMRT/shaders.
+<P>
+<A HREF="PQcorktile.jpg">
+<IMG SRC=PQcorktile_sm.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="PQcorktile.jpg"></A>
+<A HREF="PQcorktile.sl">PQcorktile.sl</A>
+<A HREF="PQcorktile.rib">Sample RIB</A>
+<HR>
+<A NAME="PQCrayon"></A>
+<H2>PQCrayon.sl</H2><P>
+
+<P>
+<A HREF="PQCrayon.jpg">
+<IMG SRC=PQCrayon_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="PQCrayon.jpg"></A>
+<A HREF="PQCrayon.sl">PQCrayon.sl</A>
+<A HREF="PQCrayon.rib">Sample RIB</A>
+<HR>
+<A NAME="PQslateroof"></A>
+<H2>PQslateroof.sl</H2><P>
+This shader works in conjunction with 
+<A HREF="../../Shaders/PQShaders/index.html#PQslateroofd">PQslateroofd displacement</A>
+shader (The RIB example also needs this shader to work).
+<P>
+<A HREF="PQslateroof.jpg">
+<IMG SRC=PQslateroof_sm.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="PQslateroof.jpg"></A>
+<A HREF="PQslateroof.sl">PQslateroof.sl</A>
+<A HREF="PQslateroof.rib">Sample RIB</A>
+<HR>
+<A NAME="PQslateroofd"></A>
+<H2>PQslateroofd.sl</H2><P>
+This shader is meant to work in conjunction with 
+<A HREF="../../Shaders/PQShaders/index.html#PQslateroof">PQslateroof surface </A>
+shader.  The RIB example using this shader can be found there.
+<P>
+<A HREF="PQslateroofd.sl">PQslateroofd.sl</A>
+<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:talrmr@pacbell.net">talrmr@pacbell.net</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2000/index.html">SIG2000</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2002 <A HREF="mailto:tal@renderman.org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

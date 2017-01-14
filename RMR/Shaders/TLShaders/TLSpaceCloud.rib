@@ -1,0 +1,32 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+Projection "perspective" "fov" [40 ]
+Format 300 220 1
+ShadingRate 1
+FrameBegin 0
+Display "TLSpaceCloud.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 180 0 1 0 
+Translate 0 0 -2 
+WorldBegin
+AttributeBegin
+Color [0.8 0.8 0.8]
+Surface "matte" "Ka" 0 "Kd" 0
+Sphere 65 -65 65 360
+AttributeEnd
+Declare "intensity" "float"
+LightSource "ambientlight" 1 "intensity" [0.025 ]
+Declare "shadows" "string"
+LightSource "distantlight" 2 "intensity" [2 ] "from" [-60 -15 10] "to" [0 0 0]
+AttributeBegin
+Rotate 90 0 0 1 
+Translate 0 0 -10 
+Declare "txtFile" "string"
+Scale 5 2.5 1
+Surface "TLSpaceCloud" "txtFile" ["ori2.tx"]
+Patch "bilinear" "P" [-1 -5 0 -1 5 0 1 -5 0 1 5 0 ]
+AttributeEnd
+WorldEnd
+FrameEnd

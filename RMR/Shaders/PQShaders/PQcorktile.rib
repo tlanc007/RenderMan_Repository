@@ -1,0 +1,39 @@
+#RIB file to demonstrate corktile.sl
+Shutter 0.0 1.0
+Display "PQcorktile.tif" "file" "rgb"
+PixelSamples 1 1
+Projection "perspective" "fov" [26.5651 ]
+Transform [0.594962 -0.420627 -0.684904 0 0.803754 0.31136 0.506985 0 1.66533e-016 0.852131 -0.523328 0 -0.64421 0.903086 44.8591 1]
+Format 320 240 -1
+Clipping 0.01 1000
+WorldBegin
+Declare "from" "uniform point"
+Declare "to" "uniform point"
+Declare "coneangle" "uniform float"
+Declare "intensity" "uniform float"
+Declare "shadows" "string"
+Attribute "light" "shadows" ["off"]
+LightSource "ambientlight" 1 "intensity" .8
+LightSource "spotlight" 6 "from" [12.6051 20.1566 5.91168] "to" [0 0 0] "coneangle" [0.52359 ] "intensity" [ 800 ]
+#  
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+AttributeEnd
+AttributeBegin
+ConcatTransform [3.25939 0 0 0 0 3.25939 0 0 0 0 3.25939 0 0 0 0 1]
+Declare "txtscale" "uniform float"
+Surface "PQcorktile" "txtscale" 5
+Attribute "identifier" "name" ["Surf #1"]
+NuPatch 2 2 [0 0 1 1] 0.000000 1.000000 2 2 [0 0 1 1] 0.000000 1.000000  "Pw" [-13.3981 -8.31715 0 1 12.233 -8.31715 0 1 -13.3981 9.15858 0 1 12.233 9.15858 0 1 ]
+AttributeEnd
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+AttributeEnd
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+AttributeEnd
+AttributeEnd
+WorldEnd
+

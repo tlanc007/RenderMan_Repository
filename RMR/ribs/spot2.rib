@@ -1,0 +1,77 @@
+##RenderMan RIB-Structure 1.0
+##System NeXT Release 3
+# Kieran Jones (kjones@freenet.vancouver.bc.ca)
+# Date: 6/15/95
+
+FrameBegin 0
+#
+Display "kjspot.tiff" "file" "rgb"
+Format 443 443 1.000000
+ScreenWindow -1 1 -1 1
+Projection "perspective" "fov" [ 40 ]
+Transform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 5 1 ]
+Shutter 0 1
+WorldBegin
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+LightSource "Light0x233774" "spotlight" "intensity" [ 35.844154 ]
+"lightcolor" [ 1 1 1 ] "from" [ 0 4 0 ] "to" [ 0 0 0 ] "coneangle" [ .523599 ]
+"conedeltaangle" [ .392699 ] "beamdistribution" [ 2 ]
+TransformEnd
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+LightSource "Light0x2335fc" "distantlight" "intensity" [ 0 ]
+"lightcolor" [ 1 1 1 ] "from" [ -30 -30 -30 ] "to" [ 0 0 0 ]
+TransformEnd
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+LightSource "Light0x233484" "ambientlight" "intensity" [ .01 ]
+"lightcolor" [ 1 1 1 ]
+TransformEnd
+AttributeBegin
+Attribute "identifier" "name" [ "root" ]
+ShadingInterpolation "smooth"
+GeometricRepresentation "primitive"
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 0 -1 0 0 1 0 0 0 0 0 1 ]
+AttributeBegin
+Attribute "identifier" "name" [ "cone1" ]
+Attribute "identifier" "shadinggroup" [ "cone1" ]
+Color [ 1 .400006 .599994 ]
+Declare "Ks" "float"
+Declare "Kd" "float"
+Declare "Ka" "float"
+Declare "roughness" "float"
+Declare "specularcolor" "color"
+#
+Surface "plastic"  "Ks" 0.5 "Kd" 0.5 "Ka" 1 "roughness" 0.1
+"specularcolor" [1 1 1]
+ShadingInterpolation "smooth"
+GeometricRepresentation "primitive"
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+Cone 1.2 .6 360
+Disk 0 .6 360
+TransformEnd
+AttributeEnd
+TransformEnd
+AttributeEnd
+AttributeBegin
+Attribute "identifier" "name" [ "worldOrigin" ]
+ShadingInterpolation "constant"
+GeometricRepresentation "lines"
+TransformBegin
+ConcatTransform [ 1 0 0 0
+ 0 1 0 0 0 0 1 0 0 0 0 1 ]
+TransformEnd
+AttributeEnd
+WorldEnd
+FrameEnd

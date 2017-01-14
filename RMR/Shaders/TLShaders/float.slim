@@ -1,0 +1,109 @@
+slim 1 appearance sl2slim {
+instance light  "float" "float" {
+
+  previewinfo {
+    shadingrate 5
+    objectsize 1
+    objectshape Sphere
+    frame 1
+  }
+  attribute float ShadingRate {
+    default 0
+    range {0 1000 .005}
+    provider constant
+    subtype vslider
+    label {Shading Rate}
+    description {Controls the quality of the shader evaluation on a per-ensemble basis. If 0, the global value will be used. Generally you'll only want to use this value in the rare case that you want to override the global behavior.}
+  }
+  attribute string CoordSysTransform {
+    default {}
+    provider constant
+    label {Shader Space}
+    description {The coordinate system in which a shader is defined. Most shaders perform important calculations relative to this space and so transforming it affects their appearance. If empty, the shader space is the object space associated with the attached primitive. Place the name of a coordinate system object here to set the shader space for the shader. If you're using file referencing, use the "coordsys" function to translate the name of the coordinate system (eg: [coordsys mtorCoordSysShape10]).}
+  }
+  attribute float Scale {
+    default 1
+    range {0 100 .01}
+    provider constant
+    subtype vslider
+    description {An additional uniform scale factor applied on top of the optional coordinate system.}
+  }
+  collection __workgenerator {make shadow map} {
+    state closed
+    drawmode all
+    description {Attach this to any camera, coordinate system or light to cause the calculation of a shadow map.}
+    torattribute string type {
+      default shadow
+      display hidden
+    }
+    torattribute string frequency {
+      default never
+      range {
+		    Never never
+		    {Every Frame} frame
+		    {Once Per Job} job
+		}
+      subtype selector
+      label {Frequency}
+      description {Controls how often you want to compute your shadow map. Usually you should choose "Every Frame" but if you know that the map's contents are invariant over a sequence, choose "Once Per Job"}
+    }
+    torattribute string locator {
+      default {$OBJNAME}
+      label {Camera Name}
+      description {The name of the camera from which to compute the shadow map. Specifying $OBJNAME enables you to utilize a single camera controller to control multiple map calcs when attached to multiple cameras.}
+    }
+    torattribute float near {
+      default 0
+      label {Near}
+      description {The near clipping plane for the map calculation. When set to 0 the global near clipping plane is used.}
+    }
+    torattribute float far {
+      default 0
+      label {Far}
+      description {The far clipping plane for the map calculation. When set to 0 the global far clipping plane is used.}
+    }
+    torattribute float resolution {
+      default 512
+      range {
+		    0  0
+		    128 128
+		    256 256
+		    512 512
+		    1024 1024
+		    2048 2048
+		    4096 4096
+		    8192 8192
+		    16384 16384
+		}
+      subtype selector
+      label {Map Resolution}
+    }
+    torattribute string crew {
+      default {}
+      label {Objects in Map}
+    }
+    torattribute string lazy {
+      default global
+      range {
+		    Off off
+		    On	on
+		    {Use Global} global
+		}
+      subtype selector
+      label {Laziness}
+    }
+    torattribute string depthfilter {
+      default min
+      range {
+			   min min
+			   max max
+			   average average
+			   midpoint midpoint
+		       }
+      subtype selector
+      label {Depth Filter}
+      description {The algorithm for calculating shadow maps.}
+    }
+  }
+}
+}

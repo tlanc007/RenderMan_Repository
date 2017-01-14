@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE> SIG2000 </TITLE>
+<body bgcolor="white">
+<center>
+</td></tr></table>
+</center>
+</HEAD>
+<BODY  bgcolor="#ffffff">
+<CENTER>
+<H1>Shaders from <i>Very Advanced RenderMan 2</i> at SIGGRAPH 2000 course 40</H1><P>
+</CENTER>
+<H4>What's on this page:</H4>
+<UL>
+<LI><A HREF="index.html#Course Notes">Course Notes</A>-- PDF
+<LI><A HREF="index.html#Extras">Extras</A>-- Supplemental materials
+<LI><A HREF="index.html#SIG2k_srfconta">SIG2k_srfconta</A>-- contact shadows
+<LI><A HREF="index.html#SIG2k_srfdefor">SIG2k_srfdefor</A>-- deformation surface shader
+<LI><A HREF="index.html#SIG2k_srf_fur">SIG2k_srf_fur</A>-- fur shader
+<LI><A HREF="index.html#Zero Shadow Bias">Zero Shadow Bias</A>-- Example pass 1
+<LI><A HREF="index.html#SIG2k_d_map">SIG2k_d_map</A>-- Simple displacement shader
+<LI><A HREF="index.html#SIG2k_shadowspot">SIG2k_shadowspot</A>-- modified shadowspot shader.
+<LI><A HREF="index.html#SIG2k_zerobias">SIG2k_zerobias</A>-- zero shadow bias surface shader
+</UL>
+<HR>
+<A NAME="Course Notes"></A>
+<H2>Course Notes</H2><P>
+This version of <a href="../../Publications/infbeyond.pdf.gz">the course notes</a> have been updated to fix some typos and other problems.<P><HR>
+<A NAME="Extras"></A>
+<H2>Extras</H2><P>
+For some reason the examples lost their line-feeds when the ISO-9600 CD got made.<br>  <A HREF="sig2k_xtra.tgz">sig2k_xtra.tgz</A> contains the full directory with the proper formating (well for UNIX anyways).<P>  Also there is no need to run the unmk8_3 script as the file names have already be corrected.<P><HR>
+<H1><IMG SRC="../../Pics/redball.gif" ALT="">
+<A NAME="Shaders from Rob Bedow's course notes"></A>Shaders from Rob Bedow's course notes
+</H1>
+<A NAME="SIG2k_srfconta"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+SIG2k_srfconta.sl</H2><P>
+Example shader for rendering contact shadows based on depth data.  This shader is a good example of quering a shadowmap to get its transformation matricies. 
+<P>
+<A HREF="SIG2k_srfconta.sl">SIG2k_srfconta.sl</A>
+<HR>
+<A NAME="SIG2k_srfdefor"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+SIG2k_srfdefor.sl</H2><P>
+Typically used when an object is suppose to interact with soft surfaces.  Say for example a mouse walking on a bed. 
+<P>
+<A HREF="SIG2k_srfdefor.sl">SIG2k_srfdefor.sl</A>
+<HR>
+<A NAME="SIG2k_srf_fur"></A>
+<H2><IMG SRC="../../Pics/new.jpg" ALT="">
+SIG2k_srf_fur.sl</H2><P>
+Example fur shader with fur clumping (when fur gets wet). 
+<P>
+<A HREF="SIG2k_srf_fur.sl">SIG2k_srf_fur.sl</A>
+<HR>
+<H1><IMG SRC="../../Pics/redball.gif" ALT="">
+<A NAME="Shaders from Tal Lancaster's course notes"></A>Shaders from Tal Lancaster's course notes
+</H1>
+<A NAME="Zero Shadow Bias"></A>
+<H2>Zero Shadow Bias</H2><P>
+<A HREF="clysphere_1.tif"><IMG SRC=clysphere_1.jpg WIDTH=100 HEIGHT=100 CLEAR <ALT="clysphere_1.tif"></A>This example RIB shows how the zero shadow bias shader is used in pass 1.  This example needs: <a href="#SIG2k_d_map.sl">SIG2k_d_map.sl</a>, <a href="#SIG2k_shadowspot.sl">SIG2k_shadowspot.sl</a>, and <a href="#SIG2k_zerobias.sl">SIG2k_zerobias.sl</a>.<P><HR>
+<A NAME="SIG2k_d_map"></A>
+<H2>SIG2k_d_map.sl</H2><P>
+Simple displacement shader.  Reads a texture map and has controls to flip the texture in S and T.<p>This shader is used in <a href="#Zero Shadow Bias">Zero Shadow Bias (pass 1)</a>.<p> 
+<P>
+<A HREF="SIG2k_d_map.sl">SIG2k_d_map.sl</A>
+<HR>
+<A NAME="SIG2k_shadowspot"></A>
+<H2>SIG2k_shadowspot.sl</H2><P>
+modified shadowspot light shader to better handle intensity attenuation.<p>This shader is used in <a href="#Zero Shadow Bias">Zero Shadow Bias (pass 1)</a>.<p> 
+<P>
+<A HREF="SIG2k_shadowspot.sl">SIG2k_shadowspot.sl</A>
+<HR>
+<A NAME="SIG2k_zerobias"></A>
+<H2>SIG2k_zerobias.sl</H2><P>
+Example surface shader illustrating Laurent Charbonnel's zero bias shadow technique for SIGGRAPH 2000 RenderMan course.  This is the shader that is attached during the two zdepth passes.<p>This shader is used in <a href="#Zero Shadow Bias">Zero Shadow Bias (pass 1)</a>.<p> 
+<P>
+<A HREF="SIG2k_zerobias.sl">SIG2k_zerobias.sl</A>
+<HR>
+<H3> Any comments or suggestions? Send them to:
+<A HREF="mailto:tal AT renderman DOT org">tal AT renderman DOT org</A>
+</H3>
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+Parent: 
+<A HREF="../../RMRShaders.html">RMRShaders</A>
+<P>
+Siblings: 
+<A HREF="../BMRTShaders/index.html">BMRTShaders</A> <A HREF="../AKShaders/index.html">AKShaders</A> <A HREF="../DPShaders/index.html">DPShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../EMShaders/index.html">EMShaders</A> <A HREF="../FGShaders/index.html">FGShaders</A> <A HREF="../FSShaders/index.html">FSShaders</A> <A HREF="../IDShaders/index.html">IDShaders</A> <A HREF="../DWShaders/index.html">DWShaders</A> <A HREF="../KMShaders/index.html">KMShaders</A> <A HREF="../JBUMShaders/index.html">JBUMShaders</A> <A HREF="../JMShaders/index.html">JMShaders</A> <A HREF="../LGShaders/index.html">LGShaders</A> <A HREF="../LCShaders/index.html">LCShaders</A> <A HREF="../MBShaders/index.html">MBShaders</A> <A HREF="../MRShaders/index.html">MRShaders</A> <A HREF="../MKShaders/index.html">MKShaders</A> <A HREF="../PQShaders/index.html">PQShaders</A> <A HREF="../RCShaders/index.html">RCShaders</A> <A HREF="../SHWShaders/index.html">SHWShaders</A> <A HREF="../SWShaders/index.html">SWShaders</A> <A HREF="../XMBShaders/index.html">XMBShaders</A> <A HREF="../SIG91/index.html">SIG91</A> <A HREF="../SIG2001/index.html">SIG2001</A> <A HREF="../TLShaders/index.html">TLShaders</A> </DL>
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org ">Tal L. Lancaster</A> all rights reserved</I></P></small>
+</BODY>
+</HTML>

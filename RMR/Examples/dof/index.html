@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+ <HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>Depth of Field</TITLE>
+</HEAD>
+
+ <body bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+ </center>
+<center>
+    <h1>Depth of Field</h1>
+</center>
+<i>NOTE: In general I haven't really had much need for this feature.  It can be expensive to render with.  For control, you really will need to pay attention to what all of the distances of the various objects in your scene are relative to the camera. Frequently it is less hassle to just perform this operation, in post, through a compositing package.</i><p>
+
+
+<H4>What's on this page?</H4><P>
+<UL>
+<LI><A HREF="#Background">Background information</A>
+<LI><A HREF="#Charts">Charts of Circle of Confusion</A>
+<LI><A HREF="#Else">What else?</A>
+<LI><A HREF="#Renders">Renders</A>
+<LI><IMG SRC="/RMR/pics/new.jpg"><A HREF="#Exception">Exception</A>
+</UL>
+<hr>
+<a name="Background"></a>
+<H2>Background</H2>
+<p>In the <a href="http://www.pixar.com/renderman/developers_corner/rispec/index.html">RenderMan Spec</a>, the <a href="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/section4.html#RiDepthOfField">Depth of Field</a> (DOF) is specified in terms of real world lens systems.  So unless you are familiar with what an f-stop is in photography then you may not know how to use this particular function.
+
+<p>
+First some background (in terms of traditional photography):
+<p>
+A lens just collects rays of light from the front of the camera and projects this as an image onto film.  Due to various reasons these light rays don't all enter at exactly the same angle and so they focus around a circular area.  This circular area is typically referred to as "circle of confusion".
+<p>
+<small><i>(From link on <a href="http://www.britannica.com/eb/article?idxref=58920">lenses</a> from <b><a href="www.brittanica.com">Britannica</a></b>.)</i></small>
+<br>
+<IMG height="350" width="390" src="http://a300.g.akamaitech.net/7/300/792/1998-07-27/www.britannica.com/eb/image?id=2104"></P>Figure 1: <I>Lenses</I> (left) Cross-sections of standard forms of common lenses; (right) the refraction of light by converging and diverging lenses showing the principal axis, principal focus (or focal point) <I>F</I>, focal length <I>f</I>, and focal  plane.<BR>
+<p>
+<small><i>(From link on <a href="http://www.britannica.com/eb/article?eu=3367">spherical aberration</a> from <b><a href="www.brittanica.com">Britannica</a></b>)</i></small><br>
+<IMG height="160" width="580" src="http://a300.g.akamaitech.net/7/300/792/1998-07-27/www.britannica.com/eb/image?id=5371"></P>
+<BR>
+
+One reason for 'circle of confusion' is due to '<a href="http://www.britannica.com/eb/article?eu=3367">spherical aberration</a>'.  Spherical aberration is the failure of rays from the 'object point' (left part of above figure) to converge to a point image (the right of the above figure).  Because of this failure the rays converge in a circle of a particular radius (rather than a precise focus).  The smallest radius is called the <i>circle of least confusion</i>.  
+<p>
+A camera's aperture controls the sizes of the circles of confusion.  The smaller the aperture the less light is let in.  The shrinking of the aperture also decreases the number of errant rays causing aberration.  The smallest aperture setting on a lens produces the <i>circle of least confusion</i>.  As the aperture increases in size so does the radius of the 'circle of confusion'.  The more the radii of the circles of confusion overlap each other, the more defocus-ed (blurry) the image will appear.<p>
+
+Changing of a camera's aperture is done in varying degrees, called f-stops.  The f-stop number for an aperture is found by dividing diameter of the aperture into the lens's focal length.
+<pre>
+    f-stop = focalLength / apertureDiameter
+
+    100mm / 40mm = f2.5 
+     50mm / 20mm = f2.5
+</pre>
+F-stops is a measurement of light-gathering power.  A f2.5 will let in the same amount of light regardless of the particular lens size.  However to actual aperture diameter will be different across lens sizes to maintain the proper f-stop.
+<p>
+In addition to changing the f-stop to control the amount of light into a camera the f-stop also controls the zone of sharp focus (depth of field).  This is done because the aperture setting is changing the radius of the circle of confusion.  As the f-stop increases (aperture gets smaller), it is letting in less light.  The light that does get in is more focused because it is only the light that can travel down the center of the lens where there is minimal opportunity for aberration.
+<p>
+SLR type cameras have several advantages, over us in the CG world, in regards to depth of field.  Typically the cameras have a preview button on the lens to get a sense of what will be in focus and what won't.  Frequently, the lenses are bracketed.  This means that once they have their subject in focus they can look on the lens body, at the depth of field scale, for their particular f-stop to get a feel for what distances should be in focus and what will be out of focus.
+<p>
+In the next section is a spreadsheet that will allow you to have the equivalent of a bracketed lens to get a feel for what should be in/out of focus when using particular settings.
+<p>
+<hr>
+<a name="Charts"></a>
+<H2>Charts</H2>
+From the <a href="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/index.html">RenderMan Spec</a> the RenderMan Call for <a href="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/section4.html#RiDepthOfField">Depth of Field</a> is:<p>
+
+<code>
+RiDepthOfField (RtFloat fstop, RtFloat focallength, RtFloat focaldistance)
+</code>
+<p>
+(From <b>RenderMan Spec</b>)<br>
+<center><IMG src="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/images/26b.gif"></center>
+<p>
+Where C equals the size of "circle of confusion".
+<p>
+
+(Below figure is a graph of Depth of field for a lens with at focal length of 35mm and f-stop 3.5)
+<p>
+<IMG src="cc35_f3.5.jpg">
+<p>
+(Below figure is a graph of Depth of field for a lens with at focal length of 35mm and f-stop 22)
+<p>
+<IMG src="cc35_f22.jpg">
+<p>
+Notice that the shape of the curves are pretty much the same for the two figures.  The difference is with the Y-axis (the size of the circles of confusion).  In the first figure (f-stop 3.5), the range is 0-1.1.  While in the second figure where the f-stop is 22, the range is down to 0-.175.
+<p>
+These figures were made with a <a href="http://www.sun.com/staroffice/">StarOffice</a>  spreadsheet, <a href="dof.sdc.gz">dof.sdc.gz"</a>(gzipped).  You can plug in various focal lengths and f-stops and get a graph with particular lenses and settings.
+<p>
+Some standard focal lengths (lens sizes) are:  15mm, 28mm, 35mm, 50mm, 75mm, 100mm, 200mm.<br>
+Some standard f-stops are: 3.5, 4, 5.6, 8, 11, 16, 22.<p>
+<HR>
+<a name="Else"></a>
+<h2>What Else?</h2>
+
+One final thing to be aware of when using DOF with RenderMan, if you happen to read up on <a href="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/section4.html#RiProjection">RiPRojection</a> and <a href="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/section4.html#RiProjection">RiDepthOfField</a> from the Spec, you might notice a sentence like:<br>
+<blockquote>
+Note that there is a redundancy in the focal length implied by this procedure and the one set by RiDepthOfField.
+</blockquote>
+and
+<blockquote>
+Note that there is a redundancy in the focal length as specified in this procedure and the one implied by RiProjection.
+</blockquote>
+This is really a misnomer.  I think that it would be more accurate to say that the two commands mutually ignore the settings of the other.  Each acts independent and is unhindered by any implied results from the other.
+<p>
+From <a href="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/section4.html#RiProjection">RiProjection</a>, we see that there is an implied focal length set by:<p>
+<img src="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/images/53.gif">
+<p>
+In fact this is really the only focal length you should worry about when framing your image.
+<p>
+But wait you say, what about the DOF command?  It has a focal length, too, should I worry about them matching up?  Answer, no. (<i> There is an <a href="#Exception">Exception</a></i>)
+<p>
+Think of the DOF giving you the freedom to say, I want a DOF with such and such characteristics.  You just pick parameter values that match those particular blurring characteristics.  These parameter values don't impact any else but dealing with mimicking a type of blurring behavior from a particular lens of a particular focal length, set to a particular F-stop, focused at at particular distance.  They do not effect any of the other RenderMan commands.  The image will still have the exact same fielding that it had before the DOF was applied.
+<p>
+
+This way there is nothing extra to worry about with or without DOF.  Otherwise if the DOF and the FOV actually interacted, then the scene would change fielding with or without DOF.  Unless one was forced to always use the same focal length (and FOV) for both the Perspective and DOF commands.  But that would be rather limiting wouldn't it?  Not to mention redundant.
+<p>
+The parameters to the DOF command: f-stop, focallength, focaldistance, 
+In traditional photography, the lens focal length determines the FOV.  The longer the focal length, the narrower the FOV.  Everything else being equal, the larger the FOV(smaller local lengths), more of the scene will be in view, but objects will appear farther away.  With smaller FOVs (larger focal lengths), objects will appear closer but less of the scene will fit in view. So the focal length effects the size of the object in view.  In fact there is a direct correlation, doubling the focal length will double the size of the object in view.<p>
+
+
+<p>
+
+<hr>
+<a name="Renders"></a>
+<H2>Renders</H2>
+Render without DOF.<br>
+<IMG SRC="dof_off.jpg">
+<p>
+Render with DepthOfField 3.5 35 1120 (<a href="dof.0154.rib">example RIB</a>). <i>Note: Only the middle row is in focus.  This example was created through  Maya/Mtor.  Remember Maya's d default measurements are in cm and not mm.  Which is why the RIB has DepthOfField 3.5 3.5 112.</i><br>
+<IMG SRC="dof_on.jpg">
+<p>
+<HR>
+<A name="Exception"></a>
+<H2>Exception</H2>
+<IMG SRC="/RMR/pics/new.jpg">Earlier, I said that you don't need to try to match up the implied focal length from the Projection and the one used by DOF.  A case for which it may matter would be if you have some real world images that you want to stick a CG object into and have it behave properly.  You will need to have some information about the camera and the lens that took the plates. Information such as the size of the film, lens size, f-stop, aperture distance, focal distance, etc.
+<p>
+People may find the following list useful for getting in right ballpark.
+This list was provided by <a href="mailto:lee AT imageworks DOT com ">Lee Sullivan</a>.  It assumes 35mm and 1.33 aspect ratio.<p>
+
+<pre>
+15mm lens (super wide angle)
+  Angle of View: 78.5'
+
+
+30mm lens (wide angle, good for landscapes)
+  Angle of View: 44.2'
+
+
+50mm lens ("normal" lens, i.e. close to the human eye)
+  Angle of View: 27.4'
+</pre>
+ You might be able to get away with a 50mm lens not having depth of field
+blur, but the following lenses should all have DOF blur applied:<p>
+<pre>
+
+70mm lens (good for portraits)
+  Angle of View: 19.2'
+
+
+120mm lens (telephoto lens)
+  Angle of View: 10.5'
+ 
+
+200mm lens (super long lens, like what you might use for nature
+photography)
+  Angle of View: 6.1'
+</pre> 
+
+<HR>
+<H3>Any comments or  suggestions?  Send them to: 
+<a href="mailto:tal AT renderman DOT org">tal AT renderman DOT org</a><P>
+<P>
+</H3><P>
+
+    <hr>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:tal AT renderman DOT org">Tal L. Lancaster</A> all rights reserved</I></P></small>
+<!-- Created: Tue May 29 21:28:48 PDT 2001 -->
+<!-- hhmts start -->
+Last modified: Sat Mar  2 08:36:27 PST 2002
+<!-- hhmts end -->
+  </body>
+</html>

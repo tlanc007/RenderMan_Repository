@@ -1,0 +1,16 @@
+##RenderMan RIB
+version 3.03
+Display "RenderMan" "framebuffer" "rgb" 
+Format 256 192 -1
+ShadingRate 1
+Option "limits" "gridsize" [9]"bucketsize" [6 6]
+Translate 0 0 2
+Scale 0.8 0.8 0.8
+LightSource "ambientlight" 1 "intensity" [0.1]
+LightSource "distantlight" 2 "from" [0 0 0]"to" [1 0 0.5]
+WorldBegin 
+Surface "matte" 
+Color [1 1 1]
+Rotate 90 1 0 0
+Sphere 1 -1 1 360 
+WorldEnd 

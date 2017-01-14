@@ -1,0 +1,26 @@
+# LGStarfield.rib
+# Author: Tal Lancaster tal@cs.caltech.edu
+# Date: 5/24/95
+# For the RenderMan Repository
+# 
+ShadingRate 1.0
+Display "LGStarfield.tiff" "file" "rgb"
+Format 256 256 1.0
+Projection "perspective" "fov" 40
+Rotate -90 1 0 0
+Translate 0 -5 0
+
+WorldBegin
+	LightSource "ambientlight" 1 "intensity" [0.025]
+	LightSource "distantlight" 2 "from" [1 1 .1] "to" [0 0 0]
+
+	Declare "pswidth" "float"
+	Declare "frequency" "float"
+	Declare "casts_shadows" "string"
+	Attribute "render" "casts_shadows" "none"
+	Surface "LGStarfield" "pswidth" .25 "frequency" 3 "intensity" 6
+	Sphere 100 -100 100 360
+WorldEnd
+
+
+

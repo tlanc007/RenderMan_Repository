@@ -1,0 +1,496 @@
+slim 1 appearance sl2slim {
+instance light  "l_uber" "l_uber" {
+
+	description { A light with many fun controls. See the source code for attributions and comments. }
+
+  previewinfo {
+    shadingrate 5
+    objectsize 1
+    objectshape Sphere
+    frame 1
+  }
+  attribute float ShadingRate {
+    default 0
+    range {0 1000 .005}
+    provider constant
+    subtype vslider
+    label {Shading Rate}
+    description {Controls the quality of the shader evaluation on a per-ensemble basis. If 0, the global value will be used. Generally you'll only want to use this value in the rare case that you want to override the global behavior.}
+  }
+  attribute string CoordSysTransform {
+    default {}
+    provider constant
+    label {Shader Space}
+    description {The coordinate system in which a shader is defined. Most shaders perform important calculations relative to this space and so transforming it affects their appearance. If empty, the shader space is the object space associated with the attached primitive. Place the name of a coordinate system object here to set the shader space for the shader. If you're using file referencing, use the "coordsys" function to translate the name of the coordinate system (eg: [coordsys mtorCoordSysShape10]).}
+  }
+  attribute float Scale {
+    default 1
+    range {0 100 .01}
+    provider constant
+    subtype vslider
+    description {An additional uniform scale factor applied on top of the optional coordinate system.}
+  }
+  collection __workgenerator {make shadow map} {
+    state closed
+    drawmode all
+    description {Attach this to any camera, coordinate system or light to cause the calculation of a shadow map.}
+    torattribute string type {
+      default shadow
+      display hidden
+    }
+    torattribute string frequency {
+      default never
+      range {
+		    Never never
+		    {Every Frame} frame
+		    {Once Per Job} job
+		}
+      subtype selector
+      label {Frequency}
+      description {Controls how often you want to compute your shadow map. Usually you should choose "Every Frame" but if you know that the map's contents are invariant over a sequence, choose "Once Per Job"}
+    }
+    torattribute string locator {
+      default {$OBJNAME}
+      label {Camera Name}
+      description {The name of the camera from which to compute the shadow map. Specifying $OBJNAME enables you to utilize a single camera controller to control multiple map calcs when attached to multiple cameras.}
+    }
+    torattribute float near {
+      default 0
+      label {Near}
+      description {The near clipping plane for the map calculation. When set to 0 the global near clipping plane is used.}
+    }
+    torattribute float far {
+      default 0
+      label {Far}
+      description {The far clipping plane for the map calculation. When set to 0 the global far clipping plane is used.}
+    }
+    torattribute float resolution {
+      default 512
+      range {
+		    0  0
+		    128 128
+		    256 256
+		    512 512
+		    1024 1024
+		    2048 2048
+		    4096 4096
+		    8192 8192
+		    16384 16384
+		}
+      subtype selector
+      label {Map Resolution}
+    }
+    torattribute string crew {
+      default {}
+      label {Objects in Map}
+    }
+    torattribute string lazy {
+      default global
+      range {
+		    Off off
+		    On	on
+		    {Use Global} global
+		}
+      subtype selector
+      label {Laziness}
+    }
+    torattribute string depthfilter {
+      default min
+      range {
+			   min min
+			   max max
+			   average average
+			   midpoint midpoint
+		       }
+      subtype selector
+      label {Depth Filter}
+      description {The algorithm for calculating shadow maps.}
+    }
+  }
+parameter string shadowname {
+	subtype shadow
+	description {Under MTOR the common setting for this is [shdname $OBJNAME].} 
+	default {}
+}
+collection miscShadow {miscShadow} {
+state open
+parameter float shadowblur {
+	range {0 1 .001}
+	subtype slider
+	description {how soft to make the shadow edge, expressed as a percentage of the width of the entire shadow map.}
+	default {0.01}
+}
+parameter float shadowbias {
+	description {the amount of shadow bias to add to the lookup. A value of -1 means to use the global shadowbias. A value of 0 should be used when "midpoint" is turned on. }
+	default {-1}
+}
+parameter float shadownsamps {
+	range { "1" 1 "4" 4 "9" 9 "16" 16 "25" 25 "36" 36 "64" 64 }
+	subtype selector
+	description {Controls supersampling of the shadowmap.}
+	default {16}
+}
+parameter color shadowcolor {
+	provider expression
+	expression { [mattr $OBJNAME.shadowColor $f]}
+	description {Shadows ( i.e. those regions with occlusion as defined by any or all of the shadow map, ray cast, or blocker ) don't actually have to block light. In fact, in this shader, shadowed regions actually just change the color of the light to shadowcolor. If this color is set to ( 0,0,0 ) , it effectively blocks all light. But if you set it to, say ( .25,.25,.25 ) , it will make the shadowed regions lose their full brightness, but not go completely dark. Another use is if you are simulating sunlight: set the lightcolor to something yellowish, and make the shadowcolor dark but somewhat bluish. Another effect of shadows is to set the __nonspecular flag, so that the shadowed regions are lit only diffusely, without highlights.}
+	default {0  0  0}
+}
+parameter float shadowOpacity {
+	range {0 1}
+	subtype slider
+	description {Lightens the shadow map, making it look less opaque.}
+	default {1.0}
+}
+}
+collection SoftShadows {SoftShadows} {
+state open
+parameter float want_softShadows {
+	subtype switch
+	description {Turn switch on to enable softshadows}
+	default {0}
+}
+parameter float softShadowSize {
+	description {Size of 'arealight'. The larger the size the faster the shadow will appear softer. Make sure that this size matches the "softsize" paramter in the Soft Shadow Controls of the shadowmap.} 
+	default {1.0}
+}
+parameter float softShadow_gapBias {
+	default {0}
+}
+}
+parameter float lighttype {
+	subtype selector
+	range { "spot" 0 "omni ( point ) " 1 "area ( BMRT ) " 2 "directional" 3 }
+	default {0}
+	provider expression
+	expression { [if {[mel "objectType $OBJNAME"] == "pointLight"} {return 1} else {[if {[mel "objectType $OBJNAME"] == "spotLight"} {return 0} else {return 3}]} ]}
+	description {The
+	subtype of light source. Use spot for lights that point in a particular direction, from a particular position ( ie. spot ) . Use omni for light to cast light in all directions ( ie. point ) . Use distant for lights that point in a particular direction, from any position ( ie. distant ) .} 
+}
+parameter float parallelrays {
+	range {0 1}
+	subtype switch
+	provider expression
+	expression { [if {[mel "objectType $OBJNAME"] == "directionalLight"} {return 1} else {return 0}]}
+	description {when off, the light apepar to eminate from a single point ( i.e. the rays diverge ) . When on, the light rays are parallel, as if from an infinitely distant source ( like the sun ) .} 
+	default {0}
+}
+parameter color lightcolor {
+	description {overall color filtering for the light.}
+	provider expression
+	expression { [mattr $OBJNAME.color $f]} 
+	default {1 1 1}
+}
+collection Light_Falloff {Light_Falloff} {
+state open
+parameter float intensity {
+	description {overall intensity scaling of the light.}
+	expression { [if {$OBJNAME == "slimobj"} {return 1} else {mattr $OBJNAME.intensity $f} ]}
+	provider expression
+	default {1}
+}
+parameter float coneAngle {
+	range {0 89.97}
+	subtype slider
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists coneAngle"] == "1"} {expr [mattr $OBJNAME.coneAngle $f]} else { return 0.006}]}
+	provider expression
+	description {This parameter only has any meaning for true spot lights. Hotter core of the light. A surface point that lies withing this coneAngle will not have any cosine falloff.}
+	default {.006}
+}
+parameter float penumbraAngle {
+	range {0 89.97}
+	subtype slider
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists penumbraAngle"] == "1"} {expr [mattr $OBJNAME.penumbraAngle $f]} else { return 5} ]}
+	provider expression
+	description {This parameter only has any meaning for true spot lights. A surface point that lies outside coneAngle+penumbraAngle will not recieve any light from this light source. A surface point that is somewhere in between those two angles will have a cosine falloff.}
+	default {5}
+}
+parameter float falloff {
+	range {0 4}
+	subtype slider
+	label decayRate
+	description {defines the exponent for falloff. A falloff of 0 indicates that the light is the same brightness regardless of distance from source. falloff == 1 indicates linear, falloff == 2 indicates physically-correct inverse squared falloff.}
+	provider expression
+	expression { [if {$OBJNAME == "slimobj"} {return 0} else {mattr $OBJNAME.decayRate $f}]}
+	default {0}
+}
+parameter float falloffdist {
+	range {0 100}
+	subtype slider
+	label dropoff
+	description {the distance at which the incident energy is actually equal to the intensity * lightcolor. In other words, the intensity is actually given by: I = ( falloffdist / distance ) ^ falloff}
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists dropoff"] == "1"} {expr [mattr $OBJNAME.dropoff $f]} else {return 0} ]}
+	provider expression
+	default {1}
+}
+parameter float maxintensity {
+	range {0 4}
+	subtype slider
+	description {to prevent the light from becoming unboundedly large when the distance < fallofdist, the intensity is smoothly clamped to this maximum value.}
+	default {1}
+}
+}
+collection BlockerDoors {BlockerDoors} {
+state open
+parameter float blocker_leftdoor {
+	range {0 90}
+	subtype slider
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists barnDoors"] == "1"} {[if {[mattr $OBJNAME.barnDoors $f]} {return [mattr $OBJNAME.leftBarnDoor $f]} else {return 90}]} else {return 90}]}
+	provider expression 
+	default {90}
+}
+parameter float blocker_rightdoor {
+	range {0 90}
+	subtype slider
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists barnDoors"] == "1"} {[if {[mattr $OBJNAME.barnDoors $f]} {return [mattr $OBJNAME.rightBarnDoor $f]} else {return 90}]} else {return 90}]}
+	provider expression 
+	default {90}
+}
+parameter float blocker_topdoor {
+	range {0 90}
+	subtype slider
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists barnDoors"] == "1"} {[if {[mattr $OBJNAME.barnDoors $f]} {return [mattr $OBJNAME.topBarnDoor $f]} else {return 90}]} else {return 90}]}
+	provider expression 
+	default {90}
+}
+parameter float blocker_bottomdoor {
+	range {0 90}
+	subtype slider
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists barnDoors"] == "1"} {[if {[mattr $OBJNAME.barnDoors $f]} {return [mattr $OBJNAME.bottomBarnDoor $f]} else {return 90}]} else {return 90}]}
+	provider expression 
+	default {90}
+}
+parameter float blocker_dooredge {
+	range {0 1}
+	subtype slider
+	default {0.02}
+}
+}
+collection Shaping_falloff {Shaping_falloff} {
+state open
+parameter float cuton {
+	range {0 100}
+	subtype slider
+	description {defines the minimum z value of the depth
+	range over which the light is active. Outside this
+	range no energy is transmitted.}
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists useDecayRegions"] == "1"} { [if {[mattr $OBJNAME.useDecayRegions $f]} { return [mattr $OBJNAME.startDistance1 $f]} else { return 0.01 }]} else { return 0.01 }]}
+	provider expression 
+	default {0.01}
+}
+parameter float cutoff {
+	range {0 100}
+	subtype slider
+	description {defines the maximum z value of the depth
+	range over which the light is active. Outside this
+	range no energy is transmitted.}
+	expression { [if {[mel "attributeQuery -node $OBJNAME -exists useDecayRegions"] == "1"} { [if {[mattr $OBJNAME.useDecayRegions $f]} { return [mattr $OBJNAME.endDistance1 $f]} else { return 1.0e6 }]} else { return 1.0e6 }]}
+	provider expression 
+	default {1.0e6}
+}
+parameter float nearedge {
+	range {0 10}
+	subtype slider
+	description {with faredge, defines the width of the transition regions for the cuton and cutoff. The transitions will be smooth.}
+	default {0}
+}
+parameter float faredge {
+	range {0 10}
+	subtype slider
+	description {with nearedge, defines the width of the transition regions for the cuton and cutoff. The transitions will be smooth.}
+	default {0}
+}
+parameter float shearx {
+	range {0 4}
+	subtype slider
+	description {one of many controls for shaping the light cross-section. The cross-section is actually described by a superellipse where shearx defines the amount of shear applied to the light cone direction.}
+	default {0}
+}
+parameter float sheary {
+	range {0 4}
+	subtype slider
+	description {one of many controls for shaping the light cross-section. The cross-section is actually described by a superellipse where sheary defines the amount of shear applied to the light cone direction.}
+	default {0}
+}
+parameter float beamdistribution {
+	range {0 1}
+	subtype slider
+	description {NOTE: penumbraAngle replaces this. One of many controls for shaping the light cross-section. The cross-section is actually described by a superellipse where beamdistribution controls intensity falloff due to angle. A value of 0 ( the default ) means no angle falloff. A value of 1 is roughly physically correct for a spotlight, and corresponds to a cosine falloff. For a BMRT area light, the cosine falloff happens automatically, so 0 is the right physical value to use. In either case, you may use larger values to make the spot more bright in the center than the outskirts. This parameter has no effect for omni lights.}
+	default {0}
+}
+}
+parameter string slidename {
+	subtype texture
+	description {if a filename is supplied, a texture lookup will be done and the light emitted from the source will be filtered by that color, much like a slide projector. If you want to make a texture map that simply blocks light, just make it black-and-white, but store it as a RGB texture. For simplicity, the shader assumes that the texture file will have at least three channels.} 
+	default {}
+}
+collection Noisey_light {Noisey_light} {
+state open
+parameter float noiseamp {
+	range {0 4}
+	subtype slider
+	description {amplitude of the noise projected onto the light. A value of 0 means not to use noise. Larger values increase the blotchiness of the projected noise.}
+	default {0}
+}
+parameter float noisefreq {
+	range {0 50}
+	subtype slider
+	description {frequency of the noise projected onto the light.}
+	default {4}
+}
+parameter vector noiseoffset {
+	description {spatial offset of the noise. This can be animated, for example if you are using the noise to simulate the attenuation of light as it passes through a window with water drops dripping down it.}
+	default {0  0  0}
+}
+}
+collection Sellipse {Sellipse} {
+state open
+parameter float width {
+	range {0 4}
+	subtype slider
+	description {one of many controls for shaping the light cross-section. The cross-section is actually described by a superellipse where width defines the dimensions of the barn door opening. They are the cross-sectional dimensions at a distance of 1 from the light. In other words, width == height == 1 indicates a 90 degree cone angle for the light.}
+	default {1}
+}
+parameter float height {
+	range {0 4}
+	subtype slider
+	description {one of many controls for shaping the light cross-section. The cross-section is actually described by a superellipse where height defines the dimensions of the barn door opening. They are the cross-sectional dimensions at a distance of 1 from the light. In other words, width == height == 1 indicates a 90 degree cone angle for the light.}
+	default {1}
+}
+parameter float wedge {
+	range {0 1}
+	subtype slider
+	description {one of many controls for shaping the light cross-section. The cross-section is actually described by a superellipse where wedge controls the amount of width edge fuzz. Values of 0 will make a sharp cutoff, large values make the edge softer.}
+	default {0}
+}
+parameter float hedge {
+	range {0 1}
+	subtype slider
+	description {one of many controls for shaping the light cross-section. The cross-section is actually described by a superellipse where wedge controls the amount of height edge fuzz. Values of 0 will make a sharp cutoff, large values make the edge softer.}
+	default {0}
+}
+parameter float roundness {
+	range {0 1}
+	subtype slider
+	description {one of many controls for shaping the light cross-section. The cross-section is actually described by a superellipse where roundness controls how rounded the corners of the superellipse are. If this value is 0, the cross-section will be a perfect rectangle. If the value is 1, the cross-section will be a perfect circle. In between values control the roundness of the corners in a fairly obvious way.}
+	default {1}
+}
+}
+collection Raytrace {Raytrace} {
+state open
+parameter float raytraceshadow {
+	range {0 1}
+	subtype switch
+	description {if nonzero, cast a ray to see if we are in shadow. The default is zero, i.e. not to try raytracing. This option only works if your renderer supports ray tracing.}
+	default {0}
+}
+parameter float nshadowrays {
+	description {Number of shadow rays to cast. This option only works if your renderer supports ray tracing.}
+	default {1}
+}
+parameter vector shadowcheat {
+	description {add this offset to the light source position. This allows you to cause the shadows to eminate as if the light were someplace else, but without changing the area illuminated or the appearance of highlights, etc. This option only works if your renderer supports ray tracing.}
+	default {0 0 0}
+}
+}
+collection Blocker {Blocker} {
+state open
+parameter string blockercoords {
+	description {Fake shadows from a blocker object. A blocker is a superellipse in 3-space which effectively blocks light. But it's not really geometry, the shader just does the intersection with the superellipse. The blocker is defined to lie on the x-y plane of its own coordinate system ( which obviously needs to be defined in the RIB file using the CoordinateSystem command ) .}
+	display hidden 
+	default {}
+}
+parameter float blockerwidth {
+	range {0 4}
+	subtype slider
+	description {define the dimensions of the blocker's superellipse shape.}
+	display hidden 
+	default {1}
+}
+parameter float blockerheight {
+	range {0 4}
+	subtype slider
+	description {define the dimensions of the blocker's superellipse shape.}
+	display hidden 
+	default {1}
+}
+parameter float blockerwedge {
+	range {0 1}
+	subtype slider
+	description {define the fuzzyness of the blockers edges.}
+	display hidden 
+	default {.1}
+}
+parameter float blockerhedge {
+	range {0 1}
+	subtype slider
+	description {define the fuzzyness of the blockers edges.}
+	display hidden 
+	default {.1}
+}
+parameter float blockerround {
+	range {0 1}
+	subtype slider
+	description {how round the corners of the blocker are ( same control as the roundness parameter that affects the light cone shape ) .}
+	display hidden 
+	default {1}
+}
+}
+collection Contributes {Contributes} {
+state open
+parameter float nonspecular {
+	range {0 1}
+	subtype switch
+	label __nonspecular
+	description {If true, light will not contribute to specularity}
+	default {0}
+}
+parameter float __nonspecular {
+	display hidden
+	default {0}
+}
+parameter float __nondiffuse {
+	range {0 1}
+	subtype switch
+	description {If true, light will not contribute to diffuse.}
+	default {0}
+}
+parameter float __eyeHighlight {
+	subtype switch
+	description {If true, light will contribute to the eye highlight. }
+	default {0}
+}
+parameter float __emitTones {
+	subtype switch
+	description {If true, light will contribute to tone shading. }
+	default {0}
+}
+parameter float __foglight {
+	range {0 1}
+	subtype switch
+	description {If true, light is a fog light}
+	default {0}
+}
+parameter float fill_Contrib {
+	subtype switch
+	default {0}
+}
+}
+parameter float __useGooch {
+	display hidden 
+	default {0}
+}
+parameter float out_intensity {
+	display hidden 
+	default {1}
+}
+parameter float max_intensity {
+	display hidden 
+	default {1}
+}
+parameter float __inShadow {
+	display hidden 
+	default {0}
+}
+}
+}

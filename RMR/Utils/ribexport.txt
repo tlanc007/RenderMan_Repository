@@ -1,0 +1,56 @@
+
+From: Drone <drone@drone.org>
+
+Hi,
+
+I've been tinkering more or less with Maya ribexport so that it can
+export poly UVs.
+
+What I got is somehow working, I'm not familiar with C++ (just know a
+little C), so that my
+coding is certainly quite messy.
+However, I'll post the source in case it might be of use for you.
+
+Until now limitations are :
+
+It's not optimised ! like the original RIBexport it will create a lot of
+vertex (one vertex per polygon
+
+using it, no shared vertices).
+
+The model has to be clean (no non-winged vertices and it has better be
+triangulated, but it already
+
+gave better results with the original version)
+
+The model has to be fully UVmapped, unmapped faces will likely crash it
+(but it handles errors, it
+should not crash Maya don't worry).
+
+For those of you using Renderman, don't bother with it, MTOR is doing a
+far better job.
+
+You'll need BMRT libriboutMTDLL library as well as OpenMaya, OpenMayaUI,
+
+OpenMayaAnim and Foundation libs
+
+My modifs all reside in the RibMeshData::RibMeshData( MObject mesh )
+declaration.
+
+Thanks to Larry Gritz for explaining to me what's in the BMRT libs and
+what is not.
+
+Thanks to Alias support for teaching me not to forget libs in my build
+projects (hum, sorry for
+asking silly questions guys)
+
+Your comments and suggestions/error reports are welcomed !
+
+Regards,
+
+
+--
+Olivier Renouard
+Drone
+Tel : 01 55 25 25 30
+http://www.drone.org

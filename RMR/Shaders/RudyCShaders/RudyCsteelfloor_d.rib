@@ -1,0 +1,29 @@
+Format 250 250 1
+PixelSamples 3 3
+ShadingRate 1
+FrameBegin 1
+Display "RudyCsteelfloor_d.tif" "framebuffer" "rgb"
+#Display "RudyCsteelfloor_d.tif" "tiff" "rgb"
+Projection "perspective" "fov" 40
+WorldBegin
+LightSource "ambientlight" 0 "intensity" [ 0.10 ] "lightcolor"  [ 1 1 1 ]
+LightSource "distantlight" 1 "intensity" [ 1.00 ] "lightcolor" [ 1 1 1 ] "from" [ -1 1 -1 ] "to" [ 0 0 0 ]
+LightSource "distantlight" 2 "intensity" [ 0.50 ] "lightcolor" [ 1 1 1 ] "from" [ 1 1 2 ] "to" [ 0 0 0 ]
+LightSource "distantlight" 3 "intensity" [ 0.30 ] "lightcolor" [ 1 1 1 ] "from" [ 1 -1 -1 ] "to" [ 0 0 0 ]
+Declare "texturename" "string"
+Declare "roughness" "float"
+Declare "Kr" "float"
+Declare "Ks" "float"
+Declare "Ka" "float"
+Surface "shinymetal" "Ks" [ 0.9 ] "Kr" [ 0.08 ] "roughness" [ 0.2 ] 
+Declare "fuzz" "float"
+Declare "crumplefreq" "float"
+Declare "crumple" "float"
+Declare "Km" "float"
+Declare "freq" "float"
+Displacement "RudyCsteelfloor_d" "crumple" [ 0.9 ]
+Translate 0 0 3.1
+Rotate -90 1 0 0
+Sphere 1 -1 1 360
+WorldEnd
+FrameEnd

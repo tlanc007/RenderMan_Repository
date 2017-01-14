@@ -1,0 +1,37 @@
+# Changed name to KMFlame.rib and names of shaders accordingly -- tal
+#
+# flame.rib
+#
+# Test file for the flame.sl shader.  see pp. 279-280
+#
+# Reference:
+#    _Texturing and Modeling: A Procedural Approach_, by David S. Ebert, ed.,
+#    F. Kenton Musgrave, Darwyn Peachey, Ken Perlin, and Steven Worley.
+#    Academic Press, 1994.  ISBN 0-12-228760-6.
+#
+# 
+
+version 3.03
+ShadingRate 1
+PixelSamples 1 1
+#Format 256 256 -1
+Format 380 380 -1
+
+Display "KMFlame.tiff" "file" "rgb"
+
+Projection "perspective" "fov" 25
+Translate 0 0 4
+Rotate -90 1 0 0
+Translate 0 0 -0.8
+
+WorldBegin
+
+  AttributeBegin
+    Declare "flameheight" "float"
+    Declare "flameamplitude" "float"
+    Declare "chaosoffset" "float"
+    Surface "KMFlame" "flameheight" .5 "chaosoffset" 0.4
+    Patch "bilinear" "P" [-2 0 3   2 0 3  -2 0 -2  2 0 -2]
+  AttributeEnd
+
+WorldEnd

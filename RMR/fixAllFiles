@@ -1,0 +1,3 @@
+#!/bin/csh
+set Files = `cat HTMLD_FILES`
+fixRMR.pl $Files

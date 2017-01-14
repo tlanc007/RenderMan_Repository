@@ -1,0 +1,25 @@
+#declares for Houdini; until figure out how to deal with out it.
+Declare "pswidth" "uniform float"
+Declare "frequency" "uniform float"
+Declare "offset" "uniform float"
+Declare "txtscale" "uniform float"
+Declare "attenuation" "uniform float"
+Declare "beamdistribution" "uniform float"
+Declare "parallelrays" "uniform float"
+Declare "useYZplane" "uniform float"
+Declare "useXZplane" "uniform float"
+
+Declare "density" "uniform float"
+Declare "integstart" "uniform float"
+Declare "integend" "uniform float"
+Declare "stepsize" "uniform float"
+Declare "scatter" "uniform float"
+Declare "octaves" "uniform float"
+Declare "freq" "uniform float"
+Declare "smokevary" "uniform float"
+Declare "use_noise" "uniform float"
+Declare "lightscale" "uniform float"
+
+
+#Atmosphere "noisysmoke" "density" [.05] "integstart" [1] "integend" [50] "stepsize" [.15] "scatter" [1 1 1] "octaves" [3] "freq" [.5] "smokevary" [3] "use_noise" [0] "lightscale" [100] 
+

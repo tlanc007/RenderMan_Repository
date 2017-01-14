@@ -1,0 +1,31 @@
+# Changed name to KMClouds.rib and names of shaders accordingly -- tal
+#
+# clouds.rib
+#
+# Test file for the puffyclouds.sl shader.  See pp. 268-269.
+#
+# Reference:
+#    _Texturing and Modeling: A Procedural Approach_, by David S. Ebert, ed.,
+#    F. Kenton Musgrave, Darwyn Peachey, Ken Perlin, and Steven Worley.
+#    Academic Press, 1994.  ISBN 0-12-228760-6.
+#
+# 
+
+version 3.03
+ShadingRate 1
+PixelSamples 1 1
+Format 380 380 -1
+
+Display "KMPuffyclouds.tiff" "file" "rgb"
+
+Projection "perspective" "fov" 45
+Translate 0 0 4
+
+WorldBegin
+
+  AttributeBegin
+    Surface "KMPuffyclouds"
+    Polygon "P" [-2 2 0  2 2 0  2 -2 0  -2 -2 0]
+  AttributeEnd
+
+WorldEnd

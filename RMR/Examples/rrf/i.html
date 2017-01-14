@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+    <title>Refraction, Reflection, Fresnel</title>
+  </head>
+
+ <body bgcolor="#ffffff">
+
+ <center>
+ </td></tr></table>
+<H1>Examples of Refraction, Reflection, Fresnel</H1>
+ </center>
+
+<H4>What's on this page?</H4><P>
+<LI><A HREF="#refract">Refraction</A>
+<LI><A HREF="#reflect">Reflection</A>
+<LI><A HREF="#frensel">Fresnel</A>
+</UL><P>
+<HR>
+<A name="refract"></A>
+<H2>Refraction</H2>
+Doing <b>refraction</b> is fairly simple under BMRT.  Just use the <B><A HREF="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/section15.html#refract">refract()</A></B> call and then trace the rays.  See the BMRT examples/glass.sl shader for more info (actually the shader uses, <b><A HREF="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/section15.html#fresnel">fresnel()</A></b>, but more about that later).<P>
+Under prman, there are two ways to do refraction. Both ways mean calling the <b>refract()</b>.<P>
+Method 1: Use BMRT to trace the refraction rays. This is done by having prman call BMRT to trace the rays for it.<P>
+Method 2: Create an environment map containing the objects that are to be refracted.  Then use the results from the <b>refract()</b> call to lookup into the environment map.  This is the typical method for doing refraction under prman.  <P>
+
+The code generally looks something like:<P>
+<table>
+<td bgcolor="#ffff00">
+<pre>
+   vector Rfrdir = refract(NI, Nf,refractIndex);
+   color Cr = color environment(mapname, Rfrdir);
+</pre>
+</tr></table>
+<A HREF="refract.tiff">
+<IMG SRC=refract.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="refract.tiff"></A>
+<A HREF="refract.rib">Refract RIB</A><P>
+This example needs: <A HREF="/RMR/Shaders/TLShaders/index.html#TL_rglass">TL_rglass.sl</A>, <A HREF="/RMR/Shaders/TLShaders/index.html#TLpplastic">TLpplastic.sl</A>, and <A HREF="/RMR/rmTMaps.htmld/index.html#grid2">grid2.tiff</A>(NOTE: the tiff file will need to be converted to a prman texture-map, before it can be used in the example RIB.  Also, the RIB expects this map to be be named grid2.tx.).
+<HR>
+<A NAME="reflect"></A>
+<H2>Reflection</H2>
+What goes for <b>refraction</b>, pretty much goes for <b>reflection</b>: <A HREF="http://www.pixar.com/renderman/developers_corner/rispec/rispec_3_1/section15.html#reflect">reflect()</A><P>
+It is fairly simple to do under BMRT;<br>
+prman can call BMRT to do ray-trace reflection rays for it;<br>
+prman <b>reflection</b> can be sort of hacked by using an environment map.<P>
+The code generally looks something like:
+<table>
+<td bgcolor="#ffff00">
+<pre>
+   vector Rfldir = reflect(NI, Nf);
+   color Cfl = environment(mapname, Rfldir);
+</pre>
+</tr></table>
+<A HREF="reflect.tiff">
+<IMG SRC=reflect.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="reflect.tiff"></A><P>
+The above image was created using the <A HREF="#refract">RIB above</A>.  The only change was the line:<P>
+<pre>
+Surface "TL_rglass" "mapname" "/tmp/geo1.env" "refractIndex" .8 "Kd" 0 "Kt" 2 "Kr" 1
+
+was changed to:
+
+Surface "TL_rglass" "mapname" "/tmp/geo1.env" "refractIndex" .8 "Kd" 0 "Kt" 0 "Kr" 1
+</pre><P>
+If the reflective surface is flat (like in a table), then there is a slightly less costly method of doing reflections in prman.  See <A HREF="http://www.pixar.com/products/renderman/toolkit/Toolkit/AppNotes/appnote.6.html">Application Note #6</A>: "<i>Simulating Reflections In A Flat Surface</i>".<P>
+<HR>
+<img src="/pics/new.jpg"><A NAME="fresnel"></A>
+<H2>Fresnel</H2>
+The fresnel() is one of the more obscure and more understood of the SL functions.  Many shaders writers have gone on for years and have never felt that they had much use for it.
+<p>
+Hopefully, after reading this you will feel that you can never live without it.
+<p>
+I won't get into the physics of fresnel nor get into explaining exactly how it works.  But will instead give a few examples to give you a few pointers on using it.<p>
+      There are already many references that give more of the what and why. For example: 
+<pre>
+<a href="http://www.graphics.cornell.edu/~westin/fresnel.html">http://www.graphics.cornell.edu/~westin/fresnel.html</a>
+<b>3D Computers Graphics</b> (2nd edition) <i>Alan Watt</i> 
+           p. 286, 287; 117
+</pre>
+
+Most important of all, the fresnel helps you to get away from the plastic look that most CG images have.  It gives you the capability to give your objects a sense of a little more complexity.  Also it can be used to give your objects a sense of rim lighting without the need of extra lights.
+<P>
+Genearlly the images that I create tend to be more for their looks than in their physical correctness.  Otherwise I would most of the time I would care that the Index of Refraction for water is 1.1; most glasses around 1.4-1.6; etc.
+<p>
+So I tend to use values 1 < <b>ior</b> < 2.  Also I will frequently punch up many of the lighting scalers like Kr.
+<p>
+Here is our base example with the normal plastic look.
+Kr 0 ior 0
+
+Same as before but now Kr is 0.5
+
+Now we will set Kr to 1 and iterate 10 times starting with an <b>ior</b> of 1.1 and finishing with <b>ior</b> of 2.
+<p>
+<img src="fresnel.0001.jpg">
+<center>
+<table cellspacing=0 cellpadding=5 border=0>
+<tr valign="bottom">
+<td bgcolor="white"><span>IOR table: 1.1 - 2.0</span></td>
+<td bgcolor="white" align="center"></td>
+</tr>
+<tr><td bgcolor="white" colspan=3>
+<table cellspacing=0 cellpadding=5 border=3>
+<tr>
+<td><img src="fresnel.0001.jpg" CLEAR><p><center>IOR 1.1</center></td>
+<td><img src="fresnel.0002.jpg"CLEAR><p><center>IOR 1.2</center></td>
+<td><img src="fresnel.0003.jpg"CLEAR><p><center>IOR 1.3</center></td>
+</tr>
+<tr>
+<td><img src="fresnel.0004.jpg"><p><center>IOR 1.4</center></td>
+<td><img src="fresnel.0005.jpg"><p><center>IOR 1.5</center></td>
+<td><img src="fresnel.0006.jpg"><p><center>IOR 1.6</center></td>
+</tr>
+</td></tr></table>
+</td></tr></table>
+</center>
+<img src="fresnel.0001.jpg">
+<HR><small>
+<P><I>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2005 <A HREF="mailto:talrmr@SpamSucks_pacbell.net">Tal L. Lancaster</A> all rights reserved</I></P></small>
+<!-- Created: Sat Sep 11 23:28:03 PDT 1999 -->
+<!-- hhmts start -->
+Last modified: Sun Jan 27 12:32:22 PST 2002
+<!-- hhmts end -->
+  </body>
+</html>

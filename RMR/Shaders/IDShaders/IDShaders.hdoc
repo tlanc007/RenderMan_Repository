@@ -1,0 +1,37 @@
+MAILTO	ivan AT martian-labs DOT com	NAME	Email Ivan DeWolf
+TITLE	IDShaders	H1	Ivan DeWolf Shaders
+DIR	IDShaders	PIC	100	100
+SHADER	IDbrushedmetal	NOTE	This shader can use an environment-map (ala prman).  This example RIB uses a prman latitude-longitude environment-map, called "a.tx".  For this example image, a.tx, was created from an image supplied by Ivan called, <A HREF="#funcenter">funcenter.jpg</A>.  Before it can be used, the file will need to be converted to tiff.  Next convert it so prman can use it with something like: <B>txmake -envlatl -smode periodic -tmode clamp funcenter.tif a.tx</B>.  <A HREF="cube.mpg">cube.mpg</A> (30 frame 320x243 mpeg file, ~158k), <A HREF="cube_anim.rib.gz">cube_anim.rib.gz</A>.
+DESC	brushedmetal shader
+DO_LINE
+SHADER	IDbubbly	NOTE	This shader is based off of Steven Worley's Siggraph 1996 paper.  This example RIB also uses the shader: <A HREF="#IDez">IDez</A>.
+DESC	"a cellular texture basis function" displacement shader.
+DO_LINE
+SHADER	IDcs	NOTE	A simple shader (Ci = Cs actually).  It is used in the <A HREF="#toonStill">toonStill</A> and <A HREF="#toonRotate">toonRotate</A> RIB files.
+DESC	simple Ci=Cs shader
+DO_LINE
+SHADER	IDez	NOTE	A simplified matte shader.  This shader is used in <A HREF="#IDbubbly">IDbubbly</A> example.
+DESC	simple matte shader.
+DO_LINE
+SHADER	IDfill	NOTE	Simple toon fill shader with shadows.   It is used in the <A HREF="#toonStill">toonStill</A> and <A HREF="#toonRotate">toonRotate</A> RIB files.
+DESC	simple toon shader
+DO_LINE
+SHADER	IDgloop	NOTE	Example of nonlinear displacements (from "stupid renderman tricks '99).  This example RIB also uses the shader: <A HREF="#IDez">IDez</A>.
+DESC	example of nonlinear displacements.
+DO_LINE
+SHADER	IDhair	NOTE	if you look at the .rib files, you'll see there are no curve primitives.  IDhair takes a parametric surface and splits it into lines, kinda like figure 16.32 on page 23 of the color plates in "advanced renderman".  these lines are then displaced off the surface in the direction of the normal farther and farther down the length of the line. they are then displaced downward depending on how much the surface points downward. This gives them their "hanging" feeling. this really is pushing the limits of the renderer and sometim s you can see odd flickering anomolies, oh well. anyway, there are 3 spheres in the .rib files, one with the hair shader, one with a simple scartissue shader, and a big flat shaded background sphere. the animation is meant to be played back pingponging back and forth, not looping.<P>-Ivan<P>  The RIB example uses the <a href="#IDscartissue">IDscartissue</a> and <a href="#IDcs">IDcs</a> shaders.<P><a href="IDhair_pingpong.mpg">IDhair_pingpong.mpg</a> is a 30 frame 320x243 mpeg animation (~280k).  The RIB for this animation is located <a href="hairanim.rib">here</a>.<P>
+DESC	Parametric hair displacement shader 
+DO_LINE
+SHADER	IDoutline	NOTE	Valdez algorithm outline shader.   It is used in the <A HREF="#toonStill">toonStill</A> and <A HREF="#toonRotate">toonRotate</A> RIB files.
+DESC	outline shader
+DO_LINE
+SHADER	IDscartissue	NOTE	A gross scar tissue shader.  It is used in the <a href="#IDhair">IDhair</a> example.
+DESC	scar tissue
+DO_LINE
+SHADER	IDtooledsteel	NOTE	This shader can use an environment-map (ala prman).  This example RIB uses a prman latitude-longitude environment-map, called "a.tx".  For this example image, a.tx, was created from an image supplied by Ivan called, <A HREF="#funcenter">funcenter.jpg</A>.  Before it can be used, the file will need to be converted to tiff.  Next convert it so prman can use it with something like: <B>txmake -envlatl -smode periodic -tmode clamp funcenter.tif a.tx</B>.  <A HREF="sphere.mpg">sphere.mpg</A> (45 frame 320x243 mpeg file, ~250k), <A HREF="sphere_amim.rib.gz">sphere_anim.rib</A>.
+DESC	a combo of IDbrushedmetal and IDbubbly
+DO_LINE
+TOC	toonRotate	example animation	NOTE	<A HREF="toonRotate.mpg"><IMG SRC=toonStill.jpg WIDTH=100 ALT "toonStill.tif">toonRotate.mpg</A> -- 30 320x243 frame example animation (~300k). <A HREF="toonRotate.rib.gz">toonRotate.rib.gz</A>(gziped compressed).  The RIB uses the following shaders: <A HREF="IDcs.sl">IDcs.sl</A>, <A HREF="IDfill.sl">IDfill.sl</A>, and <A HREF="IDoutline.sl">IDoutline.sl</A>.<P>
+TOC	toonStill	one frame example	NOTE	<A HREF="toonStill.tif"><IMG SRC=toonStill.jpg WIDTH=100 ALT "toonStill.tif"></A> <A HREF="toonStill.rib">toonStill.rib</A> -- 1 frame example. The RIB uses the following shaders: <A HREF="IDcs.sl">IDcs.sl</A>, <A HREF="IDfill.sl">IDfill.sl</A>, and <A HREF="IDoutline.sl">IDoutline.sl</A>.<P> 
+TOC	funcenter	texture map	NOTE	<A HREF="funcenter.jpg"><IMG SRC=funcenter_sm.jpg  HEIGHT=50  ALT="funcenter.jpg"></A> -- texture map src <P>
+

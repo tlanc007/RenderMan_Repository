@@ -1,0 +1,7 @@
+#!/bin/csh
+foreach f (*.tiff)
+        echo $f
+        tifftopnm $f | pnmscale -xysize 100 100 | ppmquant 256 | ppmtogif > $f.gif
+end
+rename .tiff.gif .gif *.gif
+

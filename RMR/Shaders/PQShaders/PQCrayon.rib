@@ -1,0 +1,88 @@
+Shutter 0.0 1.0
+PixelSamples 3 3
+Display "PQCrayon.tif" "file" "rgb"
+#Display "PQCrayon.tif" "framebuffer" "rgb"
+Projection "perspective" "fov" [26.5651 ]
+Transform [0.943104 0.269665 0.194514 0 -0.332498 0.764883 0.551724 0 
+		-3.4972e-015 0.585009 -0.811027 0 -3.03194 -4.80949 11.6466 1]
+#Format 250 250 -1
+Format 400 400 -1
+Clipping 0.01 1000
+WorldBegin
+Declare "intensity" "uniform float"
+Declare "shadows" "string"
+Attribute "light" "shadows" ["off"]
+LightSource "ambientlight" 1 "intensity" [0.55 ]
+Declare "intensity" "uniform float"
+Declare "from" "uniform point"
+Declare "to" "uniform point"
+Declare "shadows" "string"
+Attribute "light" "shadows" ["off"]
+LightSource "distantlight" 2 "intensity" [0.91 ] "from" [17.3 -11.6 38.9] "to" [4.5 4.3 0.1]
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+AttributeEnd
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+Color [0 1 1]
+Declare "basecolor" "uniform color"
+Declare "topcolor" "uniform color"
+Declare "antalias" "uniform float"
+Declare "thresh1" "uniform float"
+Declare "thresh0" "uniform float"
+Declare "txtscale" "uniform float"
+Surface "PQCrayon" "basecolor" [1 1 1] "topcolor" [1 0 1] "txtscale" [1]
+Attribute "identifier" "name" ["Surf #2"]
+NuPatch 2 2 [0 0 1 1] 0.000000 1.000000 2 2 [0 0 1 1] 0.000000 1.000000  "Pw" [0 0 0 1 10 0 0 1
+0 10 0 1 10 10 0 1 ]
+AttributeEnd
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 4.5 6 0 1]
+AttributeEnd
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+AttributeEnd
+AttributeBegin
+ConcatTransform [2.36303 0 0 0 0 2.36303 0 0 0 0 2.36303 0 4.5 5.4 1.1 1]
+Declare "basecolor" "uniform color"
+Declare "topcolor" "uniform color"
+Declare "thresh1" "uniform float"
+Declare "txtscale" "uniform float"
+Declare "density0" "uniform float"
+Declare "density1" "uniform float"
+Declare "txtscale" "uniform float"
+Surface "PQCrayon" "basecolor" [1 1 1] "topcolor" [1 1 0] "txtscale" [1] "density0" [.9] "density1" [.9]
+Attribute "identifier" "name" ["Surf #3"]
+NuPatch 10 3 [0 0 0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1 1 1] 0.000000 1.000000 8 3 [0 0 0
+0.166667 0.333333 0.5 0.666667 0.833333 1 1 1] 0.000000 1.000000  "Pw" [3.74915e-033 0 -1 1
+3.74915e-033 1.55295e-033 -1 1 1.55295e-033 3.74915e-033 -1 1 -1.55295e-033 3.74915e-033 -1 1
+-3.74915e-033 1.55295e-033 -1 1 -3.74915e-033 -1.55295e-033 -1 1 -1.55295e-033 -3.74915e-033 -1
+1 1.55295e-033 -3.74915e-033 -1 1 3.74915e-033 -1.55295e-033 -1 1 3.74915e-033 0 -1 1 0.267949
+-8.32667e-017 -1 1 0.267949 0.110988 -1 1 0.110988 0.267949 -1 1 -0.110988 0.267949 -1 1
+-0.267949 0.110988 -1 1 -0.267949 -0.110988 -1 1 -0.110988 -0.267949 -1 1 0.110988 -0.267949 -1
+1 0.267949 -0.110988 -1 1 0.267949 -8.32667e-017 -1 1 0.732051 -2.498e-016 -0.732051 1 0.732051
+0.303225 -0.732051 1 0.303225 0.732051 -0.732051 1 -0.303225 0.732051 -0.732051 1 -0.732051
+0.303225 -0.732051 1 -0.732051 -0.303225 -0.732051 1 -0.303225 -0.732051 -0.732051 1 0.303225
+-0.732051 -0.732051 1 0.732051 -0.303225 -0.732051 1 0.732051 -2.498e-016 -0.732051 1 1
+-3.33067e-016 -0.267949 1 1 0.414214 -0.267949 1 0.414214 1 -0.267949 1 -0.414214 1 -0.267949 1
+-1 0.414214 -0.267949 1 -1 -0.414214 -0.267949 1 -0.414214 -1 -0.267949 1 0.414214 -1 -0.267949
+1 1 -0.414214 -0.267949 1 1 -3.33067e-016 -0.267949 1 1 -3.33067e-016 0.267949 1 1 0.414214
+0.267949 1 0.414214 1 0.267949 1 -0.414214 1 0.267949 1 -1 0.414214 0.267949 1 -1 -0.414214
+0.267949 1 -0.414214 -1 0.267949 1 0.414214 -1 0.267949 1 1 -0.414214 0.267949 1 1
+-3.33067e-016 0.267949 1 0.732051 -2.22045e-016 0.732051 1 0.732051 0.303225 0.732051 1
+0.303225 0.732051 0.732051 1 -0.303225 0.732051 0.732051 1 -0.732051 0.303225 0.732051 1
+-0.732051 -0.303225 0.732051 1 -0.303225 -0.732051 0.732051 1 0.303225 -0.732051 0.732051 1
+0.732051 -0.303225 0.732051 1 0.732051 -2.22045e-016 0.732051 1 0.267949 -8.32667e-017 1 1
+0.267949 0.110988 1 1 0.110988 0.267949 1 1 -0.110988 0.267949 1 1 -0.267949 0.110988 1 1
+-0.267949 -0.110988 1 1 -0.110988 -0.267949 1 1 0.110988 -0.267949 1 1 0.267949 -0.110988 1 1
+0.267949 -8.32667e-017 1 1 3.74915e-033 0 1 1 3.74915e-033 1.55295e-033 1 1 1.55295e-033
+3.74915e-033 1 1 -1.55295e-033 3.74915e-033 1 1 -3.74915e-033 1.55295e-033 1 1 -3.74915e-033
+-1.55295e-033 1 1 -1.55295e-033 -3.74915e-033 1 1 1.55295e-033 -3.74915e-033 1 1 3.74915e-033
+-1.55295e-033 1 1 3.74915e-033 0 1 1 ]
+AttributeEnd
+AttributeEnd
+WorldEnd
+
+

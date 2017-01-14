@@ -1,0 +1,198 @@
+Opened ./KMCyclone.sl
+
+buildTypeAndLink: .:KMCyclone.sl:surface:KMCyclone
+readShaderHTML: opened ./index.html. shder KMCyclone
+readShaderHTML: desc: 
+readShaderHTML: basename KMCyclone:<A HREF="KMCyclone.tiff">
+<IMG SRC=KMCyclone.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMCyclone.tiff"></A>
+
+buildTypeAndLink: entry <A HREF="KMCyclone.tiff">
+<IMG SRC=KMCyclone.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMCyclone.tiff"></A>
+:.:KMCyclone:
+:<A HREF="KMCyclone.tiff">
+<IMG SRC=KMCyclone.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMCyclone.tiff"></A>
+:.:KMCyclone:
+buildTypeAndLink: pushing surface:<A HREF="KMCyclone.tiff">
+<IMG SRC=KMCyclone.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMCyclone.tiff"></A>
+:.:KMCyclone:
+Opened ./KMFlame.sl
+
+buildTypeAndLink: .:KMFlame.sl:surface:KMFlame
+readShaderHTML: opened ./index.html. shder KMFlame
+readShaderHTML: desc: 
+readShaderHTML: basename KMFlame:<A HREF="KMFlame.tiff">
+<IMG SRC=KMFlame.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMFlame.tiff"></A>
+
+buildTypeAndLink: entry <A HREF="KMFlame.tiff">
+<IMG SRC=KMFlame.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMFlame.tiff"></A>
+:.:KMFlame:
+:<A HREF="KMFlame.tiff">
+<IMG SRC=KMFlame.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMFlame.tiff"></A>
+:.:KMFlame:
+buildTypeAndLink: pushing surface:<A HREF="KMFlame.tiff">
+<IMG SRC=KMFlame.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMFlame.tiff"></A>
+:.:KMFlame:
+Opened ./KMLuna.sl
+
+buildTypeAndLink: .:KMLuna.sl:surface:KMLuna
+readShaderHTML: opened ./index.html. shder KMLuna
+readShaderHTML: desc: 
+buildTypeAndLink: entry :.:KMLuna:
+::.:KMLuna:
+buildTypeAndLink: pushing surface::.:KMLuna:
+Opened ./KMPlanetclouds.sl
+
+buildTypeAndLink: .:KMPlanetclouds.sl:surface:KMPlanetclouds
+readShaderHTML: opened ./index.html. shder KMPlanetclouds
+readShaderHTML: desc: 
+buildTypeAndLink: entry :.:KMPlanetclouds:
+::.:KMPlanetclouds:
+buildTypeAndLink: pushing surface::.:KMPlanetclouds:
+Opened ./KMPuffyclouds.sl
+
+buildTypeAndLink: .:KMPuffyclouds.sl:surface:KMPuffyclouds
+readShaderHTML: opened ./index.html. shder KMPuffyclouds
+readShaderHTML: desc: 
+readShaderHTML: basename KMPuffyclouds:<A HREF="KMPuffyclouds.tiff">
+<IMG SRC=KMPuffyclouds.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMPuffyclouds.tiff"></A>
+
+buildTypeAndLink: entry <A HREF="KMPuffyclouds.tiff">
+<IMG SRC=KMPuffyclouds.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMPuffyclouds.tiff"></A>
+:.:KMPuffyclouds:
+:<A HREF="KMPuffyclouds.tiff">
+<IMG SRC=KMPuffyclouds.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMPuffyclouds.tiff"></A>
+:.:KMPuffyclouds:
+buildTypeAndLink: pushing surface:<A HREF="KMPuffyclouds.tiff">
+<IMG SRC=KMPuffyclouds.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMPuffyclouds.tiff"></A>
+:.:KMPuffyclouds:
+Opened ./KMShiny.sl
+
+buildTypeAndLink: .:KMShiny.sl:surface:KMShiny
+readShaderHTML: opened ./index.html. shder KMShiny
+readShaderHTML: desc: 
+buildTypeAndLink: entry :.:KMShiny:
+::.:KMShiny:
+buildTypeAndLink: pushing surface::.:KMShiny:
+Opened ./KMStrata.sl
+
+buildTypeAndLink: .:KMStrata.sl:surface:KMStrata
+readShaderHTML: opened ./index.html. shder KMStrata
+readShaderHTML: desc: 
+readShaderHTML: basename KMStrata:<A HREF="KMStrata.tiff">
+<IMG SRC=KMStrata.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="KMStrata.tiff"></A>
+
+buildTypeAndLink: entry <A HREF="KMStrata.tiff">
+<IMG SRC=KMStrata.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="KMStrata.tiff"></A>
+:.:KMStrata:
+:<A HREF="KMStrata.tiff">
+<IMG SRC=KMStrata.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="KMStrata.tiff"></A>
+:.:KMStrata:
+buildTypeAndLink: pushing surface:<A HREF="KMStrata.tiff">
+<IMG SRC=KMStrata.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="KMStrata.tiff"></A>
+:.:KMStrata:
+Opened ./KMTerran.sl
+
+buildTypeAndLink: .:KMTerran.sl:surface:KMTerran
+readShaderHTML: opened ./index.html. shder KMTerran
+readShaderHTML: desc: 
+buildTypeAndLink: entry :.:KMTerran:
+::.:KMTerran:
+buildTypeAndLink: pushing surface::.:KMTerran:
+Opened ./KMTerranbump.sl
+
+buildTypeAndLink: .:KMTerranbump.sl:displacement:KMTerranbump
+readShaderHTML: opened ./index.html. shder KMTerranbump
+readShaderHTML: desc: 
+buildTypeAndLink: entry :.:KMTerranbump:
+::.:KMTerranbump:
+Opened ./KMVenus.sl
+
+buildTypeAndLink: .:KMVenus.sl:surface:KdoHTMLFILE: Creating surface.html
+doHTMLFile: :.:KMLuna:
+doHTMLFile: :.:KMPlanetclouds:
+doHTMLFile: :.:KMShiny:
+doHTMLFile: :.:KMTerran:
+doHTMLFile: <A HREF="KMCyclone.tiff">
+<IMG SRC=KMCyclone.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMCyclone.tiff"></A>
+:.:KMCyclone:
+doHTMLFile: <A HREF="KMFlame.tiff">
+<IMG SRC=KMFlame.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMFlame.tiff"></A>
+:.:KMFlame:
+doHTMLFile: <A HREF="KMPuffyclouds.tiff">
+<IMG SRC=KMPuffyclouds.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMPuffyclouds.tiff"></A>
+:.:KMPuffyclouds:
+doHTMLFile: <A HREF="KMStrata.tiff">
+<IMG SRC=KMStrata.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="KMStrata.tiff"></A>
+:.:KMStrata:
+doHTMLFile: <A HREF="KMVenus.tiff">
+<IMG SRC=KMVenus.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMVenus.tiff"></A>
+:.:KMVenus:
+doHTMLFILE: Creating displacement.html
+doHTMLFile: :.:KMTerranbump:
+doHTMLFile: :.:KMWindywave:
+doHTMLFILE: Creating light.html
+doHTMLFILE: Creating imager.html
+doHTMLFILE: Creating volume.html
+MVenus
+readShaderHTML: opened ./index.html. shder KMVenus
+readShaderHTML: desc: 
+readShaderHTML: basename KMVenus:<A HREF="KMVenus.tiff">
+<IMG SRC=KMVenus.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMVenus.tiff"></A>
+
+buildTypeAndLink: entry <A HREF="KMVenus.tiff">
+<IMG SRC=KMVenus.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMVenus.tiff"></A>
+:.:KMVenus:
+:<A HREF="KMVenus.tiff">
+<IMG SRC=KMVenus.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMVenus.tiff"></A>
+:.:KMVenus:
+buildTypeAndLink: pushing surface:<A HREF="KMVenus.tiff">
+<IMG SRC=KMVenus.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMVenus.tiff"></A>
+:.:KMVenus:
+Opened ./KMWindywave.sl
+
+buildTypeAndLink: .:KMWindywave.sl:displacement:KMWindywave
+readShaderHTML: opened ./index.html. shder KMWindywave
+readShaderHTML: desc: 
+buildTypeAndLink: entry :.:KMWindywave:
+::.:KMWindywave:
+main: surface <A HREF="KMCyclone.tiff">
+<IMG SRC=KMCyclone.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMCyclone.tiff"></A>
+:.:KMCyclone: <A HREF="KMFlame.tiff">
+<IMG SRC=KMFlame.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMFlame.tiff"></A>
+:.:KMFlame: :.:KMLuna: :.:KMPlanetclouds: <A HREF="KMPuffyclouds.tiff">
+<IMG SRC=KMPuffyclouds.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMPuffyclouds.tiff"></A>
+:.:KMPuffyclouds: :.:KMShiny: <A HREF="KMStrata.tiff">
+<IMG SRC=KMStrata.jpg WIDTH=100 HEIGHT=75 CLEAR
+<ALT="KMStrata.tiff"></A>
+:.:KMStrata: :.:KMTerran: <A HREF="KMVenus.tiff">
+<IMG SRC=KMVenus.jpg WIDTH=100 HEIGHT=100 CLEAR
+<ALT="KMVenus.tiff"></A>
+:.:KMVenus:

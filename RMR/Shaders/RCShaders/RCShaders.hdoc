@@ -1,0 +1,121 @@
+SUBTITLE_B	(Shaders found in the RenderMan Companion)<P>
+SUBTITLE_LEFT	Various shaders listed in the RenderMan Companion.  As complete examples are ready, then shaders will by renamed by adding RC(and capitalizing the first letter) infront the shaders from the RenderMan Companion.<P>  A nearly complete listing can be found in an archive for <A HREF="../../Pixar/rcCh16.htmld/index.html">rcCh16</A> of the _RC_ .<P>
+TITLE	RCShaders	H1	RenderMan Companion Shaders
+DIR	RCShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	RCGlow	NOTE	The source for RCGlow.sl is as it is found in the _RC_ p. 369. A slightly modifed version can be found in the archive on the page for <A HREF="../../Pixar/rcCh16.htmld/index.html">rcCh16</A>
+DESC	
+DO_LINE
+SHADER	RCPits	NOTE	
+DESC	
+DO_LINE
+SHADER	RCShiny	NOTE	
+DESC	
+DO_LINE
+SHADER	ambientlight	NOTE	
+DESC	
+DO_LINE
+SHADER	blue_marble	NOTE	
+DESC	
+DO_LINE
+SHADER	checker	NOTE	
+DESC	
+DO_LINE
+SHADER	constant	NOTE	
+DESC	
+DO_LINE
+SHADER	dented	NOTE	
+DESC	
+DO_LINE
+SHADER	depthcue	NOTE	
+DESC	
+DO_LINE
+SHADER	dferrule	NOTE	
+DESC	
+DO_LINE
+SHADER	distantlight	NOTE	
+DESC	
+DO_LINE
+SHADER	droop	NOTE	
+DESC	
+DO_LINE
+SHADER	easysurface	NOTE	
+DESC	
+DO_LINE
+SHADER	emboss	NOTE	
+DESC	
+DO_LINE
+SHADER	eroded	NOTE	
+DESC	
+DO_LINE
+SHADER	filament	NOTE	
+DESC	
+DO_LINE
+SHADER	fog	NOTE	
+DESC	
+DO_LINE
+SHADER	glow	NOTE	
+DESC	
+DO_LINE
+SHADER	gouge	NOTE	
+DESC	
+DO_LINE
+SHADER	granite	NOTE	
+DESC	
+DO_LINE
+SHADER	matte	NOTE	
+DESC	
+DO_LINE
+SHADER	metal	NOTE	
+DESC	
+DO_LINE
+SHADER	plastic	NOTE	
+DESC	
+DO_LINE
+SHADER	pointlight	NOTE	
+DESC	
+DO_LINE
+SHADER	round	NOTE	
+DESC	
+DO_LINE
+SHADER	rubber	NOTE	
+DESC	
+DO_LINE
+SHADER	screen	NOTE	
+DESC	
+DO_LINE
+SHADER	sdixon	NOTE	
+DESC	
+DO_LINE
+SHADER	shadowspot	NOTE	
+DESC	
+DO_LINE
+SHADER	shiny	NOTE	
+DESC	
+DO_LINE
+SHADER	show_st	NOTE	
+DESC	
+DO_LINE
+SHADER	show_xyz	NOTE	
+DESC	
+DO_LINE
+SHADER	slideprojector	NOTE	
+DESC	
+DO_LINE
+SHADER	spotlight	NOTE	
+DESC	
+DO_LINE
+SHADER	threads	NOTE	
+DESC	
+DO_LINE
+SHADER	txtplastic	NOTE	
+DESC	
+DO_LINE
+SHADER	windowhighlight	NOTE	
+DESC	
+DO_LINE
+SHADER	windowlight	NOTE	
+DESC	
+DO_LINE
+SHADER	wood	NOTE	
+DESC	
+DO_LINE

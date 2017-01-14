@@ -1,0 +1,48 @@
+MAILTO	lg DOT larrygritz DOT com	NAME	Email Larry
+SUBTITLE_B	(More of Larry's shaders can be found on other pages)<P>
+TITLE	LGShaders	H1	Some of Larry Gritz Shaders
+DIR	LGShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	LGAntialiasedChecks	NOTE	
+DESC	
+DO_LINE
+SHADER	LGBrick	NOTE	
+DESC	
+DO_LINE
+SHADER	LGBrickBump	NOTE	<B>NOTE:</B> This example also uses the LGBrick shader.  As this shader is a displacement shader it can work with other surfaces, too.  <P>When trying this under prman, I noticed some problems with the image.  I have been told that some of the older versions of  prman have problems with displacement shaders.  At this point I am unsure if it is bug in my version of prman (3.4) or if there is a problem with the shader.-- tal<P>
+DESC	
+DO_LINE
+NEW
+SHADER	LGbrushedmetal	NOTE	Makes a brushed metal surface.   The surface is anisotropic, i.e. has different reflection characteristics depending on the direction of the "grain".  <P>NOTE: This neewer version replaces LGbrushed_metal that was here earlier.
+DESC	surface for brushed (anisotropic) metal
+DO_LINE
+SHADER	LGEyeBall	NOTE	
+DESC	
+DO_LINE
+SHADER	LGGreenMarble	NOTE	
+DESC	
+DO_LINE
+SHADER	LGHexTile	NOTE	
+DESC	
+DO_LINE
+SHADER	LGOutlet	NOTE	<B>NOTE:</B> This example also uses the LGWallPaper shader.<P>
+DESC	
+DO_LINE
+SHADER	LG_orennayar	NOTE	Alternate isotropic lighting model.  Based on Oren & Nayar's model published in SIGGRAPH 1994 Proceedings.
+DESC	Alternate isotropic lighting model
+DESC	
+DO_LINE
+SHADER	LGParquetPlank	NOTE	
+DESC	
+DO_LINE
+SHADER	LGRustyMetal	NOTE	
+DESC	
+DO_LINE
+SHADER	LGStarfield	NOTE	A surface shader for producing stars on a large sphere.  This shader is pretty much used on all of the space examples in the RMR.<P><B>NOTE:</B> A one time this shader was called KMStarfield.  The reason for this was this shader was included with the distribution of the shaders from the <I>Texuring & Modeling</I> book and I was trying to name things in such a way as to easily track where the shaders were available orginally.  Unfortunately, many people didn't bother to read the source to see that this was Larry's shader and wasn't based off of any of Ken Mussgrave's code.  So this is the shaders new name, to give credit where credit is due.<P>  Also, I may have missed some of the references to the old name, so if you find any references to KMStarfield, use LGStarfield instead.
+DESC	
+DO_LINE
+SHADER	LGVeinedMarble	NOTE	
+DESC	
+DO_LINE
+SHADER	LGWallpaper2Stripe	NOTE	
+DESC	
+DO_LINE

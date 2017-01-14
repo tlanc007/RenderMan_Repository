@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/nav.css" title="navtitle">
+    <title>UberLight</title>
+<LINK HREF="Examples/index.html" REL="Parent" TITLE="UberLight">  </head>
+
+<BODY bgcolor="#ffffff">
+
+ <center>
+ <table cellspacing=0 cellpadding=3 border=0>
+ <tr valign="bottom">
+ <td bgcolor="#305073">&nbsp;&nbsp;&nbsp;<span class="navtitle">RenderMan Repository</span></td>
+ <td bgcolor="#305073" align="right">&nbsp;&nbsp;</td>
+ </tr>
+ <tr><td bgcolor="#305073" colspan=2>
+ <table cellspacing=0 cellpadding=5 border=0>
+    
+ <tr bgcolor="#B8C8E0">
+ <td><a CLASS="none" href="/RMR/index.html">Home</a></td>
+ 
+ <td><a CLASS="none" href="/RMR/site_index.html">Index</a></td>
+ <td><a CLASS="none" href="/RMR/Search.html">Search</a></td>
+ <td><a CLASS="none" href="/RMR/cgrrFAQ.html">FAQ</a></td>
+ <td><a CLASS="none" href="/RMR/OtherLinks/index.html">Offsite</a></td>
+ <td><a CLASS="none" href="/RMR/RMRShaders.html">Shaders</a></td>
+ <td><a CLASS="none" href="/RMR/Examples/index.html">Examples</a></td>
+ <td><a CLASS="none" href="/RMR/Books/index.html">Books</a></td>
+ <td><a CLASS="none" href="/RMR/Utils/index.html">Utils</a></td>
+ </tr>
+ </td></tr></table>
+ </td></tr></table>
+ </center>
+
+
+    <CENTER><h1>UberLight</h1></CENTER>
+
+This page uses Larry Gritz's <A HREF ="../../Shaders/BMRTShaders/index.html#uberlight">uberlight</A> to roughly mimic examples found in: 
+ Ronen Barzel's article &quot;<I>Lighting Controls for Computer Cinematography</I>&quot; from the<B> Journal of Graphics Tools</B>.  An abstract of this article can be found at <A HREF="http://www.acm.org/jgt/papers/Barzel97/">Barzel97</A>.  This paper was also reprinted in the Siggraph '98 <a href="#pixarTM">RenderMan®</a> Course.<P>
+
+In addition to the  <A HREF ="../../Shaders/BMRTShaders/index.html#uberlight">uberlight</A>, the other nonstandard shader used in theses examples is <b>smoke.sl</B> from <A HREF="http://www.pixar.com/products/renderman/toolkit/Toolkit/AppNotes/appnote.20.html">App. Note #20</A>.
+
+NOTE: I didn't try to completely reconstruct the objects, camera, or light palcement.  Also, I was lazy and used ambient light instead of using any fill lights.  But hopefuly, everything is close enough to get the point through.<P>
+Another point of interest, the RIBs were made using <A HREF="../../OtherLinks/index.html#Company">Houdini</A>. Notice how nice the RIB look and all of the friendly comments.<P>
+
+<HR>
+<A NAME="fig1"></A>
+<H3>fig1</H3>
+<A HREF="fig1.tiff">
+<IMG SRC=fig1.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig1.tiff"></A>
+<A HREF="fig1.rib">fig1 RIB</A> Cylinder and cube on the floor, torus in midair.<P>
+<HR>
+<A NAME="fig2"></A>
+<H3>fig2</H3>
+<A HREF="fig2.tiff">
+<IMG SRC=fig2.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig2.tiff"></A>
+<A HREF="fig2.rib">fig2 RIB</A> Same as Fig. 1, with a conical key light.<P>
+<HR>
+<A NAME="fig3"></A>
+<H3>fig3</H3>
+<A HREF="fig3.tiff">
+<IMG SRC=fig3.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig3.tiff"></A>
+<A HREF="fig3.rib">fig3 RIB</A> Selection Same as Fig. 2, but the torus is unaffected by the key light.<P>
+<HR>
+<A NAME="fig5"></A>
+<H3>fig5</H3>
+<A HREF="fig5.tiff">
+<IMG SRC=fig5.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig5.tiff"></A>
+<A HREF="fig5.rib">fig5 RIB</A> Rouned rectangle shage.<P>
+<HR>
+<A NAME="fig6"></A>
+<H3>fig6</H3>
+<A HREF="fig6.tiff">
+<IMG SRC=fig6.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig6.tiff"></A>
+<A HREF="fig6.rib">fig6 RIB</A> A sheard barn door light.<P>
+<HR>
+<A NAME="fig6b"></A>
+<H3>fig6b</H3>
+<A HREF="fig6b.tiff">
+<IMG SRC=fig6b.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig6b.tiff"></A>
+<A HREF="fig6b.rib">fig6b RIB</A> Same as Fig. 6, but with the shear turned off.<P>
+<HR>
+<A NAME="fig7"></A>
+<H3>fig7</H3>
+<A HREF="fig7.tiff">
+<IMG SRC=fig7.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig7.tiff"></A>
+<A HREF="fig7.rib">fig7 RIB</A> Same as Fig.5, but with soft edges.<P>
+<HR>
+<A NAME="fig9"></A>
+<H3>fig9</H3>
+<A HREF="fig9.tiff">
+<IMG SRC=fig9.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig9.tiff"></A>
+<A HREF="fig9.rib">fig9 RIB</A>  Same as Fig. 2, but with a sharp cutoff.<P>
+<HR>
+<A NAME="fig10"></A>
+<H3>fig10</H3>
+<A HREF="fig10.tiff">
+<IMG SRC=fig10.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig10.tiff"></A>
+<A HREF="fig10.rib">fig10 RIB</A>  Same as Fig. 2, but with a gradual cuton.<P>
+<HR>
+<A NAME="fig11"></A>
+<H3>fig11</H3>
+<A HREF="fig11.tiff">
+<IMG SRC=fig11.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig11.tiff"></A>
+<A HREF="fig11.rib">fig11 RIB</A> Basic shadows.  Same as Fig. 2, but with shadows from the key light.  For prman <A HREF="shad.rib">shad.rib</A> was used to generate the shadow-map.<P>
+<HR>
+<A NAME="fig12"></A>
+<H3>fig12</H3>
+<A HREF="fig12.tiff">
+<IMG SRC=fig12.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig12.tiff"></A>
+<A HREF="fig12.rib">fig12 RIB</A> Shadow selection.  Same as Fig. 11, but the cube casts no shadow.  For prman <A HREF="shad2.rib">shad.rib</A> was used to generate the shadow-map.<P>
+<HR>
+<A NAME="fig17"></A>
+<H3>fig17</H3>
+<A HREF="fig17.tiff">
+<IMG SRC=fig17.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig17.tiff"></A>
+<A HREF="fig17.rib">fig17 RIB</A> Projecting a matte image as a "cookie cutter" to get alternate light shades.  This RIB uses  <A HREF="../star.tiff"><IMG SRC=../star.jpg  ALIGN=CENTER WIDTH=100 ALT="star.tiff"> for a texture-map<P>
+<HR>
+<A NAME="fig17b"></A>
+<H3>fig17b</H3>
+<A HREF="fig17b.tiff">
+<IMG SRC=fig17b.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig17b.tiff"></A>
+<A HREF="fig17b.rib">fig17b RIB</A> Same as Fig. 17, but the width and height are set to 0.5 instead of 1.0.<P>
+<HR>
+<A NAME="fig18"></A>
+<H3>fig18</H3>
+<A HREF="fig18.tiff">
+<IMG SRC=fig18.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig18.tiff"></A>
+<A HREF="fig18.rib">fig18 RIB</A> Instead of using simulating shadows, using a projected matte image of tiny stars, <A HREF="../star2.tiff"><IMG SRC=../star2.jpg  ALIGN=CENTER WIDTH=100 ALT="star2.tiff"><P>
+<HR>
+<A NAME="fig18b"></A>
+<H3>fig18b</H3>
+<A HREF="fig18b.tiff">
+<IMG SRC=fig18b.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig18b.tiff"></A>
+<A HREF="fig18b.rib">fig18b RIB</A> Same as Fig. 18, but with the atmosphere shader turned on.<P>
+<HR>
+<A NAME="fig20"></A>
+<H3>fig20</H3>
+<A HREF="fig20.tiff">
+<IMG SRC=fig20.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig20.tiff"></A>
+<A HREF="fig20.rib">fig20 RIB</A> Projecting a color image to get a slide effect.  The image used in this case is: <A HREF="pen.tiff"><IMG SRC=pen.jpg  ALIGN=CENTER WIDTH=100 ALT="pen.tiff"><P>
+<HR>
+<A NAME="fig21"></A>
+<H3>fig21</H3>
+<A HREF="fig21.tiff">
+<IMG SRC=fig21.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig21.tiff"></A>
+<A HREF="fig21.rib">fig21 RIB</A> Intensity distribution across beam<P>
+<HR>
+<A NAME="fig22"></A>
+<H3>fig22</H3>
+<A HREF="fig22.tiff">
+<IMG SRC=fig22.jpg WIDTH=100 HEIGHT=76 CLEAR
+ALT="fig22.tiff"></A>
+<A HREF="fig22.rib">fig22 RIB</A> Intensity falloff with distance.<P>
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>Go Up (Parent):</DT>
+<DD>[<A HREF="/Examples/index.html">rmDetails</A>]
+</DL>
+<I>
+<A NAME="pixarTM"></A>
+<h3>RenderMan is a registered trademark of Pixar</h3>.
+<p>
+The RMR is <A HREF="/copyright.html">Copyright</A> &copy; 1995-2002 <A HREF="mailto:talrmr@SpamSucks_pacbell.net">Tal L. Lancaster</A> all rights reserved</I></P></small>
+
+<!-- Created: Sun Aug  2 16:19:24 PDT 1998 -->
+<!-- hhmts start -->
+Last modified: Sun Feb 10 20:19:09 PST 2002
+<!-- hhmts end -->
+  </body>
+</html>

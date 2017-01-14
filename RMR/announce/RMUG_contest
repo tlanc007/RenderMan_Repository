@@ -1,0 +1,172 @@
+
+
+                         Subject:
+                                 RenderMan-related SIGGRAPH events
+                         Date:
+                                 1999/06/18
+                         Author:
+                                 Larry Gritz <lg@pixar.com>
+
+
+                          For those of you who will attend SIGGRAPH '99 in Los Angeles
+                          (or are considering doing so), here are some RenderMan-related
+                          activities that may interest you:
+                           
+                           
+                           
+                          RenderMan Course at SIGGRAPH
+                          ----------------------------
+                           
+                          We are pleased to be repeating last year's successful course,
+                          "Advanced RenderMan: Beyond the Companion."  Speakers include
+                          Larry Gritz (Pixar), Tony Apodaca (Pixar), Ronen Barzel
+                          (Pixar), Clint Hanson (Sony Pictures Imageworks), Doug Epps
+                          (Tippet Studios) and Scott Johnston (Fleeting Image
+                          Animation).  The course is all-day and will be held on Monday,
+                          August 9.
+                           
+                          The course material is mostly identical to last year, though of
+                          course it's somewhat updated and spruced up.  If you attended
+                          last year's course, it's up to you whether or not to attend
+                          this year's -- feel free to come by for a refresher, or to see
+                          what has changed.  If you missed last year (or were among those
+                          turned away for lack of
+                          seating), you'll definitely want to be there this time.  This
+                          is the best and most advanced material we've had in the many
+                          courses we've offered over the years.
+                           
+                           
+                           
+                          New RenderMan Book
+                          ------------------
+                           
+                          As many of you already know, Tony and I (and several "guest
+                          authors") finally finished the book we've been working on,
+                          tentatively titled "Advanced RenderMan: Creating CGI for Motion
+                          Pictures."  
+                           
+                          If you liked our course, you're going to love this book -- it
+                          not only includes a greatly expanded and much more thorough
+                          treatment of the course material, but it's also about four
+                          times the content (including many topics we didn't even begin
+                          to cover in the course), weighing in at over 450 pages
+                          including 24 pages of color plates!
+                           
+                          We're now slaves to the production process, and it's unclear if
+                          books will actually be ready by SIGGRAPH.  In fact, they
+                          probably will not be ready in time, although we are holding our
+                          breath and crossing our fingers.  But if they're not ready in
+                          time, we will definitely have lots of promotional materials and
+                          a way for people to pre-order
+                          copies at a discount.
+                           
+                           
+                           
+                          User Group Meeting
+                          ------------------
+                           
+                          At SIGGRAPH '99 in Los Angeles, we will be holding a RenderMan
+                          User Group meeting on Wednesday, August 11, 1999, from
+                          7:00pm-8:30pm at the Wilshire Grand Hotel & Center.  This is a
+                          time to see demos and announcements of RenderMan-related
+                          products, meet and ask questions of the developers of your
+                          favorite renderers, as well as generally
+                          socialize and network with your counterparts at other studios.
+                           
+                          Furthermore, the user group meeting will feature a new
+                          activity... 
+                           
+                           
+                           
+                           
+                          The First More-or-Less-Annual "Stupid RenderMan Tricks" Contest
+                          ---------------------------------------------------------------
+                           
+                          When is it?
+                           
+                            During the RenderMan User's Group meeting at SIGGRAPH '99.
+                           
+                           
+                          What is it?
+                           
+                            Over the years, we've taught several courses on the theory
+                          and   practice of RenderMan.  We try to invite users from
+                          studios to   participate, but there's never enough time for us
+                          to include everybody   who has done something cool or has
+                          something to teach.  So we intend   to remedy this by allowing
+                          users a forum to teach and share at the   annual user group
+                          meeting.
+                           
+                           
+                          How do I enter?
+                           
+                            Easy.  First, think of something cool you'd like to talk
+                          about.  It   could be a neat shader trick, a renderer or an
+                          extension thereof, a   clever way to munge RIB files, a tool
+                          you've written, hints, tips,   and war stories from
+                          productions, whatever.  In short, anything   remotely related
+                          to RenderMan and its use, which would be interesting   to TD's
+                          and other users of RenderMan renderers.
+                           
+                            Second, you write up a short description (a couple paragraphs
+                          is okay)   and send it to lg@pixar.com.  Clearly mark the
+                          subject of the email
+                            as "Stupid RMan Tricks Submission."  Attaching images is
+                          fine.  All   submission materials will be strictly
+                          confidential.  Send submissions   before July 1, 1999.
+                           
+                            An elite team of renderer authors headed by lg will judge the
+                            submissions, choosing the coolest 5-6 for presentation at the
+                          user   group meeting.  You will be notified of our decision by
+                          the second   week of July.  All decisions by the jury are
+                          final!
+                           
+                           
+                          What happens if the jury likes my submission?
+                           
+                            Chosen presenters get 5 minutes in front of the other users
+                          at the   user group meeting, an overhead projector, a videotape
+                          player,   and an open mike.  Dazzle us, confuse us, make us
+                          smart!
+                           
+                            For those materials that you're allowed to distribute
+                          (example shader   code or whatever), I'll also set up a web
+                          site on which we can put   the materials so that others may
+                          access them after the meeting. 
+                           
+                           
+                          Are there prizes?
+                           
+                            Yes.
+                           
+                           
+                          Can I just show my demo reel?
+                           
+                            NO!  It's not enough to just show pretty pictures.  You need
+                          to say   how they were done, ideally with figures, shader code
+                          fragments,   vigorous hand-waving, etc. 
+                           
+                           
+                          Does it really have to be "stupid?"
+                           
+                            No, we want clever.  I was just trying to be funny.  But the
+                          jury   will be biased toward presentations that exhibit a sick
+                          and twisted   sense of what can be done with RenderMan.  Bonus
+                          points and special   preference will be given to proposals that
+                          cause jurors to say any   of the following out loud:
+                           
+                          "I never would have thought of that."
+                          "Wicked cool!"
+                          "I've gotta try this out."
+                          "I didn't know you could do that with my renderer."
+                          "Are they nuts?  What are they smoking down there in L.A.?"
+                          "Huh?" [while squinting and cocking head to side]
+                           
+                           
+                          Enter early.  Enter often.  See you all at SIGGRAPH,
+                           
+                          -- lg
+                           
+                          -- 
+                          Larry Gritz     Pixar Animation Studios
+                          lg@pixar.com     Richmond, CA

@@ -1,0 +1,135 @@
+divert(-1)
+#
+# Glimpse-compatible surface shader that accepts an arbitrary
+#	number of shadows -- match basic form of sqLight shadows
+#
+# permit M4 flags for offset, inset, and soft shadow capability.
+#     define m4inset m4offset and/or m4softshad
+# define the number of shadows supported by defining
+#     the m4 value `m4numshads'
+
+# m4 utility functions
+define(alpha,`.abcdefghijklmnopqrstuvwxyz1234567890')
+define(ORD,`substr(alpha,$1,1)')
+define(`forloop',
+    `pushdef(`$1', `$2')_forloop(`$1', `$2', `$3', `$4')popdef(`$1')')
+define(`_forloop',
+    `$4`'ifelse($1, `$3', ,
+    `define(`$1', incr($1))_forloop(`$1', `$2', `$3', `$4')')')
+
+#
+# Shadow definitions
+#
+define(SHAD_DECLARE,`string     shadowname$1 = "";
+            ENUM        shadowfilt$1 = FILT_BOX;
+            float       shadowblur$1 = 0,
+                        shadowbias$1 = 0,
+                        ifdef(`m4insetshad',`inset$1 = 0,
+                        ')shadowsamples$1 = 16,
+                        shadowdensity$1 = 1;
+            ifdef(`m4shadoffset',`vector        shadowV$1 = vector "world" (0,0,
+0);
+            ')ifdef(`m4softshad',`BOOL  softtype$1 = 0;
+            float       softsize$1 = 1,
+                        softbias$1 = 0;
+            ')')
+
+define(DO_SHAD,`if (shadowname$1 != "") {
+        ifdef(`m4shadoffset',`uniform vector shV$1 = vtransform("shader",shadowV
+$1);
+        uniform float shvx$1 = xcomp(shV$1);
+        uniform float shvy$1 = ycomp(shV$1);
+        uniform float shvz$1 = zcomp(shV$1);
+        uniform vector shadoff$1 = vector "world" (shvx$1,shvy$1,shvz$1);
+        /* uniform vector shadoff$1 = vtransform("world","current",shV$1); */
+        ')
+        shadowed = clamp(shadowdensity$1,0,1) * do_shadow6(shadowname$1,ifdef(`m
+4shadoffset',`P-shadoff$1',`P'),
+                    shadowfilt$1,shadowblur$1,shadowsamples$1,shadowbias$1
+                    ifdef(`m4softshad',`,softtype$1,softsize$1,softbias$1')
+                    ifdef(`m4insetshad',`,inset$1,N'));
+        fullShad = max(fullShad,shadowed);
+    }')
+
+divert
+
+#define BOOL    float
+#define ENUM    float
+
+#define FILT_BOX 0
+#define FILT_GAUSS 1
+
+/**************************************************/
+/*** SHADOW ***************************************/
+/**************************************************/
+
+float do_shadow6(
+    uniform string      theName;
+    varying point       thePoint;
+    uniform ENUM        theFilt;
+    uniform float       theBlur,
+                        theSamples,
+                        theBias;
+    ifdef(`m4softshad',`uniform float useSoft, softDiam, softGap;
+    ')ifdef(`m4insetshad',`uniform float theInset;
+    varying normal      theNormal;
+')) {
+    uniform string filtTypes[2] = {"box", "gaussian"};
+    uniform string theFilterName = filtTypes[clamp(theFilt,0,1)];
+    float inShadow;
+ifdef(`m4insetshad',`    varying point SHADPOINT;
+    if (theInset != 0) {
+        normal wN = normalize(ntransform("world",theNormal));
+        point wP = transform("world",thePoint);
+        point wNew = wP + wN * theInset;
+
+        SHADPOINT = transform("world","current",wNew);
+    } else {
+        SHADPOINT = thePoint;
+    }
+',`#define SHADPOINT thePoint')
+ifdef(`m4softshad',`    if (useSoft < 1) {
+    ')    inShadow = shadow (theName,
+                            SHADPOINT,
+                            "filter",   theFilterName,
+                            "blur",     theBlur,
+                            "samples",  theSamples,
+                            "bias",     theBias);
+ifdef(`m4softshad',`    } else {
+        uniform point p0, p1, p2, p3;
+        uniform float r = softDiam * .5;
+        p0 = point "shader" (-r, r, 0);
+        p1 = point "shader" (r, r, 0);
+        p2 = point "shader" (r, -r, 0);
+        p3 = point "shader" (-r, -r, 0);
+        inShadow = shadow (theName,
+                            SHADPOINT,
+                            "source", p0, p1, p2, p3,
+                            "gapbias", softGap,
+                            "filter",   theFilterName,
+                            "blur",     theBlur,
+                            "samples",  theSamples,
+                            "bias",     theBias);
+    }
+    ')return(inShadow);
+}
+
+/******************************************************/
+/*** SHADER BEGINS ************************************/
+/******************************************************/
+
+
+surface superKagee(
+    color shadColor = 0;
+    forloop(`ssn',1,m4numshads,`SHAD_DECLARE(ORD(ssn))
+    ')
+) {
+    uniform string rcsInfo =
+"$Id: skagee.slm4,v 1.1.1.1 2002/02/10 02:36:02 tal Exp $";
+    varying float fullShad = 0;
+    varying float shadowed;
+    forloop(`ssx',1,m4numshads,`DO_SHAD(ORD(ssx))')
+    Oi = Os;
+    Ci = Oi * mix(Cs,shadColor,fullShad);
+}
+

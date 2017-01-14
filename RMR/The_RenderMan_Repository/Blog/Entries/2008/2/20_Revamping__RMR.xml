@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<content collectionGUID="CC8D43BC-5F8F-47BE-80D1-1C9A9F194E72">
+  <lastEdited clientType="local-build-20080911" date="2008-09-11 20:46:19 -0700"/>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Revamping  RMR</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>After much neglect, I have started a complete redesign of the RenderMan Repository.&#xD;&#xD;The previous logs of changes can be found at:&#xD;&#xD;&lt;a href="http://www.renderman.org/RMR/rmNew.html"&gt;rmNew.html&lt;/a&gt;&#xD;</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Wednesday, February 20, 2008&lt;/b&gt;</richText>
+  </textBox>
+</content>

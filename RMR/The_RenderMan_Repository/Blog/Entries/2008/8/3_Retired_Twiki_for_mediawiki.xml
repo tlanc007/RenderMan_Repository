@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<content collectionGUID="CC8D43BC-5F8F-47BE-80D1-1C9A9F194E72">
+  <lastEdited clientType="local-build-20080911" date="2008-09-11 20:46:20 -0700"/>
+  <textBox id="generic-header-attribute" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;RMR Blog&lt;/b&gt;</richText>
+  </textBox>
+  <textBox id="generic-title-attributes" dynamic="no" visible="yes">
+    <richText>Retired Twiki for mediawiki</richText>
+  </textBox>
+  <textBox id="generic-body-attributes" dynamic="no" visible="yes">
+    <richText>Twiki was taking too much time to setup and manage.  Opted for mediawiki which seems much more direct to set up.&#xD;&#xD;Switched the links and redid the Otherlinks page in mediawiki format.&#xD;&#xD;Also added Pixie which got lost in the original twiki setup.&#xD;</richText>
+  </textBox>
+  <textBox id="generic-datefield-attributes" dynamic="no" visible="yes">
+    <richText>&lt;b&gt;Sunday, August 3, 2008&lt;/b&gt;</richText>
+  </textBox>
+</content>

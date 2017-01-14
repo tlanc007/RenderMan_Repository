@@ -1,0 +1,105 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+#
+#----- Basic setup
+#
+Projection "perspective"
+Display "no_lens.tiff" "tiff" "rgb"
+ScreenWindow -1 1 -1 1
+Format 480 480 1
+Clipping 0.099 1000.0
+#
+#----- Start
+#
+WorldBegin
+#
+#----- Fisheye lens polygon just beyond the near clip plane
+#      - fills screen
+#      - uses fjs_fisheyelens shader
+#
+###### FISHEYE LENS IS COMMENTED OUT HERE #####
+#
+#Declare "lens_angle" "uniform float"
+#Declare "zdistance" "uniform float"
+#Declare "scale" "uniform float"
+#Surface "fjs_fisheyelens" "lens_angle" [180] "zdistance" [0.1] "scale" [0.1]
+#Polygon "P" [0.1 0.1 0.1 -0.1 0.1 0.1 -0.1 -0.1 0.1 0.1 -0.1 0.1]
+#
+#----- Opaque square in center of screen
+#      - located beyond fisheye lens polygon
+#
+Color [1 0 0]
+Surface "constant"
+Polygon "P" [0.5 0.5 5.0 -0.5 0.5 5.0 -0.5 -0.5 5.0 0.5 -0.5 5.0]
+#
+#----- Other opaque squares to show what fisheyelens does
+#      - located on same Z plane as central square
+#      - upper right diagonal
+#
+Color [0 1 0]
+Polygon "P" [1.5 1.5 5.0 0.5 1.5 5.0 0.5 0.5 5.0 1.5 0.5 5.0]
+Color [0 0 1]
+Polygon "P" [2.5 2.5 5.0 1.5 2.5 5.0 1.5 1.5 5.0 2.5 1.5 5.0]
+Color [1 1 0]
+Polygon "P" [3.5 3.5 5.0 2.5 3.5 5.0 2.5 2.5 5.0 3.5 2.5 5.0]
+Color [0 1 1]
+Polygon "P" [4.5 4.5 5.0 3.5 4.5 5.0 3.5 3.5 5.0 4.5 3.5 5.0]
+Color [1 0 1]
+Polygon "P" [5.5 5.5 5.0 4.5 5.5 5.0 4.5 4.5 5.0 5.5 4.5 5.0]
+Color [1 1 1]
+Polygon "P" [6.5 6.5 5.0 5.5 6.5 5.0 5.5 5.5 5.0 6.5 5.5 5.0]
+#
+#----- Other opaque squares to show what fisheyelens does
+#      - located on same Z plane as central square
+#      - lower right diagonal
+#
+Color [0 1 0]
+Polygon "P" [1.5 -1.5 5.0 0.5 -1.5 5.0 0.5 -0.5 5.0 1.5 -0.5 5.0]
+Color [0 0 1]
+Polygon "P" [2.5 -2.5 5.0 1.5 -2.5 5.0 1.5 -1.5 5.0 2.5 -1.5 5.0]
+Color [1 1 0]
+Polygon "P" [3.5 -3.5 5.0 2.5 -3.5 5.0 2.5 -2.5 5.0 3.5 -2.5 5.0]
+Color [0 1 1]
+Polygon "P" [4.5 -4.5 5.0 3.5 -4.5 5.0 3.5 -3.5 5.0 4.5 -3.5 5.0]
+Color [1 0 1]
+Polygon "P" [5.5 -5.5 5.0 4.5 -5.5 5.0 4.5 -4.5 5.0 5.5 -4.5 5.0]
+Color [1 1 1]
+Polygon "P" [6.5 -6.5 5.0 5.5 -6.5 5.0 5.5 -5.5 5.0 6.5 -5.5 5.0]
+#
+#----- Other opaque squares to show what fisheyelens does
+#      - located on same Z plane as central square
+#      - upper left diagonal
+#
+Color [0 1 0]
+Polygon "P" [-1.5 1.5 5.0 -0.5 1.5 5.0 -0.5 0.5 5.0 -1.5 0.5 5.0]
+Color [0 0 1]
+Polygon "P" [-2.5 2.5 5.0 -1.5 2.5 5.0 -1.5 1.5 5.0 -2.5 1.5 5.0]
+Color [1 1 0]
+Polygon "P" [-3.5 3.5 5.0 -2.5 3.5 5.0 -2.5 2.5 5.0 -3.5 2.5 5.0]
+Color [0 1 1]
+Polygon "P" [-4.5 4.5 5.0 -3.5 4.5 5.0 -3.5 3.5 5.0 -4.5 3.5 5.0]
+Color [1 0 1]
+Polygon "P" [-5.5 5.5 5.0 -4.5 5.5 5.0 -4.5 4.5 5.0 -5.5 4.5 5.0]
+Color [1 1 1]
+Polygon "P" [-6.5 6.5 5.0 -5.5 6.5 5.0 -5.5 5.5 5.0 -6.5 5.5 5.0]
+#
+#----- Other opaque squares to show what fisheyelens does
+#      - located on same Z plane as central square
+#      - lower left diagonal
+#
+Color [0 1 0]
+Polygon "P" [-1.5 -1.5 5.0 -0.5 -1.5 5.0 -0.5 -0.5 5.0 -1.5 -0.5 5.0]
+Color [0 0 1]
+Polygon "P" [-2.5 -2.5 5.0 -1.5 -2.5 5.0 -1.5 -1.5 5.0 -2.5 -1.5 5.0]
+Color [1 1 0]
+Polygon "P" [-3.5 -3.5 5.0 -2.5 -3.5 5.0 -2.5 -2.5 5.0 -3.5 -2.5 5.0]
+Color [0 1 1]
+Polygon "P" [-4.5 -4.5 5.0 -3.5 -4.5 5.0 -3.5 -3.5 5.0 -4.5 -3.5 5.0]
+Color [1 0 1]
+Polygon "P" [-5.5 -5.5 5.0 -4.5 -5.5 5.0 -4.5 -4.5 5.0 -5.5 -4.5 5.0]
+Color [1 1 1]
+Polygon "P" [-6.5 -6.5 5.0 -5.5 -6.5 5.0 -5.5 -5.5 5.0 -6.5 -5.5 5.0]
+#
+#----- Finish up
+#
+WorldEnd

@@ -1,0 +1,61 @@
+displacement dented
+param	float	Km		1
+param	float	power		3
+param	float	frequency		1
+param	float	maxoctaves		6
+local	string	$_str_0 	"shader"
+local	float	size	0
+local	float	magnitude	0
+local	float	i	0
+local	point	PP	0 0 0
+initcode 3
+	return
+code
+	pushif	0 
+	popf	magnitude 
+	pushv	P 
+	pushs	$_str_0 
+	transforms
+	popv	PP 
+	cpFF	frequency size 
+	pushif	0 
+	popf	i 
+label 0
+	pushf	maxoctaves 
+	pushf	i 
+	lt
+	ifz	2
+	pushf	size 
+	pushf	size 
+	pushv	PP 
+	mulvf
+	noisev
+	pushif	0.5 
+	subff
+	abs
+	divff
+	addF	magnitude 
+	popf	magnitude 
+	pushif	2 
+	mulF	size 
+	popf	size 
+label 1
+	pushif	1 
+	addF	i 
+	popf	i 
+	jump	0
+label 2
+	pushv	N 
+	normalize
+	pushf	power 
+	pushf	magnitude 
+	pow
+	mulF	Km 
+	mulfv
+	subV	P 
+	popv	P 
+	pushv	P 
+	calculatenormal
+	popv	N 
+	return_area
+	return

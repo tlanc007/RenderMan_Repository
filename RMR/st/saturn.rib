@@ -1,0 +1,2832 @@
+##RenderMan RIB-Structure 1.0
+##CreationDate Sun May 21 18:56:34 1995
+##For tal
+version 3.03
+Projection "perspective" "fov" 40 
+Format 200 100 1
+Declare "intensity" "float"
+LightSource "ambientlight" 1 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 2 "intensity" 2  "from" [-2 0.5 -2] "to" [0 0 0]
+FrameBegin 0
+Display "sat.0.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 180 0 1 0 
+Translate 0 0 -2 
+WorldBegin
+Color [0.8 0.8 0.8]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 1
+Display "sat.1.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 174 0 1 0 
+Translate -0.203865 0 -1.939649 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 2
+Display "sat.2.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 168 0 1 0 
+Translate -0.395171 0 -1.859133 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 3
+Display "sat.3.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 162 0 1 0 
+Translate -0.57199 0 -1.760406 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 4
+Display "sat.4.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 156 0 1 0 
+Translate -0.732668 0 -1.6456 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 5
+Display "sat.5.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 150 0 1 0 
+Translate -0.875833 0 -1.516988 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 6
+Display "sat.6.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 144 0 1 0 
+Translate -1.000411 0 -1.376947 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 7
+Display "sat.7.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 138 0 1 0 
+Translate -1.105627 0 -1.227923 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 8
+Display "sat.8.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 132 0 1 0 
+Translate -1.191013 0 -1.072393 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 9
+Display "sat.9.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 126 0 1 0 
+Translate -1.256403 0 -0.91283 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 10
+Display "sat.10.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 120 0 1 0 
+Translate -1.301925 0 -0.751667 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 11
+Display "sat.11.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 114 0 1 0 
+Translate -1.327991 0 -0.591259 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 12
+Display "sat.12.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 108 0 1 0 
+Translate -1.335283 0 -0.43386 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 13
+Display "sat.13.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 102 0 1 0 
+Translate -1.324738 0 -0.281582 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 14
+Display "sat.14.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 96 0 1 0 
+Translate -1.29752 0 -0.136375 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 15
+Display "sat.15.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 90 0 1 0 
+Translate -1.255 0 -7.6844e-17 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 16
+Display "sat.16.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 84 0 1 0 
+Translate -1.19873 0 0.125992 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 17
+Display "sat.17.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 78 0 1 0 
+Translate -1.130413 0 0.240277 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 18
+Display "sat.18.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 72 0 1 0 
+Translate -1.051869 0 0.341773 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 19
+Display "sat.19.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 66 0 1 0 
+Translate -1.0049 0 0.44741 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 20
+Display "sat.20.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 60 0 1 0 
+Translate -0.952628 0 0.55 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 21
+Display "sat.21.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 54 0 1 0 
+Translate -0.889919 0 0.646564 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 22
+Display "sat.22.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 48 0 1 0 
+Translate -0.817459 0 0.736044 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 23
+Display "sat.23.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 42 0 1 0 
+Translate -0.736044 0 0.817459 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 24
+Display "sat.24.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 36 0 1 0 
+Translate -0.646564 0 0.889919 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 25
+Display "sat.25.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 30 0 1 0 
+Translate -0.55 0 0.952628 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 26
+Display "sat.26.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 24 0 1 0 
+Translate -0.44741 0 1.0049 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 27
+Display "sat.27.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 18.000002 0 1 0 
+Translate -0.339919 0 1.046162 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 28
+Display "sat.28.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 12.000001 0 1 0 
+Translate -0.228703 0 1.075962 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 29
+Display "sat.29.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 6 0 1 0 
+Translate -0.114981 0 1.093974 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 30
+Display "sat.30.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 0 0 1 0 
+Translate -1.34706e-16 0 1.1 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 31
+Display "sat.31.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -6 0 1 0 
+Translate 0.120173 0 1.143369 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 32
+Display "sat.32.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -12 0 1 0 
+Translate 0.249355 0 1.173125 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 33
+Display "sat.33.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -18 0 1 0 
+Translate 0.385962 0 1.18787 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 34
+Display "sat.34.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -24.000002 0 1 0 
+Translate 0.528215 0 1.186391 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 35
+Display "sat.35.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -30.000002 0 1 0 
+Translate 0.674167 0 1.167691 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 36
+Display "sat.36.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -36 0 1 0 
+Translate 0.821724 0 1.131006 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 37
+Display "sat.37.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -41.999996 0 1 0 
+Translate 0.968678 0 1.075826 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 38
+Display "sat.38.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -48 0 1 0 
+Translate 1.112736 0 1.001912 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 39
+Display "sat.39.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -54 0 1 0 
+Translate 1.251549 0 0.909304 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 40
+Display "sat.40.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -60 0 1 0 
+Translate 1.382754 0 0.798333 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 41
+Display "sat.41.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -66 0 1 0 
+Translate 1.504 0 0.669624 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 42
+Display "sat.42.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -72 0 1 0 
+Translate 1.612992 0 0.524093 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 43
+Display "sat.43.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -78 0 1 0 
+Translate 1.70752 0 0.362945 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 44
+Display "sat.44.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -84 0 1 0 
+Translate 1.785498 0 0.187663 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 45
+Display "sat.45.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -90 0 1 0 
+Translate 1.845 0 2.96702e-16 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 46
+Display "sat.46.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -96 0 1 0 
+Translate 1.884287 0 -0.198047 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 47
+Display "sat.47.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -102 0 1 0 
+Translate 1.901845 0 -0.40425 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 48
+Display "sat.48.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -108 0 1 0 
+Translate 1.896407 0 -0.61618 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 49
+Display "sat.49.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -114 0 1 0 
+Translate 1.866982 0 -0.831234 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 50
+Display "sat.50.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -120 0 1 0 
+Translate 1.81288 0 -1.046667 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 51
+Display "sat.51.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -126 0 1 0 
+Translate 1.733723 0 -1.259624 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 52
+Display "sat.52.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -132 0 1 0 
+Translate 1.629469 0 -1.46718 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 53
+Display "sat.53.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -138 0 1 0 
+Translate 1.500414 0 -1.666378 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 54
+Display "sat.54.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -144 0 1 0 
+Translate 1.347204 0 -1.854267 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 55
+Display "sat.55.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -150 0 1 0 
+Translate 1.170833 0 -2.027943 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 56
+Display "sat.56.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -156 0 1 0 
+Translate 0.972643 0 -2.184592 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 57
+Display "sat.57.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -162 0 1 0 
+Translate 0.75431 0 -2.321529 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 58
+Display "sat.58.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -168 0 1 0 
+Translate 0.517839 0 -2.43624 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 59
+Display "sat.59.tiff" "file" "rgb"
+PixelSamples 2 2
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -174 0 1 0 
+Translate 0.265537 0 -2.526417 
+WorldBegin
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+ShadingRate 0.25
+Surface "Tstarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Translate 2 -0.5 2 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 0.4 -0.4 0.4 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Surface "saturn3"
+Color [0.05 0.05 0.4]
+Sphere 0.45 -0.45 0.45 360
+AttributeEnd
+AttributeBegin
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Sides 2
+Surface "ring3"
+Disk 0 1 360
+AttributeEnd
+WorldEnd
+FrameEnd
+

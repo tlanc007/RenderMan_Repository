@@ -1,0 +1,6 @@
+MAILTO	rivero AT squareusa DOT com	NAME	Email Michael
+TITLE	MRShaders	H1	Michael Rivero Shaders
+DIR	MRShaders	PIC	100	100
+SHADER	MRmand	
+DESC	Mandelbrot texture
+DO_LINE

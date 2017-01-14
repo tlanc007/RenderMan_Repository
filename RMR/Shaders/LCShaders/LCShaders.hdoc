@@ -1,0 +1,6 @@
+MAILTO	laurentc AT worldnet DOT att DOT net	NAME	Email Laurent
+TITLE	LCShaders	H1	Laurent Charbonnel Shaders
+DIR	LCShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	LCStarfield	NOTE	This is an anti-aliased starfield shader.  It can work either on spheres or planes.  It is used in my	LINK	rmHoudini#sc	NAME	Space Crib	animation.
+DESC	anti-aliased starfield
+DO_LINE

@@ -1,0 +1,99 @@
+The Second More-or-Less-Annual "Stupid RenderMan Tricks" Contest
+----------------------------------------------------------------
+
+When is it?
+
+  During the RenderMan User's Group meeting at SIGGRAPH 2000.
+  That is, Wednesday, July 26, 7:00 (refreshments start at 6:30).
+  If you want to attend the user group, please RSVP to
+  renderwoman@pixar.com, and she'll send you the info.
+
+
+What is it?
+
+  Beginning at the RMan User's Group meeting of SIGGRAPH '99, we let
+  people submit ideas for fun tips and tricks, then selected the
+  best five and allowed the submitters several minutes each at
+  the podium with a microphone and overhead projector.  The users
+  who were selected to speak thrilled and amazed us all.  Now we're
+  doing it again.
+
+
+What did people talk about last year?
+
+  David Bock (NCSA) - volume visualization shading
+  Ivan DeWolf (Rhythm & Hues) - gloopy displacement shading
+  Katsuaki Hiramitsu (as himself) - butt-kicking cloud shaders
+  Doug Epps (Tippett) - things never to try with motion blocks
+  Tom Duff (Pixar) - using blobbys for rain in A Bug's Life
+
+
+How do I enter?
+
+  Easy.  First, think of something cool you'd like to talk about.  It
+  could be a neat shader technique, a renderer or an extension thereof,
+  an MTOR trick, a clever way to munge RIB files, a tool you've written,
+  hints, tips, and war stories from productions, whatever.  In short,
+  anything remotely related to RenderMan and its use and that would be
+  interesting to TD's and other users of RenderMan renderers.
+
+  Second, you write up a short description (a couple paragraphs is okay)
+  and send it to lg@pixar.com and lg@bmrt.org (yes, please use both
+  email addresses, so I can read it wherever I check mail).  Clearly
+  mark the subject of the email as "Stupid RMan Tricks Submission."
+  Attaching images, or pointing me to a web page, is fine.  All
+  submission materials will be strictly confidential.  Send submissions
+  before Friday, July 7, 2000.
+
+  An elite team of renderer authors headed by lg will judge the 
+  submissions, choosing the coolest 5-6 for presentation at the user 
+  group meeting.  You will be notified of our decision by July 10.
+  All decisions by the jury are final!
+
+
+What happens if the jury likes my submission?
+
+  Chosen presenters get 5-10 minutes in front of the other users at the
+  user group meeting, an overhead projector, a videotape player,
+  and an open mike.  Dazzle us, confuse us, make us smart!
+
+  For those materials that you're allowed to distribute (example shader
+  code or whatever), I'll also set up a web site on which we can put 
+  the materials so that others may access them after the meeting.
+
+
+Are there prizes?
+
+  Yes.
+
+
+Can I just show my demo reel?
+
+  NO!  It's not enough to just show pretty pictures.  You need to say
+  how they were done, ideally with figures, shader code fragments,
+  vigorous hand-waving, etc. 
+
+
+Does it really have to be "stupid?"
+
+  No, we want clever.  I was just trying to be funny.  But the jury
+  will be biased toward presentations that exhibit a sick and twisted 
+  sense of what can be done with RenderMan.  Bonus points and special
+  preference will be given to proposals that cause jurors to say any 
+  of the following out loud:
+
+        "I never would have thought of that."
+        "Wicked cool!"
+        "I've gotta try this out."
+        "I didn't know you could do that with my renderer."
+        "Are they nuts?  What are they smoking down there in L.A.?"
+        "Huh?" [while squinting and cocking head to side]
+
+
+Enter early.  Enter often.  See you all at SIGGRAPH,
+
+        -- lg
+
+-- 
+Larry Gritz                                     Pixar Animation Studios
+lg@pixar.com                                    Richmond, CA

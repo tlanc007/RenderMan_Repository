@@ -1,0 +1,579 @@
+ExlunaShader 1.0
+light l_uber
+param	uniform	string	shadowname	"" 	
+param	uniform	float	shadowblur	0.01 	
+param	uniform	float	shadowbias	-1 	
+param	uniform	float	shadownsamps	16 	
+param	uniform	color	shadowcolor	0 0 0 	
+param	uniform	float	shadowOpacity	1 	
+param	uniform	float	lighttype	0 	
+param	uniform	float	parallelrays	0 	
+param	uniform	color	lightcolor	1 1 1 	
+param	uniform	float	intensity	1 	
+param	uniform	float	coneAngle	0.006 	
+param	uniform	float	penumbraAngle	5 	
+param	uniform	float	falloff	0 	
+param	uniform	float	falloffdist	1 	
+param	uniform	float	maxintensity	1 	
+param	uniform	float	blocker_leftdoor	90 	
+param	uniform	float	blocker_rightdoor	90 	
+param	uniform	float	blocker_topdoor	90 	
+param	uniform	float	blocker_bottomdoor	90 	
+param	uniform	float	blocker_dooredge	0.02 	
+param	uniform	float	cuton	0.01 	
+param	uniform	float	cutoff	1e+06 	
+param	uniform	float	nearedge	0 	
+param	uniform	float	faredge	0 	
+param	uniform	float	shearx	0 	
+param	uniform	float	sheary	0 	
+param	uniform	float	beamdistribution	0 	
+param	uniform	string	slidename	"" 	
+param	uniform	float	noiseamp	0 	
+param	uniform	float	noisefreq	4 	
+param	uniform	vector	noiseoffset	0 0 0 	
+param	uniform	float	width	1 	
+param	uniform	float	height	1 	
+param	uniform	float	wedge	0 	
+param	uniform	float	hedge	0 	
+param	uniform	float	roundness	1 	
+param	uniform	float	raytraceshadow	0 	
+param	uniform	float	nshadowrays	1 	
+param	uniform	vector	shadowcheat	0 0 0 	 %space{"shader"}
+param	uniform	string	blockercoords	"" 	
+param	uniform	float	blockerwidth	1 	
+param	uniform	float	blockerheight	1 	
+param	uniform	float	blockerwedge	0.1 	
+param	uniform	float	blockerhedge	0.1 	
+param	uniform	float	blockerround	1 	
+param	uniform	float	nonspecular	0 	
+oparam	varying	float	__nonspecular	0 	
+oparam	uniform	float	__nondiffuse	0 	
+oparam	uniform	float	__eyeHighlight	0 	
+oparam	uniform	float	__emitTones	0 	
+oparam	uniform	float	__foglight	0 	
+oparam	uniform	float	__useGooch	0 	
+oparam	varying	float	out_intensity	1 	
+oparam	uniform	float	max_intensity	1 	
+oparam	varying	float	__inShadow	0 	
+oparam	uniform	float	fill_Contrib	0 	
+global	varying	float	s	0	
+global	varying	float	t	0	
+global	varying	vector	L	0 0 0	
+global	varying	color	Cl	0 0 0	
+global	varying	point	P	0 0 0	
+const	uniform	color	$const0	1 1 1	
+const	uniform	point	$const1	0 0 0	
+const	uniform	string	$str0	"shader"	
+const	uniform	string	$str1	"current"	
+const	uniform	point	$const2	0 0 1	
+const	uniform	float	$const3	1	
+const	uniform	float	$const4	0	
+const	uniform	float	$const5	0.006	
+const	uniform	float	$const6	13	
+const	uniform	float	$const7	14	
+const	uniform	float	$const8	2	
+const	uniform	float	$const9	1.41421	
+const	uniform	float	$const10	34	
+const	uniform	float	$const11	35	
+const	uniform	string	$str2	"spot"	
+const	uniform	float	$const12	1.5708	
+const	uniform	string	$str3	"arealight"	
+const	uniform	float	$const13	3	
+const	uniform	float	$const14	3.14159	
+const	uniform	string	$str4	"directional"	
+const	uniform	string	$str5	"omni"	
+const	uniform	float	$const15	44	
+const	uniform	float	$const16	46	
+const	uniform	float	$const17	40	
+const	uniform	float	$const18	36	
+const	uniform	float	$const19	61	
+const	uniform	float	$const20	62	
+const	uniform	float	$const21	77	
+const	uniform	float	$const22	87	
+const	uniform	float	$const23	96	
+const	uniform	float	$const24	1e-06	
+const	uniform	float	$const25	0.9999	
+const	uniform	float	$const26	-1	
+const	uniform	float	$const27	139	
+const	uniform	float	$const28	159	
+const	uniform	float	$const29	120	
+const	uniform	float	$const30	162	
+const	uniform	string	$str6	""	
+const	uniform	float	$const31	0.5	
+const	uniform	float	$const32	182	
+const	uniform	float	$const33	230	
+const	uniform	point	$const34	1 1 0	
+const	uniform	float	$const35	244	
+const	uniform	string	$str7	"blur"	
+const	uniform	string	$str8	"samples"	
+const	uniform	string	$str9	"bias"	
+const	uniform	float	$const36	253	
+const	uniform	float	$const37	257	
+const	uniform	float	$const38	260	
+const	uniform	float	$const39	264	
+const	uniform	float	$const40	318	
+const	uniform	float	$const41	338	
+const	uniform	float	$const42	299	
+const	uniform	float	$const43	340	
+const	uniform	float	$const44	342	
+const	uniform	float	$const45	347	
+const	uniform	float	$const46	354	
+const	uniform	float	$const47	355	
+local	varying	float	_1$result	0	
+local	varying	float	_1$x	0	
+local	varying	float	_1$y	0	
+local	varying	float	_7$q	0	
+local	varying	float	_7$r	0	
+local	varying	float	_9$re	0	
+local	varying	float	_9$q	0	
+local	varying	float	_9$r	0	
+local	varying	float	_10$atten	0	
+local	varying	float	_10$PLlen	0	
+local	varying	float	_10$Pz	0	
+local	varying	float	_18$s	0	
+local	varying	float	_18$beta	0	
+local	varying	float	_22$unoccluded	0	
+local	varying	point	_22$Pb1	0 0 0	
+local	varying	point	_22$Pb2	0 0 0	
+local	varying	vector	_24$Vlight	0 0 0	
+local	varying	point	_24$Pplane	0 0 0	
+local	varying	point	PL	0 0 0	
+local	varying	point	int_from	0 0 0	
+local	varying	vector	axis	0 0 0	
+local	uniform	float	shadowOpacityAdj	0	
+local	uniform	float	angle	0	
+local	uniform	float	haveConeAngle	0	
+local	uniform	float	rad_angle	0	
+local	uniform	float	rad_deltaAngle	0	
+local	uniform	float	cos_inner	0	
+local	uniform	float	cos_outer	0	
+local	uniform	string	lighttypeStr	""	
+local	uniform	float	_27$maxradius	0	
+local	varying	float	intens	0	
+local	varying	float	_34$atten	0	
+local	varying	color	_34$lcol	0 0 0	
+local	varying	point	_36$Pslide	0 0 0	
+local	varying	float	_36$zslide	0	
+local	varying	float	_36$xslide	0	
+local	varying	float	_36$yslide	0	
+local	varying	vector	_38$Lns	0 0 0	
+local	varying	float	_38$cosangle	0	
+local	varying	float	_38$spread	0	
+local	varying	point	_38$Pls	0 0 0	
+local	varying	point	_38$Pss	0 0 0	
+local	varying	float	_38$tau	0	
+local	varying	float	_38$sloc	0	
+local	varying	float	_38$tloc	0	
+local	uniform	float	_38$btdoor	0	
+local	uniform	float	_38$bbdoor	0	
+local	uniform	float	_38$bldoor	0	
+local	uniform	float	_38$brdoor	0	
+local	varying	float	_42$n	0	
+local	varying	float	_40$unoccluded	0	
+local	varying	point	_40$shadoworigin	0 0 0	
+local	uniform	vector	$tmp0	0 0 0	
+local	uniform	vector	$tmp2	0 0 0	
+local	uniform	float	$tmp3	0	
+local	uniform	float	$tmp5	0	
+local	uniform	float	$tmp8	0	
+local	uniform	float	$tmp10	0	
+local	uniform	float	$tmp11	0	
+local	uniform	float	$tmp12	0	
+local	uniform	float	$tmp15	0	
+local	uniform	float	$tmp17	0	
+local	uniform	float	$tmp18	0	
+local	varying	float	$tmp20	0	
+local	uniform	float	$tmp23	0	
+local	varying	float	$tmp24	0	
+local	varying	float	$tmp25	0	
+local	varying	float	$tmp29	0	
+local	varying	float	$tmp30	0	
+local	varying	float	$tmp33	0	
+local	varying	float	$tmp43	0	
+local	varying	vector	$tmp46	0 0 0	
+local	varying	vector	$tmp47	0 0 0	
+local	uniform	float	$tmp48	0	
+local	varying	point	$tmp49	0 0 0	
+local	varying	point	$tmp50	0 0 0	
+local	varying	point	$tmp51	0 0 0	
+local	varying	float	$tmp58	0	
+local	varying	float	$tmp59	0	
+local	varying	float	$tmp63	0	
+local	varying	float	$tmp65	0	
+local	varying	float	$tmp70	0	
+local	varying	float	$tmp85	0	
+local	uniform	float	$tmp99	0	
+local	uniform	point	$tmp100	0 0 0	
+local	varying	color	$tmp109	0 0 0	
+local	uniform	float	$tmp111	0	
+local	varying	float	$tmp142	0	
+local	uniform	float	$tmp143	0	
+local	uniform	float	$tmp151	0	
+local	uniform	float	$tmp152	0	
+local	uniform	float	$tmp159	0	
+local	uniform	float	$tmp162	0	
+local	varying	float	$tmp166	0	
+local	varying	float	$tmp177	0	
+local	varying	float	$tmp178	0	
+local	varying	float	$tmp184	0	
+local	uniform	float	$tmp220	0	
+initcode 8
+	assign		lightcolor  $const0  
+initcode 38
+	assign		$tmp0  $const1  
+	vtransform	shadowcheat  $str0  $str1  $tmp0  
+code
+	transform	PL  $str0  P  
+	ptransform	int_from  $str0  $str1  $const1  
+	assign		$tmp2  $const2  
+	vtransform	$tmp0  $str0  $str1  $tmp2  
+	normalize	axis  $tmp0  
+	clamp		$tmp3  shadowOpacity  $const4  $const3  
+	sub		shadowOpacityAdj  $const3  $tmp3  
+	gt		$tmp3  coneAngle  $const5  
+	if		$tmp3  $const6  $const7  
+	assign		haveConeAngle  $const3  
+	assign		haveConeAngle  $const4  
+	div		$tmp5  coneAngle  $const8  
+	radians		rad_angle  $tmp5  
+	div		$tmp5  penumbraAngle  $const8  
+	radians		rad_deltaAngle  $tmp5  
+	cos		cos_inner  rad_angle  
+	add		$tmp5  rad_angle  rad_deltaAngle  
+	cos		cos_outer  $tmp5  
+	eq		$tmp8  lighttype  $const4  
+	if		$tmp8  $const18  $const16  
+	add		$tmp10  height  hedge  
+	abs		$tmp11  sheary  
+	add		$tmp12  $tmp10  $tmp11  
+	add		$tmp10  width  wedge  
+	abs		$tmp11  shearx  
+	add		$tmp15  $tmp10  $tmp11  
+	max		$tmp5  $tmp12  $tmp15  
+	mul		_27$maxradius  $const9  $tmp5  
+	eq		$tmp5  haveConeAngle  $const3  
+	if		$tmp5  $const10  $const11  
+	acos		angle  cos_outer  
+	atan		angle  _27$maxradius  
+	assign		lighttypeStr  $str2  
+	eq		$tmp17  lighttype  $const8  
+	if		$tmp17  $const17  $const16  
+	assign		angle  $const12  
+	assign		lighttypeStr  $str3  
+	eq		$tmp18  lighttype  $const13  
+	if		$tmp18  $const15  $const16  
+	assign		angle  $const14  
+	assign		lighttypeStr  $str4  
+	assign		angle  $const14  
+	assign		lighttypeStr  $str5  
+	assign		__nonspecular  nonspecular  
+	assign		__inShadow  $const4  
+	assign		intens  $const3  
+	illuminate	$const47  int_from  axis  angle  
+	assign		_34$atten  $const3  
+	assign		_34$lcol  lightcolor  
+	div		$tmp10  maxintensity  intensity  
+	assign		$tmp20  $tmp10  
+	assign		_10$atten  $const3  
+	length		_10$PLlen  PL  
+	eq		$tmp10  lighttypeStr  $str2  
+	eq		$tmp11  lighttypeStr  $str4  
+	or		$tmp23  $tmp10  $tmp11  
+	if		$tmp23  $const19  $const20  
+	zcomp		_10$Pz  PL  
+	assign		_10$Pz  _10$PLlen  
+	sub		$tmp25  cuton  nearedge  
+	smoothstep	$tmp24  $tmp25  cuton  _10$Pz  
+	mul		_10$atten  _10$atten  $tmp24  
+	add		$tmp25  cutoff  faredge  
+	smoothstep	$tmp24  cutoff  $tmp25  _10$Pz  
+	sub		$tmp25  $const3  $tmp24  
+	mul		_10$atten  _10$atten  $tmp25  
+	ne		$tmp29  falloff  $const4  
+	if		$tmp29  $const22  $const22  
+	gt		$tmp30  _10$PLlen  falloffdist  
+	if		$tmp30  $const21  $const22  
+	sub		$tmp25  _10$PLlen  falloffdist  
+	div		$tmp33  $const3  $tmp25  
+	pow		$tmp24  $tmp33  falloff  
+	mul		_10$atten  _10$atten  $tmp24  
+	div		$tmp24  $const3  $tmp20  
+	log		_18$s  $tmp24  
+	neg		$tmp24  falloff  
+	div		_18$beta  $tmp24  _18$s  
+	div		$tmp33  _10$PLlen  falloffdist  
+	pow		$tmp25  $tmp33  _18$beta  
+	mul		$tmp33  _18$s  $tmp25  
+	exp		$tmp24  $tmp33  
+	mul		$tmp25  $tmp20  $tmp24  
+	mul		_10$atten  _10$atten  $tmp25  
+	ne		$tmp10  lighttypeStr  $str5  
+	gt		$tmp20  beamdistribution  $const4  
+	and		$tmp43  $tmp10  $tmp20  
+	if		$tmp43  $const23  $const23  
+	assign		$tmp47  PL  
+	normalize	$tmp46  $tmp47  
+	zcomp		$tmp24  $tmp46  
+	pow		$tmp20  $tmp24  beamdistribution  
+	mul		_10$atten  _10$atten  $tmp20  
+	eq		$tmp48  lighttypeStr  $str2  
+	if		$tmp48  $const30  $const30  
+	div		$tmp49  PL  _10$Pz  
+	point		$tmp50  shearx  sheary  $const4  
+	sub		$tmp51  $tmp49  $tmp50  
+	add		$tmp20  width  wedge  
+	add		$tmp24  height  hedge  
+	assign		_1$result  $const4  
+	xcomp		$tmp25  $tmp51  
+	abs		_1$x  $tmp25  
+	ycomp		$tmp25  $tmp51  
+	abs		_1$y  $tmp25  
+	ne		$tmp25  _1$x  $const4  
+	ne		$tmp33  _1$y  $const4  
+	or		$tmp58  $tmp25  $tmp33  
+	if		$tmp58  $const28  $const28  
+	lt		$tmp59  roundness  $const24  
+	if		$tmp59  $const29  $const28  
+	smoothstep	$tmp25  width  $tmp20  _1$x  
+	sub		$tmp33  $const3  $tmp25  
+	smoothstep	$tmp25  height  $tmp24  _1$y  
+	sub		$tmp63  $const3  $tmp25  
+	mul		$tmp25  $tmp33  $tmp63  
+	sub		_1$result  $const3  $tmp25  
+	gt		$tmp65  roundness  $const25  
+	if		$tmp65  $const27  $const28  
+	mul		$tmp33  height  _1$x  
+	mul		$tmp63  $tmp33  $tmp33  
+	mul		$tmp33  width  _1$y  
+	mul		$tmp70  $tmp33  $tmp33  
+	add		$tmp33  $tmp63  $tmp70  
+	sqrt		$tmp25  $tmp33  
+	div		$tmp33  height  $tmp25  
+	mul		_7$q  width  $tmp33  
+	mul		$tmp33  $tmp24  _1$x  
+	mul		$tmp63  $tmp33  $tmp33  
+	mul		$tmp33  $tmp20  _1$y  
+	mul		$tmp70  $tmp33  $tmp33  
+	add		$tmp33  $tmp63  $tmp70  
+	sqrt		$tmp25  $tmp33  
+	div		$tmp33  $tmp24  $tmp25  
+	mul		_7$r  $tmp20  $tmp33  
+	smoothstep	_1$result  _7$q  _7$r  $const3  
+	div		_9$re  $const8  roundness  
+	mul		$tmp25  width  height  
+	mul		$tmp70  height  _1$x  
+	pow		$tmp63  $tmp70  _9$re  
+	mul		$tmp85  width  _1$y  
+	pow		$tmp70  $tmp85  _9$re  
+	add		$tmp85  $tmp63  $tmp70  
+	div		$tmp63  $const26  _9$re  
+	pow		$tmp33  $tmp85  $tmp63  
+	mul		_9$q  $tmp25  $tmp33  
+	mul		$tmp25  $tmp20  $tmp24  
+	mul		$tmp33  $tmp24  _1$x  
+	pow		$tmp24  $tmp33  _9$re  
+	mul		$tmp63  $tmp20  _1$y  
+	pow		$tmp33  $tmp63  _9$re  
+	add		$tmp63  $tmp24  $tmp33  
+	div		$tmp24  $const26  _9$re  
+	pow		$tmp20  $tmp63  $tmp24  
+	mul		_9$r  $tmp25  $tmp20  
+	smoothstep	_1$result  _9$q  _9$r  $const3  
+	assign		$tmp20  _1$result  
+	sub		$tmp24  $const3  $tmp20  
+	mul		_10$atten  _10$atten  $tmp24  
+	assign		$tmp20  _10$atten  
+	mul		_34$atten  _34$atten  $tmp20  
+	ne		$tmp99  slidename  $str6  
+	if		$tmp99  $const32  $const32  
+	add		$tmp10  width  wedge  
+	add		$tmp11  height  hedge  
+	point		$tmp100  $tmp10  $tmp11  $const3  
+	div		_36$Pslide  PL  $tmp100  
+	zcomp		_36$zslide  _36$Pslide  
+	xcomp		$tmp20  _36$Pslide  
+	div		$tmp24  $tmp20  _36$zslide  
+	mul		$tmp20  $const31  $tmp24  
+	add		_36$xslide  $const31  $tmp20  
+	ycomp		$tmp20  _36$Pslide  
+	div		$tmp24  $tmp20  _36$zslide  
+	mul		$tmp20  $const31  $tmp24  
+	sub		_36$yslide  $const31  $tmp20  
+	sub		$tmp20  $const3  _36$xslide  
+	texture		$tmp109  slidename  $tmp20  _36$yslide  
+	mul		_34$lcol  _34$lcol  $tmp109  
+	eq		$tmp111  haveConeAngle  $const3  
+	if		$tmp111  $const33  $const33  
+	vtransform	$tmp46  $str0  L  
+	normalize	_38$Lns  $tmp46  
+	normalize	$tmp46  L  
+	dot		_38$cosangle  $tmp46  axis  
+	smoothstep	$tmp20  cos_outer  cos_inner  _38$cosangle  
+	mul		_34$atten  _34$atten  $tmp20  
+	div		$tmp12  coneAngle  $const8  
+	radians		$tmp11  $tmp12  
+	tan		$tmp10  $tmp11  
+	div		_38$spread  $const31  $tmp10  
+	ptransform	_38$Pls  $str0  $str1  $const1  
+	transform	_38$Pls  $str0  _38$Pls  
+	transform	$tmp49  $str0  P  
+	sub		_38$Pss  $tmp49  _38$Pls  
+	zcomp		$tmp20  _38$Pls  
+	sub		$tmp24  $const3  $tmp20  
+	zcomp		$tmp20  _38$Pss  
+	div		_38$tau  $tmp24  $tmp20  
+	xcomp		$tmp20  _38$Pls  
+	xcomp		$tmp24  _38$Pss  
+	mul		$tmp25  _38$tau  $tmp24  
+	add		_38$sloc  $tmp20  $tmp25  
+	ycomp		$tmp20  _38$Pls  
+	ycomp		$tmp24  _38$Pss  
+	mul		$tmp25  _38$tau  $tmp24  
+	add		_38$tloc  $tmp20  $tmp25  
+	div		_38$btdoor  blocker_topdoor  coneAngle  
+	div		_38$bbdoor  blocker_bottomdoor  coneAngle  
+	div		_38$bldoor  blocker_leftdoor  coneAngle  
+	div		_38$brdoor  blocker_rightdoor  coneAngle  
+	neg		$tmp10  _38$brdoor  
+	neg		$tmp11  _38$brdoor  
+	add		$tmp12  $tmp11  blocker_dooredge  
+	smoothstep	$tmp20  $tmp10  $tmp12  _38$sloc  
+	sub		$tmp10  _38$bldoor  blocker_dooredge  
+	smoothstep	$tmp24  $tmp10  _38$bldoor  _38$sloc  
+	sub		$tmp25  $tmp20  $tmp24  
+	mul		_34$atten  _34$atten  $tmp25  
+	neg		$tmp10  _38$bbdoor  
+	neg		$tmp11  _38$bbdoor  
+	add		$tmp12  $tmp11  blocker_dooredge  
+	smoothstep	$tmp20  $tmp10  $tmp12  _38$tloc  
+	sub		$tmp10  _38$btdoor  blocker_dooredge  
+	smoothstep	$tmp24  $tmp10  _38$btdoor  _38$tloc  
+	sub		$tmp25  $tmp20  $tmp24  
+	mul		_34$atten  _34$atten  $tmp25  
+	gt		$tmp142  _34$atten  $const4  
+	if		$tmp142  $const45  $const45  
+	gt		$tmp143  noiseamp  $const4  
+	if		$tmp143  $const35  $const35  
+	add		$tmp49  PL  noiseoffset  
+	mul		$tmp50  noisefreq  $tmp49  
+	assign		$tmp100  $const34  
+	mul		$tmp49  $tmp50  $tmp100  
+	noise		_42$n  $tmp49  
+	sub		$tmp20  _42$n  $const31  
+	mul		$tmp24  noiseamp  $tmp20  
+	add		$tmp20  $const31  $tmp24  
+	smoothstep	_42$n  $const4  $const3  $tmp20  
+	mul		_34$atten  _34$atten  _42$n  
+	assign		_40$unoccluded  $const3  
+	ne		$tmp151  shadowname  $str6  
+	if		$tmp151  $const37  $const37  
+	ne		$tmp152  shadowbias  $const26  
+	if		$tmp152  $const36  $const37  
+	shadow		$tmp20  shadowname  P  $str7  shadowblur  $str8  shadownsamps  $str9  shadowbias  
+	mul		$tmp24  shadowOpacity  $tmp20  
+	sub		$tmp20  $const3  $tmp24  
+	mul		_40$unoccluded  _40$unoccluded  $tmp20  
+	shadow		$tmp20  shadowname  P  $str7  shadowblur  $str8  shadownsamps  
+	mul		$tmp24  shadowOpacity  $tmp20  
+	sub		$tmp20  $const3  $tmp24  
+	mul		_40$unoccluded  _40$unoccluded  $tmp20  
+	eq		$tmp159  parallelrays  $const4  
+	if		$tmp159  $const38  $const39  
+	assign		_40$shadoworigin  int_from  
+	xcomp		$tmp20  PL  
+	ycomp		$tmp24  PL  
+	point		_40$shadoworigin  $tmp20  $tmp24  cuton  
+	ptransform	_40$shadoworigin  $str0  $str1  _40$shadoworigin  
+	ne		$tmp162  blockercoords  $str6  
+	if		$tmp162  $const44  $const44  
+	assign		_22$unoccluded  $const3  
+	transform	_22$Pb1  blockercoords  P  
+	transform	_22$Pb2  blockercoords  _40$shadoworigin  
+	zcomp		$tmp20  _22$Pb2  
+	zcomp		$tmp24  _22$Pb1  
+	mul		$tmp25  $tmp20  $tmp24  
+	lt		$tmp166  $tmp25  $const4  
+	if		$tmp166  $const43  $const43  
+	sub		_24$Vlight  _22$Pb1  _22$Pb2  
+	zcomp		$tmp20  _22$Pb1  
+	zcomp		$tmp24  _24$Vlight  
+	div		$tmp25  $tmp20  $tmp24  
+	mul		$tmp46  _24$Vlight  $tmp25  
+	sub		_24$Pplane  _22$Pb1  $tmp46  
+	add		$tmp20  blockerwidth  blockerwedge  
+	add		$tmp24  blockerheight  blockerhedge  
+	assign		_1$result  $const4  
+	xcomp		$tmp25  _24$Pplane  
+	abs		_1$x  $tmp25  
+	ycomp		$tmp25  _24$Pplane  
+	abs		_1$y  $tmp25  
+	ne		$tmp25  _1$x  $const4  
+	ne		$tmp33  _1$y  $const4  
+	or		$tmp177  $tmp25  $tmp33  
+	if		$tmp177  $const41  $const41  
+	lt		$tmp178  blockerround  $const24  
+	if		$tmp178  $const42  $const41  
+	smoothstep	$tmp25  blockerwidth  $tmp20  _1$x  
+	sub		$tmp33  $const3  $tmp25  
+	smoothstep	$tmp25  blockerheight  $tmp24  _1$y  
+	sub		$tmp63  $const3  $tmp25  
+	mul		$tmp25  $tmp33  $tmp63  
+	sub		_1$result  $const3  $tmp25  
+	gt		$tmp184  blockerround  $const25  
+	if		$tmp184  $const40  $const41  
+	mul		$tmp33  blockerheight  _1$x  
+	mul		$tmp63  $tmp33  $tmp33  
+	mul		$tmp33  blockerwidth  _1$y  
+	mul		$tmp70  $tmp33  $tmp33  
+	add		$tmp33  $tmp63  $tmp70  
+	sqrt		$tmp25  $tmp33  
+	div		$tmp33  blockerheight  $tmp25  
+	mul		_7$q  blockerwidth  $tmp33  
+	mul		$tmp33  $tmp24  _1$x  
+	mul		$tmp63  $tmp33  $tmp33  
+	mul		$tmp33  $tmp20  _1$y  
+	mul		$tmp70  $tmp33  $tmp33  
+	add		$tmp33  $tmp63  $tmp70  
+	sqrt		$tmp25  $tmp33  
+	div		$tmp33  $tmp24  $tmp25  
+	mul		_7$r  $tmp20  $tmp33  
+	smoothstep	_1$result  _7$q  _7$r  $const3  
+	div		_9$re  $const8  blockerround  
+	mul		$tmp25  blockerwidth  blockerheight  
+	mul		$tmp70  blockerheight  _1$x  
+	pow		$tmp63  $tmp70  _9$re  
+	mul		$tmp85  blockerwidth  _1$y  
+	pow		$tmp70  $tmp85  _9$re  
+	add		$tmp85  $tmp63  $tmp70  
+	div		$tmp63  $const26  _9$re  
+	pow		$tmp33  $tmp85  $tmp63  
+	mul		_9$q  $tmp25  $tmp33  
+	mul		$tmp25  $tmp20  $tmp24  
+	mul		$tmp33  $tmp24  _1$x  
+	pow		$tmp24  $tmp33  _9$re  
+	mul		$tmp63  $tmp20  _1$y  
+	pow		$tmp33  $tmp63  _9$re  
+	add		$tmp63  $tmp24  $tmp33  
+	div		$tmp24  $const26  _9$re  
+	pow		$tmp20  $tmp63  $tmp24  
+	mul		_9$r  $tmp25  $tmp20  
+	smoothstep	_1$result  _9$q  _9$r  $const3  
+	assign		$tmp20  _1$result  
+	mul		_22$unoccluded  _22$unoccluded  $tmp20  
+	assign		$tmp20  _22$unoccluded  
+	mul		_40$unoccluded  _40$unoccluded  $tmp20  
+	mix		_34$lcol  shadowcolor  _34$lcol  _40$unoccluded  
+	sub		__inShadow  $const3  _40$unoccluded  
+	sub		$tmp20  $const3  __nonspecular  
+	mul		$tmp24  _40$unoccluded  $tmp20  
+	sub		__nonspecular  $const3  $tmp24  
+	mul		$tmp20  _34$atten  intensity  
+	mul		Cl  $tmp20  _34$lcol  
+	ne		$tmp220  parallelrays  $const4  
+	if		$tmp220  $const46  $const46  
+	sub		$tmp49  P  int_from  
+	length		$tmp20  $tmp49  
+	mul		L  axis  $tmp20  
+	assign		intens  _34$atten  
+	assign		max_intensity  intensity  
+	assign		out_intensity  intens  

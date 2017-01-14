@@ -1,0 +1,963 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Filtering In PRMan</title>
+</head>
+<body>
+<h3>Filtering in PRMan</h3>
+Brent Burley, Feb 2007<br>
+<br>
+<i>The following are some very interesting insights on filtering in PRMan, by Brent.  Keep in mind that Brent is not representing or speaking for Disney or Pixar.  These are purely his insights as he tried to understand how filtering works in PRMan. And I thought it would be something really cool to share with the RenderMan community.  I do want to thank Disney for letting us share this.-- Tal Jul 24, 2008</i>
+<p>
+Here are some typical default filtering settings for PRMan:<br>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">ShadingRate<br>
+      </td>
+      <td style="vertical-align: top;">PixelSamples<br>
+      </td>
+      <td style="vertical-align: top;">ShadingInterpolation</td>
+      <td style="vertical-align: top;">PixelFilter<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">PRMan<br>
+      </td>
+      <td style="vertical-align: top;">1.0<br>
+      </td>
+      <td style="vertical-align: top;">2 2<br>
+      </td>
+      <td style="vertical-align: top;">"constant"</td>
+      <td style="vertical-align: top;">"gaussian" 2.0 2.0 </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">MTOR<br>
+      </td>
+      <td style="vertical-align: top;">1.0<br>
+      </td>
+      <td style="vertical-align: top;">2 2<br>
+      </td>
+      <td style="vertical-align: top;">"smooth"</td>
+      <td style="vertical-align: top;">"box" 1.0 1.0</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">"TOR.ini"<br>
+      </td>
+      <td style="vertical-align: top;">5.0<br>
+      </td>
+      <td style="vertical-align: top;">3 3<br>
+      </td>
+      <td style="vertical-align: top;">"smooth"</td>
+      <td style="vertical-align: top;">"separable-catmull-rom" 2.0 2.0 </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Lumiere<br>
+      </td>
+      <td style="vertical-align: top;">1.0<br>
+      </td>
+      <td style="vertical-align: top;">5 5<br>
+      </td>
+      <td style="vertical-align: top;">"smooth"</td>
+      <td style="vertical-align: top;">"catmull-rom" 2.0 2.0 </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Shot Finaling CHIC</td>
+      <td style="vertical-align: top;">0.5</td>
+      <td style="vertical-align: top;">8 8</td>
+      <td style="vertical-align: top;">"smooth"</td>
+      <td style="vertical-align: top;">"catmull-rom" 2.0 2.0</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Shot Finaling WILB<br>
+      </td>
+      <td style="vertical-align: top;">0.5<br>
+      </td>
+      <td style="vertical-align: top;">8 8<br>
+      </td>
+      <td style="vertical-align: top;">"smooth"</td>
+      <td style="vertical-align: top;">"mitchell" 5.0 5.0 </td>
+    </tr>
+  </tbody>
+</table>
+&nbsp;
+<br>
+How do these settings affect the filtering, and what are the optimal
+settings?<br>
+<ul>
+  <li>Optimal filtering = best balance between aliasing and detail loss
+(cost is a secondary concern) - "best" in this case is somewhat
+subjective, but there's definitely a sweet spot.<br>
+  </li>
+  <li>Aliasing = high frequency data masquerading as low-frequency data
+(jaggies, Moir&eacute;, noise, sparkling, popping, etc.) that results
+from sampling a signal with improper filtering.&nbsp; And since the
+aliasing is mixed in with the real low-frequency data, once added it
+cannot be removed.<br>
+  </li>
+</ul>
+<span style="font-weight: bold;"></span><br>
+PRMan filtering occurs in several stages:<span
+ style="font-weight: bold;"><br>
+</span>
+<ol>
+  <li>Dicing of geometry into micropolygons whose size is based on the <a
+ href="#ShadingRate">ShadingRate</a><br>
+  </li>
+  <li>Shading, which includes <a href="#Texture_Filtering">texture</a>
+and/or <a href="#Procedural_Filtering">procedural</a> filtering</li>
+  <li>Stochastic sampling, with a resolution based on <a
+ href="#PixelSamples">PixelSamples</a>, and micropolygon sample values
+determined by <a href="#ShadingInterpolation">ShadingInterpolation</a></li>
+  <li>Final image reconstruction using the <a href="#PixelFilter">PixelFilter</a></li>
+</ol>
+Each step
+attenuates high-frequencies to some extent and also adds some
+aliasing.&nbsp;&nbsp; First, the <a href="#Frequency_Analysis_with_FFT">FFT
+is reviewed</a> as a tool for frequency analysis, and then
+the frequency response of each of the filter settings is analyzed in
+the
+follow sections.&nbsp; Finally, filtered <a href="#Image_comparison">sample
+images are compared</a> and <a href="#Recommendations">recommendations
+are summarized</a>.<br>
+&nbsp;
+<br>
+<br>
+<span style="font-weight: bold;"><a name="Frequency_Analysis_with_FFT"></a>Frequency
+Analysis with FFT<br>
+<br>
+</span>The frequency content, or spectrum, of a signal can be measured
+using the Fast
+Fourier Transform
+(FFT) in 1 or 2 dimensions.&nbsp; To measure the frequency <span
+ style="font-style: italic;">response</span> of
+a filter, a random (white noise) signal is generated, processed by the
+filter in question, and
+then analyzed with the FFT to measure the spectrum after filtering.<br>
+<br>
+Sample 1d FFT:<br>
+<img style="width: 600px; height: 450px;" alt="" src="fft1d.png"><br>
+Top left: 1d kernel plot; top right: 2d kernel image.&nbsp; Bottom: FFT
+frequency response.<br>
+<br>
+The FFT response curve shows the attenuation based on frequency.&nbsp;
+The attenuation is in decibels (dB) and is a logarithmic scale.&nbsp;
+Every 6 dB down from zero corresponds to a reduction in intensity by
+1/2, or 1 bit of resolution.&nbsp; For example, in an 8-bit image,
+after 48 dB the
+intensity is no longer measurable; 16 bit resolution gives 96 dB
+dynamic range.&nbsp; The filter shown above may be sufficient for 8-bit
+images but will produce significant aliasing in a 16-bit image.<br>
+<br>
+The frequency for an image filter is measured in cycles per
+pixel.&nbsp; The frequency of 0.5
+is the Nyquist limit and is the highest representable frequency
+corresponding to a signal with a 2-pixel period (e.g. alternating
+bright/dark pixels).&nbsp;
+Everything above that frequency that gets through the filter is
+by definition aliasing.&nbsp; Any attenuation below the Nyquist limit
+is lost detail
+and results in a blurry image.&nbsp; The gaussian 2.0 filter shown
+above has an attenuation of about 10dB (or 70%) at the Nyquist limit
+but also loses about 2.5dB of detail (or 25%) in the 0.25 frequency
+range.<br>
+<br>
+For separable filters (like mitchell and separable-catmull-rom), the 1d
+frequency response also applies to 2d
+filtering.&nbsp; But for non-separable filters (like gaussian and
+catmull-rom), and other filtering effects
+like
+stochastic sampling and shading interpolation, the frequency response
+must be examined using a
+2d FFT.<br>
+<br>
+<img style="width: 256px; height: 256px;" alt="" src="fft2d.png">&nbsp;&nbsp;
+<img style="width: 256px; height: 256px;" alt="" src="fft2d_sinc.png">
+&nbsp; <img style="width: 256px; height: 256px;" alt=""
+ src="catmull-rom.png">&nbsp;&nbsp; <img
+ style="width: 256px; height: 256px;" alt=""
+ src="separable-catmull-rom.png">
+<br>
+Left to Right: 2d FFTs of gaussian 2.0, sinc 7.0, catmull-rom 4.0, and
+separable-catmull-rom 4.0 filters.<br>
+<br>
+The 2d FFT shows the frequency response of a filtered rand image.&nbsp;
+The lower left corner of the image represents
+frequency zero in x and y, and the upper right corner is the Nyquist
+limit (the lower right and upper left corners
+are the 1d Nyquist limits in x and y).&nbsp; Low pass filters attenuate
+the
+higher frequencies
+and thus the image is typically darker on the top and right
+edges.&nbsp; The sinc
+response is much flatter than the gaussian with negligible attenuation
+below the nyquist limit.&nbsp; For the gaussian, the intensity in the
+lower right corner is approximately 70% lower than at the lower left
+corner (which is consistent with the 1d FFT); for a separable filter,
+the attenuation in the upper right corner will be the product of the x
+and y attenuations which for the gaussian is about 90% (.3 * .3 =
+.09 = 91% attenuation).&nbsp; Notice how the catmull-rom and
+separable-catmull-rom have significantly different 2d responses even
+though their 1d response is identical.<br>
+<br>
+Various 2d images and their FFTs (inset over the images) are found
+ <a href="html/fft/index.html">here</a>.<br>
+<br>
+<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"><a
+ name="ShadingRate"></a>ShadingRate</span><br>
+<br>
+The ShadingRate determines the size of the micropolygons and
+represents the desired <span style="font-style: italic;">area</span>
+of the micropolygons in pixel units.&nbsp; The length of a micropolygon
+on each side is equal to <span style="font-style: italic;">sqrt(ShadingRate)</span>.&nbsp;
+For example, a ShadingRate of 0.25 generates micropolygons that are 1/2
+a pixel wide
+on each side.<br>
+<br>
+Using a ShadingRate of less than 1.0 results in subpixel shading and
+gives a more detailed image, but at significant cost: the shading time
+(which is often most of the rendering time) is roughly proportional to
+<span style="font-style: italic;">1.0/ShadingRate</span>.&nbsp; For
+example, a shading rate of 0.25 incurs a shading time 4 times
+longer than a ShadingRate of 1.0; the effect on overall render time
+depends on other factors but will likely be somewhat less than 4 times.<br>
+<br>
+<img style="width: 896px; height: 128px;" alt="" src="shadingrate.png"><br>
+Left to right:&nbsp; 2d FFT for shading rates of 4, 2, 1, 0.5, 0.25,
+.125, and 0.0625 (with smooth shading interpolation).<br>
+<br>
+<img style="width: 600px; height: 600px;" alt="" src="shadingrate1d.png"><br>
+1d FFT for various shading rates.<br>
+<br>
+With a shading rate of 0.5, there is still significant attenuation
+(about -3dB, or 50%) at the Nyquist limit.&nbsp; It is recommended to
+use a shading rate of 0.25 or smaller to minimize detail loss.<br>
+<br>
+<br>
+<span style="font-weight: bold;"><a name="Texture_Filtering"></a>Texture
+Filtering<br>
+<br>
+</span>There are a number of texture filters available:<br>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">box<br>
+      </td>
+      <td style="vertical-align: top;">aliases too much<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">disk<br>
+      </td>
+      <td style="vertical-align: top;">supposed to avoid mipmap
+artifacts, but expensive and also aliases too much<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">gaussian<br>
+      </td>
+      <td style="vertical-align: top;">best filter for color, not
+smooth enough for displacements<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">radial-bspline<br>
+      </td>
+      <td style="vertical-align: top;">best filter for displacements,
+too blurry for color<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">lagrangian<br>
+      </td>
+      <td style="vertical-align: top;">supposed to be 4x faster, but
+has strange artifacts<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Prman texture filtering is <span style="font-style: italic;">anisotropic</span>,
+but only in a rectangular
+way.&nbsp; That is, you can scale the filter rectangle separately in s
+and t, but the filter area must remain a rectangle.&nbsp; When the
+texture coordinates don't form a rectangle (i.e. when the shading grid
+and texture axes are not aligned) the filter rectangle is formed from
+the bounding box of the coordinates which which results in overly soft
+filtering.&nbsp; Fully anisotropic
+filtering (using "elliptical weighted averaging") is reported to be in
+development but
+is not yet available.&nbsp; But even when it is, it will still likely
+be
+somewhat soft as elliptical filtering is typcially based on the
+gaussian filter which is a soft filter.<br>
+<br>
+<span style="font-weight: bold;"></span>
+<i>Our [Disney's] proprietary texture system, <a href="http://www.cs.utah.edu/~lacewell/ptex/">Ptex</a>, uses the Mitchell filter with controllable sharpness.  Smooth filtering (sharpness=0) is equivalent to bspline filtering and is good for displacements, and sharp filtering (sharpness=1) is good for color.  Values in-between are also possible (0.4 is similar to gaussian).  Because the per-face UVs are always grid-aligned, the filter area will always be a rectangle and proper anisotropic filtering will be achieved. A paper on Ptex was published in the 2008 Eurographics.   <a href="http://www.cs.utah.edu/~lacewell/ptex/">Go here </a> to find out more about this texture format and to request a copy of the paper.</i>
+
+<br>
+<br style="font-weight: bold;">
+<span style="font-weight: bold;"><a name="Procedural_Filtering"></a>Procedural
+Filtering</span><br>
+<br>
+Anti-aliasing of a procedural-noise-based shader generally involves
+attenuating
+noise octaves based on the filter size.&nbsp; An optimally attenuated
+noise function is now available with the "wnoise"
+shadeop.&nbsp; However, one problem that remains is that the filtering
+is
+isotropic.&nbsp; On silhouettes where one
+dimension should be
+filtered more than the other, both dimensions must be filtered equally
+and thus too much detail is lost.&nbsp; Baking
+a procedural noise pattern into a texture (at a slightly higher res
+than needed) will then enable
+anisotropic filtering and generally produce a more detailed result.<br>
+<br style="font-weight: bold;">
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"><a
+ name="PixelSamples"></a>PixelSamples</span><br>
+<br>
+The PixelSamples setting controls the number of times the micropolygons
+are
+sampled
+for each pixel.&nbsp; Prman generates a "subpixel" image that is
+PixelSamples
+times larger and then uses a 2d "pixel filter" to reduce the image
+to the final resolution.<br>
+<br>
+&nbsp;&nbsp;&nbsp; E.g.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; PixelSamples 5 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Format 2048 1280<br>
+<br>
+&nbsp;&nbsp;&nbsp; Prman renders a 10240 by 6400 image and then reduces
+it
+to 2048 x 1280 using the PixelFilter<br>
+<br>
+A special mode can be used to turn off the pixel filtering
+(Hider "hidden" "subpixel" [1.0]) and render the subpixel image.&nbsp;
+This can be useful for
+debugging or
+for filtering in another package like Shake.<br>
+<br>
+<img style="width: 512px; height: 376px;" alt=""
+ src="diner_subpixel.png">&nbsp;&nbsp; <img
+ style="width: 103px; height: 76px;" alt="" src="diner_final.png"><br>
+Left: subpixel (PixelSamples 5 5) render, Right: final render after
+filtered reduction<br>
+<br>
+Notice the noisy edges in the above image, particularly on geometric
+silhouettes.&nbsp; This is due to <span style="font-weight: bold;">stochastic
+sampling</span> which jitters the micropolygon sample locations to help
+anti-alias sharp edges.&nbsp; The amount of noise is reduced as the
+number of pixel samples is increased.&nbsp; <br>
+<br>
+<img style="width: 512px; height: 512px;" alt="" src="checker_8.png">&nbsp;&nbsp;&nbsp;
+<img style="width: 512px; height: 512px;" alt=""
+ src="stochastic_sampling.png"> <br>
+An 8x8 checker pattern with its 2d FFT inset.&nbsp; All of the energy
+is concentrated in the fundamental frequency of 1/16 and the odd
+harmonics (3/16, 5/16, 7/16).&nbsp; On the right, the checker pattern
+was
+stochastically sampled.&nbsp; The even harmonics are slightly
+emphasized, but otherwise the main effect is the addition of white
+noise with a strength of about 20%.&nbsp; Doubling the pixel samples
+appears to
+cut the strength of the noise in half.&nbsp; Note that the 20% noise
+level is particular to the frequency content of this image, but is
+fairly typical.<br>
+<br>
+In addition to scaling the resolution of the subpixel image,
+PixelSamples also determines the number of filter kernel samples as
+shown in the figures below.<br>
+<br>
+<img style="width: 1200px; height: 600px;" alt=""
+ src="pixel_samples.png"><br>
+<br>
+Notes:<br>
+<ul>
+  <li>A low number of samples will distort the kernel and the
+frequency response.&nbsp; For example, the 2 unit gaussian and
+catmull-rom filters with 2 pixel samples (shown above) are both
+identical to a triangle filter which generally has poor performance.</li>
+  <li>The kernel values must be normalized - that is, all of the
+samples must add up to 1.0.&nbsp; Because of this, the samples may not
+follow the original curve exactly.&nbsp; For example, the center sample
+for the gaussian filter with an odd number of samples is visibly lower
+than the calculated value.<br>
+  </li>
+  <li>Using an odd PixelSamples value will sample the kernel at the
+pixel centers (integer positions -2, -1, 0, 1, 2, etc.).&nbsp; For many
+kernels (catmull-rom, sinc, mitchell, lanczos), the kernel is zero at
+these
+points, so many of the samples are wasted and the filter performance
+will be degraded.&nbsp; Note in particular
+that the catmull-rom 4.0 filter with 1 pixel sample has 5 kernel points
+but four of them are zero - this is equivalent to a 1 unit box filter!<br>
+  </li>
+</ul>
+<br>
+At a bare minimum, PixelSamples should be at least high enough to
+sample each micropolygon twice in each direction (sampling only once
+per polygon defeats the purpose of smooth shading and adds a lot of
+noise to the image).&nbsp; The minimum reasonable value is thus <span
+ style="font-style: italic;">2 /
+sqrt(ShadingRate) </span>and is shown in the table below.&nbsp;
+Increasing
+PixelSamples further doesn't affect shading cost, but does become
+expensive at
+very high levels (20 or more).&nbsp; More PixelSamples will generally
+look better (with less noise), but have negligible effect on beyond a
+certain point (given by the Recommended PixelSamples values
+below).&nbsp; Note
+that more samples may be needed for other reasons such as motion blur.<br>
+<br>
+Recommended PixelSample Values<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Shading Rate<br>
+      </td>
+      <td style="vertical-align: top;">Min PixelSamples for Shading Rate<br>
+      </td>
+      <td style="vertical-align: top;">Recommended PixelSamples for
+Shading Rate<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">1.0<br>
+      </td>
+      <td style="vertical-align: top;">2 2<br>
+      </td>
+      <td style="vertical-align: top;">4 4<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">0.5<br>
+      </td>
+      <td style="vertical-align: top;">4 4*<br>
+      </td>
+      <td style="vertical-align: top;">6 6<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">0.25<br>
+      </td>
+      <td style="vertical-align: top;">4 4<br>
+      </td>
+      <td style="vertical-align: top;">8 8<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">0.1<br>
+      </td>
+      <td style="vertical-align: top;">6 6<br>
+      </td>
+      <td style="vertical-align: top;">10 10<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-style: italic;">* 3 3 would normally be sufficient,
+but using an odd number of samples is not recommended for some filters
+as previously discussed</span><br>
+<br>
+A comparison of frequency response vs pixel samples (using mitchell 4.0
+filter) is shown <a href="html/samples/index.html">here</a>.&nbsp; For each shading rate, increasing
+the number of pixel samples beyond a certain point has no visible
+effect.<br>
+<span style="font-weight: bold;"></span><br>
+<br>
+<span style="font-weight: bold;"><a name="ShadingInterpolation"></a>ShadingInterpolation</span><br>
+<br>
+ShadingInterpolation has two options:<br>
+<div style="margin-left: 40px;">"constant" - micropolygons are flat
+shaded<br>
+"smooth" - micropolygons are smooth shaded (aka "Gouraud" shading or
+bi-linear interpolation)<br>
+</div>
+<br>
+<div style="margin-left: 40px;">8x8 pixel samples with randomly
+colored, pixel-sized micropolygons rendered as subpixel image:<br>
+</div>
+<div style="margin-left: 40px;"><img alt="" src="constant.png">&nbsp;&nbsp;
+&nbsp; &nbsp; <img style="width: 128px; height: 128px;" alt=""
+ src="smooth.png"><br>
+Constant Shading&nbsp; &nbsp;&nbsp; &nbsp; Smooth Shading<br>
+</div>
+<br>
+<img style="width: 600px; height: 450px;" alt=""
+ src="shadinginterp1d.png"><br>
+Frequency response vs ShadingInterpolation, using a ShadingRate of 1.0.<br>
+<br>
+Constant shading is like "box" filtering and is sharper than smooth
+shading, but has
+significant aliasing.&nbsp; Smooth shading is like "triangle"
+filtering.&nbsp;
+Note that smooth shading is required to avoid certain artifacts),
+particularly
+with
+displacements, so it's not really a choice (see "centered derivatives"
+discussion in prman docs); but the shading interpolation affects the
+overall
+frequency response and thus must be taken into account.&nbsp; <br>
+<br>
+<br style="font-weight: bold;">
+<span style="font-weight: bold;"><a name="PixelFilter"></a>PixelFilter</span><br>
+<br>
+There is a wide choice of pixel filters, each with a characteristic
+kernel
+shape and a settable
+kernel width.&nbsp; Unfortunately, there seems to be no good published
+advice for
+choosing
+a filter kernel or setting the appropriate width.&nbsp;
+What's more, you
+can't compare filters by setting their kernel widths to be equal; for a
+fair comparison, you must know the optimal kernel width for each filter
+and that information is not easily obtainable (and is certainly not in
+the prman docs)!&nbsp; For the filters shown below, the "canonical"
+widths were gathered from a number of sources including original
+research papers, by comparing with Shake (where possible), and by
+examining the FFTs.&nbsp; The blackman-harris filter's 3.3 width in
+particular was determined by matching the frequency response to the
+gaussian.<br>
+<br>
+Here are all the PRMan filter kernel profiles (with canonical widths):<br>
+<img style="width: 1000px; height: 500px;" alt="" src="kernels.png"><br>
+<br>
+The top row of filters approximate the infinite gaussian function,
+exp(-w * x^2).&nbsp; The box filter just averages all values within the
+box.&nbsp; If you apply a 1 unit wide box filter twice, you get a 2
+unit triangle, also known as a linear b-spline;
+three times, a 3 unit quadratic b-spline; four times, a 4 unit cubic
+b-spline; and so
+on; at the limit you'll have the infinite gaussian (which is infinitely
+smooth).&nbsp; But in a practical implementation, the gaussian function
+must
+be windowed.&nbsp; PRMan's "gaussian" filter uses a box window which
+adds
+aliasing similar to a box filter (but attenuated).&nbsp; A wider window
+would reduce the aliasing, but the
+window width is not settable in PRMan.&nbsp; The blackman-harris filter
+has a gaussian-like kernel that goes smoothly to zero at the edges and
+has
+much less aliasing; it is built from
+cosines, a0 + a1 * cos(pi*x) + a2 * cos(2*pi*x) + a3 * cos(3*pi*x),
+where a0..a3 are carefully chosen constants.&nbsp; The lower order
+gaussian-like filters (like box and triangle) are much sharper, but
+have strong aliasing.<br>
+<br>
+The bottom row of filters approximate the infinite sinc function,
+sin(x)/x, with alternating (and progressively smaller) positive and
+negative lobes.&nbsp; The filters are shown left to right in order of
+increasing sharpness (which is relative to the size of the negative
+lobes).&nbsp; Mitchell and catmull-rom are cubic filters with single,
+negative side lobes.&nbsp; The lanczos filter
+(named after a Hungarian mathmetician and pronounced "LAHN-tsosh") is a
+smoothly windowed sinc with very good performance.&nbsp; The bessel
+filter is another variant of sinc that is softer than lanczos
+due to the wider lobes and lower middle peak.&nbsp; Beware of a bug in
+bessel with odd filter widths - the sample at 0.0 is too low (at least
+in the PRMan 13.0).&nbsp; The sinc filter is just the straight sinc
+function windowed with a box and thus will
+have significant aliasing for smaller widths.<br>
+<br>
+<img style="width: 600px; height: 450px;" alt="" src="filterffts1d.png"><br>
+Frequency response of the recommended filters, in order of increasing
+sharpness.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Negative lobes and ringing.&nbsp; </span>The
+infinite sinc is theoretically the ideal filter, perfectly
+reconstructing sampled <span style="font-style: italic;">periodic</span>
+signals below the Nyquist
+limit, and perfectly suppressing higher frequencies and the sinc-like
+filters do preserve the most detail.&nbsp; But for
+non-periodic signals (like the step that occurs at the edge of an
+object) this results in <span style="font-style: italic;">ringing</span>
+due to the oscillating
+lobes.&nbsp; With one negative lobe such as with mitchell or
+catmull-rom, the ringing is confined to a single band that merely
+increases the contrast at the edge.&nbsp; With an additional positive
+lobe (as shown in the bessel, lanczos, and sinc filters above) there
+will
+be two rings - one dark and one light - creating a halo effect.&nbsp;
+Filters will more lobes will have more rings that look like pond
+ripples.&nbsp; For this reason,
+only filters with a single negative side lobe and no additional lobes
+are recommended.&nbsp; This means confining lanczos and sinc to widths
+of 4.<br>
+<br>
+<span style="font-weight: bold;">Radial vs. </span><span
+ style="font-weight: bold;">separable filters.</span>&nbsp; The
+disk, gaussian, and catmull-rom filters are radial which means that the
+1d filter kernel is revolved to produce a radially-symmetric 2d
+kernel.&nbsp; The rest
+of the filters are separable which means that the 1d kernels are
+computed separately in x and y and then multipled together to produce
+the 2d kernel.&nbsp; The "separable-catmull-rom" filter has a 1d kernel
+that is identical to the radial "catmull-rom", but is extended to 2d
+rectangularly as shown below.&nbsp; Note how the negative lobes cancel
+out on the diagonal for the separable-catmull-rom but form a symmetric
+"moat" around the radial catmull-rom.<br>
+<br>
+<img alt="" src="kernels2d.png"><br>
+<br>
+Radial filters are theoretically better at suppressing sampling grid
+structure.&nbsp; But, the disk filter has too much aliasing to be
+useful; the gaussian filter is windowed with a box and thus behaves
+more like a separable filter than a radial one; and the radial
+catmull-rom filter is <span style="font-style: italic;">much</span>
+sharper than the 1d and
+separable forms due to the enlarged negative region and the
+higher-than-one central peak resulting from normalization.&nbsp;
+Ironically, blackman-harris, the apparently best-performing radial
+filter isn't actually radial!&nbsp; This doesn't prove that radial
+filters are bad, just that they don't behave as expected from the 1d
+analysis.<br>
+<br>
+Separable
+2d filters on the other hand perform equivalently to their 1d
+counterparts.&nbsp; Note that all of the Shake filters are separable
+and this apparently has not been an issue.&nbsp; <br>
+<br>
+<span style="font-weight: bold;">Filter width.</span>&nbsp; All filters
+have a width parameter (actually there are separate "xwidth" and
+"ywidth" parameters though the 2 values are generally the same).&nbsp;
+But the behavior of the width parameters varies from filter to
+filter.&nbsp; For the box,
+disk, triangle, gaussian, blackman-harris, and mitchell filters, the
+width parameter controls the kernel width.&nbsp; The kernel is simply
+scaled spatially, and the frequency response is similarly scaled.&nbsp;
+Put
+another way, this is like controlling the blur width in Shake.&nbsp;
+For these filters, there are canonical widths that put the cutoff
+frequency near the Nyquist limit.&nbsp; These are the widths shown in
+the profiles above.&nbsp; The Blackman-Harris filter doesn't have a
+published canonical width that I could find, but I found that the 3.3
+value closely matches the frequency response of PRMan's Gaussian 2.0
+filter.&nbsp; The canonical widths should be considered minimum
+widths.&nbsp; Larger widths can be used to reduce aliasing.&nbsp; But
+to avoid a result that is too blurry, the width should probably not be
+scaled much beyond about 25% larger than the canonical width.<br>
+<br>
+For the remaining filters (catmull-rom, separable-catmull-rom, bessel,
+lanczos,
+and sinc), the width parameter controls the kernel <span
+ style="font-style: italic;">window</span> width and thus controls the
+number (and in some cases the strength) of the side lobes.&nbsp; The
+frequency response however is fixed, and wider kernels just increase
+the
+sharpness of the image.&nbsp; Also note that both forms of the
+catmull-rom filter have a kernel that goes to zero beyond a width of 4
+and thus
+values larger than 4 have no effect (other than increasing the cpu
+time).&nbsp; Also note that the kernel window is applied as a
+rectangle, so even though a "catmull-rom 2.0" kernel will have no
+negative lobes in 1d, it will have partial negative lobes on the
+diagonal in 2d.&nbsp; The "separable-catmull-rom 2.0" filter will have
+no negative lobes in 1d or 2d (but clipping the kernel like this will
+add significant
+aliasing and is not recommended).&nbsp; With these filters, going below
+4 is not recommended
+due to the increased aliasing, and going above 6 is not recommended due
+to the excessive ringing as previously discussed.<br>
+<br>
+Kernel plots and 1d FFT images for all of the prman filters over a
+range of widths are shown
+<br>
+<a
+ href="html/filters/index.html">here</a>)<br>
+<br>
+2d FFT images of the filters with three different shading rates
+(1.0, 0.5, and 0.25) and using 8x8 pixel samples and smooth shading are
+shown in:<br>
+ <a
+ href="html/fft2d_1.0/index.html">fft2d_1.0</a><br>
+<a
+ href="html/fft2d_0.5/index.html">fft2d)_0.5</a><br>
+ <a
+ href="html/fft2d_0.25/index.html">fft2d_0.25</a><br>
+<br>
+Based on these tests, I would recommended the following filters and
+filter widths:<br>
+<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Minimum Width<br>
+      </td>
+      <td style="vertical-align: top;">Maximum Recommended Width<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">softest</td>
+      <td style="vertical-align: top;">blackman-harris<br>
+      </td>
+      <td style="vertical-align: top;">3.3<br>
+      </td>
+      <td style="vertical-align: top;">4.0<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">.<br>
+      </td>
+      <td style="vertical-align: top;">mitchell</td>
+      <td style="vertical-align: top;">4.0 </td>
+      <td style="vertical-align: top;">5.0 </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">.<br>
+      </td>
+      <td style="vertical-align: top;">separable-catmull-rom</td>
+      <td style="vertical-align: top;">4.0 </td>
+      <td style="vertical-align: top;">4.0 </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sharpest</td>
+      <td style="vertical-align: top;">lanczos<br>
+      </td>
+      <td style="vertical-align: top;">4.0 </td>
+      <td style="vertical-align: top;">6.0 (be careful of ringing!)<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+For the first three, larger widths will be softer, but will produce
+less
+aliasing.<br>
+For lanczos, larger widths will be sharper, but with
+increased ringing.<br>
+<br>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">Shake filters.</span>&nbsp; The
+primary Shake filters all have PRMan equivalents:<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Shake Filter</td>
+      <td style="vertical-align: top;">PRMan Filter<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">softest</td>
+      <td style="vertical-align: top;">gauss</td>
+      <td style="vertical-align: top;">gaussian 2.0, blackman-harris 3.3<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">.<br>
+      </td>
+      <td style="vertical-align: top;">mitchell (default enlargement
+filter)</td>
+      <td style="vertical-align: top;">mitchell 4.0<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">.<br>
+      </td>
+      <td style="vertical-align: top;">lanczos</td>
+      <td style="vertical-align: top;">lanczos 6.0<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">sharpest</td>
+      <td style="vertical-align: top;">sinc (default reduction filter)</td>
+      <td style="vertical-align: top;">sinc 4.0<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+Shake also has box and triangle filters, but because of the way shake
+pre-filters the image, these are not equivalent to the prman versions.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Adjustable Mitchell filter</span>.&nbsp;
+The Mitchell filter is really a family of
+filters that includes Catmull-Rom, the cubic b-spline, and everything
+in between.&nbsp; Mitchell can even go sharper than Catmull-Rom.&nbsp;
+The sharpness parameter is not controllable in
+PRMan, but it can be easily implemented as a Rif plugin.<br>
+<br>
+Here are are kernel plots and frequency responses for the mitchell 4.0
+filter with a sharpness values ranging from 0.0 to 1.8:<br>
+<img style="width: 1200px; height: 400px;" alt=""
+ src="mitchell_sharpness.png"><br>
+The response is flattest at a sharpness of 1.2 and is still pretty flat
+up to about 1.5.&nbsp; Values above 1.5 should probably be avoided.<br>
+<br>
+The mitchell filter can provide sharpness that is comparable to most of
+the builtin filters:<br>
+<table style="text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">PRMan filter<br>
+      </td>
+      <td style="vertical-align: top;">comparable sharpness <br>
+for mitchell 4.0 filter<br>
+      </td>
+      <td style="vertical-align: top;">comments<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">(b-spline)<br>
+      </td>
+      <td style="vertical-align: top;">0.0<br>
+      </td>
+      <td style="vertical-align: top;">exact match<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">gaussian 2.0<br>
+blackman-harris 3.3<br>
+      </td>
+      <td style="vertical-align: top;">0.4<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">separable-catmull-rom 4.0<br>
+      </td>
+      <td style="vertical-align: top;">1.0<br>
+      </td>
+      <td style="vertical-align: top;"> exact match</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">lanczos 4.0<br>
+      </td>
+      <td style="vertical-align: top;">1.0<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">lanczos 5.0<br>
+      </td>
+      <td style="vertical-align: top;">1.25<br>
+      </td>
+      <td style="vertical-align: top;">larger lanczos widths have a
+second positive lobe<br>
+and will exhibit halo artifacts<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sinc 4.0<br>
+      </td>
+      <td style="vertical-align: top;">1.4<br>
+      </td>
+      <td style="vertical-align: top;"> mitchell has much flatter
+response!</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">sinc 5.0<br>
+      </td>
+      <td style="vertical-align: top;">1.5<br>
+      </td>
+      <td style="vertical-align: top;">sinc 5.0 is much flatter than
+sinc 4.0 (comparable to mitchell),<br>
+but has second positive lobe and will exhibit halo artifacts<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+Notice in the above images that as the sharpness increases, the
+attenuation at the Nyquist frequency decreases (from about 10db at
+sharpness 0.4 to only about 3db at sharpness 1.5).&nbsp; As an
+alternative, a constant Nyquist attenuation can be achieved by matching
+the filter width to the sharpness level as shown below.&nbsp; This
+should give
+consistent anti-aliasing for a range sharpness values, though the
+sharpness of the image will be slightly reduced.<br>
+<br>
+<img style="width: 1200px; height: 400px;" alt=""
+ src="mitchell_matched.png"><br>
+Mitchell filters with matched sharpness level and filter width. &nbsp;
+Sharpness 0.7, 4.0 is close to the "standard" Mitchell filter.&nbsp;
+All of these values have about an 8dB attenuation at the Nyquist
+frequency.<br>
+<br>
+<span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;"><a name="Image_comparison"></a>Image
+comparison<br>
+<br>
+<img style="width: 338px; height: 214px;" alt=""
+ src="diner_mitchell_sr1.0.png">&nbsp; <img
+ style="width: 338px; height: 214px;" alt=""
+ src="diner_mitchell_sr0.5.png">&nbsp; <img
+ style="width: 338px; height: 214px;" alt=""
+ src="diner_mitchell_sr0.25.png"><br>
+<span style="font-weight: bold;"></span></span>Mitchell 4.0 filter w/ a
+range of ShadingRate settings (w/ standard sharpness of 0.667).<span
+ style="font-weight: bold;"><span style="font-weight: bold;"></span><br>
+<br>
+<img style="width: 338px; height: 214px;" alt=""
+ src="diner_mitchell_0.7.png">&nbsp; <img
+ style="width: 338px; height: 214px;" alt=""
+ src="diner_mitchell_1.0.png">&nbsp; <img
+ style="width: 338px; height: 214px;" alt=""
+ src="diner_mitchell_1.5.png"><br>
+<span style="font-weight: bold;"></span></span>Mitchell 4.0 filter w/ a
+range of sharpness settings (ShadingRate 0.25).<br>
+<br>
+Additional filters are shown in <a
+ href="html/diner/index.html">diner</a>.&nbsp; All images used
+5x5 PixelSamples.<br>
+<br>
+<br>
+<a name="Recommendations"></a><span style="font-weight: bold;">Summary
+of Recommendations</span><br>
+<ul>
+  <li><span style="font-weight: bold;">ShadingRate</span> - should be
+0.25 or smaller for final images.&nbsp; Smaller shading rates may be
+needed for large displacements.&nbsp; Larger shading rates may be
+needed if the render is too slow, but image quality will suffer.</li>
+  <li><span style="font-weight: bold;">PixelSamples</span> - should be
+at least 8 in each direction for a shading rate of 0.25 and should
+never be less than <span style="font-style: italic;">2 /
+sqrt(ShadingRate)</span>.&nbsp; Even numbers of samples are more
+efficient for many kernels.&nbsp; Larger numbers of samples may be
+needed for motion blur.<br>
+  </li>
+  <li><span style="font-weight: bold;">ShadingInterpolation</span> -
+should be "smooth".</li>
+  <li><span style="font-weight: bold;">PixelFilter -</span> start with
+the mitchell 4.0 filter.&nbsp; To soften and/or reduce aliasing, increase
+the width up to 5.0
+(fractions are ok!).&nbsp; For a
+sharper filter, use a custom Mitchell with controllable
+sharpness (using a RIF plugin for example); or, use one of the
+recommended standard filters: separable-catmull-rom 4.0, lanczos 4.0 to
+6.0.<br>
+  </li>
+</ul>
+<br>
+<hr>
+
+</body>
+</html>

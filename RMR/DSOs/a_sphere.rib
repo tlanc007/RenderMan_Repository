@@ -1,0 +1,17 @@
+##RenderMan RIB
+version 3.03
+Display "a.tif" "framebuffer" "rgba"
+Format 256 256 1
+Clipping 0.001 1000
+PixelSamples 1 1
+Projection "perspective"
+Translate 0 0 5
+WorldBegin
+LightSource "distantlight" 1 "intensity" [1]
+LightSource "ambientlight" 2 "intensity" [1]
+Surface "paintedplastic" "Ka" .1 "texturename" ["grid.tex"]
+
+Procedural "DynamicLoad" ["a_sphere.so" "3.0" ] [-3 3 -3 3 -3 3]
+
+WorldEnd
+

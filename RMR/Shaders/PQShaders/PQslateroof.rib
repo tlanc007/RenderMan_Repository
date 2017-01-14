@@ -1,0 +1,46 @@
+PixelSamples 2 2
+Projection "perspective" "fov" [26.5651 ]
+Transform [0.887075 -0.454396 -0.0813788 0 0.461626 0.873182 0.15638 0 -1.29341e-014 0.176287 -0.984339 0 -5.30747 -4.07199 28.9401 1]
+Display "PQslateroof.tif" "file" "rgb"
+Format 250 250 -1
+PixelFilter "gaussian" 2 2 
+Clipping 0.01 1000
+WorldBegin
+Declare "intensity" "uniform float"
+Declare "from" "uniform point"
+Declare "to" "uniform point"
+Declare "coneangle" "uniform float"
+Declare "shadows" "string"
+Attribute "light" "shadows" ["off"]
+LightSource "spotlight" 1 "intensity" [1000 ] "from" [-7 16.5 20] "to" [3.5 5 5] "coneangle" [0.52359 ]
+Declare "intensity" "uniform float"
+Declare "shadows" "string"
+Attribute "light" "shadows" ["on"]
+LightSource "ambientlight" 2 "intensity" [0.28 ]
+#  
+AttributeBegin
+ConcatTransform [6.37652e-014 1 0 0 -1 6.37652e-014 0 0 0 0 1 0 -10 3 0 1]
+AttributeEnd
+AttributeBegin
+ConcatTransform [6.32484 0 8.80434 0 0 10.8407 0 0 -8.80434 0 6.32484 0 0 0 0 1]
+Color [1 0.501961 0]
+Declare "sfreq" "uniform float"
+Declare "tfreq" "uniform float"
+Declare "maxadd" "uniform float"
+Surface "PQslateroof" "sfreq" [5 ] "tfreq" [8 ] "maxadd" [0.5 ]
+Declare "sfreq" "uniform float"
+Declare "tfreq" "uniform float"
+Declare "Km" "uniform float"
+Attribute "displacementbound" "coordinatesystem" "object" "sphere" [.05]
+Displacement "PQslateroofd" "sfreq" [5 ] "tfreq" [8 ] "Km" [0.04 ]
+Attribute "identifier" "name" ["Surf #2"]
+NuPatch 2 2 [0 0 1 1] 0.000000 1.000000 2 2 [0 0 1 1] 0.000000 1.000000  "Pw" [0 0 0 1 1 0 0 1 0 1 0 1 1 1 0 1 ]
+AttributeEnd
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 1 6 8 1]
+AttributeEnd
+AttributeBegin
+ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+AttributeEnd
+WorldEnd
+

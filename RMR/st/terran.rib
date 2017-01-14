@@ -1,0 +1,3128 @@
+##RenderMan RIB-Structure 1.0
+##CreationDate Tue May 30 17:31:20 1995
+##For tal
+version 3.03
+Projection "perspective" "fov" 60 
+#Format 600 440 1
+Format 200 100 1
+FrameBegin 0
+Display "ter.0.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 180 0 1 0 
+Translate 0 0 -3 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 1 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 2 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.8 0.8 0.8]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 1
+Display "ter.1.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 174.000015 0 1 0 
+Translate -0.30491 0 -2.90102 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 3 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 4 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 2
+Display "ter.2.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 168 0 1 0 
+Translate -0.589222 0 -2.77207 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 5 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 6 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 3
+Display "ter.3.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 162 0 1 0 
+Translate -0.850106 0 -2.616356 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 7 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 8 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 4
+Display "ter.4.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 156 0 1 0 
+Translate -1.085173 0 -2.437339 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 9 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 10 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 5
+Display "ter.5.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 150 0 1 0 
+Translate -1.2925 0 -2.238676 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 11 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 12 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 6
+Display "ter.6.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 144 0 1 0 
+Translate -1.470639 0 -2.024161 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 13 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 14 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 7
+Display "ter.7.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 138 0 1 0 
+Translate -1.618627 0 -1.797667 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 15 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 16 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 8
+Display "ter.8.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 132 0 1 0 
+Translate -1.735986 0 -1.563089 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 17 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 18 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 9
+Display "ter.9.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 126 0 1 0 
+Translate -1.822715 0 -1.32428 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 19 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 20 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 10
+Display "ter.10.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 120 0 1 0 
+Translate -1.879275 0 -1.085 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 21 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 22 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 11
+Display "ter.11.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 114 0 1 0 
+Translate -1.906569 0 -0.848859 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 23 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 24 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 12
+Display "ter.12.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 108 0 1 0 
+Translate -1.905917 0 -0.61927 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 25 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 26 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 13
+Display "ter.13.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 102 0 1 0 
+Translate -1.879022 0 -0.399398 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 27 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 28 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 14
+Display "ter.14.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 96 0 1 0 
+Translate -1.827931 0 -0.192123 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 29 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 30 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 15
+Display "ter.15.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 90 0 1 0 
+Translate -1.755 0 -1.07459e-16 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 31 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 32 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 16
+Display "ter.16.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 84 0 1 0 
+Translate -1.662841 0 0.174772 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 33 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 34 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 17
+Display "ter.17.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 78 0 1 0 
+Translate -1.554277 0 0.330372 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 35 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 36 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 18
+Display "ter.18.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 72 0 1 0 
+Translate -1.432291 0 0.46538 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 37 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 38 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 19
+Display "ter.19.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 66 0 1 0 
+Translate -1.299975 0 0.578786 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 39 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 40 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 20
+Display "ter.20.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 60 0 1 0 
+Translate -1.160474 0 0.67 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 41 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 42 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 21
+Display "ter.21.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 54 0 1 0 
+Translate -1.016934 0 0.738846 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 43 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 44 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 22
+Display "ter.22.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 48 0 1 0 
+Translate -0.872452 0 0.785559 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 45 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 46 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 23
+Display "ter.23.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 42 0 1 0 
+Translate -0.730021 0 0.810771 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 47 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 48 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 24
+Display "ter.24.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 36 0 1 0 
+Translate -0.592488 0 0.815489 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 49 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 50 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 25
+Display "ter.25.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 30.000002 0 1 0 
+Translate -0.4625 0 0.801073 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 51 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 52 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 26
+Display "ter.26.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 24.000002 0 1 0 
+Translate -0.342472 0 0.769205 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 53 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 54 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 27
+Display "ter.27.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 17.999998 0 1 0 
+Translate -0.234544 0 0.721852 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 55 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 56 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 28
+Display "ter.28.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 12.000002 0 1 0 
+Translate -0.147617 0 0.694485 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 57 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 58 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 29
+Display "ter.29.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate 5.999994 0 1 0 
+Translate -0.074215 0 0.706111 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 59 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 60 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 30
+Display "ter.30.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate NaN 0 1 0 
+Translate -8.6947e-17 0 0.71 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 61 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 62 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 31
+Display "ter.31.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -6.000005 0 1 0 
+Translate 0.082891 0 0.788656 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 63 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 64 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 32
+Display "ter.32.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -11.999996 0 1 0 
+Translate 0.182131 0 0.856857 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 65 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 66 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 33
+Display "ter.33.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -17.999998 0 1 0 
+Translate 0.296347 0 0.912063 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 67 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 68 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 34
+Display "ter.34.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -24 0 1 0 
+Translate 0.42382 0 0.951914 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 69 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 70 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 35
+Display "ter.35.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -30.000002 0 1 0 
+Translate 0.5625 0 0.974279 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 71 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 72 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 36
+Display "ter.36.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -36 0 1 0 
+Translate 0.710045 0 0.977293 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 73 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 74 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 37
+Display "ter.37.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -42 0 1 0 
+Translate 0.863848 0 0.9594 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 75 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 76 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 38
+Display "ter.38.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -48 0 1 0 
+Translate 1.021081 0 0.919385 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 77 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 78 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 39
+Display "ter.39.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -54 0 1 0 
+Translate 1.178738 0 0.856403 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 79 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 80 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 40
+Display "ter.40.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -60 0 1 0 
+Translate 1.333679 0 0.77 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 81 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 82 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 41
+Display "ter.41.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -66 0 1 0 
+Translate 1.482684 0 0.660134 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 83 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 84 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 42
+Display "ter.42.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -72 0 1 0 
+Translate 1.622502 0 0.527183 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 85 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 86 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 43
+Display "ter.43.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -78 0 1 0 
+Translate 1.749906 0 0.371954 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 87 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 88 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 44
+Display "ter.44.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -84 0 1 0 
+Translate 1.861745 0 0.195677 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 89 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 90 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 45
+Display "ter.45.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -90 0 1 0 
+Translate 1.955 0 3.59115e-16 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 91 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 92 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 46
+Display "ter.46.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -96 0 1 0 
+Translate 2.026836 0 -0.213029 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 93 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 94 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 47
+Display "ter.47.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -102 0 1 0 
+Translate 2.074651 0 -0.440981 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 95 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 96 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 48
+Display "ter.48.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -108 0 1 0 
+Translate 2.096128 0 -0.681073 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 97 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 98 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 49
+Display "ter.49.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -114 0 1 0 
+Translate 2.089278 0 -0.930207 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 99 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 100 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 50
+Display "ter.50.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -120 0 1 0 
+Translate 2.05248 0 -1.185 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 101 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 102 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 51
+Display "ter.51.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -126 0 1 0 
+Translate 1.984519 0 -1.441837 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 103 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 104 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 52
+Display "ter.52.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -132 0 1 0 
+Translate 1.884615 0 -1.696915 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 105 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 106 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 53
+Display "ter.53.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -138 0 1 0 
+Translate 1.752453 0 -1.946296 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 107 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 108 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 54
+Display "ter.54.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -144 0 1 0 
+Translate 1.588196 0 -2.185964 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 109 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 110 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 55
+Display "ter.55.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -150 0 1 0 
+Translate 1.3925 0 -2.411881 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 111 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 112 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 56
+Display "ter.56.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -156 0 1 0 
+Translate 1.166521 0 -2.620048 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 113 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 114 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 57
+Display "ter.57.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -162 0 1 0 
+Translate 0.911909 0 -2.806568 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 115 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 116 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 58
+Display "ter.58.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -168 0 1 0 
+Translate 0.630804 0 -2.9677 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 117 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 118 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+FrameBegin 59
+Display "ter.59.tiff" "file" "rgb"
+Identity
+Rotate 0 0 0 1 
+Rotate 0 1 0 0 
+Rotate -174.000015 0 1 0 
+Translate 0.325815 0 -3.099925 
+WorldBegin
+Declare "intensity" "float"
+LightSource "ambientlight" 119 "intensity" 0.025 
+Declare "shadows" "string"
+Attribute "light" "shadows" "on"
+LightSource "distantlight" 120 "intensity" 2  "from" [-2 0.5 100] "to" [0 0 0]
+Color [0.05 0.05 0.4]
+AttributeBegin
+Declare "pswidth" "float"
+Declare "frequency" "float"
+Declare "casts_shadows" "string"
+Declare "intensity" "float"
+Attribute "render" "casts_shadows" "none"
+Surface "LGStarfield" "pswidth" 0.2  "frequency" 0.005  "intensity" 1.5 
+Sphere 10000 -10000 10000 360
+AttributeEnd
+AttributeBegin
+Attribute "render" "casts_shadows" "none"
+Translate -2 0.5 100 
+Color [0.984 0.996 0.703]
+Declare "attenuation" "float"
+Surface "RCGlow" "attenuation" 2 
+Sphere 8 -8 8 360
+AttributeEnd
+Scale 0.5 0.5 0.5
+AttributeBegin
+Declare "sea_level" "float"
+Rotate -15 0 0 1 
+Rotate -95 1 0 0 
+Declare "ice_caps" "float"
+Declare "multifractal" "float"
+Displacement "KMTerranbump" "sea_level" 0.15 
+Surface "TLTerranNwhite" "sea_level" 0.15 
+Color [0.05 0.05 0.4]
+Sphere 1 -1 1 360
+AttributeEnd
+AttributeBegin
+Declare "casts_shadows" "string"
+Attribute "render" "casts_shadows" "shade"
+Declare "offset" "float"
+Surface "KMPlanetclouds" "offset" 0.25 
+Sphere 1.02 -1.02 1.02 360
+AttributeEnd
+WorldEnd
+FrameEnd
+

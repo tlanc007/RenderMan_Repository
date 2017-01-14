@@ -1,0 +1,713 @@
+surface superplank
+param	float	Ka		1
+param	float	Kd		1
+param	float	Ks		0.75
+param	float	roughness		0.02
+param	color	specularcolor		1 1 1
+param	float	Kr		1
+param	float	eta		1.5
+param	float	Ktrace		1
+param	float	Krefl		0
+param	string	reflmap		""
+param	float	txtscale		1
+param	float	Km		1
+param	color	lightwood		0 0 0
+param	float	plankpattern		1
+param	float	plankspertile		4
+param	float	plankwidth		0.05
+param	float	planklength		0.75
+param	float	groovewidth		0.001
+param	float	groovedepth		0.0004
+param	color	groovecolor		0 0 0
+param	float	plankstagger		1
+param	float	plankvary		0.8
+param	float	ringscale		25
+param	float	ringwidth		1
+param	float	wavy		0.08
+param	float	grainy		1
+param	float	grainscale		60
+param	float	graindepth		0.0001
+param	float	varnishbumpfreq		30
+param	float	varnishbumpamp		0.0003
+local	string	$_str_0 	""
+local	string	$_str_1 	"shader"
+local	string	$_str_2 	"__nonspecular"
+local	string	$_str_3 	"NDC"
+local	float	ss	0
+local	float	tt	0
+local	float	grain_s	0
+local	float	grain_t	0
+local	float	ring_s	0
+local	float	ring_t	0
+local	float	plank_s	0
+local	float	plank_t	0
+local	float	swidth	0
+local	float	twidth	0
+local	float	fwidth	0
+local	float	sw	0
+local	float	tw	0
+local	float	overallscale	0
+local	float	PGWIDTH	0
+local	float	PGHEIGHT	0
+local	float	GWF	0
+local	float	GHF	0
+local	float	whichrow	0
+local	float	whichplank	0
+local	float	w	0
+local	float	h	0
+local	float	groovy	0
+local	color	Ct	0 0 0
+local	color	woodcolor	0 0 0
+local	float	r2	0
+local	float	fade	0
+local	float	ttt	0
+local	float	ring	0
+local	float	grain	0
+local	float	adjustedKs	0
+local	vector	IN	0 0 0
+local	normal	NN	0 0 0
+local	normal	Nf	0 0 0
+local	vector	R	0 0 0
+local	vector	T_dummy	0 0 0
+local	float	fresnelKr	0
+local	float	fresnelKt	0
+local	float	shadlen	0
+local	float	disp	0
+local	point	Pndc	0 0 0
+local	vector	V	0 0 0
+local	color	Cspec	0 0 0
+local	float	nonspec	0
+local	float	tmp	0
+local	float	_5$edge0	0
+code
+local	float	_5$edge1	0
+code
+local	float	_5$x0	0
+local	float	_5$x1	0
+local	vector	_27$H	0 0 0
+initcode 12
+	pushiv	0.5 0.2 0.067 
+	popc	lightwood 
+initcode 19
+	pushiv	0.01 0.003 0.001 
+	popc	groovecolor 
+initcode 29
+	return
+code
+	pushf	txtscale 
+	mulF	s 
+	popf	ss 
+	pushf	txtscale 
+	mulF	t 
+	popf	tt 
+	pushif	1e-07 
+	pushf	dv 
+	pushf	ss 
+	Dvf
+	mulff
+	abs
+	pushf	du 
+	pushf	ss 
+	Duf
+	mulff
+	abs
+	addff
+	fmax
+	popf	swidth 
+	pushif	1e-07 
+	pushf	dv 
+	pushf	tt 
+	Dvf
+	mulff
+	abs
+	pushf	du 
+	pushf	tt 
+	Duf
+	mulff
+	abs
+	addff
+	fmax
+	popf	twidth 
+	pushf	twidth 
+	pushf	swidth 
+	fmax
+	popf	fwidth 
+	pushf	ss 
+	pushv	P 
+	Derivv
+	length
+	popf	overallscale 
+	pushif	1 
+	pushf	plankpattern 
+	feqf
+	ifz	0
+	pushf	groovewidth 
+	addF	plankwidth 
+	popf	PGWIDTH 
+	pushf	groovewidth 
+	addF	planklength 
+	popf	PGHEIGHT 
+	pushf	PGWIDTH 
+	divF	ss 
+	popf	plank_s 
+	pushf	plank_s 
+	floor
+	popf	whichrow 
+	pushf	whichrow 
+	cellnoisef
+	pushf	plankstagger 
+	pushif	20 
+	mulff
+	mulff
+	pushf	PGHEIGHT 
+	divF	tt 
+	addff
+	popf	plank_t 
+	pushf	plank_t 
+	floor
+	popf	whichplank 
+	jump	1
+label 0
+	pushf	groovewidth 
+	addF	plankwidth 
+	popf	PGWIDTH 
+	pushf	plankspertile 
+	mulF	PGWIDTH 
+	popf	PGHEIGHT 
+	pushf	PGWIDTH 
+	divF	ss 
+	popf	plank_s 
+	pushf	plank_s 
+	floor
+	popf	whichrow 
+	pushf	PGHEIGHT 
+	divF	tt 
+	popf	plank_t 
+	pushf	plank_t 
+	floor
+	popf	whichplank 
+	pushif	1 
+	pushif	2 
+	pushf	whichplank 
+	pushf	plankspertile 
+	divF	whichrow 
+	addff
+	mod
+	ge
+	ifz	2
+	pushf	PGWIDTH 
+	divF	tt 
+	popf	plank_s 
+	pushf	PGHEIGHT 
+	divF	ss 
+	popf	plank_t 
+	pushf	plank_s 
+	floor
+	popf	whichrow 
+	pushf	plank_t 
+	floor
+	popf	whichplank 
+	cpFF	ss tmp 
+	cpFF	tt ss 
+	cpFF	tmp tt 
+	cpFF	swidth tmp 
+	cpFF	twidth swidth 
+	cpFF	tmp twidth 
+label 2
+label 3
+label 1
+	pushf	PGWIDTH 
+	pushif	0.5 
+	divff
+	mulF	groovewidth 
+	popf	GWF 
+	pushf	PGHEIGHT 
+	pushif	0.5 
+	divff
+	mulF	groovewidth 
+	popf	GHF 
+	pushf	PGWIDTH 
+	divF	swidth 
+	popf	sw 
+	pushf	PGHEIGHT 
+	divF	twidth 
+	popf	tw 
+	pushif	1 
+	pushf	sw 
+	ge
+	ifz	4
+	pushf	GWF 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	w 
+	jump	5
+label 4
+	pushf	GWF 
+	addF	whichrow 
+	popf	_5$edge0 
+	pushf	GWF 
+	pushif	1 
+	addF	whichrow 
+	subff
+	popf	_5$edge1 
+	pushif	0.5 
+	mulF	sw 
+	subF	plank_s 
+	popf	_5$x0 
+	pushf	sw 
+	addF	_5$x0 
+	popf	_5$x1 
+	pushf	sw 
+	pushf	_5$edge0 
+	pushf	_5$x0 
+	fmax
+	pushf	_5$edge1 
+	pushf	_5$x1 
+	fmin
+	subff
+	divff
+	pushif	0 
+	fmax
+	jump	6
+label 6
+	popf	w 
+label 5
+	pushif	1 
+	pushf	tw 
+	ge
+	ifz	7
+	pushf	GHF 
+	pushif	2 
+	mulff
+	pushif	1 
+	subff
+	popf	h 
+	jump	8
+label 7
+	pushf	GHF 
+	addF	whichplank 
+	popf	_5$edge0 
+	pushf	GHF 
+	pushif	1 
+	addF	whichplank 
+	subff
+	popf	_5$edge1 
+	pushif	0.5 
+	mulF	tw 
+	subF	plank_t 
+	popf	_5$x0 
+	pushf	tw 
+	addF	_5$x0 
+	popf	_5$x1 
+	pushf	tw 
+	pushf	_5$edge0 
+	pushf	_5$x0 
+	fmax
+	pushf	_5$edge1 
+	pushf	_5$x1 
+	fmin
+	subff
+	divff
+	pushif	0 
+	fmax
+	jump	9
+label 9
+	popf	h 
+label 8
+	pushf	h 
+	mulF	w 
+	popf	groovy 
+	pushf	ringscale 
+	mulF	twidth 
+	pushf	ringscale 
+	mulF	swidth 
+	fmax
+	popf	fwidth 
+	pushf	fwidth 
+	pushif	4 
+	pushif	0.75 
+	smoothstep
+	popf	fade 
+	pushif	0.999 
+	pushf	fade 
+	lt
+	ifz	10
+	pushf	ringscale 
+	mulF	ss 
+	popf	ring_s 
+	pushf	ringscale 
+	mulF	tt 
+	popf	ring_t 
+	pushf	ring_t 
+	pushf	ring_s 
+	pushif	8 
+	mulff
+	noiseff
+	mulF	wavy 
+	pushif	28.38 
+	mulF	whichplank 
+	addF	ring_t 
+	addff
+	popf	ttt 
+	pushif	20 
+	divF	ttt 
+	pushif	4.18 
+	mulF	whichplank 
+	subF	ring_s 
+	noiseff
+	mulF	ringscale 
+	popf	ring 
+	pushf	ring 
+	floor
+	subF	ring 
+	popf	ring 
+	pushf	ring 
+	pushif	0.8 
+	pushif	0.75 
+	smoothstep
+	pushif	1 
+	subff
+	pushf	ring 
+	pushif	0.55 
+	pushf	ringwidth 
+	pushif	0.35 
+	mulff
+	pushif	0.55 
+	subff
+	smoothstep
+	pushif	0.7 
+	mulff
+	mulff
+	pushif	0.3 
+	addff
+	popf	ring 
+	pushf	fade 
+	pushif	0.65 
+	mulff
+	pushf	ring 
+	pushf	fade 
+	pushif	1 
+	subff
+	mulff
+	addff
+	popf	ring 
+	pushf	grainscale 
+	mulF	twidth 
+	pushf	grainscale 
+	mulF	swidth 
+	fmax
+	popf	fwidth 
+	pushf	fwidth 
+	pushif	4 
+	pushif	0.75 
+	smoothstep
+	popf	fade 
+	pushif	0.999 
+	pushf	fade 
+	lt
+	ifz	12
+	pushf	grainscale 
+	mulF	ss 
+	popf	grain_s 
+	pushf	grainscale 
+	mulF	tt 
+	popf	grain_t 
+	pushf	grain_t 
+	pushf	grain_s 
+	pushif	12 
+	mulff
+	noiseff
+	pushif	1.3 
+	subff
+	popf	r2 
+	pushf	grainy 
+	pushif	1 
+	subff
+	pushf	r2 
+	pushf	r2 
+	mulF	grainy 
+	mulff
+	addff
+	popf	r2 
+	pushf	fade 
+	pushif	0.75 
+	mulff
+	pushf	r2 
+	pushf	fade 
+	pushif	1 
+	subff
+	mulff
+	addff
+	popf	grain 
+	jump	13
+label 12
+	pushif	0.75 
+	popf	grain 
+label 13
+	jump	11
+label 10
+	pushif	0.4875 
+	popf	ring 
+	pushif	0.75 
+	popf	grain 
+label 11
+	pushf	ring 
+	pushif	0.15 
+	mulff
+	pushif	0.85 
+	addff
+	mulF	grain 
+	popf	grain 
+	cpCC	lightwood woodcolor 
+	pushf	whichrow 
+	pushf	whichplank 
+	cellnoiseff
+	mulF	plankvary 
+	pushif	2 
+	divF	plankvary 
+	pushif	1 
+	subff
+	addff
+	pushc	woodcolor 
+	mulcf
+	popc	woodcolor 
+	pushf	grain 
+	pushif	0.5 
+	mulff
+	pushif	1 
+	subff
+	pushf	ring 
+	pushif	0.25 
+	mulff
+	pushif	1 
+	subff
+	mulff
+	pushc	woodcolor 
+	mulcf
+	popc	woodcolor 
+	pushf	groovy 
+	pushc	woodcolor 
+	pushc	groovecolor 
+	cmix
+	popc	Ct 
+	pushf	groovy 
+	pushf	grain 
+	pushif	0.3 
+	mulff
+	pushif	1 
+	addff
+	pushf	ring 
+	pushif	0.2 
+	mulff
+	pushif	1 
+	addff
+	mulF	Ks 
+	mulff
+	mulff
+	popf	adjustedKs 
+	pushif	0 
+	pushf	Km 
+	gt
+	ifz	14
+	pushf	groovy 
+	pushif	1 
+	subff
+	pushf	groovedepth 
+	negf
+	mulff
+	popf	disp 
+	pushif	0 
+	pushf	varnishbumpamp 
+	gt
+	ifz	16
+	pushif	1 
+	pushf	tt 
+	mulF	varnishbumpfreq 
+	pushf	ss 
+	mulF	varnishbumpfreq 
+	noiseff
+	pushif	2 
+	mulff
+	subff
+	mulF	varnishbumpamp 
+	addF	disp 
+	popf	disp 
+label 16
+label 17
+	pushf	ring 
+	pushf	grain 
+	pushif	0.75 
+	mulff
+	addff
+	mulF	graindepth 
+	subF	disp 
+	popf	disp 
+	pushv	N 
+	normalize
+	popv	NN 
+	pushv	NN 
+	pushs	$_str_1 
+	ntransforms
+	length
+	divF	overallscale 
+	popf	shadlen 
+	pushv	NN 
+	pushf	disp 
+	pushf	shadlen 
+	mulF	Km 
+	mulff
+	mulfv
+	addV	P 
+	calculatenormal
+	popv	N 
+label 14
+label 15
+	pushv	I 
+	normalize
+	popv	IN 
+	pushv	IN 
+	negv
+	popv	V 
+	pushv	I 
+	pushv	N 
+	normalize
+	faceforward
+	popv	Nf 
+	pushf	eta 
+	pushif	1 
+	divff
+	pushv	Nf 
+	pushv	IN 
+	fresnel4
+	popf	fresnelKr 
+	popf	fresnelKt 
+	popv	R 
+	popv	T_dummy 
+	pushf	Kr 
+	mulF	fresnelKr 
+	popf	fresnelKr 
+	pushif	0 
+	cset	Cspec 
+	pushif	1.5708 
+	pushv	Nf 
+	pushv	P 
+	illuminance_start
+label 18
+	illuminance3	19
+	pushif	0 
+	popf	nonspec 
+	pushf	nonspec 
+	pushs	$_str_2 
+	pushif	1 
+	lightsource
+	popf	nonspec 
+	pushif	1 
+	pushf	nonspec 
+	lt
+	ifz	20
+	pushv	V 
+	pushv	L 
+	normalize
+	addvv
+	normalize
+	popv	_27$H 
+	pushf	roughness 
+	pushif	8 
+	divff
+	pushv	_27$H 
+	pushv	Nf 
+	vdot
+	pushif	0 
+	fmax
+	pow
+	pushif	0.85 
+	pushif	0.6 
+	smoothstep
+	pushf	nonspec 
+	pushif	1 
+	subff
+	mulff
+	pushc	Cl 
+	mulcf
+	addC	Cspec 
+	popc	Cspec 
+label 20
+label 21
+	jump	18
+label 19
+	pushc	Cspec 
+	mulC	specularcolor 
+	mulFv	adjustedKs 
+	pushv	Nf 
+	diffuse
+	mulFv	Kd 
+	ambient
+	mulFv	Ka 
+	addcc
+	mulC	Ct 
+	pushf	fresnelKr 
+	pushif	1 
+	subff
+	mulfc
+	addcc
+	popc	Ci 
+	pushif	0.001 
+	pushf	fresnelKr 
+	gt
+	ifz	22
+	pushs	$_str_0 
+	pushs	reflmap 
+	sne
+	pushif	0 
+	pushf	Krefl 
+	gt
+	and
+	ifz	24
+	pushv	P 
+	pushs	$_str_3 
+	transforms
+	popv	Pndc 
+	pushv	Pndc 
+	ycomp
+	pushif	1 
+	subff
+	pushv	Pndc 
+	xcomp
+	pushif	-1 
+	pushs	reflmap 
+	pushif	2 
+	pushif	2 
+	ftexture
+	pushc	specularcolor 
+	mulFv	fresnelKr 
+	mulcf
+	addC	Ci 
+	popc	Ci 
+label 24
+label 25
+	pushif	0 
+	pushf	Ktrace 
+	gt
+	ifz	26
+	pushv	R 
+	pushv	P 
+	trace
+	pushc	specularcolor 
+	pushf	fresnelKr 
+	mulF	Ktrace 
+	mulfc
+	mulcc
+	addC	Ci 
+	popc	Ci 
+label 26
+label 27
+label 22
+label 23
+	cpCC	Os Oi 
+	return_area
+	pushc	Oi 
+	mulC	Ci 
+	popc	Ci 
+	return

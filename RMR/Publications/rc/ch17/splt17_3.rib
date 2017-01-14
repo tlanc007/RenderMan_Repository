@@ -1,0 +1,73 @@
+##RenderMan RIB
+version 3.03
+Display "RenderMan" "framebuffer" "rgb" 
+Format 256 192 -1
+ShadingRate 1
+Projection "perspective" 
+Option "limits" "eyesplits" [8]
+LightSource "pointlight" 1 "from" [0 0 0]
+Translate 0 0 2.5
+WorldBegin 
+Surface "matte" 
+Color [1 1 0]
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.0"]
+Rotate 0 0 0 1
+Translate 0 0.8 0
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.1"]
+Rotate 36 0 0 1
+Translate 0 0.8 0.4
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.2"]
+Rotate 72 0 0 1
+Translate 0 0.8 0.8
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.3"]
+Rotate 108 0 0 1
+Translate 0 0.8 1.2
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.4"]
+Rotate 144 0 0 1
+Translate 0 0.8 1.6
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.5"]
+Rotate 180 0 0 1
+Translate 0 0.8 2
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.6"]
+Rotate 216 0 0 1
+Translate 0 0.8 2.4
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.7"]
+Rotate 252 0 0 1
+Translate 0 0.8 2.8
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.8"]
+Rotate 288 0 0 1
+Translate 0 0.8 3.2
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "name" ["Spike.9"]
+Rotate 324 0 0 1
+Translate 0 0.8 3.6
+Patch "bilinear" "P" [-1 0 -30 1 0 -30 0 0 0 0 0 0]
+AttributeEnd 
+WorldEnd 

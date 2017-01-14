@@ -1,0 +1,233 @@
+ExlunaShader 1.0
+surface JBUMhexscales
+%OiIsOs
+param	uniform	float	Ka	1 	
+param	uniform	float	Kd	0.7 	
+param	uniform	float	spec	0.4 	
+param	uniform	float	roughness	0.2 	
+param	uniform	float	Km	0.02 	
+param	uniform	float	scale	40 	
+param	uniform	float	jitter	0.5 	
+param	uniform	float	linethick	0.0022 	
+param	uniform	color	darkcolor	0 0 0	
+param	uniform	color	lightcolor	0 0 0	
+param	uniform	float	noiseamp	0.05 	
+global	varying	color	Ci	0 0 0	
+global	varying	color	Oi	0 0 0	
+global	varying	color	Os	0 0 0	
+global	varying	point	P	0 0 0	
+global	varying	normal	N	0 0 0	
+global	varying	float	s	0	
+global	varying	float	t	0	
+global	varying	vector	I	0 0 0	
+const	uniform	color	$const0	0.257 0.116 0.104	
+const	uniform	color	$const1	0.83 0.547 0.359	
+const	uniform	float	$const2	0	
+const	uniform	float	$const3	0.5	
+const	uniform	float	$const4	1000	
+const	uniform	float	$const5	-1	
+const	uniform	float	$const6	1	
+const	uniform	float	$const7	2	
+const	uniform	float	$const8	22	
+const	uniform	float	$const9	23	
+const	uniform	float	$const10	87	
+const	uniform	float	$const11	56	
+const	uniform	float	$const12	51	
+const	uniform	float	$const13	26	
+const	uniform	float	$const14	57	
+const	uniform	float	$const15	14	
+const	uniform	float	$const16	58	
+const	uniform	float	$const17	0.9	
+const	uniform	float	$const18	1.1	
+const	uniform	float	$const19	24	
+const	uniform	float	$const20	18	
+const	uniform	float	$const21	1e-06	
+const	uniform	float	$const22	4	
+const	uniform	float	$const23	0.2	
+const	uniform	float	$const24	0.75	
+const	uniform	float	$const25	92	
+const	uniform	float	$const26	103	
+const	uniform	float	$const27	104	
+local	uniform	float	_21$amp	0	
+local	varying	point	_21$pp	0 0 0	
+local	varying	float	_21$sum	0	
+local	varying	float	_21$fw	0	
+local	uniform	float	_21$i	0	
+local	varying	float	_118$sthiscell	0	
+local	varying	float	_118$tthiscell	0	
+local	varying	float	_118$ofst	0	
+local	uniform	float	_118$i	0	
+local	uniform	float	_118$j	0	
+local	varying	float	_120$stestcell	0	
+local	varying	float	_123$ttestcell	0	
+local	varying	float	_123$spos	0	
+local	varying	float	_123$tpos	0	
+local	varying	float	_123$soffset	0	
+local	varying	float	_123$toffset	0	
+local	varying	float	_123$dist	0	
+local	varying	float	r1	0	
+local	varying	float	spos1	0	
+local	varying	float	tpos1	0	
+local	varying	float	r2	0	
+local	varying	float	spos2	0	
+local	varying	float	tpos2	0	
+local	varying	float	lt	0	
+local	varying	float	pert	0	
+local	varying	float	cmix	0	
+local	varying	float	varycolor	0	
+local	varying	color	Ct	0 0 0	
+local	varying	float	$tmp0	0	
+local	varying	float	$tmp1	0	
+local	varying	float	$tmp2	0	
+local	uniform	float	$tmp4	0	
+local	varying	float	$tmp6	0	
+local	varying	float	$tmp9	0	
+local	uniform	float	$tmp10	0	
+local	varying	float	$tmp16	0	
+local	varying	float	$tmp17	0	
+local	varying	float	$tmp22	0	
+local	varying	float	$tmp23	0	
+local	varying	point	$tmp33	0 0 0	
+local	varying	point	$tmp41	0 0 0	
+local	varying	float	$tmp45	0	
+local	uniform	float	$tmp46	0	
+local	varying	vector	$tmp58	0 0 0	
+local	varying	vector	$tmp59	0 0 0	
+local	varying	vector	$tmp62	0 0 0	
+local	varying	color	$tmp63	0 0 0	
+local	varying	color	$tmp64	0 0 0	
+local	varying	color	$tmp66	0 0 0	
+initcode 8
+	assign		darkcolor  $const0  
+initcode 9
+	assign		lightcolor  $const1  
+code
+	assign		pert  $const2  
+	mul		$tmp0  s  scale  
+	mul		$tmp1  t  scale  
+	floor		$tmp2  $tmp0  
+	add		_118$sthiscell  $tmp2  $const3  
+	floor		$tmp2  $tmp1  
+	add		_118$tthiscell  $tmp2  $const3  
+	assign		r2  $const4  
+	assign		r1  r2  
+	assign		_118$i  $const5  
+	for		$tmp4  $const15  $const14  $const16  
+	le		$tmp4  _118$i  $const6  
+	add		_120$stestcell  _118$sthiscell  _118$i  
+	div		$tmp6  _120$stestcell  $const7  
+	floor		$tmp2  $tmp6  
+	mul		$tmp6  $tmp2  $const7  
+	floor		$tmp2  _120$stestcell  
+	ne		$tmp9  $tmp6  $tmp2  
+	if		$tmp9  $const8  $const9  
+	assign		_118$ofst  $const3  
+	assign		_118$ofst  $const2  
+	assign		_118$j  $const5  
+	for		$tmp10  $const13  $const11  $const14  
+	le		$tmp10  _118$j  $const6  
+	add		_123$ttestcell  _118$tthiscell  _118$j  
+	cellnoise	$tmp2  _123$ttestcell  _120$stestcell  
+	sub		$tmp6  $tmp2  $const3  
+	mul		$tmp2  jitter  $tmp6  
+	add		_123$spos  _120$stestcell  $tmp2  
+	add		$tmp2  _123$ttestcell  _118$ofst  
+	add		$tmp16  _123$ttestcell  $const9  
+	sub		$tmp17  _120$stestcell  $const10  
+	cellnoise	$tmp6  $tmp16  $tmp17  
+	sub		$tmp16  $tmp6  $const3  
+	mul		$tmp6  jitter  $tmp16  
+	add		_123$tpos  $tmp2  $tmp6  
+	sub		_123$soffset  _123$spos  $tmp0  
+	sub		_123$toffset  _123$tpos  $tmp1  
+	mul		$tmp2  _123$soffset  _123$soffset  
+	mul		$tmp6  _123$toffset  _123$toffset  
+	add		_123$dist  $tmp2  $tmp6  
+	lt		$tmp22  _123$dist  r1  
+	if		$tmp22  $const12  $const11  
+	assign		r2  r1  
+	assign		spos2  spos1  
+	assign		tpos2  tpos1  
+	assign		r1  _123$dist  
+	assign		spos1  _123$spos  
+	assign		tpos1  _123$tpos  
+	lt		$tmp23  _123$dist  r2  
+	if		$tmp23  $const11  $const11  
+	assign		r2  _123$dist  
+	assign		spos2  _123$spos  
+	assign		tpos2  _123$tpos  
+	add		_118$j  _118$j  $const6  
+	add		_118$i  _118$i  $const6  
+	sqrt		r1  r1  
+	sqrt		r2  r2  
+	add		$tmp0  spos1  $const3  
+	add		$tmp1  tpos1  $const3  
+	cellnoise	varycolor  $tmp0  $tmp1  
+	assign		lt  linethick  
+	mul		$tmp0  scale  lt  
+	mul		$tmp1  $tmp0  $const17  
+	mul		$tmp0  scale  lt  
+	mul		$tmp2  $tmp0  $const18  
+	sub		$tmp0  r2  r1  
+	smoothstep	cmix  $tmp1  $tmp2  $tmp0  
+	mul		$tmp0  r1  r1  
+	sub		$tmp1  $const6  $tmp0  
+	mul		$tmp0  s  scale  
+	mul		$tmp2  $tmp0  $const19  
+	mul		$tmp0  t  scale  
+	mul		$tmp6  $tmp0  $const20  
+	point		$tmp33  $tmp2  $tmp6  $const2  
+	mul		$tmp16  s  scale  
+	mul		$tmp17  $tmp16  $const19  
+	mul		$tmp16  t  scale  
+	mul		$tmp45  $tmp16  $const20  
+	point		$tmp41  $tmp17  $tmp45  $const2  
+	area		$tmp6  $tmp41  
+	sqrt		$tmp2  $tmp6  
+	max		$tmp0  $tmp2  $const21  
+	assign		_21$amp  $const6  
+	assign		_21$pp  $tmp33  
+	assign		_21$sum  $const2  
+	assign		_21$fw  $tmp0  
+	assign		_21$i  $const2  
+	for		$tmp46  $const25  $const26  $const27  
+	lt		$tmp46  _21$i  $const22  
+	noise		$tmp0  _21$pp  
+	mul		$tmp2  $const7  $tmp0  
+	sub		$tmp0  $tmp2  $const6  
+	smoothstep	$tmp2  $const23  $const24  _21$fw  
+	sub		$tmp6  $const6  $tmp2  
+	mul		$tmp2  $tmp0  $tmp6  
+	mul		$tmp0  _21$amp  $tmp2  
+	add		_21$sum  _21$sum  $tmp0  
+	mul		_21$amp  _21$amp  $const3  
+	mul		_21$pp  _21$pp  $const7  
+	mul		_21$fw  _21$fw  $const7  
+	add		_21$i  _21$i  $const6  
+	assign		$tmp0  _21$sum  
+	mul		$tmp2  $tmp0  noiseamp  
+	add		pert  $tmp1  $tmp2  
+	mul		$tmp0  varycolor  cmix  
+	mix		Ct  darkcolor  lightcolor  $tmp0  
+	mul		$tmp0  Km  pert  
+	normalize	$tmp58  N  
+	mul		$tmp59  $tmp0  $tmp58  
+	add		P  P  $tmp59  
+	Pmoved
+	calculatenormal	N  P  
+	normalize	$tmp62  N  
+	faceforward	$tmp59  $tmp62  I  
+	normalize	$tmp58  $tmp59  
+	ambient		$tmp63  
+	mul		$tmp64  Ka  $tmp63  
+	diffuse		$tmp63  $tmp58  
+	mul		$tmp66  Kd  $tmp63  
+	add		$tmp63  $tmp64  $tmp66  
+	mul		$tmp64  Ct  $tmp63  
+	normalize	$tmp62  I  
+	neg		$tmp59  $tmp62  
+	specular	$tmp63  $tmp58  $tmp59  roughness  
+	mul		$tmp66  spec  $tmp63  
+	add		Ci  $tmp64  $tmp66  
+	assign		Oi  Os  
+	mul		Ci  Ci  Oi  

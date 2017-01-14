@@ -1,0 +1,317 @@
+<HTML>
+<HEAD>
+   <TITLE>Advanced RenderMan Additional Materials</TITLE>
+</HEAD>
+
+<body bgcolor="#FFFFFF" link="#660033" vlink="#003366" alink="#FFFFCC">
+
+<H1><em>Advanced RenderMan: Creating CGI for Motion Pictures</em><br>
+<p>Auxiliary Materials</H1>
+
+<p><hr><p>
+
+<h3>This page contains links to:</h3>
+<ul>
+  <li>All of the shader code (both complete shaders and header files)
+       used in <em>Advanced RenderMan</em>.
+  <li>Digital images (JPEG, gamma 2.2 corrected) of many of the figures
+       appearing in the book.
+  <li>RIB files that you can use to demostrate the shaders and generate
+       many of the figures yourself.
+</ul>
+
+<p><hr><p>
+
+<h3>Notes:</h3>
+
+<p>For you convenience, you may download just the shaders, all of the
+example files, or pick piece by piece.
+
+<p>All of these shaders and examples have been tested with
+<a href="../../OtherLinks/blackSIGGRAPH.html">BMRT</a> 2.5 and
+<a href="https://renderman.pixar.com/products/tools/index.htm">PRMan</a> 3.8.
+Many of the shaders take advantage of
+recently-added Shading Language features, so I do not expect them
+to work properly in much older releases of these renderers.
+
+<p>The examples should run identically on any other modern,
+fully-RenderMan-compliant renderers, but I haven't personally verified
+this.  If anybody can test all the examples against other renderers,
+pelase let me know how they fare and I will report the results here.
+
+<p>Many of the shaders have been changed slightly from the way they
+appear printed in the book.  In some cases this is to fix bugs that
+weren't found until after the book had gone to press, in other cases
+new functionality has been added, and in a few cases the book
+presented slightly simpler versions for the sake of clarity.
+
+<p>Some of the examples require certain archive models, shaders, or
+require you to generate a shadow map.  In all such cases, it should
+be easy to deduce the prerequisites by examining the comments at the
+top of the RIB file.
+
+<p>The JPEG images on this page (sometimes linked to by the figure name)
+are all gamma corrected to 2.2.  If they look washed out to you, please
+turn off hardware gamma correction.
+
+
+
+<p><hr><p>
+<h2>Tar files to download:</h2><p>
+<p><ul>
+  <p><li>Download <a href="arman-all.tar.gz">the whole shebang</a> -- a gzipped
+       tar file with all shaders, textures, images, and example RIB files.
+  <p><li>Download <a href="arman-shaders.tar.gz">the shaders</a> -- a gzipped
+       tar file with all of the shaders and header files.
+  </ul>
+  
+<p><hr><p>
+
+<h2>Organized by Chapter:</h2><p>
+
+<p><h3>Chapter 8: Texture Mapping and Displacement</h3>
+<ul>
+<li><a href="figs/fig8.1.jpg">Figure 8.1</a> :
+     RIB source <a href="Chap8/fig8.1.rib"><code>fig8.1.rib</code></a>.
+     To render this file, you will also need one of
+     <a href="Chap8/bmrt.opt"><code>bmrt.opt</code></a> or
+     <a href="Chap8/prman.opt"><code>prman.opt</code></a>,
+     and the texture file for the
+     <a href="texsrc/mandrill.tif">mandrill</a>.
+<p><li>Listing 8.2 :
+     SL source for <a href="shaders/simpletexmap.sl">
+     <code>simpletexmap.sl</code></a>
+<p><li><a href="figs/fig8.2.jpg">Figure 8.2</a> illustrates the blur
+     parameter to <code>texture()</code> :
+     RIB source <a href="Chap8/fig8.2.rib"><code>fig8.2.rib</code></a>.
+     To render this file, you will also need one of
+     <a href="Chap8/bmrt.opt"><code>bmrt.opt</code></a> or
+     <a href="Chap8/prman.opt"><code>prman.opt</code></a>,
+     and the texture file for the
+     <a href="texsrc/mandrill.tif">mandrill</a>, and the
+     <a href="shaders/supertexmap.sl"><code>supertexmap.sl</code></a> shader.
+
+<p><li>Figure 8.4 (comparison of bump versus displacement) :
+     RIB source <a href="Chap8/fig8.4.rib"><code>fig8.4.rib</code></a>.
+     To render this file, you will also need the
+     <a href="shaders/lumpy.sl"><code>lumpy.sl</code></a> shader (which
+     requires <a href="shaders/displace.h"><code>displace.h</code></a>
+     and <a href="shaders/noises.h"><code>noises.h</code></a>).
+
+<p><li>Listing 8.3 :
+     SL source for <a href="shaders/emboss.sl"><code>emboss.sl</code></a>
+     (requires <a href="shaders/displace.h"><code>displace.h</code></a>).<br>
+     <a href="figs/fig8.5.jpg">Figure 8.5</a> (RIB source
+     <a href="Chap8/fig8.5.rib"><code>fig8.5.rib</code></a>
+     demonstrates the emboss shader.
+    
+<p><li><a href="figs/fig8.6.jpg">Figure 8.6</a> (showing displacement
+     bound artifacts) :
+     RIB source <a href="Chap8/fig8.6.rib"><code>fig8.6.rib</code></a>.
+
+<p><li>Listing 8.4 (several projection routines) and Listing 8.5 (texture
+     application) are found in 
+     <a href="shaders/project.h"><code>project.h</code></a>.
+    
+<p><li>Listing 8.6 :
+     SL source for 
+     <a href="shaders/supertexmap.sl"><code>supertexmap.sl</code></a>
+     (requires <a href="shaders/project.h"><code>project.h</code></a>,
+     <a href="shaders/displace.h"><code>displace.h</code></a>, and
+     <a href="shaders/filterwidth.h"><code>filterwidth.h</code></a>).
+    
+</ul>
+
+<p><h3>Chapter 9: Illumination Models and Lights</h3>
+<ul>
+<p><li>Listings 9.1 (<code>MaterialPlastic</code>), 9.2
+     (<code>MaterialMatte</code>), 9.3 (<code>MaterialRoughMetal</code>),
+     and 9.4 (<code>MaterialThinPlastic</code>) can be found in
+     <a href="shaders/material.h"><code>material.h</code></a>.
+
+<p><li>Listing 9.5 can be found among the routines contained in
+     <a href="shaders/raysphere.h"><code>raysphere.h</code></a> and
+     <a href="shaders/reflections.h"><code>reflections.h</code></a>.
+
+<p><li>Listings 9.6 and 9.7 can be found in 
+     <a href="shaders/reflections.h"><code>reflections.h</code></a>.
+
+<p><li>Listing 9.8 can be found in 
+     <a href="shaders/shiny.sl"><code>shiny.sl</code></a>
+     (requires <a href="shaders/reflections.h"><code>reflections.h</code></a>).
+
+<p><li>Listing 9.9 can be found in 
+     <a href="shaders/shinyplastic.sl"><code>shinyplastic.sl</code></a>
+     (requires <a href="shaders/reflections.h"><code>reflections.h</code></a>).
+
+<p><li>Listings 9.11 (<code>LocIllumOrenNayar</code>), 9.12
+     (<code>LocIllumWardAnisotropic</code>),
+     and 9.13 (<code>LocIllumGlossy</code>) can be found in
+     <a href="shaders/locillum.h"><code>locillum.h</code></a>.
+     This is used by the <a href="shaders/clay.sl"><code>clay.sl</code></a>
+     shader. <br>
+     Figures <a href="figs/fig9.7a.jpg">9.7a</a> and
+     <a href="figs/fig9.7b.jpg">9.7b</a> (generated with
+     <a href="Chap9/fig9.7.rib"><code>fig9.7.rib</code></a>)
+     show the difference between using Oren/Nayar and diffuse.
+     Figures <a href="figs/fig9.8a.jpg">9.8a</a>,
+     <a href="figs/fig9.8b.jpg">9.8b</a>, and
+     <a href="figs/fig9.8c.jpg">9.8c</a> (generated with
+     <a href="Chap9/fig9.8.rib"><code>fig9.8.rib</code></a>)
+     show the anisotropic metal using the
+     <a href="shaders/brushedmetal.sl"><code>brushedmetal.sl</code></a>
+     shader.
+
+<p><li>Listing 9.19: SL source for
+     <a href="shaders/shadowspot.sl"><code>shadowspot.sl</code></a>.
+
+</ul>
+
+<p><h3>Chapter 10: Pattern Generation</h3>
+<ul>
+<p><li>The various noise, fBm, and voronoi routines of this chapter
+     can be found in
+     <a href="shaders/noises.h"><code>noises.h</code></a>.
+</ul>
+
+<p><h3>Chapter 11: Shader Antialiasing</h3>
+<ul>
+<p><li>The <code>filterwidth</code> and <code>filterwidthp</code>
+     macros can be found in
+     <a href="shaders/filterwidth.h"><code>filterwidth.h</code></a>.
+
+<p><li>Various patterns (such as <code>pulse</code>, <code>pulsetrain</code>,
+     etc.) and their antialiased versions can be found in
+     <a href="shaders/patterns.h"><code>patterns.h</code></a>.
+
+<p><li>Antialiased versions of <code>fBm</code>, <code>vfBm</code>,
+     and <code>turbulence</code> can be found in 
+     <a href="shaders/noises.h"><code>noises.h</code></a>.
+</ul>
+
+<p><h3>Chapter 12: A Gallery of Procedural Shaders</h3>
+<ul>
+<p><li>Listing 12.1: SL source in
+     <a href="shaders/pshad.h"><code>pshad.h</code></a>.
+     
+<p><li>Listing 12.2: SL source in
+     <a href="shaders/ceramictiles.sl"><code>ceramictiles.sl</code></a>
+     <br><a href="figs/fig12.7.jpg">Figure 12.7</a> generated by
+     RIB source <a href="Chap12/fig12.7.rib"><code>fig12.7.rib</code></a>.
+     
+<p><li>Listing 12.3: SL source in
+     <a href="shaders/oak.sl"><code>oak.sl</code></a> (requires
+     <a href="shaders/oak.h"><code>oak.h</code></a>)
+     <br><a href="figs/fig12.10.jpg">Figure 12.10</a> generated by
+     RIB source <a href="Chap12/fig12.10.rib"><code>fig12.10.rib</code></a>.
+
+<p><li>Listing 12.4: SL source in
+     <a href="shaders/oakplank.sl"><code>oakplank.sl</code></a> (requires
+     <a href="shaders/oak.h"><code>oak.h</code></a>)
+      <br><a href="figs/fig12.11.jpg">Figure 12.11</a> generated by
+     RIB source <a href="Chap12/fig12.11.rib"><code>fig12.11.rib</code></a>.
+    
+<p><li>Listing 12.6: SL source in
+     <a href="shaders/smoke.sl"><code>smoke.sl</code></a>
+      <br><a href="figs/fig12.12.jpg">Figure 12.12</a> generated by
+     RIB source <a href="Chap12/fig12.12.rib"><code>fig12.12.rib</code></a>.
+    
+<p><li>Listing 12.7: SL source in
+     <a href="shaders/lensflare.sl"><code>lensflare.sl</code></a>
+     <br><a href="figs/fig12.14.jpg">Figure 12.14</a>.
+     
+<p><li>Listing 12.8: SL source in
+     <a href="shaders/cel.sl"><code>cel.sl</code></a>
+     <br><a href="figs/fig12.17.jpg">Figure 12.17</a> illustrates
+     the effect.
+     
+</ul>
+
+<p><h3>Chapter 14: Lighting Controls for Computer Cinematography</h3>
+<ul>
+<p><li>Listing 14.1: SL source in
+     <a href="shaders/uberlight.sl"><code>uberlight.sl</code></a>.
+</ul>
+
+<p><h3>Chapter 15: Volumetric Shaders for Visual Effects</h3>
+<ul>
+<p><li>Listing 15.1: SL source in
+     <a href="shaders/gcloud.sl"><code>gcloud.sl</code></a>.
+<p><li>Listing 15.2: SL source in
+     <a href="shaders/texdust.sl"><code>texdust.sl</code></a>.
+<p><li>Listing 15.3: SL source in
+     <a href="shaders/shadowedclouds.sl"><code>shadowedclouds.sl</code></a>
+     (requires <a href="shaders/filterwidth.h"><code>filterwidth.h</code></a>,
+     <a href="shaders/noises.h"><code>noises.h</code></a>,
+     and <a href="shaders/raysphere.h"><code>raysphere.h</code></a>).
+<p><li>Listing 15.4: SL source in
+     <a href="shaders/cellclouds.sl"><code>cellclouds.sl</code></a>
+     (requires <a href="shaders/filterwidth.h"><code>filterwidth.h</code></a>,
+     <a href="shaders/noises.h"><code>noises.h</code></a>,
+     and <a href="shaders/raysphere.h"><code>raysphere.h</code></a>).
+<p><li>Listing 15.5: SL source in
+     <a href="shaders/hypertexture.sl"><code>hypertexture.sl</code></a>
+     (requires <a href="shaders/filterwidth.h"><code>filterwidth.h</code></a>,
+     <a href="shaders/noises.h"><code>noises.h</code></a>,
+     and <a href="shaders/raysphere.h"><code>raysphere.h</code></a>).
+</ul>
+
+<p><h3>Chapter 16: Nonphotorealistic Rendering</h3>
+<ul>
+<p><li>Listing 16.1: SL source in
+     <a href="shaders/panorama.sl"><code>panorama.sl</code></a>
+     <b>NOTE:</b> this shader will only work properly with a renderer
+     that implements ray tracing, like BMRT, but not with a scanline-only
+     renderer like PRMan.
+<p><li>Listing 16.2: SL source in
+     <a href="shaders/areacam.sl"><code>areacam.sl</code></a>
+     <b>NOTE:</b> this shader will only work properly with a renderer
+     that implements ray tracing, like BMRT, but not with a scanline-only
+     renderer like PRMan.
+<p><li>Listing 16.3: SL source in
+     <a href="shaders/woodblockprint.sl"><code>woodblockprint.sl</code></a>.
+<p><li>Listing 16.4: SL source in
+     <a href="shaders/nizid.sl"><code>nizid.sl</code></a>.
+</ul>
+
+<p><h3>Chapter 17: Ray Tracing in <em>PRMan</em> (with a little help
+from BMRT)</h3>
+<ul>
+<p><li>Listing 17.1 and 17.2: the <code>raytrace</code> and
+     <code>SampleEnvironment</code> functions can be found in
+     <a href="shaders/reflections.h"><code>reflections.h</code></a>.
+<p><li>Listing 17.3: SL source in
+     <a href="shaders/glass.sl"><code>glass.sl</code></a> (with the
+     <code>MaterialGlass</code> function in
+     <a href="shaders/material.h"><code>material.h</code></a>).
+<p><li>Listings 17.4-17.7: the latest versions of 
+     <code>rayserver.h</code> and the <code>frankenrender</code> script
+     can be found distributed with <a href="../../OtherLinks/blackSIGGRAPH.html">BMRT</a>.
+</ul>
+
+
+
+<HR>
+
+
+<p><a href="http://www.mkp.com/renderman">Return to the <em>Advanced RenderMan</em> book home page.</a>
+<p><a href="contrib.html">See the page on user extensions and contributions.</a>
+<p><a href="errata.html">Errata from the first printing.</a>
+<p><!--<a href="http://www.bmrt.org/rmanlinks.html">Other RenderMan-related Links</a> -->
+<p>
+
+<HR>
+
+<ADDRESS>
+Last change: 17 Nov 1999 / Larry Gritz (<a href="mailto:lg@bmrt.org">lg@bmrt.org</a>)</ADDRESS>
+
+<hr width=25%>
+<i>Sun Sep 14 17:43:47 PDT 2003: Imported into RMR -- Tal </i>
+<p>
+<I>
+The RMR is <A HREF="/RMR/copyright.html">Copyright</A> &copy; 1995--2003 <A HREF="mailto:talrmr@SpamSucks_pacbell.net">Tal L. Lancaster</A> all rights reserved</I><br>
+<!-- hhmts start -->
+Last modified: Sun Sep 14 18:02:26 PDT 2003
+<!-- hhmts end -->
+</BODY>
+</HTML>

@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<LINK rel="stylesheet" type="text/css" href="/RMR/css/global.css">
+<TITLE>rcCh6</TITLE>
+<LINK HREF="../rcCh7.htmld/index.html" REL="Sibling" TITLE="rcCh7">
+<LINK HREF="../rcCh16.htmld/index.html" REL="Sibling" TITLE="rcCh16">
+<LINK HREF="../rcCh5.htmld/index.html" REL="Sibling" TITLE="rcCh5">
+</HEAD>
+
+<BODY bgcolor=white>
+
+ <center>
+ </td></tr></table>
+ </center>
+<CENTER><P>
+<H1>_RC_ Chapter 6 Parametric Surfaces</H1><P>
+<B>(Primitive Surfaces III:)</B><P>
+</CENTER><P>
+<H2> <A HREF="../errataRev1.htmld/index.html#ch6">Errata</A>
+
+ </H2><P>
+<P>
+The following are needed if you don't have them already:<P>
+<P>
+ and the <A HREF="../ch6.tar.gz">ch6.tar.gz</A> package.  The ch6.tar.gz is a tar'd,gzip'd directory of all the files specific to chapter 6.  It will require the misc package to fully build.<P>
+<P>
+This listings below are already contained in the ch6.tar.gz package.<P>
+<P>
+<A HREF="../ch6/listing6_1.tiff"><IMG SRC=../ch6/listing6_1.gif ALIGN=LEFT WIDTH=100 HEIGHT=75  ALT="../ch6/listing6_1.tiff"></A>
+
+<B>p. 89</B> <A NAME="ex6_1"></A>
+
+ <A HREF="../ch6/listing6_1.c">listing6_1.c</A>
+
+ --Defining a surface of revolution using a wrapped patch mesh.<P>
+<A HREF="../ch6/listing6_2.tiff"><IMG SRC=../ch6/listing6_2.gif ALIGN=LEFT WIDTH=100 HEIGHT=75  ALT="../ch6/listing6_2.tiff"></A>
+
+<B>p. 94</B> <A NAME="ex6_2"></A>
+
+ <A HREF="../ch6/listing6_2.c">listing6_2.c</A>
+
+ --Defining a surface of revolution using a wrapped patch mesh. (<A HREF="../errataRev1.htmld/index.html#ex6_2">Errata</A>
+
+ )<P>
+<A HREF="../ch6/listing6_3.tiff"><IMG SRC=../ch6/listing6_3.gif ALIGN=LEFT WIDTH=40 HEIGHT=100  ALT="../ch6/listing6_3.tiff"></A>
+
+<B>p. 101</B> <A NAME="ex6_3"></A>
+
+ <A HREF="../ch6/listing6_3.c">listing6_3.c</A>
+
+ --Defining a surface of revolution using a wrapped patch mesh. (<A HREF="../errataRev1.htmld/index.html#ex6_3">Errata</A>
+
+ )<P>
+<A HREF="../ch6/listing6_4.tiff"><IMG SRC=../ch6/listing6_4.gif ALIGN=LEFT WIDTH=40 HEIGHT=100  ALT="../ch6/listing6_4.tiff"></A>
+
+<B>p. 102</B> <A NAME="ex6_4"></A>
+
+ <A HREF="../ch6/listing6_4.c">listing6_4.c</A>
+
+ --Defining a surface of revolution using a wrapped patch mesh. (<A HREF="../errataRev1.htmld/index.html#ex6_4">Errata</A>
+
+ )<P>
+<P>
+
+
+<!-- TRAILER -->
+<HR>
+<DL COMPACT>
+
+<DT>See Also (Siblings):</DT><DD>
+
+[<A HREF="../rcCh7.htmld/index.html">rcCh7</A>]
+
+[<A HREF="../rcCh16.htmld/index.html">rcCh16</A>]
+
+[<A HREF="../rcCh5.htmld/index.html">rcCh5</A>]
+</DL>
+<HR><ADDRESS><A HREF=".etDocInfo">rcCh6</A> was converted on Sat May 18 15:11:53 PDT 1996 by <A HREF="http://xent.w3.org/eTextEngine">the <I>eText Engine</I>, version 5, release 0.95</A></ADDRESS>
+
+</BODY>
+</HTML>

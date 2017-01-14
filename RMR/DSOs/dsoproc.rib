@@ -1,0 +1,27 @@
+##RenderMan RIB
+version 3.03
+Display "a.tif" "framebuffer" "rgba"
+Format 256 256 1
+Clipping 0.001 1000
+PixelSamples 1 1
+Projection "perspective"
+Translate 0 0 1
+WorldBegin
+LightSource "distantlight" 1 "intensity" [1]
+LightSource "ambientlight" 2 "intensity" [1]
+Surface "paintedplastic" "Ka" [.1 ] "texturename" ["grid.tex"]
+
+# Replaced the following Patch statement with a DSO that simply does
+#   the same thing:
+#Patch "bilinear" "P" [-1 1 0 1 1 0 -1 -1 0 1 -1 0]
+Procedural "DynamicLoad"
+           [ "dsoproc.so" "-0.5 0.5 -1 1 0 1 1 0 -1 -1 0 1 -1 0" ]
+           [ -1 1 -1 1 -0.5 0.5 ]
+
+
+# A little parsing test for ConvertParameters:
+#Procedural "DynamicLoad"
+#           [ "dsoproc.so" "" ]
+#           [ -1 1 -1 1 -0.5 0.5 ]
+WorldEnd
+

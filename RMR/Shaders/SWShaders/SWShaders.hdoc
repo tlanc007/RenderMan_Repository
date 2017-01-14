@@ -1,0 +1,13 @@
+MAILTO	indy AT is DOT com	NAME	Email Steve
+TITLE	MBShaders	H1	Steve Weintz Shaders (and models and animations)
+DIR	SWShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	SWTerran_old	NOTE	The following uses a variant of	LINK	KMShaders#KMTerran	NAME	KMTerran_old	 <A HREF="SWTerran_old.mpg">SWTerran_old.mpg</A>-- (0.157M) 98 frames at 320x240.<P>
+DESC	modified KMTerran shader
+DO_LINE
+SHADER	SWTerran	NOTE	The following uses a variant of KMTerran.<P><A HREF="Fronterra.mpg">Fronterra.mpg</A>-- (0.2M) 60 frames at 464x272.<P>
+DESC	modified KMTerran shader
+DO_LINE
+TOC	Spaceliner	model, texture map and animation	NOTE	<A HREF="spaceliner.13.tiff"><IMG SRC=spaceliner.13.jpg  WIDTH=100 HEIGHT=71  ALT="spaceliner.13.tiff"></A><A HREF="spaceliner.mpg">spaceliner.mpg</A> -- (28K) 21 frames at  336x240.  This <A HREF="SpaceLiner.rib">RIB</A> (36K) or <A HREF="SpaceLiner.rib.gz"> gzip'd RIB</A>(4k) contains 1 frame of this animation.  The animation was modeled and animated in <B>solidThinking</B>.  The background was grabbed from NASA Select and then composited.  Shaders used: <I>paintedplastic, emboss, LGHextile</I>.  The hull of the ship is a texturemap <A HREF="index.html#Hullplate">Hullplate.tx</A>S(6k).<P>
+TOC	KnownSpace	model of 12 LY from Sol	NOTE	<A HREF="KnownSpace.tiff"><IMG SRC=KnownSpace.jpg  WIDTH=100 HEIGHT=59  ALT="KnownSpace.tiff"></A>  This <A HREF="KnownSpace.rib">RIB</A>(23K) is a model of our local stars out to a radius of about 12 lightyears.  The radius is centered on Sol.  Not much to look at, until you start rotating it!<P>
+TOC	Spaceship	model of 50's style spaceship	NOTE	<A HREF="SpaceShip.tiff"><IMG SRC=SpaceShip.jpg  WIDTH=58 HEIGHT=100  ALT="SpaceShip.tiff"></A>  This <A HREF="SpaceShip.rib">RIB</A> (13K) is a model of an 50's style rocketship.<P>
+TOC	Hullplate	texture map	NOTE	<A HREF="Hullplate.tiff"><IMG SRC=Hullplate.jpg  HEIGHT=100  ALT="Hullplate.tiff"></A> -- texture map src <P><A HREF="Hullplate.tx.gz">Hullplate.tx</A>-- gzip'd prman texture map (6k) <P><A HREF="Hullplate_test.tiff"><IMG SRC=Hullplate_test.jpg  WIDTH=100  ALT="Hullplate_test.tiff"></A><A HREF="Hullplate_test.rib">Hullplate_test.rib</A><P><A HREF="QED_Rocket.tiff"><IMG SRC=QED_Rocket.jpg  HEIGHT=100  ALT="QED_Rocket.tiff"></A>  Here's an <A HREF="QED_Rocket.mov">animation</A> animation(458k 40 frames of 320x240 QT)  that uses <B>Hullplate</B>.  The  <A HREF="http://www.urly-bird.com/LIT/interstellar/Explorer_Class/Bussard_Fusion_systems.HTML">rocket design</A> comes from <A HREF="mailto:KellySt AT aol DOT com">Kelly Starks</A> -- the shiny sphere is a 5000 Mw fusion reactor, the gold object is an electrostatic accelerator using water as reaction mass. An engine like this can boost a 747 to Mars in less than a week!<P>

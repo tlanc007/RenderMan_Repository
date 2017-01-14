@@ -1,0 +1,82 @@
+SUBTITLE_H5	(Shaders from Larry Gritz's BMRT/examples)
+SUBTITLE	The following are some of the shaders that can be found in BMRT/examples.
+TITLE	BMRTShaders	H1	BMRT Shading Section
+DIR	BMRTShaders	PIC	100	100	ALIGN=LEFT CLEAR
+SHADER	background	NOTE	This rib also uses the 	QLINK	dented 	shader.
+DESC	
+DO_LINE
+SHADER	brick	NOTE	<B>Note:</B> This shader requires <a href="noises.h">noises.h</a> and <a href="patterns.h">patterns.h</a> to compile.  This shader is also used in the <a href="#texbox1">texbox1.rib</a>.<P>
+DESC	
+DO_LINE
+SHADER	brickbump	NOTE	<B>Note:</B> This shader requires <a href="noises.h">noises.h</a> and <a href="patterns.h">patterns.h</a> to compile. This example also uses the "brick" shaders.  This shader is also used in the  <a href="#texbox1">texbox1.rib</a>.<P>
+DESC	
+DO_LINE
+SHADER	castucco	NOTE	<B>Note:</B> This shader requires <a href="noises.h">noises.h</a> to compile. This shader is used in the  <a href="#texbox1">texbox1.rib</a>.<P>
+DESC	
+DO_LINE
+SHADER	clamptoalpha	NOTE	
+DESC	
+DO_LINE
+EXAMPLE	cornell	NOTE	This RIB demonstrates radiosity with BMRT.<P>
+DESC	(example RIB)
+DO_LINE
+SHADER	dented	NOTE	
+DESC	
+DO_LINE
+SHADER	disptest	NOTE	This RIB demonstrates displacement and procedural textures with BMRT.  This example uses 	QLINK	stucco	, 	QLINK	dented	, 	QLINK	shiny	, and 	QLINK	gmarble_polish	 shaders.<P>
+DESC	
+DO_LINE
+EXAMPLE	dresser	NOTE	This RIB shows off radiosity and raytracing with BMRT.  This example needs 	QLINK	wood2 	and 	QLINK	wallpaper_2stripe 	shaders.<P>
+DESC	(example RIB)
+DO_LINE
+SHADER	funkyglass	NOTE	This shader is also used in <a href="#shadtest">shadtest.rib</a>..<P>
+DESC	
+DO_LINE
+SHADER	glass	NOTE	This shader is used in the <a href="#teapots">teapots</a>.rib.<P>
+DESC	
+DO_LINE
+SHADER	gmarbtile_polish	NOTE	<B>NOTE:</B> This shader makes use of the trace() call, which means it can do reflections without reflection maps (at least under BMRT).  This shader is also used in <a href="#disptest">disptest.rib</a>.<P>
+DESC	
+DO_LINE
+SHADER	noisysmoke	NOTE	Atmospheric shader.  The RIB is just smokebox.rib renamed.<P>
+DESC	
+DO_LINE
+SHADER	screen	NOTE	NOTE: A NON antialiased version
+DESC	
+DO_LINE
+SHADER	screen_aa	NOTE	NOTE: An anti-aliased version
+DESC	
+DO_LINE
+EXAMPLE	shadtest	NOTE	Uses 	QLINK	funkyglass, 	QLINK	screen	 and 	QLINK	screen_aa 	shaders.  <B>Note:</B> This example shows off the automatic shadows found in BMRT.  If you are wondering why the left image has a solid shadow rather than one like its middle counter part, check out the RIB and the corresponding BMRT documentation under:<P>Atrribute &quot;render&quot; ....<P><P>
+DESC	(example RIB)
+DO_LINE
+SHADER	shiny	NOTE	Used in teapots.rib
+DESC	
+DO_LINE
+SHADER	stucco	NOTE	
+DESC	
+DO_LINE
+SHADER	superplank	NOTE	<B>Note:</B> This shader requires <a href="noises.h">noises.h</a> and <a href="patterns.h">patterns.h</a> to compile.  Used in 	QLINK	teapots	, 	QLINK	texbox1	, and 	QLINK 	tpdisp	RIB examples.
+DESC	
+DO_LINE
+EXAMPLE	teapots	NOTE	This RIB uses	QLINK	superplank	,	QLINK	shiny	, and 	QLINK	glass	 shaders.
+DESC	(example RIB)
+DO_LINE
+EXAMPLE	texbox1	NOTE	This RIB uses 	QLINK	windowlight	, 	QLINK	brick	, 	QLINK	brickbump	, 	QLINK	castucco shaders.<P>
+DESC	(example RIB)	
+DO_LINE
+EXAMPLE	tpdisp	NOTE	This RIB uses the 	QLINK	superplank	 shader.  This RIB shows bump-maping verses true displacement.
+DESC	(example RIB)	
+DO_LINE
+SHADER	uberlight	NOTE	This shader is based  on Ronen Barzel's paper "Lighting Controls for Computer Cinematography" (in Journal of Graphics Tools, vol. 2, no. 1: 1-20).  A whole page of examples using this shader can be found at:  <A HREF="../../rmBlockers/uber/index.html">uberlight</A>.
+DESC	light with many fun controls
+DO_LINE
+SHADER	wallpaper_2stripe	NOTE  This shader is also used in <a href="#dresser">dresser.rib</a>..
+DESC	
+DO_LINE
+SHADER	windowlight	NOTE	This shader is used in  <a href="#texbox1">texbox1.rib</a>.	
+DESC	
+DO_LINE
+SHADER	wood2	NOTE	<B>Note:</B> This shader requires <a href="patterns.h">patterns.h</a> to compile.  It is used in 	QLINK	dresser	 and 	QLINK	limbo	RIBS.
+DESC	
+DO_LINE

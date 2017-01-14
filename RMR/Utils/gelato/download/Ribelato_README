@@ -1,0 +1,159 @@
+RIB(1)-reading generator plugin for NVIDIA's Gelato
+---------------------------------------------------
+
+Abstract
+--------
+
+This distribution contains the source and object code to
+rib.generator.so, a plugin for NVIDIA's Gelato (tm) rendering system
+that allows Gelato to read RIB files.  RIB is the format used by
+renderers adhering to Pixar's RenderMan Interface Specification ((c)
+and (R) Pixar).
+
+
+
+Usage
+-----
+
+On 32-bit Linux systems running Gelato, just copy rib.generator.so to
+$GELATOHOME/lib.  Or put the .so file anywhere you want, and make sure
+your Gelato startup files (such as $GELATOHOME/.gelato.pyg or
+$HOME/.gelato.pyg) specify that directory in the "path:generator"
+attribute.
+
+Once installed, Gelato will automatically load the plugin if it 
+needs to read a RIB file.
+
+
+
+Manifest
+--------
+
+README                This file
+INSTALL               Installation / recompilation instructions
+CHANGES               Revision log
+LICENSE               Licensing terms (BSD Open Source License)
+Ribelato.cpp          \
+Ribelato.h             |
+rib.generator.cpp      |- source code for the plugin
+RIBParser.cpp          |
+RIBParser.h           /
+rib.generator.so      Pre-compiled plugin for 32-bit Linux
+
+
+
+Functionality Notes
+-------------------
+
+The following RIB calls are not handled:
+    o Blobby, Bound, ClippingPlane, ColorSamples, Cone, Cylinder, DepthOfField,
+      Detail, DetailRange, Disk, Exterior, FrameAspectRatio, FrameBegin, Frame-
+      End, Geometry, Hider, Hyperboloid, Imager, Interior, MakeCubeFaceEnviron-
+      ment, MakeLatLongEnvironment, MakeShadow, MakeTexture, Paraboloid, Pixel- 
+      Variance, RelativeDetail, ShadingInterpolation (currently always on in
+      Gelato), SolidBegin, SolidEnd, Torus
+
+The following calls are implemented in limited fashion:
+    o Shutter, MotionBegin - There is no support for multisegment motion-blur.
+    o ErrorHandler - handles "ignore", "print", and "abort", but errors always 
+      go to stderr.  E.g., when reading a RIB file via a Gelato Input() call,
+      from Mango, one might like errors to go to the Maya script window, but 
+      they don't.
+    o Procedural handles DelayedReadArchive, but not RunProgram or DynamicLoad.
+    o GeneralPolygon and PointsGeneralPolygon ignore holes. Gelato does handle 
+      concave polygons.
+    o GeometricApproximation handles only "motionfactor".
+    o Basis handles only the bases that Gelato understands (Bezier, B-spline, 
+      and Catmull-Rom).
+    o PatchMesh and NuPatch do not handle uniform and varying parameters. Gelato
+      has no provision for these. The alternative would be to break PatchMeshes
+      into separate Patch calls.
+    o ObjectBegin, ObjectEnd, ObjectInstance - Gelato does not support 
+      instancing, so these are handled by the parser. The current implementation
+      is rather inefficient in memory usage.
+
+Other notes:
+    o Attribute "gelato" <param-list> will send the parameters in <param-list>
+      to gelato.  Parameter names must be fully spec'd (e.g., "int shoeSize").
+    o Gelato "user" attributes must also be fully spec'd.
+    o AreaLightSource, LightSource, and Illuminate handle both integer and 
+      string light IDs.  Since Gelato wants strings, integers are converted to
+      "lightNNN", where NNN is the integer ID.  No attempt is made to check for 
+      collisions with string light IDs.
+    o Periodic patchmeshes are unwrapped.
+    o ReadArchive calls Gelato's Input(), so you can read an archive in any 
+      language you have a generator plug-in for.
+    o Note Gelato's shadingquality = sqrt(1 / ShadingRate).
+    o The SubdivisionMesh command's tags, nargs, intargs, floatargs argument 
+      foursome is optional.
+
+Parameters:
+    o "Cs" maps to "C", "Os" to "opacity".
+    o "st" parameters are taken apart into separate "s" and "t".
+
+Miscellaneous option/attribute translations:
+
+    RIB                                     Gelato
+    ===                                     ======
+    "user" <name> <value>                   "user:name" value
+    "gelato" <name> <value>                 name value
+
+    "dice" "binary"                         "int dice:binary"
+    "dice" "rasterorient"                   "int dice:rasterorient"
+    "displacementbound" "coordinatesystem"  "string displace:maxspace"
+    "displacementbound" "sphere"            "float displace:maxradius"
+    "identifier" "name"                     "string name"
+    "light" "nsamples"                      "int light:nsamples"
+    "limits" "bucketsize"                   "int[2] limits:bucketsize"
+    "limits" "gridsize"                     "int limits:gridsize"
+    "limits" "othreshold"                   "color limits:opacitythreshold"
+    "limits" "texturefiles"                 "int limits:texturefiles"
+    "limits" "texturememory"                "int limits:texturememory"
+    "render" "casts_shadows" "opaque"       "int ray:opaqueshadows" 1
+    "render" "max_raylevel"                 "int ray:maxdepth"
+    "render" "tracedisplacements"           "int dice:tracedisplacements"
+    "searchpath" "archive"                  "string path:input"
+    "searchpath" "display"                  "string path:imageio"
+    "searchpath" "procedural"               "string path:generator"
+    "searchpath" "shader"                   "string path:shader"
+    "searchpath" "texture"                  "string path:texture"
+    "shadow" "bias"                         "float shadow:bias"
+    "statistics" "endofframe"               "int statistics:level"
+    "statistics" "filelog"                  "string statistics:filename"
+    "trace" "maxdepth"                      "int ray:maxdepth"
+    "visibility" "shadow" onoff             "string geometryset" "+-shadow" (2)
+    "visibility" "reflection" onoff         "string geometryset", "+-reflection"
+    "visibility" "camera" onoff             "string geometryset"  "+-camera"
+    "visibility" "transmission" "opaque"    "string geometryset" "+raytrace"
+    "visibility" "transmission" "transparent" "string geometryset" "-raytrace"
+
+(1) "RIB" is a trademark of Pixar, Inc.
+
+(2) "+shadow" or "-shadow", depending on the value of 'onoff', and similarly
+    for "+/-reflection" and "+/-camera".
+
+
+
+
+Contributions
+-------------
+
+This code is open source.  Bug fixes, extensions, and other improvements
+are welcome.  We hope that if you make modifications, you will contribute
+them back to the project.  There is much room for improvement.  Some areas
+that would be good to address are:
+
+* Robustness to bad input.  The plugin often crashes on syntax errors.  
+  Array lengths should be maintained and checked, so the user can be 
+  warned when they've passed an unexpected number of values to a parameter. 
+
+* Support for more geometric primitives.  For example, the quadrics not
+  supported by Gelato could nonetheless be handled by creating an
+  appropriately-shaped NURBS "Patch" primitive.
+
+* Support for more attribute translation of the more rarely-used attributes,
+  and/or the attributes of other RenderMan-compliant renderers.
+
+* More complete implementation of any of the RIB calls that are listed
+  in the notes above as "implemented in limited fashion."
+

@@ -1,0 +1,99 @@
+MAILTO	lg AT larrygritz.com	NAME	Email Larry
+TITLE	armanShaders	H1	Andrew V. Klishin Shaders
+DIR	armanShaders	PIC	100	100	ALIGN=LEFT CLEAR
+DESC	areacam.sl
+SHADERS	areacam.sl	NOTE	
+DO_LINE
+DESC	brushedmetal.sl
+SHADERS	brushedmetal.sl	NOTE	
+DO_LINE
+DESC	cellclouds.sl
+SHADERS	cellclouds.sl	NOTE	
+DO_LINE
+DESC	cel.sl
+SHADERS	cel.sl	NOTE	
+DO_LINE
+DESC	ceramictiles.sl
+SHADERS	ceramictiles.sl	NOTE	
+DO_LINE
+DESC	clay.sl
+SHADERS	clay.sl	NOTE	
+DO_LINE
+DESC	emboss.sl
+SHADERS	emboss.sl	NOTE	
+DO_LINE
+DESC	gcloud.sl
+SHADERS	gcloud.sl	NOTE	
+DO_LINE
+DESC	glass.sl
+SHADERS	glass.sl	NOTE	
+DO_LINE
+DESC	hypertexture.sl
+SHADERS	hypertexture.sl	NOTE	
+DO_LINE
+DESC	lensflare.sl
+SHADERS	lensflare.sl	NOTE	
+DO_LINE
+DESC	lumpy.sl
+SHADERS	lumpy.sl	NOTE	
+DO_LINE
+DESC	nizid.sl
+SHADERS	nizid.sl	NOTE	
+DO_LINE
+DESC	oakplank.sl
+SHADERS	oakplank.sl	NOTE	
+DO_LINE
+DESC	oak.sl
+SHADERS	oak.sl	NOTE	
+DO_LINE
+DESC	panorama.sl
+SHADERS	panorama.sl	NOTE	
+DO_LINE
+DESC	planetatmo.sl
+SHADERS	planetatmo.sl	NOTE	
+DO_LINE
+DESC	planetclouds.sl
+SHADERS	planetclouds.sl	NOTE	
+DO_LINE
+DESC	platlight.sl
+SHADERS	platlight.sl	NOTE	
+DO_LINE
+DESC	shadowedclouds.sl
+SHADERS	shadowedclouds.sl	NOTE	
+DO_LINE
+DESC	shadowspot.sl
+SHADERS	shadowspot.sl	NOTE	
+DO_LINE
+DESC	shinyplastic.sl
+SHADERS	shinyplastic.sl	NOTE	
+DO_LINE
+DESC	shiny.sl
+SHADERS	shiny.sl	NOTE	
+DO_LINE
+DESC	simpletexmap.sl
+SHADERS	simpletexmap.sl	NOTE	
+DO_LINE
+DESC	smoke.sl
+SHADERS	smoke.sl	NOTE	
+DO_LINE
+DESC	starball.sl
+SHADERS	starball.sl	NOTE	
+DO_LINE
+DESC	starfield.sl
+SHADERS	starfield.sl	NOTE	
+DO_LINE
+DESC	supertexmap.sl
+SHADERS	supertexmap.sl	NOTE	
+DO_LINE
+DESC	terran.sl
+SHADERS	terran.sl	NOTE	
+DO_LINE
+DESC	texdust.sl
+SHADERS	texdust.sl	NOTE	
+DO_LINE
+DESC	uberlight.sl
+SHADERS	uberlight.sl	NOTE	
+DO_LINE
+DESC	woodblockprint.sl
+SHADERS	woodblockprint.sl	NOTE	
+DO_LINE

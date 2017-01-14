@@ -1,0 +1,6 @@
+MAILTO	xavier AT chimney DOT se	NAME	Email Xavier Matia Bernasconi
+TITLE	XMBShaders	H1	 Xavier Matia Bernasconi Shaders
+DIR	XMBShaders	PIC	100	100
+SHADER	XMBtranslucency	NOTE	Can use a different color and translucency texture for each side of a flat object.  It also implements the Stephen H. Westin velvet illuminance loop.<p> This example uses the following textures<p> <a href="front.tif"><IMG SRC=front.jpg WIDTH=100 CLEAR <ALT="front.tif"> front.tif </a><a href="back.tif"><IMG SRC=back.jpg WIDTH=100 CLEAR <ALT="back.tif"> back.tif </a>
+DESC	Double side translucency shader
+DO_LINE

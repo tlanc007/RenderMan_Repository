@@ -1,0 +1,127 @@
+##RenderMan RIB-Structure 1.1
+##Creator mtor 4.0b1, RAT 5.0b1 (Jan 15 2002 17:02:06)
+##For tal
+##CreationDate Sat Feb 09 17:40:55 2002
+
+version 3.04
+Declare "resource" "string"
+Declare "dirmap" "string"
+Declare "minmax" "int"
+Declare "serverresource" "string"
+Option "searchpath" "resource" [".:@"]
+FrameBegin 1
+Option "limits" "bucketsize" [32 32]
+Option "limits" "gridsize" [1024]
+Attribute "dice" "binary" [0]
+PixelSamples 5 5
+Exposure 1 1
+Option "shadow" "bias0" [0.05] "bias1" [0.05]
+Hider "hidden" "jitter" [1]
+PixelFilter "catmull-rom" 3 3
+#Shutter 1 1.5
+Shutter 0 0.0166667
+Option "shutter" "float offset" [0.0333333]
+#Format 1024 770 1
+Format 640 480 1
+Quantize "rgba" 255 0 255 0.5
+#Display "d_cell1.tif" "it" "rgba"
+Display "d_cell1.tif" "framebuffer" "rgba"
+Clipping 0.1 1000
+Projection "perspective" "fov" [54.4322]
+ScreenWindow -1 1 -0.751953 0.751953
+ConcatTransform [0.881303 -0.287922 -0.374707 -3.8225e-010 -7.17756e-009 0.792946 -0.609292 8.53753e-010 -0.472551 -0.536971 -0.698826 -7.12893e-010 -4.91288 -7.15993 69.0889 1]
+WorldBegin 
+	TransformBegin 
+		CoordinateSystem "worldspace"
+	TransformEnd 
+	ReverseOrientation 
+	ShadingRate 0.1
+	ShadingInterpolation "constant"
+	Surface "defaultsurface" 
+	TransformBegin 
+		Attribute "identifier" "string name" ["directional1LightShape"]
+		Transform [-0.817237 0.0104992 0.576207 0 -0.286419 0.86021 -0.421904 0 -0.500088 -0.509832 -0.699988 0 86.7041 115.408 117.12 1]
+		#slim light key 
+		#work genmap  -crew "" -far 0 -near 0 -frequency "frame" -type "shadow" -depthfilter "midpoint" -lazy "global" -resolution 2048 -locator "directional1LightShape": 
+		TransformBegin
+		Scale 1 1 1
+		LightSource "l_uber" 1 "color lightcolor" [ 1 1 1 ]  "color shadowcolor" [ 0 0 0 ] "float __eyeHighlight" [ 0 ] "float __foglight" [ 0 ] "float __inShadow" [ 0 ] "float __nondiffuse" [ 0 ] "float __nonspecular" [ 0 ] "float beamdistribution" [ 0 ] "float blocker_bottomdoor" [ 90 ] "float blocker_dooredge" [ 0.02 ] "float blocker_leftdoor" [ 90 ] "float blocker_rightdoor" [ 90 ] "float blocker_topdoor" [ 90 ] "float blockerhedge" [ .1 ] "float blockerheight" [ 1 ] "float blockerround" [ 1 ] "float blockerwedge" [ .1 ] "float blockerwidth" [ 1 ] "float coneAngle" [ 0.006 ] "float cutoff" [ 1.0e6 ] "float cuton" [ 0.01 ] "float falloff" [ 0 ] "float falloffdist" [ 0 ] "float faredge" [ 0 ] "float fill_Contrib" [ 0 ] "float hedge" [ 0 ] "float height" [ 1 ] "float intensity" [ 1 ] "float lighttype" [ 3 ] "float max_intensity" [ 1 ] "float maxintensity" [ 1 ] "float nearedge" [ 0 ] "float noiseamp" [ 0 ] "float noisefreq" [ 4 ] "float nonspecular" [ 0 ] "float nshadowrays" [ 1 ] "float parallelrays" [ 1 ] "float penumbraAngle" [ 5 ] "float raytraceshadow" [ 0 ] "float rimOutline" [ 0 ] "float roundness" [ 1 ] "float shadowOpacity" [ 1.0 ] "float shadowbias" [ 0.100 ] "float shadowblur" [ 0.005 ] "float shadownsamps" [ 36 ] "float shearx" [ 0 ] "float sheary" [ 0 ]  "float wedge" [ 0 ] "float width" [ 1 ]"string blockercoords" [ "" ] "string shadowname" [ "" ] "string slidename" [ "" ] "vector noiseoffset" [ 0  0  0 ] "vector shadowcheat" [ 0 0 0 ] 
+		TransformEnd
+	TransformEnd 
+
+	AttributeBegin 
+Attribute "dice" "rasterorient" [0]
+		Attribute "identifier" "name" ["|gasebo|base1|baseShape1"]
+		ConcatTransform [1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1]
+		#slim surface s_base1 
+		TransformBegin
+		Attribute "render" "string casts_shadows" ["opaque"]
+		Scale 1 1 1
+		Opacity [1 1 1]
+		Color [1 1 1]
+	Surface "plastic"
+
+		TransformEnd
+		#slim displacement d_base1 
+		TransformBegin
+		Attribute "render" "string casts_shadows" ["opaque"]
+		Scale 1 1 1
+		Attribute "displacementbound" "sphere" [0.6000] "coordinatesystem" ["shader"]
+		Displacement "TLd_cell1" "float Kvoro" [ -0.600 ] "float VoroVal" [ 0 ] "float usePref" [ 1 ] "float voro_freq" [ 0.500 ] "float voro_jitter" [ 0.400 ] "float voro_step" [ 0.025 ] "point __Pref" [ 1000  0  -1000 ] "string PSpace" [ "object" ] 
+		TransformEnd
+		ShadingInterpolation "smooth"
+		NuPatch 11 4 [0 0 0
+		0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1 1 1 1] 0 1 7 4 [0 0 0 0 0.633333 0.666667 0.683333 1 1 1 1] 0 1 "Pw" [24.2104 -0.0171541 -13.691 1 24.2104 -0.0171541 -7.36714 1
+		18.9716 -0.0171541 5.28059 1 1.6428e-015 -0.0171541 13.1389 1 -18.9716 -0.0171541 5.28059 1
+		-26.8299 -0.0171541 -13.691 1 -18.9716 -0.0171541 -32.6626 1 -4.3307e-015 -0.0171541 -40.5209 1
+		18.9716 -0.0171541 -32.6626 1 24.2104 -0.0171541 -20.0149 1 24.2104 -0.0171541 -13.691 1
+		24.2104 0.789851 -13.691 1 24.2104 0.789851 -7.36714 1 18.9716 0.789851 5.28059 1
+		1.6428e-015 0.789851 13.1389 1 -18.9716 0.789851 5.28059 1 -26.8299 0.789851 -13.691 1
+		-18.9716 0.789851 -32.6626 1 -4.3307e-015 0.789851 -40.5209 1 18.9716 0.789851 -32.6626 1
+		24.2104 0.789851 -20.0149 1 24.2104 0.789851 -13.691 1 24.2104 1.63933 -13.691 1
+		24.2104 1.63933 -7.36714 1 18.9716 1.63933 5.28059 1 1.6428e-015 1.63933 13.1389 1
+		-18.9716 1.63933 5.28059 1 -26.8299 1.63933 -13.691 1 -18.9716 1.63933 -32.6626 1
+		-4.3307e-015 1.63933 -40.5209 1 18.9716 1.63933 -32.6626 1 24.2104 1.63933 -20.0149 1
+		24.2104 1.63933 -13.691 1 24.2104 2.53128 -13.691 1 24.2104 2.53128 -7.36714 1
+		18.9716 2.53128 5.28059 1 1.6428e-015 2.53128 13.1389 1 -18.9716 2.53128 5.28059 1
+		-26.8299 2.53128 -13.691 1 -18.9716 2.53128 -32.6626 1 -4.3307e-015 2.53128 -40.5209 1
+		18.9716 2.53128 -32.6626 1 24.2104 2.53128 -20.0149 1 24.2104 2.53128 -13.691 1
+		15.7368 2.53128 -13.691 1 15.7368 2.53128 -9.58049 1 12.3315 2.53128 -1.35947 1
+		1.06782e-015 2.53128 3.74842 1 -12.3315 2.53128 -1.35947 1 -17.4394 2.53128 -13.691 1
+		-12.3315 2.53128 -26.0225 1 -2.81496e-015 2.53128 -31.1304 1 12.3315 2.53128 -26.0225 1
+		15.7368 2.53128 -17.8015 1 15.7368 2.53128 -13.691 1 7.66664 2.53128 -13.691 1
+		7.66664 2.53128 -11.6884 1 6.00767 2.53128 -7.68333 1 5.20221e-016 2.53128 -5.19487 1
+		-6.00767 2.53128 -7.68333 1 -8.49613 2.53128 -13.691 1 -6.00767 2.53128 -19.6987 1
+		-1.37139e-015 2.53128 -22.1871 1 6.00767 2.53128 -19.6987 1 7.66664 2.53128 -15.6936 1
+		7.66664 2.53128 -13.691 1 0 2.53128 -13.691 1 0 2.53128 -13.691 1
+		0 2.53128 -13.691 1 0 2.53128 -13.691 1 0 2.53128 -13.691 1
+		0 2.53128 -13.691 1 0 2.53128 -13.691 1 0 2.53128 -13.691 1
+		0 2.53128 -13.691 1 0 2.53128 -13.691 1 0 2.53128 -13.691 1] "vertex hpoint __Pref" [24.2104 -0.0171541 -13.691 1 24.2104 -0.0171541 -7.36714 1
+		18.9716 -0.0171541 5.28059 1 1.6428e-015 -0.0171541 13.1389 1 -18.9716 -0.0171541 5.28059 1
+		-26.8299 -0.0171541 -13.691 1 -18.9716 -0.0171541 -32.6626 1 -4.3307e-015 -0.0171541 -40.5209 1
+		18.9716 -0.0171541 -32.6626 1 24.2104 -0.0171541 -20.0149 1 24.2104 -0.0171541 -13.691 1
+		24.2104 0.789851 -13.691 1 24.2104 0.789851 -7.36714 1 18.9716 0.789851 5.28059 1
+		1.6428e-015 0.789851 13.1389 1 -18.9716 0.789851 5.28059 1 -26.8299 0.789851 -13.691 1
+		-18.9716 0.789851 -32.6626 1 -4.3307e-015 0.789851 -40.5209 1 18.9716 0.789851 -32.6626 1
+		24.2104 0.789851 -20.0149 1 24.2104 0.789851 -13.691 1 24.2104 1.63933 -13.691 1
+		24.2104 1.63933 -7.36714 1 18.9716 1.63933 5.28059 1 1.6428e-015 1.63933 13.1389 1
+		-18.9716 1.63933 5.28059 1 -26.8299 1.63933 -13.691 1 -18.9716 1.63933 -32.6626 1
+		-4.3307e-015 1.63933 -40.5209 1 18.9716 1.63933 -32.6626 1 24.2104 1.63933 -20.0149 1
+		24.2104 1.63933 -13.691 1 24.2104 2.53128 -13.691 1 24.2104 2.53128 -7.36714 1
+		18.9716 2.53128 5.28059 1 1.6428e-015 2.53128 13.1389 1 -18.9716 2.53128 5.28059 1
+		-26.8299 2.53128 -13.691 1 -18.9716 2.53128 -32.6626 1 -4.3307e-015 2.53128 -40.5209 1
+		18.9716 2.53128 -32.6626 1 24.2104 2.53128 -20.0149 1 24.2104 2.53128 -13.691 1
+		15.7368 2.53128 -13.691 1 15.7368 2.53128 -9.58049 1 12.3315 2.53128 -1.35947 1
+		1.06782e-015 2.53128 3.74842 1 -12.3315 2.53128 -1.35947 1 -17.4394 2.53128 -13.691 1
+		-12.3315 2.53128 -26.0225 1 -2.81496e-015 2.53128 -31.1304 1 12.3315 2.53128 -26.0225 1
+		15.7368 2.53128 -17.8015 1 15.7368 2.53128 -13.691 1 7.66664 2.53128 -13.691 1
+		7.66664 2.53128 -11.6884 1 6.00767 2.53128 -7.68333 1 5.20221e-016 2.53128 -5.19487 1
+		-6.00767 2.53128 -7.68333 1 -8.49613 2.53128 -13.691 1 -6.00767 2.53128 -19.6987 1
+		-1.37139e-015 2.53128 -22.1871 1 6.00767 2.53128 -19.6987 1 7.66664 2.53128 -15.6936 1
+		7.66664 2.53128 -13.691 1 0 2.53128 -13.691 1 0 2.53128 -13.691 1
+		0 2.53128 -13.691 1 0 2.53128 -13.691 1 0 2.53128 -13.691 1
+		0 2.53128 -13.691 1 0 2.53128 -13.691 1 0 2.53128 -13.691 1
+		0 2.53128 -13.691 1 0 2.53128 -13.691 1 0 2.53128 -13.691 1]
+	AttributeEnd 
+WorldEnd 
+FrameEnd 
