@@ -25,6 +25,6 @@ Some directories that may be of interest include:
 
 ## Copyright
 
-I selected the Apache license for this current incarnation of the materials found on the website for the content that I personally created.
+The License file invokes the original RMR copyright for the content in the repository.
 
-However, note there are some copyrighted materials sitting in the repository where the copyright supersedes this license associated with this git repo.  At the time, I was given permission for the copyrighted materials found on the site from the principles.  If you want to use them for more than your personal enlightenment, you will need to contact the appropriate parties.
+However, note there are a number of copyrighted materials sitting in the repository where the copyright supersedes the RMR license associated with this git repo.  At the time, I was given permission for those copyrighted materials found on the site from the principles.  If you want to use them for more than your personal enlightenment, you will need to contact the appropriate parties.
